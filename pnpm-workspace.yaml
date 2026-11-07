@@ -1,0 +1,4 @@
+packages:
+  - content
+  - apps/admin
+  - supabase/functions

@@ -1,0 +1,15 @@
+{
+  "name": "lingora",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "content:validate": "pnpm -C content validate",
+    "content:bundle": "pnpm -C content bundle",
+    "content:seed": "pnpm -C content seed",
+    "test": "pnpm -r test",
+    "db:verify": "bash supabase/verify/run.sh"
+  }
+}

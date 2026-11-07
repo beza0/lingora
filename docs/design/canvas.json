@@ -1,0 +1,452 @@
+{
+ "v": 3,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-07T23:25:37Z"
+ },
+ "title": "Lingora — Mobil ve Panel Tasarımı v1",
+ "launch": {
+  "view": "canvas"
+ },
+ "pages": [],
+ "boards": {
+  "Main.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1280,
+   "h": 1780,
+   "title": "Tasarım sistemi"
+  },
+  "M01-Welcome.dc.html": {
+   "x": 0,
+   "y": 2160,
+   "w": 390,
+   "h": 844,
+   "title": "M01 · Alan seçimi",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M02-Home.dc.html": {
+   "x": 470,
+   "y": 2160,
+   "w": 390,
+   "h": 1500,
+   "title": "M02 · Alan ana ekranı (tam kaydırma)",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M03-Domains.dc.html": {
+   "x": 940,
+   "y": 2160,
+   "w": 390,
+   "h": 844,
+   "title": "M03 · Alan yönetimi",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M13-Assessment.dc.html": {
+   "x": 1410,
+   "y": 2160,
+   "w": 390,
+   "h": 844,
+   "title": "M13 · Değerlendirme adımı",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M13-AssessmentResult.dc.html": {
+   "x": 1880,
+   "y": 2160,
+   "w": 390,
+   "h": 844,
+   "title": "M13 · Değerlendirme sonucu",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M20-Auth.dc.html": {
+   "x": 2350,
+   "y": 2160,
+   "w": 390,
+   "h": 844,
+   "title": "M20 · Hesap oluştur (kota dolunca)",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M05-Intro.dc.html": {
+   "x": 0,
+   "y": 4040,
+   "w": 390,
+   "h": 844,
+   "title": "M05 · Tanıtım kartı",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M12-Details.dc.html": {
+   "x": 470,
+   "y": 4040,
+   "w": 390,
+   "h": 844,
+   "title": "M12 · Ayrıntılar (alt sayfa)",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M05-Exercise.dc.html": {
+   "x": 940,
+   "y": 4040,
+   "w": 390,
+   "h": 844,
+   "title": "M05 · Alıştırma (ipucu kullanıldı)",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M06-Wrong.dc.html": {
+   "x": 1410,
+   "y": 4040,
+   "w": 390,
+   "h": 844,
+   "title": "M06 · Yanlış cevap",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M06-Typing.dc.html": {
+   "x": 1880,
+   "y": 4040,
+   "w": 390,
+   "h": 844,
+   "title": "M06 · Yazım hatası, anlam doğru",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M07-Pattern.dc.html": {
+   "x": 2350,
+   "y": 4040,
+   "w": 390,
+   "h": 844,
+   "title": "M07 · Kalıp ve yapı",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M08-Summary.dc.html": {
+   "x": 2820,
+   "y": 4040,
+   "w": 390,
+   "h": 844,
+   "title": "M08 · Oturum özeti",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M09-Scenario.dc.html": {
+   "x": 0,
+   "y": 5264,
+   "w": 390,
+   "h": 844,
+   "title": "M09 · Senaryo",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M10-Phrasebook.dc.html": {
+   "x": 470,
+   "y": 5264,
+   "w": 390,
+   "h": 844,
+   "title": "M10 · Cümle Rehberi",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M11-Reading.dc.html": {
+   "x": 940,
+   "y": 5264,
+   "w": 390,
+   "h": 844,
+   "title": "M11 · Oku ve Dinle",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M14-Review.dc.html": {
+   "x": 0,
+   "y": 6488,
+   "w": 390,
+   "h": 1000,
+   "title": "M14 · Tekrar",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M15-ChatList.dc.html": {
+   "x": 470,
+   "y": 6488,
+   "w": 390,
+   "h": 844,
+   "title": "M15 · AI Sohbet listesi",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M16-Chat.dc.html": {
+   "x": 940,
+   "y": 6488,
+   "w": 390,
+   "h": 844,
+   "title": "M16 · AI sohbet (akış sürüyor)",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M17-Collection.dc.html": {
+   "x": 1410,
+   "y": 6488,
+   "w": 390,
+   "h": 844,
+   "title": "M17 · Koleksiyonum",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M18-Add.dc.html": {
+   "x": 1880,
+   "y": 6488,
+   "w": 390,
+   "h": 844,
+   "title": "M18 · Metinden aday çıkarma",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M19-Profile.dc.html": {
+   "x": 2350,
+   "y": 6488,
+   "w": 390,
+   "h": 844,
+   "title": "M19 · Profil",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "M21-Settings.dc.html": {
+   "x": 2820,
+   "y": 6488,
+   "w": 390,
+   "h": 844,
+   "title": "M21 · Ayarlar",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "S1-Loading.dc.html": {
+   "x": 0,
+   "y": 7868,
+   "w": 390,
+   "h": 844,
+   "title": "S1 · Yükleniyor",
+   "radius": 28
+  },
+  "S2-EmptyCollection.dc.html": {
+   "x": 470,
+   "y": 7868,
+   "w": 390,
+   "h": 844,
+   "title": "S2 · Boş durum",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "S3-AiNotConfigured.dc.html": {
+   "x": 940,
+   "y": 7868,
+   "w": 390,
+   "h": 844,
+   "title": "S3 · AI yapılandırılmadı",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "S4-ChatError.dc.html": {
+   "x": 1410,
+   "y": 7868,
+   "w": 390,
+   "h": 844,
+   "title": "S4 · Ağ hatası ve yeniden dene",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "S5-Offline.dc.html": {
+   "x": 1880,
+   "y": 7868,
+   "w": 390,
+   "h": 1580,
+   "title": "S5 · Çevrimdışı + eşitleme bekliyor",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "D1-Home.dc.html": {
+   "x": 0,
+   "y": 9828,
+   "w": 390,
+   "h": 1500,
+   "title": "D1 · Ana ekran · koyu",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "D2-Typing.dc.html": {
+   "x": 470,
+   "y": 9828,
+   "w": 390,
+   "h": 844,
+   "title": "D2 · Yazım hatası · koyu",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "D3-Chat.dc.html": {
+   "x": 940,
+   "y": 9828,
+   "w": 390,
+   "h": 844,
+   "title": "D3 · AI sohbet · koyu",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "D4-Review.dc.html": {
+   "x": 1410,
+   "y": 9828,
+   "w": 390,
+   "h": 1000,
+   "title": "D4 · Tekrar · koyu",
+   "is_interactive": true,
+   "radius": 28
+  },
+  "A01-Login.dc.html": {
+   "x": 0,
+   "y": 11708,
+   "w": 1440,
+   "h": 900,
+   "title": "A01 · Panel giriş (yetkisiz durum)",
+   "is_interactive": true,
+   "expand": "fill"
+  },
+  "A02-Content.dc.html": {
+   "x": 1520,
+   "y": 11708,
+   "w": 1440,
+   "h": 900,
+   "title": "A02 · İçerik listesi",
+   "is_interactive": true,
+   "expand": "fill"
+  },
+  "A03-Editor.dc.html": {
+   "x": 3040,
+   "y": 11708,
+   "w": 1440,
+   "h": 900,
+   "title": "A03 · İçerik düzenleyici",
+   "is_interactive": true,
+   "expand": "fill"
+  },
+  "A04-Import.dc.html": {
+   "x": 4560,
+   "y": 11708,
+   "w": 1440,
+   "h": 900,
+   "title": "A04 · Toplu aktarım ve doğrulama",
+   "is_interactive": true,
+   "expand": "fill"
+  },
+  "A05-Reports.dc.html": {
+   "x": 6080,
+   "y": 11708,
+   "w": 1440,
+   "h": 900,
+   "title": "A05 · Hata bildirimleri",
+   "is_interactive": true,
+   "expand": "fill"
+  }
+ },
+ "order": [
+  "Main.dc.html",
+  "M01-Welcome.dc.html",
+  "M02-Home.dc.html",
+  "M03-Domains.dc.html",
+  "M13-Assessment.dc.html",
+  "M13-AssessmentResult.dc.html",
+  "M20-Auth.dc.html",
+  "M05-Intro.dc.html",
+  "M12-Details.dc.html",
+  "M05-Exercise.dc.html",
+  "M06-Wrong.dc.html",
+  "M06-Typing.dc.html",
+  "M07-Pattern.dc.html",
+  "M08-Summary.dc.html",
+  "M09-Scenario.dc.html",
+  "M10-Phrasebook.dc.html",
+  "M11-Reading.dc.html",
+  "M14-Review.dc.html",
+  "M15-ChatList.dc.html",
+  "M16-Chat.dc.html",
+  "M17-Collection.dc.html",
+  "M18-Add.dc.html",
+  "M19-Profile.dc.html",
+  "M21-Settings.dc.html",
+  "S1-Loading.dc.html",
+  "S2-EmptyCollection.dc.html",
+  "S3-AiNotConfigured.dc.html",
+  "S4-ChatError.dc.html",
+  "S5-Offline.dc.html",
+  "D1-Home.dc.html",
+  "D2-Typing.dc.html",
+  "D3-Chat.dc.html",
+  "D4-Review.dc.html",
+  "A01-Login.dc.html",
+  "A02-Content.dc.html",
+  "A03-Editor.dc.html",
+  "A04-Import.dc.html",
+  "A05-Reports.dc.html"
+ ],
+ "notes": {
+  "row0": {
+   "x": 0,
+   "y": -260,
+   "text": "Tasarım sistemi",
+   "kind": "title1",
+   "maxW": 1280
+  },
+  "row1": {
+   "x": 0,
+   "y": 1900,
+   "text": "Açılış, alan ana ekranı ve hesap",
+   "kind": "title1",
+   "maxW": 2740
+  },
+  "row2": {
+   "x": 0,
+   "y": 3780,
+   "text": "Öğrenme oturumu",
+   "kind": "title1",
+   "maxW": 3210
+  },
+  "row3": {
+   "x": 0,
+   "y": 5004,
+   "text": "Senaryo, Cümle Rehberi, Oku ve Dinle",
+   "kind": "title1",
+   "maxW": 1330
+  },
+  "row4": {
+   "x": 0,
+   "y": 6228,
+   "text": "Tekrar, AI Sohbet, Koleksiyon, Profil",
+   "kind": "title1",
+   "maxW": 3210
+  },
+  "row5": {
+   "x": 0,
+   "y": 7608,
+   "text": "Yükleniyor, boş, hata ve çevrimdışı durumları",
+   "kind": "title1",
+   "maxW": 2270
+  },
+  "row6": {
+   "x": 0,
+   "y": 9568,
+   "text": "Koyu tema",
+   "kind": "title1",
+   "maxW": 1800
+  },
+  "row7": {
+   "x": 0,
+   "y": 11448,
+   "text": "Yönetim paneli (web, yerelde çalışır)",
+   "kind": "title1",
+   "maxW": 7520
+  }
+ },
+ "designSystems": []
+}

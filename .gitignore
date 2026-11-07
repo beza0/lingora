@@ -1,0 +1,41 @@
+# Gizli bilgiler
+.env
+.env.*
+!.env.example
+**/.env.json
+!**/.env.example.json
+*.jks
+*.keystore
+key.properties
+GoogleService-Info.plist
+google-services.json
+
+# Node
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+**/build/
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/ephemeral/
+**/android/.gradle/
+**/android/local.properties
+*.iml
+.idea/
+
+# Supabase
+supabase/.temp/
+supabase/.branches/
+
+# Yerel test veritabanı
+.pgtest/
+
+# Sistem
+.DS_Store
+Thumbs.db
