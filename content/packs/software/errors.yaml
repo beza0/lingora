@@ -1,0 +1,539 @@
+id: software-errors
+domain: software
+title: "Hatalar ve sorun giderme"
+desc: "Hata bildirme, hatayı yeniden oluşturma, kayıt okuma ve çözüm önerme."
+sort: 2
+
+targets:
+  - id: reproduce
+    w: reproduce
+    pos: v
+    tr: "(bir hatayı) yeniden oluşturmak"
+    ex: "I can't [[reproduce]] the bug on my machine."
+    extr: "Hatayı kendi bilgisayarımda yeniden oluşturamıyorum."
+    d: 2
+    col: ["reproduce a bug", "steps to reproduce", "can't reproduce"]
+    syn: ["recreate", "replicate"]
+    fam: ["reproduction (i.) yeniden oluşturma", "reproducible (s.) yeniden oluşturulabilir"]
+    conf: ["repeat | Bir eylemi tekrarlamaktır; reproduce aynı sonucu yeniden ortaya çıkarmaktır."]
+    other: "Biyolojide “üremek”, basımda “çoğaltmak” anlamına da gelir."
+    tone: ["Hata kaydı", "Ekip mesajı"]
+    dis:
+      - "replace | Değiştirmek demektir; bir hata değiştirilmez."
+      - "reduce | Azaltmak demektir; cümleye uymaz."
+      - "recite | Ezberden okumak demektir."
+  - id: crash
+    w: crash
+    pos: v
+    tr: "çökmek (uygulama)"
+    ex: "The app [[crashes]] when I upload a large file."
+    extr: "Büyük bir dosya yüklediğimde uygulama çöküyor."
+    d: 1
+    col: ["crash on startup", "crash report", "keeps crashing"]
+    fam: ["crash (i.) çökme"]
+    conf: ["crush | Ezmek demektir; yazılışı benzer."]
+    tone: ["Hata kaydı", "Günlük"]
+    dis:
+      - "crushes | Ezmek demektir."
+      - "clashes | Çatışmak demektir."
+      - "cracks | Çatlamak demektir."
+  - id: workaround
+    w: workaround
+    pos: n
+    tr: "geçici çözüm"
+    ex: "As a [[workaround]], restart the service after each update."
+    extr: "Geçici çözüm olarak her güncellemeden sonra servisi yeniden başlat."
+    d: 2
+    col: ["find a workaround", "a temporary workaround"]
+    conf: ["fix | Kalıcı düzeltmedir; workaround sorunu çözmeden etrafından dolaşır."]
+    tone: ["Hata kaydı", "Ekip mesajı"]
+    dis:
+      - "walkthrough | Adım adım anlatım demektir."
+      - "workout | Spor antrenmanı demektir."
+      - "workflow | İş akışı demektir; “As a workflow” anlam vermez."
+  - id: root-cause
+    w: root cause
+    pos: n
+    tr: "kök neden"
+    ex: "We still don't know the [[root cause]] of the outage."
+    extr: "Kesintinin kök nedenini hâlâ bilmiyoruz."
+    d: 3
+    col: ["root cause analysis", "find the root cause"]
+    tone: ["Teknik rapor", "Toplantı"]
+    dis:
+      - "root user | Yönetici kullanıcı hesabı demektir."
+      - "root folder | Kök klasör demektir."
+      - "route cause | “route” güzergâh demektir; doğrusu root."
+  - id: stack-trace
+    w: stack trace
+    pos: n
+    tr: "yığın izi (hatanın çağrı sırası)"
+    ex: "Please paste the full [[stack trace]] into the ticket."
+    extr: "Lütfen tam yığın izini görev kaydına yapıştır."
+    d: 2
+    col: ["full stack trace", "read the stack trace"]
+    tone: ["Hata kaydı", "Teknik"]
+    dis:
+      - "stack overflow | Yığın taşması hatasıdır; yapıştırılan bir kayıt değildir."
+      - "stack size | Yığın boyutu demektir."
+      - "track record | Geçmiş başarı demektir."
+  - id: log
+    w: log
+    pos: n
+    tr: "kayıt dosyası, günlük (log)"
+    ex: "Check the error [[log]] for more details."
+    extr: "Daha fazla ayrıntı için hata kaydına bak."
+    d: 1
+    col: ["error log", "server logs", "check the logs"]
+    fam: ["log (f.) kaydetmek", "logging (i.) kayıt tutma"]
+    other: "Günlük dilde “kütük” anlamına gelir; “log in” ise giriş yapmaktır."
+    tone: ["Teknik", "Hata kaydı"]
+    dis:
+      - "lock | Kilit demektir."
+      - "loop | Döngü demektir."
+      - "lag | Gecikme demektir."
+  - id: timeout
+    w: timeout
+    pos: n
+    tr: "zaman aşımı"
+    ex: "The request fails with a [[timeout]] after 30 seconds."
+    extr: "İstek 30 saniye sonra zaman aşımıyla başarısız oluyor."
+    d: 2
+    col: ["request timeout", "increase the timeout"]
+    other: "Sporda “mola” anlamına gelir."
+    tone: ["Teknik", "Hata kaydı"]
+    dis:
+      - "time zone | Saat dilimi demektir."
+      - "timeline | Zaman çizelgesi demektir."
+      - "time off | İzin demektir."
+  - id: intermittent
+    w: intermittent
+    pos: adj
+    tr: "aralıklı, ara sıra olan"
+    ex: "It's an [[intermittent]] issue, so it doesn't happen every time."
+    extr: "Aralıklı bir sorun, bu yüzden her seferinde olmuyor."
+    d: 3
+    col: ["intermittent failure", "intermittent issue"]
+    syn: ["occasional", "sporadic"]
+    ant: ["constant", "consistent"]
+    tone: ["Hata kaydı", "Teknik"]
+    dis:
+      - "international | Uluslararası demektir."
+      - "intentional | Kasıtlı demektir; devamındaki açıklamaya uymaz."
+      - "internal | İç, dahili demektir; “so it doesn't happen every time” ile bağ kurmaz."
+  - id: edge-case
+    w: edge case
+    pos: n
+    tr: "uç durum, nadir senaryo"
+    ex: "We missed an [[edge case]]: empty passwords."
+    extr: "Bir uç durumu atlamışız: boş parolalar."
+    d: 3
+    col: ["handle edge cases", "an edge case"]
+    tone: ["Kod inceleme", "Teknik"]
+    dis:
+      - "edge device | Ağın ucundaki cihaz demektir."
+      - "upper case | Büyük harf demektir."
+      - "suitcase | Bavul demektir."
+  - id: debug
+    w: debug
+    pos: v
+    tr: "hata ayıklamak"
+    ex: "I spent two hours trying to [[debug]] the login flow."
+    extr: "Giriş akışında hata ayıklamaya çalışarak iki saat geçirdim."
+    d: 2
+    col: ["debug an issue", "debug mode", "debugging session"]
+    fam: ["debugger (i.) hata ayıklayıcı"]
+    tone: ["Teknik", "Günlük"]
+    dis:
+      - "debate | Tartışmak demektir."
+      - "debit | Hesaptan para çekmek demektir."
+      - "default | Varsayılan demektir; fiil değildir."
+  - id: regression
+    w: regression
+    pos: n
+    tr: "gerileme hatası (önceden çalışan şeyin bozulması)"
+    ex: "This bug is a [[regression]] from last week's release."
+    extr: "Bu hata, geçen haftaki sürümle gelen bir gerileme hatası."
+    d: 3
+    col: ["regression test", "introduce a regression"]
+    other: "İstatistikte “regresyon” anlamına gelir."
+    tone: ["Teknik", "Hata kaydı"]
+    dis:
+      - "recession | Ekonomik durgunluk demektir."
+      - "registration | Kayıt olma demektir."
+      - "repression | Baskı demektir."
+  - id: roll-back
+    w: roll back
+    pos: phrasal
+    tr: "önceki sürüme geri dönmek"
+    ex: "We had to [[roll back]] the update after the errors."
+    extr: "Hatalardan sonra güncellemeyi geri almak zorunda kaldık."
+    d: 2
+    col: ["roll back a release", "roll back to version 2.3"]
+    fam: ["rollback (i.) geri alma"]
+    ant: ["roll out"]
+    tone: ["Teknik", "Ekip mesajı"]
+    dis:
+      - "roll up | Sarmak, toplamak demektir."
+      - "roll over | Yuvarlanmak veya devretmek demektir."
+      - "role back | “role” rol demektir; doğrusu roll."
+  - id: environment
+    w: environment
+    pos: n
+    tr: "ortam (geliştirme, test, canlı)"
+    ex: "The bug only happens in the test [[environment]]."
+    extr: "Hata yalnızca test ortamında oluyor."
+    d: 2
+    col: ["test environment", "production environment", "environment variable"]
+    other: "Günlük dilde “çevre” anlamına gelir."
+    tone: ["Teknik"]
+    dis:
+      - "equipment | Donanım, ekipman demektir."
+      - "engagement | Katılım demektir."
+      - "enhancement | İyileştirme demektir."
+  - id: works-on-my-machine
+    w: "It works on my machine."
+    pos: phrase
+    tr: "Bende çalışıyor."
+    ex: "[[It works on my machine]], but it fails on the server."
+    extr: "Bende çalışıyor ama sunucuda hata veriyor."
+    d: 2
+    tone: ["Ekip mesajı", "Samimi"]
+    dis:
+      - "It's broken on my machine | “Bende bozuk” demektir; “but it fails” ile çelişir."
+      - "It walks on my machine | “walk” yürümek demektir."
+      - "It worked for my mother | Anlam tamamen değişir."
+  - id: steps-to-reproduce
+    w: "steps to reproduce"
+    pos: phrase
+    tr: "hatayı yeniden oluşturma adımları"
+    ex: "[[Steps to reproduce]]: open the app and tap Save."
+    extr: "Yeniden oluşturma adımları: uygulamayı aç ve Kaydet'e dokun."
+    d: 2
+    tone: ["Hata kaydı"]
+    dis:
+      - "Steps to remove | Kaldırma adımları demektir."
+      - "Steps to produce | Üretme adımları demektir; hata kaydında kullanılmaz."
+      - "Stops to reproduce | “stop” durak demektir."
+  - id: seen-before
+    w: "Has anyone seen this error before?"
+    pos: phrase
+    tr: "Bu hatayı daha önce gören oldu mu?"
+    ex: "[[Has anyone seen this error before]]? It appears after login."
+    extr: "Bu hatayı daha önce gören oldu mu? Girişten sonra çıkıyor."
+    d: 2
+    tone: ["Ekip mesajı", "Yardım isteme"]
+    dis:
+      - "Has anyone saw this error before | “has” sonrası 3. hâl gelir: seen."
+      - "Has anyone sent this error before | “send” göndermek demektir."
+      - "Has anyone seen this error after | “before” gerekir; anlam bozulur."
+  - id: outage
+    w: outage
+    pos: n
+    tr: "hizmet kesintisi"
+    ex: "The [[outage]] lasted about twenty minutes."
+    extr: "Kesinti yaklaşık yirmi dakika sürdü."
+    d: 2
+    col: ["a major outage", "power outage", "during the outage"]
+    syn: ["downtime"]
+    tone: ["Teknik rapor", "Ekip mesajı"]
+    dis:
+      - "output | Çıktı demektir."
+      - "outrage | Öfke demektir."
+      - "outlet | Priz veya satış noktası demektir."
+  - id: null-value
+    w: "null"
+    pos: adj
+    tr: "boş, değer atanmamış (null)"
+    ex: "The user ID is [[null]] after logout."
+    extr: "Çıkıştan sonra kullanıcı kimliği boş (null)."
+    d: 2
+    col: ["null check", "null pointer", "return null"]
+    tone: ["Teknik", "Kod inceleme"]
+    dis:
+      - "full | Dolu demektir."
+      - "dull | Sıkıcı demektir."
+      - "nail | Çivi demektir."
+  - id: deprecated
+    w: deprecated
+    pos: adj
+    tr: "kullanımdan kaldırılmış (eskimiş)"
+    ex: "This method is [[deprecated]], so use the new one."
+    extr: "Bu yöntem kullanımdan kaldırıldı, o yüzden yenisini kullan."
+    d: 3
+    col: ["deprecated API", "be deprecated in version 3"]
+    fam: ["deprecate (f.) kullanımdan kaldırmak", "deprecation (i.) kullanımdan kaldırma"]
+    conf: ["depreciated | Değer kaybetmiş demektir (finans)."]
+    tone: ["Teknik", "Dokümantasyon"]
+    dis:
+      - "depreciated | Değer kaybetmiş demektir (finans)."
+      - "dedicated | Adanmış demektir."
+      - "decorated | Süslenmiş demektir."
+  - id: hotfix
+    w: hotfix
+    pos: n
+    tr: "acil düzeltme sürümü"
+    ex: "We released a [[hotfix]] for the payment error."
+    extr: "Ödeme hatası için acil bir düzeltme yayımladık."
+    d: 2
+    col: ["release a hotfix", "hotfix branch"]
+    syn: ["patch"]
+    tone: ["Teknik", "Ekip mesajı"]
+    dis:
+      - "hotspot | Sıcak nokta veya kablosuz erişim noktası demektir."
+      - "hotline | Acil yardım hattı demektir."
+      - "hot dog | Sosisli sandviç demektir."
+
+patterns:
+  - id: getting-error
+    t: "I'm getting … when …"
+    ex: "I'm [[getting]] a 500 error when I log in."
+    extr: "Giriş yaptığımda 500 hatası alıyorum."
+    ttr: "Giriş yaptığımda şunu alıyorum: …."
+    slots: ["a 500 error | 500 hatası", "a timeout | bir zaman aşımı", "an empty page | boş bir sayfa"]
+    chunks: ["I'm getting | alıyorum", "a 500 error | hata", "when I log in | giriş yaptığımda"]
+    g: present-continuous
+    ctx: ["Hata bildirme", "Ekip mesajı"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "get | “I'm” sonrası -ing gerekir: getting."
+      - "taking | Hata “take” edilmez; “get an error” denir."
+      - "got | “I'm” ile geçmiş hâl kullanılmaz."
+    alt: ["I am getting a 500 error when I log in."]
+  - id: it-started
+    t: "It started … after …"
+    ex: "It started [[failing]] after the last update."
+    extr: "Son güncellemeden sonra hata vermeye başladı."
+    ttr: "Son güncellemeden sonra şu başladı: …."
+    slots: ["failing | hata vermek", "crashing | çökmek", "running slowly | yavaş çalışmak"]
+    chunks: ["It started | başladı", "failing | hata vermeye", "after the last update | son güncellemeden sonra"]
+    g: past-simple-reporting
+    ctx: ["Hata bildirme"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "fail | “started” sonrası -ing ya da “to fail” gerekir."
+      - "failed | “started” sonrası geçmiş hâl gelmez."
+      - "failure | İsimdir; burada fiil gerekir."
+    alt: ["It started to fail after the last update."]
+  - id: have-you-tried
+    t: "Have you tried …?"
+    ex: "Have you [[tried]] clearing the cache?"
+    extr: "Önbelleği temizlemeyi denedin mi?"
+    ttr: "Şunu denedin mi: …?"
+    slots: ["clearing the cache | önbelleği temizlemek", "restarting the server | sunucuyu yeniden başlatmak", "updating the library | kütüphaneyi güncellemek"]
+    chunks: ["Have you tried | denedin mi", "clearing the cache | önerilen çözüm (-ing)"]
+    g: present-perfect-results
+    ctx: ["Yardım etme", "Ekip mesajı"]
+    tone: ["Nazik"]
+    d: 2
+    dis:
+      - "try | “have” sonrası fiilin 3. hâli gelir: tried."
+      - "trying | “Have you trying” yanlıştır."
+      - "tries | “have” sonrası çekimli fiil gelmez."
+  - id: seems-to-be
+    t: "The problem seems to be …"
+    ex: "The problem [[seems to be]] in the config file."
+    extr: "Sorun yapılandırma dosyasında gibi görünüyor."
+    ttr: "Sorun şurada gibi görünüyor: …."
+    slots: ["in the config file | yapılandırma dosyasında", "with the database | veritabanında", "in the new library | yeni kütüphanede"]
+    chunks: ["The problem | sorun", "seems to be | gibi görünüyor", "in the config file | yer"]
+    g: present-simple
+    ctx: ["Hata bildirme", "Toplantı"]
+    tone: ["Temkinli"]
+    d: 2
+    dis:
+      - "seem to be | Tekil özne (the problem) -s ister: seems."
+      - "seems be | “to” eksik."
+      - "seeming to be | Bu yapıda geniş zaman kullanılır."
+  - id: fixed-it-by
+    t: "I fixed it by …"
+    ex: "I fixed it [[by]] updating the driver."
+    extr: "Sürücüyü güncelleyerek düzelttim."
+    ttr: "Şunu yaparak düzelttim: …."
+    slots: ["updating the driver | sürücüyü güncellemek", "adding a null check | boş değer kontrolü eklemek", "increasing the timeout | zaman aşımı süresini artırmak"]
+    chunks: ["I fixed it | düzelttim", "by | -erek", "updating the driver | yöntem (-ing)"]
+    g: past-simple-reporting
+    ctx: ["Durum bildirme", "Ekip mesajı"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "with | Yöntem anlatılırken “by + -ing” kullanılır."
+      - "for | Amaç bildirir; yöntem değil."
+      - "from | Kaynak bildirir."
+  - id: should-be-fixed
+    t: "It should be fixed in …"
+    ex: "It [[should be fixed]] in the next build."
+    extr: "Bir sonraki derlemede düzelmiş olması gerekiyor."
+    ttr: "Şurada düzelmiş olması gerekiyor: …."
+    slots: ["the next build | bir sonraki derleme", "version 2.5 | 2.5 sürümü", "tomorrow's release | yarınki sürüm"]
+    chunks: ["It should be | olması gerekir", "fixed | düzeltilmiş", "in the next build | zaman/yer"]
+    g: passive-voice-basics
+    ctx: ["Durum bildirme", "Müşteriye yanıt"]
+    tone: ["Temkinli"]
+    d: 3
+    dis:
+      - "should fixed | “be” eksik; edilgen yapı should be + 3. hâl."
+      - "should be fix | Fiilin 3. hâli gerekir: fixed."
+      - "should been fixed | “be” yerine “been” kullanılmaz."
+  - id: check-if
+    t: "Can you check if …?"
+    ex: "Can you [[check if]] the API is up?"
+    extr: "API'nin çalışıp çalışmadığını kontrol edebilir misin?"
+    ttr: "Şunu kontrol edebilir misin: …?"
+    slots: ["the API is up | API çalışıyor mu", "the job finished | iş bitti mi", "the logs show errors | kayıtlarda hata var mı"]
+    chunks: ["Can you | -ebilir misin", "check if | … mı diye kontrol et-", "the API is up | kontrol edilen durum"]
+    g: polite-requests-could
+    ctx: ["Yardım isteme", "Ekip mesajı"]
+    tone: ["Samimi"]
+    d: 2
+    dis:
+      - "check that if | “that” ve “if” birlikte kullanılmaz."
+      - "checking if | “can” sonrası fiil yalın olur."
+      - "check is | “is” bağlaç değildir."
+  - id: noticed-that
+    t: "I noticed that …"
+    ex: "I [[noticed]] that the images load slowly."
+    extr: "Görsellerin yavaş yüklendiğini fark ettim."
+    ttr: "Şunu fark ettim: …."
+    slots: ["the images load slowly | görseller yavaş yükleniyor", "the button doesn't work | düğme çalışmıyor", "some tests are skipped | bazı testler atlanıyor"]
+    chunks: ["I noticed | fark ettim", "that | -dığını", "the images load slowly | fark edilen durum"]
+    g: past-simple-reporting
+    ctx: ["Hata bildirme", "Kod inceleme"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "notice | Geçmiş zaman gerekir: noticed."
+      - "noticing | “I” sonrası çekimli fiil gerekir."
+      - "notified | Bildirmek demektir ve bir nesne ister."
+  - id: error-says
+    t: "The error says …"
+    ex: "The error [[says]] 'permission denied'."
+    extr: "Hata “izin reddedildi” diyor."
+    ttr: "Hata şunu diyor: …."
+    slots: ["'permission denied' | “izin reddedildi”", "'file not found' | “dosya bulunamadı”", "'connection refused' | “bağlantı reddedildi”"]
+    chunks: ["The error | hata (mesajı)", "says | diyor", "'permission denied' | mesaj metni"]
+    g: present-simple
+    ctx: ["Hata bildirme"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "tells | “tell” bir kişiye söylemektir ve nesne ister."
+      - "speaks | Konuşmak demektir."
+      - "say | Tekil özne -s ister: says."
+  - id: only-happens-when
+    t: "It only happens when …"
+    ex: "It only [[happens]] when the user is offline."
+    extr: "Yalnızca kullanıcı çevrimdışıyken oluyor."
+    ttr: "Yalnızca şu durumda oluyor: …."
+    slots: ["the user is offline | kullanıcı çevrimdışı", "the list is empty | liste boş", "two people edit at once | iki kişi aynı anda düzenliyor"]
+    chunks: ["It only happens | yalnızca oluyor", "when | -dığında", "the user is offline | koşul"]
+    g: present-simple
+    ctx: ["Hata bildirme"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "happen | Tekil özne -s ister: happens."
+      - "happened | Cümlenin geri kalanı geniş zamanda; zamanlar uyuşmaz."
+      - "happens to | Ardından fiil gelir; burada “when” var."
+
+grammar:
+  - id: past-simple-reporting
+    title: "Past Simple ile olanı anlatma"
+    short: "Biten olayları anlatırken fiilin geçmiş hâli kullanılır: It crashed. I fixed it. Düzensiz fiillere dikkat: see → saw, find → found."
+    long: "Olumsuz ve soru “did” ile kurulur ve fiil yalın kalır: It didn't crash. Did it crash? Hata kayıtlarında olayların sırası verilir: First I logged in, then the page froze. Zaman belirtilmişse (yesterday, at 10 am) past simple gerekir; zaman yoksa ve sonuç şimdi önemliyse present perfect tercih edilir: I've fixed it."
+    ex: ["The app crashed after the update. | Uygulama güncellemeden sonra çöktü.", "I didn't see any errors in the log. | Kayıtta hiçbir hata görmedim.", "Did you restart the server? | Sunucuyu yeniden başlattın mı?"]
+  - id: present-perfect-results
+    title: "Present Perfect ile sonuç bildirme"
+    short: "Geçmişte yapılan ama sonucu şimdi önemli olan işler için have/has + fiilin 3. hâli kullanılır: I've finished the tests."
+    long: "Belirli bir geçmiş zaman söylenmez: I've fixed the bug (I've fixed it yesterday denmez; zaman varsa past simple: I fixed it yesterday). Soru: Have you tried restarting it? Olumsuz: We haven't deployed yet. “already” ve “yet” sık birlikte kullanılır: I've already merged it. / Has QA tested it yet?"
+    ex: ["I've finished the API integration. | API entegrasyonunu bitirdim.", "Have you tried clearing the cache? | Önbelleği temizlemeyi denedin mi?", "We haven't released the hotfix yet. | Acil düzeltmeyi henüz yayımlamadık."]
+
+scenarios:
+  - id: report-crash
+    title: "Çökmeyi bildirme"
+    sit: "Ekip kanalındasın. Uygulama büyük dosya yüklenirken çöküyor ve sen bunu her seferinde yeniden oluşturabiliyorsun."
+    d: 2
+    targets: [crash, reproduce, steps-to-reproduce]
+    turns:
+      - ["QA engineer", "Hey, did you see the crash report from this morning?", "Selam, bu sabahki çökme raporunu gördün mü?"]
+      - choose:
+          - ["Yes. It crashes when I upload a large file, and I can reproduce it every time.", true, "Ne olduğunu ve her seferinde yeniden oluşturulabildiğini net anlatıyor."]
+          - ["Yes. It crushes when I upload a large file.", false, "“crush” ezmek demektir; uygulama için “crash” kullanılır."]
+          - ["Yes. I reproduced it never.", false, "“never” bu konumda kullanılmaz; doğrusu “I've never reproduced it.”"]
+      - ["QA engineer", "Great. Can you add the steps to reproduce to the ticket?", "Harika. Yeniden oluşturma adımlarını kayda ekleyebilir misin?"]
+      - choose:
+          - ["Sure, I'll add them with the full stack trace.", true, "İsteği kabul edip faydalı bir ek bilgi sunuyor."]
+          - ["Sure, I'll remove them from the ticket.", false, "İstenenin tersi: eklemek yerine kaldırmak."]
+          - ["Sure, I'll add them yesterday.", false, "“will” ile “yesterday” birlikte kullanılmaz."]
+  - id: outage-review
+    title: "Kesintiyi açıklama"
+    sit: "Kısa bir hizmet kesintisi oldu. Ekip lideri ne olduğunu ve kök nedeni soruyor."
+    d: 3
+    targets: [outage, root-cause, roll-back, workaround]
+    turns:
+      - ["Team lead", "What happened during the outage?", "Kesinti sırasında ne oldu?"]
+      - choose:
+          - ["A bad config change caused timeouts, so we rolled back the release.", true, "Nedeni ve alınan önlemi doğru sırayla anlatıyor."]
+          - ["The outage caused a bad config change.", false, "Neden-sonuç ters kurulmuş."]
+          - ["We rolled out the outage to all users.", false, "Kesinti “roll out” edilmez; anlam saçma."]
+      - ["Team lead", "Do we know the root cause yet?", "Kök nedeni artık biliyor muyuz?"]
+      - choose:
+          - ["Not yet. For now, we have a workaround: we restart the service every hour.", true, "Durumu dürüstçe söylüyor ve geçici çözümü açıklıyor."]
+          - ["Yes, the root cause is a workaround.", false, "Geçici çözüm bir neden değildir."]
+          - ["Not yet, so the root cause fixed it.", false, "Anlamsız: bir neden bir şeyi düzeltmez."]
+
+readings:
+  - id: login-bug-report
+    title: "Login fails after password reset"
+    kind: "Hata kaydı"
+    d: 2
+    s:
+      - ["Title: Login fails after password reset.", "Başlık: Parola sıfırlamadan sonra giriş başarısız oluyor."]
+      - ["Steps to reproduce: reset the password from the email link, then log in with the new password.", "Yeniden oluşturma adımları: parolayı e-postadaki bağlantıdan sıfırla, sonra yeni parolayla giriş yap."]
+      - ["Expected result: the user sees the dashboard.", "Beklenen sonuç: kullanıcı ana paneli görür."]
+      - ["Actual result: an 'Invalid session' error appears.", "Gerçekleşen sonuç: “Geçersiz oturum” hatası çıkıyor."]
+      - ["The issue is intermittent; it does not happen on every attempt.", "Sorun aralıklı; her denemede olmuyor."]
+    gloss: ["steps to reproduce | yeniden oluşturma adımları", "expected result | beklenen sonuç", "actual result | gerçekleşen sonuç", "intermittent | aralıklı"]
+    q:
+      - q: "Hata ne zaman ortaya çıkıyor?"
+        o: ["Parola sıfırlandıktan sonra yeni parolayla giriş yaparken", "Kullanıcı kayıt olurken", "Ana panel açıldığında"]
+        a: 0
+        why: "Adımlar: parolayı sıfırla, sonra yeni parolayla giriş yap."
+      - q: "“intermittent” bu kayıtta ne anlatıyor?"
+        o: ["Hata her denemede oluyor", "Hata bazen oluyor, bazen olmuyor", "Hata düzeltildi"]
+        a: 1
+        why: "“it does not happen on every attempt” = her denemede olmuyor."
+  - id: readme-troubleshooting
+    title: "README: Troubleshooting"
+    kind: "README parçası"
+    d: 3
+    s:
+      - ["If the app does not start, check that Node 22 is installed.", "Uygulama başlamazsa Node 22'nin kurulu olduğunu kontrol et."]
+      - ["If you see a timeout error, increase REQUEST_TIMEOUT in the config file.", "Zaman aşımı hatası görürsen yapılandırma dosyasındaki REQUEST_TIMEOUT değerini artır."]
+      - ["The old login method is deprecated and will be removed in version 3.", "Eski giriş yöntemi kullanımdan kaldırıldı ve 3. sürümde tamamen silinecek."]
+      - ["Please include the full stack trace when you open an issue.", "Bir sorun kaydı açarken lütfen tam yığın izini ekle."]
+    gloss: ["troubleshooting | sorun giderme", "deprecated | kullanımdan kaldırılmış", "stack trace | yığın izi", "open an issue | sorun kaydı açmak"]
+    q:
+      - q: "Zaman aşımı hatası görürsen ne yapmalısın?"
+        o: ["Node'u kaldırmalısın", "REQUEST_TIMEOUT değerini artırmalısın", "Eski giriş yöntemini kullanmalısın"]
+        a: 1
+        why: "“increase REQUEST_TIMEOUT in the config file”"
+      - q: "Eski giriş yöntemi için ne söyleniyor?"
+        o: ["3. sürümde kaldırılacak", "Yeni eklendi", "Önerilen yöntem bu"]
+        a: 0
+        why: "“deprecated and will be removed in version 3”"
+
+writing:
+  id: bug-report
+  p: "Bir hata kaydı için 3–4 cümle yaz: ne oluyor, nasıl yeniden oluşturulur, beklenen ve gerçekleşen sonuç ne?"
+  rubric: ["Hatayı tek cümlede net anlatıyor", "Yeniden oluşturma adımlarını sırayla veriyor", "Beklenen ve gerçekleşen sonucu ayırıyor"]
+  samples: ["The app crashes when I upload a PDF larger than 10 MB. Steps to reproduce: open the Files page and upload a large PDF. Expected result: the file is uploaded. Actual result: the app closes without an error message."]
+  d: 3
+
+situations:
+  - { parent: "Hata bildirme", name: "Hatayı anlatmak", items: [getting-error, crash, error-says] }
+  - { parent: "Hata bildirme", name: "Ne zaman olduğunu söylemek", items: [only-happens-when, it-started, intermittent] }
+  - { parent: "Yardım isteme", name: "Daha önce görülmüş mü diye sormak", items: [seen-before, works-on-my-machine] }
+  - { parent: "Yardım etme", name: "Çözüm önermek", items: [have-you-tried, workaround, check-if] }

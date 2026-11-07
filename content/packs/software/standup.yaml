@@ -1,0 +1,549 @@
+id: software-standup
+domain: software
+title: "Günlük toplantı ve ekip iletişimi"
+desc: "Durum bildirme, engel anlatma, yardım isteme ve toplantı dili."
+sort: 1
+
+targets:
+  - id: blocker
+    w: blocker
+    pos: n
+    tr: "engel, işi durduran sorun"
+    ex: "My only [[blocker]] is the missing API key."
+    extr: "Tek engelim eksik API anahtarı."
+    d: 1
+    col: ["no blockers", "a major blocker", "remove a blocker"]
+    syn: ["obstacle"]
+    fam: ["block (f.) engellemek", "blocked (s.) engellenmiş, takılmış"]
+    conf: ["bug | Her hata (bug) engel değildir; blocker işi ilerletmeyi durduran şeydir."]
+    tone: ["Toplantı", "Ekip mesajı"]
+    dis:
+      - "deadline | Son tarih demektir; eksik bir anahtar son tarih olamaz."
+      - "feature | Özellik demektir; cümlenin anlamına uymaz."
+      - "release | Sürüm demektir; bir engel bildirmez."
+  - id: update
+    w: update
+    pos: n
+    tr: "güncel durum bilgisi"
+    ex: "Let me give a quick [[update]] on the search page."
+    extr: "Arama sayfasıyla ilgili kısa bir durum bilgisi vereyim."
+    d: 1
+    col: ["a quick update", "give an update", "any updates on"]
+    fam: ["update (f.) güncellemek", "updated (s.) güncellenmiş"]
+    conf: ["upgrade | Sürüm yükseltme demektir; bilgi vermek için kullanılmaz."]
+    tone: ["Toplantı", "Ekip mesajı"]
+    dis:
+      - "upgrade | Sürüm yükseltme demektir; durum bilgisi verilmez."
+      - "upload | Dosya yükleme demektir."
+      - "outcome | Sonuç demektir; “give a quick outcome” denmez."
+  - id: on-track
+    w: on track
+    pos: phrase
+    tr: "plana uygun ilerliyor"
+    ex: "The migration is still [[on track]] for Friday."
+    extr: "Taşıma işi cuma için hâlâ plana uygun ilerliyor."
+    d: 2
+    col: ["on track for", "stay on track", "get back on track"]
+    ant: ["behind schedule"]
+    conf: ["on time | Tam zamanında demektir; süren bir işin plana uygunluğunu anlatmak için “on track” kullanılır."]
+    tone: ["Toplantı", "Durum raporu"]
+    dis:
+      - "on board | Ekibe katılmış demektir; bir iş için kullanılmaz."
+      - "on call | Nöbetçi demektir; kişiler için kullanılır."
+      - "on air | Yayında demektir."
+  - id: pair
+    w: pair
+    pos: v
+    tr: "eşli çalışmak (iki kişi aynı iş üzerinde)"
+    ex: "Can you [[pair]] with Ali on the login bug?"
+    extr: "Giriş hatası üzerinde Ali'yle eşli çalışabilir misin?"
+    d: 2
+    col: ["pair with someone", "pair programming", "pair on a task"]
+    fam: ["pair (i.) çift", "pairing (i.) eşli çalışma"]
+    other: "Günlük dilde “çift” (a pair of shoes) anlamına da gelir."
+    tone: ["Ekip mesajı", "Günlük"]
+    dis:
+      - "compare | Karşılaştırmak demektir; bir kişiyle hata üzerinde karşılaştırılmaz."
+      - "match | Eşleştirmek demektir; birlikte çalışmayı anlatmaz."
+      - "couple | “couple with” bağlamak demektir; birlikte çalışmayı anlatmaz."
+  - id: estimate
+    w: estimate
+    pos: n
+    tr: "tahmin (süre veya maliyet)"
+    ex: "What's your [[estimate]] for the API task?"
+    extr: "API görevi için tahminin ne?"
+    d: 2
+    col: ["a rough estimate", "give an estimate", "estimate for"]
+    fam: ["estimate (f.) tahmin etmek", "estimation (i.) tahmin etme"]
+    conf: ["guess | Bilgisiz bir tahmindir; iş süresi için “estimate” kullanılır."]
+    tone: ["Toplantı", "Planlama"]
+    dis:
+      - "estate | Mülk demektir."
+      - "esteem | Saygı demektir."
+      - "establish | Kurmak demektir; burada isim gerekir."
+  - id: sync-up
+    w: sync up
+    pos: phrasal
+    tr: "kısaca görüşüp uyum sağlamak"
+    ex: "Let's [[sync up]] after lunch about the release."
+    extr: "Öğle yemeğinden sonra sürüm konusunda kısaca görüşelim."
+    d: 2
+    col: ["sync up with someone", "a quick sync"]
+    syn: ["catch up", "touch base"]
+    tone: ["Ekip mesajı", "Günlük"]
+    dis:
+      - "sign up | Kaydolmak demektir."
+      - "sink up | “sink” batmak demektir; böyle bir kalıp yok."
+      - "set up | Kurmak demektir; görüşmeyi anlatmaz."
+  - id: heads-up
+    w: heads-up
+    pos: n
+    tr: "önceden haber, ön uyarı"
+    ex: "Just a [[heads-up]]: the staging server will be down at 3."
+    extr: "Haberiniz olsun: test sunucusu saat 3'te kapalı olacak."
+    d: 2
+    col: ["just a heads-up", "give someone a heads-up"]
+    syn: ["warning", "notice"]
+    tone: ["Ekip mesajı", "Samimi"]
+    dis:
+      - "head start | Önde başlama avantajı demektir."
+      - "headline | Manşet demektir."
+      - "handout | Dağıtılan not demektir."
+  - id: priority
+    w: priority
+    pos: n
+    tr: "öncelik"
+    ex: "Fixing the checkout bug is our top [[priority]]."
+    extr: "Ödeme adımındaki hatayı düzeltmek en büyük önceliğimiz."
+    d: 1
+    col: ["top priority", "high priority", "set priorities"]
+    fam: ["prioritize (f.) önceliklendirmek", "prior (s.) önceki"]
+    tone: ["Toplantı", "Planlama"]
+    dis:
+      - "property | Mülk veya özellik demektir."
+      - "privacy | Gizlilik demektir."
+      - "prior | “Önceki” anlamında sıfattır; burada isim gerekir."
+  - id: wrap-up
+    w: wrap up
+    pos: phrasal
+    tr: "toparlamak, bitirmek"
+    ex: "I'll [[wrap up]] the tests before the demo."
+    extr: "Demodan önce testleri bitireceğim."
+    d: 2
+    col: ["wrap up a meeting", "let's wrap up"]
+    syn: ["finish", "complete"]
+    tone: ["Toplantı", "Günlük"]
+    dis:
+      - "warm up | Isınmak demektir."
+      - "wake up | Uyanmak demektir."
+      - "wrap out | Böyle bir kalıp yok."
+  - id: deadline
+    w: deadline
+    pos: n
+    tr: "son teslim tarihi"
+    ex: "The [[deadline]] for the redesign is next Monday."
+    extr: "Yeniden tasarımın son teslim tarihi önümüzdeki pazartesi."
+    d: 1
+    col: ["meet a deadline", "miss a deadline", "tight deadline"]
+    tone: ["Planlama", "Ekip mesajı"]
+    dis:
+      - "headline | Manşet demektir."
+      - "lifeline | Can simidi, kurtarıcı demektir."
+      - "guideline | Yönerge demektir; bir tarih değildir."
+  - id: follow-up
+    w: follow up
+    pos: phrasal
+    tr: "takip etmek, sonra tekrar dönmek"
+    ex: "I'll [[follow up]] with the design team tomorrow."
+    extr: "Yarın tasarım ekibiyle konuyu takip edeceğim."
+    d: 2
+    col: ["follow up with someone", "follow up on something"]
+    fam: ["follow-up (i.) takip, ardından gelen iş"]
+    tone: ["Ekip mesajı", "E-posta"]
+    dis:
+      - "fill up | Doldurmak demektir."
+      - "fold up | Katlamak demektir."
+      - "fall up | Böyle bir kalıp yok."
+  - id: availability
+    w: availability
+    pos: n
+    tr: "müsaitlik"
+    ex: "Please share your [[availability]] for next week."
+    extr: "Lütfen gelecek hafta ne zaman müsait olduğunu paylaş."
+    d: 2
+    col: ["share your availability", "check availability"]
+    fam: ["available (s.) müsait, erişilebilir"]
+    tone: ["E-posta", "Resmî"]
+    dis:
+      - "ability | Yetenek demektir."
+      - "available | Sıfattır; “your” sonrası isim gerekir."
+      - "valuable | Değerli demektir; sıfattır."
+  - id: out-of-office
+    w: out of office
+    pos: phrase
+    tr: "izinli, ofis dışında"
+    ex: "Sena is [[out of office]] until Thursday."
+    extr: "Sena perşembeye kadar izinli."
+    d: 2
+    col: ["out-of-office reply", "be out of office"]
+    tone: ["E-posta", "Ekip mesajı"]
+    dis:
+      - "out of order | Bozuk demektir; makineler için kullanılır."
+      - "out of date | Güncel değil demektir."
+      - "out of print | Baskısı tükenmiş demektir."
+  - id: clarify
+    w: "Could you clarify what you mean?"
+    pos: phrase
+    tr: "Ne demek istediğini açar mısın?"
+    ex: "Sorry, [[could you clarify what you mean]] by quick fix?"
+    extr: "Pardon, “hızlı çözüm” derken ne demek istediğini açar mısın?"
+    d: 2
+    col: ["could you clarify", "just to clarify"]
+    fam: ["clarification (i.) açıklama"]
+    tone: ["Toplantı", "Nazik"]
+    dis:
+      - "could you turn it down | Sesi kısmasını ister; anlam sormaz."
+      - "could you sign it | İmzalamasını ister."
+      - "could you repeat after me | “Benden sonra tekrar et” demektir; açıklama istemez."
+  - id: add-something
+    w: "Can I add something here?"
+    pos: phrase
+    tr: "Buraya bir şey ekleyebilir miyim?"
+    ex: "[[Can I add something here]]? The tests also fail on Safari."
+    extr: "Buraya bir şey ekleyebilir miyim? Testler Safari'de de başarısız oluyor."
+    d: 2
+    tone: ["Toplantı", "Nazik"]
+    dis:
+      - "Can I take something here | “Buradan bir şey alabilir miyim” demektir."
+      - "Can I leave something here | Bir şey bırakmayı sorar."
+      - "Can I add someone here | Birini eklemeyi sorar; bilgi eklemeyi değil."
+  - id: take-offline
+    w: "Let's take this offline."
+    pos: phrase
+    tr: "Bunu toplantı dışında konuşalım."
+    ex: "This is getting detailed. [[Let's take this offline]]."
+    extr: "Konu ayrıntıya giriyor. Bunu toplantı dışında konuşalım."
+    d: 3
+    tone: ["Toplantı", "Nötr"]
+    dis:
+      - "Let's turn this off | “Bunu kapatalım” demektir."
+      - "Let's take this out | “Bunu dışarı çıkaralım” demektir."
+      - "Let's take this online | Deyim değildir; anlam ters döner."
+  - id: assign
+    w: assign
+    pos: v
+    tr: "atamak, görevlendirmek"
+    ex: "Can you [[assign]] the ticket to me?"
+    extr: "Görev kaydını bana atayabilir misin?"
+    d: 2
+    col: ["assign a task", "assign to someone", "assigned to"]
+    fam: ["assignment (i.) görev, ödev", "assignee (i.) görevi alan kişi"]
+    tone: ["Ekip mesajı", "Proje yönetimi"]
+    dis:
+      - "assist | Yardım etmek demektir; “assist the ticket to me” denmez."
+      - "assume | Varsaymak demektir."
+      - "assert | İleri sürmek demektir."
+  - id: ticket
+    w: ticket
+    pos: n
+    tr: "görev kaydı (iş takip sisteminde)"
+    ex: "I created a [[ticket]] for the broken link."
+    extr: "Bozuk bağlantı için bir görev kaydı oluşturdum."
+    d: 1
+    col: ["open a ticket", "close a ticket", "ticket number"]
+    syn: ["issue", "task"]
+    other: "Günlük dilde “bilet” anlamına gelir."
+    tone: ["Proje yönetimi", "Ekip mesajı"]
+    dis:
+      - "tablet | Tablet cihaz demektir."
+      - "ticker | Kayan yazı veya fiyat göstergesi demektir."
+      - "tactic | Taktik demektir."
+  - id: progress
+    w: progress
+    pos: n
+    tr: "ilerleme"
+    ex: "I made good [[progress]] on the search filters."
+    extr: "Arama filtrelerinde iyi ilerleme kaydettim."
+    d: 1
+    col: ["make progress", "good progress", "progress on"]
+    fam: ["progress (f.) ilerlemek", "progressive (s.) ilerici, aşamalı"]
+    conf: ["process | Süreç demektir; “make progress” kalıbında kullanılmaz."]
+    tone: ["Toplantı", "Durum raporu"]
+    dis:
+      - "process | Süreç demektir; “made good process” denmez."
+      - "profit | Kâr demektir."
+      - "promise | Söz demektir."
+  - id: standup
+    w: standup
+    pos: n
+    tr: "günlük kısa ekip toplantısı"
+    ex: "We discuss blockers in the daily [[standup]]."
+    extr: "Engelleri günlük kısa toplantıda konuşuruz."
+    d: 1
+    col: ["daily standup", "after the standup"]
+    syn: ["daily scrum"]
+    tone: ["Toplantı", "Günlük"]
+    dis:
+      - "setup | Kurulum demektir."
+      - "startup | Girişim şirketi demektir."
+      - "backup | Yedek demektir."
+
+patterns:
+  - id: working-on
+    t: "I'm working on …"
+    ex: "I'm [[working on]] the login page."
+    extr: "Giriş sayfası üzerinde çalışıyorum."
+    ttr: "… üzerinde çalışıyorum."
+    slots: ["the login page | giriş sayfası", "a bug fix | bir hata düzeltmesi", "the payment system | ödeme sistemi", "a new feature | yeni bir özellik"]
+    chunks: ["I'm | ben (-yorum)", "working on | üzerinde çalış-", "the login page | değişen iş"]
+    g: present-continuous
+    ctx: ["Toplantı", "Ekip mesajı"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "work on | “I'm” sonrası fiil -ing almalı: working."
+      - "worked on | Geçmiş zamandır; “I'm” ile kullanılmaz."
+      - "working at | Bir iş üzerinde çalışmak “on” ile söylenir."
+    alt: ["I am working on the login page."]
+  - id: stuck-on
+    t: "I'm stuck on …"
+    ex: "I'm [[stuck on]] the database migration."
+    extr: "Veritabanı taşıma işinde takıldım."
+    ttr: "Şurada takıldım: …."
+    slots: ["the database migration | veritabanı taşıma işi", "a failing test | başarısız olan bir test", "the payment flow | ödeme akışı"]
+    chunks: ["I'm stuck | takıldım", "on | (bir şey) üzerinde", "the database migration | sorunlu iş"]
+    g: to-be
+    ctx: ["Toplantı", "Yardım isteme"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "stick on | “I'm” sonrası sıfat gerekir: stuck."
+      - "sticking on | “Yapıştırıyorum” anlamına kayar."
+      - "stack on | “stack” yığmak demektir."
+    alt: ["I am stuck on the database migration."]
+  - id: take-a-look
+    t: "Could you take a look at …?"
+    ex: "[[Could you take a look at]] my pull request?"
+    extr: "Pull request'ime bir göz atabilir misin?"
+    ttr: "Şuna bir göz atabilir misin: …?"
+    slots: ["my pull request | pull request'im", "this error message | bu hata mesajı", "the new design | yeni tasarım"]
+    chunks: ["Could you | -ebilir misin", "take a look at | bir göz at-", "my pull request | bakılacak şey"]
+    g: polite-requests-could
+    ctx: ["Kod inceleme", "Yardım isteme"]
+    tone: ["Nazik"]
+    d: 1
+    dis:
+      - "Could you take a look on | “look” ile “at” kullanılır."
+      - "Could you took a look at | “could” sonrası fiil yalın olur: take."
+      - "Could you take a looking at | “look” burada isimdir; -ing almaz."
+  - id: finished
+    t: "I've finished …"
+    ex: "I've [[finished]] the API integration."
+    extr: "API entegrasyonunu bitirdim."
+    ttr: "Şunu bitirdim: …."
+    slots: ["the API integration | API entegrasyonu", "the first draft | ilk taslak", "the code review | kod incelemesi"]
+    chunks: ["I've | (ben) -dim", "finished | bitir-", "the API integration | biten iş"]
+    g: present-perfect-results
+    ctx: ["Toplantı", "Durum raporu"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "finish | “I've” sonrası fiilin 3. hâli gelir: finished."
+      - "finishing | “I've finishing” yanlıştır."
+      - "finishes | Üçüncü tekil şahıs eki burada yanlış."
+    alt: ["I have finished the API integration."]
+  - id: going-to-today
+    t: "Today I'm going to …"
+    ex: "Today I'm [[going to]] write the unit tests."
+    extr: "Bugün birim testlerini yazacağım."
+    ttr: "Bugün şunu yapacağım: …."
+    slots: ["write the unit tests | birim testlerini yazmak", "review Deniz's code | Deniz'in kodunu incelemek", "fix the login bug | giriş hatasını düzeltmek"]
+    chunks: ["Today | bugün", "I'm going to | -eceğim (plan)", "write the unit tests | yapılacak iş"]
+    g: going-to-plans
+    ctx: ["Toplantı", "Durum raporu"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "going | Fiile bağlamak için “to” gerekir."
+      - "go to | “I'm” sonrası -ing gerekir: going."
+      - "gonna to | “gonna” zaten “going to” demektir; “to” fazla."
+    alt: ["Today I am going to write the unit tests."]
+  - id: need-help-with
+    t: "I need some help with …"
+    ex: "I need some [[help with]] the deployment script."
+    extr: "Dağıtım betiğinde biraz yardıma ihtiyacım var."
+    ttr: "Şu konuda biraz yardıma ihtiyacım var: …."
+    slots: ["the deployment script | dağıtım betiği", "the database query | veritabanı sorgusu", "this test | bu test"]
+    chunks: ["I need | ihtiyacım var", "some help with | biraz yardım (… konusunda)", "the deployment script | konu"]
+    g: present-simple
+    ctx: ["Yardım isteme", "Ekip mesajı"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "helping with | “some” sonrası isim gerekir: help."
+      - "help at | “at” yer bildirir."
+      - "help of | “with the help of” başka bir kalıptır."
+  - id: waiting-for
+    t: "I'm waiting for …"
+    ex: "I'm [[waiting for]] feedback from the client."
+    extr: "Müşteriden geri bildirim bekliyorum."
+    ttr: "Şunu bekliyorum: …."
+    slots: ["feedback from the client | müşteriden geri bildirim", "the API key | API anahtarı", "a review | bir inceleme"]
+    chunks: ["I'm waiting | bekliyorum", "for | (bir şeyi)", "feedback from the client | beklenen şey"]
+    g: present-continuous
+    ctx: ["Toplantı", "Durum raporu"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "waiting | Bir şeyi beklerken “for” gerekir."
+      - "waiting to | Ardından fiil gelir; burada isim var."
+      - "waited for | Geçmiş zamandır; “I'm” ile kullanılmaz."
+    alt: ["I am waiting for feedback from the client."]
+  - id: any-updates-on
+    t: "Any updates on …?"
+    ex: "Any [[updates on]] the payment bug?"
+    extr: "Ödeme hatasıyla ilgili yeni bir gelişme var mı?"
+    ttr: "Şu konuda yeni bir gelişme var mı: …?"
+    slots: ["the payment bug | ödeme hatası", "the new release | yeni sürüm", "the hiring process | işe alım süreci"]
+    chunks: ["Any updates | yeni gelişme var mı", "on | … ile ilgili", "the payment bug | konu"]
+    g: present-simple
+    ctx: ["Ekip mesajı", "Toplantı"]
+    tone: ["Samimi"]
+    d: 2
+    dis:
+      - "updates in | Bu kalıpta “on” kullanılır."
+      - "updating on | İsim gerekir: updates."
+      - "updates at | “at” yer veya zaman bildirir."
+  - id: share-with-team
+    t: "I'll share … with the team."
+    ex: "I'll [[share]] the meeting notes with the team."
+    extr: "Toplantı notlarını ekiple paylaşacağım."
+    ttr: "Şunu ekiple paylaşacağım: …."
+    slots: ["the meeting notes | toplantı notları", "the test results | test sonuçları", "the new mockups | yeni ekran taslakları"]
+    chunks: ["I'll | -eceğim", "share | paylaş-", "the meeting notes | paylaşılan şey", "with the team | ekiple"]
+    g: going-to-plans
+    ctx: ["Toplantı", "Ekip mesajı"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "sharing | “I'll” sonrası fiil yalın olur."
+      - "shared | “I'll” sonrası geçmiş hâl kullanılmaz."
+      - "show | “show … with the team” denmez; “show … to the team” denir."
+  - id: move-to
+    t: "Could we move … to …?"
+    ex: "Could we [[move]] the demo to Thursday?"
+    extr: "Demoyu perşembeye alabilir miyiz?"
+    ttr: "Şunu başka bir güne alabilir miyiz: …?"
+    slots: ["the demo | demo", "our standup | günlük toplantımız", "the review meeting | inceleme toplantısı"]
+    chunks: ["Could we | -ebilir miyiz", "move | taşı-, al-", "the demo | etkinlik", "to Thursday | perşembeye"]
+    g: polite-requests-could
+    ctx: ["Planlama", "Ekip mesajı"]
+    tone: ["Nazik"]
+    d: 2
+    dis:
+      - "moving | “could” sonrası fiil yalın olur."
+      - "remove | Kaldırmak demektir; tarihi değiştirmez."
+      - "movie | Film demektir."
+
+grammar:
+  - id: present-continuous
+    title: "Present Continuous (şimdiki zaman)"
+    short: "Şu an ya da bu günlerde süren işler için am/is/are + fiil-ing kullanılır. Toplantıda en sık kalıp: I'm working on …"
+    long: "Olumlu: I'm (I am) working on the login page. Olumsuz: I'm not working on it today. Soru: Are you working on the API? Durum bildiren bazı fiiller (know, need, want) genellikle -ing almaz: I need help (I'm needing help değil). “Bu hafta, bu sprint” gibi geçici süreçler için de kullanılır: This week we're fixing bugs."
+    ex: ["I'm working on the login page. | Giriş sayfası üzerinde çalışıyorum.", "Are you working on the API today? | Bugün API üzerinde mi çalışıyorsun?", "We aren't adding new features this week. | Bu hafta yeni özellik eklemiyoruz."]
+  - id: polite-requests-could
+    title: "Could you …? ile nazik istek"
+    short: "Bir iş arkadaşından nazikçe bir şey isterken Could you + yalın fiil kullanılır. Can you daha samimidir."
+    long: "Could you review my code? (nazik) · Can you review my code? (samimi) · Would you mind reviewing my code? (daha yumuşak; mind sonrası fiil -ing alır). Could we …? biçimi ortak bir öneri veya plan değişikliği için kullanılır: Could we move the demo? Cevap verirken: Sure. / Of course. / Sorry, I can't today."
+    ex: ["Could you take a look at my pull request? | Pull request'ime bir göz atabilir misin?", "Would you mind sharing the logs? | Kayıtları paylaşır mısın?", "Could we move the meeting to 3 pm? | Toplantıyı saat 15'e alabilir miyiz?"]
+
+scenarios:
+  - id: explain-blocker
+    title: "Toplantıda engeli açıklama"
+    sit: "Günlük toplantıdasın. API değişikliği yüzünden ilerleyemiyorsun ve yardım istemek istiyorsun."
+    d: 2
+    targets: [blocker, need-help-with, pair]
+    turns:
+      - ["Team lead", "Morning, everyone! Any blockers today?", "Herkese günaydın! Bugün bir engel var mı?"]
+      - choose:
+          - ["Yes, I'm blocked by the API change. Could someone from the backend team help me?", true, "Engeli ve isteği açıkça söylüyor; “Could someone…” nazik bir istek."]
+          - ["Yes, I block the API change today.", false, "“I block” API'yi senin engellediğin anlamına gelir; anlam ters."]
+          - ["No blockers, so I need help with the API.", false, "Kendiyle çelişiyor: engel yok deyip yardım istiyor."]
+      - ["Team lead", "Sure. Ali, can you pair with her after the meeting?", "Tabii. Ali, toplantıdan sonra onunla eşli çalışabilir misin?"]
+      - ["Ali", "Of course. I'll message you at eleven.", "Elbette. Saat on birde sana yazarım."]
+  - id: progress-update
+    title: "Durum bildirme"
+    sit: "Scrum master senden günlük durum bilgisi istiyor. Dün arama filtrelerini bitirdin, bugün test yazacaksın."
+    d: 2
+    targets: [update, on-track, finished]
+    turns:
+      - ["Scrum master", "Deniz, what's your update?", "Deniz, son durum ne?"]
+      - choose:
+          - ["Yesterday I finished the search filters. Today I'm going to write the tests.", true, "Dün için geçmiş zaman, bugün için plan kalıbı doğru kullanılmış."]
+          - ["Yesterday I'm finishing the search filters. Today I wrote the tests.", false, "Zamanlar ters: dün için geçmiş, bugün için gelecek gerekir."]
+          - ["I finish yesterday the search filters and tomorrow tests.", false, "Fiil zamanı ve kelime sırası yanlış."]
+      - ["Scrum master", "Great. Are you still on track for Friday?", "Harika. Cuma için hâlâ plana uygun mu gidiyorsun?"]
+      - choose:
+          - ["Yes, but I'll need the API key by Wednesday.", true, "Evet deyip bir koşulu net belirtiyor."]
+          - ["Yes, I'm on board for Friday.", false, "“on board” ekibe katılmak demektir; işin plana uygunluğunu anlatmaz."]
+          - ["No, the deadline is on track.", false, "Soru senin işinin durumunu soruyor; son tarih “on track” olmaz."]
+
+readings:
+  - id: release-message
+    title: "Team chat: release update"
+    kind: "Ekip mesajı"
+    d: 2
+    s:
+      - ["Hi team, here is a quick update on the 2.4 release.", "Herkese merhaba, 2.4 sürümüyle ilgili kısa bir durum bilgisi."]
+      - ["The search filters are done and merged.", "Arama filtreleri bitti ve ana koda eklendi."]
+      - ["The payment bug is still open, so we are not on track for Thursday.", "Ödeme hatası hâlâ açık, bu yüzden perşembe için plana uygun değiliz."]
+      - ["Our new estimate for the release is Monday.", "Sürüm için yeni tahminimiz pazartesi."]
+      - ["Ece is out of office tomorrow, so please send payment questions to Ali.", "Ece yarın izinli, bu yüzden ödeme sorularını lütfen Ali'ye gönderin."]
+    gloss: ["merged | ana koda eklendi", "on track | plana uygun", "estimate | tahmin", "out of office | izinli, ofis dışında"]
+    q:
+      - q: "Sürüm neden perşembeye yetişmiyor?"
+        o: ["Ödeme hatası hâlâ açık", "Arama filtreleri bitmedi", "Ece izinli"]
+        a: 0
+        why: "“The payment bug is still open, so we are not on track” cümlesi nedeni veriyor."
+      - q: "Yarın ödeme sorularını kime göndermelisin?"
+        o: ["Ece'ye", "Ali'ye", "Takım liderine"]
+        a: 1
+        why: "Ece izinli; sorular Ali'ye gönderilecek."
+      - q: "Sürüm için yeni tahmin hangi gün?"
+        o: ["Perşembe", "Cuma", "Pazartesi"]
+        a: 2
+        why: "“Our new estimate for the release is Monday.”"
+  - id: standup-notes
+    title: "Daily standup notes"
+    kind: "Toplantı notu"
+    d: 1
+    s:
+      - ["Mert: Yesterday I fixed the login timeout.", "Mert: Dün giriş zaman aşımını düzelttim."]
+      - ["Today I'm working on the profile page.", "Bugün profil sayfası üzerinde çalışıyorum."]
+      - ["Selin: I'm stuck on a failing integration test.", "Selin: Başarısız olan bir entegrasyon testinde takıldım."]
+      - ["Mert will pair with her after the standup.", "Mert toplantıdan sonra onunla eşli çalışacak."]
+      - ["Action item: Selin will share the test logs in the team channel.", "Yapılacak iş: Selin test kayıtlarını ekip kanalında paylaşacak."]
+    gloss: ["timeout | zaman aşımı", "integration test | entegrasyon testi", "action item | yapılacak iş", "logs | kayıtlar"]
+    q:
+      - q: "Selin'in engeli ne?"
+        o: ["Profil sayfası", "Başarısız bir entegrasyon testi", "Giriş zaman aşımı"]
+        a: 1
+        why: "“I'm stuck on a failing integration test.”"
+      - q: "Toplantıdan sonra ne olacak?"
+        o: ["Mert ile Selin eşli çalışacak", "Mert izne çıkacak", "Selin profil sayfasını bitirecek"]
+        a: 0
+        why: "“Mert will pair with her after the standup.”"
+
+writing:
+  id: standup-update
+  p: "Günlük toplantı için 3–4 cümlelik bir durum mesajı yaz: dün ne yaptın, bugün ne yapacaksın, bir engelin var mı?"
+  rubric: ["Dün için geçmiş zaman kullanılmış", "Bugün için “I'm going to” veya “I'm working on” kullanılmış", "Engel varsa açıkça ve bir yardım isteğiyle söylenmiş"]
+  samples: ["Yesterday I finished the search filters. Today I'm working on the unit tests. My only blocker is the missing API key. Could someone from the backend team help me?"]
+  d: 2
+
+situations:
+  - { parent: "Toplantı", name: "Anlamadığımı belirtmek", items: [clarify] }
+  - { parent: "Toplantı", name: "Söz almak", items: [add-something] }
+  - { parent: "Toplantı", name: "Konuyu toplantı dışına almak", items: [take-offline] }
+  - { parent: "Yardım isteme", name: "Bir engeli anlatmak", items: [blocker, stuck-on, need-help-with] }
+  - { parent: "Durum bildirme", name: "İlerlemeyi anlatmak", items: [working-on, finished, on-track, any-updates-on] }
