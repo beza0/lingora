@@ -1,0 +1,525 @@
+id: general-introductions
+domain: general
+title: "Tanışma ve kendini anlatma"
+desc: "Kendini tanıtma, nereli olduğunu ve ne iş yaptığını anlatma, sohbet başlatma."
+sort: 1
+
+targets:
+  - id: introduce
+    w: introduce
+    pos: v
+    tr: "tanıtmak"
+    ex: "Let me [[introduce]] myself: I'm Elif, a nurse from İzmir."
+    extr: "Kendimi tanıtayım: Ben Elif, İzmirli bir hemşireyim."
+    d: 1
+    col: ["introduce yourself", "introduce someone to someone"]
+    fam: ["introduction (i.) tanıtım, giriş"]
+    tone: ["Günlük", "Resmî"]
+    dis:
+      - "induce | Neden olmak demektir."
+      - "reduce | Azaltmak demektir."
+      - "produce | Üretmek demektir."
+  - id: colleague
+    w: colleague
+    pos: n
+    tr: "iş arkadaşı"
+    ex: "This is my [[colleague]], Murat."
+    extr: "Bu, iş arkadaşım Murat."
+    d: 1
+    col: ["a former colleague", "my colleagues at work"]
+    syn: ["coworker"]
+    tone: ["İş", "Nötr"]
+    dis:
+      - "college | Yüksekokul demektir."
+      - "collage | Kolaj demektir."
+      - "league | Lig demektir."
+  - id: based-in
+    w: based in
+    pos: phrase
+    tr: "(bir yerde) yaşayan, çalışan"
+    ex: "I'm [[based in]] Ankara, but I travel a lot."
+    extr: "Ankara'da yaşıyorum ama çok seyahat ediyorum."
+    d: 2
+    conf: ["based on | “Bir şeye dayanan” demektir."]
+    tone: ["İş", "Nötr"]
+    dis:
+      - "based on | “Bir şeye dayanan” demektir."
+      - "basic in | “basic” temel demektir."
+      - "biased in | “biased” önyargılı demektir."
+  - id: hometown
+    w: hometown
+    pos: n
+    tr: "memleket, doğup büyüdüğün şehir"
+    ex: "My [[hometown]] is a small city near the sea."
+    extr: "Memleketim denize yakın küçük bir şehir."
+    d: 1
+    tone: ["Günlük"]
+    dis:
+      - "homework | Ödev demektir."
+      - "downtown | Şehir merkezi demektir."
+      - "township | Kasaba yönetimi demektir."
+  - id: hobby
+    w: hobby
+    pos: n
+    tr: "hobi"
+    ex: "My favorite [[hobby]] is hiking."
+    extr: "En sevdiğim hobim doğa yürüyüşü."
+    d: 1
+    col: ["take up a hobby", "my hobbies"]
+    tone: ["Günlük"]
+    dis:
+      - "lobby | Lobi demektir."
+      - "hubby | Samimi dilde “koca” demektir."
+      - "hockey | Hokey demektir."
+  - id: get-along
+    w: get along
+    pos: phrasal
+    tr: "iyi geçinmek"
+    ex: "I [[get along]] well with my roommates."
+    extr: "Ev arkadaşlarımla iyi geçinirim."
+    d: 2
+    col: ["get along with someone", "get along well"]
+    tone: ["Günlük"]
+    dis:
+      - "get alone | “alone” yalnız demektir; böyle bir kalıp yok."
+      - "get away | Kaçmak demektir."
+      - "give along | Böyle bir kalıp yok."
+  - id: nice-to-meet
+    w: "Nice to meet you."
+    pos: phrase
+    tr: "Tanıştığımıza memnun oldum."
+    ex: "Hi, I'm Can. [[Nice to meet you]]."
+    extr: "Merhaba, ben Can. Tanıştığımıza memnun oldum."
+    d: 1
+    tone: ["Selamlaşma", "Nazik"]
+    dis:
+      - "Nice to meat you | “meat” et demektir."
+      - "Nice to miss you | Anlamsız bir ifadedir."
+      - "Nice to meet yourself | Dönüşlü zamir burada kullanılmaz."
+  - id: what-do-you-do
+    w: "What do you do?"
+    pos: phrase
+    tr: "Ne iş yapıyorsun?"
+    ex: "So, [[what do you do]]? I work in marketing."
+    extr: "Peki, ne iş yapıyorsun? Ben pazarlamada çalışıyorum."
+    d: 1
+    tone: ["Günlük", "Tanışma"]
+    dis:
+      - "what are you doing | “Şu an ne yapıyorsun” demektir; meslek sormaz."
+      - "what do you like | “Neyi seversin” demektir."
+      - "how do you do | Resmî bir selamlaşmadır; meslek sormaz."
+  - id: where-from
+    w: "Where are you from?"
+    pos: phrase
+    tr: "Nerelisin?"
+    ex: "[[Where are you from]]? I'm from Bursa."
+    extr: "Nerelisin? Ben Bursalıyım."
+    d: 1
+    tone: ["Günlük", "Tanışma"]
+    dis:
+      - "Where are you going | “Nereye gidiyorsun” demektir."
+      - "Who are you from | “who” kişi sorar."
+      - "Where do you from | “do” ile fiilsiz soru kurulmaz."
+  - id: retired
+    w: retired
+    pos: adj
+    tr: "emekli"
+    ex: "My father is [[retired]] now, so he travels a lot."
+    extr: "Babam artık emekli, bu yüzden çok seyahat ediyor."
+    d: 2
+    fam: ["retire (f.) emekli olmak", "retirement (i.) emeklilik"]
+    tone: ["Günlük"]
+    dis:
+      - "tired | Yorgun demektir; “so he travels a lot” ile uyuşmaz."
+      - "required | Gerekli demektir."
+      - "rewired | Yeniden kablolanmış demektir."
+  - id: shy
+    w: shy
+    pos: adj
+    tr: "utangaç"
+    ex: "I was [[shy]] as a child, but now I love meeting people."
+    extr: "Çocukken utangaçtım ama şimdi insanlarla tanışmaya bayılıyorum."
+    d: 1
+    ant: ["outgoing", "confident"]
+    tone: ["Günlük"]
+    dis:
+      - "sly | Kurnaz demektir; cümledeki karşıtlığı kurmaz."
+      - "shiny | Parlak demektir."
+      - "dry | Kuru demektir."
+  - id: outgoing
+    w: outgoing
+    pos: adj
+    tr: "dışa dönük, sosyal"
+    ex: "Ece is very [[outgoing]]; she talks to everyone."
+    extr: "Ece çok sosyal; herkesle konuşur."
+    d: 2
+    syn: ["sociable", "friendly"]
+    ant: ["shy"]
+    tone: ["Günlük"]
+    dis:
+      - "ongoing | Süregelen demektir; kişiler için kullanılmaz."
+      - "outdoing | “Geride bırakan” demektir; tek başına sıfat değildir."
+      - "outgrowing | Büyüyüp sığmamak demektir."
+  - id: currently
+    w: currently
+    pos: adv
+    tr: "şu anda, şu sıralar"
+    ex: "I'm [[currently]] learning Spanish."
+    extr: "Şu sıralar İspanyolca öğreniyorum."
+    d: 2
+    syn: ["at the moment", "right now"]
+    tone: ["Nötr"]
+    dis:
+      - "currency | Para birimi demektir."
+      - "curly | Kıvırcık demektir."
+      - "current | Sıfattır; burada zarf gerekir."
+  - id: single
+    w: single
+    pos: adj
+    tr: "bekâr"
+    ex: "I'm [[single]], and I live with my cat."
+    extr: "Bekârım ve kedimle yaşıyorum."
+    d: 1
+    other: "“Tek” anlamına da gelir: a single room."
+    tone: ["Günlük"]
+    dis:
+      - "simple | Basit demektir."
+      - "signal | Sinyal demektir."
+      - "singer | Şarkıcı demektir; ayrıca “a” gerekir."
+  - id: graduate
+    w: graduate
+    pos: v
+    tr: "mezun olmak"
+    ex: "I [[graduated]] from Ege University in 2020."
+    extr: "2020'de Ege Üniversitesi'nden mezun oldum."
+    d: 2
+    col: ["graduate from", "a recent graduate"]
+    fam: ["graduation (i.) mezuniyet", "graduate (i.) mezun"]
+    tone: ["Nötr", "İş görüşmesi"]
+    dis:
+      - "graded | Not vermek demektir; “graded from” denmez."
+      - "generated | Üretmek demektir."
+      - "gratitude | Minnet demektir; isimdir."
+  - id: interested-in
+    w: interested in
+    pos: phrase
+    tr: "-e ilgi duyan"
+    ex: "I'm really [[interested in]] photography."
+    extr: "Fotoğrafçılığa gerçekten ilgi duyuyorum."
+    d: 1
+    conf: ["interesting | İlgi çekici demektir; kişi kendi ilgisini “interested” ile anlatır."]
+    tone: ["Günlük"]
+    dis:
+      - "interesting in | “interesting” ilgi çekici demektir; burada “interested” gerekir."
+      - "interested on | Edat yanlış: in."
+      - "interest in | “I'm” sonrası sıfat gerekir."
+  - id: me-too
+    w: "Me too."
+    pos: phrase
+    tr: "Ben de."
+    ex: "A: I love coffee. B: [[Me too]]!"
+    extr: "A: Kahveyi çok severim. B: Ben de!"
+    d: 1
+    conf: ["Me neither | Olumsuz bir cümleye “ben de (… değilim)” yanıtıdır."]
+    tone: ["Samimi"]
+    dis:
+      - "Me neither | Olumsuz cümleye verilir."
+      - "Me also | Doğal değildir; “Me too” denir."
+      - "I too | Günlük konuşmada tek başına kullanılmaz."
+  - id: spare-time
+    w: spare time
+    pos: n
+    tr: "boş zaman"
+    ex: "In my [[spare time]], I play the guitar."
+    extr: "Boş zamanımda gitar çalarım."
+    d: 1
+    syn: ["free time"]
+    tone: ["Günlük"]
+    dis:
+      - "spare tire | Yedek lastik demektir."
+      - "spare part | Yedek parça demektir."
+      - "spear time | “spear” mızrak demektir."
+  - id: fluent
+    w: fluent
+    pos: adj
+    tr: "(bir dili) akıcı konuşan"
+    ex: "She is [[fluent]] in German and English."
+    extr: "Almanca ve İngilizceyi akıcı konuşuyor."
+    d: 2
+    col: ["fluent in", "fluent English"]
+    fam: ["fluency (i.) akıcılık", "fluently (z.) akıcı bir şekilde"]
+    tone: ["Nötr", "İş görüşmesi"]
+    dis:
+      - "fluid | Sıvı demektir."
+      - "frequent | Sık demektir; “frequent in German” denmez."
+      - "affluent | Varlıklı demektir."
+  - id: originally
+    w: originally
+    pos: adv
+    tr: "aslen"
+    ex: "I'm [[originally]] from Trabzon, but I live in İstanbul now."
+    extr: "Aslen Trabzonluyum ama şimdi İstanbul'da yaşıyorum."
+    d: 2
+    tone: ["Günlük"]
+    dis:
+      - "original | Sıfattır; burada zarf gerekir."
+      - "orderly | Düzenli demektir."
+      - "occasionally | Ara sıra demektir; “from Trabzon” ile anlam kurmaz."
+
+patterns:
+  - id: im-a
+    t: "I'm a/an …"
+    ex: "I'm [[a]] software developer."
+    extr: "Yazılım geliştiriciyim."
+    ttr: "Mesleğim: …."
+    slots: ["software developer | yazılım geliştirici", "nurse | hemşire", "teacher | öğretmen", "student | öğrenci"]
+    chunks: ["I'm | ben …-im", "a | bir", "software developer | meslek"]
+    g: to-be
+    ctx: ["Tanışma", "İş görüşmesi"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "an | Ünsüz sesle başlayan kelimeden önce “a” gelir."
+      - "the | Kendini tanıtırken belirsiz artikel (a/an) kullanılır."
+      - "one | Sayı vurgusu yapar; doğal değildir."
+    alt: ["I am a software developer."]
+  - id: work-at
+    t: "I work at …"
+    ex: "I work [[at]] a bank in Kadıköy."
+    extr: "Kadıköy'de bir bankada çalışıyorum."
+    ttr: "Şurada çalışıyorum: …."
+    slots: ["a bank in Kadıköy | Kadıköy'de bir banka", "a small startup | küçük bir girişim şirketi", "a hospital | bir hastane"]
+    chunks: ["I work | çalışıyorum", "at | -de", "a bank in Kadıköy | iş yeri"]
+    g: present-simple
+    ctx: ["Tanışma", "İş görüşmesi"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "on | İş yeri için “on” kullanılmaz."
+      - "to | Hareket yönü bildirir."
+      - "into | İçine doğru hareket bildirir."
+    alt: ["I work in a bank in Kadıköy."]
+  - id: lived-for
+    t: "I've lived in … for … years."
+    ex: "I've lived in İstanbul [[for]] five years."
+    extr: "Beş yıldır İstanbul'da yaşıyorum."
+    ttr: "Beş yıldır şurada yaşıyorum: …."
+    slots: ["İstanbul | İstanbul", "this neighborhood | bu mahalle", "Germany | Almanya"]
+    chunks: ["I've lived | yaşıyorum (geçmişten beri)", "in İstanbul | yer", "for five years | beş yıldır"]
+    g: present-perfect-results
+    ctx: ["Tanışma"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "since | “since” bir başlangıç noktası ister: since 2020."
+      - "during | Süre bildirirken “for” kullanılır."
+      - "from | Başlangıç bildirir ve genelde “to” ile kullanılır."
+    alt: ["I have lived in İstanbul for five years."]
+  - id: like-ing
+    t: "I like …-ing in my free time."
+    ex: "I like [[reading]] in my free time."
+    extr: "Boş zamanımda okumayı severim."
+    ttr: "Boş zamanımda şunu severim: …."
+    slots: ["reading | okumak", "cooking | yemek yapmak", "going to concerts | konserlere gitmek"]
+    chunks: ["I like | severim", "reading | -mayı (fiil + -ing)", "in my free time | boş zamanımda"]
+    g: present-simple
+    ctx: ["Tanışma", "Sohbet"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "read | “like” sonrası -ing ya da “to” + fiil gelir."
+      - "readed | “read” düzensizdir; ayrıca burada -ing gerekir."
+      - "reads | “like” sonrası çekimli fiil gelmez."
+    alt: ["I like to read in my free time."]
+  - id: good-at
+    t: "I'm good at …"
+    ex: "I'm good [[at]] solving problems."
+    extr: "Problem çözmekte iyiyim."
+    ttr: "Şunda iyiyim: …."
+    slots: ["solving problems | problem çözmek", "math | matematik", "talking to people | insanlarla konuşmak"]
+    chunks: ["I'm good | iyiyim", "at | … konusunda", "solving problems | beceri"]
+    g: to-be
+    ctx: ["Tanışma", "İş görüşmesi"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "in | Beceri için “good at” kalıbı kullanılır."
+      - "on | Edat yanlış: at."
+      - "for | “good for” bir şeye yararlı demektir."
+    alt: ["I am good at solving problems."]
+  - id: dont-often
+    t: "I don't … very often."
+    ex: "I [[don't]] watch TV very often."
+    extr: "Pek sık televizyon izlemem."
+    ttr: "Şunu pek sık yapmam: …."
+    slots: ["watch TV | televizyon izlemek", "eat fast food | fast food yemek", "go out on weekdays | hafta içi dışarı çıkmak"]
+    chunks: ["I don't | -mam", "watch TV | eylem", "very often | çok sık"]
+    g: present-simple
+    ctx: ["Sohbet"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "doesn't | “I” ile “don't” kullanılır."
+      - "not | Fiille olumsuzlukta yardımcı fiil (do) gerekir."
+      - "am not | Fiil cümlesinde “do not” gerekir."
+    alt: ["I do not watch TV very often."]
+  - id: how-long
+    t: "How long have you …?"
+    ex: "How long [[have you]] lived here?"
+    extr: "Ne zamandır burada yaşıyorsun?"
+    ttr: "Ne zamandır şunu yapıyorsun: …?"
+    slots: ["lived here | burada yaşamak", "worked there | orada çalışmak", "known Ayşe | Ayşe'yi tanımak"]
+    chunks: ["How long | ne zamandır", "have you | (sen) -", "lived here | süren durum"]
+    g: present-perfect-results
+    ctx: ["Tanışma", "Sohbet"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "are you | Present perfect yapısı gerekir: have you lived."
+      - "have you been | “been lived” yanlış bir yapı olur."
+      - "you have | Soruda yardımcı fiil özneden önce gelir."
+  - id: what-kind-of
+    t: "What kind of … do you like?"
+    ex: "What [[kind of]] music do you like?"
+    extr: "Ne tür müzik seversin?"
+    ttr: "Ne tür … seversin?"
+    slots: ["music | müzik", "movies | film", "food | yemek"]
+    chunks: ["What kind of | ne tür", "music | konu", "do you like | seversin"]
+    g: present-simple
+    ctx: ["Sohbet"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "kind on | Edat yanlış: of."
+      - "kinds | “What kind of” kalıbında “of” gerekir."
+      - "kindly | “Nazikçe” demektir."
+  - id: live-with
+    t: "I live with …"
+    ex: "I [[live with]] my sister."
+    extr: "Kız kardeşimle yaşıyorum."
+    ttr: "… ile yaşıyorum."
+    slots: ["my sister | kız kardeşim", "two flatmates | iki ev arkadaşı", "my parents | ailem"]
+    chunks: ["I live | yaşıyorum", "with | ile", "my sister | kişi"]
+    g: present-simple
+    ctx: ["Tanışma", "Sohbet"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "live by | “by” yanında demektir."
+      - "lives with | “I” ile -s kullanılmaz."
+      - "living with | “I” sonrası çekimli fiil gerekir."
+  - id: see-you
+    t: "See you …!"
+    ex: "[[See you]] on Monday!"
+    extr: "Pazartesi görüşürüz!"
+    ttr: "… görüşürüz!"
+    slots: ["on Monday | pazartesi", "at the meeting | toplantıda", "next week | gelecek hafta"]
+    chunks: ["See you | görüşürüz", "on Monday | zaman"]
+    g: present-simple
+    ctx: ["Selamlaşma"]
+    tone: ["Samimi"]
+    d: 1
+    dis:
+      - "See your | “your” iyelik sıfatıdır."
+      - "Seeing you | Kalıp “See you” biçimindedir."
+      - "Sea you | “sea” deniz demektir."
+
+grammar:
+  - id: present-simple
+    title: "Present Simple (geniş zaman)"
+    short: "Alışkanlıklar, kalıcı durumlar ve genel gerçekler için kullanılır: I work at a bank. He, she, it ile fiil -s alır: She works."
+    long: "Olumsuz: I don't / She doesn't + yalın fiil. Soru: Do you …? / Does she …? Sıklık zarfları (always, usually, often, sometimes, never) genelde fiilden önce gelir: I usually walk to work. like, know, need, want gibi durum fiilleri çoğunlukla -ing almaz."
+    ex: ["I work at a small company. | Küçük bir şirkette çalışıyorum.", "She doesn't drink coffee. | Kahve içmez.", "Do you live near here? | Buraya yakın mı oturuyorsun?"]
+  - id: to-be
+    title: "to be: am / is / are"
+    short: "Kim olduğunu, nereli olduğunu ve nasıl hissettiğini anlatırken am/is/are kullanılır: I'm a nurse. She's from İzmir."
+    long: "I am (I'm); you, we, they are ('re); he, she, it is ('s). Olumsuz: I'm not, isn't, aren't. Soru: Are you a student? Is he at work? Meslekten önce a/an gelir: I'm an engineer. Sıfat + edat kalıpları çok kullanılır: good at, interested in, sure about, stuck on."
+    ex: ["I'm a teacher. | Öğretmenim.", "Are you from Ankara? | Ankaralı mısın?", "We aren't sure about the plan. | Plandan emin değiliz."]
+
+scenarios:
+  - id: first-day
+    title: "İlk iş günü"
+    sit: "Yeni işinde ilk günün. Tasarım ekibinden bir iş arkadaşı kendini tanıtıyor."
+    d: 1
+    targets: [nice-to-meet, where-from, originally]
+    turns:
+      - ["Murat", "Hi, I'm Murat from the design team. You must be new here.", "Selam, ben tasarım ekibinden Murat. Burada yenisin galiba."]
+      - choose:
+          - ["Yes, I started today. I'm Deniz. Nice to meet you!", true, "Kendini tanıtıyor ve uygun selamlaşmayı kullanıyor."]
+          - ["Yes, I start yesterday. Nice to meat you!", false, "Zaman yanlış; ayrıca “meat” et demektir."]
+          - ["No, I'm Deniz. How do you do it?", false, "“How do you do it?” “Bunu nasıl yapıyorsun?” demektir."]
+      - ["Murat", "Nice to meet you too. Where are you from?", "Ben de memnun oldum. Nerelisin?"]
+      - choose:
+          - ["I'm originally from Trabzon, but I've lived in İstanbul for five years.", true, "Aslen nereli olduğunu ve ne zamandır nerede yaşadığını doğru anlatıyor."]
+          - ["I'm from Trabzon since five years.", false, "Süre için “for” ve present perfect gerekir."]
+          - ["I live from Trabzon.", false, "“live from” denmez; “I'm from Trabzon” denir."]
+  - id: party-chat
+    title: "Partide sohbet"
+    sit: "Bir arkadaşının doğum günü partisindesin ve yeni tanıştığın biriyle sohbet ediyorsun."
+    d: 1
+    targets: [spare-time, hobby, like-ing]
+    turns:
+      - ["Lena", "So, what do you do in your spare time?", "Peki, boş zamanında neler yaparsın?"]
+      - choose:
+          - ["I like hiking and taking photos. What about you?", true, "Soruyu yanıtlıyor ve sohbeti sürdürmek için geri soruyor."]
+          - ["I like hike and take photo.", false, "“like” sonrası -ing gerekir; “photos” çoğul olmalı."]
+          - ["My spare time is on Saturday.", false, "Soru ne yaptığını soruyor, ne zaman boş olduğunu değil."]
+      - ["Lena", "I love hiking too! There's a nice trail near the lake.", "Ben de yürüyüşe bayılırım! Gölün yakınında güzel bir parkur var."]
+      - choose:
+          - ["Really? That sounds great. We should go together sometime.", true, "İlgi gösteriyor ve doğal bir öneri yapıyor."]
+          - ["Really? Me neither.", false, "“Me neither” olumsuz bir cümleye verilir."]
+          - ["Really? I'm not interested on it.", false, "Edat yanlış ve sohbeti kaba biçimde kapatıyor."]
+
+readings:
+  - id: about-me
+    title: "About me"
+    kind: "Kısa tanıtım"
+    d: 1
+    s:
+      - ["Hi! My name is Selin and I'm a physiotherapist.", "Merhaba! Adım Selin ve fizyoterapistim."]
+      - ["I'm originally from Eskişehir, but I've lived in Ankara for six years.", "Aslen Eskişehirliyim ama altı yıldır Ankara'da yaşıyorum."]
+      - ["I work at a small clinic near my home.", "Evimin yakınındaki küçük bir klinikte çalışıyorum."]
+      - ["In my spare time, I go swimming and I'm learning to play the violin.", "Boş zamanımda yüzmeye gidiyorum ve keman çalmayı öğreniyorum."]
+      - ["I'm a bit shy at first, but I get along well with most people.", "İlk başta biraz utangacım ama çoğu insanla iyi geçinirim."]
+    gloss: ["originally | aslen", "spare time | boş zaman", "shy | utangaç", "get along | iyi geçinmek"]
+    q:
+      - q: "Selin şu anda nerede yaşıyor?"
+        o: ["Eskişehir'de", "Ankara'da", "İstanbul'da"]
+        a: 1
+        why: "“I've lived in Ankara for six years.”"
+      - q: "Selin şu sıralar ne öğreniyor?"
+        o: ["Yüzmeyi", "Keman çalmayı", "Fizyoterapiyi"]
+        a: 1
+        why: "“I'm learning to play the violin.”"
+  - id: new-team-member
+    title: "New team member"
+    kind: "E-posta"
+    d: 2
+    s:
+      - ["Hello everyone, I'd like to introduce our new colleague, Emre.", "Herkese merhaba, yeni iş arkadaşımız Emre'yi tanıtmak istiyorum."]
+      - ["He graduated from Hacettepe University and he's interested in data analysis.", "Hacettepe Üniversitesi'nden mezun oldu ve veri analizine ilgi duyuyor."]
+      - ["Emre is fluent in English and German.", "Emre İngilizce ve Almancayı akıcı konuşuyor."]
+      - ["He's based in our Ankara office, so please say hello if you see him!", "Ankara ofisimizde çalışıyor; onu görürseniz lütfen merhaba deyin!"]
+    gloss: ["introduce | tanıtmak", "graduated from | -den mezun oldu", "fluent in | -i akıcı konuşan", "based in | -de çalışan"]
+    q:
+      - q: "Emre hangi alana ilgi duyuyor?"
+        o: ["Veri analizi", "Tasarım", "Satış"]
+        a: 0
+        why: "“he's interested in data analysis”"
+      - q: "Emre hangi ofiste çalışıyor?"
+        o: ["İstanbul", "Ankara", "İzmir"]
+        a: 1
+        why: "“He's based in our Ankara office.”"
+
+writing:
+  id: introduce-yourself
+  p: "Kendini 3–4 cümleyle tanıt: nerelisin, ne iş yapıyorsun, boş zamanında neler yaparsın?"
+  rubric: ["Adını ve nereli olduğunu söylüyor", "Mesleğini veya okulunu “I'm a …” ya da “I work at …” ile anlatıyor", "Bir ilgi alanını “I like …-ing” ile anlatıyor"]
+  samples: ["Hi, I'm Deniz. I'm originally from Bursa, but I've lived in İstanbul for three years. I work at a small software company. In my spare time, I like cooking and playing tennis."]
+  d: 1
+
+situations:
+  - { parent: "Tanışma", name: "Selamlaşmak", items: [nice-to-meet, see-you] }
+  - { parent: "Tanışma", name: "Soru sormak", items: [what-do-you-do, where-from, how-long, what-kind-of] }
+  - { parent: "Kendini anlatmak", name: "Meslek ve yer", items: [im-a, work-at, based-in, lived-for] }
+  - { parent: "Kendini anlatmak", name: "İlgi alanları", items: [like-ing, good-at, interested-in] }

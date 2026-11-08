@@ -1,0 +1,522 @@
+id: general-daily-life
+domain: general
+title: "Günlük yaşam ve planlar"
+desc: "Günlük rutin, hafta sonu planları, davet etme, kabul etme ve erteleme."
+sort: 2
+
+targets:
+  - id: usually
+    w: usually
+    pos: adv
+    tr: "genellikle"
+    ex: "I [[usually]] get up at seven."
+    extr: "Genellikle yedide kalkarım."
+    d: 1
+    syn: ["normally", "generally"]
+    tone: ["Günlük"]
+    dis:
+      - "unusually | “Alışılmadık şekilde” demektir."
+      - "usual | Sıfattır; burada zarf gerekir."
+      - "useful | Yararlı demektir."
+  - id: commute
+    w: commute
+    pos: v
+    tr: "işe gidip gelmek"
+    ex: "I [[commute]] to work by metro."
+    extr: "İşe metroyla gidip geliyorum."
+    d: 2
+    col: ["daily commute", "a long commute"]
+    fam: ["commute (i.) işe gidip gelme yolculuğu", "commuter (i.) işe gidip gelen kişi"]
+    tone: ["Günlük"]
+    dis:
+      - "compute | Hesaplamak demektir."
+      - "commit | Bağlanmak veya suç işlemek demektir."
+      - "comment | Yorum yapmak demektir."
+  - id: errand
+    w: errand
+    pos: n
+    tr: "ayak işi (alışveriş, fatura, kargo gibi)"
+    ex: "I have a few [[errands]] to run this afternoon."
+    extr: "Bu öğleden sonra halletmem gereken birkaç ayak işim var."
+    d: 3
+    col: ["run errands", "a quick errand"]
+    tone: ["Günlük"]
+    dis:
+      - "errors | Hata demektir."
+      - "arrows | Ok demektir."
+      - "erasers | Silgi demektir."
+  - id: grocery
+    w: grocery
+    pos: n
+    tr: "market (gıda) alışverişi"
+    ex: "I do the [[grocery]] shopping on Saturdays."
+    extr: "Market alışverişini cumartesileri yaparım."
+    d: 2
+    col: ["grocery store", "groceries"]
+    tone: ["Günlük"]
+    dis:
+      - "gallery | Galeri demektir."
+      - "greenery | Yeşillik demektir."
+      - "grocer | Bakkal (kişi) demektir; “grocer shopping” denmez."
+  - id: appointment
+    w: appointment
+    pos: n
+    tr: "randevu"
+    ex: "I have a dentist [[appointment]] on Friday."
+    extr: "Cuma günü dişçi randevum var."
+    d: 2
+    col: ["make an appointment", "cancel an appointment"]
+    tone: ["Günlük", "Resmî"]
+    dis:
+      - "apartment | Daire demektir."
+      - "appointee | Bir göreve atanan kişi demektir."
+      - "disappointment | Hayal kırıklığı demektir."
+  - id: free
+    w: free
+    pos: adj
+    tr: "boş, müsait"
+    ex: "Are you [[free]] on Saturday evening?"
+    extr: "Cumartesi akşamı müsait misin?"
+    d: 1
+    other: "“Ücretsiz” anlamına da gelir: free coffee."
+    syn: ["available"]
+    tone: ["Günlük"]
+    dis:
+      - "fee | Ücret demektir."
+      - "freeze | Donmak demektir."
+      - "fresh | Taze demektir."
+  - id: plans
+    w: plan
+    pos: n
+    tr: "plan"
+    ex: "Do you have any [[plans]] for the weekend?"
+    extr: "Hafta sonu için bir planın var mı?"
+    d: 1
+    col: ["make plans", "change of plans"]
+    tone: ["Günlük"]
+    dis:
+      - "plants | Bitki demektir."
+      - "planes | Uçak demektir."
+      - "planets | Gezegen demektir."
+  - id: cancel
+    w: cancel
+    pos: v
+    tr: "iptal etmek"
+    ex: "I had to [[cancel]] the dinner because I was sick."
+    extr: "Hasta olduğum için yemeği iptal etmek zorunda kaldım."
+    d: 1
+    fam: ["cancellation (i.) iptal"]
+    tone: ["Günlük"]
+    dis:
+      - "cancer | Kanser demektir; isimdir."
+      - "counsel | Tavsiye vermek demektir."
+      - "candle | Mum demektir."
+  - id: postpone
+    w: postpone
+    pos: v
+    tr: "ertelemek"
+    ex: "Can we [[postpone]] our meeting until next week?"
+    extr: "Toplantımızı gelecek haftaya erteleyebilir miyiz?"
+    d: 2
+    syn: ["put off", "delay"]
+    tone: ["Resmî", "Günlük"]
+    dis:
+      - "postcard | Kartpostal demektir."
+      - "propose | Önermek demektir; “until next week” ile kullanılmaz."
+      - "position | Konum demektir."
+  - id: routine
+    w: routine
+    pos: n
+    tr: "günlük düzen, rutin"
+    ex: "My morning [[routine]] starts with a short walk."
+    extr: "Sabah rutinim kısa bir yürüyüşle başlar."
+    d: 2
+    col: ["daily routine", "morning routine"]
+    tone: ["Günlük"]
+    dis:
+      - "route | Güzergâh demektir."
+      - "ruin | Harabe demektir."
+      - "routing | Yönlendirme demektir."
+  - id: weekend
+    w: weekend
+    pos: n
+    tr: "hafta sonu"
+    ex: "We're going to visit my grandparents this [[weekend]]."
+    extr: "Bu hafta sonu büyükannemlere gideceğiz."
+    d: 1
+    ant: ["weekday"]
+    tone: ["Günlük"]
+    dis:
+      - "weakness | Zayıflık demektir."
+      - "weekly | Haftalık demektir."
+      - "weekday | Hafta içi günü demektir; “this weekday” denmez."
+  - id: tired
+    w: tired
+    pos: adj
+    tr: "yorgun"
+    ex: "I'm too [[tired]] to cook tonight."
+    extr: "Bu akşam yemek yapamayacak kadar yorgunum."
+    d: 1
+    col: ["too tired to", "tired of"]
+    tone: ["Günlük"]
+    dis:
+      - "tied | Bağlı demektir."
+      - "tide | Gelgit demektir."
+      - "tidy | Düzenli demektir."
+  - id: sounds-good
+    w: "Sounds good."
+    pos: phrase
+    tr: "Olur, kulağa iyi geliyor."
+    ex: "A: Shall we meet at six? B: [[Sounds good]]!"
+    extr: "A: Altıda buluşalım mı? B: Olur!"
+    d: 1
+    tone: ["Samimi"]
+    dis:
+      - "Sounds well | Bu kalıpta “good” kullanılır."
+      - "Sound good | Gizli özne “that” olduğu için -s gerekir."
+      - "Sounds goods | “goods” mal, eşya demektir."
+  - id: afraid-cant
+    w: "I'm afraid I can't."
+    pos: phrase
+    tr: "Maalesef yapamam (gelemem)."
+    ex: "[[I'm afraid I can't]]; I'm working late tonight."
+    extr: "Maalesef gelemem; bu akşam geç saate kadar çalışıyorum."
+    d: 2
+    tone: ["Nazik"]
+    dis:
+      - "I'm afraid of I can't | “of” fazladır."
+      - "I'm afraid I can | Olumlu olur; ardından gelen mazeretle çelişir."
+      - "I'm afraid I don't can | “can” ile “do” birlikte kullanılmaz."
+  - id: check-calendar
+    w: "Let me check my calendar."
+    pos: phrase
+    tr: "Takvimime bir bakayım."
+    ex: "[[Let me check my calendar]] and get back to you."
+    extr: "Takvimime bir bakıp sana döneyim."
+    d: 2
+    tone: ["Nazik", "İş"]
+    dis:
+      - "Let me cheat my calendar | “cheat” hile yapmak demektir."
+      - "Let me check my colander | “colander” süzgeç demektir."
+      - "Let me chuck my calendar | “chuck” fırlatıp atmak demektir."
+  - id: on-time
+    w: on time
+    pos: phrase
+    tr: "zamanında, tam vaktinde"
+    ex: "The bus was [[on time]] this morning."
+    extr: "Otobüs bu sabah tam vaktinde geldi."
+    d: 1
+    ant: ["late"]
+    tone: ["Günlük"]
+    dis:
+      - "at time | Böyle bir kalıp yok."
+      - "on line | Anlamı farklıdır; zamanlamayı anlatmaz."
+      - "on tile | “tile” fayans demektir."
+  - id: rush-hour
+    w: rush hour
+    pos: n
+    tr: "trafiğin yoğun olduğu saat"
+    ex: "I avoid driving during [[rush hour]]."
+    extr: "Trafiğin yoğun olduğu saatte araba kullanmaktan kaçınırım."
+    d: 2
+    tone: ["Günlük"]
+    dis:
+      - "rush order | Acil sipariş demektir."
+      - "brush hour | “brush” fırça demektir."
+      - "crush hour | “crush” ezmek demektir."
+  - id: laundry
+    w: laundry
+    pos: n
+    tr: "çamaşır (yıkanacak)"
+    ex: "I do the [[laundry]] every Sunday."
+    extr: "Her pazar çamaşır yıkarım."
+    d: 2
+    col: ["do the laundry", "laundry basket"]
+    tone: ["Günlük"]
+    dis:
+      - "lottery | Piyango demektir."
+      - "library | Kütüphane demektir."
+      - "laundromat | Çamaşırhane demektir; “do the laundromat” denmez."
+  - id: nap
+    w: nap
+    pos: n
+    tr: "kısa uyku, şekerleme"
+    ex: "I sometimes take a short [[nap]] after lunch."
+    extr: "Bazen öğle yemeğinden sonra kısa bir uyku çekerim."
+    d: 2
+    col: ["take a nap", "power nap"]
+    tone: ["Günlük", "Samimi"]
+    dis:
+      - "nab | Yakalamak demektir."
+      - "map | Harita demektir."
+      - "nape | Ense demektir."
+  - id: look-forward-to
+    w: look forward to
+    pos: phrasal
+    tr: "dört gözle beklemek"
+    ex: "I'm [[looking forward to]] the holiday."
+    extr: "Tatili dört gözle bekliyorum."
+    d: 2
+    col: ["look forward to seeing you"]
+    tone: ["Nazik", "E-posta"]
+    dis:
+      - "looking forward for | Edat yanlış: to."
+      - "looking after to | “look after” bakmak, ilgilenmek demektir."
+      - "looking toward to | Kalıp “looking forward to” biçimindedir."
+
+patterns:
+  - id: going-to-weekend
+    t: "I'm going to … this weekend."
+    ex: "I'm [[going to]] visit my parents this weekend."
+    extr: "Bu hafta sonu ailemi ziyaret edeceğim."
+    ttr: "Bu hafta sonu şunu yapacağım: …."
+    slots: ["visit my parents | ailemi ziyaret etmek", "clean the house | evi temizlemek", "watch a movie | film izlemek"]
+    chunks: ["I'm going to | -eceğim (plan)", "visit my parents | eylem", "this weekend | bu hafta sonu"]
+    g: going-to-plans
+    ctx: ["Sohbet", "Plan yapma"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "going | Fiile bağlamak için “to” gerekir."
+      - "go to | “I'm” sonrası -ing gerekir."
+      - "gone to | “Gitti” anlamına gelir."
+    alt: ["I am going to visit my parents this weekend."]
+  - id: how-about
+    t: "How about …?"
+    ex: "How [[about]] going to the cinema tonight?"
+    extr: "Bu akşam sinemaya gitmeye ne dersin?"
+    ttr: "Şuna ne dersin: …?"
+    slots: ["going to the cinema tonight | bu akşam sinemaya gitmek", "meeting at six | altıda buluşmak", "a picnic on Sunday | pazar günü piknik"]
+    chunks: ["How about | ne dersin", "going to the cinema | öneri (-ing veya isim)"]
+    g: modal-suggestions-should
+    ctx: ["Plan yapma", "Davet"]
+    tone: ["Samimi"]
+    d: 1
+    dis:
+      - "for | Kalıp “How about” biçimindedir."
+      - "with | Kalıp “How about” biçimindedir."
+      - "of | Kalıp “How about” biçimindedir."
+  - id: are-you-free
+    t: "Are you free on …?"
+    ex: "Are you free [[on]] Friday evening?"
+    extr: "Cuma akşamı müsait misin?"
+    ttr: "… müsait misin?"
+    slots: ["Friday evening | cuma akşamı", "the 15th | ayın 15'inde", "Sunday morning | pazar sabahı"]
+    chunks: ["Are you free | müsait misin", "on Friday evening | zaman"]
+    g: to-be
+    ctx: ["Plan yapma", "Davet"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "in | Gün ve tarihlerden önce “on” gelir."
+      - "at | Saatlerden önce “at” gelir."
+      - "by | “by” bir zamana kadar demektir."
+  - id: always-before
+    t: "I always … before …"
+    ex: "I always check my email [[before]] work."
+    extr: "İşten önce her zaman e-postalarımı kontrol ederim."
+    ttr: "İşten önce her zaman şunu yaparım: …."
+    slots: ["check my email | e-postalarımı kontrol etmek", "have a coffee | kahve içmek", "go for a run | koşuya çıkmak"]
+    chunks: ["I always | her zaman", "check my email | eylem", "before work | işten önce"]
+    g: frequency-adverbs
+    ctx: ["Sohbet", "Rutin"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "ago | Geçmiş zaman ifadesidir; isimden önce gelmez."
+      - "since | Present perfect ile kullanılır."
+      - "beforehand | Zarftır; ardından isim gelmez."
+  - id: have-to
+    t: "I have to … today."
+    ex: "I [[have to]] finish this report today."
+    extr: "Bu raporu bugün bitirmem gerekiyor."
+    ttr: "Bugün şunu yapmam gerekiyor: …."
+    slots: ["finish this report | bu raporu bitirmek", "pick up my kids at four | dörtte çocuklarımı almak", "pay the bills | faturaları ödemek"]
+    chunks: ["I have to | -mem gerekiyor", "finish this report | yapılacak iş", "today | bugün"]
+    g: can-have-to
+    ctx: ["Sohbet", "Mazeret"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "has to | “I” ile “have to” kullanılır."
+      - "have | Zorunluluk için “to” gerekir."
+      - "must to | “must” sonrası “to” gelmez."
+  - id: meeting-tomorrow
+    t: "I'm meeting … tomorrow."
+    ex: "I'm [[meeting]] Ayşe for lunch tomorrow."
+    extr: "Yarın öğle yemeğinde Ayşe'yle buluşacağım."
+    ttr: "Yarın … buluşacağım."
+    slots: ["Ayşe for lunch | öğle yemeğinde Ayşe'yle", "my brother at the station | istasyonda kardeşimle", "a client at ten | saat onda bir müşteriyle"]
+    chunks: ["I'm meeting | buluşacağım (ayarlanmış plan)", "Ayşe for lunch | kim ve ne için", "tomorrow | yarın"]
+    g: present-continuous
+    ctx: ["Plan yapma"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "meet | “I'm” sonrası -ing gerekir."
+      - "met | Geçmiş hâl “I'm” ve “tomorrow” ile kullanılmaz."
+      - "meat | “meat” et demektir."
+  - id: lets-meet
+    t: "Let's meet at …"
+    ex: "Let's [[meet]] at the café near the station."
+    extr: "İstasyonun yakınındaki kafede buluşalım."
+    ttr: "Şurada buluşalım: …."
+    slots: ["the café near the station | istasyonun yakınındaki kafe", "the main entrance | ana giriş", "my place | benim ev"]
+    chunks: ["Let's | -elim", "meet | buluş-", "at the café | yer"]
+    g: present-simple
+    ctx: ["Plan yapma"]
+    tone: ["Samimi"]
+    d: 1
+    dis:
+      - "meeting | “Let's” sonrası fiil yalın olur."
+      - "to meet | “Let's” sonrası “to” gelmez."
+      - "met | “Let's” sonrası geçmiş hâl gelmez."
+  - id: it-takes
+    t: "It takes … to get to …"
+    ex: "It [[takes]] about 40 minutes to get to work."
+    extr: "İşe gitmek yaklaşık 40 dakika sürüyor."
+    ttr: "İşe gitmek şu kadar sürüyor: …."
+    slots: ["about 40 minutes | yaklaşık 40 dakika", "an hour by bus | otobüsle bir saat", "ten minutes on foot | yürüyerek on dakika"]
+    chunks: ["It takes | sürüyor", "about 40 minutes | süre", "to get to work | işe gitmek"]
+    g: present-simple
+    ctx: ["Sohbet", "Rutin"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "lasts | Yolculuk süresi için “It takes … to” kalıbı kullanılır."
+      - "spends | “spend” kişinin zaman harcamasıdır; özne “it” olamaz."
+      - "take | Tekil özne “it” ile -s gerekir."
+  - id: cant-make-it
+    t: "Sorry, I can't make it …"
+    ex: "Sorry, I can't [[make it]] tonight."
+    extr: "Kusura bakma, bu akşam gelemiyorum."
+    ttr: "Kusura bakma, şu zaman gelemiyorum: …."
+    slots: ["tonight | bu akşam", "on Thursday | perşembe", "this weekend | bu hafta sonu"]
+    chunks: ["Sorry | kusura bakma", "I can't make it | gelemiyorum, yetişemiyorum", "tonight | zaman"]
+    g: can-have-to
+    ctx: ["Davet", "Mazeret"]
+    tone: ["Nazik"]
+    d: 2
+    dis:
+      - "make up | “Telafi etmek” veya “barışmak” demektir."
+      - "makes it | “can't” sonrası fiil yalın olur."
+      - "make them | Anlamsız bir yapıdır."
+  - id: what-time-start
+    t: "What time does … start?"
+    ex: "What time [[does]] the movie start?"
+    extr: "Film saat kaçta başlıyor?"
+    ttr: "… saat kaçta başlıyor?"
+    slots: ["the movie | film", "your shift | vardiyan", "the class | ders"]
+    chunks: ["What time | saat kaçta", "does the movie start | film başlıyor"]
+    g: present-simple
+    ctx: ["Plan yapma"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "do | Tekil özne (the movie) ile “does” gerekir."
+      - "is | Fiil cümlesinde soru “does” ile kurulur."
+      - "doing | Soru yardımcı fiili gerekir."
+
+grammar:
+  - id: going-to-plans
+    title: "be going to ve will ile gelecek"
+    short: "Önceden karar verilmiş planlar için am/is/are going to + yalın fiil: I'm going to visit my parents. Konuşma anında verilen kararlar ve sözler için will: I'll call you later."
+    long: "Ayarlanmış buluşmalar için present continuous da kullanılır: I'm meeting Ayşe tomorrow. Olumsuz: I'm not going to … / I won't … Konuşmada going to çoğu zaman “gonna” diye söylenir ama resmî yazıda kullanılmaz. will kısaltmaları: I'll, you'll, we'll."
+    ex: ["I'm going to clean the house on Saturday. | Cumartesi evi temizleyeceğim.", "I'll send you the address. | Sana adresi göndereceğim.", "We're meeting at six. | Altıda buluşuyoruz."]
+  - id: frequency-adverbs
+    title: "Sıklık zarfları"
+    short: "always, usually, often, sometimes, rarely, never ne sıklıkla yaptığını anlatır ve genelde ana fiilden önce gelir: I usually walk to work."
+    long: "be fiilinden sonra gelir: I'm always tired on Mondays. Sıklık sorusu: How often do you …? Cevaplar: once a week, twice a month, every day (genelde cümle sonunda). never zaten olumsuzdur; “don't never” denmez."
+    ex: ["I usually have breakfast at eight. | Genellikle sekizde kahvaltı yaparım.", "She is never late. | O asla geç kalmaz.", "How often do you go to the gym? | Spor salonuna ne sıklıkla gidersin?"]
+
+scenarios:
+  - id: weekend-plans
+    title: "Hafta sonu planı"
+    sit: "Bir arkadaşın seni cumartesi müzedeki yeni sergiye çağırıyor."
+    d: 1
+    targets: [free, sounds-good, how-about]
+    turns:
+      - ["Zeynep", "Are you free on Saturday? There's a new exhibition at the museum.", "Cumartesi müsait misin? Müzede yeni bir sergi var."]
+      - choose:
+          - ["Yes, I'm free in the afternoon. How about meeting at two?", true, "Müsaitliğini söyleyip somut bir saat öneriyor."]
+          - ["Yes, I'm fee in the afternoon.", false, "“fee” ücret demektir."]
+          - ["Yes, I'm going to free on Saturday.", false, "“going to” sonrası fiil gerekir; doğrusu “I'm free”."]
+      - ["Zeynep", "Two o'clock works for me. Let's meet at the main entrance.", "Saat iki bana uyar. Ana girişte buluşalım."]
+      - choose:
+          - ["Sounds good! See you on Saturday.", true, "Kabul ediyor ve doğal biçimde vedalaşıyor."]
+          - ["Sounds goods! See you on Saturday.", false, "“goods” mal, eşya demektir."]
+          - ["Sound good, see you yesterday.", false, "“Sounds” gerekir; “yesterday” ise anlamsız."]
+  - id: cancel-dinner
+    title: "Yemeği erteleme"
+    sit: "Bu akşamki yemeğe gidemeyeceksin. Arkadaşına nazikçe haber veriyorsun."
+    d: 2
+    targets: [afraid-cant, postpone, have-to]
+    turns:
+      - ["Kerem", "We're still meeting for dinner tonight, right?", "Bu akşam yemekte buluşuyoruz, değil mi?"]
+      - choose:
+          - ["I'm afraid I can't. I have to work late. Can we postpone it until Friday?", true, "Nazikçe reddediyor, nedenini söylüyor ve yeni bir zaman öneriyor."]
+          - ["I'm afraid I can. I have to work late.", false, "Olumlu cevap ardından gelen mazeretle çelişiyor."]
+          - ["I'm afraid of I can't, I postpone Friday.", false, "“of” fazla ve cümle bozuk."]
+      - ["Kerem", "No problem. Friday works for me.", "Sorun değil. Cuma bana uyar."]
+      - choose:
+          - ["Great, thanks for understanding!", true, "Anlayış gösterdiği için teşekkür ediyor."]
+          - ["Great, thanks for understand!", false, "“for” sonrası -ing gerekir: understanding."]
+          - ["Great, I cancel Friday too.", false, "Az önce önerdiği günü iptal ediyor; anlamsız."]
+
+readings:
+  - id: typical-week
+    title: "My typical week"
+    kind: "Kişisel blog"
+    d: 2
+    s:
+      - ["On weekdays, I usually get up at 6:30 and commute to work by ferry.", "Hafta içi genellikle 6.30'da kalkarım ve işe vapurla gidip gelirim."]
+      - ["The ferry takes about 25 minutes, so I read a book on the way.", "Vapur yaklaşık 25 dakika sürüyor, bu yüzden yolda kitap okurum."]
+      - ["I always avoid the roads during rush hour.", "Yoğun saatlerde yollardan hep uzak dururum."]
+      - ["On Saturdays, I do the laundry and the grocery shopping.", "Cumartesileri çamaşır yıkar ve market alışverişi yaparım."]
+      - ["Sundays are for my family, and sometimes I take a nap after lunch.", "Pazarlar ailem içindir ve bazen öğle yemeğinden sonra kısa bir uyku çekerim."]
+    gloss: ["commute | işe gidip gelmek", "rush hour | yoğun saat", "laundry | çamaşır", "take a nap | kısa uyku çekmek"]
+    q:
+      - q: "Yazar işe nasıl gidip geliyor?"
+        o: ["Metroyla", "Vapurla", "Arabayla"]
+        a: 1
+        why: "“commute to work by ferry”"
+      - q: "Yazar cumartesileri ne yapar?"
+        o: ["Ailesini ziyaret eder", "Çamaşır yıkar ve market alışverişi yapar", "İşe gider"]
+        a: 1
+        why: "“On Saturdays, I do the laundry and the grocery shopping.”"
+      - q: "Yazar yolculuk sırasında ne yapar?"
+        o: ["Kitap okur", "Uyur", "E-posta yazar"]
+        a: 0
+        why: "“I read a book on the way.”"
+  - id: weekend-chat
+    title: "Weekend plans"
+    kind: "Mesajlaşma"
+    d: 1
+    s:
+      - ["Ayşe: Hi! Do you have any plans for the weekend?", "Ayşe: Selam! Hafta sonu için bir planın var mı?"]
+      - ["Ali: I'm going to visit my grandparents on Saturday, but I'm free on Sunday.", "Ali: Cumartesi büyükannemlere gideceğim ama pazar boşum."]
+      - ["Ayşe: Great! How about a picnic in the park on Sunday?", "Ayşe: Harika! Pazar günü parkta pikniğe ne dersin?"]
+      - ["Ali: Sounds good. Let me check the weather and get back to you.", "Ali: Olur. Havaya bir bakıp sana döneyim."]
+    gloss: ["plans | planlar", "free | boş, müsait", "How about … ? | … ne dersin?", "get back to you | sana dönmek"]
+    q:
+      - q: "Ali cumartesi ne yapacak?"
+        o: ["Pikniğe gidecek", "Büyükannesine ve büyükbabasına gidecek", "Evde dinlenecek"]
+        a: 1
+        why: "“I'm going to visit my grandparents on Saturday.”"
+      - q: "Ali piknik için ne zaman kesin cevap verecek?"
+        o: ["Hemen", "Havaya baktıktan sonra", "Pazartesi"]
+        a: 1
+        why: "“Let me check the weather and get back to you.”"
+
+writing:
+  id: invite-friend
+  p: "Bir arkadaşına 3–4 cümlelik bir mesaj yaz: hafta sonu planını anlat ve onu bir etkinliğe davet et."
+  rubric: ["Planını “I'm going to …” ile anlatıyor", "Daveti “How about …?” veya “Are you free …?” ile yapıyor", "Somut bir gün, saat veya yer veriyor"]
+  samples: ["Hi Ece! I'm going to clean the house on Saturday morning, but I'm free in the afternoon. How about going to the new café in Moda at three? Let me know if you're free!"]
+  d: 2
+
+situations:
+  - { parent: "Plan yapma", name: "Davet etmek", items: [how-about, are-you-free, lets-meet] }
+  - { parent: "Plan yapma", name: "Kabul etmek", items: [sounds-good, check-calendar] }
+  - { parent: "Plan yapma", name: "Reddetmek veya ertelemek", items: [afraid-cant, cant-make-it, postpone] }
+  - { parent: "Günlük düzen", name: "Rutini anlatmak", items: [usually, always-before, it-takes] }

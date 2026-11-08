@@ -1,0 +1,531 @@
+id: engineering-specs
+domain: engineering
+title: "Teknik özellikler ve ölçümler"
+desc: "Boyut, ağırlık, malzeme, kapasite ve çalışma aralıklarını anlatma; karşılaştırma."
+sort: 1
+
+targets:
+  - id: dimensions
+    w: dimension
+    pos: n
+    tr: "boyut, ölçü"
+    ex: "Please check the [[dimensions]] of the part before ordering."
+    extr: "Sipariş vermeden önce lütfen parçanın ölçülerini kontrol et."
+    d: 2
+    col: ["overall dimensions", "outer dimensions"]
+    tone: ["Teknik"]
+    dis:
+      - "dimmers | Işık kısıcılar demektir."
+      - "dementia | Bunama demektir."
+      - "diamonds | Elmaslar demektir."
+  - id: tolerance
+    w: tolerance
+    pos: n
+    tr: "tolerans (izin verilen sapma)"
+    ex: "The [[tolerance]] for this shaft is ±0.05 mm."
+    extr: "Bu milin toleransı ±0,05 mm."
+    d: 3
+    col: ["within tolerance", "tight tolerance"]
+    other: "Günlük dilde “hoşgörü” anlamına gelir."
+    tone: ["Teknik", "Kalite"]
+    dis:
+      - "tolerant | Sıfattır; burada isim gerekir."
+      - "temperance | Ölçülülük demektir."
+      - "toleration | “Hoşgörü” demektir; teknik anlamda kullanılmaz."
+  - id: weight
+    w: weight
+    pos: n
+    tr: "ağırlık"
+    ex: "The total [[weight]] of the unit is 12 kg."
+    extr: "Ünitenin toplam ağırlığı 12 kg."
+    d: 1
+    fam: ["weigh (f.) tartmak, … ağırlığında olmak"]
+    tone: ["Teknik"]
+    dis:
+      - "wait | Beklemek demektir."
+      - "width | Genişlik demektir; kg ile ölçülmez."
+      - "height | Yükseklik demektir; kg ile ölçülmez."
+  - id: capacity
+    w: capacity
+    pos: n
+    tr: "kapasite, hacim"
+    ex: "The tank has a [[capacity]] of 500 liters."
+    extr: "Deponun kapasitesi 500 litre."
+    d: 1
+    col: ["full capacity", "storage capacity"]
+    tone: ["Teknik"]
+    dis:
+      - "capability | Yetenek demektir."
+      - "captivity | Esaret demektir."
+      - "capital | Sermaye veya başkent demektir."
+  - id: accurate
+    w: accurate
+    pos: adj
+    tr: "doğru, hassas (ölçümde)"
+    ex: "This sensor is more [[accurate]] than the old one."
+    extr: "Bu sensör eskisinden daha hassas."
+    d: 2
+    fam: ["accuracy (i.) doğruluk, hassasiyet"]
+    conf: ["precise | Ölçümlerin birbirine yakınlığıdır; accurate gerçek değere yakınlıktır."]
+    tone: ["Teknik"]
+    dis:
+      - "accused | Suçlanan demektir."
+      - "accrued | Tahakkuk etmiş demektir."
+      - "accustomed | Alışkın demektir; “to” ister."
+  - id: measure
+    w: measure
+    pos: v
+    tr: "ölçmek"
+    ex: "We [[measure]] the temperature every ten minutes."
+    extr: "Sıcaklığı her on dakikada bir ölçüyoruz."
+    d: 1
+    fam: ["measurement (i.) ölçüm"]
+    tone: ["Teknik"]
+    dis:
+      - "measurement | İsimdir; fiil gerekir."
+      - "pleasure | Zevk demektir."
+      - "treasure | Hazine demektir."
+  - id: diameter
+    w: diameter
+    pos: n
+    tr: "çap"
+    ex: "The pipe has an inner [[diameter]] of 25 mm."
+    extr: "Borunun iç çapı 25 mm."
+    d: 2
+    col: ["inner diameter", "outer diameter"]
+    fam: ["radius (i.) yarıçap"]
+    tone: ["Teknik"]
+    dis:
+      - "diagram | Şema demektir."
+      - "dilemma | İkilem demektir."
+      - "parameter | Parametre demektir; “inner parameter of 25 mm” anlamsızdır."
+  - id: material
+    w: material
+    pos: n
+    tr: "malzeme"
+    ex: "Aluminum is a light but strong [[material]]."
+    extr: "Alüminyum hafif ama dayanıklı bir malzemedir."
+    d: 1
+    tone: ["Teknik"]
+    dis:
+      - "maternal | Annelikle ilgili demektir."
+      - "memorial | Anıt demektir."
+      - "managerial | Yönetimsel demektir."
+  - id: specification
+    w: specification
+    pos: n
+    tr: "teknik şartname, özellik"
+    ex: "The motor meets the customer's [[specifications]]."
+    extr: "Motor, müşterinin teknik şartlarını karşılıyor."
+    d: 2
+    col: ["meet the specifications", "technical specification"]
+    syn: ["spec (kısa)"]
+    tone: ["Teknik", "Resmî"]
+    dis:
+      - "speculations | Spekülasyonlar demektir."
+      - "spectators | Seyirciler demektir."
+      - "specialities | Uzmanlıklar demektir."
+  - id: rated
+    w: rated
+    pos: adj
+    tr: "anma (nominal) değerinde"
+    ex: "The motor is [[rated]] at 2.2 kW."
+    extr: "Motorun anma gücü 2,2 kW."
+    d: 3
+    col: ["rated power", "rated voltage", "rated at"]
+    tone: ["Teknik"]
+    dis:
+      - "rotated | Döndürülmüş demektir."
+      - "related | İlgili demektir."
+      - "routed | Yönlendirilmiş demektir."
+  - id: approximately
+    w: approximately
+    pos: adv
+    tr: "yaklaşık olarak"
+    ex: "The test takes [[approximately]] three hours."
+    extr: "Test yaklaşık üç saat sürüyor."
+    d: 2
+    syn: ["about", "roughly"]
+    tone: ["Teknik", "Resmî"]
+    dis:
+      - "appropriately | Uygun şekilde demektir."
+      - "approvingly | Onaylarcasına demektir."
+      - "proximity | Yakınlık demektir; isimdir."
+  - id: range
+    w: range
+    pos: n
+    tr: "aralık"
+    ex: "The operating temperature [[range]] is −20 to 60 °C."
+    extr: "Çalışma sıcaklığı aralığı −20 ile 60 °C arası."
+    d: 2
+    col: ["operating range", "within the range"]
+    other: "“Ürün yelpazesi” veya “menzil” anlamına da gelir."
+    tone: ["Teknik"]
+    dis:
+      - "rage | Öfke demektir."
+      - "ranch | Çiftlik demektir."
+      - "rank | Rütbe demektir."
+  - id: durable
+    w: durable
+    pos: adj
+    tr: "dayanıklı (uzun ömürlü)"
+    ex: "This coating is very [[durable]] in wet conditions."
+    extr: "Bu kaplama ıslak koşullarda çok dayanıklı."
+    d: 2
+    fam: ["durability (i.) dayanıklılık"]
+    tone: ["Teknik"]
+    dis:
+      - "duration | Süre demektir; isimdir."
+      - "during | Edattır."
+      - "dutiable | Gümrük vergisine tabi demektir."
+  - id: lightweight
+    w: lightweight
+    pos: adj
+    tr: "hafif"
+    ex: "We need a [[lightweight]] frame for the drone."
+    extr: "Drone için hafif bir gövdeye ihtiyacımız var."
+    d: 1
+    ant: ["heavy"]
+    tone: ["Teknik"]
+    dis:
+      - "lighthouse | Deniz feneri demektir."
+      - "lightning | Şimşek demektir."
+      - "lighthearted | Neşeli demektir."
+  - id: per
+    w: per
+    pos: prep
+    tr: "başına, her … için"
+    ex: "The pump moves 30 liters [[per]] minute."
+    extr: "Pompa dakikada 30 litre aktarıyor."
+    d: 1
+    col: ["per minute", "per unit", "per hour"]
+    tone: ["Teknik"]
+    dis:
+      - "pre | Bir önektir; tek başına kullanılmaz."
+      - "pear | Armut demektir."
+      - "pier | İskele demektir."
+  - id: thickness
+    w: thickness
+    pos: n
+    tr: "kalınlık"
+    ex: "The wall [[thickness]] is 3 mm."
+    extr: "Et kalınlığı 3 mm."
+    d: 2
+    fam: ["thick (s.) kalın"]
+    tone: ["Teknik"]
+    dis:
+      - "thickening | Koyulaşma demektir."
+      - "thinness | İncelik demektir; burada ölçü adı olarak kullanılmaz."
+      - "sickness | Hastalık demektir."
+  - id: output
+    w: output
+    pos: n
+    tr: "çıkış (gücü), çıktı"
+    ex: "The maximum power [[output]] is 5 kW."
+    extr: "Azami çıkış gücü 5 kW."
+    d: 2
+    ant: ["input"]
+    tone: ["Teknik"]
+    dis:
+      - "outage | Kesinti demektir."
+      - "outfit | Kıyafet demektir."
+      - "outing | Gezi demektir."
+  - id: voltage
+    w: voltage
+    pos: n
+    tr: "gerilim (voltaj)"
+    ex: "Check the [[voltage]] before you connect the device."
+    extr: "Cihazı bağlamadan önce gerilimi kontrol et."
+    d: 1
+    col: ["high voltage", "supply voltage"]
+    tone: ["Teknik", "Güvenlik"]
+    dis:
+      - "vintage | Eski ve değerli demektir."
+      - "voyage | Deniz yolculuğu demektir."
+      - "village | Köy demektir."
+  - id: stress
+    w: stress
+    pos: n
+    tr: "gerilme (mekanik)"
+    ex: "The beam fails when the [[stress]] exceeds 250 MPa."
+    extr: "Gerilme 250 MPa'yı aşınca kiriş hasar görüyor."
+    d: 3
+    col: ["tensile stress", "stress analysis"]
+    conf: ["strain | Birim şekil değiştirmedir; birimsizdir, MPa ile ölçülmez."]
+    other: "Günlük dilde “stres” anlamına gelir; bu pakette mühendislik anlamı çalışılır."
+    tone: ["Teknik"]
+    dis:
+      - "strain | Birim şekil değiştirmedir; MPa ile ölçülmez."
+      - "string | İp veya dize demektir."
+      - "street | Sokak demektir."
+  - id: compliant
+    w: compliant
+    pos: adj
+    tr: "(standarda) uygun"
+    ex: "The design is fully [[compliant]] with the safety standard."
+    extr: "Tasarım güvenlik standardına tamamen uygun."
+    d: 3
+    col: ["compliant with", "CE compliant"]
+    fam: ["compliance (i.) uygunluk", "comply (f.) uymak"]
+    tone: ["Teknik", "Resmî"]
+    dis:
+      - "complaint | Şikâyet demektir; isimdir."
+      - "complacent | Rehavet içinde demektir."
+      - "compliment | İltifat demektir."
+
+patterns:
+  - id: x-er-than
+    t: "… is …-er than …"
+    ex: "The new pump is [[quieter than]] the old one."
+    extr: "Yeni pompa eskisinden daha sessiz."
+    ttr: "Yeni pompa eskisinden daha …."
+    slots: ["quieter | sessiz", "lighter | hafif", "more efficient | verimli"]
+    chunks: ["The new pump | yeni pompa", "is quieter than | -den daha sessiz", "the old one | eskisi"]
+    g: comparatives
+    ctx: ["Teknik toplantı", "Rapor"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "more quiet as | Karşılaştırmada “than” kullanılır."
+      - "quietest than | En üstünlük biçimi “than” ile kullanılmaz."
+      - "quieter that | “that” yerine “than” gerekir."
+  - id: measures-by
+    t: "It measures … by …"
+    ex: "The panel [[measures]] 60 by 120 cm."
+    extr: "Panel 60'a 120 cm boyutunda."
+    ttr: "Panelin ölçüsü: …."
+    slots: ["60 by 120 cm | 60'a 120 cm", "1.2 by 2.4 m | 1,2'ye 2,4 m", "30 by 40 mm | 30'a 40 mm"]
+    chunks: ["The panel | panel", "measures | … ölçüsünde", "60 by 120 cm | en × boy"]
+    g: measurements-numbers
+    ctx: ["Teknik özellik"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "measure | Tekil özne -s ister."
+      - "measuring | Çekimli fiil gerekir."
+      - "is measure | “is” ile yalın fiil birlikte kullanılmaz."
+  - id: made-of
+    t: "It's made of …"
+    ex: "The housing is [[made of]] stainless steel."
+    extr: "Gövde paslanmaz çelikten yapılmış."
+    ttr: "Gövde şundan yapılmış: …."
+    slots: ["stainless steel | paslanmaz çelik", "aluminum | alüminyum", "recycled plastic | geri dönüştürülmüş plastik"]
+    chunks: ["The housing | gövde", "is made of | -den yapılmış", "stainless steel | malzeme"]
+    g: passive-voice-basics
+    ctx: ["Teknik özellik"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "made by | “by” yapan kişiyi veya firmayı bildirir."
+      - "make of | Edilgen yapı gerekir: made."
+      - "made at | Malzeme için “of” kullanılır."
+    alt: ["The housing is made from stainless steel."]
+  - id: operates-at
+    t: "It operates at …"
+    ex: "The system [[operates at]] 24 volts."
+    extr: "Sistem 24 voltta çalışır."
+    ttr: "Sistem şu değerde çalışır: …."
+    slots: ["24 volts | 24 volt", "a pressure of 6 bar | 6 bar basınç", "50 hertz | 50 hertz"]
+    chunks: ["The system | sistem", "operates at | … değerinde çalışır", "24 volts | değer"]
+    g: present-simple
+    ctx: ["Teknik özellik"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "operates in | Değer bildirirken “at” kullanılır."
+      - "operate at | Tekil özne -s ister."
+      - "operating at | Çekimli fiil gerekir."
+  - id: up-to
+    t: "It can … up to …"
+    ex: "The crane can lift [[up to]] two tons."
+    extr: "Vinç iki tona kadar kaldırabilir."
+    ttr: "Vinç şuna kadar kaldırabilir: …."
+    slots: ["two tons | iki ton", "500 kg | 500 kg", "1,000 kg | 1.000 kg"]
+    chunks: ["The crane can lift | vinç kaldırabilir", "up to | -e kadar", "two tons | üst sınır"]
+    g: measurements-numbers
+    ctx: ["Teknik özellik"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "until | Zaman için kullanılır."
+      - "upon | “Üzerine” demektir."
+      - "up from | “-den itibaren” demektir; anlam bozulur."
+  - id: difference-is
+    t: "The difference between … is …"
+    ex: "The [[difference]] between the two readings is 0.3 mm."
+    extr: "İki ölçüm arasındaki fark 0,3 mm."
+    ttr: "İki ölçüm arasındaki fark: …."
+    slots: ["0.3 mm | 0,3 mm", "about 5% | yaklaşık %5", "less than one degree | bir dereceden az"]
+    chunks: ["The difference | fark", "between the two readings | iki ölçüm arasındaki", "is 0.3 mm | değer"]
+    g: measurements-numbers
+    ctx: ["Rapor", "Teknik toplantı"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "different | Sıfattır; burada isim gerekir."
+      - "differ | Fiildir; burada isim gerekir."
+      - "deference | Saygı demektir."
+  - id: within
+    t: "The result is within …"
+    ex: "The result is [[within]] the allowed range."
+    extr: "Sonuç izin verilen aralığın içinde."
+    ttr: "Sonuç şunun içinde: …."
+    slots: ["the allowed range | izin verilen aralık", "tolerance | tolerans", "the limits | sınırlar"]
+    chunks: ["The result | sonuç", "is within | içinde", "the allowed range | sınır"]
+    g: present-simple
+    ctx: ["Kalite", "Rapor"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "without | “Olmadan” demektir."
+      - "with | “İle” demektir."
+      - "within of | “of” fazladır."
+  - id: should-not-exceed
+    t: "… should not exceed …"
+    ex: "The temperature should not [[exceed]] 80 °C."
+    extr: "Sıcaklık 80 °C'yi aşmamalı."
+    ttr: "Sıcaklık şunu aşmamalı: …."
+    slots: ["80 °C | 80 °C", "the rated value | anma değeri", "the safety limit | güvenlik sınırı"]
+    chunks: ["The temperature | sıcaklık", "should not exceed | aşmamalı", "80 °C | sınır"]
+    g: modal-suggestions-should
+    ctx: ["Güvenlik", "Kılavuz"]
+    tone: ["Uyarı"]
+    d: 2
+    dis:
+      - "excess | İsimdir; burada fiil gerekir."
+      - "exceeds | “should not” sonrası fiil yalın olur."
+      - "accede | Kabul etmek demektir."
+  - id: compared-to
+    t: "Compared to …, …"
+    ex: "[[Compared to]] steel, aluminum is much lighter."
+    extr: "Çelikle karşılaştırıldığında alüminyum çok daha hafif."
+    ttr: "Alüminyum şununla karşılaştırıldığında çok daha hafif: …."
+    slots: ["steel | çelik", "copper | bakır", "cast iron | dökme demir"]
+    chunks: ["Compared to steel | çelikle karşılaştırıldığında", "aluminum is much lighter | alüminyum çok daha hafif"]
+    g: comparatives
+    ctx: ["Teknik toplantı", "Rapor"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "Compare to | “Compared” biçimi gerekir."
+      - "Compared than | “than” karşılaştırma sıfatıyla kullanılır."
+      - "Compared at | Edat yanlış."
+    alt: ["Compared with steel, aluminum is much lighter."]
+  - id: according-to
+    t: "According to …, …"
+    ex: "[[According to]] the datasheet, the maximum load is 5 kN."
+    extr: "Veri sayfasına göre azami yük 5 kN."
+    ttr: "Şuna göre azami yük 5 kN: …."
+    slots: ["the datasheet | veri sayfası", "the manual | kullanım kılavuzu", "the standard | standart"]
+    chunks: ["According to the datasheet | veri sayfasına göre", "the maximum load is 5 kN | bilgi"]
+    g: present-simple
+    ctx: ["Rapor", "Teknik toplantı"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "Accordingly to | “Accordingly” “buna göre” anlamında bir zarftır."
+      - "According with | Edat yanlış."
+      - "Regarding to | “Regarding” “to” almaz."
+
+grammar:
+  - id: comparatives
+    title: "Karşılaştırma (comparatives)"
+    short: "Kısa sıfatlar -er ve than alır: lighter than. Uzun sıfatlarda more kullanılır: more efficient than."
+    long: "Düzensiz biçimler: good → better, bad → worse. Farkın büyüklüğü: much / far / slightly + -er: much lighter, slightly heavier. Eşitlik: as … as: as strong as steel. Kat: twice as heavy as. En üstünlük: the lightest, the most efficient. “more heavier” gibi çift karşılaştırma yanlıştır."
+    ex: ["The new motor is more efficient than the old one. | Yeni motor eskisinden daha verimli.", "Aluminum is much lighter than steel. | Alüminyum çelikten çok daha hafif.", "This part is twice as heavy as that one. | Bu parça ötekinin iki katı ağır."]
+  - id: measurements-numbers
+    title: "Ölçü ve sayıları söyleme"
+    short: "Boyut: 60 by 120 cm (altmışa yüz yirmi). Ondalık ayırıcı noktadır ve “point” diye okunur: 0.05 = zero point zero five."
+    long: "Binlik ayırıcı virgüldür: 1,000. ± “plus or minus” diye okunur. Birim çoğulu: 2 kilograms; sıfat olarak tekil: a 2-kilogram part. Oranlar “per” ile: 30 liters per minute. Aralık: from −20 to 60 degrees Celsius. up to = -e kadar (üst sınır)."
+    ex: ["The plate measures 200 by 300 mm. | Plaka 200'e 300 mm boyutunda.", "The tolerance is plus or minus 0.05 mm. | Tolerans artı eksi 0,05 mm.", "The pump can deliver up to 40 liters per minute. | Pompa dakikada 40 litreye kadar basabilir."]
+
+scenarios:
+  - id: supplier-call
+    title: "Tedarikçiyle teknik görüşme"
+    sit: "Bir tedarikçiyle yeni bir pompanın teknik özelliklerini konuşuyorsun."
+    d: 2
+    targets: [per, capacity, specification]
+    turns:
+      - ["Supplier", "This model can pump up to 40 liters per minute.", "Bu model dakikada 40 litreye kadar pompalayabilir."]
+      - choose:
+          - ["That's good. What's the total weight of the unit?", true, "Doğru ve ilgili bir soru soruyor."]
+          - ["That's good. What's the total wait of the unit?", false, "“wait” beklemek demektir."]
+          - ["That's good. How much weights the unit?", false, "Soru yapısı bozuk; doğrusu “How much does it weigh?”"]
+      - ["Supplier", "It weighs about 18 kg, and the tank capacity is 50 liters.", "Yaklaşık 18 kg ağırlığında ve depo kapasitesi 50 litre."]
+      - choose:
+          - ["Great. Could you send me the datasheet with all the specifications?", true, "Kibar ve somut bir istek."]
+          - ["Great. Could you send me the datasheet with all the speculations?", false, "“speculations” spekülasyon demektir."]
+          - ["Great. Could you sent me the datasheet?", false, "“could” sonrası fiil yalın olur: send."]
+  - id: material-choice
+    title: "Malzeme seçimi"
+    sit: "Ekip toplantısında bir drone gövdesi için malzeme seçiyorsunuz."
+    d: 2
+    targets: [lightweight, durable, compared-to]
+    turns:
+      - ["Engineer", "Should we use steel or aluminum for the frame?", "Gövde için çelik mi alüminyum mu kullanalım?"]
+      - choose:
+          - ["Aluminum. Compared to steel, it's much lighter, and we need a lightweight frame.", true, "Seçimi doğru bir gerekçeyle yapıyor."]
+          - ["Aluminum, because it is more heavier than steel.", false, "“more heavier” yanlış; ayrıca alüminyum çelikten hafiftir."]
+          - ["Steel, because it's lighter than aluminum.", false, "Teknik olarak yanlış: çelik alüminyumdan ağırdır."]
+      - ["Engineer", "But is it durable enough in wet conditions?", "Peki ıslak koşullarda yeterince dayanıklı mı?"]
+      - choose:
+          - ["Yes, if we add a protective coating.", true, "Koşulu belirterek yanıt veriyor."]
+          - ["Yes, it is enough durable.", false, "Kelime sırası yanlış: durable enough."]
+          - ["Yes, it's during in wet conditions.", false, "“during” bir edattır."]
+
+readings:
+  - id: pump-datasheet
+    title: "Datasheet: centrifugal pump CP-40"
+    kind: "Veri sayfası"
+    d: 2
+    s:
+      - ["Rated power: 2.2 kW.", "Anma gücü: 2,2 kW."]
+      - ["Maximum flow rate: 40 liters per minute.", "Azami debi: dakikada 40 litre."]
+      - ["Operating temperature range: −10 to 80 °C.", "Çalışma sıcaklığı aralığı: −10 ile 80 °C arası."]
+      - ["Housing material: stainless steel.", "Gövde malzemesi: paslanmaz çelik."]
+      - ["Weight: approximately 18 kg.", "Ağırlık: yaklaşık 18 kg."]
+    gloss: ["rated power | anma gücü", "flow rate | debi", "range | aralık", "housing | gövde, muhafaza"]
+    q:
+      - q: "Pompa hangi sıcaklıkta çalıştırılmamalı?"
+        o: ["0 °C", "50 °C", "95 °C"]
+        a: 2
+        why: "Çalışma aralığı −10 ile 80 °C arası; 95 °C bu aralığın dışında."
+      - q: "Pompanın gövdesi hangi malzemeden?"
+        o: ["Alüminyum", "Paslanmaz çelik", "Plastik"]
+        a: 1
+        why: "“Housing material: stainless steel.”"
+      - q: "Pompa dakikada en fazla ne kadar sıvı basabilir?"
+        o: ["18 litre", "40 litre", "80 litre"]
+        a: 1
+        why: "“Maximum flow rate: 40 liters per minute.”"
+  - id: measurement-email
+    title: "Measurement results"
+    kind: "E-posta"
+    d: 3
+    s:
+      - ["Hi Burak, I measured the ten sample parts this morning.", "Merhaba Burak, bu sabah on numune parçayı ölçtüm."]
+      - ["Eight parts are within tolerance.", "Sekiz parça tolerans içinde."]
+      - ["Two parts have a diameter of 25.08 mm, which is 0.03 mm above the limit.", "İki parçanın çapı 25,08 mm; bu, sınırın 0,03 mm üzerinde."]
+      - ["The new gauge is more accurate than the old one, so I'm confident about the results.", "Yeni ölçü aleti eskisinden daha hassas, bu yüzden sonuçlardan eminim."]
+    gloss: ["sample | numune", "within tolerance | tolerans içinde", "above the limit | sınırın üzerinde", "gauge | ölçü aleti"]
+    q:
+      - q: "Kaç parça tolerans dışında?"
+        o: ["İki", "Sekiz", "On"]
+        a: 0
+        why: "On parçanın sekizi tolerans içinde; iki parça sınırın üzerinde."
+      - q: "Yazar sonuçlardan neden emin?"
+        o: ["Parçalar yeni", "Yeni ölçü aleti daha hassas", "Burak sonuçları onayladı"]
+        a: 1
+        why: "“The new gauge is more accurate than the old one.”"
+
+writing:
+  id: product-specs
+  p: "Bir ürünün 3–4 temel teknik özelliğini İngilizce yaz (boyut, ağırlık, malzeme, çalışma değeri) ve onu eski modelle karşılaştır."
+  rubric: ["Ölçüleri doğru biçimde veriyor (by, per, up to)", "Malzemeyi “made of” ile söylüyor", "Karşılaştırma için -er/more … than ya da compared to kullanıyor"]
+  samples: ["The new sensor measures 40 by 20 mm and weighs 35 grams. It is made of aluminum and operates at 5 volts. Compared to the old model, it is lighter and more accurate."]
+  d: 2
+
+situations:
+  - { parent: "Teknik özellik", name: "Ölçü bildirmek", items: [measures-by, per, up-to, operates-at] }
+  - { parent: "Teknik özellik", name: "Karşılaştırmak", items: [x-er-than, compared-to] }
+  - { parent: "Teknik özellik", name: "Sınırları söylemek", items: [within, should-not-exceed, tolerance] }

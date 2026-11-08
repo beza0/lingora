@@ -1,0 +1,522 @@
+id: engineering-testing
+domain: engineering
+title: "Test ve sonuçlar"
+desc: "Test koşullarını, gözlemleri ve sonuçları anlatma; rapor dili ve öneriler."
+sort: 2
+
+targets:
+  - id: prototype
+    w: prototype
+    pos: n
+    tr: "prototip, ilk deneme modeli"
+    ex: "We tested the first [[prototype]] last week."
+    extr: "İlk prototipi geçen hafta test ettik."
+    d: 1
+    tone: ["Teknik"]
+    dis:
+      - "protocol | Protokol demektir."
+      - "protein | Protein demektir."
+      - "prototyping | Süreci anlatır; burada sayılabilir bir isim gerekir."
+  - id: sample
+    w: sample
+    pos: n
+    tr: "numune, örnek"
+    ex: "We took ten [[samples]] from each batch."
+    extr: "Her partiden on numune aldık."
+    d: 1
+    col: ["take a sample", "sample size"]
+    tone: ["Teknik", "Kalite"]
+    dis:
+      - "symbols | Semboller demektir."
+      - "staples | Zımba telleri demektir."
+      - "temples | Tapınaklar demektir."
+  - id: batch
+    w: batch
+    pos: n
+    tr: "üretim partisi"
+    ex: "The second [[batch]] failed the quality check."
+    extr: "İkinci parti kalite kontrolünden geçemedi."
+    d: 2
+    col: ["batch number", "production batch"]
+    tone: ["Teknik", "Kalite"]
+    dis:
+      - "patch | Yama demektir."
+      - "beach | Plaj demektir."
+      - "badge | Rozet demektir."
+  - id: failure
+    w: failure
+    pos: n
+    tr: "arıza, başarısızlık"
+    ex: "The [[failure]] happened after 2,000 cycles."
+    extr: "Arıza 2.000 çevrimden sonra meydana geldi."
+    d: 2
+    col: ["failure mode", "failure rate"]
+    fam: ["fail (f.) başarısız olmak"]
+    tone: ["Teknik"]
+    dis:
+      - "feature | Özellik demektir."
+      - "future | Gelecek demektir."
+      - "fairness | Adalet demektir."
+  - id: cycle
+    w: cycle
+    pos: n
+    tr: "çevrim, döngü"
+    ex: "Each test [[cycle]] lasts 30 seconds."
+    extr: "Her test çevrimi 30 saniye sürüyor."
+    d: 2
+    col: ["test cycle", "life cycle"]
+    tone: ["Teknik"]
+    dis:
+      - "circle | Çember demektir."
+      - "bicycle | Bisiklet demektir."
+      - "cyclist | Bisikletçi demektir."
+  - id: pass-test
+    w: pass
+    pos: v
+    tr: "(testi) geçmek"
+    ex: "All units [[passed]] the vibration test."
+    extr: "Bütün üniteler titreşim testini geçti."
+    d: 1
+    ant: ["fail"]
+    other: "“Geçmek, uzatmak (bir şeyi)” anlamlarına da gelir."
+    tone: ["Teknik"]
+    dis:
+      - "paused | Duraklamak demektir."
+      - "pressed | Bastırmak demektir."
+      - "posted | Göndermek, paylaşmak demektir."
+  - id: fail-test
+    w: fail
+    pos: v
+    tr: "(testte) başarısız olmak"
+    ex: "Two units [[failed]] at high temperature."
+    extr: "İki ünite yüksek sıcaklıkta başarısız oldu."
+    d: 1
+    ant: ["pass"]
+    tone: ["Teknik"]
+    dis:
+      - "filed | Dosyalamak demektir."
+      - "felt | Hissetmek demektir."
+      - "fell | Düşmek demektir; testteki başarısızlığı anlatmaz."
+  - id: result
+    w: result
+    pos: n
+    tr: "(test) sonucu, bulgu"
+    ex: "The test [[results]] are in the shared folder."
+    extr: "Test sonuçları ortak klasörde."
+    d: 1
+    col: ["test results", "as a result"]
+    tone: ["Teknik"]
+    dis:
+      - "resorts | Tatil köyleri demektir."
+      - "rests | Molalar demektir."
+      - "resulting | Sıfattır; burada isim gerekir."
+  - id: load
+    w: load
+    pos: n
+    tr: "yük"
+    ex: "We increased the [[load]] by 10% every hour."
+    extr: "Yükü her saat %10 artırdık."
+    d: 2
+    col: ["full load", "maximum load", "load test"]
+    tone: ["Teknik"]
+    dis:
+      - "lead | Kurşun demektir."
+      - "loan | Kredi demektir."
+      - "lord | Lord demektir."
+  - id: temperature
+    w: temperature
+    pos: n
+    tr: "sıcaklık"
+    ex: "The [[temperature]] inside the chamber reached 85 °C."
+    extr: "Kabin içindeki sıcaklık 85 °C'ye ulaştı."
+    d: 1
+    tone: ["Teknik"]
+    dis:
+      - "temperament | Mizaç demektir."
+      - "temple | Tapınak demektir."
+      - "tempo | Tempo demektir."
+  - id: deviation
+    w: deviation
+    pos: n
+    tr: "sapma"
+    ex: "We saw a small [[deviation]] from the expected value."
+    extr: "Beklenen değerden küçük bir sapma gördük."
+    d: 3
+    col: ["standard deviation", "deviation from"]
+    fam: ["deviate (f.) sapmak"]
+    tone: ["Teknik", "Kalite"]
+    dis:
+      - "devotion | Bağlılık demektir."
+      - "aviation | Havacılık demektir."
+      - "deviate | Fiildir; burada isim gerekir."
+  - id: repeatable
+    w: repeatable
+    pos: adj
+    tr: "tekrarlanabilir"
+    ex: "The results are [[repeatable]] across all three labs."
+    extr: "Sonuçlar üç laboratuvarda da tekrarlanabiliyor."
+    d: 3
+    fam: ["repeatability (i.) tekrarlanabilirlik"]
+    tone: ["Teknik", "Kalite"]
+    dis:
+      - "reputable | Saygın demektir."
+      - "repeatedly | Zarftır; burada sıfat gerekir."
+      - "repairable | Tamir edilebilir demektir."
+  - id: setup
+    w: setup
+    pos: n
+    tr: "(test) düzeneği"
+    ex: "Please check the test [[setup]] before you start."
+    extr: "Başlamadan önce lütfen test düzeneğini kontrol et."
+    d: 2
+    fam: ["set up (f.) kurmak"]
+    tone: ["Teknik"]
+    dis:
+      - "setback | Aksilik demektir."
+      - "upset | Üzgün demektir."
+      - "sunset | Gün batımı demektir."
+  - id: calibrate
+    w: calibrate
+    pos: v
+    tr: "kalibre etmek, ayarlamak"
+    ex: "We [[calibrate]] the sensors every month."
+    extr: "Sensörleri her ay kalibre ediyoruz."
+    d: 2
+    fam: ["calibration (i.) kalibrasyon"]
+    tone: ["Teknik"]
+    dis:
+      - "celebrate | Kutlamak demektir."
+      - "calculate | Hesaplamak demektir; sensör hesaplanmaz."
+      - "collaborate | İşbirliği yapmak demektir."
+  - id: record
+    w: record
+    pos: v
+    tr: "kaydetmek (veriyi)"
+    ex: "The system [[records]] the pressure every second."
+    extr: "Sistem basıncı her saniye kaydediyor."
+    d: 2
+    fam: ["record (i.) kayıt", "recording (i.) kayıt"]
+    tone: ["Teknik"]
+    dis:
+      - "recalls | Hatırlamak demektir."
+      - "rewards | Ödüllendirmek demektir."
+      - "regards | Saygı duymak veya kabul etmek demektir."
+  - id: duration
+    w: duration
+    pos: n
+    tr: "süre"
+    ex: "The test [[duration]] was 48 hours."
+    extr: "Test süresi 48 saatti."
+    d: 2
+    tone: ["Teknik", "Resmî"]
+    dis:
+      - "durability | Dayanıklılık demektir."
+      - "duress | Baskı, zorlama demektir."
+      - "donation | Bağış demektir."
+  - id: significant
+    w: significant
+    pos: adj
+    tr: "önemli, belirgin (büyüklükte)"
+    ex: "There was no [[significant]] change in performance."
+    extr: "Performansta belirgin bir değişiklik olmadı."
+    d: 3
+    fam: ["significantly (z.) önemli ölçüde", "significance (i.) önem"]
+    tone: ["Rapor", "Resmî"]
+    dis:
+      - "signature | İmza demektir."
+      - "significance | İsimdir; burada sıfat gerekir."
+      - "magnificent | Muhteşem demektir."
+  - id: as-expected
+    w: as expected
+    pos: phrase
+    tr: "beklendiği gibi"
+    ex: "The valve worked [[as expected]] under normal pressure."
+    extr: "Vana normal basınçta beklendiği gibi çalıştı."
+    d: 2
+    tone: ["Rapor"]
+    dis:
+      - "as excepted | “except” hariç tutmak demektir."
+      - "so expected | Kalıp “as expected” biçimindedir."
+      - "as expecting | Kalıp “as expected” biçimindedir."
+  - id: crack
+    w: crack
+    pos: n
+    tr: "çatlak"
+    ex: "We found a small [[crack]] near the weld."
+    extr: "Kaynağın yakınında küçük bir çatlak bulduk."
+    d: 2
+    fam: ["crack (f.) çatlamak"]
+    tone: ["Teknik"]
+    dis:
+      - "crab | Yengeç demektir."
+      - "track | İz veya ray demektir."
+      - "crate | Sandık demektir."
+  - id: wear
+    w: wear
+    pos: n
+    tr: "aşınma"
+    ex: "There is visible [[wear]] on the gears after 500 hours."
+    extr: "500 saatten sonra dişlilerde gözle görülür aşınma var."
+    d: 3
+    col: ["wear and tear", "signs of wear"]
+    other: "Fiil olarak “giymek” demektir."
+    tone: ["Teknik"]
+    dis:
+      - "where | “Nerede” demektir."
+      - "warmth | Sıcaklık, ılıklık demektir."
+      - "weir | Su seddi demektir."
+
+patterns:
+  - id: if-then
+    t: "If …, the … (her zaman geçerli sonuç)"
+    ex: "If the pressure drops, the valve [[closes]] automatically."
+    extr: "Basınç düşerse vana otomatik olarak kapanır."
+    ttr: "… vana otomatik olarak kapanır."
+    slots: ["the pressure drops | Basınç düşerse", "the sensor fails | Sensör arızalanırsa", "the power goes off | Elektrik kesilirse"]
+    chunks: ["If the pressure drops | basınç düşerse", "the valve closes | vana kapanır", "automatically | otomatik olarak"]
+    g: zero-conditional
+    ctx: ["Kılavuz", "Teknik açıklama"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "will closes | “will” sonrası fiil yalın olur."
+      - "closing | Çekimli fiil gerekir."
+      - "close | Tekil özne (the valve) -s ister."
+  - id: was-tested
+    t: "The … was tested at …"
+    ex: "The battery [[was tested]] at −20 °C."
+    extr: "Pil −20 °C'de test edildi."
+    ttr: "Pil şu koşulda test edildi: …."
+    slots: ["−20 °C | −20 °C", "full load | tam yük", "high humidity | yüksek nem"]
+    chunks: ["The battery | pil", "was tested | test edildi", "at −20 °C | koşul"]
+    g: past-passive
+    ctx: ["Test raporu"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "was test | Edilgen yapıda fiilin 3. hâli gerekir."
+      - "were tested | Tekil özne ile “was” kullanılır."
+      - "is testing | Pil test yapmaz; edilgen geçmiş zaman gerekir."
+  - id: results-show
+    t: "The results show that …"
+    ex: "The results [[show that]] the coating works well."
+    extr: "Sonuçlar kaplamanın iyi çalıştığını gösteriyor."
+    ttr: "Sonuçlar şunu gösteriyor: …."
+    slots: ["the coating works well | kaplama iyi çalışıyor", "the new design is stronger | yeni tasarım daha güçlü", "the error is under 1% | hata %1'in altında"]
+    chunks: ["The results | sonuçlar", "show that | -dığını gösteriyor", "the coating works well | bulgu"]
+    g: present-simple
+    ctx: ["Test raporu", "Sunum"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "shows that | Çoğul özne (results) -s almaz."
+      - "show what | Bu yapıda “that” gerekir."
+      - "showing that | Çekimli fiil gerekir."
+  - id: failed-after
+    t: "It failed after …"
+    ex: "The bearing failed [[after]] 3,000 hours."
+    extr: "Rulman 3.000 saat sonra arızalandı."
+    ttr: "Rulman şundan sonra arızalandı: …."
+    slots: ["3,000 hours | 3.000 saat", "200 cycles | 200 çevrim", "two weeks of testing | iki haftalık test"]
+    chunks: ["The bearing failed | rulman arızalandı", "after 3,000 hours | 3.000 saat sonra"]
+    g: past-simple-reporting
+    ctx: ["Test raporu"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "since | Present perfect ile kullanılır."
+      - "behind | “Arkasında” demektir."
+      - "later | İsimden önce “after” kullanılır."
+  - id: no-sign-of
+    t: "There was no sign of …"
+    ex: "There was no [[sign of]] corrosion after the test."
+    extr: "Testten sonra korozyon belirtisi yoktu."
+    ttr: "Testten sonra şunun belirtisi yoktu: …."
+    slots: ["corrosion | korozyon", "wear | aşınma", "overheating | aşırı ısınma"]
+    chunks: ["There was no | yoktu", "sign of corrosion | korozyon belirtisi", "after the test | testten sonra"]
+    g: past-simple-reporting
+    ctx: ["Test raporu"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "signal of | “signal” sinyal demektir."
+      - "sign for | Edat yanlış: of."
+      - "sing of | “sing” şarkı söylemek demektir."
+  - id: repeat-test
+    t: "We need to repeat … because …"
+    ex: "We need to [[repeat]] the test because the sensor was loose."
+    extr: "Sensör gevşek olduğu için testi tekrarlamamız gerekiyor."
+    ttr: "Sensör gevşek olduğu için şunu tekrarlamamız gerekiyor: …."
+    slots: ["the test | test", "the measurement | ölçüm", "the last step | son adım"]
+    chunks: ["We need to repeat | tekrarlamamız gerekiyor", "the test | iş", "because the sensor was loose | neden"]
+    g: can-have-to
+    ctx: ["Toplantı", "Laboratuvar"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "repeating | “need to” sonrası fiil yalın olur."
+      - "repeat for | “for” fazladır."
+      - "repeal | Yürürlükten kaldırmak demektir."
+  - id: increased-by
+    t: "… increased by …"
+    ex: "The temperature increased [[by]] 15 degrees."
+    extr: "Sıcaklık 15 derece arttı."
+    ttr: "Sıcaklık şu kadar arttı: …."
+    slots: ["15 degrees | 15 derece", "about 10% | yaklaşık %10", "0.5 bar | 0,5 bar"]
+    chunks: ["The temperature | sıcaklık", "increased by | … kadar arttı", "15 degrees | artış miktarı"]
+    g: change-verbs
+    ctx: ["Test raporu"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "to | “to” ulaşılan değeri bildirir; artış miktarı için “by” kullanılır."
+      - "with | Edat yanlış."
+      - "of | Edat yanlış."
+  - id: under-conditions
+    t: "Under … conditions, …"
+    ex: "[[Under]] normal conditions, the motor runs at 1,500 rpm."
+    extr: "Normal koşullar altında motor 1.500 devirde çalışır."
+    ttr: "… motor 1.500 devirde çalışır."
+    slots: ["normal conditions | Normal koşullar altında", "full load | Tam yük altında", "high pressure | Yüksek basınç altında"]
+    chunks: ["Under normal conditions | normal koşullar altında", "the motor runs at 1,500 rpm | motor 1.500 devirde çalışır"]
+    g: zero-conditional
+    ctx: ["Teknik açıklama"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "Below | Konum veya değer altını bildirir; koşul için “under” kullanılır."
+      - "In under | İki edat birlikte kullanılmaz."
+      - "Over | Anlamı tersine çevirir."
+  - id: observed
+    t: "We observed …"
+    ex: "We [[observed]] a small vibration at high speed."
+    extr: "Yüksek hızda küçük bir titreşim gözlemledik."
+    ttr: "Şunu gözlemledik: …."
+    slots: ["a small vibration | küçük bir titreşim", "a drop in pressure | basınçta bir düşüş", "a rise in temperature | sıcaklıkta bir artış"]
+    chunks: ["We observed | gözlemledik", "a small vibration | gözlem", "at high speed | koşul"]
+    g: past-simple-reporting
+    ctx: ["Test raporu"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "observe | Geçmiş zaman gerekir: observed."
+      - "served | Hizmet etmek demektir."
+      - "observation | İsimdir; burada fiil gerekir."
+  - id: recommend-ing
+    t: "We recommend …-ing"
+    ex: "We recommend [[using]] a thicker seal."
+    extr: "Daha kalın bir conta kullanılmasını öneriyoruz."
+    ttr: "Şunu öneriyoruz: …."
+    slots: ["using a thicker seal | daha kalın bir conta kullanmak", "testing at higher loads | daha yüksek yüklerde test etmek", "changing the supplier | tedarikçiyi değiştirmek"]
+    chunks: ["We recommend | öneriyoruz", "using a thicker seal | öneri (-ing)"]
+    g: suggestions-recommend
+    ctx: ["Test raporu", "Toplantı"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "to use | “recommend” sonrası “to” + fiil gelmez."
+      - "use | “recommend” sonrası fiil -ing alır."
+      - "used | Geçmiş hâl gelmez."
+
+grammar:
+  - id: zero-conditional
+    title: "Zero conditional (her zaman geçerli koşul)"
+    short: "Her zaman aynı sonucu veren durumlar için If + geniş zaman, geniş zaman kullanılır: If the pressure drops, the valve closes."
+    long: "Teknik açıklamalarda ve kılavuzlarda çok yaygındır. If yerine When de kullanılabilir: When the light turns red, the system stops. Gelecekteki tek bir olası durum için first conditional kullanılır: If it rains tomorrow, we will test indoors."
+    ex: ["If the temperature exceeds 100 °C, the system stops. | Sıcaklık 100 °C'yi aşarsa sistem durur.", "When you press this button, the pump starts. | Bu düğmeye bastığında pompa çalışır.", "If water gets inside, the sensor fails. | İçeri su girerse sensör arızalanır."]
+  - id: past-passive
+    title: "Geçmiş zamanda edilgen yapı"
+    short: "Test raporlarında işi kimin yaptığı önemli değilse was/were + fiilin 3. hâli kullanılır: The samples were tested at 20 °C."
+    long: "Tekil özne: was tested; çoğul özne: were tested. Olumsuz: wasn't measured. Soru: Was it calibrated? Yapan belirtilecekse: The test was carried out by the quality team. Raporlarda etken yapı (We tested …) da kabul edilir; edilgen daha resmî durur."
+    ex: ["The samples were tested at 20 °C. | Numuneler 20 °C'de test edildi.", "The sensor was calibrated last month. | Sensör geçen ay kalibre edildi.", "Was the data recorded correctly? | Veriler doğru kaydedildi mi?"]
+
+scenarios:
+  - id: report-test
+    title: "Test sonucunu bildirme"
+    sit: "Test yöneticisi, dünkü titreşim testinin nasıl geçtiğini soruyor."
+    d: 2
+    targets: [pass-test, fail-test, crack]
+    turns:
+      - ["Test manager", "How did the vibration test go yesterday?", "Dünkü titreşim testi nasıl geçti?"]
+      - choose:
+          - ["Eight units passed, but two failed after 200 cycles.", true, "Sonucu sayılarla ve net biçimde veriyor."]
+          - ["Eight units past, but two felt after 200 cycles.", false, "“past” ve “felt” yanlış kelimeler: passed, failed."]
+          - ["Eight units are passing yesterday.", false, "“yesterday” ile geçmiş zaman gerekir."]
+      - ["Test manager", "Do we know why the two units failed?", "İki ünitenin neden başarısız olduğunu biliyor muyuz?"]
+      - choose:
+          - ["We found a small crack near the weld. We need to repeat the test with new samples.", true, "Nedeni ve sonraki adımı açıklıyor."]
+          - ["We found a small crab near the weld.", false, "“crab” yengeç demektir."]
+          - ["Yes, because they passed.", false, "Anlamsız: geçtikleri için başarısız olmadılar."]
+  - id: calibration-check
+    title: "Sensör sapması"
+    sit: "Laboratuvarda bir meslektaşın bir sensörün değerlerinin tuhaf olduğunu söylüyor."
+    d: 3
+    targets: [calibrate, deviation, repeatable]
+    turns:
+      - ["Colleague", "The readings from sensor B look strange today.", "B sensöründen gelen değerler bugün tuhaf görünüyor."]
+      - choose:
+          - ["Yes, there's a deviation of about 2%. When was it last calibrated?", true, "Gözlemi sayıyla veriyor ve doğru soruyu soruyor."]
+          - ["Yes, there's a devotion of about 2%.", false, "“devotion” bağlılık demektir."]
+          - ["Yes, we celebrate it every month.", false, "“celebrate” kutlamak demektir."]
+      - ["Colleague", "Last month. I'll calibrate it again and repeat the measurement.", "Geçen ay. Tekrar kalibre edip ölçümü tekrarlayacağım."]
+      - choose:
+          - ["Good idea. Then we can check if the results are repeatable.", true, "Mantıklı bir sonraki adımı söylüyor."]
+          - ["Good idea. Then we can check if the results are reputable.", false, "“reputable” saygın demektir."]
+          - ["Good idea, but don't repeat nothing.", false, "Çift olumsuzluk ve anlam bozuk."]
+
+readings:
+  - id: seal-report
+    title: "Test report: seal durability"
+    kind: "Test raporu özeti"
+    d: 3
+    s:
+      - ["Objective: to check the durability of the new rubber seal.", "Amaç: yeni kauçuk contanın dayanıklılığını kontrol etmek."]
+      - ["Ten samples were tested at 90 °C for 500 hours.", "On numune 90 °C'de 500 saat boyunca test edildi."]
+      - ["Nine samples passed; one sample failed after 420 hours.", "Dokuz numune testi geçti; bir numune 420 saat sonra başarısız oldu."]
+      - ["There was no sign of corrosion on the metal parts.", "Metal parçalarda korozyon belirtisi yoktu."]
+      - ["We recommend testing a second batch before mass production.", "Seri üretimden önce ikinci bir partinin test edilmesini öneriyoruz."]
+    gloss: ["objective | amaç", "seal | conta", "mass production | seri üretim", "corrosion | korozyon"]
+    q:
+      - q: "Kaç numune başarısız oldu?"
+        o: ["Bir", "Dokuz", "On"]
+        a: 0
+        why: "“one sample failed after 420 hours”"
+      - q: "Raporun önerisi ne?"
+        o: ["Seri üretime hemen başlamak", "Seri üretimden önce ikinci bir partiyi test etmek", "Metal parçaları değiştirmek"]
+        a: 1
+        why: "“We recommend testing a second batch before mass production.”"
+      - q: "Test hangi sıcaklıkta yapıldı?"
+        o: ["20 °C", "90 °C", "500 °C"]
+        a: 1
+        why: "“tested at 90 °C for 500 hours”"
+  - id: lab-rules
+    title: "Lab rules: test bench 3"
+    kind: "Laboratuvar notu"
+    d: 2
+    s:
+      - ["Always calibrate the load cell before each test.", "Her testten önce mutlaka yük hücresini kalibre et."]
+      - ["If the temperature exceeds 100 °C, the system stops automatically.", "Sıcaklık 100 °C'yi aşarsa sistem otomatik olarak durur."]
+      - ["Record all results in the shared spreadsheet.", "Tüm sonuçları ortak tabloya kaydet."]
+      - ["If you see a significant deviation, repeat the test and inform the lab manager.", "Belirgin bir sapma görürsen testi tekrarla ve laboratuvar yöneticisine haber ver."]
+    gloss: ["load cell | yük hücresi", "exceeds | aşar", "spreadsheet | hesap tablosu", "inform | haber vermek"]
+    q:
+      - q: "Sıcaklık 100 °C'yi aşarsa ne olur?"
+        o: ["Alarm çalar ama sistem çalışmaya devam eder", "Sistem otomatik olarak durur", "Test kendiliğinden tekrarlanır"]
+        a: 1
+        why: "“the system stops automatically”"
+      - q: "Belirgin bir sapma görürsen ne yapmalısın?"
+        o: ["Sonuçları silmelisin", "Testi tekrarlayıp laboratuvar yöneticisine haber vermelisin", "Yük hücresini değiştirmelisin"]
+        a: 1
+        why: "“repeat the test and inform the lab manager”"
+
+writing:
+  id: test-summary
+  p: "Bir testin sonucunu 3–4 cümleyle özetle: ne test edildi, hangi koşulda, sonuç ne ve önerin ne?"
+  rubric: ["Test koşulunu (sıcaklık, yük, süre) veriyor", "Sonucu sayılarla ve geçmiş zamanla anlatıyor", "Öneriyi “We recommend …-ing” ile yapıyor"]
+  samples: ["We tested five prototypes at full load for 48 hours. Four prototypes passed the test, but one failed after 30 hours because of overheating. We recommend using a larger fan in the next design."]
+  d: 3
+
+situations:
+  - { parent: "Test", name: "Sonuç bildirmek", items: [results-show, was-tested, failed-after, as-expected] }
+  - { parent: "Test", name: "Gözlem anlatmak", items: [observed, no-sign-of, increased-by] }
+  - { parent: "Test", name: "Öneri yapmak", items: [recommend-ing, repeat-test] }

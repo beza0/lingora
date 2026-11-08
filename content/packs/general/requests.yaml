@@ -1,0 +1,524 @@
+id: general-requests
+domain: general
+title: "İstekler ve sorunlar"
+desc: "Restoranda, mağazada ve evde bir şey isteme, sorun bildirme ve kibarca şikâyet etme."
+sort: 3
+
+targets:
+  - id: refund
+    w: refund
+    pos: n
+    tr: "para iadesi"
+    ex: "I'd like a [[refund]] for these shoes."
+    extr: "Bu ayakkabılar için paramı geri istiyorum."
+    d: 2
+    col: ["get a refund", "full refund"]
+    fam: ["refund (f.) parayı iade etmek"]
+    tone: ["Mağaza", "Resmî"]
+    dis:
+      - "refill | Yeniden doldurma demektir."
+      - "reform | Köklü değişiklik demektir."
+      - "referee | Hakem demektir."
+  - id: receipt
+    w: receipt
+    pos: n
+    tr: "fiş, makbuz"
+    ex: "Do you have the [[receipt]]?"
+    extr: "Fişiniz var mı?"
+    d: 2
+    conf: ["recipe | Yemek tarifi demektir; yazılışı benzer."]
+    tone: ["Mağaza"]
+    dis:
+      - "recipe | Yemek tarifi demektir."
+      - "receiver | Alıcı demektir."
+      - "reception | Resepsiyon demektir."
+  - id: broken
+    w: broken
+    pos: adj
+    tr: "bozuk, kırık"
+    ex: "The heater in my room is [[broken]]."
+    extr: "Odamdaki ısıtıcı bozuk."
+    d: 1
+    fam: ["break (f.) kırmak, bozmak"]
+    tone: ["Günlük"]
+    dis:
+      - "spoken | Konuşulmuş demektir."
+      - "brokers | Komisyoncular demektir."
+      - "braking | Fren yapan demektir."
+  - id: complaint
+    w: complaint
+    pos: n
+    tr: "şikâyet"
+    ex: "I'd like to make a [[complaint]] about the noise."
+    extr: "Gürültü hakkında şikâyette bulunmak istiyorum."
+    d: 2
+    col: ["make a complaint", "complaint about"]
+    fam: ["complain (f.) şikâyet etmek"]
+    conf: ["compliment | İltifat demektir; anlamı tam tersidir."]
+    tone: ["Resmî"]
+    dis:
+      - "compliment | İltifat demektir; anlamı tersine çevirir."
+      - "complaining | “make a” sonrası isim gerekir."
+      - "complement | Tamamlayıcı demektir."
+  - id: exchange
+    w: exchange
+    pos: v
+    tr: "(ürünü başka biriyle) değiştirmek"
+    ex: "Can I [[exchange]] this shirt for a smaller size?"
+    extr: "Bu gömleği daha küçük bir bedenle değiştirebilir miyim?"
+    d: 2
+    col: ["exchange something for something", "exchange rate"]
+    tone: ["Mağaza"]
+    dis:
+      - "exclude | Hariç tutmak demektir."
+      - "expand | Genişletmek demektir."
+      - "excite | Heyecanlandırmak demektir."
+  - id: bill
+    w: bill
+    pos: n
+    tr: "hesap (restoranda), fatura"
+    ex: "Could we have the [[bill]], please?"
+    extr: "Hesabı alabilir miyiz, lütfen?"
+    d: 1
+    syn: ["check (Amerikan İngilizcesi)"]
+    tone: ["Restoran", "Nazik"]
+    dis:
+      - "bell | Zil demektir."
+      - "pill | Hap demektir."
+      - "build | İnşa etmek demektir."
+  - id: leak
+    w: leak
+    pos: v
+    tr: "sızdırmak, damlatmak"
+    ex: "The kitchen tap is [[leaking]]."
+    extr: "Mutfak musluğu damlatıyor."
+    d: 2
+    fam: ["leak (i.) sızıntı"]
+    tone: ["Ev"]
+    dis:
+      - "licking | Yalamak demektir."
+      - "leaving | Ayrılmak demektir."
+      - "looking | Bakmak demektir."
+  - id: replace
+    w: replace
+    pos: v
+    tr: "yerine yenisini koymak"
+    ex: "Can you [[replace]] the light bulb in the bathroom?"
+    extr: "Banyodaki ampulü değiştirebilir misin?"
+    d: 2
+    fam: ["replacement (i.) yenisi, yedek"]
+    tone: ["Ev"]
+    dis:
+      - "reply | Cevap vermek demektir."
+      - "relax | Rahatlamak demektir."
+      - "repeat | Tekrarlamak demektir."
+  - id: available
+    w: available
+    pos: adj
+    tr: "mevcut, bulunabilir"
+    ex: "Is this jacket [[available]] in blue?"
+    extr: "Bu ceketin mavisi var mı?"
+    d: 2
+    fam: ["availability (i.) bulunabilirlik, müsaitlik"]
+    tone: ["Mağaza"]
+    dis:
+      - "valuable | Değerli demektir."
+      - "avoidable | Kaçınılabilir demektir."
+      - "availability | İsimdir; burada sıfat gerekir."
+  - id: excuse-me
+    w: "Excuse me."
+    pos: phrase
+    tr: "Affedersiniz (dikkat çekmek için)."
+    ex: "[[Excuse me]], where is the nearest pharmacy?"
+    extr: "Affedersiniz, en yakın eczane nerede?"
+    d: 1
+    conf: ["Sorry | Bir hatadan sonra özür dilemektir; birinin dikkatini çekmek için “Excuse me” kullanılır."]
+    tone: ["Nazik"]
+    dis:
+      - "Excuse you | Kaba bir yanıttır."
+      - "Exclude me | “Beni hariç tut” demektir."
+      - "Excuse my | “my” sonrası isim gerekir."
+  - id: favor
+    w: "Could you do me a favor?"
+    pos: phrase
+    tr: "Bana bir iyilik yapabilir misin?"
+    ex: "[[Could you do me a favor]] and water my plants this weekend?"
+    extr: "Bana bir iyilik yapıp bu hafta sonu bitkilerimi sular mısın?"
+    d: 2
+    tone: ["Samimi", "Nazik"]
+    dis:
+      - "Could you do me a flavor | “flavor” tat demektir."
+      - "Could you make me a favor | Kalıp “do someone a favor” biçimindedir."
+      - "Could you do me favorite | “favorite” en sevilen demektir."
+  - id: not-what-ordered
+    w: "That's not what I ordered."
+    pos: phrase
+    tr: "Benim sipariş ettiğim bu değil."
+    ex: "Sorry, [[that's not what I ordered]]. I asked for soup."
+    extr: "Kusura bakmayın, benim sipariş ettiğim bu değil. Ben çorba istemiştim."
+    d: 2
+    tone: ["Restoran", "Nazik"]
+    dis:
+      - "that's not what I orders | Geçmiş zaman gerekir: ordered."
+      - "that's what I ordered | Olumlu olur; ardından gelen açıklamayla çelişir."
+      - "that's not what I ordered it | “it” fazladır."
+  - id: out-of-stock
+    w: out of stock
+    pos: phrase
+    tr: "stokta yok"
+    ex: "Sorry, this model is [[out of stock]] right now."
+    extr: "Kusura bakmayın, bu model şu anda stokta yok."
+    d: 2
+    ant: ["in stock"]
+    tone: ["Mağaza"]
+    dis:
+      - "out of shape | Formsuz demektir."
+      - "out of sight | Gözden uzak demektir."
+      - "out of luck | Şanssız demektir."
+  - id: deliver
+    w: deliver
+    pos: v
+    tr: "teslim etmek"
+    ex: "When will you [[deliver]] my order?"
+    extr: "Siparişimi ne zaman teslim edeceksiniz?"
+    d: 1
+    fam: ["delivery (i.) teslimat"]
+    tone: ["Alışveriş"]
+    dis:
+      - "deliberate | Kasıtlı demektir."
+      - "delete | Silmek demektir."
+      - "devour | Yalayıp yutmak demektir."
+  - id: damaged
+    w: damaged
+    pos: adj
+    tr: "hasarlı"
+    ex: "The box arrived [[damaged]]."
+    extr: "Kutu hasarlı geldi."
+    d: 2
+    fam: ["damage (i.) hasar"]
+    tone: ["Alışveriş", "Resmî"]
+    dis:
+      - "damaging | Zarar veren demektir."
+      - "dammed | Önüne baraj yapılmış demektir."
+      - "managed | Yönetilmiş demektir."
+  - id: urgent
+    w: urgent
+    pos: adj
+    tr: "acil"
+    ex: "It's [[urgent]]; there's water all over the floor."
+    extr: "Acil; yerler su içinde."
+    d: 2
+    fam: ["urgency (i.) aciliyet", "urgently (z.) acilen"]
+    tone: ["Günlük"]
+    dis:
+      - "urban | Kentsel demektir."
+      - "regent | Naip demektir."
+      - "agent | Temsilci demektir; ayrıca “an” gerekir."
+  - id: neighbor
+    w: neighbor
+    pos: n
+    tr: "komşu"
+    ex: "My [[neighbor]] plays loud music every night."
+    extr: "Komşum her gece yüksek sesle müzik çalıyor."
+    d: 1
+    fam: ["neighborhood (i.) mahalle"]
+    tone: ["Günlük"]
+    dis:
+      - "neighborhood | Mahalle demektir."
+      - "labor | Emek demektir."
+      - "number | Sayı demektir."
+  - id: landlord
+    w: landlord
+    pos: n
+    tr: "ev sahibi (kiraya veren)"
+    ex: "I called my [[landlord]] about the broken heater."
+    extr: "Bozuk ısıtıcı için ev sahibimi aradım."
+    d: 2
+    syn: ["landlady (kadın ev sahibi)"]
+    ant: ["tenant"]
+    tone: ["Ev"]
+    dis:
+      - "landmark | Simge yapı demektir."
+      - "landline | Sabit telefon hattı demektir."
+      - "landscape | Manzara demektir."
+  - id: fix
+    w: fix
+    pos: v
+    tr: "tamir etmek, düzeltmek"
+    ex: "Someone will come to [[fix]] the washing machine tomorrow."
+    extr: "Yarın biri gelip çamaşır makinesini tamir edecek."
+    d: 1
+    syn: ["repair"]
+    tone: ["Günlük"]
+    dis:
+      - "fax | Faks çekmek demektir."
+      - "fizz | Köpürmek demektir."
+      - "mix | Karıştırmak demektir."
+  - id: wrong
+    w: wrong
+    pos: adj
+    tr: "yanlış"
+    ex: "I think you gave me the [[wrong]] change."
+    extr: "Sanırım bana yanlış para üstü verdiniz."
+    d: 1
+    ant: ["right", "correct"]
+    tone: ["Günlük"]
+    dis:
+      - "wrung | Sıkılmış (çamaşır) demektir."
+      - "strong | Güçlü demektir."
+      - "long | Uzun demektir."
+
+patterns:
+  - id: id-like
+    t: "I'd like …, please."
+    ex: "I'd [[like]] a glass of water, please."
+    extr: "Bir bardak su istiyorum, lütfen."
+    ttr: "… istiyorum, lütfen."
+    slots: ["a glass of water | bir bardak su", "the chicken salad | tavuklu salata", "a table for two | iki kişilik bir masa"]
+    chunks: ["I'd like | istiyorum (kibar)", "a glass of water | istenen şey", "please | lütfen"]
+    g: would-like
+    ctx: ["Restoran", "Mağaza"]
+    tone: ["Nazik"]
+    d: 1
+    dis:
+      - "likes | “I'd” sonrası fiil yalın olur."
+      - "liked | “I'd” sonrası geçmiş hâl gelmez."
+      - "love to | İsimden önce “to” gelmez."
+    alt: ["I would like a glass of water, please."]
+  - id: could-i-have
+    t: "Could I have …?"
+    ex: "Could I [[have]] the menu, please?"
+    extr: "Menüyü alabilir miyim, lütfen?"
+    ttr: "Şunu alabilir miyim: …?"
+    slots: ["the menu | menü", "some more bread | biraz daha ekmek", "the Wi-Fi password | Wi-Fi şifresi"]
+    chunks: ["Could I | -ebilir miyim", "have | al-", "the menu | istenen şey"]
+    g: can-have-to
+    ctx: ["Restoran", "Otel"]
+    tone: ["Nazik"]
+    d: 1
+    dis:
+      - "has | “could” sonrası fiil yalın olur."
+      - "having | “could” sonrası fiil yalın olur."
+      - "had | “could” sonrası geçmiş hâl gelmez."
+  - id: is-it-okay-if
+    t: "Is it okay if I …?"
+    ex: "Is it okay [[if]] I open the window?"
+    extr: "Pencereyi açsam olur mu?"
+    ttr: "Şunu yapsam olur mu: …?"
+    slots: ["open the window | pencereyi açmak", "leave a bit early | biraz erken çıkmak", "sit here | buraya oturmak"]
+    chunks: ["Is it okay | olur mu", "if I | -sam", "open the window | eylem"]
+    g: can-have-to
+    ctx: ["İzin isteme"]
+    tone: ["Nazik"]
+    d: 2
+    dis:
+      - "when | Zaman bildirir; izin istemez."
+      - "whether | Bu kalıpta kullanılmaz."
+      - "so | Sonuç bildirir."
+  - id: problem-with
+    t: "There's a problem with …"
+    ex: "There's a problem [[with]] my room key."
+    extr: "Oda anahtarımda bir sorun var."
+    ttr: "Şunda bir sorun var: …."
+    slots: ["my room key | oda anahtarım", "the shower | duş", "my order | siparişim"]
+    chunks: ["There's a problem | bir sorun var", "with | … ile ilgili", "my room key | sorunlu şey"]
+    g: present-simple
+    ctx: ["Otel", "Mağaza"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "on | Edat yanlış: with."
+      - "for | Edat yanlış: with."
+      - "at | Edat yanlış: with."
+  - id: doesnt-work
+    t: "The … doesn't work."
+    ex: "The air conditioner [[doesn't]] work."
+    extr: "Klima çalışmıyor."
+    ttr: "… çalışmıyor."
+    slots: ["air conditioner | klima", "TV | televizyon", "elevator | asansör"]
+    chunks: ["The air conditioner | arızalı şey", "doesn't work | çalışmıyor"]
+    g: present-simple
+    ctx: ["Otel", "Ev"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "don't | Tekil özne ile “doesn't” gerekir."
+      - "isn't | Fiil cümlesinde “doesn't” gerekir."
+      - "not | Yardımcı fiil eksik."
+    alt: ["The air conditioner does not work."]
+  - id: how-much
+    t: "How much is …?"
+    ex: "How much [[is]] this backpack?"
+    extr: "Bu sırt çantası ne kadar?"
+    ttr: "… ne kadar?"
+    slots: ["this backpack | bu sırt çantası", "a ticket to Ankara | Ankara'ya bir bilet", "the room per night | odanın gecelik fiyatı"]
+    chunks: ["How much | ne kadar", "is | -dir", "this backpack | ürün"]
+    g: to-be
+    ctx: ["Mağaza"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "are | Tekil isimle “is” gerekir."
+      - "does | “does” ile soruda fiil (cost) gerekir."
+      - "many | “How many” sayı sorar."
+  - id: help-me
+    t: "Can you help me …?"
+    ex: "Can you help me [[carry]] these boxes?"
+    extr: "Bu kutuları taşımama yardım edebilir misin?"
+    ttr: "Şunu yapmama yardım edebilir misin: …?"
+    slots: ["carry these boxes | bu kutuları taşımak", "find the station | istasyonu bulmak", "fill in this form | bu formu doldurmak"]
+    chunks: ["Can you help me | bana yardım edebilir misin", "carry these boxes | eylem (yalın fiil)"]
+    g: can-have-to
+    ctx: ["Yardım isteme"]
+    tone: ["Samimi"]
+    d: 1
+    dis:
+      - "carrying | “help me” sonrası yalın fiil (veya to + fiil) gelir."
+      - "carries | Çekimli fiil gelmez."
+      - "carried | Geçmiş hâl gelmez."
+    alt: ["Can you help me to carry these boxes?"]
+  - id: was-charged
+    t: "I think I was charged …"
+    ex: "I think I [[was charged]] twice for this."
+    extr: "Sanırım bunun için benden iki kez ücret alındı."
+    ttr: "Sanırım benden ücret alındı: …."
+    slots: ["twice for this | bunun için iki kez", "too much | fazla", "for a room I didn't book | ayırtmadığım bir oda için"]
+    chunks: ["I think | sanırım", "I was charged | benden ücret alındı", "twice | iki kez"]
+    g: passive-voice-basics
+    ctx: ["Mağaza", "Otel", "Banka"]
+    tone: ["Nazik"]
+    d: 3
+    dis:
+      - "was charge | Edilgen yapıda fiilin 3. hâli gerekir."
+      - "were charged | “I” ile “was” kullanılır."
+      - "is charged | “I” ile “is” kullanılmaz."
+  - id: would-you-mind
+    t: "Would you mind …-ing?"
+    ex: "Would you mind [[turning]] the music down?"
+    extr: "Müziğin sesini kısar mısınız?"
+    ttr: "Şunu yapar mısınız: …?"
+    slots: ["turning the music down | müziğin sesini kısmak", "closing the door | kapıyı kapatmak", "waiting a minute | bir dakika beklemek"]
+    chunks: ["Would you mind | … mısınız (çok nazik)", "turning the music down | eylem (-ing)"]
+    g: would-like
+    ctx: ["Komşu", "Rica"]
+    tone: ["Çok nazik"]
+    d: 2
+    dis:
+      - "turn | “mind” sonrası fiil -ing alır."
+      - "to turn | “mind” sonrası “to” gelmez."
+      - "turned | Geçmiş hâl gelmez."
+  - id: ordered-but
+    t: "I ordered …, but I got …"
+    ex: "I ordered a medium, [[but]] I got a large."
+    extr: "Orta boy sipariş ettim ama bana büyük boy geldi."
+    ttr: "Şunu sipariş ettim ama başka bir şey geldi: …."
+    slots: ["a medium | orta boy", "two coffees | iki kahve", "the vegetarian pizza | vejetaryen pizza"]
+    chunks: ["I ordered | sipariş ettim", "a medium | istenen", "but I got a large | ama gelen"]
+    g: past-simple-reporting
+    ctx: ["Restoran", "Online alışveriş"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "so | Sonuç bildirir; burada karşıtlık için “but” gerekir."
+      - "because | Neden bildirir."
+      - "or | Seçenek bildirir."
+
+grammar:
+  - id: would-like
+    title: "would like ve would you mind"
+    short: "Bir şey isterken I'd like + isim ya da I'd like to + fiil kibar bir yoldur: I'd like a refund. I'd like to speak to the manager."
+    long: "I want daha doğrudandır; restoranda ve mağazada I'd like tercih edilir. Teklif: Would you like some tea? Çok nazik rica: Would you mind + -ing: Would you mind closing the window? Buna “No, not at all.” yanıtı “Hayır, hiç sorun değil” demektir; yani rica kabul edilmiştir."
+    ex: ["I'd like the soup, please. | Çorba alayım, lütfen.", "Would you like a coffee? | Kahve ister misin?", "Would you mind waiting a minute? | Bir dakika bekler misiniz?"]
+  - id: can-have-to
+    title: "can, could ve have to"
+    short: "can/could yetenek, izin ve rica bildirir: Can I sit here? Could you help me? have to zorunluluk bildirir: I have to leave early."
+    long: "can ve could sonrası yalın fiil gelir, “to” gelmez. could, can'den daha naziktir. have to, he/she/it ile has to olur. Olumsuzu farklıdır: don't have to “gerek yok”, mustn't “yasak” demektir. Sık kalıp: I can't make it = gelemiyorum, yetişemiyorum."
+    ex: ["Could I have the bill, please? | Hesabı alabilir miyim, lütfen?", "I have to work late tonight. | Bu akşam geç saate kadar çalışmam gerekiyor.", "You don't have to bring anything. | Bir şey getirmene gerek yok."]
+
+scenarios:
+  - id: hotel-problem
+    title: "Otelde arıza bildirme"
+    sit: "Otel odanda klima çalışmıyor. Resepsiyonu arıyorsun."
+    d: 1
+    targets: [doesnt-work, fix, could-i-have]
+    turns:
+      - ["Receptionist", "Good evening, reception. How can I help you?", "İyi akşamlar, resepsiyon. Size nasıl yardımcı olabilirim?"]
+      - choose:
+          - ["Hi, this is room 304. The air conditioner doesn't work.", true, "Oda numarasını ve sorunu net söylüyor."]
+          - ["Hi, room 304. The air conditioner don't work.", false, "Tekil özne ile “doesn't” gerekir."]
+          - ["Hi, I'm the air conditioner in room 304.", false, "Kendini klima olarak tanıtıyor; anlamsız."]
+      - ["Receptionist", "I'm sorry about that. Someone will come to fix it in ten minutes.", "Bunun için üzgünüm. On dakika içinde biri gelip tamir edecek."]
+      - choose:
+          - ["Thank you. Could I also have an extra blanket, please?", true, "Teşekkür ediyor ve kibar bir ek istekte bulunuyor."]
+          - ["Thank you. Could I also has an extra blanket?", false, "“could” sonrası fiil yalın olur: have."]
+          - ["Thank you, but it's not urgent, so fix it now.", false, "Çelişkili: acil değil deyip hemen istiyor."]
+  - id: exchange-shirt
+    title: "Mağazada ürün değiştirme"
+    sit: "Dün aldığın gömlek küçük geldi. Mağazada daha büyük bir bedenle değiştirmek istiyorsun."
+    d: 2
+    targets: [exchange, receipt, refund]
+    turns:
+      - ["Shop assistant", "Hello! Can I help you?", "Merhaba! Yardımcı olabilir miyim?"]
+      - choose:
+          - ["Yes, I bought this shirt yesterday, but it's too small. Can I exchange it for a medium?", true, "Durumu ve isteğini açık ve kibar biçimde anlatıyor."]
+          - ["Yes, I buyed this shirt, it's too small.", false, "“buy” düzensiz bir fiildir: bought."]
+          - ["Yes, can I exchange me a medium?", false, "Yapı bozuk; doğrusu “exchange it for a medium”."]
+      - ["Shop assistant", "Of course. Do you have the receipt?", "Elbette. Fişiniz var mı?"]
+      - choose:
+          - ["Yes, here it is.", true, "Bir şeyi uzatırken kullanılan doğal kalıp."]
+          - ["Yes, here is it.", false, "Kelime sırası yanlış: here it is."]
+          - ["Yes, I have the recipe.", false, "“recipe” yemek tarifidir."]
+
+readings:
+  - id: complaint-email
+    title: "Complaint: damaged order"
+    kind: "E-posta"
+    d: 2
+    s:
+      - ["Dear Customer Service, I ordered a coffee machine from your website on 3 May.", "Sayın Müşteri Hizmetleri, 3 Mayıs'ta web sitenizden bir kahve makinesi sipariş ettim."]
+      - ["It was delivered yesterday, but the box arrived damaged and the machine doesn't work.", "Dün teslim edildi ama kutu hasarlı geldi ve makine çalışmıyor."]
+      - ["I'd like to exchange it for a new one or get a full refund.", "Makineyi yenisiyle değiştirmek ya da paramın tamamını geri almak istiyorum."]
+      - ["I've attached a photo of the box and my receipt.", "Kutunun fotoğrafını ve fişimi ekledim."]
+    gloss: ["delivered | teslim edildi", "damaged | hasarlı", "refund | para iadesi", "attached | (e-postaya) ekledim"]
+    q:
+      - q: "Sorun ne?"
+        o: ["Sipariş hiç gelmedi", "Kutu hasarlı geldi ve makine çalışmıyor", "Yanlış renk geldi"]
+        a: 1
+        why: "“the box arrived damaged and the machine doesn't work”"
+      - q: "Yazar ne istiyor?"
+        o: ["Yeni bir makine ya da para iadesi", "Bir indirim kodu", "Teslimatın ertelenmesi"]
+        a: 0
+        why: "“exchange it for a new one or get a full refund”"
+  - id: building-notice
+    title: "Notice to all residents"
+    kind: "Duyuru"
+    d: 2
+    s:
+      - ["Dear residents, there is a water leak in the basement.", "Sayın sakinler, bodrum katta bir su sızıntısı var."]
+      - ["A plumber will come to fix it on Tuesday morning.", "Salı sabahı bir tesisatçı gelip tamir edecek."]
+      - ["There will be no hot water from 9 am to 12 pm.", "Saat 9 ile 12 arasında sıcak su olmayacak."]
+      - ["If you have an urgent problem, please call the building manager.", "Acil bir sorununuz olursa lütfen bina yöneticisini arayın."]
+      - ["We're sorry for the inconvenience.", "Verdiğimiz rahatsızlık için özür dileriz."]
+    gloss: ["leak | sızıntı", "plumber | tesisatçı", "urgent | acil", "inconvenience | rahatsızlık"]
+    q:
+      - q: "Salı sabahı ne olacak?"
+        o: ["Bina boyanacak", "Bir tesisatçı sızıntıyı tamir edecek", "Asansör değiştirilecek"]
+        a: 1
+        why: "“A plumber will come to fix it on Tuesday morning.”"
+      - q: "Acil bir sorunda kimi aramalısın?"
+        o: ["Tesisatçıyı", "Bina yöneticisini", "Komşunu"]
+        a: 1
+        why: "“please call the building manager”"
+
+writing:
+  id: polite-complaint
+  p: "Bir mağazaya ya da otele 3–4 cümlelik kibar bir şikâyet mesajı yaz: sorun ne, ne zaman oldu ve ne istiyorsun?"
+  rubric: ["Sorunu ve ne zaman olduğunu açıkça anlatıyor", "İsteğini “I'd like …” ile kibarca söylüyor", "Kaba veya suçlayıcı ifade kullanmıyor"]
+  samples: ["Hello, I bought a lamp from your store last week, but it doesn't work. I tried different sockets, but it still doesn't turn on. I'd like to exchange it for a new one. I still have the receipt."]
+  d: 2
+
+situations:
+  - { parent: "Restoran ve mağaza", name: "Bir şey istemek", items: [id-like, could-i-have, how-much] }
+  - { parent: "Restoran ve mağaza", name: "Sorun bildirmek", items: [not-what-ordered, ordered-but, out-of-stock] }
+  - { parent: "Ev ve otel", name: "Arıza bildirmek", items: [doesnt-work, problem-with, broken] }
+  - { parent: "Rica ve izin", name: "Nazikçe rica etmek", items: [would-you-mind, favor, is-it-okay-if, excuse-me] }

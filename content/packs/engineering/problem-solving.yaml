@@ -1,0 +1,519 @@
+id: engineering-problem-solving
+domain: engineering
+title: "Sorun açıklama ve çözüm önerme"
+desc: "Teknik sorunu tanımlama, nedenini söyleme, seçenekleri karşılaştırma ve öneri yapma."
+sort: 3
+
+targets:
+  - id: issue
+    w: issue
+    pos: n
+    tr: "sorun, mesele"
+    ex: "We have an [[issue]] with the cooling system."
+    extr: "Soğutma sisteminde bir sorunumuz var."
+    d: 1
+    col: ["an issue with", "fix an issue", "known issue"]
+    syn: ["problem"]
+    other: "“Sayı (dergi)” veya “yayımlamak” anlamına da gelir."
+    tone: ["Teknik", "Toplantı"]
+    dis:
+      - "tissue | Doku veya kâğıt mendil demektir."
+      - "image | Görüntü demektir."
+      - "icon | Simge demektir."
+  - id: overheat
+    w: overheat
+    pos: v
+    tr: "aşırı ısınmak"
+    ex: "The motor [[overheats]] after an hour of use."
+    extr: "Motor bir saatlik kullanımdan sonra aşırı ısınıyor."
+    d: 2
+    fam: ["overheating (i.) aşırı ısınma"]
+    tone: ["Teknik"]
+    dis:
+      - "overhears | Kulak misafiri olmak demektir."
+      - "overeats | Aşırı yemek demektir."
+      - "overheads | Genel giderler demektir."
+  - id: leakage
+    w: leakage
+    pos: n
+    tr: "sızıntı, kaçak"
+    ex: "We found [[leakage]] at the pipe joint."
+    extr: "Boru bağlantısında sızıntı bulduk."
+    d: 2
+    fam: ["leak (f.) sızdırmak"]
+    tone: ["Teknik"]
+    dis:
+      - "linkage | Bağlantı mekanizması demektir."
+      - "lineage | Soy demektir."
+      - "luggage | Bagaj demektir."
+  - id: vibration
+    w: vibration
+    pos: n
+    tr: "titreşim"
+    ex: "There is strong [[vibration]] at high speed."
+    extr: "Yüksek hızda güçlü bir titreşim var."
+    d: 2
+    fam: ["vibrate (f.) titreşmek"]
+    tone: ["Teknik"]
+    dis:
+      - "vibrant | Canlı demektir; sıfattır."
+      - "violation | İhlal demektir."
+      - "vacation | Tatil demektir."
+  - id: solution
+    w: solution
+    pos: n
+    tr: "çözüm"
+    ex: "The simplest [[solution]] is to add a fan."
+    extr: "En basit çözüm bir fan eklemek."
+    d: 1
+    fam: ["solve (f.) çözmek"]
+    other: "Kimyada “çözelti” demektir."
+    tone: ["Teknik", "Toplantı"]
+    dis:
+      - "solvent | Çözücü demektir."
+      - "salutation | Selamlama demektir."
+      - "solitude | Yalnızlık demektir."
+  - id: component
+    w: component
+    pos: n
+    tr: "bileşen, parça"
+    ex: "We need to replace this [[component]] immediately."
+    extr: "Bu bileşeni hemen değiştirmemiz gerekiyor."
+    d: 2
+    tone: ["Teknik"]
+    dis:
+      - "comment | Yorum demektir."
+      - "compliment | İltifat demektir."
+      - "competent | Yetkin demektir; sıfattır."
+  - id: cause
+    w: cause
+    pos: v
+    tr: "neden olmak"
+    ex: "Dust can [[cause]] the sensor to fail."
+    extr: "Toz, sensörün arızalanmasına neden olabilir."
+    d: 2
+    fam: ["cause (i.) neden"]
+    tone: ["Teknik"]
+    dis:
+      - "case | Durum demektir; isimdir."
+      - "pause | Duraklamak demektir."
+      - "curse | Lanetlemek demektir."
+  - id: prevent
+    w: prevent
+    pos: v
+    tr: "önlemek"
+    ex: "A filter will [[prevent]] dust from entering the unit."
+    extr: "Bir filtre tozun üniteye girmesini önler."
+    d: 2
+    col: ["prevent something from …-ing"]
+    fam: ["prevention (i.) önleme", "preventive (s.) önleyici"]
+    tone: ["Teknik"]
+    dis:
+      - "present | Sunmak demektir."
+      - "pretend | Rol yapmak demektir."
+      - "prevail | Galip gelmek demektir."
+  - id: feasible
+    w: feasible
+    pos: adj
+    tr: "uygulanabilir, yapılabilir"
+    ex: "Is it [[feasible]] to finish the redesign by May?"
+    extr: "Yeniden tasarımı mayısa kadar bitirmek uygulanabilir mi?"
+    d: 3
+    fam: ["feasibility (i.) fizibilite, yapılabilirlik"]
+    tone: ["Toplantı", "Resmî"]
+    dis:
+      - "visible | Görünür demektir."
+      - "festive | Bayram havasında demektir."
+      - "fusible | Eriyebilir demektir."
+  - id: cost-effective
+    w: cost-effective
+    pos: adj
+    tr: "maliyet açısından verimli"
+    ex: "Option B is more [[cost-effective]] in the long term."
+    extr: "B seçeneği uzun vadede maliyet açısından daha verimli."
+    d: 3
+    tone: ["Toplantı", "Rapor"]
+    dis:
+      - "costume | Kostüm demektir."
+      - "coastal | Kıyı ile ilgili demektir."
+      - "cosmetic | Görünüşle ilgili demektir."
+  - id: risk
+    w: risk
+    pos: n
+    tr: "risk, tehlike olasılığı"
+    ex: "There is a [[risk]] of fire if the cable overheats."
+    extr: "Kablo aşırı ısınırsa yangın riski var."
+    d: 1
+    col: ["risk of", "reduce the risk"]
+    tone: ["Teknik", "Güvenlik"]
+    dis:
+      - "rusk | Peksimet demektir."
+      - "disk | Disk demektir."
+      - "rink | Buz pateni pisti demektir."
+  - id: trade-off
+    w: trade-off
+    pos: n
+    tr: "ödünleşim (birini kazanırken diğerinden vazgeçme)"
+    ex: "There's a [[trade-off]] between weight and strength."
+    extr: "Ağırlık ile dayanım arasında bir ödünleşim var."
+    d: 3
+    tone: ["Toplantı", "Teknik"]
+    dis:
+      - "take-off | Kalkış demektir."
+      - "trademark | Ticari marka demektir."
+      - "trade fair | Ticaret fuarı demektir."
+  - id: temporary
+    w: temporary
+    pos: adj
+    tr: "geçici"
+    ex: "This is a [[temporary]] fix until the new part arrives."
+    extr: "Bu, yeni parça gelene kadar geçici bir çözüm."
+    d: 2
+    ant: ["permanent"]
+    tone: ["Teknik"]
+    dis:
+      - "temporal | Zamanla ilgili demektir; “geçici” anlamı vermez."
+      - "contemporary | Çağdaş demektir."
+      - "temperature | Sıcaklık demektir; isimdir."
+  - id: permanent
+    w: permanent
+    pos: adj
+    tr: "kalıcı"
+    ex: "We need a [[permanent]] solution, not a quick fix."
+    extr: "Hızlı bir yama değil, kalıcı bir çözüme ihtiyacımız var."
+    d: 2
+    ant: ["temporary"]
+    tone: ["Teknik"]
+    dis:
+      - "pertinent | İlgili demektir."
+      - "prominent | Önde gelen demektir."
+      - "permitted | İzin verilmiş demektir."
+  - id: shut-down
+    w: shut down
+    pos: phrasal
+    tr: "(sistemi, makineyi) kapatmak"
+    ex: "Please [[shut down]] the machine before cleaning it."
+    extr: "Lütfen temizlemeden önce makineyi kapat."
+    d: 2
+    fam: ["shutdown (i.) kapatma, duruş"]
+    tone: ["Güvenlik", "Kılavuz"]
+    dis:
+      - "shut up | “Sus” demektir; kabadır."
+      - "shot down | Vurulup düşürüldü demektir."
+      - "shut out | Dışarıda bırakmak demektir."
+  - id: inspect
+    w: inspect
+    pos: v
+    tr: "muayene etmek, denetlemek"
+    ex: "We [[inspect]] the welds once a week."
+    extr: "Kaynakları haftada bir muayene ediyoruz."
+    d: 2
+    fam: ["inspection (i.) muayene, denetim", "inspector (i.) denetçi"]
+    tone: ["Teknik", "Kalite"]
+    dis:
+      - "insect | Böcek demektir."
+      - "inspire | İlham vermek demektir."
+      - "expect | Beklemek demektir."
+  - id: maintenance
+    w: maintenance
+    pos: n
+    tr: "bakım"
+    ex: "The machine needs regular [[maintenance]]."
+    extr: "Makinenin düzenli bakıma ihtiyacı var."
+    d: 2
+    col: ["regular maintenance", "maintenance schedule"]
+    fam: ["maintain (f.) bakımını yapmak, korumak"]
+    tone: ["Teknik"]
+    dis:
+      - "maintain | Fiildir; burada isim gerekir."
+      - "mainland | Anakara demektir."
+      - "attendance | Katılım demektir."
+  - id: downtime
+    w: downtime
+    pos: n
+    tr: "duruş süresi (sistemin çalışmadığı süre)"
+    ex: "The repair caused six hours of [[downtime]]."
+    extr: "Onarım altı saatlik duruşa neden oldu."
+    d: 3
+    tone: ["Teknik", "Üretim"]
+    dis:
+      - "downtown | Şehir merkezi demektir."
+      - "download | İndirme demektir."
+      - "downturn | Durgunluk demektir."
+  - id: propose
+    w: propose
+    pos: v
+    tr: "önermek (resmî)"
+    ex: "I'd like to [[propose]] a different design."
+    extr: "Farklı bir tasarım önermek istiyorum."
+    d: 2
+    fam: ["proposal (i.) öneri, teklif"]
+    tone: ["Toplantı", "Resmî"]
+    dis:
+      - "purpose | Amaç demektir; isimdir."
+      - "suppose | Varsaymak demektir."
+      - "oppose | Karşı çıkmak demektir; anlamı ters çevirir."
+  - id: immediately
+    w: immediately
+    pos: adv
+    tr: "hemen, derhal"
+    ex: "Stop the test [[immediately]] if you smell smoke."
+    extr: "Duman kokusu alırsan testi hemen durdur."
+    d: 2
+    syn: ["right away", "at once"]
+    tone: ["Güvenlik"]
+    dis:
+      - "immediate | Sıfattır; burada zarf gerekir."
+      - "intermediately | “Ara seviyede” demektir."
+      - "immensely | Son derece demektir."
+
+patterns:
+  - id: if-will
+    t: "If we …, … will …"
+    ex: "If we add a fan, the temperature [[will drop]]."
+    extr: "Bir fan eklersek sıcaklık düşer."
+    ttr: "Şunu yaparsak sıcaklık düşer: …."
+    slots: ["add a fan | bir fan eklemek", "use a thicker cable | daha kalın kablo kullanmak", "reduce the load | yükü azaltmak"]
+    chunks: ["If we add a fan | bir fan eklersek", "the temperature | sıcaklık", "will drop | düşecek"]
+    g: first-conditional
+    ctx: ["Toplantı", "Öneri"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "will drops | “will” sonrası fiil yalın olur."
+      - "would dropped | Yapı bozuk."
+      - "drops will | Kelime sırası yanlış."
+  - id: the-problem-is
+    t: "The problem is that …"
+    ex: "The problem [[is that]] the cable is too thin."
+    extr: "Sorun, kablonun fazla ince olması."
+    ttr: "Sorun şu: …."
+    slots: ["the cable is too thin | kablo fazla ince", "the fan is too small | fan fazla küçük", "the parts arrive late | parçalar geç geliyor"]
+    chunks: ["The problem | sorun", "is that | şu ki", "the cable is too thin | açıklama"]
+    g: present-simple
+    ctx: ["Toplantı", "Rapor"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "is what | Bu yapıda “that” gerekir."
+      - "are that | Tekil özne (problem) ile “is” gerekir."
+      - "it is that | Fazladan “it” var."
+  - id: one-option
+    t: "One option is to …"
+    ex: "[[One option is]] to replace the bearing."
+    extr: "Seçeneklerden biri rulmanı değiştirmek."
+    ttr: "Seçeneklerden biri şu: …."
+    slots: ["replace the bearing | rulmanı değiştirmek", "add a second sensor | ikinci bir sensör eklemek", "change the supplier | tedarikçiyi değiştirmek"]
+    chunks: ["One option is | seçeneklerden biri", "to replace the bearing | öneri (to + fiil)"]
+    g: suggestions-recommend
+    ctx: ["Toplantı", "E-posta"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "One option are | Tekil özne ile “is” gerekir."
+      - "One optional is | “optional” sıfattır."
+      - "One option it is | Fazladan “it” var."
+  - id: suggest-that
+    t: "I suggest that we …"
+    ex: "I suggest [[that we]] test it again."
+    extr: "Tekrar test etmemizi öneriyorum."
+    ttr: "Şunu yapmamızı öneriyorum: …."
+    slots: ["test it again | tekrar test etmek", "order spare parts | yedek parça sipariş etmek", "stop the line | hattı durdurmak"]
+    chunks: ["I suggest | öneriyorum", "that we | -memizi", "test it again | öneri (yalın fiil)"]
+    g: suggestions-recommend
+    ctx: ["Toplantı", "E-posta"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "us to | “suggest” kişi + to ile kullanılmaz."
+      - "to we | Yapı bozuk."
+      - "that we to | Fazladan “to” var."
+    alt: ["I suggest we test it again."]
+  - id: caused-by
+    t: "… is caused by …"
+    ex: "The noise is [[caused by]] a loose screw."
+    extr: "Ses gevşek bir vidadan kaynaklanıyor."
+    ttr: "Ses şundan kaynaklanıyor: …."
+    slots: ["a loose screw | gevşek bir vida", "a worn bearing | aşınmış bir rulman", "low oil pressure | düşük yağ basıncı"]
+    chunks: ["The noise | ses", "is caused by | … kaynaklanıyor", "a loose screw | neden"]
+    g: passive-voice-basics
+    ctx: ["Rapor", "Toplantı"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "caused from | Edat yanlış: by."
+      - "cause by | Edilgen yapıda 3. hâl gerekir."
+      - "causing by | Edilgen yapı gerekir."
+  - id: to-avoid
+    t: "To avoid …, we should …"
+    ex: "To [[avoid]] overheating, we should add a fan."
+    extr: "Aşırı ısınmayı önlemek için bir fan eklemeliyiz."
+    ttr: "Şunu önlemek için bir fan eklemeliyiz: …."
+    slots: ["overheating | aşırı ısınma", "downtime | duruş süresi", "damage to the motor | motorun hasar görmesi"]
+    chunks: ["To avoid overheating | aşırı ısınmayı önlemek için", "we should add a fan | bir fan eklemeliyiz"]
+    g: modal-suggestions-should
+    ctx: ["Toplantı", "Öneri"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "avoiding | “To” sonrası fiil yalın olur."
+      - "void | “Geçersiz kılmak” demektir."
+      - "avoidance | İsimdir; burada fiil gerekir."
+  - id: advantage-is
+    t: "The advantage of … is that …"
+    ex: "The [[advantage]] of this design is that it's cheaper."
+    extr: "Bu tasarımın avantajı daha ucuz olması."
+    ttr: "Bu tasarımın avantajı şu: …."
+    slots: ["it's cheaper | daha ucuz", "it's easier to assemble | montajı daha kolay", "it needs less maintenance | daha az bakım gerektiriyor"]
+    chunks: ["The advantage of this design | bu tasarımın avantajı", "is that | şu ki", "it's cheaper | gerekçe"]
+    g: comparatives
+    ctx: ["Toplantı", "Rapor"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "advance | İlerleme demektir."
+      - "advantageous | Sıfattır; burada isim gerekir."
+      - "adventure | Macera demektir."
+  - id: how-long-take
+    t: "How long will it take to …?"
+    ex: "How long will it [[take]] to fix the line?"
+    extr: "Hattı tamir etmek ne kadar sürer?"
+    ttr: "Şunu yapmak ne kadar sürer: …?"
+    slots: ["fix the line | hattı tamir etmek", "get the new parts | yeni parçaları almak", "restart the system | sistemi yeniden başlatmak"]
+    chunks: ["How long | ne kadar", "will it take | sürer", "to fix the line | iş"]
+    g: going-to-plans
+    ctx: ["Toplantı", "Planlama"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "takes | “will” sonrası fiil yalın olur."
+      - "took | “will” sonrası geçmiş hâl gelmez."
+      - "last | Kalıp “How long will it take to …”."
+  - id: either-or
+    t: "We could either … or …"
+    ex: "We could [[either]] repair the pump or buy a new one."
+    extr: "Ya pompayı tamir edebiliriz ya da yenisini alabiliriz."
+    ttr: "Ya şunu yapabiliriz ya da yenisini alabiliriz: …."
+    slots: ["repair the pump | pompayı tamir etmek", "rebuild the motor | motoru yeniden yapmak", "fix the old unit | eski üniteyi onarmak"]
+    chunks: ["We could either | ya … -ebiliriz", "repair the pump | 1. seçenek", "or buy a new one | ya da yenisini almak"]
+    g: modal-suggestions-should
+    ctx: ["Toplantı"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "neither | “nor” ile kullanılır ve olumsuz anlam verir."
+      - "whether | Seçenek sunarken bu yapıda kullanılmaz."
+      - "both | “and” ile kullanılır."
+  - id: safety-reasons
+    t: "For safety reasons, …"
+    ex: "For safety [[reasons]], wear gloves in the lab."
+    extr: "Güvenlik nedeniyle laboratuvarda eldiven tak."
+    ttr: "Güvenlik nedeniyle şunu yap: …."
+    slots: ["wear gloves in the lab | laboratuvarda eldiven takmak", "turn off the power first | önce elektriği kesmek", "keep this door closed | bu kapıyı kapalı tutmak"]
+    chunks: ["For safety reasons | güvenlik nedeniyle", "wear gloves | talimat (emir kipi)"]
+    g: present-simple
+    ctx: ["Güvenlik", "Kılavuz"]
+    tone: ["Resmî"]
+    d: 1
+    dis:
+      - "reason | Kalıpta çoğul kullanılır: reasons."
+      - "seasons | Mevsimler demektir."
+      - "raisins | Kuru üzümler demektir."
+
+grammar:
+  - id: first-conditional
+    title: "First conditional (olası koşul)"
+    short: "Gelecekte olası bir durum ve sonucu için If + geniş zaman, will + yalın fiil kullanılır: If we add a fan, the temperature will drop."
+    long: "If'li kısımda will kullanılmaz: If it will rain yanlıştır. Sonuç kısmında can, might, should da gelebilir: If the part arrives today, we can finish tomorrow. unless = if not: Unless we fix it, the line will stop."
+    ex: ["If we use a thicker cable, it won't overheat. | Daha kalın bir kablo kullanırsak aşırı ısınmaz.", "If the part arrives today, we can finish tomorrow. | Parça bugün gelirse yarın bitirebiliriz.", "Unless we inspect it, we won't find the crack. | Muayene etmezsek çatlağı bulamayız."]
+  - id: suggestions-recommend
+    title: "suggest ve recommend ile öneri"
+    short: "suggest/recommend + -ing ya da suggest/recommend + that + özne + yalın fiil kullanılır: We recommend using a filter. I suggest that we test it again."
+    long: "suggest/recommend + kişi + to + fiil yanlıştır: I suggest you to test yanlış; doğrusu I suggest (that) you test it. Seçenek sunmak için One option is to … / Another option is to … kullanılır. Resmî raporlarda: It is recommended that …"
+    ex: ["We recommend replacing the filter every month. | Filtrenin her ay değiştirilmesini öneriyoruz.", "I suggest that we stop the line now. | Hattı şimdi durdurmamızı öneriyorum.", "Another option is to buy a new pump. | Bir diğer seçenek yeni bir pompa almak."]
+
+scenarios:
+  - id: overheating-meeting
+    title: "Aşırı ısınma toplantısı"
+    sit: "Bir makine sürekli aşırı ısınıp duruyor. Ekip toplantısında sorunu ve çözümü anlatıyorsun."
+    d: 2
+    targets: [overheat, solution, if-will]
+    turns:
+      - ["Manager", "Why does the machine keep stopping?", "Makine neden sürekli duruyor?"]
+      - choose:
+          - ["It overheats after about an hour. The problem is that the fan is too small.", true, "Belirtiyi ve nedeni net anlatıyor."]
+          - ["It overhears after about an hour.", false, "“overhear” kulak misafiri olmak demektir."]
+          - ["It is overheat because the fan small.", false, "Fiil yapısı bozuk ve ikinci cümlede “is” eksik."]
+      - ["Manager", "What do you suggest?", "Ne öneriyorsun?"]
+      - choose:
+          - ["If we install a larger fan, the temperature will drop. It's a cheap solution.", true, "First conditional doğru kullanılmış ve gerekçe veriyor."]
+          - ["If we will install a larger fan, the temperature drops.", false, "If'li kısımda “will” kullanılmaz; sonuç kısmında gerekir."]
+          - ["I suggest you to install a larger fan.", false, "“suggest you to” yanlış; “I suggest that we install …” denir."]
+  - id: temporary-fix
+    title: "Geçici ve kalıcı çözüm"
+    sit: "Üretim hattında bir parça arızalandı. Yeni parça gelene kadar ne yapacağınızı konuşuyorsunuz."
+    d: 3
+    targets: [temporary, downtime, trade-off]
+    turns:
+      - ["Colleague", "The new part won't arrive until Friday. What can we do now?", "Yeni parça cumaya kadar gelmeyecek. Şimdi ne yapabiliriz?"]
+      - choose:
+          - ["As a temporary fix, we could use the spare part from line 2.", true, "Uygulanabilir geçici bir çözüm öneriyor."]
+          - ["As a temporal fix, we could use the spare part from line 2.", false, "“temporal” zamanla ilgili demektir; “geçici” için “temporary” kullanılır."]
+          - ["As a permanent fix, we can wait until Friday.", false, "Beklemek kalıcı bir çözüm değildir; anlam çelişkili."]
+      - ["Colleague", "Good idea, but line 2 will have some downtime.", "İyi fikir ama 2. hatta biraz duruş olacak."]
+      - choose:
+          - ["True, it's a trade-off. Two hours of downtime is better than three days.", true, "Ödünleşimi görüp gerekçeyle karar veriyor."]
+          - ["True, it's a take-off.", false, "“take-off” kalkış demektir."]
+          - ["True, so line 2 has no downtime.", false, "Az önce söyleneni inkâr ediyor; çelişkili."]
+
+readings:
+  - id: incident-report
+    title: "Incident report: conveyor stop"
+    kind: "Arıza raporu"
+    d: 3
+    s:
+      - ["On 12 March, conveyor 4 stopped for two hours.", "12 Mart'ta 4 numaralı konveyör iki saat durdu."]
+      - ["The stop was caused by a worn bearing in the main motor.", "Duruş, ana motordaki aşınmış bir rulmandan kaynaklandı."]
+      - ["As a temporary fix, the team replaced the bearing with a spare part.", "Geçici çözüm olarak ekip rulmanı yedek parçayla değiştirdi."]
+      - ["To prevent this issue in the future, we recommend inspecting the bearings every month.", "Bu sorunun gelecekte yaşanmaması için rulmanların her ay muayene edilmesini öneriyoruz."]
+    gloss: ["conveyor | konveyör, taşıma bandı", "worn | aşınmış", "spare part | yedek parça", "inspecting | muayene etmek"]
+    q:
+      - q: "Konveyör neden durdu?"
+        o: ["Elektrik kesildi", "Ana motordaki rulman aşınmıştı", "Operatör hata yaptı"]
+        a: 1
+        why: "“caused by a worn bearing in the main motor”"
+      - q: "Gelecek için öneri ne?"
+        o: ["Konveyörü tamamen değiştirmek", "Rulmanları her ay muayene etmek", "Motoru kalıcı olarak kapatmak"]
+        a: 1
+        why: "“we recommend inspecting the bearings every month”"
+  - id: cooling-options
+    title: "Options for the cooling problem"
+    kind: "E-posta"
+    d: 3
+    s:
+      - ["Hi team, here are two options for the cooling problem.", "Herkese merhaba, soğutma sorunu için iki seçenek var."]
+      - ["Option A is to add a second fan. It's quick and cheap, but it's noisy.", "A seçeneği ikinci bir fan eklemek. Hızlı ve ucuz ama gürültülü."]
+      - ["Option B is to redesign the housing for better airflow. It's more cost-effective in the long term, but it will take six weeks.", "B seçeneği, daha iyi hava akışı için gövdeyi yeniden tasarlamak. Uzun vadede maliyet açısından daha verimli ama altı hafta sürecek."]
+      - ["I suggest that we start with option A and plan option B for the next version.", "A seçeneğiyle başlayıp B seçeneğini bir sonraki sürüm için planlamamızı öneriyorum."]
+    gloss: ["option | seçenek", "airflow | hava akışı", "cost-effective | maliyet açısından verimli", "in the long term | uzun vadede"]
+    q:
+      - q: "A seçeneğinin dezavantajı ne?"
+        o: ["Pahalı olması", "Gürültülü olması", "Altı hafta sürmesi"]
+        a: 1
+        why: "“It's quick and cheap, but it's noisy.”"
+      - q: "Yazar ne öneriyor?"
+        o: ["Yalnız B seçeneğini uygulamak", "Önce A seçeneğini uygulayıp B'yi sonraki sürüme planlamak", "Hiçbir şey yapmamak"]
+        a: 1
+        why: "“start with option A and plan option B for the next version”"
+
+writing:
+  id: problem-and-options
+  p: "Bir teknik sorunu ve iki olası çözümü 3–4 cümleyle anlat; birini öner ve nedenini söyle."
+  rubric: ["Sorunu “The problem is that …” ile tanımlıyor", "İki seçeneği “One option is to … / Another option is to …” ile sunuyor", "Önerisini gerekçesiyle ve doğru yapıyla (suggest that / recommend -ing) yapıyor"]
+  samples: ["The problem is that the motor overheats after an hour. One option is to add a second fan, and another option is to use a bigger motor. I suggest that we add a fan, because it is cheaper and faster. If we do this, the temperature will drop by about 10 degrees."]
+  d: 3
+
+situations:
+  - { parent: "Sorun çözme", name: "Sorunu tanımlamak", items: [the-problem-is, caused-by, issue] }
+  - { parent: "Sorun çözme", name: "Seçenek sunmak", items: [one-option, either-or, advantage-is] }
+  - { parent: "Sorun çözme", name: "Öneri yapmak", items: [suggest-that, to-avoid, if-will] }

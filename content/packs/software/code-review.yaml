@@ -1,0 +1,534 @@
+id: software-code-review
+domain: software
+title: "Kod inceleme ve değişiklikler"
+desc: "Pull request yorumları, öneri yapma, onay verme ve geri bildirime yanıt."
+sort: 3
+
+targets:
+  - id: refactor
+    w: refactor
+    pos: v
+    tr: "kodu davranışını değiştirmeden yeniden düzenlemek"
+    ex: "We should [[refactor]] this function before adding more features."
+    extr: "Daha fazla özellik eklemeden önce bu fonksiyonu yeniden düzenlemeliyiz."
+    d: 2
+    col: ["refactor a function", "a big refactor"]
+    fam: ["refactoring (i.) yeniden düzenleme"]
+    tone: ["Kod inceleme", "Teknik"]
+    dis:
+      - "reflect | Yansıtmak demektir."
+      - "refund | Para iadesi yapmak demektir."
+      - "reform | Toplum veya sistemde köklü değişiklik yapmak demektir."
+  - id: merge
+    w: merge
+    pos: v
+    tr: "(dalı ana koda) birleştirmek"
+    ex: "You can [[merge]] the branch after two approvals."
+    extr: "İki onaydan sonra dalı birleştirebilirsin."
+    d: 1
+    col: ["merge a pull request", "merge into main", "merge conflict"]
+    tone: ["Kod inceleme", "Teknik"]
+    dis:
+      - "emerge | Ortaya çıkmak demektir."
+      - "measure | Ölçmek demektir."
+      - "march | Yürümek demektir."
+  - id: approve
+    w: approve
+    pos: v
+    tr: "onaylamak"
+    ex: "Could you [[approve]] my pull request if it looks good?"
+    extr: "Uygun görünüyorsa pull request'imi onaylayabilir misin?"
+    d: 1
+    col: ["approve a change", "get an approval"]
+    fam: ["approval (i.) onay"]
+    tone: ["Kod inceleme", "Nazik"]
+    dis:
+      - "improve | İyileştirmek demektir; “if it looks good” ile çelişir."
+      - "approach | Yaklaşmak demektir."
+      - "appear | Görünmek demektir."
+  - id: branch
+    w: branch
+    pos: n
+    tr: "dal (kod deposunda)"
+    ex: "I pushed the fix to a new [[branch]]."
+    extr: "Düzeltmeyi yeni bir dala gönderdim."
+    d: 1
+    col: ["feature branch", "main branch", "create a branch"]
+    other: "Günlük dilde “ağaç dalı” veya “şube” anlamına gelir."
+    tone: ["Teknik"]
+    dis:
+      - "brunch | Geç kahvaltı demektir."
+      - "bench | Bank demektir."
+      - "bridge | Köprü demektir."
+  - id: nitpick
+    w: nitpick
+    pos: n
+    tr: "küçük, önemsiz düzeltme önerisi"
+    ex: "Just a [[nitpick]]: this variable name could be shorter."
+    extr: "Ufak bir not: bu değişken adı daha kısa olabilir."
+    d: 3
+    col: ["just a nitpick", "minor nitpick"]
+    tone: ["Kod inceleme", "Samimi"]
+    dis:
+      - "nickname | Takma ad demektir."
+      - "pickup | Teslim alma demektir."
+      - "toothpick | Kürdan demektir."
+  - id: readable
+    w: readable
+    pos: adj
+    tr: "okunaklı, kolay okunur"
+    ex: "Splitting this function would make it more [[readable]]."
+    extr: "Bu fonksiyonu bölmek onu daha okunaklı hâle getirir."
+    d: 2
+    col: ["more readable", "readable code"]
+    fam: ["readability (i.) okunabilirlik"]
+    tone: ["Kod inceleme"]
+    dis:
+      - "readily | Zarftır; “more” sonrası sıfat gerekir."
+      - "readiness | İsimdir; sıfat gerekir."
+      - "redeemable | Paraya çevrilebilir demektir."
+  - id: naming
+    w: naming
+    pos: n
+    tr: "adlandırma"
+    ex: "The [[naming]] in this file is inconsistent."
+    extr: "Bu dosyadaki adlandırma tutarsız."
+    d: 2
+    col: ["naming convention", "variable naming"]
+    tone: ["Kod inceleme"]
+    dis:
+      - "nailing | Çivileme demektir."
+      - "mining | Madencilik demektir."
+      - "morning | Sabah demektir."
+  - id: duplicated
+    w: duplicated
+    pos: adj
+    tr: "tekrarlanmış, kopyalanmış"
+    ex: "This logic is [[duplicated]] in two components."
+    extr: "Bu mantık iki bileşende tekrarlanmış."
+    d: 2
+    col: ["duplicated code", "remove duplication"]
+    fam: ["duplicate (f.) kopyalamak", "duplication (i.) tekrar"]
+    tone: ["Kod inceleme"]
+    dis:
+      - "dedicated | Adanmış demektir."
+      - "dominated | Hâkim olunmuş demektir."
+      - "duplex | İki katlı daire demektir."
+  - id: hardcoded
+    w: hardcoded
+    pos: adj
+    tr: "koda sabit yazılmış"
+    ex: "The API URL is [[hardcoded]], so it can't change per environment."
+    extr: "API adresi koda sabit yazılmış, bu yüzden ortama göre değişemiyor."
+    d: 3
+    col: ["hardcoded value", "avoid hardcoding"]
+    tone: ["Kod inceleme", "Teknik"]
+    dis:
+      - "hardworking | Çalışkan demektir."
+      - "hardware | Donanım demektir; isimdir."
+      - "barcoded | Barkodlu demektir."
+  - id: address
+    w: address
+    pos: v
+    tr: "(yorumu, sorunu) ele almak, gereğini yapmak"
+    ex: "I've [[addressed]] all your comments."
+    extr: "Tüm yorumlarının gereğini yaptım."
+    d: 3
+    col: ["address a comment", "address an issue"]
+    other: "İsim olarak “adres” demektir."
+    tone: ["Kod inceleme", "Resmî"]
+    dis:
+      - "addicted | Bağımlı demektir."
+      - "advertised | Reklamını yapmak demektir."
+      - "dressed | Giyinmek demektir."
+  - id: suggestion
+    w: suggestion
+    pos: n
+    tr: "öneri"
+    ex: "Thanks for the [[suggestion]]; I'll update the test."
+    extr: "Öneri için teşekkürler; testi güncelleyeceğim."
+    d: 1
+    col: ["make a suggestion", "a good suggestion"]
+    fam: ["suggest (f.) önermek"]
+    tone: ["Kod inceleme", "Nazik"]
+    dis:
+      - "suggestive | Sıfattır; isim gerekir."
+      - "subscription | Abonelik demektir."
+      - "situation | Durum demektir."
+  - id: scope
+    w: scope
+    pos: n
+    tr: "kapsam"
+    ex: "That change is out of [[scope]] for this pull request."
+    extr: "O değişiklik bu pull request'in kapsamı dışında."
+    d: 2
+    col: ["out of scope", "in scope", "project scope"]
+    tone: ["Kod inceleme", "Proje yönetimi"]
+    dis:
+      - "scoop | Kepçe veya özel haber demektir."
+      - "slope | Eğim demektir."
+      - "score | Skor demektir."
+  - id: looks-good
+    w: "Looks good to me."
+    pos: phrase
+    tr: "Bana uygun görünüyor. (onay)"
+    ex: "[[Looks good to me]], feel free to merge."
+    extr: "Bana uygun görünüyor, birleştirebilirsin."
+    d: 1
+    col: ["LGTM"]
+    tone: ["Kod inceleme", "Samimi"]
+    dis:
+      - "Looks bad to me | Onay değildir; “feel free to merge” ile çelişir."
+      - "Look good to me | Gizli özne “it” olduğu için “looks” gerekir."
+      - "Looks good at me | Edat yanlış: to me."
+  - id: nice-catch
+    w: "Nice catch!"
+    pos: phrase
+    tr: "İyi yakaladın!"
+    ex: "[[Nice catch]], I didn't see that bug."
+    extr: "İyi yakaladın, o hatayı görmemiştim."
+    d: 2
+    tone: ["Kod inceleme", "Samimi"]
+    dis:
+      - "Nice cash | “cash” nakit para demektir."
+      - "Nice match | “İyi eşleşme” demektir."
+      - "Nice chat | “İyi sohbet” demektir."
+  - id: good-point
+    w: "Good point."
+    pos: phrase
+    tr: "Haklısın, iyi bir nokta."
+    ex: "[[Good point]], I'll add a check for that."
+    extr: "Haklısın, bunun için bir kontrol ekleyeceğim."
+    d: 1
+    tone: ["Toplantı", "Kod inceleme"]
+    dis:
+      - "Good pint | “pint” bir sıvı ölçüsüdür."
+      - "Good paint | “paint” boya demektir."
+      - "Good print | “print” baskı demektir."
+  - id: split-prs
+    w: "Could you split this into smaller PRs?"
+    pos: phrase
+    tr: "Bunu daha küçük PR'lara bölebilir misin?"
+    ex: "This is a big change. [[Could you split this into smaller PRs]]?"
+    extr: "Bu büyük bir değişiklik. Bunu daha küçük PR'lara bölebilir misin?"
+    d: 2
+    tone: ["Kod inceleme", "Nazik"]
+    dis:
+      - "Could you spit this into smaller PRs | “spit” tükürmek demektir."
+      - "Could you spill this into smaller PRs | “spill” dökmek demektir."
+      - "Could you split this into smaller prices | “price” fiyat demektir."
+  - id: commit
+    w: commit
+    pos: n
+    tr: "commit (kaydedilen kod değişikliği)"
+    ex: "Please squash these changes into one [[commit]]."
+    extr: "Lütfen bu değişiklikleri tek bir commit'te birleştir."
+    d: 2
+    col: ["commit message", "squash commits"]
+    fam: ["commit (f.) kaydetmek; bağlanmak, söz vermek"]
+    conf: ["comment | Yorum demektir; yazılışı benzer."]
+    tone: ["Teknik"]
+    dis:
+      - "comment | Yorum demektir; değişiklikler bir yoruma birleştirilmez."
+      - "comet | Kuyruklu yıldız demektir."
+      - "committee | Komite demektir."
+  - id: conflict
+    w: conflict
+    pos: n
+    tr: "çakışma (kod birleştirmede)"
+    ex: "There's a merge [[conflict]] in the config file."
+    extr: "Yapılandırma dosyasında bir birleştirme çakışması var."
+    d: 2
+    col: ["merge conflict", "resolve a conflict"]
+    other: "Günlük dilde “anlaşmazlık” anlamına gelir."
+    tone: ["Teknik"]
+    dis:
+      - "confirm | Onaylamak demektir; fiildir."
+      - "concert | Konser demektir."
+      - "conflate | Karıştırarak birleştirmek demektir; fiildir."
+  - id: coverage
+    w: coverage
+    pos: n
+    tr: "(test) kapsamı"
+    ex: "This change lowers our test [[coverage]] to 60%."
+    extr: "Bu değişiklik test kapsamımızı %60'a düşürüyor."
+    d: 2
+    col: ["test coverage", "code coverage"]
+    other: "Haberde “yayın, haber kapsamı”, sigortada “teminat” demektir."
+    tone: ["Teknik", "Kod inceleme"]
+    dis:
+      - "courage | Cesaret demektir."
+      - "covering | Örtü demektir."
+      - "converge | Yakınsamak demektir; fiildir."
+  - id: consistent
+    w: consistent
+    pos: adj
+    tr: "tutarlı"
+    ex: "Please keep the code style [[consistent]] across files."
+    extr: "Lütfen kod stilini dosyalar arasında tutarlı tut."
+    d: 2
+    col: ["consistent naming", "stay consistent"]
+    fam: ["consistency (i.) tutarlılık"]
+    ant: ["inconsistent"]
+    tone: ["Kod inceleme"]
+    dis:
+      - "consisting | “… oluşan” demektir ve “of” ister."
+      - "content | İçerik veya memnun demektir."
+      - "consent | Rıza demektir."
+
+patterns:
+  - id: what-do-you-think
+    t: "What do you think about …?"
+    ex: "What do you [[think about]] moving this to a helper?"
+    extr: "Bunu bir yardımcı fonksiyona taşımaya ne dersin?"
+    ttr: "Şuna ne dersin: …?"
+    slots: ["moving this to a helper | bunu yardımcı fonksiyona taşımak", "using a map here | burada map kullanmak", "renaming this class | bu sınıfın adını değiştirmek"]
+    chunks: ["What do you think | ne dersin", "about | … hakkında", "moving this to a helper | öneri (-ing)"]
+    g: present-simple
+    ctx: ["Kod inceleme", "Toplantı"]
+    tone: ["Nazik"]
+    d: 2
+    dis:
+      - "think of about | İki edat birlikte kullanılmaz."
+      - "thinking about | “do you” sonrası fiil yalın olur."
+      - "think to | Bu anlamda “about” kullanılır."
+  - id: maybe-we-could
+    t: "Maybe we could …"
+    ex: "Maybe we [[could]] add a test for this case."
+    extr: "Belki bu durum için bir test ekleyebiliriz."
+    ttr: "Belki şunu yapabiliriz: …."
+    slots: ["add a test for this case | bu durum için test eklemek", "use a constant here | burada sabit kullanmak", "cache the result | sonucu önbelleğe almak"]
+    chunks: ["Maybe | belki", "we could | -ebiliriz", "add a test | öneri"]
+    g: modal-suggestions-should
+    ctx: ["Kod inceleme", "Toplantı"]
+    tone: ["Nazik"]
+    d: 1
+    dis:
+      - "could to | Modal fiilden sonra “to” gelmez."
+      - "can to | Modal fiilden sonra “to” gelmez."
+      - "coulds | Modal fiiller ek almaz."
+  - id: should-be-moved
+    t: "This should be moved to …"
+    ex: "This logic [[should be moved]] to the service layer."
+    extr: "Bu mantık servis katmanına taşınmalı."
+    ttr: "Bu mantık şuraya taşınmalı: …."
+    slots: ["the service layer | servis katmanı", "a separate file | ayrı bir dosya", "the utils folder | utils klasörü"]
+    chunks: ["This logic | bu mantık", "should be moved | taşınmalı", "to the service layer | hedef yer"]
+    g: passive-voice-basics
+    ctx: ["Kod inceleme"]
+    tone: ["Nötr"]
+    d: 3
+    dis:
+      - "should be move | Edilgen yapıda fiilin 3. hâli gerekir: moved."
+      - "should been moved | “should” sonrası “be” gelir."
+      - "should moved | “be” eksik."
+  - id: instead-of
+    t: "Can we use … instead of …?"
+    ex: "Can we use a map [[instead of]] two arrays?"
+    extr: "İki dizi yerine bir map kullanabilir miyiz?"
+    ttr: "İki dizi yerine şunu kullanabilir miyiz: …?"
+    slots: ["a map | bir map", "a single query | tek bir sorgu", "a set | bir set"]
+    chunks: ["Can we use | kullanabilir miyiz", "a map | önerilen", "instead of two arrays | iki dizi yerine"]
+    g: modal-suggestions-should
+    ctx: ["Kod inceleme"]
+    tone: ["Nazik"]
+    d: 2
+    dis:
+      - "instead | “of” eksik."
+      - "instead for | Edat yanlış: instead of."
+      - "rather of | “rather than” ya da “instead of” denir."
+  - id: left-comments
+    t: "I left a few comments on …"
+    ex: "I [[left]] a few comments on your PR."
+    extr: "PR'ına birkaç yorum bıraktım."
+    ttr: "Şuna birkaç yorum bıraktım: …."
+    slots: ["your PR | PR'ın", "the design doc | tasarım belgesi", "the new endpoint | yeni uç nokta"]
+    chunks: ["I left | bıraktım", "a few comments | birkaç yorum", "on your PR | PR'ına"]
+    g: past-simple-reporting
+    ctx: ["Kod inceleme", "Ekip mesajı"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "leaved | “leave” düzensiz bir fiildir: left."
+      - "lift | Kaldırmak demektir."
+      - "let | İzin vermek demektir."
+  - id: not-sure-about
+    t: "I'm not sure about …"
+    ex: "I'm not [[sure about]] this approach."
+    extr: "Bu yaklaşımdan emin değilim."
+    ttr: "Şundan emin değilim: …."
+    slots: ["this approach | bu yaklaşım", "the variable names | değişken adları", "the error handling | hata yönetimi"]
+    chunks: ["I'm not sure | emin değilim", "about | … hakkında", "this approach | konu"]
+    g: to-be
+    ctx: ["Kod inceleme", "Toplantı"]
+    tone: ["Temkinli"]
+    d: 1
+    dis:
+      - "sure for | Edat yanlış: sure about."
+      - "surely about | Sıfat gerekir: sure."
+      - "sure with | Edat yanlış: sure about."
+  - id: updated-pr
+    t: "I've updated the PR based on …"
+    ex: "I've updated the PR [[based on]] your feedback."
+    extr: "PR'ı geri bildirimine göre güncelledim."
+    ttr: "PR'ı şuna göre güncelledim: …."
+    slots: ["your feedback | geri bildirimin", "the new design | yeni tasarım", "our discussion | konuşmamız"]
+    chunks: ["I've updated the PR | PR'ı güncelledim", "based on | … göre", "your feedback | dayanak"]
+    g: present-perfect-results
+    ctx: ["Kod inceleme"]
+    tone: ["Nötr"]
+    d: 2
+    dis:
+      - "base on | 3. hâl gerekir: based on."
+      - "based in | “based in” bir yerde bulunmak demektir."
+      - "basing at | Kalıp “based on” biçimindedir."
+  - id: reason-why
+    t: "Is there a reason why …?"
+    ex: "Is there a [[reason why]] we don't use the existing helper?"
+    extr: "Mevcut yardımcı fonksiyonu kullanmamamızın bir nedeni var mı?"
+    ttr: "Şunun bir nedeni var mı: …?"
+    slots: ["we don't use the existing helper | mevcut yardımcıyı kullanmıyoruz", "this test is skipped | bu test atlanıyor", "the timeout is so long | zaman aşımı bu kadar uzun"]
+    chunks: ["Is there a reason | bir nedeni var mı", "why | neden", "we don't use the existing helper | sorulan durum"]
+    g: present-simple
+    ctx: ["Kod inceleme"]
+    tone: ["Nazik"]
+    d: 2
+    dis:
+      - "reason because | “reason why” ya da “reason that” denir."
+      - "reasons why | “a” ile tekil isim gelir."
+      - "reason what | “what” burada kullanılmaz."
+  - id: will-break
+    t: "This will break … if …"
+    ex: "This will [[break]] the build if the file is missing."
+    extr: "Dosya yoksa bu, derlemeyi bozar."
+    ttr: "Dosya yoksa bu, şunu bozar: …."
+    slots: ["the build | derleme", "the login flow | giriş akışı", "older clients | eski istemciler"]
+    chunks: ["This will break | bu bozar", "the build | etkilenen şey", "if the file is missing | dosya yoksa"]
+    g: first-conditional
+    ctx: ["Kod inceleme"]
+    tone: ["Uyarı"]
+    d: 2
+    dis:
+      - "broke | “will” sonrası fiil yalın olur."
+      - "breaks | “will” sonrası çekimli fiil gelmez."
+      - "brake | “Fren yapmak” demektir."
+  - id: thanks-for-review
+    t: "Thanks for …"
+    ex: "Thanks [[for the review]], I'll fix it now."
+    extr: "İnceleme için teşekkürler, hemen düzeltiyorum."
+    ttr: "Şunun için teşekkürler: …."
+    slots: ["the review | inceleme", "the quick feedback | hızlı geri bildirim", "your help | yardımın"]
+    chunks: ["Thanks | teşekkürler", "for the review | … için"]
+    g: present-simple
+    ctx: ["Kod inceleme", "Ekip mesajı"]
+    tone: ["Nazik"]
+    d: 1
+    dis:
+      - "to the review | “Thanks” sonrası “for” gelir."
+      - "of the review | Edat yanlış."
+      - "for review the | Kelime sırası yanlış."
+
+grammar:
+  - id: modal-suggestions-should
+    title: "should ve could ile öneri"
+    short: "Öneri yaparken should (yapmalı) daha güçlü, could (yapabiliriz) daha yumuşaktır. Ardından fiil yalın gelir: We should add a test."
+    long: "Maybe we could … / What about adding …? / Why don't we …? kalıpları nazik öneridir. Modal fiiller ek almaz ve “to” ile kullanılmaz: should to add yanlıştır. Olumsuz: You shouldn't merge it yet. Kod incelemesinde doğrudan emir (Change this.) yerine öneri kalıbı daha kibar durur."
+    ex: ["We should add a test for this case. | Bu durum için bir test eklemeliyiz.", "Maybe we could cache the result. | Belki sonucu önbelleğe alabiliriz.", "You shouldn't merge it before the tests pass. | Testler geçmeden birleştirmemelisin."]
+  - id: passive-voice-basics
+    title: "Edilgen yapı (passive voice)"
+    short: "İşi kimin yaptığı önemli değilse be + fiilin 3. hâli kullanılır: The bug was fixed. This should be moved."
+    long: "Zamanlara göre: is fixed (geniş), was fixed (geçmiş), has been fixed (sonuç), will be fixed (gelecek), should be fixed (gereklilik). Yapan belirtilecekse “by” kullanılır: The PR was approved by Ece. Teknik metinlerde ve raporlarda çok yaygındır."
+    ex: ["The bug was fixed in version 2.4. | Hata 2.4 sürümünde düzeltildi.", "This logic should be moved to a helper. | Bu mantık bir yardımcıya taşınmalı.", "The PR was approved by two reviewers. | PR iki inceleyen tarafından onaylandı."]
+
+scenarios:
+  - id: respond-to-review
+    title: "İnceleme yorumuna yanıt verme"
+    sit: "Bir ekip arkadaşın PR'ına yorum bıraktı: aynı mantık iki bileşende tekrarlanmış."
+    d: 2
+    targets: [duplicated, address, good-point]
+    turns:
+      - ["Reviewer", "This logic is duplicated in two components. Could we move it to a shared helper?", "Bu mantık iki bileşende tekrarlanmış. Ortak bir yardımcıya taşıyabilir miyiz?"]
+      - choose:
+          - ["Good point. I'll move it to a helper and update the PR.", true, "Yorumu kabul edip ne yapacağını söylüyor."]
+          - ["Good paint. I'll move it to a helper.", false, "“paint” boya demektir; doğru ifade “Good point”."]
+          - ["No point. It is duplicated because duplicated.", false, "Kaba ve anlamsız bir gerekçe."]
+      - ["Reviewer", "Thanks! Let me know when it's ready for another look.", "Teşekkürler! Tekrar bakmaya hazır olduğunda haber ver."]
+      - choose:
+          - ["Will do. I've addressed all your comments now.", true, "Kısa ve net; yorumların gereğinin yapıldığını bildiriyor."]
+          - ["Will do. I've added all your comments to the code.", false, "Yorumlar koda eklenmez; gereği yapılır (addressed)."]
+          - ["Will do. I addressing all comments yesterday.", false, "Fiil zamanı yanlış."]
+  - id: approve-pr
+    title: "PR onaylama"
+    sit: "Bir PR'ı inceledin. Küçük bir öneri dışında her şey iyi görünüyor."
+    d: 1
+    targets: [looks-good, nitpick, merge]
+    turns:
+      - ["Author", "Hi! Did you have a chance to look at my PR?", "Merhaba! PR'ıma bakma fırsatın oldu mu?"]
+      - choose:
+          - ["Yes, looks good to me. Just one nitpick about a variable name.", true, "Onay veriyor ve küçük notu belirtiyor."]
+          - ["Yes, looks good at me, no nitpicks for merge.", false, "Edat yanlış ve cümle bozuk."]
+          - ["Yes, it is a nitpick, so I can't approve.", false, "Küçük bir not onayı engellemez; anlam çelişkili."]
+      - ["Author", "Thanks! Can I merge it after I fix that?", "Teşekkürler! Onu düzelttikten sonra birleştirebilir miyim?"]
+      - choose:
+          - ["Sure, feel free to merge once the tests pass.", true, "Onay veriyor ve koşulu net söylüyor."]
+          - ["Sure, feel free to merge before you write it.", false, "Mantıksız: henüz yazılmamış kod birleştirilmez."]
+          - ["Sure, feel free merge.", false, "“feel free to + fiil” kalıbında “to” eksik."]
+
+readings:
+  - id: pr-description
+    title: "PR: Add search filters"
+    kind: "PR açıklaması"
+    d: 2
+    s:
+      - ["This PR adds price and category filters to the search page.", "Bu PR, arama sayfasına fiyat ve kategori filtreleri ekliyor."]
+      - ["I refactored the search service so that each filter is a small function.", "Arama servisini, her filtre küçük bir fonksiyon olacak şekilde yeniden düzenledim."]
+      - ["Test coverage for the search module is now 85%.", "Arama modülünün test kapsamı artık %85."]
+      - ["The old filter API is deprecated but still works.", "Eski filtre API'si kullanımdan kaldırıldı ama hâlâ çalışıyor."]
+      - ["Please review the naming in filters.ts carefully.", "Lütfen filters.ts dosyasındaki adlandırmayı dikkatle incele."]
+    gloss: ["refactored | yeniden düzenlendi", "coverage | test kapsamı", "deprecated | kullanımdan kaldırılmış", "naming | adlandırma"]
+    q:
+      - q: "Bu PR ne ekliyor?"
+        o: ["Fiyat ve kategori filtreleri", "Yeni bir giriş sayfası", "Ödeme sistemi"]
+        a: 0
+        why: "“adds price and category filters to the search page”"
+      - q: "Eski filtre API'si için doğru olan hangisi?"
+        o: ["Artık hiç çalışmıyor", "Kullanımdan kaldırıldı ama hâlâ çalışıyor", "Yeni eklendi"]
+        a: 1
+        why: "“deprecated but still works”"
+      - q: "Yazar incelemecilerden özellikle neye bakmalarını istiyor?"
+        o: ["Test kapsamına", "filters.ts dosyasındaki adlandırmaya", "Ödeme ekranına"]
+        a: 1
+        why: "“Please review the naming in filters.ts carefully.”"
+  - id: review-thread
+    title: "Review comments"
+    kind: "Kod inceleme yorumları"
+    d: 2
+    s:
+      - ["Reviewer: Nice catch on the empty list case!", "İnceleyen: Boş liste durumunu iyi yakalamışsın!"]
+      - ["Reviewer: The API URL is hardcoded here. Could we read it from the config instead?", "İnceleyen: API adresi burada koda sabit yazılmış. Bunun yerine yapılandırmadan okuyabilir miyiz?"]
+      - ["Author: Good point, I've moved it to the config file.", "Yazar: Haklısın, yapılandırma dosyasına taşıdım."]
+      - ["Reviewer: There is also a merge conflict in package.json.", "İnceleyen: package.json dosyasında bir birleştirme çakışması da var."]
+      - ["Author: Fixed. Ready for another look.", "Yazar: Düzelttim. Tekrar bakmaya hazır."]
+    gloss: ["nice catch | iyi yakaladın", "hardcoded | koda sabit yazılmış", "merge conflict | birleştirme çakışması", "ready for another look | tekrar incelemeye hazır"]
+    q:
+      - q: "İnceleyen API adresiyle ilgili ne öneriyor?"
+        o: ["Adresi silmeyi", "Adresi yapılandırmadan okumayı", "Adresi başka bir dala taşımayı"]
+        a: 1
+        why: "“Could we read it from the config instead?”"
+      - q: "Konuşmanın sonunda durum ne?"
+        o: ["Yazar düzeltmeleri yaptı ve yeniden inceleme bekliyor", "İnceleyen PR'ı reddetti", "Çakışma hâlâ duruyor"]
+        a: 0
+        why: "“Fixed. Ready for another look.”"
+
+writing:
+  id: review-comment
+  p: "Bir PR'a 2–3 cümlelik nazik bir inceleme yorumu yaz: bir şeyi beğen, bir değişiklik öner ve nedenini söyle."
+  rubric: ["Olumlu bir geri bildirimle başlıyor", "Öneriyi “could / maybe / what about” gibi nazik bir kalıpla yapıyor", "Önerinin nedenini açıklıyor"]
+  samples: ["Nice work on the search filters! One suggestion: the API URL is hardcoded, so maybe we could read it from the config file. This would make it easier to change per environment."]
+  d: 3
+
+situations:
+  - { parent: "Kod inceleme", name: "Değişiklik önermek", items: [maybe-we-could, what-do-you-think, instead-of, split-prs] }
+  - { parent: "Kod inceleme", name: "Onay vermek", items: [looks-good, nice-catch] }
+  - { parent: "Kod inceleme", name: "Yorumlara yanıt vermek", items: [good-point, updated-pr, thanks-for-review] }
+  - { parent: "Kod inceleme", name: "Gerekçe sormak", items: [reason-why, not-sure-about] }
