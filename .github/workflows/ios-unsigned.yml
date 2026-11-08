@@ -1,0 +1,55 @@
+# iPhone için imzasız .ipa üretir. Windows'ta Sideloadly ile ücretsiz Apple ID'nle imzalanıp telefona kurulur.
+# Elle çalıştırılır: GitHub → Actions → "iOS (imzasız IPA)" → Run workflow. Sonuç "Artifacts" bölümünden indirilir.
+name: iOS (imzasız IPA)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: apps/mobile
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Platform klasörleri
+        run: flutter create --org com.beyzaacar --project-name lingora --platforms=ios .
+
+      - name: Bağımlılıklar ve testler
+        run: |
+          flutter pub get
+          flutter test
+
+      - name: Uygulama adı ve derin bağlantı
+        run: |
+          /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName Lingora" ios/Runner/Info.plist
+          /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes array" ios/Runner/Info.plist || true
+          /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes:0 dict" ios/Runner/Info.plist || true
+          /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes array" ios/Runner/Info.plist || true
+          /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes:0 string com.beyzaacar.lingora" ios/Runner/Info.plist || true
+
+      - name: Derle (imzasız)
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
+        run: |
+          flutter build ios --release --no-codesign \
+            --dart-define=SUPABASE_URL="$SUPABASE_URL" \
+            --dart-define=SUPABASE_ANON_KEY="$SUPABASE_ANON_KEY"
+          mkdir -p Payload
+          cp -R build/ios/iphoneos/Runner.app Payload/
+          zip -qr Lingora-unsigned.ipa Payload
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Lingora-unsigned-ipa
+          path: apps/mobile/Lingora-unsigned.ipa
+          retention-days: 14
