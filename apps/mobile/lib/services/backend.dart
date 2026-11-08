@@ -7,6 +7,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../config.dart';
 import '../data/user_data.dart';
+import '../srs/fsrs.dart';
 
 /// Sunucu hatası (docs/api-contract.md §4). `code` uygulamanın davranışını belirler.
 class ApiError implements Exception {
@@ -44,7 +45,7 @@ class Backend extends ChangeNotifier {
   Future<void> init() async {
     if (!AppConfig.hasBackend) return;
     try {
-      await Supabase.initialize(url: AppConfig.supabaseUrl, anonKey: AppConfig.supabaseAnonKey);
+      await Supabase.initialize(url: AppConfig.supabaseUrl, publishableKey: AppConfig.supabaseAnonKey);
       ready = true;
       Supabase.instance.client.auth.onAuthStateChange.listen((_) => notifyListeners());
       await ensureSession();

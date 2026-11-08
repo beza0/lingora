@@ -187,7 +187,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
     }
     if (!mounted) return;
     setState(() => result = r);
-    await _record(s, ex, r!);
+    await _record(s, ex, r);
   }
 
   Future<bool?> _selfGrade(String expected, ApiError e) => showDialog<bool>(
