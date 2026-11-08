@@ -142,6 +142,7 @@ class UserData extends ChangeNotifier {
   final List<CustomItem> custom = [];
   String themeMode = 'system';
   double ttsRate = 0.45;
+  bool soundOn = true;
   bool onboarded = false;
   bool dirtyMeta = false;
 
@@ -165,6 +166,7 @@ class UserData extends ChangeNotifier {
     final settings = _map(await store.getKv('settings'));
     themeMode = settings['theme'] as String? ?? 'system';
     ttsRate = (settings['tts_rate'] as num?)?.toDouble() ?? 0.45;
+    soundOn = settings['sound'] as bool? ?? true;
     onboarded = settings['onboarded'] as bool? ?? false;
     dirtyMeta = (await store.getKv('dirty_meta')) == '1';
     notifyListeners();
@@ -185,7 +187,7 @@ class UserData extends ChangeNotifier {
   }
 
   Future<void> _saveSettings() =>
-      store.putKv('settings', jsonEncode({'theme': themeMode, 'tts_rate': ttsRate, 'onboarded': onboarded}));
+      store.putKv('settings', jsonEncode({'theme': themeMode, 'tts_rate': ttsRate, 'sound': soundOn, 'onboarded': onboarded}));
 
   Future<void> clearMetaDirty() async {
     dirtyMeta = false;
@@ -230,6 +232,12 @@ class UserData extends ChangeNotifier {
 
   Future<void> setTheme(String mode) async {
     themeMode = mode;
+    await _saveSettings();
+    notifyListeners();
+  }
+
+  Future<void> setSound(bool on) async {
+    soundOn = on;
     await _saveSettings();
     notifyListeners();
   }

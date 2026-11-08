@@ -6,6 +6,7 @@ import '../../app_state.dart';
 import '../../data/content.dart';
 import '../../data/user_data.dart';
 import '../../services/backend.dart';
+import '../../services/sound_fx.dart';
 import '../../srs/answer_check.dart';
 import '../../srs/session.dart';
 import '../../theme.dart';
@@ -67,7 +68,10 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
 
   SessionStep? get step => index < steps.length ? steps[index] : null;
 
-  void _next() {
+  void _fx(Fx f) => ref.read(soundProvider).play(f);
+
+  void _next({bool tap = true}) {
+    if (tap) _fx(Fx.tap);
     setState(() {
       index++;
       hintsUsed = 0;
@@ -76,7 +80,10 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
       checking = false;
       typed.clear();
     });
-    if (index >= steps.length) _finish();
+    if (index >= steps.length) {
+      if (answered > 0) _fx(Fx.complete);
+      _finish();
+    }
   }
 
   Future<void> _finish() async {
@@ -132,6 +139,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
       source: 'local',
       englishAnswer: ex['type'] == 'cloze_choice' || ex['type'] == 'dialogue_choice',
     );
+    _fx(r.ok ? Fx.correct : Fx.wrong);
     setState(() {
       selected = i;
       result = r;
@@ -188,6 +196,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
       r = _Result(Outcome.incorrect, expected: answer, source: 'local');
     }
     if (!mounted) return;
+    _fx(r.ok ? Fx.correct : Fx.wrong);
     setState(() => result = r);
     await _record(s, ex, r);
   }
@@ -278,7 +287,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
                   empty: plan.isEmpty,
                 )
               : s.kind == StepKind.intro
-                  ? _Intro(view: content.view(s.targetId), onNext: _next, onKnow: () => _iKnowIt(s))
+                  ? _Intro(view: content.view(s.targetId), onNext: () => _next(), onKnow: () => _iKnowIt(s))
                   : _exercise(content, s),
         ),
       ),
@@ -288,7 +297,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
   Widget _exercise(ContentRepo content, SessionStep s) {
     final ex = content.exercises[s.exerciseId];
     if (ex == null) {
-      WidgetsBinding.instance.addPostFrameCallback((_) => _next());
+      WidgetsBinding.instance.addPostFrameCallback((_) => _next(tap: false));
       return const SizedBox.shrink();
     }
     final p = context.pal;
@@ -425,7 +434,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
       Padding(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 12),
         child: result != null
-            ? FilledButton(onPressed: _next, child: const Text('Devam'))
+            ? FilledButton(onPressed: () => _next(), child: const Text('Devam'))
             : typing
                 ? FilledButton(
                     onPressed: checking ? null : () => _answerTyped(s, ex),

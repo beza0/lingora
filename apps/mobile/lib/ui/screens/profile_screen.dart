@@ -122,11 +122,19 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 onChanged: (v) => user.setTheme(v ?? 'system'),
               ),
             ),
+            SwitchListTile(
+              title: const Text('Ses efektleri'),
+              subtitle: const Text('Doğru, yanlış ve düğme sesleri'),
+              value: user.soundOn,
+              onChanged: (v) => user.setSound(v),
+            ),
             ListTile(
               title: const Text('Konuşma hızı'),
               subtitle: Slider(value: user.ttsRate, min: 0.2, max: 0.8, divisions: 6, onChanged: (v) => user.setTtsRate(v)),
               trailing: SpeakButton('This is how fast I will speak.'),
             ),
+            if (ref.read(speakerProvider).voiceName != null)
+              ListTile(title: const Text('İngilizce ses'), trailing: Text(ref.read(speakerProvider).voiceName!, style: TextStyle(color: p.muted))),
             FutureBuilder<Map<String, int>>(
               future: usage,
               builder: (_, snap) {
