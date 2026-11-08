@@ -1,0 +1,523 @@
+id: yds-change
+domain: yds
+title: "Değişim, artış ve azalış"
+desc: "Grafik, oran ve eğilim anlatan akademik kelimeler ve kalıplar. Sorular özgün çalışma sorularıdır."
+sort: 3
+
+targets:
+  - id: increase
+    w: increase
+    pos: v
+    tr: "artmak, artırmak"
+    ex: "The number of tourists [[increased]] by 20% last year."
+    extr: "Turist sayısı geçen yıl %20 arttı."
+    d: 1
+    fam: ["increase (i.) artış", "increasingly (z.) giderek"]
+    ant: ["decrease"]
+    tone: ["Akademik"]
+    dis:
+      - "incised | Kesilmiş, oyulmuş demektir."
+      - "creased | Kırışmış demektir."
+      - "inherited | Miras kaldı demektir."
+  - id: decline
+    w: decline
+    pos: v
+    tr: "düşmek, azalmak"
+    ex: "Sales [[declined]] sharply in the second quarter."
+    extr: "Satışlar ikinci çeyrekte keskin biçimde düştü."
+    d: 2
+    fam: ["decline (i.) düşüş"]
+    other: "“Kibarca reddetmek” anlamına da gelir: decline an invitation."
+    tone: ["Akademik"]
+    dis:
+      - "declared | Açıkladı, ilan etti demektir."
+      - "reclined | Arkaya yaslandı demektir."
+      - "designed | Tasarladı demektir."
+  - id: sharply
+    w: sharply
+    pos: adv
+    tr: "keskin biçimde, hızla"
+    ex: "Prices rose [[sharply]] after the storm."
+    extr: "Fırtınadan sonra fiyatlar keskin biçimde yükseldi."
+    d: 2
+    fam: ["sharp (s.) keskin"]
+    ant: ["slightly", "gradually"]
+    tone: ["Akademik"]
+    dis:
+      - "sharp | Sıfattır; fiili nitelemek için zarf gerekir."
+      - "shapely | Biçimli demektir."
+      - "shabbily | Özensizce demektir."
+  - id: gradually
+    w: gradually
+    pos: adv
+    tr: "yavaş yavaş, kademeli olarak"
+    ex: "The temperature rose [[gradually]] over the century."
+    extr: "Sıcaklık yüzyıl boyunca yavaş yavaş yükseldi."
+    d: 2
+    fam: ["gradual (s.) kademeli"]
+    tone: ["Akademik"]
+    dis:
+      - "graduate | Mezun demektir."
+      - "gratefully | Minnetle demektir."
+      - "grandly | Görkemli biçimde demektir."
+  - id: steady
+    w: steady
+    pos: adj
+    tr: "düzenli ve sürekli"
+    ex: "There has been a [[steady]] rise in house prices."
+    extr: "Konut fiyatlarında düzenli ve sürekli bir artış oldu."
+    d: 2
+    fam: ["steadily (z.) düzenli olarak"]
+    tone: ["Akademik"]
+    dis:
+      - "study | Çalışma demektir; isimdir."
+      - "sturdy | Sağlam yapılı demektir."
+      - "steamy | Buharlı demektir."
+  - id: dramatic
+    w: dramatic
+    pos: adj
+    tr: "çarpıcı, çok büyük"
+    ex: "The report shows a [[dramatic]] drop in crime."
+    extr: "Rapor suçta çarpıcı bir düşüş olduğunu gösteriyor."
+    d: 2
+    fam: ["dramatically (z.) çarpıcı biçimde"]
+    tone: ["Akademik"]
+    dis:
+      - "dogmatic | Dogmatik demektir."
+      - "dramatist | Oyun yazarı demektir; isimdir."
+      - "diplomatic | Diplomatik demektir."
+  - id: rate
+    w: rate
+    pos: n
+    tr: "oran, hız"
+    ex: "The unemployment [[rate]] fell to 8%."
+    extr: "İşsizlik oranı %8'e düştü."
+    d: 1
+    col: ["birth rate", "interest rate", "growth rate"]
+    tone: ["Akademik"]
+    dis:
+      - "rat | Sıçan demektir."
+      - "rage | Öfke demektir."
+      - "late | Geç demektir."
+  - id: fluctuate
+    w: fluctuate
+    pos: v
+    tr: "dalgalanmak, inip çıkmak"
+    ex: "Oil prices [[fluctuated]] throughout the year."
+    extr: "Petrol fiyatları yıl boyunca dalgalandı."
+    d: 3
+    fam: ["fluctuation (i.) dalgalanma"]
+    tone: ["Akademik"]
+    dis:
+      - "flushed | Kızardı demektir."
+      - "fluttered | Çırpındı demektir."
+      - "fractured | Kırıldı demektir."
+  - id: remain
+    w: remain
+    pos: v
+    tr: "(aynı) kalmak"
+    ex: "The population [[remained]] stable for ten years."
+    extr: "Nüfus on yıl boyunca sabit kaldı."
+    d: 2
+    tone: ["Akademik"]
+    dis:
+      - "reminded | Hatırlattı demektir."
+      - "remarked | Belirtti demektir."
+      - "remedied | Çare buldu demektir."
+  - id: stable
+    w: stable
+    pos: adj
+    tr: "sabit, değişmeyen"
+    ex: "Prices have been [[stable]] since March."
+    extr: "Fiyatlar marttan beri sabit."
+    d: 2
+    fam: ["stability (i.) istikrar"]
+    other: "İsim olarak “ahır” demektir."
+    tone: ["Akademik"]
+    dis:
+      - "table | Masa demektir."
+      - "stale | Bayat demektir."
+      - "stabled | Ahıra konmuş demektir."
+  - id: double
+    w: double
+    pos: v
+    tr: "iki katına çıkmak"
+    ex: "The number of electric cars has [[doubled]] since 2020."
+    extr: "Elektrikli araç sayısı 2020'den beri iki katına çıktı."
+    d: 2
+    fam: ["triple (f.) üç katına çıkmak", "halve (f.) yarıya inmek"]
+    tone: ["Akademik"]
+    dis:
+      - "doubted | Şüphelendi demektir."
+      - "dabbled | Amatörce uğraştı demektir."
+      - "bubbled | Köpürdü demektir."
+  - id: reach
+    w: reach
+    pos: v
+    tr: "ulaşmak"
+    ex: "Unemployment [[reached]] its highest level in 2009."
+    extr: "İşsizlik 2009'da en yüksek düzeyine ulaştı."
+    d: 1
+    tone: ["Akademik"]
+    dis:
+      - "reacted | Tepki verdi demektir."
+      - "preached | Vaaz verdi demektir."
+      - "rated | Değerlendirdi demektir."
+  - id: peak
+    w: peak
+    pos: n
+    tr: "zirve, en yüksek nokta"
+    ex: "Sales hit a [[peak]] in December."
+    extr: "Satışlar aralıkta zirveye ulaştı."
+    d: 2
+    col: ["reach a peak", "peak season"]
+    tone: ["Akademik"]
+    dis:
+      - "peek | Gizlice bakış demektir."
+      - "pick | Seçim demektir."
+      - "beak | Gaga demektir."
+  - id: drop
+    w: drop
+    pos: n
+    tr: "düşüş"
+    ex: "There was a sudden [[drop]] in temperature at night."
+    extr: "Gece sıcaklıkta ani bir düşüş oldu."
+    d: 1
+    col: ["a sharp drop", "drop in"]
+    other: "“Damla” anlamına da gelir."
+    tone: ["Akademik"]
+    dis:
+      - "drip | Damlama demektir."
+      - "dropout | Okulu bırakan kişi demektir."
+      - "drape | Perde demektir."
+  - id: proportion
+    w: proportion
+    pos: n
+    tr: "oran, pay"
+    ex: "A large [[proportion]] of students work part-time."
+    extr: "Öğrencilerin büyük bir kısmı yarı zamanlı çalışıyor."
+    d: 3
+    fam: ["proportional (s.) orantılı"]
+    tone: ["Akademik"]
+    dis:
+      - "promotion | Terfi demektir."
+      - "proposition | Önerme demektir."
+      - "protection | Koruma demektir."
+  - id: slightly
+    w: slightly
+    pos: adv
+    tr: "biraz, hafifçe"
+    ex: "Exports fell [[slightly]] in May."
+    extr: "İhracat mayısta biraz düştü."
+    d: 2
+    ant: ["sharply", "dramatically"]
+    tone: ["Akademik"]
+    dis:
+      - "slightest | En üstünlük sıfatıdır."
+      - "sightly | Göze hoş gelen demektir."
+      - "slyly | Kurnazca demektir."
+  - id: overall
+    w: overall
+    pos: adv
+    tr: "genel olarak, bütün olarak"
+    ex: "[[Overall]], the economy grew by 3%."
+    extr: "Genel olarak ekonomi %3 büyüdü."
+    d: 2
+    tone: ["Akademik"]
+    dis:
+      - "Overalls | Tulum (giysi) demektir."
+      - "Overhaul | Elden geçirme demektir."
+      - "Overload | Aşırı yük demektir."
+  - id: decade
+    w: decade
+    pos: n
+    tr: "on yıl"
+    ex: "Life expectancy has increased over the last [[decade]]."
+    extr: "Ortalama yaşam süresi son on yılda arttı."
+    d: 1
+    tone: ["Akademik"]
+    dis:
+      - "decay | Çürüme demektir."
+      - "decode | Şifre çözmek demektir."
+      - "facade | Cephe demektir."
+  - id: level-off
+    w: level off
+    pos: phrasal
+    tr: "sabitlenmek, düzleşmek"
+    ex: "After years of growth, sales began to [[level off]]."
+    extr: "Yıllarca süren büyümenin ardından satışlar sabitlenmeye başladı."
+    d: 3
+    syn: ["stabilize"]
+    tone: ["Akademik"]
+    dis:
+      - "level up | “Seviye atlamak” demektir."
+      - "lever off | “lever” kaldıraç demektir."
+      - "leave off | “Bırakmak” demektir."
+  - id: figure
+    w: figure
+    pos: n
+    tr: "rakam, sayısal veri"
+    ex: "According to official [[figures]], two million people moved abroad."
+    extr: "Resmî rakamlara göre iki milyon kişi yurt dışına taşındı."
+    d: 2
+    other: "“Şekil” veya “kişi, figür” anlamlarına da gelir."
+    tone: ["Akademik"]
+    dis:
+      - "fingers | Parmaklar demektir."
+      - "fixtures | Demirbaşlar demektir."
+      - "features | Özellikler demektir."
+
+patterns:
+  - id: increased-from-to
+    t: "… increased from … to …"
+    ex: "The price increased [[from]] 10 to 15 dollars."
+    extr: "Fiyat 10 dolardan 15 dolara çıktı."
+    ttr: "Fiyat … çıktı."
+    slots: ["10 to 15 dollars | 10 dolardan 15 dolara", "2 to 3 million | 2 milyondan 3 milyona", "40% to 55% | %40'tan %55'e"]
+    chunks: ["The price increased | fiyat arttı", "from 10 | 10'dan", "to 15 dollars | 15 dolara"]
+    g: change-verbs
+    ctx: ["Grafik"]
+    tone: ["Akademik"]
+    d: 1
+    dis:
+      - "since | Başlangıç ve son değer için “from … to” kalıbı kullanılır."
+      - "off | Edat yanlış."
+      - "for | Edat yanlış."
+  - id: has-risen-since
+    t: "… has risen since …"
+    ex: "The number of users [[has risen]] since 2020."
+    extr: "Kullanıcı sayısı 2020'den beri arttı."
+    ttr: "Kullanıcı sayısı şundan beri arttı: …."
+    slots: ["2020 | 2020", "the new law | yeni yasa", "last summer | geçen yaz"]
+    chunks: ["The number of users | kullanıcı sayısı", "has risen | arttı (ve etkisi sürüyor)", "since 2020 | 2020'den beri"]
+    g: present-perfect-trends
+    ctx: ["Grafik", "Paragraf"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "has rose | Fiilin 3. hâli gerekir: risen."
+      - "have risen | Tekil özne (the number) ile “has” gerekir."
+      - "has raised | “raise” nesne ister; burada nesne yok."
+  - id: a-rise-in
+    t: "There was a … rise in …"
+    ex: "There was a sharp rise [[in]] food prices."
+    extr: "Gıda fiyatlarında keskin bir artış oldu."
+    ttr: "Şunda keskin bir artış oldu: …."
+    slots: ["food prices | gıda fiyatları", "online sales | çevrim içi satışlar", "the number of visitors | ziyaretçi sayısı"]
+    chunks: ["There was | oldu", "a sharp rise | keskin bir artış", "in food prices | gıda fiyatlarında"]
+    g: change-verbs
+    ctx: ["Grafik"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "of | Değişen şeyi belirtirken “rise in” kullanılır."
+      - "on | Edat yanlış."
+      - "at | Edat yanlış."
+  - id: fell-by
+    t: "… fell by …"
+    ex: "Unemployment fell [[by]] two percentage points."
+    extr: "İşsizlik iki yüzde puan düştü."
+    ttr: "İşsizlik şu kadar düştü: …."
+    slots: ["two percentage points | iki yüzde puan", "half | yarı yarıya", "about 10% | yaklaşık %10"]
+    chunks: ["Unemployment fell | işsizlik düştü", "by | … kadar (değişim miktarı)", "two percentage points | miktar"]
+    g: change-verbs
+    ctx: ["Grafik"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "with | Edat yanlış."
+      - "of | Edat yanlış."
+      - "at | Edat yanlış."
+  - id: number-of
+    t: "The number of … has …"
+    ex: "[[The number of]] students has grown."
+    extr: "Öğrenci sayısı arttı."
+    ttr: "… sayısı arttı."
+    slots: ["students | Öğrenci", "cars | Araç", "tourists | Turist"]
+    chunks: ["The number of | … sayısı (tekil)", "students | sayılan şey", "has grown | arttı"]
+    g: present-perfect-trends
+    ctx: ["Grafik", "Paragraf"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "A number of | “Birçok” demektir ve çoğul fiil ister."
+      - "The amount of | Sayılamayan isimler için kullanılır."
+      - "The numbers of | Bu kalıpta tekil “number” kullanılır."
+  - id: than-in
+    t: "… -er than in …"
+    ex: "Sales were higher [[than]] in 2022."
+    extr: "Satışlar 2022'dekinden daha yüksekti."
+    ttr: "Satışlar şundan daha yüksekti: …."
+    slots: ["in 2022 | 2022'dekinden", "last year | geçen yıldan", "expected | beklenenden"]
+    chunks: ["Sales were higher | satışlar daha yüksekti", "than | -den", "in 2022 | karşılaştırılan"]
+    g: comparatives
+    ctx: ["Grafik"]
+    tone: ["Akademik"]
+    d: 1
+    dis:
+      - "then | “O zaman” demektir."
+      - "as | Eşitlik için “as … as” kullanılır."
+      - "that | Karşılaştırmada “than” gerekir."
+  - id: remained-throughout
+    t: "… remained … throughout …"
+    ex: "Prices remained stable [[throughout]] the year."
+    extr: "Fiyatlar yıl boyunca sabit kaldı."
+    ttr: "Fiyatlar şu süre boyunca sabit kaldı: …."
+    slots: ["the year | yıl", "the summer | yaz", "the decade | on yıl"]
+    chunks: ["Prices remained stable | fiyatlar sabit kaldı", "throughout | boyunca", "the year | süre"]
+    g: change-verbs
+    ctx: ["Grafik"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "thorough | “Titiz, kapsamlı” demektir."
+      - "through out | Ayrı yazılmaz."
+      - "though | “-e rağmen” demektir."
+  - id: accounted-for
+    t: "… accounted for … of …"
+    ex: "Women [[accounted for]] 60% of the participants."
+    extr: "Katılımcıların %60'ını kadınlar oluşturuyordu."
+    ttr: "Kadınlar şunu oluşturuyordu: …."
+    slots: ["60% of the participants | katılımcıların %60'ı", "half of all users | tüm kullanıcıların yarısı", "a third of the sample | örneklemin üçte biri"]
+    chunks: ["Women | kadınlar", "accounted for | oluşturuyordu", "60% of the participants | pay"]
+    g: change-verbs
+    ctx: ["Grafik", "Paragraf"]
+    tone: ["Akademik"]
+    d: 3
+    dis:
+      - "accounted to | Edat yanlış: for."
+      - "counted for | “Değeri olmak” demektir; oran bildirmez."
+      - "accounting for | Çekimli fiil gerekir."
+  - id: tend-to
+    t: "… tend to …"
+    ex: "Older people [[tend to]] use fewer apps."
+    extr: "Yaşlı insanlar daha az uygulama kullanma eğiliminde."
+    ttr: "Yaşlı insanlar şu eğilimde: …."
+    slots: ["use fewer apps | daha az uygulama kullanmak", "save more money | daha çok para biriktirmek", "sleep less | daha az uyumak"]
+    chunks: ["Older people | yaşlı insanlar", "tend to | … eğilimindedir", "use fewer apps | davranış"]
+    g: reporting-verbs
+    ctx: ["Paragraf"]
+    tone: ["Temkinli"]
+    d: 2
+    dis:
+      - "tend for | Edat yanlış: to."
+      - "tends to | Çoğul özne -s almaz."
+      - "tend on | Edat yanlış: to."
+  - id: by-the-end
+    t: "By the end of …, …"
+    ex: "[[By the end of]] 2030, the population will reach 90 million."
+    extr: "2030 sonuna kadar nüfus 90 milyona ulaşacak."
+    ttr: "… sonuna kadar nüfus 90 milyona ulaşacak."
+    slots: ["2030 | 2030", "the decade | On yılın", "the century | Yüzyılın"]
+    chunks: ["By the end of 2030 | 2030 sonuna kadar", "the population will reach | nüfus ulaşacak", "90 million | değer"]
+    g: going-to-plans
+    ctx: ["Tahmin", "Paragraf"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "Until the end of | “until” süreklilik bildirir; tahminlerde “by” kullanılır."
+      - "In the end of | “at the end of” ya da “by the end of” denir."
+      - "By the ending of | Kalıpta isim olarak “end” kullanılır."
+
+grammar:
+  - id: change-verbs
+    title: "Değişimi anlatma: increase, rise, fall, decline"
+    short: "Fiil: Prices rose/fell by 5%. İsim: There was a 5% rise/fall in prices. by = değişim miktarı, to = ulaşılan değer, from … to = başlangıç ve son değer."
+    long: "rise (rose, risen) nesne almaz; raise nesne ister: The company raised prices. Zarf + fiil: increased sharply, fell slightly. Sıfat + isim: a sharp increase, a slight fall. Grafik metinlerinde sık geçenler: peak (zirve), remain stable (sabit kalmak), fluctuate (dalgalanmak), level off (sabitlenmek), account for (… oluşturmak)."
+    ex: ["Sales rose by 10% to 2 million. | Satışlar %10 artarak 2 milyona çıktı.", "There was a slight fall in exports. | İhracatta hafif bir düşüş oldu.", "The company raised its prices. | Şirket fiyatlarını artırdı."]
+  - id: present-perfect-trends
+    title: "Eğilimlerde present perfect"
+    short: "Geçmişte başlayıp etkisi süren değişimler için has/have + fiilin 3. hâli kullanılır: The number of users has doubled since 2020."
+    long: "since + başlangıç noktası (since 2020), for + süre (for ten years), over the last decade. Sürecin devam ettiğini vurgulamak için present perfect continuous: Prices have been rising for months. Belirli ve bitmiş bir zaman söyleniyorsa past simple gerekir: Prices rose in 2021."
+    ex: ["Internet use has increased over the last decade. | İnternet kullanımı son on yılda arttı.", "The number of students has grown since 2015. | Öğrenci sayısı 2015'ten beri arttı.", "Prices have been rising for six months. | Fiyatlar altı aydır yükseliyor."]
+
+scenarios:
+  - id: describe-chart
+    title: "Grafiği anlatma"
+    sit: "Seminerde bir şirketin 2015–2024 satışlarını gösteren çizgi grafiği anlatıyorsun."
+    d: 3
+    targets: [increase, peak, level-off]
+    turns:
+      - ["Lecturer", "Can you describe the trend in sales?", "Satışlardaki eğilimi anlatabilir misin?"]
+      - choose:
+          - ["Sales increased steadily from 2015 to 2019 and reached a peak in 2020.", true, "Zarf, zaman ve “reach a peak” kalıbı doğru."]
+          - ["Sales increased steady from 2015 to 2019.", false, "Fiili niteleyen zarf gerekir: steadily."]
+          - ["Sales has increase from 2015 to 2019.", false, "Çoğul özne ve fiil biçimi yanlış; bitmiş dönem için past simple gerekir."]
+      - ["Lecturer", "And what happened after 2020?", "Peki 2020'den sonra ne oldu?"]
+      - choose:
+          - ["They fell slightly and then leveled off.", true, "Hafif düşüşü ve sabitlenmeyi doğru anlatıyor."]
+          - ["They fell slight and then leveled up.", false, "Zarf gerekir (slightly); “level up” seviye atlamak demektir."]
+          - ["They have fallen in 2021 by slightly.", false, "Belirli bir yılla present perfect kullanılmaz; “by slightly” yanlış."]
+  - id: interpret-figure
+    title: "Oranı yorumlama"
+    sit: "Bir rapordaki oranı arkadaşına açıklıyorsun."
+    d: 2
+    targets: [proportion, accounted-for, figure]
+    turns:
+      - ["Friend", "The report says women accounted for 60% of the participants. What does that mean?", "Raporda katılımcıların %60'ını kadınların oluşturduğu yazıyor. Bu ne demek?"]
+      - choose:
+          - ["It means that six out of ten participants were women.", true, "“account for” burada “oluşturmak” demektir."]
+          - ["It means that women counted the participants.", false, "“account for” burada saymak anlamında değildir."]
+          - ["It means that exactly 60 women took part.", false, "Oran ile sayı karıştırılmış; toplam katılımcı sayısı verilmiyor."]
+      - ["Friend", "Is that a large proportion?", "Bu büyük bir oran mı?"]
+      - choose:
+          - ["Yes, it's more than half.", true, "%60 yarıdan fazladır."]
+          - ["Yes, it's more than double.", false, "%60 yarıdan fazladır; iki kat değildir."]
+          - ["No, it's less than a third.", false, "%60 üçte birden fazladır."]
+
+readings:
+  - id: internet-use-chart
+    title: "Daily internet use, 2010–2024"
+    kind: "Grafik yorumu"
+    d: 3
+    s:
+      - ["The chart shows the proportion of adults who used the internet daily between 2010 and 2024.", "Grafik, 2010 ile 2024 arasında interneti her gün kullanan yetişkinlerin oranını gösteriyor."]
+      - ["In 2010, the figure was about 40%.", "2010'da bu oran yaklaşık %40'tı."]
+      - ["It rose steadily over the next decade and reached 80% in 2020.", "Sonraki on yılda düzenli olarak arttı ve 2020'de %80'e ulaştı."]
+      - ["Since then, it has risen slightly and leveled off at around 85%.", "O zamandan beri biraz arttı ve yaklaşık %85'te sabitlendi."]
+      - ["Overall, daily internet use more than doubled over the period.", "Genel olarak günlük internet kullanımı bu dönemde iki katından fazla arttı."]
+    gloss: ["proportion | oran", "steadily | düzenli olarak", "leveled off | sabitlendi", "overall | genel olarak"]
+    q:
+      - q: "2020'de oran neydi?"
+        o: ["%40", "%80", "%85"]
+        a: 1
+        why: "“reached 80% in 2020”"
+      - q: "Paragrafa göre hangisi doğrudur?"
+        o: ["Oran 2020'den sonra keskin biçimde düştü", "Oran dönem boyunca iki katından fazla arttı", "Oran hep %40 civarında kaldı"]
+        a: 1
+        why: "%40'tan yaklaşık %85'e çıkmış: “more than doubled”."
+  - id: birth-rates
+    title: "Birth rates in developed countries"
+    kind: "Akademik paragraf"
+    d: 3
+    s:
+      - ["In many developed countries, birth rates have declined over the last fifty years.", "Pek çok gelişmiş ülkede doğum oranları son elli yılda düştü."]
+      - ["This trend is mainly attributed to higher education levels and the rising cost of raising children.", "Bu eğilim esas olarak daha yüksek eğitim düzeylerine ve çocuk yetiştirmenin artan maliyetine bağlanıyor."]
+      - ["As a result, the proportion of older people in the population has increased.", "Sonuç olarak nüfus içindeki yaşlıların oranı arttı."]
+      - ["Some governments now offer financial support to families; however, its effect has been limited so far.", "Bazı hükümetler artık ailelere maddi destek sunuyor; ancak bunun etkisi şimdiye kadar sınırlı kaldı."]
+    gloss: ["birth rate | doğum oranı", "attributed to | -e bağlanan", "proportion | oran", "so far | şimdiye kadar"]
+    q:
+      - q: "Paragrafa göre doğum oranlarındaki düşüşün bir nedeni nedir?"
+        o: ["Daha yüksek eğitim düzeyleri", "Yaşlı nüfusun azalması", "Devlet desteğinin artması"]
+        a: 0
+        why: "“mainly attributed to higher education levels and the rising cost of raising children”"
+      - q: "Devletlerin maddi desteği hakkında ne söyleniyor?"
+        o: ["Doğum oranlarını iki katına çıkardı", "Etkisi şimdiye kadar sınırlı kaldı", "Hiç uygulanmadı"]
+        a: 1
+        why: "“its effect has been limited so far”"
+      - q: "“As a result” ile başlayan cümle neyi anlatıyor?"
+        o: ["Düşen doğum oranlarının bir sonucunu", "Bir karşıtlığı", "Bir örneği"]
+        a: 0
+        why: "“As a result” sonuç bildirir: yaşlı nüfusun oranı arttı."
+
+writing:
+  id: describe-trend
+  p: "Bir grafiği veya eğilimi 3 cümleyle anlat: başlangıç değeri, değişim ve son durum."
+  rubric: ["Başlangıç ve son değeri “from … to” veya “reach” ile veriyor", "Değişimi zarf veya sıfatla niteliyor (steadily, sharp, slight)", "Etkisi süren değişim için present perfect kullanıyor"]
+  samples: ["In 2015, about 30% of people shopped online. The figure rose steadily and reached a peak of 70% in 2021. Since then, it has leveled off at around 68%."]
+  d: 3
+
+situations:
+  - { parent: "Grafik ve eğilim", name: "Artış ve azalış", items: [increased-from-to, a-rise-in, fell-by, has-risen-since] }
+  - { parent: "Grafik ve eğilim", name: "Sabit kalma ve karşılaştırma", items: [remained-throughout, than-in, level-off] }
+  - { parent: "Grafik ve eğilim", name: "Oran anlatmak", items: [accounted-for, number-of, tend-to, proportion] }

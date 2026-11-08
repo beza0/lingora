@@ -1,0 +1,527 @@
+id: yds-research
+domain: yds
+title: "Araştırma ve bulgular"
+desc: "Akademik metinlerde amaç, yöntem, bulgu ve kısıtlılık anlatan ortak kelime ve yapılar. Sorular özgün çalışma sorularıdır."
+sort: 1
+
+targets:
+  - id: hypothesis
+    w: hypothesis
+    pos: n
+    tr: "hipotez, varsayım"
+    ex: "The [[hypothesis]] was supported by the data."
+    extr: "Hipotez veriler tarafından desteklendi."
+    d: 2
+    fam: ["hypothetical (s.) varsayımsal", "hypothesize (f.) varsaymak"]
+    tone: ["Akademik"]
+    dis:
+      - "hypocrisy | İkiyüzlülük demektir."
+      - "hyphen | Kısa çizgi demektir."
+      - "hypnosis | Hipnoz demektir."
+  - id: findings
+    w: finding
+    pos: n
+    tr: "bulgu(lar)"
+    ex: "The [[findings]] suggest that sleep affects memory."
+    extr: "Bulgular uykunun hafızayı etkilediğini düşündürüyor."
+    d: 2
+    col: ["key findings", "research findings"]
+    tone: ["Akademik"]
+    dis:
+      - "fittings | Bağlantı parçaları demektir."
+      - "feelings | Duygular demektir."
+      - "fundings | “funding” fon demektir ve çoğul kullanılmaz."
+  - id: participant
+    w: participant
+    pos: n
+    tr: "katılımcı"
+    ex: "Each [[participant]] completed a short questionnaire."
+    extr: "Her katılımcı kısa bir anket doldurdu."
+    d: 2
+    fam: ["participate (f.) katılmak", "participation (i.) katılım"]
+    tone: ["Akademik"]
+    dis:
+      - "participle | Ortaç (dilbilgisi terimi) demektir."
+      - "particle | Parçacık demektir."
+      - "partition | Bölme demektir."
+  - id: evidence
+    w: evidence
+    pos: n
+    tr: "kanıt"
+    ex: "There is little [[evidence]] that the drug works."
+    extr: "İlacın işe yaradığına dair çok az kanıt var."
+    d: 2
+    col: ["strong evidence", "evidence for/that"]
+    fam: ["evident (s.) açık, belli"]
+    tone: ["Akademik"]
+    dis:
+      - "evident | Sıfattır; burada isim gerekir."
+      - "eviction | Tahliye demektir."
+      - "elegance | Zarafet demektir."
+  - id: conduct
+    w: conduct
+    pos: v
+    tr: "(araştırma) yürütmek, yapmak"
+    ex: "The study was [[conducted]] in three countries."
+    extr: "Çalışma üç ülkede yürütüldü."
+    d: 3
+    col: ["conduct a study", "conduct research"]
+    other: "İsim olarak “davranış” demektir."
+    tone: ["Akademik"]
+    dis:
+      - "contacted | İletişime geçilmiş demektir."
+      - "conceded | Kabullenilmiş demektir."
+      - "conducive | Elverişli demektir; sıfattır."
+  - id: indicate
+    w: indicate
+    pos: v
+    tr: "göstermek, işaret etmek"
+    ex: "The results [[indicate]] a strong link between diet and health."
+    extr: "Sonuçlar beslenme ile sağlık arasında güçlü bir bağlantıya işaret ediyor."
+    d: 2
+    fam: ["indicator (i.) gösterge", "indication (i.) belirti"]
+    tone: ["Akademik"]
+    dis:
+      - "indict | Suçlamak demektir."
+      - "induce | Neden olmak demektir; “a link” ile anlam vermez."
+      - "dedicate | Adamak demektir."
+  - id: survey
+    w: survey
+    pos: n
+    tr: "anket, inceleme"
+    ex: "According to a recent [[survey]], most students study at night."
+    extr: "Yakın tarihli bir ankete göre öğrencilerin çoğu gece ders çalışıyor."
+    d: 1
+    col: ["conduct a survey", "survey results"]
+    tone: ["Akademik"]
+    dis:
+      - "surgery | Ameliyat demektir."
+      - "survival | Hayatta kalma demektir."
+      - "surface | Yüzey demektir."
+  - id: approach
+    w: approach
+    pos: n
+    tr: "yaklaşım, yöntem"
+    ex: "This [[approach]] has been used in many earlier studies."
+    extr: "Bu yaklaşım daha önceki pek çok çalışmada kullanıldı."
+    d: 2
+    other: "Fiil olarak “yaklaşmak” demektir."
+    tone: ["Akademik"]
+    dis:
+      - "reproach | Sitem demektir."
+      - "approval | Onay demektir."
+      - "applause | Alkış demektir."
+  - id: data
+    w: data
+    pos: n
+    tr: "veri(ler)"
+    ex: "The researchers collected [[data]] from 2,000 households."
+    extr: "Araştırmacılar 2.000 haneden veri topladı."
+    d: 1
+    col: ["collect data", "data analysis"]
+    tone: ["Akademik"]
+    dis:
+      - "date | Tarih demektir."
+      - "debt | Borç demektir."
+      - "dart | Dart oku demektir."
+  - id: limitation
+    w: limitation
+    pos: n
+    tr: "kısıtlılık, sınırlılık"
+    ex: "One [[limitation]] of the study is its small sample."
+    extr: "Çalışmanın bir kısıtlılığı küçük örneklemidir."
+    d: 2
+    fam: ["limit (f./i.) sınırlamak; sınır", "limited (s.) sınırlı"]
+    tone: ["Akademik"]
+    dis:
+      - "imitation | Taklit demektir."
+      - "limousine | Limuzin demektir."
+      - "liberation | Kurtuluş demektir."
+  - id: reliable
+    w: reliable
+    pos: adj
+    tr: "güvenilir"
+    ex: "These measurements are not [[reliable]] enough."
+    extr: "Bu ölçümler yeterince güvenilir değil."
+    d: 2
+    fam: ["reliability (i.) güvenilirlik", "rely on (f.) güvenmek"]
+    tone: ["Akademik"]
+    dis:
+      - "reliant | Bağımlı demektir; “on” ister."
+      - "relatable | “Kendinden bir şey bulunan” demektir."
+      - "religious | Dini demektir."
+  - id: previous
+    w: previous
+    pos: adj
+    tr: "önceki"
+    ex: "Unlike [[previous]] studies, this one used real patients."
+    extr: "Önceki çalışmaların aksine bu çalışmada gerçek hastalar kullanıldı."
+    d: 1
+    syn: ["earlier", "prior"]
+    tone: ["Akademik"]
+    dis:
+      - "precious | Değerli demektir."
+      - "pervious | Geçirgen demektir."
+      - "obvious | Belli, açık demektir."
+  - id: claim
+    w: claim
+    pos: v
+    tr: "iddia etmek, ileri sürmek"
+    ex: "Some scientists [[claim]] that the effect is temporary."
+    extr: "Bazı bilim insanları etkinin geçici olduğunu iddia ediyor."
+    d: 2
+    fam: ["claim (i.) iddia"]
+    tone: ["Akademik"]
+    dis:
+      - "climb | Tırmanmak demektir."
+      - "clam | Bir tür deniz kabuklusudur."
+      - "calm | Sakinleştirmek demektir."
+  - id: analyze
+    w: analyze
+    pos: v
+    tr: "analiz etmek, çözümlemek"
+    ex: "We [[analyzed]] the results using statistical software."
+    extr: "Sonuçları istatistik yazılımı kullanarak analiz ettik."
+    d: 2
+    fam: ["analysis (i.) analiz", "analyst (i.) analist"]
+    tone: ["Akademik"]
+    dis:
+      - "paralyzed | Felç olmuş demektir."
+      - "analyst | Analist demektir; isimdir."
+      - "anesthetized | Uyuşturulmuş demektir."
+  - id: correlation
+    w: correlation
+    pos: n
+    tr: "ilişki, korelasyon"
+    ex: "There is a strong [[correlation]] between income and education."
+    extr: "Gelir ile eğitim arasında güçlü bir ilişki var."
+    d: 3
+    conf: ["causation | Nedensellik demektir; korelasyon nedensellik anlamına gelmez."]
+    tone: ["Akademik"]
+    dis:
+      - "corporation | Şirket demektir."
+      - "collocation | Eşdizim demektir."
+      - "coronation | Taç giyme töreni demektir."
+  - id: objective
+    w: objective
+    pos: n
+    tr: "amaç, hedef"
+    ex: "The main [[objective]] of this study is to measure stress levels."
+    extr: "Bu çalışmanın temel amacı stres düzeylerini ölçmektir."
+    d: 2
+    syn: ["aim", "goal"]
+    other: "Sıfat olarak “nesnel” demektir."
+    tone: ["Akademik"]
+    dis:
+      - "objection | İtiraz demektir."
+      - "objectively | Zarftır; burada isim gerekir."
+      - "obstacle | Engel demektir."
+  - id: thus
+    w: thus
+    pos: adv
+    tr: "bu nedenle, böylece"
+    ex: "The sample was small; [[thus]], the results cannot be generalized."
+    extr: "Örneklem küçüktü; bu nedenle sonuçlar genellenemez."
+    d: 3
+    syn: ["therefore", "hence"]
+    tone: ["Akademik"]
+    dis:
+      - "thumb | Başparmak demektir."
+      - "this | Gösterme sözcüğüdür; bağlaç işlevi görmez."
+      - "though | Karşıtlık bildirir; anlam bozulur."
+  - id: respondent
+    w: respondent
+    pos: n
+    tr: "(ankete) yanıt veren kişi"
+    ex: "About 60% of [[respondents]] said they felt stressed at work."
+    extr: "Yanıt verenlerin yaklaşık %60'ı işte stresli hissettiğini söyledi."
+    d: 3
+    fam: ["respond (f.) yanıt vermek"]
+    tone: ["Akademik"]
+    dis:
+      - "responsibilities | Sorumluluklar demektir."
+      - "repellents | Kovucular demektir."
+      - "rodents | Kemirgenler demektir."
+  - id: confirm
+    w: confirm
+    pos: v
+    tr: "doğrulamak, teyit etmek"
+    ex: "The new study [[confirms]] earlier results."
+    extr: "Yeni çalışma önceki sonuçları doğruluyor."
+    d: 2
+    fam: ["confirmation (i.) doğrulama"]
+    tone: ["Akademik"]
+    dis:
+      - "conforms | Uymak demektir ve “to” ister."
+      - "confines | Sınırlamak demektir."
+      - "conflicts | Çatışmak demektir ve “with” ister."
+  - id: trend
+    w: trend
+    pos: n
+    tr: "eğilim"
+    ex: "The study shows a clear [[trend]] toward online learning."
+    extr: "Çalışma çevrim içi öğrenmeye yönelik açık bir eğilim gösteriyor."
+    d: 2
+    col: ["a growing trend", "trend toward"]
+    tone: ["Akademik"]
+    dis:
+      - "tend | Fiildir; burada isim gerekir."
+      - "tread | Basamak veya ayak izi demektir."
+      - "trench | Hendek demektir."
+
+patterns:
+  - id: results-suggest
+    t: "The results suggest that …"
+    ex: "The results [[suggest that]] exercise improves memory."
+    extr: "Sonuçlar egzersizin hafızayı geliştirdiğini düşündürüyor."
+    ttr: "Sonuçlar şunu düşündürüyor: …."
+    slots: ["exercise improves memory | egzersiz hafızayı geliştirir", "the drug has side effects | ilacın yan etkileri var", "age is not a factor | yaş bir etken değil"]
+    chunks: ["The results | sonuçlar", "suggest that | -dığını düşündürüyor (temkinli)", "exercise improves memory | bulgu"]
+    g: reporting-verbs
+    ctx: ["Akademik metin"]
+    tone: ["Temkinli"]
+    d: 2
+    dis:
+      - "suggests that | Çoğul özne (results) -s almaz."
+      - "suggest to | Ardından “that” cümlesi gelir."
+      - "suggestion that | İsimdir; burada fiil gerekir."
+  - id: has-been-shown
+    t: "It has been shown that …"
+    ex: "It [[has been shown]] that bilingual children learn faster."
+    extr: "İki dilli çocukların daha hızlı öğrendiği gösterilmiştir."
+    ttr: "Şu gösterilmiştir: …."
+    slots: ["bilingual children learn faster | iki dilli çocuklar daha hızlı öğrenir", "stress affects sleep | stres uykuyu etkiler", "the method is effective | yöntem etkilidir"]
+    chunks: ["It has been shown | gösterilmiştir", "that | -dığı", "bilingual children learn faster | bulgu"]
+    g: passive-voice-basics
+    ctx: ["Akademik metin"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "have been shown | “It” tekildir; “has” gerekir."
+      - "has been show | Fiilin 3. hâli gerekir: shown."
+      - "has be shown | “been” gerekir."
+  - id: a-study-which
+    t: "a study which …"
+    ex: "This is a study [[which]] examined 500 schools."
+    extr: "Bu, 500 okulu inceleyen bir çalışma."
+    ttr: "Bu, şunu yapan bir çalışma: …."
+    slots: ["examined 500 schools | 500 okulu inceledi", "lasted ten years | on yıl sürdü", "was funded by the EU | AB tarafından finanse edildi"]
+    chunks: ["a study | bir çalışma", "which | ki o (nesne için)", "examined 500 schools | açıklama"]
+    g: relative-clauses
+    ctx: ["Akademik metin"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "who | “who” insanlar için kullanılır."
+      - "where | Yer bildirir."
+      - "what | İsimden sonra ilgi zamiri olarak kullanılmaz."
+    alt: ["This is a study that examined 500 schools."]
+  - id: participants-who
+    t: "Participants who …"
+    ex: "Participants [[who]] slept less made more errors."
+    extr: "Daha az uyuyan katılımcılar daha çok hata yaptı."
+    ttr: "Şu katılımcılar daha çok hata yaptı: …."
+    slots: ["slept less | daha az uyuyan", "skipped breakfast | kahvaltıyı atlayan", "worked night shifts | gece vardiyasında çalışan"]
+    chunks: ["Participants | katılımcılar", "who slept less | daha az uyuyan", "made more errors | daha çok hata yaptı"]
+    g: relative-clauses
+    ctx: ["Akademik metin"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "which | İnsanlar için “who” kullanılır."
+      - "whom | Özne konumunda “who” gerekir."
+      - "whose | İyelik bildirir."
+    alt: ["Participants that slept less made more errors."]
+  - id: aim-of-study
+    t: "The aim of this study is to …"
+    ex: "[[The aim of this study is]] to investigate the effects of noise."
+    extr: "Bu çalışmanın amacı gürültünün etkilerini araştırmaktır."
+    ttr: "Bu çalışmanın amacı şudur: …."
+    slots: ["to investigate the effects of noise | gürültünün etkilerini araştırmak", "to compare two methods | iki yöntemi karşılaştırmak", "to test a new theory | yeni bir kuramı sınamak"]
+    chunks: ["The aim of this study | bu çalışmanın amacı", "is | -dır", "to investigate … | amaç (to + fiil)"]
+    g: present-simple
+    ctx: ["Akademik metin"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "The aim of this study are | Tekil özne (aim) ile “is” gerekir."
+      - "The aims of this study is | Çoğul özne ile “are” gerekir."
+      - "The aim for this study is | Edat yanlış: of."
+  - id: more-research
+    t: "Further research is needed to …"
+    ex: "Further research [[is needed]] to confirm these results."
+    extr: "Bu sonuçları doğrulamak için daha fazla araştırma gerekiyor."
+    ttr: "Şunun için daha fazla araştırma gerekiyor: …."
+    slots: ["confirm these results | bu sonuçları doğrulamak", "explain this effect | bu etkiyi açıklamak", "test larger groups | daha büyük grupları sınamak"]
+    chunks: ["Further research | daha fazla araştırma", "is needed | gerekiyor", "to confirm these results | amaç"]
+    g: passive-voice-basics
+    ctx: ["Akademik metin"]
+    tone: ["Temkinli"]
+    d: 2
+    dis:
+      - "are needed | “research” sayılamaz; “is” gerekir."
+      - "is need | Fiilin 3. hâli gerekir."
+      - "needs is | Yapı bozuk."
+  - id: associated-with
+    t: "… is associated with …"
+    ex: "Poor sleep [[is associated with]] lower grades."
+    extr: "Kötü uyku daha düşük notlarla ilişkilidir."
+    ttr: "Kötü uyku şununla ilişkilidir: …."
+    slots: ["lower grades | daha düşük notlar", "weight gain | kilo alma", "higher stress levels | daha yüksek stres düzeyleri"]
+    chunks: ["Poor sleep | kötü uyku", "is associated with | ile ilişkilidir", "lower grades | ilişkili durum"]
+    g: passive-voice-basics
+    ctx: ["Akademik metin"]
+    tone: ["Temkinli"]
+    d: 3
+    dis:
+      - "is associated to | Edat yanlış: with."
+      - "associates with | Bu anlamda edilgen yapı gerekir."
+      - "is association with | İsimdir; yapı bozuk."
+  - id: researchers-found
+    t: "Researchers found that …"
+    ex: "Researchers [[found]] that the treatment reduced pain."
+    extr: "Araştırmacılar tedavinin ağrıyı azalttığını buldu."
+    ttr: "Araştırmacılar şunu buldu: …."
+    slots: ["the treatment reduced pain | tedavi ağrıyı azalttı", "most users ignore warnings | çoğu kullanıcı uyarıları önemsemiyor", "the effect lasted a year | etki bir yıl sürdü"]
+    chunks: ["Researchers | araştırmacılar", "found that | -dığını buldu", "the treatment reduced pain | bulgu"]
+    g: reporting-verbs
+    ctx: ["Akademik metin"]
+    tone: ["Nötr"]
+    d: 1
+    dis:
+      - "founded | “found” (kurmak) fiilinin geçmişidir; “bulmak” değil."
+      - "find | Geçmiş zaman gerekir."
+      - "fined | “Para cezası verdi” demektir."
+  - id: it-is-likely
+    t: "It is likely that …"
+    ex: "It is [[likely]] that the trend will continue."
+    extr: "Eğilimin devam etmesi muhtemeldir."
+    ttr: "Şu muhtemeldir: …."
+    slots: ["the trend will continue | eğilim devam edecek", "prices will rise | fiyatlar artacak", "more people will move to cities | daha çok insan şehirlere taşınacak"]
+    chunks: ["It is likely | muhtemeldir", "that | -mesi", "the trend will continue | olasılık"]
+    g: reporting-verbs
+    ctx: ["Akademik metin"]
+    tone: ["Temkinli"]
+    d: 2
+    dis:
+      - "likely to | Ardından “that” cümlesi geldiği için “to” kullanılmaz."
+      - "likeness | Benzerlik demektir."
+      - "liking | Hoşlanma demektir."
+  - id: may-be-due
+    t: "This may be due to …"
+    ex: "This may be [[due to]] the small sample size."
+    extr: "Bu, küçük örneklem büyüklüğünden kaynaklanıyor olabilir."
+    ttr: "Bu, şundan kaynaklanıyor olabilir: …."
+    slots: ["the small sample size | küçük örneklem büyüklüğü", "cultural differences | kültürel farklılıklar", "measurement errors | ölçüm hataları"]
+    chunks: ["This may be | bu … olabilir", "due to | -den kaynaklanan", "the small sample size | olası neden"]
+    g: linkers-cause-effect
+    ctx: ["Akademik metin"]
+    tone: ["Temkinli"]
+    d: 2
+    dis:
+      - "due of | Edat yanlış: due to."
+      - "do to | “do” bir fiildir; doğrusu “due to”."
+      - "due for | “due for” bir şeyin vakti gelmiş demektir."
+
+grammar:
+  - id: reporting-verbs
+    title: "Raporlama fiilleri (suggest, show, claim …)"
+    short: "Akademik metinlerde bulgular suggest, show, indicate, reveal, claim gibi fiillerle aktarılır. Fiilin gücü önemlidir: show kesin, suggest temkinlidir."
+    long: "Yapı: özne + fiil + that + cümle: The data indicate that … Temkinli dil (hedging): may, might, likely, appear to: The drug may reduce pain. Okuma sorularında yazarın kesin mi temkinli mi konuştuğuna dikkat et. claim (iddia eder) çoğu zaman yazarın bu görüşe mesafeli olduğunu ima eder."
+    ex: ["The data indicate that the effect is small. | Veriler etkinin küçük olduğunu gösteriyor.", "Some experts claim that the method is unsafe. | Bazı uzmanlar yöntemin güvenli olmadığını iddia ediyor.", "It is likely that prices will rise. | Fiyatların artması muhtemel."]
+  - id: relative-clauses
+    title: "İlgi cümlecikleri (who, which, that)"
+    short: "Bir ismi açıklayan cümlecikte insanlar için who, nesneler için which, ikisi için de that kullanılır: participants who slept less, a study which lasted ten years."
+    long: "whose iyelik bildirir: students whose parents work abroad. where yer bildirir: the city where the study was done. Virgüllü (ek bilgi veren) ilgi cümleciğinde that kullanılmaz: The study, which lasted ten years, … Cümle tamamlama sorularında ismin insan mı nesne mi olduğuna ve virgüle bak."
+    ex: ["Students who sleep well perform better. | İyi uyuyan öğrenciler daha iyi performans gösterir.", "The method, which was developed in 2010, is still popular. | 2010'da geliştirilen yöntem hâlâ yaygın.", "This is the lab where the tests were done. | Testlerin yapıldığı laboratuvar burası."]
+
+scenarios:
+  - id: interpret-abstract
+    title: "Özetteki cümleyi yorumlama"
+    sit: "Bir makale özeti okudun. Ders arkadaşın bir cümlenin ne anlama geldiğini soruyor."
+    d: 3
+    targets: [findings, hypothesis, results-suggest]
+    turns:
+      - ["Classmate", "The abstract says: 'The findings suggest that exercise may improve memory in older adults.' What does that mean?", "Özette şöyle yazıyor: “Bulgular, egzersizin yaşlı yetişkinlerde hafızayı geliştirebileceğini düşündürüyor.” Bu ne demek?"]
+      - choose:
+          - ["The study found a possible positive effect of exercise on memory, but it isn't certain.", true, "“suggest” ve “may” temkinli dildir; kesinlik bildirmez."]
+          - ["The study proved that exercise always improves memory.", false, "“suggest” ve “may” kesin kanıt anlamına gelmez; “always” da cümlede yok."]
+          - ["The study found that older adults don't like exercise.", false, "Cümlede böyle bir bilgi yok."]
+      - ["Classmate", "So was their hypothesis supported?", "Yani hipotezleri desteklendi mi?"]
+      - choose:
+          - ["Partly. The results point in that direction, but they are not conclusive.", true, "Temkinli bulguyu doğru yorumluyor."]
+          - ["Yes, so no further research is needed.", false, "Temkinli bulgular kesin sonuç sayılmaz; çıkarım yanlış."]
+          - ["No, because the hypothesis was a participant.", false, "Hipotez bir katılımcı değildir; anlamsız."]
+  - id: discuss-limitations
+    title: "Kısıtlılıkları tartışma"
+    sit: "Seminerde hoca bir çalışmanın kısıtlılıklarını soruyor."
+    d: 3
+    targets: [limitation, reliable, may-be-due]
+    turns:
+      - ["Professor", "What is one limitation of this study?", "Bu çalışmanın bir kısıtlılığı nedir?"]
+      - choose:
+          - ["The sample was very small, so the results may not be reliable.", true, "Kısıtlılığı ve sonucunu mantıklı biçimde bağlıyor."]
+          - ["The sample was very small, so the results are more reliable.", false, "Küçük örneklem güvenilirliği artırmaz; mantık hatası."]
+          - ["The limitation is that the study was conducted.", false, "Anlamsız bir gerekçe."]
+      - ["Professor", "Good. Why do you think the two groups gave different answers?", "Güzel. Sence iki grup neden farklı yanıtlar verdi?"]
+      - choose:
+          - ["This may be due to cultural differences between the groups.", true, "Olası nedeni temkinli bir dille söylüyor."]
+          - ["This may be due of cultural differences.", false, "Edat yanlış: due to."]
+          - ["This may be do to cultural differences.", false, "“do” bir fiildir; doğrusu “due to”."]
+
+readings:
+  - id: sleep-memory
+    title: "Sleep and memory"
+    kind: "Akademik paragraf"
+    d: 3
+    s:
+      - ["Many studies have examined the link between sleep and memory.", "Pek çok çalışma uyku ile hafıza arasındaki bağlantıyı incelemiştir."]
+      - ["In a recent study, researchers asked 120 participants to learn a list of words before going to bed.", "Yakın tarihli bir çalışmada araştırmacılar 120 katılımcıdan yatmadan önce bir kelime listesi öğrenmelerini istedi."]
+      - ["Participants who slept at least seven hours remembered more words the next day.", "En az yedi saat uyuyan katılımcılar ertesi gün daha fazla kelime hatırladı."]
+      - ["However, the authors note that the sample consisted only of university students.", "Ancak yazarlar, örneklemin yalnızca üniversite öğrencilerinden oluştuğunu belirtiyor."]
+      - ["Thus, further research is needed before the results can be generalized.", "Bu nedenle sonuçlar genellenmeden önce daha fazla araştırma gerekiyor."]
+    gloss: ["examine | incelemek", "participant | katılımcı", "sample | örneklem", "generalize | genellemek"]
+    q:
+      - q: "Paragrafa göre aşağıdakilerden hangisi doğrudur?"
+        o: ["Daha uzun uyuyan katılımcılar daha fazla kelime hatırladı", "Katılımcılar farklı yaş gruplarından seçildi", "Sonuçlar herkese genellenebilir"]
+        a: 0
+        why: "“Participants who slept at least seven hours remembered more words.” Diğer iki seçenek paragrafla çelişiyor."
+      - q: "Yazarlar neden temkinli?"
+        o: ["Çalışma çok uzun sürdü", "Örneklem yalnızca üniversite öğrencilerinden oluşuyordu", "Kelime listesi çok kısaydı"]
+        a: 1
+        why: "“the sample consisted only of university students”"
+      - q: "Son cümledeki “Thus” hangi ilişkiyi kuruyor?"
+        o: ["Karşıtlık", "Sonuç", "Örnekleme"]
+        a: 1
+        why: "“Thus” = bu nedenle; önceki cümledeki kısıtlılığın sonucunu bildiriyor."
+  - id: online-learning-survey
+    title: "Online learning survey"
+    kind: "Akademik paragraf"
+    d: 3
+    s:
+      - ["A survey of 1,500 university students was conducted in 2023.", "2023'te 1.500 üniversite öğrencisiyle bir anket yapıldı."]
+      - ["About 70% of respondents said they preferred online lectures, which they could watch at any time.", "Yanıt verenlerin yaklaşık %70'i, istedikleri zaman izleyebildikleri çevrim içi dersleri tercih ettiğini söyledi."]
+      - ["Yet many of them also reported feeling less connected to their classmates.", "Yine de birçoğu sınıf arkadaşlarına daha az bağlı hissettiğini de bildirdi."]
+      - ["The authors claim that universities should combine online and face-to-face teaching.", "Yazarlar, üniversitelerin çevrim içi ve yüz yüze öğretimi birleştirmesi gerektiğini ileri sürüyor."]
+    gloss: ["survey | anket", "respondent | yanıt veren kişi", "yet | yine de, ancak", "claim | ileri sürmek"]
+    q:
+      - q: "Paragrafa göre öğrencilerin çoğu çevrim içi dersleri neden tercih ediyor?"
+        o: ["Dersler daha kısa olduğu için", "Dersleri istedikleri zaman izleyebildikleri için", "Hocalar daha iyi olduğu için"]
+        a: 1
+        why: "“online lectures, which they could watch at any time”"
+      - q: "Yazarlar ne öneriyor?"
+        o: ["Yalnızca çevrim içi öğretim", "Çevrim içi ve yüz yüze öğretimin birleştirilmesi", "Yüz yüze öğretimin kaldırılması"]
+        a: 1
+        why: "“combine online and face-to-face teaching”"
+
+writing:
+  id: summarize-study
+  p: "Okuduğun bir araştırmayı 2–3 akademik cümleyle özetle: amacı, temel bulgusu ve bir kısıtlılığı."
+  rubric: ["Amacı “The aim of this study was to …” gibi bir kalıpla veriyor", "Bulguyu temkinli bir raporlama fiiliyle (suggest, indicate) aktarıyor", "Bir kısıtlılığı ve sonucunu belirtiyor"]
+  samples: ["The aim of this study was to examine the link between sleep and memory. The results suggest that participants who sleep longer remember more words. However, the sample consisted only of students, so further research is needed."]
+  d: 3
+
+situations:
+  - { parent: "Akademik dil", name: "Bulgu aktarmak", items: [results-suggest, researchers-found, has-been-shown] }
+  - { parent: "Akademik dil", name: "Temkinli konuşmak", items: [it-is-likely, may-be-due, associated-with] }
+  - { parent: "Akademik dil", name: "Çalışmayı tanıtmak", items: [aim-of-study, a-study-which, participants-who] }

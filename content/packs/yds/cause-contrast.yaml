@@ -1,0 +1,528 @@
+id: yds-cause-contrast
+domain: yds
+title: "Neden, sonuç ve karşıtlık"
+desc: "Paragraf ve cümle tamamlama sorularında sık geçen neden-sonuç ve karşıtlık kelimeleri ile bağlaçlar. Sorular özgün çalışma sorularıdır."
+sort: 2
+
+targets:
+  - id: consequence
+    w: consequence
+    pos: n
+    tr: "(çoğunlukla olumsuz) sonuç"
+    ex: "Poor planning had serious [[consequences]] for the project."
+    extr: "Kötü planlamanın proje için ciddi sonuçları oldu."
+    d: 2
+    fam: ["consequently (z.) sonuç olarak"]
+    tone: ["Akademik"]
+    dis:
+      - "conscience | Vicdan demektir."
+      - "conferences | Konferanslar demektir."
+      - "convenience | Kolaylık demektir."
+  - id: impact
+    w: impact
+    pos: n
+    tr: "güçlü etki"
+    ex: "Social media has a huge [[impact]] on young people."
+    extr: "Sosyal medyanın gençler üzerinde çok büyük bir etkisi var."
+    d: 2
+    col: ["have an impact on", "negative impact"]
+    tone: ["Akademik"]
+    dis:
+      - "impart | “Aktarmak” anlamında bir fiildir."
+      - "input | Girdi demektir."
+      - "impasse | Çıkmaz demektir."
+  - id: factor
+    w: factor
+    pos: n
+    tr: "etken"
+    ex: "Price is an important [[factor]] when people choose a phone."
+    extr: "İnsanlar telefon seçerken fiyat önemli bir etkendir."
+    d: 1
+    col: ["a key factor", "risk factor"]
+    tone: ["Akademik"]
+    dis:
+      - "faction | Hizip demektir."
+      - "fracture | Kırık demektir."
+      - "actor | Oyuncu demektir."
+  - id: lead-to
+    w: lead to
+    pos: phrasal
+    tr: "yol açmak"
+    ex: "Lack of sleep can [[lead to]] serious health problems."
+    extr: "Uykusuzluk ciddi sağlık sorunlarına yol açabilir."
+    d: 2
+    syn: ["cause", "result in"]
+    tone: ["Akademik"]
+    dis:
+      - "lead from | Edat yanlış: lead to."
+      - "lead on | “Kandırmak, oyalamak” demektir."
+      - "lean to | Eğilmek demektir."
+  - id: result-in
+    w: result in
+    pos: phrasal
+    tr: "ile sonuçlanmak"
+    ex: "The new policy [[resulted in]] lower costs."
+    extr: "Yeni politika daha düşük maliyetlerle sonuçlandı."
+    d: 3
+    conf: ["result from | “-den kaynaklanmak” demektir; yönü terstir."]
+    tone: ["Akademik"]
+    dis:
+      - "resulted on | Edat yanlış: in."
+      - "resulted at | Edat yanlış: in."
+      - "rested in | Dinlenmek veya “-e dayanmak” demektir."
+  - id: contribute-to
+    w: contribute to
+    pos: phrasal
+    tr: "katkıda bulunmak, payı olmak"
+    ex: "Many factors [[contribute to]] climate change."
+    extr: "İklim değişikliğinde pek çok etkenin payı var."
+    d: 2
+    fam: ["contribution (i.) katkı"]
+    tone: ["Akademik"]
+    dis:
+      - "contribute with | Edat yanlış: to."
+      - "distribute to | Dağıtmak demektir."
+      - "attribute to | “Bir nedene bağlamak” demektir; yapı uymaz."
+  - id: trigger
+    w: trigger
+    pos: v
+    tr: "tetiklemek"
+    ex: "Stress can [[trigger]] headaches."
+    extr: "Stres baş ağrısını tetikleyebilir."
+    d: 2
+    other: "İsim olarak “tetik” demektir."
+    tone: ["Akademik"]
+    dis:
+      - "tiger | Kaplan demektir."
+      - "trickle | Damlamak demektir."
+      - "trimmer | Kesme makinesi demektir."
+  - id: influence
+    w: influence
+    pos: v
+    tr: "etkilemek"
+    ex: "Parents strongly [[influence]] their children's eating habits."
+    extr: "Ebeveynler çocuklarının beslenme alışkanlıklarını güçlü biçimde etkiler."
+    d: 2
+    fam: ["influence (i.) etki", "influential (s.) etkili, nüfuzlu"]
+    tone: ["Akademik"]
+    dis:
+      - "influenza | Grip demektir."
+      - "affluence | Zenginlik demektir."
+      - "fluency | Akıcılık demektir."
+  - id: benefit
+    w: benefit
+    pos: n
+    tr: "fayda, yarar"
+    ex: "Regular exercise has many health [[benefits]]."
+    extr: "Düzenli egzersizin pek çok sağlık faydası var."
+    d: 1
+    ant: ["drawback", "disadvantage"]
+    tone: ["Akademik"]
+    dis:
+      - "befits | “Yakışmak” demektir."
+      - "bandits | Haydutlar demektir."
+      - "benches | Banklar demektir."
+  - id: drawback
+    w: drawback
+    pos: n
+    tr: "sakınca, dezavantaj"
+    ex: "The main [[drawback]] of solar power is its cost."
+    extr: "Güneş enerjisinin temel sakıncası maliyetidir."
+    d: 3
+    syn: ["disadvantage"]
+    ant: ["benefit"]
+    tone: ["Akademik"]
+    dis:
+      - "drawbridge | Kalkan köprü demektir."
+      - "drawing | Çizim demektir."
+      - "throwback | Geçmişe dönüş demektir."
+  - id: similarity
+    w: similarity
+    pos: n
+    tr: "benzerlik"
+    ex: "There is a clear [[similarity]] between the two theories."
+    extr: "İki kuram arasında açık bir benzerlik var."
+    d: 2
+    fam: ["similar (s.) benzer", "similarly (z.) benzer şekilde"]
+    tone: ["Akademik"]
+    dis:
+      - "simplicity | Sadelik demektir."
+      - "singularity | Tekillik demektir."
+      - "solidarity | Dayanışma demektir."
+  - id: difference
+    w: difference
+    pos: n
+    tr: "fark"
+    ex: "There is a significant [[difference]] between the two groups."
+    extr: "İki grup arasında anlamlı bir fark var."
+    d: 1
+    fam: ["differ (f.) farklı olmak", "different (s.) farklı"]
+    tone: ["Akademik"]
+    dis:
+      - "deference | Saygı demektir."
+      - "diffidence | Çekingenlik demektir."
+      - "different | Sıfattır; burada isim gerekir."
+  - id: reason
+    w: reason
+    pos: n
+    tr: "neden, sebep"
+    ex: "The [[reason]] for the delay was a technical problem."
+    extr: "Gecikmenin nedeni teknik bir sorundu."
+    d: 1
+    col: ["the reason for", "for this reason"]
+    tone: ["Akademik"]
+    dis:
+      - "season | Mevsim demektir."
+      - "region | Bölge demektir."
+      - "raisin | Kuru üzüm demektir."
+  - id: mainly
+    w: mainly
+    pos: adv
+    tr: "esas olarak, çoğunlukla"
+    ex: "The increase is [[mainly]] due to higher demand."
+    extr: "Artış esas olarak daha yüksek talepten kaynaklanıyor."
+    d: 2
+    syn: ["largely", "primarily"]
+    tone: ["Akademik"]
+    dis:
+      - "manly | Erkeksi demektir."
+      - "namely | “Yani, şöyle ki” demektir."
+      - "manually | Elle demektir."
+  - id: hence
+    w: hence
+    pos: adv
+    tr: "bu yüzden, dolayısıyla"
+    ex: "The material is light and strong; [[hence]], it is used in aircraft."
+    extr: "Malzeme hafif ve sağlam; bu yüzden uçaklarda kullanılıyor."
+    d: 3
+    syn: ["therefore", "thus"]
+    tone: ["Akademik"]
+    dis:
+      - "fence | Çit demektir."
+      - "whence | “Nereden” anlamında eski bir sözcüktür."
+      - "thence | “Oradan” anlamında eski bir sözcüktür."
+  - id: crucial
+    w: crucial
+    pos: adj
+    tr: "çok önemli, kritik"
+    ex: "Sleep is [[crucial]] for learning."
+    extr: "Uyku öğrenme için çok önemlidir."
+    d: 2
+    syn: ["essential", "vital"]
+    tone: ["Akademik"]
+    dis:
+      - "cruel | Zalim demektir."
+      - "crucible | Pota demektir; isimdir."
+      - "crustal | Yer kabuğuyla ilgili demektir."
+  - id: inevitable
+    w: inevitable
+    pos: adj
+    tr: "kaçınılmaz"
+    ex: "Some errors are [[inevitable]] in large studies."
+    extr: "Büyük çalışmalarda bazı hatalar kaçınılmazdır."
+    d: 3
+    fam: ["inevitably (z.) kaçınılmaz olarak"]
+    tone: ["Akademik"]
+    dis:
+      - "inedible | Yenmez demektir."
+      - "inevitably | Zarftır; burada sıfat gerekir."
+      - "irritable | Sinirli demektir."
+  - id: attribute
+    w: attribute
+    pos: v
+    tr: "(bir nedene) bağlamak"
+    ex: "Researchers [[attribute]] the decline to climate change."
+    extr: "Araştırmacılar düşüşü iklim değişikliğine bağlıyor."
+    d: 3
+    col: ["attribute something to something"]
+    other: "İsim olarak “özellik, nitelik” demektir."
+    tone: ["Akademik"]
+    dis:
+      - "contribute | Katkıda bulunmak demektir; bu yapıda anlam vermez."
+      - "distribute | Dağıtmak demektir."
+      - "tribute | Saygı, övgü demektir; isimdir."
+  - id: obstacle
+    w: obstacle
+    pos: n
+    tr: "engel"
+    ex: "Cost is the main [[obstacle]] to wider use of electric cars."
+    extr: "Elektrikli araçların yaygınlaşmasının önündeki temel engel maliyet."
+    d: 2
+    col: ["an obstacle to", "overcome obstacles"]
+    tone: ["Akademik"]
+    dis:
+      - "oracle | Kâhin demektir."
+      - "obstinate | İnatçı demektir; sıfattır."
+      - "spectacle | Gösteri demektir."
+  - id: origin
+    w: origin
+    pos: n
+    tr: "köken, kaynak"
+    ex: "The [[origin]] of the virus is still unclear."
+    extr: "Virüsün kökeni hâlâ belirsiz."
+    d: 2
+    fam: ["originate (f.) kaynaklanmak", "original (s.) özgün, ilk"]
+    tone: ["Akademik"]
+    dis:
+      - "orange | Portakal demektir."
+      - "organ | Organ demektir."
+      - "original | Sıfattır; burada isim gerekir."
+
+patterns:
+  - id: although
+    t: "Although …, …"
+    ex: "[[Although]] the test was difficult, most students passed."
+    extr: "Sınav zor olmasına rağmen öğrencilerin çoğu geçti."
+    ttr: "… olmasına rağmen öğrencilerin çoğu geçti."
+    slots: ["the test was difficult | Sınavın zor", "the questions were long | Soruların uzun", "time was limited | Sürenin kısıtlı"]
+    chunks: ["Although | -e rağmen (+ cümle)", "the test was difficult | sınav zordu", "most students passed | öğrencilerin çoğu geçti"]
+    g: linkers-contrast
+    ctx: ["Cümle tamamlama"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "Because | Neden bildirir; anlam bozulur."
+      - "Despite | Ardından isim gelir, cümle gelmez."
+      - "However | Zarftır; iki cümleyi bu biçimde bağlamaz."
+    alt: ["Even though the test was difficult, most students passed."]
+  - id: despite
+    t: "Despite …, …"
+    ex: "[[Despite]] the rain, the event was a success."
+    extr: "Yağmura rağmen etkinlik başarılı geçti."
+    ttr: "… rağmen etkinlik başarılı geçti."
+    slots: ["the rain | Yağmura", "the low budget | Düşük bütçeye", "the late start | Geç başlamasına"]
+    chunks: ["Despite | -e rağmen (+ isim)", "the rain | yağmur", "the event was a success | etkinlik başarılıydı"]
+    g: linkers-contrast
+    ctx: ["Cümle tamamlama"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "Although | Ardından cümle gelir; burada isim var."
+      - "Despite of | “of” fazladır."
+      - "Because of | Neden bildirir; anlam bozulur."
+    alt: ["In spite of the rain, the event was a success."]
+  - id: whereas
+    t: "…, whereas …"
+    ex: "Some species adapt quickly, [[whereas]] others die out."
+    extr: "Bazı türler hızla uyum sağlarken diğerleri yok oluyor."
+    ttr: "Bazı türler hızla uyum sağlarken diğerleri …."
+    slots: ["die out | yok oluyor", "move to new areas | yeni bölgelere göç ediyor", "change very slowly | çok yavaş değişiyor"]
+    chunks: ["Some species adapt quickly | bazı türler hızla uyum sağlar", "whereas | oysa, -iken", "others die out | diğerleri yok olur"]
+    g: linkers-contrast
+    ctx: ["Cümle tamamlama", "Paragraf"]
+    tone: ["Akademik"]
+    d: 3
+    dis:
+      - "because | Neden bildirir."
+      - "so | Sonuç bildirir."
+      - "unless | Koşul bildirir."
+    alt: ["Some species adapt quickly, while others die out."]
+  - id: however
+    t: "…; however, …"
+    ex: "The method is cheap; [[however]], it is not very accurate."
+    extr: "Yöntem ucuz; ancak çok hassas değil."
+    ttr: "Yöntem ucuz; ancak …."
+    slots: ["it is not very accurate | çok hassas değil", "it takes a long time | uzun sürüyor", "it needs trained staff | eğitimli personel gerektiriyor"]
+    chunks: ["The method is cheap | yöntem ucuz", "however | ancak", "it is not very accurate | karşıt bilgi"]
+    g: linkers-contrast
+    ctx: ["Paragraf", "Cümle tamamlama"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "therefore | Sonuç bildirir; mantık bozulur."
+      - "moreover | Ekleme yapar; karşıtlık göstermez."
+      - "for instance | Örnek verir."
+  - id: therefore
+    t: "…; therefore, …"
+    ex: "Fuel prices rose sharply; [[therefore]], airline tickets became more expensive."
+    extr: "Yakıt fiyatları keskin biçimde arttı; bu nedenle uçak biletleri pahalandı."
+    ttr: "Yakıt fiyatları keskin biçimde arttı; bu nedenle …."
+    slots: ["airline tickets became more expensive | uçak biletleri pahalandı", "fewer people traveled | daha az insan seyahat etti", "companies cut costs | şirketler maliyetleri kıstı"]
+    chunks: ["Fuel prices rose sharply | yakıt fiyatları keskin biçimde arttı", "therefore | bu nedenle", "airline tickets became more expensive | sonuç"]
+    g: linkers-cause-effect
+    ctx: ["Paragraf", "Cümle tamamlama"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "however | Karşıtlık bildirir; mantık bozulur."
+      - "although | Bağlaçtır; noktalı virgülden sonra bu biçimde kullanılmaz."
+      - "in contrast | Karşıtlık bildirir."
+  - id: because-of
+    t: "… because of …"
+    ex: "The match was postponed [[because of]] heavy snow."
+    extr: "Maç yoğun kar yüzünden ertelendi."
+    ttr: "Maç şu yüzden ertelendi: …."
+    slots: ["heavy snow | yoğun kar", "a power cut | bir elektrik kesintisi", "safety concerns | güvenlik kaygıları"]
+    chunks: ["The match was postponed | maç ertelendi", "because of | yüzünden (+ isim)", "heavy snow | neden"]
+    g: linkers-cause-effect
+    ctx: ["Cümle tamamlama"]
+    tone: ["Akademik"]
+    d: 1
+    dis:
+      - "because | Ardından cümle gelir; burada isim var."
+      - "despite | Karşıtlık bildirir."
+      - "so that | Amaç bildirir."
+    alt: ["The match was postponed due to heavy snow."]
+  - id: so-that
+    t: "… so that …"
+    ex: "She saved money [[so that]] she could study abroad."
+    extr: "Yurt dışında okuyabilmek için para biriktirdi."
+    ttr: "Şunu yapabilmek için para biriktirdi: …."
+    slots: ["she could study abroad | yurt dışında okumak", "she could buy a car | araba almak", "she could start a business | iş kurmak"]
+    chunks: ["She saved money | para biriktirdi", "so that | -sın diye, -mek için", "she could study abroad | amaç"]
+    g: linkers-cause-effect
+    ctx: ["Cümle tamamlama"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "such that | Bu bağlamda kullanılmaz."
+      - "even though | Karşıtlık bildirir."
+      - "as if | “Sanki” demektir."
+  - id: unlike
+    t: "Unlike …, …"
+    ex: "[[Unlike]] her brother, she enjoys math."
+    extr: "Ağabeyinin aksine matematiği seviyor."
+    ttr: "… aksine matematiği seviyor."
+    slots: ["her brother | Ağabeyinin", "most students | Çoğu öğrencinin", "her parents | Ailesinin"]
+    chunks: ["Unlike her brother | ağabeyinin aksine", "she enjoys math | matematiği seviyor"]
+    g: linkers-contrast
+    ctx: ["Cümle tamamlama"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "Alike | Edat olarak kullanılmaz."
+      - "Unlikely | “Olası olmayan” demektir."
+      - "Dislike | “Sevmemek” anlamında bir fiildir."
+  - id: in-contrast
+    t: "…. In contrast, …"
+    ex: "Northern cities are cold. [[In contrast]], southern cities are warm."
+    extr: "Kuzey şehirleri soğuk. Buna karşılık güney şehirleri sıcak."
+    ttr: "Kuzey şehirleri soğuk. Buna karşılık …."
+    slots: ["southern cities are warm | güney şehirleri sıcak", "coastal towns are mild | kıyı kasabaları ılıman", "desert areas are hot | çöl bölgeleri sıcak"]
+    chunks: ["Northern cities are cold | kuzey şehirleri soğuk", "In contrast | buna karşılık", "southern cities are warm | karşıt bilgi"]
+    g: linkers-contrast
+    ctx: ["Paragraf"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "In addition | Ekleme yapar."
+      - "As a result | Sonuç bildirir."
+      - "In particular | “Özellikle” demektir."
+  - id: otherwise
+    t: "…; otherwise, …"
+    ex: "Save your work often; [[otherwise]], you may lose it."
+    extr: "Çalışmanı sık sık kaydet; aksi takdirde kaybedebilirsin."
+    ttr: "Çalışmanı sık sık kaydet; aksi takdirde …."
+    slots: ["you may lose it | kaybedebilirsin", "the file may be damaged | dosya bozulabilir", "you will have to start again | baştan başlaman gerekir"]
+    chunks: ["Save your work often | çalışmanı sık kaydet", "otherwise | aksi takdirde", "you may lose it | olası sonuç"]
+    g: linkers-cause-effect
+    ctx: ["Cümle tamamlama"]
+    tone: ["Akademik"]
+    d: 2
+    dis:
+      - "therefore | Sonuç bildirir; anlam bozulur."
+      - "likewise | “Aynı şekilde” demektir."
+      - "besides | “Ayrıca” demektir."
+
+grammar:
+  - id: linkers-cause-effect
+    title: "Neden-sonuç bağlaçları"
+    short: "Neden: because + cümle; because of / due to + isim. Sonuç: so, therefore, thus, consequently, as a result. Amaç: so that + cümle."
+    long: "Bağlacın ardından ne geldiğine bak: cümle mi, isim mi? because the weather was bad / because of the bad weather. therefore ve consequently genelde noktalı virgül veya noktadan sonra gelir ve ardından virgül alır. otherwise “aksi takdirde” anlamında koşullu bir sonuç bildirir."
+    ex: ["Because of the strike, all trains were cancelled. | Grev yüzünden bütün trenler iptal edildi.", "The sample was small; therefore, the results are limited. | Örneklem küçüktü; bu nedenle sonuçlar sınırlı.", "He left early so that he could catch the bus. | Otobüse yetişebilmek için erken çıktı."]
+  - id: linkers-contrast
+    title: "Karşıtlık bağlaçları"
+    short: "Cümle ile: although, even though, whereas, while. İsim ile: despite, in spite of. Cümle başında bağlantı zarfı olarak: however, nevertheless, in contrast."
+    long: "although + cümle: Although it rained, … / despite + isim veya -ing: Despite the rain, … / Despite being tired, … “despite of” yanlıştır. whereas iki durumu karşılaştırır: A is cheap, whereas B is expensive. however ve nevertheless noktalı virgül veya noktadan sonra gelir. Paragraf sorularında karşıtlık bağlacından sonra çoğu zaman yazarın asıl görüşü gelir."
+    ex: ["Although it was late, they continued working. | Geç olmasına rağmen çalışmaya devam ettiler.", "Despite the high price, the product sold well. | Yüksek fiyatına rağmen ürün iyi sattı.", "Some people learn by reading, whereas others learn by doing. | Bazı insanlar okuyarak öğrenirken diğerleri yaparak öğrenir."]
+
+scenarios:
+  - id: choose-linker
+    title: "Bağlaç seçimi"
+    sit: "Bir arkadaşınla sınava çalışıyorsunuz. Boşluğa hangi bağlacın uyduğunu tartışıyorsunuz."
+    d: 3
+    targets: [despite, although]
+    turns:
+      - ["Friend", "The sentence is: '___ the high cost, many people buy electric cars.' Which word fits?", "Cümle şu: “___ the high cost, many people buy electric cars.” Hangi kelime uyar?"]
+      - choose:
+          - ["'Despite', because a noun follows and the sentence shows contrast.", true, "Ardından isim (the high cost) geliyor ve karşıtlık var."]
+          - ["'Although', because the sentence shows contrast.", false, "Karşıtlık doğru ama “although” sonrası cümle gelir; burada isim var."]
+          - ["'Because of', because the cost is the reason.", false, "Yüksek maliyet satın almanın nedeni değildir; anlam ters."]
+      - ["Friend", "And what about '___ the cost was high, many people bought them.'?", "Peki “___ the cost was high, many people bought them.” için?"]
+      - choose:
+          - ["'Although', because a full clause follows.", true, "Ardından tam bir cümle (özne + fiil) geliyor."]
+          - ["'Despite', because it shows contrast.", false, "Ardından tam cümle geldiği için “despite” kullanılamaz."]
+          - ["'Therefore', because it's a result.", false, "Anlam karşıtlıktır, sonuç değil."]
+  - id: explain-pollution
+    title: "Grafiği yorumlama"
+    sit: "Seminerde şehirlerde artan hava kirliliğini gösteren bir grafiği yorumluyorsun."
+    d: 3
+    targets: [factor, contribute-to, mainly, lead-to]
+    turns:
+      - ["Lecturer", "What are the main factors behind the rise in air pollution?", "Hava kirliliğindeki artışın arkasındaki temel etkenler neler?"]
+      - choose:
+          - ["Traffic and factories contribute to it, but the increase is mainly due to traffic.", true, "Etkenleri sayıyor ve hangisinin ağır bastığını söylüyor."]
+          - ["Traffic contributes with it, mainly because factories.", false, "Yapı yanlış: contribute to, because of."]
+          - ["The main factor is that pollution causes traffic.", false, "Neden-sonuç ters kurulmuş."]
+      - ["Lecturer", "And what are the consequences for public health?", "Peki halk sağlığı açısından sonuçları neler?"]
+      - choose:
+          - ["It can lead to breathing problems, especially in children.", true, "Sonucu doğru kalıpla (lead to) anlatıyor."]
+          - ["It can lead from breathing problems.", false, "“lead from” denmez; doğrusu “lead to”."]
+          - ["It has no consequences; therefore, it is dangerous.", false, "Kendiyle çelişen bir mantık."]
+
+readings:
+  - id: remote-work
+    title: "Working from home"
+    kind: "Akademik paragraf"
+    d: 3
+    s:
+      - ["Working from home has become common in many countries.", "Evden çalışma pek çok ülkede yaygınlaştı."]
+      - ["Its main benefit is that employees save time because they do not commute.", "Temel faydası, çalışanların işe gidip gelmedikleri için zaman kazanmasıdır."]
+      - ["However, some workers feel isolated, and this can reduce their motivation.", "Ancak bazı çalışanlar kendini yalnız hissediyor ve bu durum motivasyonlarını düşürebiliyor."]
+      - ["Whereas large companies can offer online support, small firms often lack the resources to do so.", "Büyük şirketler çevrim içi destek sunabilirken küçük firmalar çoğu zaman bunun için gereken kaynaklardan yoksun."]
+      - ["Therefore, the impact of remote work depends partly on the size of the company.", "Bu nedenle uzaktan çalışmanın etkisi kısmen şirketin büyüklüğüne bağlı."]
+    gloss: ["benefit | fayda", "isolated | yalnız, yalıtılmış", "lack | -den yoksun olmak", "impact | etki"]
+    q:
+      - q: "Paragrafa göre evden çalışmanın bir sakıncası nedir?"
+        o: ["Çalışanların zaman kaybetmesi", "Bazı çalışanların yalnız hissetmesi", "Şirketlerin daha çok para harcaması"]
+        a: 1
+        why: "“some workers feel isolated, and this can reduce their motivation”"
+      - q: "“Whereas” ile başlayan cümle neyi karşılaştırıyor?"
+        o: ["Büyük ve küçük şirketlerin destek olanaklarını", "Evden ve ofisten çalışmayı", "Çalışanların yaşlarını"]
+        a: 0
+        why: "Büyük şirketlerin destek sunabildiği, küçük firmaların ise kaynaktan yoksun olduğu karşılaştırılıyor."
+      - q: "Paragraf hangi sonuca varıyor?"
+        o: ["Uzaktan çalışma herkes için kötüdür", "Uzaktan çalışmanın etkisi şirket büyüklüğüne kısmen bağlıdır", "Küçük firmalar uzaktan çalışmayı yasaklamalıdır"]
+        a: 1
+        why: "Son cümle “Therefore” ile bu sonucu veriyor."
+  - id: urban-trees
+    title: "Urban trees"
+    kind: "Akademik paragraf"
+    d: 2
+    s:
+      - ["Trees play a crucial role in cities.", "Ağaçlar şehirlerde çok önemli bir rol oynar."]
+      - ["They reduce temperatures in summer and contribute to cleaner air.", "Yazın sıcaklıkları düşürür ve havanın temizlenmesine katkıda bulunurlar."]
+      - ["Despite these benefits, many cities cut down trees to build roads.", "Bu faydalara rağmen pek çok şehir yol yapmak için ağaç kesiyor."]
+      - ["This often leads to hotter streets and higher energy use for air conditioning.", "Bu da çoğu zaman daha sıcak sokaklara ve klima için daha fazla enerji kullanımına yol açıyor."]
+    gloss: ["crucial | çok önemli", "contribute to | katkıda bulunmak", "despite | -e rağmen", "lead to | yol açmak"]
+    q:
+      - q: "Paragrafa göre ağaç kesmenin bir sonucu nedir?"
+        o: ["Sokakların serinlemesi", "Klima için daha fazla enerji kullanılması", "Havanın temizlenmesi"]
+        a: 1
+        why: "“leads to hotter streets and higher energy use for air conditioning”"
+      - q: "“Despite these benefits” ifadesi neyi vurgular?"
+        o: ["Faydalara rağmen ağaçların kesildiğini", "Faydaların az olduğunu", "Ağaçların yol yapımına yardım ettiğini"]
+        a: 0
+        why: "“despite” karşıtlık bildirir: faydalar var ama ağaçlar yine de kesiliyor."
+
+writing:
+  id: benefit-drawback
+  p: "Bir konu hakkında 3 cümle yaz: bir faydasını, bir sakıncasını ve bir sonucunu bağlaçlarla bağla (however, therefore, although …)."
+  rubric: ["Bir fayda ve bir sakınca belirtiyor", "En az bir karşıtlık bağlacını doğru kullanıyor", "En az bir sonuç bağlacını doğru kullanıyor"]
+  samples: ["Online courses are flexible, so students can study at any time. However, some students find it hard to stay motivated. Therefore, many universities combine online and face-to-face classes."]
+  d: 3
+
+situations:
+  - { parent: "Bağlaçlar", name: "Karşıtlık", items: [although, despite, whereas, however, in-contrast, unlike] }
+  - { parent: "Bağlaçlar", name: "Neden ve sonuç", items: [because-of, therefore, so-that, otherwise] }
+  - { parent: "Akademik dil", name: "Etkiyi anlatmak", items: [lead-to, result-in, contribute-to, impact] }

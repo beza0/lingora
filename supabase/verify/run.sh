@@ -17,4 +17,10 @@ for f in "$ROOT"/supabase/migrations/*.sql; do
   echo "geçiş: $(basename "$f")"
   "${PSQL[@]}" -f "$f"
 done
+if [ -d "$ROOT/content/node_modules" ]; then
+  echo "içerik: derlenen paketler şemaya yükleniyor"
+  (cd "$ROOT/content" && npx tsx scripts/to-sql.ts) > "$DATA/content.sql"
+  "${PSQL[@]}" -f "$DATA/content.sql" >/dev/null
+  "${PSQL[@]}" -tA -c "select 'yüklendi: ' || (select count(*) from learning_targets) || ' hedef, ' || (select count(*) from exercises) || ' alıştırma, ' || (select count(*) from content_revisions) || ' geçmiş kaydı'"
+fi
 "${PSQL[@]}" -tA -f "$ROOT/supabase/verify/tests.sql" 2>&1 | sed 's/^psql:.*NOTICE:  //'

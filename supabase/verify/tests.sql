@@ -37,25 +37,25 @@ insert into auth.users (id, email, is_anonymous) values
 insert into public.app_admins (user_id) values ('00000000-0000-0000-0000-00000000000c');
 
 insert into public.packs (id, domain_id, slug, title_tr, description_tr) values
-  ('10000000-0000-0000-0000-000000000001', 'software', 'software-errors', 'Hatalar ve sorun giderme', 'Test paketi');
-insert into public.lexemes (id, lemma, pos) values ('20000000-0000-0000-0000-000000000001', 'reproduce', 'verb');
+  ('10000000-0000-0000-0000-000000000001', 'software', 'verify-pack', 'Hatalar ve sorun giderme', 'Test paketi');
+insert into public.lexemes (id, lemma, pos) values ('20000000-0000-0000-0000-000000000001', 'verifyword', 'verb');
 insert into public.senses (id, lexeme_id, meaning_tr) values
   ('30000000-0000-0000-0000-000000000001', '20000000-0000-0000-0000-000000000001', '(bir hatayı) yeniden oluşturmak');
 insert into public.learning_targets (id, slug, kind, sense_id, difficulty) values
-  ('40000000-0000-0000-0000-000000000001', 'reproduce-bug', 'sense', '30000000-0000-0000-0000-000000000001', 2);
+  ('40000000-0000-0000-0000-000000000001', 'verify-target', 'sense', '30000000-0000-0000-0000-000000000001', 2);
 insert into public.pack_targets (pack_id, target_id) values
   ('10000000-0000-0000-0000-000000000001', '40000000-0000-0000-0000-000000000001');
 
 -- ---------------------------------------------------------------- 1. taslak görünürlüğü
 select verify.as_user('00000000-0000-0000-0000-00000000000a');
 set role authenticated;
-select verify.expect_eq((select count(*) from public.learning_targets), 0, 'show_drafts=false iken taslak görünmez');
+select verify.expect_eq((select count(*) from public.learning_targets where slug = 'verify-target'), 0, 'show_drafts=false iken taslak görünmez');
 reset role;
 update public.app_config set value = 'true' where key = 'show_drafts';
 set role authenticated;
-select verify.expect_eq((select count(*) from public.learning_targets), 1, 'show_drafts=true iken taslak görünür');
+select verify.expect_eq((select count(*) from public.learning_targets where slug = 'verify-target'), 1, 'show_drafts=true iken taslak görünür');
 set role anon;
-select verify.expect_eq((select count(*) from public.packs), 1, 'anon da yayın kuralıyla içerik okur');
+select verify.expect_eq((select count(*) from public.packs where slug = 'verify-pack'), 1, 'anon da yayın kuralıyla içerik okur');
 reset role;
 
 -- ---------------------------------------------------------------- 2. cevap olayları
@@ -108,8 +108,8 @@ reset role;
 select verify.as_user('00000000-0000-0000-0000-00000000000a');
 set role authenticated;
 select verify.expect_error($q$insert into public.lexemes (id, lemma, pos) values (gen_random_uuid(), 'hack', 'verb')$q$);
-update public.learning_targets set status = 'reviewed';
-select verify.expect_eq((select count(*) from public.learning_targets where status = 'reviewed'), 0, 'yönetici olmayan içerik durumunu değiştiremez');
+update public.learning_targets set status = 'reviewed' where slug = 'verify-target';
+select verify.expect_eq((select count(*) from public.learning_targets where slug = 'verify-target' and status = 'reviewed'), 0, 'yönetici olmayan içerik durumunu değiştiremez');
 select verify.expect_eq((select count(*) from public.content_revisions), 0, 'yönetici olmayan değişiklik geçmişini göremez');
 update public.app_config set value = 'false' where key = 'show_drafts';
 select verify.expect_eq((select count(*) from public.app_config where key = 'show_drafts' and value = 'true'), 1, 'yönetici olmayan ayar değiştiremez');
@@ -119,10 +119,10 @@ reset role;
 select verify.as_user('00000000-0000-0000-0000-00000000000c');
 set role authenticated;
 select verify.expect_eq((select public.is_admin()::int), 1, 'is_admin() yönetici için true');
-select verify.expect_error($q$update public.learning_targets set status = 'published' where slug = 'reproduce-bug'$q$);
-update public.learning_targets set status = 'reviewed' where slug = 'reproduce-bug';
-update public.learning_targets set status = 'published' where slug = 'reproduce-bug';
-select verify.expect_eq((select count(*) from public.learning_targets where status = 'published'), 1, 'incelendi → yayımlandı geçişi çalışır');
+select verify.expect_error($q$update public.learning_targets set status = 'published' where slug = 'verify-target'$q$);
+update public.learning_targets set status = 'reviewed' where slug = 'verify-target';
+update public.learning_targets set status = 'published' where slug = 'verify-target';
+select verify.expect_eq((select count(*) from public.learning_targets where slug = 'verify-target' and status = 'published'), 1, 'incelendi → yayımlandı geçişi çalışır');
 update public.senses set meaning_tr = 'yeniden oluşturmak (hata)' where id = '30000000-0000-0000-0000-000000000001';
 select verify.expect_eq((select version from public.senses where id = '30000000-0000-0000-0000-000000000001'), 2, 'içerik değişince sürüm artar');
 select verify.expect_eq((select count(*) from public.content_revisions where entity_type = 'learning_targets' and status_to = 'published'), 1, 'yayın geçişi geçmişe yazılır');
