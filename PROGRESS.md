@@ -29,6 +29,7 @@ Son güncelleme: 2026-11-08
 | İçerik yükleme (Supabase) | GitHub'dan çekildi, MD5 doğrulandı; 12 paket, 360 hedef, 1427 alıştırma, 24 senaryo, 24 okuma, 24 yapı notu, 12 yazma görevi. `show_drafts = true`, `content_version = ee5852d367bbe995` |
 | Misafir → hesap birleştirme (canlı, uçtan uca) | Misafir RLS ile 2 cevap + 1 kayıt yazdı; `prepare` → `complete` sonrası hepsi hesaba geçti, misafir silindi, belirteç ikinci kez `not_found` |
 | Auth ayarları | Anonim giriş açık (canlı doğrulandı); Site URL ve yönlendirmeler: `com.beyzaacar.lingora://auth-callback`, `http://localhost:5173` |
+| Gerçek AI çağrısı (Groq, `openai/gpt-oss-120b`) | `ai-chat` SSE akışı `<en>` bloklarıyla İngilizce ifadeler + Türkçe açıklama döndü; `ai-evaluate` şemaya uygun değerlendirme döndü. Kota (misafir 1/3 sohbet, 1/10 değerlendirme), token sayımı ve mesaj kaydı doğrulandı; test verisi silindi |
 | `pnpm db:verify` (PostgreSQL 16) | Bütün doğrulamalar geçti: migration'lar, RLS (kullanıcılar arası erişim engeli), durum kuralları, kota ve iade, birleştirme (idempotent), toplu durum değiştirme, içerik yükleme |
 
 ## Çalıştırılmayan kontroller ve sebebi
@@ -36,7 +37,6 @@ Son güncelleme: 2026-11-08
 | Kontrol | Sebep |
 | --- | --- |
 | Flutter uygulaması (yazma, derleme, test) | Bulut ortamında Flutter/Xcode yok; Mac'te yapılacak (`docs/FLUTTER_HANDOFF.md`) |
-| Gerçek AI çağrısı | `GROQ_API_KEY` henüz eklenmedi. Sağlayıcılar sahte `fetch` ile test edildi; anahtarsız uç noktalar canlıda `ai_not_configured` dönüyor. |
 | Panelin gerçek PostgREST ile uçtan uca denenmesi | Yerel Supabase yığını yok. |
 
 ## Bilinen eksikler
