@@ -26,6 +26,9 @@ Son güncelleme: 2026-11-08
 | Canlı uç nokta testleri (gerçek JWT ile) | `ai-chat` → `ai_not_configured` (503), oturumsuz → `unauthorized` (401); `ai-evaluate` yerel kontrol → `correct` (200), AI gereken cevap → `ai_not_configured`; `merge-guest` hesapla `prepare` → `forbidden`, geçersiz belirteç → `not_found`; `delete-account` onaysız → `invalid_request`, onaylı → kullanıcı silindi |
 | pgTAP (`supabase/tests/rls.test.sql`, gerçek Supabase üzerinde) | 16/16 geçti; test verisi sonra silindi |
 | Supabase güvenlik denetimi | Bulgular `20261108000600_hardening.sql` ile giderildi; kalanlar bilinçli (sunucuya özel tablolarda politika olmaması, RLS'in çağırdığı `is_admin`/`content_visible`) |
+| İçerik yükleme (Supabase) | GitHub'dan çekildi, MD5 doğrulandı; 12 paket, 360 hedef, 1427 alıştırma, 24 senaryo, 24 okuma, 24 yapı notu, 12 yazma görevi. `show_drafts = true`, `content_version = ee5852d367bbe995` |
+| Misafir → hesap birleştirme (canlı, uçtan uca) | Misafir RLS ile 2 cevap + 1 kayıt yazdı; `prepare` → `complete` sonrası hepsi hesaba geçti, misafir silindi, belirteç ikinci kez `not_found` |
+| Auth ayarları | Anonim giriş açık (canlı doğrulandı); Site URL ve yönlendirmeler: `com.beyzaacar.lingora://auth-callback`, `http://localhost:5173` |
 | `pnpm db:verify` (PostgreSQL 16) | Bütün doğrulamalar geçti: migration'lar, RLS (kullanıcılar arası erişim engeli), durum kuralları, kota ve iade, birleştirme (idempotent), toplu durum değiştirme, içerik yükleme |
 
 ## Çalıştırılmayan kontroller ve sebebi
@@ -34,8 +37,6 @@ Son güncelleme: 2026-11-08
 | --- | --- |
 | Flutter uygulaması (yazma, derleme, test) | Bulut ortamında Flutter/Xcode yok; Mac'te yapılacak (`docs/FLUTTER_HANDOFF.md`) |
 | Gerçek Anthropic çağrısı | Anahtar henüz yok (bilinçli karar). Sağlayıcı sahte `fetch` ile test edildi. |
-| İçeriğin veritabanına yüklenmesi | 1,8 MB SQL; bu ortamdan Supabase'e doğrudan ağ erişimi yok. `supabase/content/content.sql` SQL Editor'da çalıştırılabilir veya repo GitHub'a gönderilince veritabanından çekilebilir. |
-| Misafir girişi uçtan uca | Supabase'de “Anonymous sign-ins” kapalı; panelden açılmalı. |
 | Panelin gerçek PostgREST ile uçtan uca denenmesi | Yerel Supabase yığını yok. |
 
 ## Bilinen eksikler
@@ -43,4 +44,5 @@ Son güncelleme: 2026-11-08
 - Mobil uygulama henüz yok.
 - İçerik incelenmedi (test sürümü); uygulamada “İncelenmedi” rozetiyle gösterilecek.
 - Apple ile giriş kapalı; push bildirimleri yok.
-- GitHub'a bu oturumdan gönderilemedi; teslim git paketi ile yapıldı.
+- Google ile giriş henüz yapılandırılmadı (Google Cloud OAuth istemcisi gerekiyor).
+- Test kullanıcıları ve geçici tablolar temizlendi; veritabanında kullanıcı yok, yalnız içerik var.
