@@ -5,9 +5,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app_state.dart';
+import '../../data/roleplays.dart';
 import '../../services/backend.dart';
 import '../../theme.dart';
 import '../widgets.dart';
+
+bool _isRoleplay(Map<String, Object?>? c) => c?['kind'] == 'roleplay';
 
 class ChatListScreen extends ConsumerStatefulWidget {
   const ChatListScreen({super.key});
@@ -37,6 +40,11 @@ class _ChatListScreenState extends ConsumerState<ChatListScreen> {
             icon: const Icon(Icons.add_comment_outlined),
             label: const Text('Yeni soru'),
           ),
+          const SizedBox(height: 8),
+          _RoleplaySection(onOpen: (r) async {
+            await context.push('/chat/new', extra: r.toContext());
+            if (mounted) setState(() => threads = ref.read(backendProvider).chatThreads());
+          }),
           const SectionTitle('GEÇMİŞ'),
           FutureBuilder<List<Map<String, Object?>>>(
             future: threads,
@@ -95,7 +103,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
     threadId = widget.threadId;
     ctx = widget.initialContext;
     if (threadId != null) _load();
-    if (ctx != null && ctx!['text'] != null) {
+    if (ctx != null && ctx!['text'] != null && !_isRoleplay(ctx)) {
       input.text = '“${ctx!['text']}” ne zaman ve nasıl kullanılır?';
     }
   }
@@ -103,6 +111,17 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
   Future<void> _load() async {
     final rows = await ref.read(backendProvider).chatMessages(threadId!);
     if (!mounted) return;
+    // Rol yapma sohbeti yeniden açılınca senaryo bağlamı ilk mesajdan geri yüklenir
+    if (ctx == null) {
+      for (final r in rows) {
+        final c = r['context_ref'];
+        if (c is Map && c['kind'] == 'roleplay') {
+          final rp = roleplays.where((x) => x.title == c['pack_title']).firstOrNull;
+          ctx = rp?.toContext() ?? c.cast<String, Object?>();
+          break;
+        }
+      }
+    }
     setState(() => msgs.addAll(rows.map((r) => _Msg(r['role'] as String, r['content'] as String))));
     _toBottom();
   }
@@ -119,8 +138,8 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
         if (scroll.hasClients) scroll.animateTo(scroll.position.maxScrollExtent, duration: const Duration(milliseconds: 200), curve: Curves.easeOut);
       });
 
-  void _send() {
-    final text = input.text.trim();
+  void _send([String? preset]) {
+    final text = (preset ?? input.text).trim();
     if (text.isEmpty || sending) return;
     final reply = _Msg('assistant', '');
     setState(() {
@@ -165,7 +184,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
         });
       },
       onDone: () {
-        ctx = null; // bağlam yalnız ilk mesajda gönderilir
+        if (!_isRoleplay(ctx)) ctx = null; // bağlam yalnız ilk mesajda gönderilir; rol yapmada her mesajda
         setState(() => sending = false);
       },
       cancelOnError: true,
@@ -182,7 +201,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
     final p = context.pal;
     final backend = ref.watch(backendProvider);
     return Scaffold(
-      appBar: AppBar(title: const Text('AI\'a sor'), actions: [
+      appBar: AppBar(title: Text(_isRoleplay(ctx) ? 'Rol yapma' : 'AI\'a sor'), actions: [
         if (used != null && limit != null)
           Center(child: Padding(padding: const EdgeInsets.only(right: 16), child: Text('Bugün $used/$limit', style: TextStyle(color: p.muted)))),
       ]),
@@ -191,6 +210,19 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
           Expanded(
             child: blocking != null
                 ? _Blocking(error: blocking!, guest: backend.account == AccountKind.guest)
+                : msgs.isEmpty && _isRoleplay(ctx)
+                    ? ListView(padding: const EdgeInsets.all(20), children: [
+                        _ScenarioCard(ctx: ctx!),
+                        const SizedBox(height: 16),
+                        FilledButton.icon(
+                          onPressed: sending ? null : () => _send("Let's start."),
+                          icon: const Icon(Icons.play_arrow),
+                          label: const Text('Konuşmayı başlat'),
+                        ),
+                        const SizedBox(height: 12),
+                        Text('AI rolündeki kişiyi oynar ve her cevabından sonra kısa bir Türkçe geri bildirim verir. Takılırsan Türkçe yazabilirsin; İngilizcesini gösterir. Yaklaşık 8 turda biter.',
+                            style: TextStyle(color: p.muted, fontSize: 13)),
+                      ])
                 : msgs.isEmpty
                     ? ListView(padding: const EdgeInsets.all(20), children: [
                         Text('Örnek sorular', style: TextStyle(color: p.muted, fontWeight: FontWeight.w600)),
@@ -214,8 +246,14 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                     : ListView.builder(
                         controller: scroll,
                         padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                        itemCount: msgs.length,
-                        itemBuilder: (_, i) => _MessageView(msg: msgs[i], typing: sending && i == msgs.length - 1),
+                        itemCount: msgs.length + (_isRoleplay(ctx) ? 1 : 0),
+                        itemBuilder: (_, j) {
+                          if (_isRoleplay(ctx)) {
+                            if (j == 0) return Padding(padding: const EdgeInsets.only(bottom: 12), child: _ScenarioCard(ctx: ctx!, compact: true));
+                            j -= 1;
+                          }
+                          return _MessageView(msg: msgs[j], typing: sending && j == msgs.length - 1);
+                        },
                       ),
           ),
           if (blocking == null)
@@ -230,7 +268,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                     maxLength: 1000,
                     textInputAction: TextInputAction.send,
                     onSubmitted: (_) => _send(),
-                    decoration: const InputDecoration(hintText: 'Sorunu yaz', counterText: ''),
+                    decoration: InputDecoration(hintText: _isRoleplay(ctx) ? 'İngilizce cevabını yaz' : 'Sorunu yaz', counterText: ''),
                   ),
                 ),
                 const SizedBox(width: 8),
@@ -355,6 +393,63 @@ class _EnCard extends ConsumerWidget {
           },
         ),
       ]),
+    );
+  }
+}
+
+class _RoleplaySection extends ConsumerWidget {
+  final void Function(Roleplay) onOpen;
+  const _RoleplaySection({required this.onOpen});
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final p = context.pal;
+    final domains = ref.watch(userProvider).activeDomains.map((d) => d.domainId).toSet();
+    final list = roleplays.where((r) => domains.isEmpty || domains.contains(r.domain)).toList();
+    if (list.isEmpty) return const SizedBox.shrink();
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+      const SectionTitle('ROL YAPMA'),
+      Text('AI karşındaki kişiyi oynar, sen İngilizce konuşursun. Her turda kısa geri bildirim alırsın.', style: TextStyle(color: p.muted, fontSize: 13)),
+      const SizedBox(height: 8),
+      Card(
+        child: Column(children: [
+          for (final r in list)
+            ListTile(
+              leading: DomainDot(r.domain),
+              title: Text(r.title),
+              subtitle: Text(r.goal, maxLines: 2, overflow: TextOverflow.ellipsis),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => onOpen(r),
+            ),
+        ]),
+      ),
+    ]);
+  }
+}
+
+class _ScenarioCard extends StatelessWidget {
+  final Map<String, Object?> ctx;
+  final bool compact;
+  const _ScenarioCard({required this.ctx, this.compact = false});
+  @override
+  Widget build(BuildContext context) {
+    final p = context.pal;
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Row(children: [
+            Icon(Icons.theater_comedy_outlined, color: p.muted, size: 20),
+            const SizedBox(width: 8),
+            Expanded(child: Text('${ctx['pack_title'] ?? 'Rol yapma'}', style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16))),
+          ]),
+          const SizedBox(height: 8),
+          Text('Hedefin: ${ctx['meaning_tr'] ?? ''}'),
+          if (!compact) ...[
+            const SizedBox(height: 8),
+            Text('${ctx['text'] ?? ''}', style: TextStyle(color: p.muted, fontSize: 13, fontStyle: FontStyle.italic)),
+          ],
+        ]),
+      ),
     );
   }
 }

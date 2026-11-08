@@ -85,7 +85,8 @@ export async function handleChat(input: { user: AuthUser | null; ip: string | nu
   }
 
   // Sağlayıcı yanıt vermeye başladı: sohbeti ve kullanıcı mesajını şimdi kaydet
-  if (!threadId) threadId = await deps.db.createThread(user.id, domainId, message.slice(0, 60));
+  const title = context?.kind === "roleplay" && context.pack_title ? `Rol yapma: ${context.pack_title}`.slice(0, 60) : message.slice(0, 60);
+  if (!threadId) threadId = await deps.db.createThread(user.id, domainId, title);
   await deps.db.insertMessage({ threadId, userId: user.id, role: "user", content: message, contextRef: context, model: null });
 
   const enc = new TextEncoder();

@@ -329,7 +329,7 @@ class Backend extends ChangeNotifier {
   Future<List<Map<String, Object?>>> chatMessages(String threadId) async {
     final c = _c;
     if (c == null) return const [];
-    final rows = await c.from('chat_messages').select('role,content,created_at').eq('thread_id', threadId).order('created_at');
+    final rows = await c.from('chat_messages').select('role,content,context_ref,created_at').eq('thread_id', threadId).order('created_at');
     return rows.map((r) => r.cast<String, Object?>()).toList();
   }
 
