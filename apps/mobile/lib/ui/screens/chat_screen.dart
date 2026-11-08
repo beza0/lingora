@@ -301,12 +301,12 @@ class _MessageView extends ConsumerWidget {
     var last = 0;
     for (final m in re.allMatches(msg.text)) {
       final before = msg.text.substring(last, m.start).trim();
-      if (before.isNotEmpty) parts.add(Padding(padding: const EdgeInsets.only(bottom: 6), child: Text(before, style: const TextStyle(fontSize: 15, height: 1.4))));
+      if (before.isNotEmpty) parts.add(Padding(padding: const EdgeInsets.only(bottom: 6), child: _rich(before, p.text)));
       parts.add(_EnCard(text: m.group(1)!.trim()));
       last = m.end;
     }
     final rest = msg.text.substring(last).replaceAll(RegExp(r'</?en>?'), '').trim();
-    if (rest.isNotEmpty) parts.add(Text(rest, style: TextStyle(fontSize: 15, height: 1.4, color: msg.error ? p.danger : p.text)));
+    if (rest.isNotEmpty) parts.add(_rich(rest, msg.error ? p.danger : p.text));
     return Container(
       margin: const EdgeInsets.only(bottom: 12, right: 24),
       padding: const EdgeInsets.all(12),
@@ -314,6 +314,20 @@ class _MessageView extends ConsumerWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: parts),
     );
   }
+}
+
+/// Basit biçim: **kalın** işaretleri kalın yazılır, işaretler gösterilmez.
+Widget _rich(String text, Color color) {
+  final spans = <TextSpan>[];
+  final re = RegExp(r'\*\*(.+?)\*\*');
+  var last = 0;
+  for (final m in re.allMatches(text)) {
+    if (m.start > last) spans.add(TextSpan(text: text.substring(last, m.start)));
+    spans.add(TextSpan(text: m.group(1), style: const TextStyle(fontWeight: FontWeight.w700)));
+    last = m.end;
+  }
+  if (last < text.length) spans.add(TextSpan(text: text.substring(last)));
+  return Text.rich(TextSpan(style: TextStyle(fontSize: 15, height: 1.4, color: color), children: spans));
 }
 
 class _EnCard extends ConsumerWidget {

@@ -25,7 +25,8 @@ class _Result {
   final String? note; // seçilen yanlış seçeneğin açıklaması veya AI açıklaması
   final String? source; // local | ai | self
   final String? corrected;
-  const _Result(this.outcome, {this.expected, this.note, this.source, this.corrected});
+  final bool englishAnswer;
+  const _Result(this.outcome, {this.expected, this.note, this.source, this.corrected, this.englishAnswer = true});
   bool get ok => outcome != Outcome.incorrect;
 }
 
@@ -129,6 +130,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
       expected: options[answer],
       note: ok ? null : notes[options[i]] as String?,
       source: 'local',
+      englishAnswer: ex['type'] == 'cloze_choice' || ex['type'] == 'dialogue_choice',
     );
     setState(() {
       selected = i;
@@ -540,7 +542,7 @@ class _Feedback extends StatelessWidget {
           const SizedBox(height: 8),
           Row(children: [
             Expanded(child: Text('Doğru cevap: ${result.corrected ?? result.expected}', style: const TextStyle(fontWeight: FontWeight.w600))),
-            SpeakButton(result.corrected ?? result.expected!, size: 18),
+            if (result.englishAnswer) SpeakButton(result.corrected ?? result.expected!, size: 18),
           ]),
         ],
         if (result.note != null) ...[const SizedBox(height: 6), Text(result.note!)],

@@ -68,8 +68,12 @@ class _DomainPickerScreenState extends ConsumerState<DomainPickerScreen> {
     final content = ref.watch(contentProvider);
     final p = context.pal;
     return Scaffold(
-      appBar: AppBar(title: Text(widget.editing ? 'Alanlarım' : 'Hangi alanlarda çalışmak istersin?')),
+      appBar: AppBar(title: Text(widget.editing ? 'Alanlarım' : 'Alanlarını seç')),
       body: ListView(padding: const EdgeInsets.fromLTRB(20, 0, 20, 24), children: [
+        if (!widget.editing) ...[
+          const Text('Hangi alanlarda çalışmak istersin?', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+          const SizedBox(height: 6),
+        ],
         Text('Birden fazla seçebilirsin. Sıra, ana sayfadaki sırayı belirler.', style: TextStyle(color: p.muted)),
         const SizedBox(height: 16),
         for (final d in content.domainList) ...[
