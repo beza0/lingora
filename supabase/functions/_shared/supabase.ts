@@ -1,6 +1,6 @@
 // Gerçek Supabase bağımlılıkları (yalnız Deno giriş dosyaları kullanır). Service-role anahtarı yalnız burada, sunucuda.
 // deno-lint-ignore-file no-explicit-any
-import { createClient } from "npm:@supabase/supabase-js@2";
+import { createClient } from "@supabase/supabase-js";
 import type { AiDb, AuthUser } from "./handlers.ts";
 import type { AccountDb } from "./account.ts";
 

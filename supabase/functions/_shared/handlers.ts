@@ -109,7 +109,7 @@ export async function handleChat(input: { user: AuthUser | null; ip: string | nu
           r = await iterator.next();
         }
         send(c, "done", { usage: { input: usage.inputTokens, output: usage.outputTokens } });
-      } catch (e) {
+      } catch {
         const aborted = controller.signal.aborted;
         if (!aborted) send(c, "error", { code: "provider_error", message: "Yanıt yarıda kesildi. Yeniden deneyebilirsin." });
         if (!text) await deps.db.refundQuota(user.id, "chat", ipHash);

@@ -10,6 +10,7 @@
     "content:bundle": "pnpm -C content bundle",
     "content:seed": "pnpm -C content seed",
     "test": "pnpm -r test",
-    "db:verify": "bash supabase/verify/run.sh"
+    "db:verify": "bash supabase/verify/run.sh",
+    "content:sql": "pnpm -C content sql"
   }
 }

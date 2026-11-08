@@ -21,6 +21,9 @@ Son güncelleme: 2026-11-08
 | `pnpm -C content test` | 12/12 geçti |
 | `pnpm -C supabase/functions test` + `tsc` | 27/27 geçti, tür hatası yok |
 | `pnpm -C apps/admin lint`, `test`, `build` | lint temiz, 8/8 geçti, derleme başarılı |
+| Deno 2.9 `deno check` + `deno lint` (4 fonksiyon) | Tür hatası yok, lint temiz |
+| Supabase `lingora-test` (Frankfurt) | 5 migration uygulandı; 4 Edge Function yüklendi |
+| Canlı uç nokta testleri (gerçek JWT ile) | `ai-chat` → `ai_not_configured` (503), oturumsuz → `unauthorized` (401); `ai-evaluate` yerel kontrol → `correct` (200), AI gereken cevap → `ai_not_configured`; `merge-guest` hesapla `prepare` → `forbidden`, geçersiz belirteç → `not_found`; `delete-account` onaysız → `invalid_request`, onaylı → kullanıcı silindi |
 | `pnpm db:verify` (PostgreSQL 16) | Bütün doğrulamalar geçti: migration'lar, RLS (kullanıcılar arası erişim engeli), durum kuralları, kota ve iade, birleştirme (idempotent), toplu durum değiştirme, içerik yükleme |
 
 ## Çalıştırılmayan kontroller ve sebebi
@@ -28,10 +31,10 @@ Son güncelleme: 2026-11-08
 | Kontrol | Sebep |
 | --- | --- |
 | Flutter uygulaması (yazma, derleme, test) | Bulut ortamında Flutter/Xcode yok; Mac'te yapılacak (`docs/FLUTTER_HANDOFF.md`) |
-| `supabase test db` (pgTAP) | Docker yok. Aynı kuralların çoğu `db:verify` ile denendi. |
-| Deno ile Edge Functions çalıştırma ve `deno lint` | Deno indirilemedi. Mantık Node + Vitest ile test edildi; Deno giriş dosyaları ince sarmalayıcı. |
+| pgTAP testleri (Supabase üzerinde) | Supabase bağlantısı, test verisi silen sorgu için onay istedi; onay bekleniyor. |
 | Gerçek Anthropic çağrısı | Anahtar henüz yok (bilinçli karar). Sağlayıcı sahte `fetch` ile test edildi. |
-| Gerçek Supabase projesine yükleme (`db push`, `content:seed`, `functions deploy`) | Proje bilgileri bu ortamda yok; README adımlarıyla Mac'ten yapılacak. |
+| İçeriğin veritabanına yüklenmesi | 1,8 MB SQL; bu ortamdan Supabase'e doğrudan ağ erişimi yok. `supabase/content/content.sql` SQL Editor'da çalıştırılabilir veya repo GitHub'a gönderilince veritabanından çekilebilir. |
+| Misafir girişi uçtan uca | Supabase'de “Anonymous sign-ins” kapalı; panelden açılmalı. |
 | Panelin gerçek PostgREST ile uçtan uca denenmesi | Yerel Supabase yığını yok. |
 
 ## Bilinen eksikler

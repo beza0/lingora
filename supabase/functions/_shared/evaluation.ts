@@ -26,7 +26,7 @@ export function parseEvaluation(raw: string): Evaluation | null {
   if (typeof o.corrected !== "string" || typeof o.explanation_tr !== "string") return null;
   if (!o.explanation_tr.trim() || o.explanation_tr.length > 400) return null;
   const issues = Array.isArray(o.spelling_issues) ? o.spelling_issues : [];
-  if (!issues.every((i) => i && typeof (i as any).wrong === "string" && typeof (i as any).right === "string")) return null;
+  if (!issues.every((i) => i && typeof (i as Record<string, unknown>).wrong === "string" && typeof (i as Record<string, unknown>).right === "string")) return null;
   const alts = Array.isArray(o.alternatives) ? o.alternatives.filter((a) => typeof a === "string").slice(0, 2) : [];
   // Tutarlılık: anlam yanlışsa "correct" olamaz
   if (!o.meaning_ok && o.verdict !== "incorrect") return null;

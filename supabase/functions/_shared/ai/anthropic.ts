@@ -43,6 +43,7 @@ export class AnthropicProvider implements AiProvider {
     let input = 0;
     let output = 0;
     for await (const data of sseData(res.body)) {
+      // deno-lint-ignore no-explicit-any -- sağlayıcının akış olayı; alanlar aşağıda tek tek denetlenir
       let ev: Record<string, any>;
       try {
         ev = JSON.parse(data);
