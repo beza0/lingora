@@ -166,6 +166,43 @@ set role authenticated;
 select verify.expect_eq((select requests from public.my_ai_usage() where kind = 'chat'), 2, 'kullanıcı kendi kullanımını okuyabilir');
 reset role;
 
+
+-- ---------------------------------------------------------------- 6b. misafir birleştirme
+insert into auth.users (id, email, is_anonymous) values ('00000000-0000-0000-0000-00000000000d', null, true);
+insert into public.review_events (id, user_id, target_id, skill, outcome, rating, answered_at) values
+  ('50000000-0000-0000-0000-0000000000d1', '00000000-0000-0000-0000-00000000000d', '40000000-0000-0000-0000-000000000001', 'vocab', 'incorrect', 1, now()),
+  ('50000000-0000-0000-0000-0000000000d2', '00000000-0000-0000-0000-00000000000d', '40000000-0000-0000-0000-000000000001', 'vocab', 'correct', 3, now());
+insert into public.card_states (user_id, target_id, stability, difficulty, due_at, state) values
+  ('00000000-0000-0000-0000-00000000000a', '40000000-0000-0000-0000-000000000001', 3, 5, now(), 2);
+insert into public.saved_items (id, user_id, target_id) values ('80000000-0000-0000-0000-00000000000d', '00000000-0000-0000-0000-00000000000d', '40000000-0000-0000-0000-000000000001');
+insert into public.lists (id, user_id, name) values ('60000000-0000-0000-0000-00000000000d', '00000000-0000-0000-0000-00000000000d', 'Misafir listesi');
+insert into public.list_items (list_id, saved_item_id, user_id) values ('60000000-0000-0000-0000-00000000000d', '80000000-0000-0000-0000-00000000000d', '00000000-0000-0000-0000-00000000000d');
+insert into public.user_domains (user_id, domain_id, active) values
+  ('00000000-0000-0000-0000-00000000000d', 'software', true), ('00000000-0000-0000-0000-00000000000d', 'yds', true),
+  ('00000000-0000-0000-0000-00000000000a', 'software', false);
+insert into public.study_sessions (id, user_id, domain_id, plan, started_at, updated_at) values
+  ('90000000-0000-0000-0000-00000000000d', '00000000-0000-0000-0000-00000000000d', 'software', '{}', now(), now()),
+  ('90000000-0000-0000-0000-00000000000a', '00000000-0000-0000-0000-00000000000a', 'software', '{}', now() - interval '1 day', now() - interval '1 day');
+
+select verify.as_user('00000000-0000-0000-0000-00000000000a');
+set role authenticated;
+select verify.expect_error($q$select public.merge_guest_data('00000000-0000-0000-0000-00000000000d', '00000000-0000-0000-0000-00000000000a')$q$);
+reset role;
+set role service_role;
+select verify.expect_error($q$select public.merge_guest_data('00000000-0000-0000-0000-00000000000a', '00000000-0000-0000-0000-00000000000c')$q$);
+select verify.expect_eq((select (public.merge_guest_data('00000000-0000-0000-0000-00000000000d', '00000000-0000-0000-0000-00000000000a')->>'events')::bigint), 2, 'misafirin olayları hesaba taşınır');
+select verify.expect_eq((select (public.merge_guest_data('00000000-0000-0000-0000-00000000000d', '00000000-0000-0000-0000-00000000000a')->>'events')::bigint), 0, 'birleştirme tekrar çalışınca hiçbir şey çoğalmaz');
+reset role;
+select verify.expect_eq((select count(*) from public.review_events where user_id = '00000000-0000-0000-0000-00000000000a'), 3, 'hesapta tekil olaylar birleşir');
+select verify.expect_eq((select count(*) from public.review_events where user_id = '00000000-0000-0000-0000-00000000000d'), 0, 'misafirde olay kalmaz');
+select verify.expect_eq((select count(*) from public.card_states where user_id = '00000000-0000-0000-0000-00000000000a' and target_id = '40000000-0000-0000-0000-000000000001'), 0, 'etkilenen kart yeniden hesaplanmak üzere silinir');
+select verify.expect_eq((select count(*) from public.saved_items where user_id = '00000000-0000-0000-0000-00000000000a' and target_id = '40000000-0000-0000-0000-000000000001'), 1, 'aynı hedef iki kez kaydedilmez');
+select verify.expect_eq((select count(*) from public.list_items li join public.saved_items s on s.id = li.saved_item_id where li.list_id = '60000000-0000-0000-0000-00000000000d' and s.user_id = '00000000-0000-0000-0000-00000000000a'), 1, 'liste öğesi hesaptaki kayda bağlanır');
+select verify.expect_eq((select count(*) from public.user_domains where user_id = '00000000-0000-0000-0000-00000000000a'), 2, 'alanlar birleşir');
+select verify.expect_eq((select active::int from public.user_domains where user_id = '00000000-0000-0000-0000-00000000000a' and domain_id = 'software'), 1, 'alan etkinliği birleşir');
+select verify.expect_eq((select count(*) from public.study_sessions where user_id = '00000000-0000-0000-0000-00000000000a' and status = 'in_progress'), 1, 'aynı alanda tek açık oturum kalır');
+select verify.expect_eq((select count(*) from public.study_sessions where id = '90000000-0000-0000-0000-00000000000d' and status = 'in_progress'), 1, 'en yeni oturum açık kalır');
+
 -- ---------------------------------------------------------------- 7. hesap silme
 delete from auth.users where id = '00000000-0000-0000-0000-00000000000a';
 select verify.expect_eq((select count(*) from public.review_events where user_id = '00000000-0000-0000-0000-00000000000a'), 0, 'hesap silinince olaylar silinir');
