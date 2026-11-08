@@ -130,6 +130,21 @@ select verify.expect_eq((select count(*) from public.chat_messages), 0, 'yöneti
 select verify.expect_error($q$insert into public.lexemes (id, lemma, pos, status) values (gen_random_uuid(), 'direct', 'adj', 'published')$q$);
 reset role;
 
+
+-- ---------------------------------------------------------------- 4b. inceleme akışı (panel)
+select verify.as_user('00000000-0000-0000-0000-00000000000a');
+set role authenticated;
+select verify.expect_error($q$select public.set_target_status(array(select id from public.learning_targets where slug = 'software:blocker'), 'reviewed')$q$);
+reset role;
+select verify.as_user('00000000-0000-0000-0000-00000000000c');
+set role authenticated;
+select verify.expect_error($q$select public.set_target_status(array(select id from public.learning_targets where slug = 'software:blocker'), 'published')$q$);
+select verify.expect_eq((select public.set_target_status(array(select id from public.learning_targets where slug = 'software:blocker'), 'reviewed')), 1, 'yönetici hedefi incelendi yapar');
+select verify.expect_eq((select count(*) from public.exercises e join public.learning_targets t on t.id = e.target_id where t.slug = 'software:blocker' and e.status = 'reviewed'), 6, 'hedefin bütün alıştırmaları (eşleştirme ve diyalog dahil) incelendi olur');
+select verify.expect_eq((select public.set_target_status(array(select id from public.learning_targets where slug = 'software:blocker'), 'published')), 1, 'incelenen hedef yayımlanır');
+select verify.expect_eq((select count(*) from public.senses s join public.learning_targets t on t.sense_id = s.id where t.slug = 'software:blocker' and s.status = 'published'), 1, 'bağlı anlam da yayımlanır');
+reset role;
+
 -- ---------------------------------------------------------------- 5. hata bildirimleri
 select verify.as_user('00000000-0000-0000-0000-00000000000a');
 set role authenticated;
