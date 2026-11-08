@@ -301,7 +301,7 @@ function targetExercises(pack: Pack, own: Target[], file: string, err: (f: strin
     const accepted = [...new Set([form, ...t.alt].map((s) => s.trim()))];
     rows.push({
       id: uid(`ex:${key}:recall`), target_id: tid, type: "recall_typing", skill: "vocab",
-      prompt: { instruction_tr: `Boşluğa uygun İngilizce ${kind(t)}i yaz.`, sentence: blankOut(t.ex), sentence_tr: t.extr, hints_tr: [t.tr, `${form[0]}${"_".repeat(Math.max(form.length - 1, 1))} (${form.length} karakter)`] },
+      prompt: { instruction_tr: `Boşluğa uygun İngilizce ${kind(t)}yi yaz.`, sentence: blankOut(t.ex), sentence_tr: t.extr, hints_tr: [t.tr, `${form[0]}${"_".repeat(Math.max(form.length - 1, 1))} (${form.length} karakter)`] },
       answer: { text: form }, accepted_answers: accepted, distractor_notes: {},
       explanation_tr: `Doğru cevap: ${form}. ${t.w} = ${t.tr}.`, difficulty: Math.min(t.d + 1, 5), status: "draft",
     });
