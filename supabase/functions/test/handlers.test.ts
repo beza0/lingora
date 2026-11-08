@@ -218,6 +218,19 @@ describe("değerlendirme yardımcıları", () => {
   });
 });
 
+describe("rol yapma yönergesi", () => {
+  it("rol yapma bağlamında karşı tarafı oynar ve geri bildirim ister", async () => {
+    const { chatSystemPrompt } = await import("../_shared/prompts.ts");
+    const p = chatSystemPrompt("software", { kind: "roleplay", text: "You are the team lead in a daily stand-up.", meaning_tr: "Dünkü işini anlat", pack_title: "Stand-up toplantısı" });
+    expect(p).toContain("rol yapma");
+    expect(p).toContain("You are the team lead");
+    expect(p).toContain("Geri bildirim:");
+    expect(p).toContain("Yazılım İngilizcesi");
+    const normal = chatSystemPrompt("software", { kind: "target", text: "blocker" });
+    expect(normal).not.toContain("Geri bildirim:");
+  });
+});
+
 describe("Anthropic sağlayıcısı", () => {
   it("SSE akışını metin ve kullanım olaylarına çevirir", async () => {
     const sse = [

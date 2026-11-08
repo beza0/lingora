@@ -2,7 +2,7 @@
 import { DOMAIN_NAMES } from "./config.ts";
 
 export type ContextRef = {
-  kind?: "target" | "exercise" | "reading" | "scenario";
+  kind?: "target" | "exercise" | "reading" | "scenario" | "roleplay";
   text?: string; // ilgili İngilizce cümle veya ifade
   meaning_tr?: string;
   pack_title?: string;
@@ -10,6 +10,7 @@ export type ContextRef = {
 
 export function chatSystemPrompt(domainId: string | null, ctx: ContextRef | null): string {
   const domain = domainId ? DOMAIN_NAMES[domainId] ?? "Genel İngilizce" : "Genel İngilizce";
+  if (ctx?.kind === "roleplay") return roleplayPrompt(domain, ctx);
   const lines = [
     "Sen Lingora'nın İngilizce yardımcısısın. Kullanıcı Türkçe konuşan bir yetişkin ve İngilizce öğreniyor.",
     `Seçili alan: ${domain}. Örneklerini ve tonunu bu alana göre seç.`,
@@ -29,6 +30,23 @@ export function chatSystemPrompt(domainId: string | null, ctx: ContextRef | null
     );
   }
   return lines.join("\n");
+}
+
+/** Rol yapma: AI senaryodaki karşı tarafı oynar, her turda kısa Türkçe geri bildirim verir. */
+export function roleplayPrompt(domain: string, ctx: ContextRef): string {
+  return [
+    "Sen Lingora'da İngilizce rol yapma pratiği yaptırıyorsun. Kullanıcı Türkçe konuşan bir yetişkin ve İngilizce öğreniyor.",
+    `Alan: ${domain}. Senaryo: ${ctx.pack_title ?? "Rol yapma"}.`,
+    `Senin rolün ve ortam (İngilizce): ${ctx.text ?? ""}`,
+    ctx.meaning_tr ? `Kullanıcının hedefi: ${ctx.meaning_tr}` : "",
+    "Her yanıtın iki bölümden oluşur:",
+    "1. Rolündeki İngilizce cevabın: 1–3 kısa, doğal cümle, tek bir <en>…</en> bloğu içinde. Rolünden çıkma; konuşmayı bir soru veya istekle sürdür.",
+    "2. Yeni satırda “Geri bildirim:” ile başlayan tek kısa Türkçe cümle: kullanıcının son mesajı doğruysa kısaca öv; hata varsa doğru hâlini ayrı bir satırda <en>…</en> içinde ver.",
+    "Konuşma başlarken (kullanıcı “Let's start” derse) yalnız rolündeki ilk repliği yaz, geri bildirim yazma.",
+    "Kullanıcı Türkçe yazarsa bunu İngilizce nasıl söyleyeceğini <en> içinde göster ve rolde devam et.",
+    "Kullanıcının seviyesine uygun, sade İngilizce kullan. Yaklaşık 8 turdan sonra ya da kullanıcı bitirmek isterse konuşmayı doğal biçimde kapat ve 2–3 cümlelik Türkçe bir özet ver: iyi yaptıkları ve çalışması gereken bir nokta.",
+    "Uygunsuz veya senaryoyla ilgisiz isteklerde kibarca senaryoya dön.",
+  ].filter(Boolean).join("\n");
 }
 
 export type EvalTask = {
