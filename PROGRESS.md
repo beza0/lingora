@@ -11,6 +11,8 @@ Son güncelleme: 2026-11-08
 | İçerik | 12 paket (4 alan × 3): 240 anlam, 120 kalıp, 24 yapı notu, 24 senaryo, 24 okuma, yazma görevleri, Cümle Rehberi; 1427 türetilmiş alıştırma. Hepsi taslak. |
 | Edge Functions | `ai-chat` (SSE), `ai-evaluate` (yerel kontrol + AI + şema doğrulama), `merge-guest`, `delete-account`; sağlayıcı katmanı, kota ve iade, hata kodları |
 | Yönetim paneli | Giriş, içerik listesi ve süzme, hedef düzenleme, toplu inceleme/yayınlama, varlık tabloları, içe aktarma (önizlemeli), raporlar, değişiklik geçmişi |
+| Mobil uygulama (Flutter) | Açılış/alan seçimi, Bugün, çalışma oturumu (tanıtım, 6 alıştırma türü, ipucu, geri bildirim, özet), FSRS, seviye ayarı, Keşfet (arama, paket, hedef ayrıntısı, Cümle Rehberi, okuma, senaryo), AI sohbet (SSE, `<en>` kartları, kota), Koleksiyon, Profil (hesap, birleştirme, beceri, ayarlar, dışa aktarma, hesap silme), drift ile yerel kayıt ve eşitleme |
+| Web sürümü (iPhone'da Ana Ekrana Ekle) | https://lingora-beza0s-projects.vercel.app — her `main` gönderiminde Vercel derler: `flutter analyze` + `flutter test` + `flutter build web` |
 | Belgeler | README, kararlar, mimari, API sözleşmesi, FSRS, içerik rehberi, Flutter devir talimatı |
 
 ## Çalıştırılan kontroller
@@ -30,18 +32,21 @@ Son güncelleme: 2026-11-08
 | Misafir → hesap birleştirme (canlı, uçtan uca) | Misafir RLS ile 2 cevap + 1 kayıt yazdı; `prepare` → `complete` sonrası hepsi hesaba geçti, misafir silindi, belirteç ikinci kez `not_found` |
 | Auth ayarları | Anonim giriş açık (canlı doğrulandı); Site URL ve yönlendirmeler: `com.beyzaacar.lingora://auth-callback`, `http://localhost:5173` |
 | Gerçek AI çağrısı (Groq, `openai/gpt-oss-120b`) | `ai-chat` SSE akışı `<en>` bloklarıyla İngilizce ifadeler + Türkçe açıklama döndü; `ai-evaluate` şemaya uygun değerlendirme döndü. Kota (misafir 1/3 sohbet, 1/10 değerlendirme), token sayımı ve mesaj kaydı doğrulandı; test verisi silindi |
+| Flutter (Vercel derlemesinde) | `flutter analyze` hatasız, `flutter test` 24/24 geçti, web derlemesi başarılı |
+| Web sürümü elle deneme (telefon boyutu) | Açılış → alan seçimi → Bugün → oturum (tanıtım, anlam sorusu, yanlış/doğru geri bildirimi, çıkış onayı) → AI sohbet (gerçek Groq yanıtı, kota 1/3) çalıştı; yerel veritabanı IndexedDB üzerinde açıldı |
 | `pnpm db:verify` (PostgreSQL 16) | Bütün doğrulamalar geçti: migration'lar, RLS (kullanıcılar arası erişim engeli), durum kuralları, kota ve iade, birleştirme (idempotent), toplu durum değiştirme, içerik yükleme |
 
 ## Çalıştırılmayan kontroller ve sebebi
 
 | Kontrol | Sebep |
 | --- | --- |
-| Flutter uygulaması (yazma, derleme, test) | Bulut ortamında Flutter/Xcode yok; Mac'te yapılacak (`docs/FLUTTER_HANDOFF.md`) |
+| iOS yerel derlemesi | GitHub Actions iş akışı hazır (`.github/workflows/ios-unsigned.yml`), henüz çalıştırılmadı; kurulum Sideloadly ile |
+| Android derlemesi | Denenmedi |
 | Panelin gerçek PostgREST ile uçtan uca denenmesi | Yerel Supabase yığını yok. |
 
 ## Bilinen eksikler
 
-- Mobil uygulama henüz yok.
+- Başlangıç seviye değerlendirmesi (M13) ve yazma görevleri ekranı henüz yok; eşleştirme alıştırması oturumlara eklenmedi.
 - İçerik incelenmedi (test sürümü); uygulamada “İncelenmedi” rozetiyle gösterilecek.
 - Apple ile giriş kapalı; push bildirimleri yok.
 - Google ile giriş henüz yapılandırılmadı (Google Cloud OAuth istemcisi gerekiyor).

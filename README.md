@@ -12,7 +12,7 @@
 | `supabase/functions` | Edge Functions: `ai-chat`, `ai-evaluate`, `merge-guest`, `delete-account` | Hazır, mantık testleri geçti |
 | `content` | 12 içerik paketi (YAML), şema, doğrulama, paketleme, yükleme betikleri | Hazır, 0 hata |
 | `apps/admin` | React + TypeScript yönetim paneli (yerelde çalışır) | Hazır |
-| `apps/mobile` | Flutter uygulaması | **Henüz yazılmadı.** Yalnız içerik paketi (`assets/content`) var. Bkz. `docs/FLUTTER_HANDOFF.md` |
+| `apps/mobile` | Flutter uygulaması (iOS, Android, web) | Çalışıyor; web sürümü: https://lingora-beza0s-projects.vercel.app |
 | `docs` | Ürün belgesi (`BUILD_SPEC.md`), tasarım, sözleşme, mimari | — |
 
 Ayrıntılı durum: `PROGRESS.md`. Kararlar: `DECISIONS.md`.
@@ -113,6 +113,11 @@ Yalnız `app_admins` tablosundaki hesaplar paneli kullanabilir; yetki veritaban�
 5. İlk açılışta iPhone'da Ayarlar → Genel → VPN ve Aygıt Yönetimi → geliştiriciye güven.
 
 Ücretsiz hesapla kurulan uygulama 7 gün sonra yeniden kurulmalıdır.
+
+## iPhone'da deneme (Mac olmadan)
+
+- **Web sürümü:** iPhone Safari'de https://lingora-beza0s-projects.vercel.app → Paylaş → **Ana Ekrana Ekle**. Uygulama gibi tam ekran açılır. `main` dalına her gönderimde Vercel yeniden derler.
+- **Yerel iOS uygulaması:** GitHub → Actions → **iOS (imzasız IPA)** → Run workflow. Repo ayarlarında Variables olarak `SUPABASE_URL` ve `SUPABASE_ANON_KEY` tanımlı olmalı. Çıkan `.ipa` dosyasını Windows'ta **Sideloadly** ile ücretsiz Apple ID'nle iPhone'a kur (7 günde bir yenilenir).
 
 ## Testler
 
