@@ -32,7 +32,7 @@ export function loadConfig(get: (k: string) => string | undefined): AiConfig {
     baseUrl: (get("AI_BASE_URL") ?? preset?.baseUrl ?? "").trim() || null,
     modelChat: get("AI_MODEL_CHAT") ?? preset?.model ?? "",
     modelEval: get("AI_MODEL_EVAL") ?? preset?.model ?? "",
-    dailyChatGuest: int("AI_DAILY_CHAT_GUEST", 3),
+    dailyChatGuest: int("AI_DAILY_CHAT_GUEST", 10),
     dailyChatUser: int("AI_DAILY_CHAT_USER", 20),
     dailyEvalGuest: int("AI_DAILY_EVAL_GUEST", 10),
     dailyEvalUser: int("AI_DAILY_EVAL_USER", 50),

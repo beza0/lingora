@@ -97,12 +97,12 @@ describe("ai-chat", () => {
   it("misafir için misafir kotası uygulanır ve dolunca 429 + sıfırlanma saati döner", async () => {
     const db = new FakeDb();
     const d = deps(db, new FakeProvider());
-    for (let i = 0; i < 3; i++) await (await handleChat({ user: GUEST, ip: null, body: { message: "hi" } }, d)).text();
+    for (let i = 0; i < 10; i++) await (await handleChat({ user: GUEST, ip: null, body: { message: "hi" } }, d)).text();
     const r = await handleChat({ user: GUEST, ip: null, body: { message: "hi" } }, d);
     expect(r.status).toBe(429);
     const body = await r.json();
     expect(body.error.code).toBe("quota_exceeded");
-    expect(body.error.limit).toBe(3);
+    expect(body.error.limit).toBe(10);
     expect(body.error.guest).toBe(true);
     expect(body.error.resets_at).toBe("2026-11-08T21:00:00.000Z");
   });
