@@ -21,7 +21,7 @@ Ayrıntılı durum: `PROGRESS.md`. Kararlar: `DECISIONS.md`.
 
 - Hiçbir anahtar repoya girmez. `.env`, `.env.json`, `google-services.json`, `GoogleService-Info.plist` ve keystore dosyaları `.gitignore` içindedir.
 - Değişken adları `.env.example` dosyasındadır. Kopyalayıp değerleri **kendi bilgisayarında** doldur: `cp .env.example .env`.
-- Anthropic anahtarı yalnız Supabase Secrets'ta durur (aşağıda). Uygulamaya ve panele hiçbir zaman girmez.
+- AI anahtarı (varsayılan `GROQ_API_KEY`) yalnız Supabase Secrets'ta durur (aşağıda). Uygulamaya ve panele hiçbir zaman girmez.
 - `SUPABASE_SERVICE_ROLE_KEY` yalnız yerel `content:seed` komutunda kullanılır.
 - Anahtarları sohbete, issue'ya veya commit mesajına yapıştırma.
 
@@ -75,10 +75,13 @@ supabase functions deploy ai-evaluate
 supabase functions deploy merge-guest
 supabase functions deploy delete-account
 
+# Varsayılan AI sağlayıcısı Groq'tur (ücretsiz plan, console.groq.com → API Keys).
 # Anahtar hazır olduğunda (terminal geçmişine düşmemesi için):
-read -s ANTHROPIC_API_KEY && supabase secrets set ANTHROPIC_API_KEY="$ANTHROPIC_API_KEY" && unset ANTHROPIC_API_KEY
+read -s GROQ_API_KEY && supabase secrets set GROQ_API_KEY="$GROQ_API_KEY" && unset GROQ_API_KEY
 supabase secrets set IP_HASH_SALT="$(openssl rand -hex 32)"
 ```
+
+Ya da Supabase paneli → Edge Functions → Secrets bölümünden ekle. Başka sağlayıcı (Anthropic, Gemini, OpenAI uyumlu) için `AI_PROVIDER` ve ilgili anahtar adları `.env.example` içinde.
 
 Anahtar ayarlanmadan önce AI uç noktaları `ai_not_configured` döner ve uygulama bunu açıkça gösterir; sahte AI cevabı üretilmez. Kota ve model gibi diğer ayarlar `.env.example` içinde listelidir.
 

@@ -2,6 +2,7 @@
 export type AiConfig = {
   provider: string;
   apiKey: string | null;
+  baseUrl: string | null;
   modelChat: string;
   modelEval: string;
   dailyChatGuest: number;
@@ -21,12 +22,16 @@ export function loadConfig(get: (k: string) => string | undefined): AiConfig {
     const v = Number.parseInt(get(k) ?? "", 10);
     return Number.isFinite(v) && v >= 0 ? v : d;
   };
-  const key = (get("ANTHROPIC_API_KEY") ?? "").trim();
+  const provider = (get("AI_PROVIDER") ?? "groq").trim();
+  const preset = PROVIDERS[provider];
+  const keyName = preset?.keyEnv ?? "AI_API_KEY";
+  const key = (get(keyName) ?? "").trim();
   return {
-    provider: get("AI_PROVIDER") ?? "anthropic",
+    provider,
     apiKey: key.length ? key : null,
-    modelChat: get("AI_MODEL_CHAT") ?? "claude-haiku-5-5",
-    modelEval: get("AI_MODEL_EVAL") ?? "claude-haiku-5-5",
+    baseUrl: (get("AI_BASE_URL") ?? preset?.baseUrl ?? "").trim() || null,
+    modelChat: get("AI_MODEL_CHAT") ?? preset?.model ?? "",
+    modelEval: get("AI_MODEL_EVAL") ?? preset?.model ?? "",
     dailyChatGuest: int("AI_DAILY_CHAT_GUEST", 3),
     dailyChatUser: int("AI_DAILY_CHAT_USER", 20),
     dailyEvalGuest: int("AI_DAILY_EVAL_GUEST", 10),
@@ -39,6 +44,17 @@ export function loadConfig(get: (k: string) => string | undefined): AiConfig {
     historyLimit: 10,
   };
 }
+
+/**
+ * Hazır sağlayıcılar. Varsayılan Groq'tur (ücretsiz plan). Başka bir OpenAI uyumlu servis için
+ * AI_PROVIDER=openai_compat, AI_BASE_URL, AI_API_KEY ve AI_MODEL_CHAT/AI_MODEL_EVAL ayarlanır.
+ */
+export const PROVIDERS: Record<string, { keyEnv: string; baseUrl: string | null; model: string }> = {
+  groq: { keyEnv: "GROQ_API_KEY", baseUrl: "https://api.groq.com/openai/v1", model: "openai/gpt-oss-120b" },
+  anthropic: { keyEnv: "ANTHROPIC_API_KEY", baseUrl: null, model: "claude-haiku-5-5" },
+  gemini: { keyEnv: "GEMINI_API_KEY", baseUrl: "https://generativelanguage.googleapis.com/v1beta/openai", model: "" }, // model adı AI Studio'dan seçilir: AI_MODEL_CHAT / AI_MODEL_EVAL
+  openai_compat: { keyEnv: "AI_API_KEY", baseUrl: null, model: "" },
+};
 
 export const DOMAIN_NAMES: Record<string, string> = {
   general: "Genel İngilizce",

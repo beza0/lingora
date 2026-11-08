@@ -50,7 +50,7 @@ class FakeProvider implements AiProvider {
   }
 }
 
-const config = (extra: Record<string, string> = {}) => loadConfig((k) => ({ ANTHROPIC_API_KEY: "test-key", ...extra } as Record<string, string>)[k]);
+const config = (extra: Record<string, string> = {}) => loadConfig((k) => ({ GROQ_API_KEY: "test-key", ...extra } as Record<string, string>)[k]);
 const deps = (db: FakeDb, provider: AiProvider | null, cfg = config()) => ({ config: cfg, provider, db, now: () => new Date("2026-11-08T10:00:00Z") });
 
 async function readSse(res: Response) {

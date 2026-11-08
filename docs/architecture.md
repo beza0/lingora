@@ -45,7 +45,7 @@ Fonksiyon idempotenttir: ikinci çağrı bir şey taşımaz. Yeni hesap açılı
 
 ## AI
 
-- `AiProvider` arayüzü; şu an `AnthropicProvider` (fetch + SSE). Sağlayıcı `AI_PROVIDER` ile değişir.
+- `AiProvider` arayüzü: `OpenAICompatProvider` (varsayılan Groq; Gemini, OpenRouter vb.) ve `AnthropicProvider`. Seçim `AI_PROVIDER` ile, kurulum `_shared/ai/factory.ts` içinde.
 - Her istekten önce `consume_ai_quota`: dakika sınırı, IP günlük sınırı, kullanıcı günlük sınırı (gün İstanbul saatiyle). Sağlayıcı hata verirse `refund_ai_quota` ile iade.
 - `ai-evaluate` önce yerel karşılaştırma yapar (kota düşmez); gerekirse AI'ı çağırır ve çıktıyı şemaya göre doğrular, geçersizse `invalid_output`.
 - Anahtar yoksa `ai_not_configured`. Uygulama hiçbir durumda yerel olarak sahte AI cevabı üretmez.

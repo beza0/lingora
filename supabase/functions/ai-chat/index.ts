@@ -2,14 +2,14 @@
 import { loadConfig } from "../_shared/config.ts";
 import { CORS_HEADERS, errorResponse } from "../_shared/errors.ts";
 import { handleChat } from "../_shared/handlers.ts";
-import { AnthropicProvider } from "../_shared/ai/anthropic.ts";
+import { createProvider } from "../_shared/ai/factory.ts";
 import { authUser, clientIp, supabaseAiDb } from "../_shared/supabase.ts";
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS_HEADERS });
   if (req.method !== "POST") return errorResponse("invalid_request");
   const config = loadConfig((k) => Deno.env.get(k));
-  const provider = config.apiKey && config.provider === "anthropic" ? new AnthropicProvider(config.apiKey) : null;
+  const provider = createProvider(config);
   let body = {};
   try {
     body = await req.json();

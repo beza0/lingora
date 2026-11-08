@@ -19,7 +19,7 @@ Son güncelleme: 2026-11-08
 | --- | --- |
 | `pnpm content:validate` | 0 hata, 0 uyarı |
 | `pnpm -C content test` | 12/12 geçti |
-| `pnpm -C supabase/functions test` + `tsc` | 27/27 geçti, tür hatası yok |
+| `pnpm -C supabase/functions test` + `tsc` | 35/35 geçti (OpenAI uyumlu sağlayıcı testleri dahil), tür hatası yok |
 | `pnpm -C apps/admin lint`, `test`, `build` | lint temiz, 8/8 geçti, derleme başarılı |
 | Deno 2.9 `deno check` + `deno lint` (4 fonksiyon) | Tür hatası yok, lint temiz |
 | Supabase `lingora-test` (Frankfurt) | 5 migration uygulandı; 4 Edge Function yüklendi |
@@ -36,7 +36,7 @@ Son güncelleme: 2026-11-08
 | Kontrol | Sebep |
 | --- | --- |
 | Flutter uygulaması (yazma, derleme, test) | Bulut ortamında Flutter/Xcode yok; Mac'te yapılacak (`docs/FLUTTER_HANDOFF.md`) |
-| Gerçek Anthropic çağrısı | Anahtar henüz yok (bilinçli karar). Sağlayıcı sahte `fetch` ile test edildi. |
+| Gerçek AI çağrısı | `GROQ_API_KEY` henüz eklenmedi. Sağlayıcılar sahte `fetch` ile test edildi; anahtarsız uç noktalar canlıda `ai_not_configured` dönüyor. |
 | Panelin gerçek PostgREST ile uçtan uca denenmesi | Yerel Supabase yığını yok. |
 
 ## Bilinen eksikler
