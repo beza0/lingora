@@ -47,7 +47,12 @@ class Backend extends ChangeNotifier {
     try {
       await Supabase.initialize(url: AppConfig.supabaseUrl, publishableKey: AppConfig.supabaseAnonKey);
       ready = true;
-      Supabase.instance.client.auth.onAuthStateChange.listen((_) => notifyListeners());
+      Supabase.instance.client.auth.onAuthStateChange.listen((s) {
+        notifyListeners();
+        // Mobilde Google girişi uygulama açıkken derin bağlantıyla döner
+        final d = _data;
+        if (s.event == AuthChangeEvent.signedIn && d != null) unawaited(finishPendingMerge(d));
+      });
       await ensureSession();
     } catch (e) {
       debugPrint('backend init: $e');
@@ -417,6 +422,63 @@ class Backend extends ChangeNotifier {
     notifyListeners();
     return merged;
   }
+
+  static const _pendingMergeKey = 'pending_merge_token';
+  UserData? _data;
+  bool _merging = false;
+
+  /// Google girişinden dönüşte birleştirme yapılabilsin diye kullanıcı verisi bağlanır.
+  void attach(UserData data) => _data = data;
+
+  /// Google ile giriş. Misafir verisi varsa birleştirme belirteci yönlendirmeden önce saklanır;
+  /// dönüşte [finishPendingMerge] misafir ilerlemesini Google hesabına taşır (yeni veya var olan hesap).
+  Future<void> signInWithGoogle(UserData data) async {
+    final c = _c;
+    if (c == null) throw ApiError.noBackend;
+    if (account == AccountKind.guest) {
+      await sync(data);
+      try {
+        final token = _json(await _post('merge-guest', {'action': 'prepare'}))['token'] as String?;
+        if (token != null) await data.store.putKv(_pendingMergeKey, token);
+      } catch (_) {
+        // Birleştirme hazırlanamazsa giriş yine yapılır; misafir verisi bu cihazda kalır
+      }
+    }
+    try {
+      await c.auth.signInWithOAuth(OAuthProvider.google, redirectTo: kIsWeb ? '${Uri.base.origin}/' : AppConfig.authRedirect);
+    } on AuthException catch (e) {
+      throw ApiError('auth', _authMessage(e));
+    }
+  }
+
+  /// Bekleyen misafir birleştirmesini tamamlar. Belirteç yoksa hiçbir şey yapmaz.
+  Future<Map<String, Object?>?> finishPendingMerge(UserData data) async {
+    if (_merging || account != AccountKind.email) return null;
+    final token = await data.store.getKv(_pendingMergeKey);
+    if (token == null || token.isEmpty) return null;
+    _merging = true;
+    Map<String, Object?>? merged;
+    try {
+      await data.store.putKv(_pendingMergeKey, '');
+      try {
+        merged = _json(await _post('merge-guest', {'action': 'complete', 'token': token}));
+      } on ApiError catch (e) {
+        if (e.code != 'not_found') debugPrint('merge: ${e.code}');
+      }
+      for (final id in data.cards.keys) {
+        await data.store.putCard(id, data.cards[id]!.toJson());
+      }
+      data.dirtyMeta = true;
+      await sync(data, pull: true);
+    } finally {
+      _merging = false;
+      notifyListeners();
+    }
+    return merged;
+  }
+
+  /// Giriş yöntemi: "google" veya "email".
+  String? get provider => user?.appMetadata['provider'] as String?;
 
   Future<void> resetPassword(String email) async {
     final c = _c;

@@ -48,7 +48,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               const SizedBox(height: 4),
               Text(
                 switch (backend.account) {
-                  AccountKind.email => 'İlerlemen hesabına eşitleniyor.',
+                  AccountKind.email => backend.provider == 'google' ? 'Google ile giriş yapıldı. İlerlemen hesabına eşitleniyor.' : 'İlerlemen hesabına eşitleniyor.',
                   AccountKind.guest => 'İlerlemen bu cihazda ve misafir hesabında. Kaybetmemek için hesap oluştur.',
                   AccountKind.none => 'Veriler yalnız bu cihazda.',
                 },

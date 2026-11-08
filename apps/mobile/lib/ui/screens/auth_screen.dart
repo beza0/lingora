@@ -70,6 +70,24 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
     }
   }
 
+  Future<void> _google() async {
+    setState(() {
+      busy = true;
+      error = null;
+      info = null;
+    });
+    try {
+      await ref.read(backendProvider).signInWithGoogle(ref.read(userProvider));
+      // Web'de sayfa Google'a yönlenir; mobilde tarayıcı açılır ve giriş bitince uygulamaya döner.
+    } on ApiError catch (x) {
+      setState(() => error = x.message);
+    } catch (_) {
+      setState(() => error = 'Google ile giriş başlatılamadı. Tekrar dene.');
+    } finally {
+      if (mounted) setState(() => busy = false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final p = context.pal;
@@ -99,6 +117,20 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
         else if (!login && backend.account == AccountKind.email)
           Text('Zaten ${backend.email} hesabıyla giriş yaptın.', style: TextStyle(color: p.muted))
         else ...[
+          OutlinedButton.icon(
+            onPressed: busy ? null : _google,
+            icon: const Text('G', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
+            label: const Text('Google ile devam et'),
+            style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(48)),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12),
+            child: Row(children: [
+              const Expanded(child: Divider()),
+              Padding(padding: const EdgeInsets.symmetric(horizontal: 12), child: Text('veya e-postayla', style: TextStyle(color: p.muted))),
+              const Expanded(child: Divider()),
+            ]),
+          ),
           TextField(
             controller: email,
             keyboardType: TextInputType.emailAddress,

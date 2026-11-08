@@ -38,7 +38,9 @@ Future<void> main() async {
   ));
 
   // Sunucu bağlantısı arka planda kurulur; uygulama beklemeden çevrimdışı çalışır.
+  backend.attach(user);
   await backend.init();
+  await backend.finishPendingMerge(user);
   final drafts = await backend.fetchShowDrafts();
   if (drafts != null) content.showDrafts = drafts;
   await backend.sync(user, pull: user.events.isEmpty && backend.account == AccountKind.email);
