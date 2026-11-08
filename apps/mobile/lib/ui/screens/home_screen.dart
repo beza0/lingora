@@ -71,6 +71,7 @@ class HomeScreen extends ConsumerWidget {
                 minutes: (plan.estimate.inSeconds / 60).ceil(),
                 reduced: plan.reducedNew,
                 onStart: plan.isEmpty ? null : () => context.push('/session/${d.domainId}'),
+                onAssess: user.assessed.contains(d.domainId) ? null : () => context.push('/assessment/${d.domainId}'),
               );
             }),
             const SizedBox(height: 12),
@@ -122,7 +123,9 @@ class _DomainCard extends StatelessWidget {
   final int due, newCount, started, total, minutes;
   final bool reduced;
   final VoidCallback? onStart;
+  final VoidCallback? onAssess;
   const _DomainCard({
+    this.onAssess,
     required this.domainId,
     required this.name,
     required this.due,
@@ -156,6 +159,10 @@ class _DomainCard extends StatelessWidget {
             Text('Bekleyen tekrar çok olduğu için bugün daha az yeni hedef var.', style: TextStyle(color: p.muted, fontSize: 13)),
           ],
           const SizedBox(height: 14),
+          if (onAssess != null) ...[
+            OutlinedButton.icon(onPressed: onAssess, icon: const Icon(Icons.tune, size: 18), label: const Text('Seviyeni belirle · 1–2 dk')),
+            const SizedBox(height: 8),
+          ],
           FilledButton(
             onPressed: onStart,
             child: Text(onStart == null ? 'Bugünlük bu kadar' : 'Çalış · yaklaşık $minutes dk · tahmini'),

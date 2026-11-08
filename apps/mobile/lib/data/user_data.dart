@@ -143,6 +143,7 @@ class UserData extends ChangeNotifier {
   String themeMode = 'system';
   double ttsRate = 0.45;
   bool soundOn = true;
+  final Set<String> assessed = {};
   bool onboarded = false;
   bool dirtyMeta = false;
 
@@ -167,6 +168,9 @@ class UserData extends ChangeNotifier {
     themeMode = settings['theme'] as String? ?? 'system';
     ttsRate = (settings['tts_rate'] as num?)?.toDouble() ?? 0.45;
     soundOn = settings['sound'] as bool? ?? true;
+    assessed
+      ..clear()
+      ..addAll(((settings['assessed'] as List?) ?? const []).cast<String>());
     onboarded = settings['onboarded'] as bool? ?? false;
     dirtyMeta = (await store.getKv('dirty_meta')) == '1';
     notifyListeners();
@@ -187,7 +191,7 @@ class UserData extends ChangeNotifier {
   }
 
   Future<void> _saveSettings() =>
-      store.putKv('settings', jsonEncode({'theme': themeMode, 'tts_rate': ttsRate, 'sound': soundOn, 'onboarded': onboarded}));
+      store.putKv('settings', jsonEncode({'theme': themeMode, 'tts_rate': ttsRate, 'sound': soundOn, 'onboarded': onboarded, 'assessed': assessed.toList()}));
 
   Future<void> clearMetaDirty() async {
     dirtyMeta = false;
@@ -234,6 +238,13 @@ class UserData extends ChangeNotifier {
     themeMode = mode;
     await _saveSettings();
     notifyListeners();
+  }
+
+  /// Seviye testi bitti: seçilen seviye kaydedilir.
+  Future<void> completeAssessment(String domainId, int level) async {
+    assessed.add(domainId);
+    await _saveSettings();
+    await setLevel(domainId, level);
   }
 
   Future<void> setSound(bool on) async {

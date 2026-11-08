@@ -78,6 +78,7 @@ SessionPlan buildSession({
   Fsrs fsrs = const Fsrs(),
   int maxReviews = 10,
   int newCount = 5,
+  bool includeMatching = true,
 }) {
   final domainTargets = content.targetsForDomain(domainId);
   final inDomain = domainTargets.toSet();
@@ -128,7 +129,29 @@ SessionPlan buildSession({
     final second = pickExercise(content, id, 0, avoidType: 'meaning_choice');
     if (second != null) steps.add(SessionStep(StepKind.exercise, id, exerciseId: second['id'] as String, isNew: true, isRetry: true));
   }
+  // Eşleştirme: grubundaki bütün hedefler daha önce başlanmışsa, tekrarı olan bir grup tercih edilir.
+  if (includeMatching && steps.isNotEmpty) {
+    final m = pickMatching(content, domainId, cards, prefer: dueIds.toSet());
+    if (m != null) {
+      final at = (steps.length * 2 / 3).round().clamp(0, steps.length);
+      steps.insert(at, SessionStep(StepKind.exercise, m['target_id'] as String, exerciseId: m['id'] as String, isRetry: true));
+    }
+  }
   return SessionPlan(domainId: domainId, steps: steps, newTargets: newIds, dueTargets: dueIds, reducedNew: reduced);
+}
+
+/// Bütün hedefleri başlanmış bir eşleştirme alıştırması (yoksa null).
+Json? pickMatching(ContentRepo content, String domainId, Map<String, CardState> cards, {Set<String> prefer = const {}}) {
+  Json? fallback;
+  for (final t in content.targetsForDomain(domainId)) {
+    for (final e in content.exercisesFor(t, type: 'matching')) {
+      final group = ((e['group_target_ids'] as List?) ?? const []).cast<String>();
+      if (group.isEmpty || !group.every(cards.containsKey)) continue;
+      if (group.any(prefer.contains)) return e;
+      fallback ??= e;
+    }
+  }
+  return fallback;
 }
 
 /// Alan seviyesi ayarı: son 20 ilk denemede yardımsız doğru oranı (docs/srs.md).

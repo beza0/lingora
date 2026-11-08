@@ -98,11 +98,17 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 leading: DomainDot(d.domainId),
                 title: Text(content.domains[d.domainId]?['name_tr'] as String? ?? d.domainId),
                 subtitle: Text('Seviye ${d.level} / 5'),
+                onTap: () => context.push('/assessment/${d.domainId}'),
                 trailing: Row(mainAxisSize: MainAxisSize.min, children: [
                   IconButton(tooltip: 'Daha kolay', icon: const Icon(Icons.remove), onPressed: d.level > 1 ? () => user.setLevel(d.domainId, d.level - 1) : null),
                   IconButton(tooltip: 'Daha zor', icon: const Icon(Icons.add), onPressed: d.level < 5 ? () => user.setLevel(d.domainId, d.level + 1) : null),
                 ]),
               ),
+            ListTile(
+              title: const Text('Seviye testini yeniden yapmak için alana dokun'),
+              dense: true,
+              textColor: p.muted,
+            ),
             ListTile(title: const Text('Alanları düzenle'), trailing: const Icon(Icons.chevron_right), onTap: () => context.push('/domains')),
           ]),
         ),

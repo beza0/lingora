@@ -24,6 +24,7 @@ class PackScreen extends ConsumerWidget {
     final now = DateTime.now().toUtc();
     final scenarios = (content.scenariosByPack[packId] ?? const []).where(content.visible).toList();
     final readings = (content.readingsByPack[packId] ?? const []).where(content.visible).toList();
+    final writing = (content.writingByPack[packId] ?? const []).where(content.visible).toList();
     final grammar = (content.packGrammar[packId] ?? const <String>[]).map((g) => content.grammar[g]).where(content.visible).toList();
 
     Widget targetTile(String id) {
@@ -44,7 +45,7 @@ class PackScreen extends ConsumerWidget {
           Expanded(child: Text(pack['description_tr'] as String, style: TextStyle(color: p.muted))),
           if ((pack['status'] as String?) != 'published') const DraftBadge(),
         ]),
-        if (scenarios.isNotEmpty || readings.isNotEmpty) ...[
+        if (scenarios.isNotEmpty || readings.isNotEmpty || writing.isNotEmpty) ...[
           const SectionTitle('UYGULA'),
           Card(
             child: Column(children: [
@@ -63,6 +64,14 @@ class PackScreen extends ConsumerWidget {
                   subtitle: Text('Okuma · ${r['kind']}'),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () => context.push('/reading/${r['id']}'),
+                ),
+              for (final w in writing)
+                ListTile(
+                  leading: Icon(Icons.edit_note, color: p.primary),
+                  title: Text(w['prompt_tr'] as String, maxLines: 2, overflow: TextOverflow.ellipsis),
+                  subtitle: const Text('Yazma görevi'),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () => context.push('/writing/${w['id']}'),
                 ),
             ]),
           ),

@@ -49,6 +49,11 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
   bool checking = false;
   final typed = TextEditingController();
   final focus = FocusNode();
+  // eşleştirme
+  String? matchLeft;
+  final matched = <String>{};
+  String? wrongFlash;
+  int matchMistakes = 0;
 
   @override
   void initState() {
@@ -79,6 +84,10 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
       result = null;
       checking = false;
       typed.clear();
+      matchLeft = null;
+      matched.clear();
+      wrongFlash = null;
+      matchMistakes = 0;
     });
     if (index >= steps.length) {
       if (answered > 0) _fx(Fx.complete);
@@ -199,6 +208,40 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
     _fx(r.ok ? Fx.correct : Fx.wrong);
     setState(() => result = r);
     await _record(s, ex, r);
+  }
+
+  Future<void> _matchTap(SessionStep s, Json ex, String side, String value) async {
+    if (result != null) return;
+    final pairs = {for (final p in ((ex['answer'] as Map)['pairs'] as List).cast<List>()) p[0] as String: p[1] as String};
+    if (side == 'l') {
+      if (matched.contains(value)) return;
+      setState(() => matchLeft = value);
+      _fx(Fx.tap);
+      return;
+    }
+    final left = matchLeft;
+    if (left == null || matched.contains(left)) return;
+    if (pairs[left] == value) {
+      _fx(Fx.correct);
+      setState(() {
+        matched.add(left);
+        matchLeft = null;
+      });
+      if (matched.length == pairs.length) {
+        final r = _Result(matchMistakes == 0 ? Outcome.correct : Outcome.correctWithHint, source: 'local', note: matchMistakes == 0 ? null : '$matchMistakes yanlış eşleştirme yaptın.');
+        setState(() => result = r);
+        await _record(s, ex, r);
+      }
+    } else {
+      _fx(Fx.wrong);
+      setState(() {
+        matchMistakes++;
+        wrongFlash = value;
+      });
+      Future.delayed(const Duration(milliseconds: 600), () {
+        if (mounted) setState(() => wrongFlash = null);
+      });
+    }
   }
 
   Future<bool?> _selfGrade(String expected, ApiError e) => showDialog<bool>(
@@ -357,6 +400,40 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
             ]),
           ));
         }
+      case 'matching':
+        final pairs = ((ex['answer'] as Map)['pairs'] as List).cast<List>();
+        final left = pairs.map((e) => e[0] as String).toList();
+        final right = pairs.map((e) => e[1] as String).toList();
+        // Sağ sütun karışık sırada (alıştırma kimliğine göre sabit)
+        final seed = (ex['id'] as String).codeUnits.fold<int>(0, (a, b) => a + b);
+        final order = List<int>.generate(right.length, (i) => i)..sort((a, b) => ((a * 7 + seed) % 11).compareTo((b * 7 + seed) % 11));
+        final pairsMap = {for (final e in pairs) e[1] as String: e[0] as String};
+        body.add(Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Expanded(
+            child: Column(children: [
+              for (final l in left)
+                _MatchTile(
+                  text: l,
+                  state: matched.contains(l) ? _Opt.correct : (matchLeft == l ? _Opt.wrong : _Opt.idle),
+                  selected: matchLeft == l,
+                  onTap: () => _matchTap(s, ex, 'l', l),
+                  speak: true,
+                ),
+            ]),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(children: [
+              for (final i in order)
+                _MatchTile(
+                  text: right[i],
+                  state: matched.contains(pairsMap[right[i]]) ? _Opt.correct : (wrongFlash == right[i] ? _Opt.wrong : _Opt.idle),
+                  selected: false,
+                  onTap: () => _matchTap(s, ex, 'r', right[i]),
+                ),
+            ]),
+          ),
+        ]));
       default:
         body.add(Text(type));
     }
@@ -393,7 +470,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
         onSubmitted: (_) => _answerTyped(s, ex),
         decoration: const InputDecoration(hintText: 'Cevabını yaz'),
       ));
-    } else {
+    } else if (type != 'matching') {
       final options = ((prompt['options'] as List?) ?? const []).cast<String>();
       final answerIndex = (ex['answer'] as Map)['index'] as int?;
       for (var i = 0; i < options.length; i++) {
@@ -512,6 +589,45 @@ class _OptionButton extends StatelessWidget {
                 if (state == _Opt.correct) Icon(Icons.check_circle, color: p.success),
                 if (state == _Opt.wrong) Icon(Icons.cancel, color: p.danger),
               ]),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _MatchTile extends ConsumerWidget {
+  final String text;
+  final _Opt state;
+  final bool selected;
+  final bool speak;
+  final VoidCallback onTap;
+  const _MatchTile({required this.text, required this.state, required this.selected, required this.onTap, this.speak = false});
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final p = context.pal;
+    final done = state == _Opt.correct;
+    final bg = done ? p.successSoft : (selected ? p.primarySoft : (state == _Opt.wrong ? p.dangerSoft : p.surface));
+    final border = done ? p.success : (selected ? p.primary : (state == _Opt.wrong ? p.danger : p.border));
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Material(
+        color: bg,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12), side: BorderSide(color: border, width: selected || done ? 2 : 1)),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: done
+              ? null
+              : () {
+                  if (speak) ref.read(speakerProvider).speak(text, rate: ref.read(userProvider).ttsRate);
+                  onTap();
+                },
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 56),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              child: Center(child: Text(text, textAlign: TextAlign.center, style: TextStyle(fontSize: 15, color: done ? p.success : p.text))),
             ),
           ),
         ),

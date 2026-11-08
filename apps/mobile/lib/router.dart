@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'app_state.dart';
+import 'ui/screens/assessment_screen.dart';
 import 'ui/screens/auth_screen.dart';
 import 'ui/screens/chat_screen.dart';
 import 'ui/screens/collection_screen.dart';
@@ -16,6 +17,7 @@ import 'ui/screens/reading_screen.dart';
 import 'ui/screens/scenario_screen.dart';
 import 'ui/screens/session_screen.dart';
 import 'ui/screens/target_screen.dart';
+import 'ui/screens/writing_screen.dart';
 
 GoRouter buildRouter(WidgetRef ref) {
   final user = ref.read(userProvider);
@@ -41,6 +43,8 @@ GoRouter buildRouter(WidgetRef ref) {
         ],
       ),
       GoRoute(path: '/session/:domain', builder: (_, s) => SessionScreen(domainId: s.pathParameters['domain']!)),
+      GoRoute(path: '/assessment/:domain', builder: (_, s) => AssessmentScreen(domainId: s.pathParameters['domain']!)),
+      GoRoute(path: '/writing/:id', builder: (_, s) => WritingScreen(taskId: s.pathParameters['id']!)),
       GoRoute(path: '/target/:id', builder: (_, s) => TargetScreen(targetId: s.pathParameters['id']!)),
       GoRoute(path: '/pack/:id', builder: (_, s) => PackScreen(packId: s.pathParameters['id']!)),
       GoRoute(path: '/reading/:id', builder: (_, s) => ReadingScreen(readingId: s.pathParameters['id']!)),

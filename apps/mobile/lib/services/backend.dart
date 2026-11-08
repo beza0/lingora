@@ -344,6 +344,24 @@ class Backend extends ChangeNotifier {
     }
   }
 
+  Future<void> saveAssessment({required String domainId, required List<Map<String, Object?>> steps, required int result, required int chosen}) async {
+    final c = _c;
+    final u = user;
+    if (c == null || u == null) return;
+    try {
+      await c.from('assessments').insert({
+        'id': newId(),
+        'user_id': u.id,
+        'domain_id': domainId,
+        'steps': steps,
+        'result_level': result,
+        'chosen_level': chosen,
+      });
+    } catch (e) {
+      debugPrint('assessment: $e');
+    }
+  }
+
   Future<void> report({required String entityType, required String entityId, required String reason, String? text}) async {
     final c = _c;
     final u = user;
