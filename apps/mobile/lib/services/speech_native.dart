@@ -6,7 +6,7 @@ bool _ready = false;
 
 void initSpeech() {}
 
-Future<void> speakEnglish(String text, double rate) async {
+Future<bool> speakEnglish(String text, double rate) async {
   try {
     if (!_ready) {
       await _tts.setSharedInstance(true);
@@ -20,6 +20,7 @@ Future<void> speakEnglish(String text, double rate) async {
   } catch (_) {
     // Ses yoksa sessizce geç; metin ekranda zaten var.
   }
+  return true;
 }
 
 Future<void> stopSpeech() async {

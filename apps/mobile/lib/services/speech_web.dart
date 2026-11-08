@@ -54,17 +54,25 @@ void initSpeech() {
 }
 
 /// [rate]: uygulama ayarı 0.2–0.8 (varsayılan 0.45). Web'de normal hız 1.0'dır.
-Future<void> speakEnglish(String text, double rate) async {
+/// Cihazda İngilizce ses yoksa okumaz ve false döner: Türkçe sesle yanlış telaffuz öğretmekten iyidir.
+Future<bool> speakEnglish(String text, double rate) async {
   initSpeech();
   final synth = web.window.speechSynthesis;
   synth.cancel();
   _voice ??= _pick();
-  final u = web.SpeechSynthesisUtterance(text);
-  u.lang = 'en-US';
+  // Bazı tarayıcılar ses listesini ilk istekten sonra yükler
+  for (var i = 0; _voice == null && i < 8; i++) {
+    await Future<void>.delayed(const Duration(milliseconds: 100));
+    _voice = _pick();
+  }
   final v = _voice;
-  if (v != null) u.voice = v;
+  if (v == null) return false;
+  final u = web.SpeechSynthesisUtterance(text);
+  u.lang = v.lang;
+  u.voice = v;
   u.rate = (0.5 + rate).clamp(0.5, 1.4);
   synth.speak(u);
+  return true;
 }
 
 Future<void> stopSpeech() async {

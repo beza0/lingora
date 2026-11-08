@@ -22,7 +22,8 @@ class Speaker {
     speech.initSpeech();
   }
 
-  Future<void> speak(String text, {double rate = 0.45}) => speech.speakEnglish(text, rate);
+  /// Cihazda İngilizce ses yoksa false döner.
+  Future<bool> speak(String text, {double rate = 0.45}) => speech.speakEnglish(text, rate);
   Future<void> stop() => speech.stopSpeech();
   String? get voiceName => speech.currentVoiceName();
 }

@@ -378,7 +378,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
       case 'listen_choice':
         body.add(Center(
           child: FilledButton.tonalIcon(
-            onPressed: () => ref.read(speakerProvider).speak(prompt['audio_text'] as String, rate: ref.read(userProvider).ttsRate),
+            onPressed: () => speakOrExplain(context, ref, prompt['audio_text'] as String),
             icon: const Icon(Icons.volume_up),
             label: const Text('Dinle'),
           ),
@@ -620,7 +620,7 @@ class _MatchTile extends ConsumerWidget {
           onTap: done
               ? null
               : () {
-                  if (speak) ref.read(speakerProvider).speak(text, rate: ref.read(userProvider).ttsRate);
+                  if (speak) speakOrExplain(context, ref, text);
                   onTap();
                 },
           child: ConstrainedBox(

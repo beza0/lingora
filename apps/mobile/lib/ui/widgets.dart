@@ -34,9 +34,34 @@ class SpeakButton extends ConsumerWidget {
       iconSize: size,
       constraints: const BoxConstraints(minWidth: 44, minHeight: 44),
       icon: Icon(Icons.volume_up_outlined, color: context.pal.primary),
-      onPressed: () => ref.read(speakerProvider).speak(text, rate: ref.read(userProvider).ttsRate),
+      onPressed: () => speakOrExplain(context, ref, text),
     );
   }
+}
+
+/// İngilizce okur; cihazda İngilizce ses yoksa nasıl ekleneceğini anlatır (bir kez).
+bool _explained = false;
+Future<void> speakOrExplain(BuildContext context, WidgetRef ref, String text) async {
+  final ok = await ref.read(speakerProvider).speak(text, rate: ref.read(userProvider).ttsRate);
+  if (ok || !context.mounted) return;
+  if (_explained) {
+    toast(context, 'Bu cihazda İngilizce ses yok.');
+    return;
+  }
+  _explained = true;
+  await showDialog<void>(
+    context: context,
+    builder: (c) => AlertDialog(
+      title: const Text('İngilizce ses bulunamadı'),
+      content: const Text(
+        'Bu tarayıcıda yalnız Türkçe ses var; yanlış telaffuz öğretmemek için okumadım.\n\n'
+        'Windows: Ayarlar → Saat ve dil → Konuşma → Ses ekle → English (United States). Ekledikten sonra sayfayı yenile.\n\n'
+        'iPhone: Ayarlar → Erişilebilirlik → Sözlü İçerik → Sesler → English.\n\n'
+        'Chrome veya Edge ile açarsan İngilizce sesler genelde hazırdır.',
+      ),
+      actions: [TextButton(onPressed: () => Navigator.pop(c), child: const Text('Tamam'))],
+    ),
+  );
 }
 
 class CopyButton extends StatelessWidget {
