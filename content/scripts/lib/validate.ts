@@ -4,7 +4,7 @@ import { type Bundle, type Issue, type LoadedPack, markedForm, split, stripMarks
 import type { Target } from "../../schema/authoring.ts";
 
 export const PER_PACK = { targets: 20, patterns: 10, scenarios: 2, readings: 2, grammar: 2 } as const;
-export const TOTAL = { packs: 12, targets: 240, patterns: 120, scenarios: 24, readings: 24, grammar: 24, writing: 12 } as const;
+export const TOTAL = { packs: 15, targets: 300, patterns: 150, scenarios: 30, readings: 30, grammar: 30, writing: 15 } as const;
 
 const norm = (s: string) => s.toLowerCase().replace(/[’']/g, "'").replace(/[.,!?;:]/g, "").replace(/\s+/g, " ").trim();
 

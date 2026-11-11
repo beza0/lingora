@@ -225,6 +225,8 @@ describe("rol yapma yönergesi", () => {
     expect(p).toContain("rol yapma");
     expect(p).toContain("You are the team lead");
     expect(p).toContain("Geri bildirim:");
+    expect(p).toContain("Puan: X/10");
+    expect(p).toContain("Let's finish");
     expect(p).toContain("Yazılım İngilizcesi");
     const normal = chatSystemPrompt("software", { kind: "target", text: "blocker" });
     expect(normal).not.toContain("Geri bildirim:");

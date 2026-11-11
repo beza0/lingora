@@ -47,6 +47,27 @@ const roleplays = <Roleplay>[
       'You are a fellow student in an academic seminar discussing an article about the effects of social media on young people. Share an opinion, ask the user for theirs and politely challenge it.'),
   Roleplay('rp_conference', 'yds', 'Konferansta tanışma', 'Araştırma konunu kısaca anlat ve iletişim bilgisi paylaş.',
       'You are a researcher at an international conference coffee break. Start a conversation with the user, ask about their research and their university, and talk about possible collaboration.'),
+  // Sağlık
+  Roleplay('rp_doctor', 'health', 'Doktora belirtileri anlatma', 'Belirtilerini, ne zamandır sürdüğünü ve ilaç alerjini anlat.',
+      'You are a family doctor. A patient comes in feeling unwell. Ask about their symptoms, how long they have had them, the pain level and any allergies, then give simple advice.'),
+  Roleplay('rp_patient', 'health', 'Hastadan öykü alma', 'Sen sağlık çalışanısın: hastanın şikâyetini, geçmiş hastalıklarını ve ilaçlarını sor.',
+      'You are a patient at a hospital clinic with stomach pain since yesterday. Answer the health worker\'s questions naturally and ask one or two questions about the treatment.'),
+  Roleplay('rp_pharmacy', 'health', 'Eczanede ilaç alma', 'Reçeteni ver, ilacın nasıl kullanılacağını ve yan etkilerini sor.',
+      'You are a pharmacist. The customer brings a prescription for antibiotics. Explain the dose, when to take it and common side effects, and answer questions.'),
+  // Turizm
+  Roleplay('rp_reception', 'tourism', 'Resepsiyonda misafir karşılama', 'Sen resepsiyonistsin: misafiri karşıla, rezervasyonu bul ve kahvaltı saatini anlat.',
+      'You are a hotel guest arriving at reception. You have a reservation for two nights but you want a room with a sea view and late check-out. Be polite but ask for what you want.'),
+  Roleplay('rp_complaint', 'tourism', 'Şikâyeti çözme', 'Misafirin şikâyetini dinle, özür dile ve bir çözüm öner.',
+      'You are an unhappy hotel guest. The room is noisy and the Wi-Fi does not work. Complain politely but firmly and expect a solution.'),
+  Roleplay('rp_tour', 'tourism', 'Tur önerme', 'Misafire şehirde gezilecek yerleri öner ve nasıl gidileceğini anlat.',
+      'You are a tourist asking the hotel concierge for recommendations: a good restaurant, a museum and how to get there. Ask follow-up questions about prices and opening hours.'),
+  // Hukuk
+  Roleplay('rp_client', 'law', 'Müvekkille sözleşme konuşma', 'Müvekkile kira sözleşmesindeki fesih maddesini ve bildirim süresini açıkla.',
+      'You are a foreign client meeting a lawyer about your rental contract. You want to end the lease early. Ask what the termination clause says, about notice and your deposit.'),
+  Roleplay('rp_negotiation', 'law', 'Sözleşme müzakeresi', 'Karşı tarafın avukatıyla ödeme süresi maddesini müzakere et ve bir orta yol öner.',
+      'You are the other side\'s lawyer negotiating a service agreement. You want payment within 15 days and a penalty clause for late delivery. Be professional and open to a compromise.'),
+  Roleplay('rp_intake', 'law', 'İlk görüşme', 'Avukat olarak yeni müvekkilin sorununu dinle, belgeleri iste ve sonraki adımı anlat.',
+      'You are a new client at a law firm. Your employer has not paid your last two salaries. Explain your situation and ask what you can do and what documents you need.'),
 ];
 
 Roleplay? roleplayById(String? id) {

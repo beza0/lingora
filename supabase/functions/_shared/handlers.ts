@@ -22,7 +22,7 @@ export interface AiDb {
 
 export type Deps = { config: AiConfig; provider: AiProvider | null; db: AiDb; now: () => Date };
 
-const DOMAINS = new Set(["general", "software", "engineering", "yds"]);
+const DOMAINS = new Set(["general", "software", "engineering", "yds", "health", "tourism", "law"]);
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 async function takeQuota(kind: QuotaKind, user: AuthUser, ip: string | null, deps: Deps) {

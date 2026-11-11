@@ -1,4 +1,4 @@
-// Derlenen içeriği SQL INSERT komutlarına çevirir (yerel şema uyumluluk testi için; supabase/verify/run.sh kullanır).
+// Derlenen içeriği SQL INSERT komutlarına çevirir (yerel şema testi ve canlı yükleme). Var olan satırlara dokunmaz (on conflict do nothing).
 import { run } from "./common.ts";
 
 const { bundle, report } = run();
@@ -17,10 +17,14 @@ const lit = (col: string, v: unknown): string => {
 const order = ["packs", "lexemes", "senses", "sense_usages", "grammar_notes", "patterns", "pattern_slots", "learning_targets", "pack_targets",
   "pack_grammar_notes", "exercises", "scenarios", "readings", "writing_tasks", "situations", "situation_items"] as const;
 const out: string[] = ["begin;"];
+for (const d of bundle.domains as Record<string, unknown>[]) {
+  const cols = Object.keys(d);
+  out.push(`insert into public.domains (${cols.join(",")}) values (${cols.map((c) => lit(c, d[c])).join(",")}) on conflict (id) do update set name_tr = excluded.name_tr, description_tr = excluded.description_tr, sort = excluded.sort;`);
+}
 for (const t of order) {
   for (const r of bundle[t] as Record<string, unknown>[]) {
     const cols = Object.keys(r);
-    out.push(`insert into public.${t} (${cols.join(",")}) values (${cols.map((c) => lit(c, r[c])).join(",")});`);
+    out.push(`insert into public.${t} (${cols.join(",")}) values (${cols.map((c) => lit(c, r[c])).join(",")}) on conflict do nothing;`);
   }
 }
 out.push("commit;");

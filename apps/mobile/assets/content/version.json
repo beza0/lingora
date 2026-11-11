@@ -1,14 +1,14 @@
 {
-  "content_version": "01bee0cd3853a798",
+  "content_version": "1c633c5fae921e13",
   "totals": {
-    "packs": 12,
-    "targets": 240,
-    "patterns": 120,
-    "scenarios": 24,
-    "readings": 24,
-    "grammar": 24,
-    "writing": 12,
-    "exercises": 1427,
-    "learning_targets": 360
+    "packs": 15,
+    "targets": 300,
+    "patterns": 150,
+    "scenarios": 30,
+    "readings": 30,
+    "grammar": 30,
+    "writing": 15,
+    "exercises": 1784,
+    "learning_targets": 450
   }
 }

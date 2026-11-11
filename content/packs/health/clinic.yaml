@@ -1,0 +1,539 @@
+id: health-clinic
+domain: health
+title: "Hastanede ve muayenede iletişim"
+desc: "Belirtileri anlatma, hasta öyküsü alma, tedavi ve ilaç talimatı verme."
+sort: 1
+
+targets:
+  - id: symptom
+    w: symptom
+    pos: n
+    tr: "belirti, semptom"
+    ex: "What [[symptoms]] have you had since Monday?"
+    extr: "Pazartesiden beri hangi belirtileriniz var?"
+    d: 1
+    col: ["common symptoms", "mild symptoms", "describe your symptoms"]
+    syn: ["sign"]
+    fam: ["symptomatic (s.) belirti gösteren"]
+    tone: ["Muayene", "Resmî"]
+    dis:
+      - "system | Sistem demektir."
+      - "sympathy | Anlayış, duygudaşlık demektir."
+      - "syndrome | Sendrom; birden çok belirtinin oluşturduğu tablo demektir."
+  - id: pain
+    w: pain
+    pos: n
+    tr: "ağrı"
+    ex: "Where exactly is the [[pain]]?"
+    extr: "Ağrı tam olarak nerede?"
+    d: 1
+    col: ["sharp pain", "chest pain", "be in pain"]
+    syn: ["ache"]
+    fam: ["painful (s.) ağrılı", "painkiller (i.) ağrı kesici"]
+    conf: ["ache | Genellikle sürekli, künt ağrıdır (headache); pain daha geneldir."]
+    tone: ["Muayene", "Günlük"]
+    dis:
+      - "pane | Pencere camı demektir."
+      - "paint | Boya demektir."
+      - "pin | Toplu iğne demektir."
+  - id: fever
+    w: fever
+    pos: n
+    tr: "ateş (yüksek vücut ısısı)"
+    ex: "She has had a high [[fever]] for two days."
+    extr: "İki gündür yüksek ateşi var."
+    d: 1
+    col: ["high fever", "run a fever", "fever and chills"]
+    syn: ["temperature"]
+    conf: ["fire | Yangın ya da ateş (alev) demektir; vücut ısısı için fever kullanılır."]
+    tone: ["Muayene", "Günlük"]
+    dis:
+      - "flavor | Tat, aroma demektir."
+      - "favor | İyilik demektir."
+      - "fewer | Daha az demektir."
+  - id: dizzy
+    w: dizzy
+    pos: adj
+    tr: "başı dönen"
+    ex: "I feel [[dizzy]] when I stand up quickly."
+    extr: "Hızlı kalktığımda başım dönüyor."
+    d: 1
+    col: ["feel dizzy", "dizzy spells"]
+    syn: ["light-headed"]
+    fam: ["dizziness (i.) baş dönmesi"]
+    tone: ["Muayene", "Günlük"]
+    dis:
+      - "busy | Meşgul demektir."
+      - "dusty | Tozlu demektir."
+      - "lazy | Tembel demektir."
+  - id: allergic
+    w: allergic
+    pos: adj
+    tr: "alerjisi olan"
+    ex: "Are you [[allergic]] to any medicines?"
+    extr: "Herhangi bir ilaca alerjiniz var mı?"
+    d: 1
+    col: ["allergic to penicillin", "allergic reaction"]
+    fam: ["allergy (i.) alerji"]
+    tone: ["Muayene", "Resmî"]
+    dis:
+      - "aggressive | Saldırgan demektir."
+      - "allergy | İsimdir; “be” sonrası sıfat gerekir: allergic."
+      - "arctic | Kutup bölgesine ait demektir."
+  - id: prescription
+    w: prescription
+    pos: n
+    tr: "reçete"
+    ex: "You can't buy this medicine without a [[prescription]]."
+    extr: "Bu ilacı reçetesiz alamazsınız."
+    d: 2
+    col: ["write a prescription", "prescription drugs", "fill a prescription"]
+    fam: ["prescribe (f.) reçete yazmak"]
+    conf: ["recipe | Yemek tarifidir; reçete prescription'dır."]
+    tone: ["Eczane", "Resmî"]
+    dis:
+      - "recipe | Yemek tarifi demektir."
+      - "description | Tarif, betimleme demektir."
+      - "subscription | Abonelik demektir."
+  - id: dose
+    w: dose
+    pos: n
+    tr: "doz, bir seferde alınan miktar"
+    ex: "Take one [[dose]] every eight hours."
+    extr: "Her sekiz saatte bir doz alın."
+    d: 2
+    col: ["a single dose", "a high dose", "miss a dose"]
+    fam: ["dosage (i.) dozaj"]
+    tone: ["İlaç talimatı", "Resmî"]
+    dis:
+      - "dozen | Düzine (on iki) demektir."
+      - "doze | Uyuklamak demektir."
+      - "close | Kapatmak ya da yakın demektir."
+  - id: side-effect
+    w: side effect
+    pos: n
+    tr: "yan etki"
+    ex: "A common [[side effect]] of this drug is a dry mouth."
+    extr: "Bu ilacın yaygın bir yan etkisi ağız kuruluğudur."
+    d: 2
+    col: ["serious side effects", "have side effects"]
+    tone: ["İlaç talimatı", "Resmî"]
+    dis:
+      - "side dish | Yan yemek, garnitür demektir."
+      - "side effort | Böyle bir kalıp yok."
+      - "after effect | Sonradan görülen etki; ilaç yan etkisi için kullanılmaz."
+  - id: appointment-health
+    w: appointment
+    pos: n
+    tr: "randevu"
+    ex: "I'd like to make an [[appointment]] with Dr. Kaya."
+    extr: "Dr. Kaya'dan randevu almak istiyorum."
+    d: 1
+    col: ["make an appointment", "cancel an appointment", "follow-up appointment"]
+    tone: ["Telefon", "Resmî"]
+    dis:
+      - "apartment | Daire demektir."
+      - "announcement | Duyuru demektir."
+      - "agreement | Anlaşma demektir."
+  - id: blood-pressure
+    w: blood pressure
+    pos: n
+    tr: "tansiyon, kan basıncı"
+    ex: "Your [[blood pressure]] is a little high today."
+    extr: "Bugün tansiyonunuz biraz yüksek."
+    d: 1
+    col: ["high blood pressure", "check your blood pressure"]
+    tone: ["Muayene", "Resmî"]
+    dis:
+      - "blood type | Kan grubu demektir."
+      - "blood test | Kan tahlili demektir."
+      - "blood stress | Böyle bir kalıp yok."
+  - id: swollen
+    w: swollen
+    pos: adj
+    tr: "şişmiş"
+    ex: "My ankle is [[swollen]] after the fall."
+    extr: "Düştükten sonra ayak bileğim şişti."
+    d: 2
+    col: ["swollen ankle", "swollen glands"]
+    fam: ["swell (f.) şişmek", "swelling (i.) şişlik"]
+    tone: ["Muayene", "Günlük"]
+    dis:
+      - "stolen | Çalınmış demektir."
+      - "sunken | Çökmüş, batmış demektir."
+      - "swallow | Yutmak demektir."
+  - id: nausea
+    w: nausea
+    pos: n
+    tr: "bulantı"
+    ex: "The medicine may cause mild [[nausea]]."
+    extr: "İlaç hafif bulantıya neden olabilir."
+    d: 2
+    col: ["nausea and vomiting", "feel nausea"]
+    fam: ["nauseous (s.) midesi bulanan"]
+    tone: ["Muayene", "Resmî"]
+    dis:
+      - "noise | Gürültü demektir."
+      - "nurse | Hemşire demektir."
+      - "nature | Doğa demektir."
+  - id: recover
+    w: recover
+    pos: v
+    tr: "iyileşmek"
+    ex: "Most patients [[recover]] within a week."
+    extr: "Hastaların çoğu bir hafta içinde iyileşir."
+    d: 2
+    col: ["recover from an illness", "recover fully"]
+    syn: ["get better"]
+    fam: ["recovery (i.) iyileşme"]
+    tone: ["Muayene", "Resmî"]
+    dis:
+      - "discover | Keşfetmek demektir."
+      - "cover | Örtmek demektir."
+      - "remove | Çıkarmak demektir."
+  - id: examine
+    w: examine
+    pos: v
+    tr: "muayene etmek"
+    ex: "The doctor will [[examine]] you in a few minutes."
+    extr: "Doktor birkaç dakika içinde sizi muayene edecek."
+    d: 2
+    col: ["examine a patient", "examine carefully"]
+    fam: ["examination (i.) muayene"]
+    tone: ["Muayene", "Resmî"]
+    dis:
+      - "example | Örnek demektir."
+      - "explain | Açıklamak demektir."
+      - "exercise | Egzersiz yapmak demektir."
+  - id: emergency
+    w: emergency
+    pos: n
+    tr: "acil durum"
+    ex: "Call 112 in an [[emergency]]."
+    extr: "Acil durumda 112'yi arayın."
+    d: 1
+    col: ["emergency room", "in an emergency", "medical emergency"]
+    fam: ["emerge (f.) ortaya çıkmak"]
+    tone: ["Acil", "Resmî"]
+    dis:
+      - "agency | Ajans demektir."
+      - "energy | Enerji demektir."
+      - "urgency | Aciliyet; “in an urgency” denmez."
+  - id: get-worse
+    w: get worse
+    pos: phrase
+    tr: "kötüleşmek"
+    ex: "Come back if the cough [[gets worse]]."
+    extr: "Öksürük kötüleşirse tekrar gelin."
+    d: 1
+    ant: ["get better"]
+    tone: ["Muayene", "Günlük"]
+    dis:
+      - "gets bad | Dilbilgisi olarak mümkün ama karşılaştırma (daha kötü) anlamı kaybolur."
+      - "gets worst | “worst” en kötü demektir; karşılaştırma için “worse” kullanılır."
+      - "gets better | Tam tersi; iyileşmek demektir."
+  - id: how-long-had
+    w: How long have you had …?
+    pos: phrase
+    tr: "Ne zamandır … var?"
+    ex: "[[How long have you had]] this headache?"
+    extr: "Ne zamandır bu baş ağrınız var?"
+    d: 2
+    tone: ["Muayene", "Resmî"]
+    dis:
+      - "How long do you have | Şimdiki zaman; başlangıcı sorulan süreç için kullanılmaz."
+      - "How long did you have | Bitmiş bir durumu sorar; ağrı hâlâ sürüyor."
+      - "How long are you having | Bu soru için doğal değil."
+  - id: take-deep-breath
+    w: Take a deep breath.
+    pos: phrase
+    tr: "Derin bir nefes alın."
+    ex: "[[Take a deep breath]] and hold it."
+    extr: "Derin bir nefes alın ve tutun."
+    d: 1
+    tone: ["Muayene", "Talimat"]
+    dis:
+      - "Make a deep breath | “breath” ile “take” kullanılır."
+      - "Take a deep breathe | “breathe” fiildir; burada isim gerekir: breath."
+      - "Give a deep breath | Böyle söylenmez."
+  - id: on-a-scale
+    w: on a scale of 1 to 10
+    pos: phrase
+    tr: "1'den 10'a kadar bir ölçekte"
+    ex: "[[On a scale of 1 to 10]], how bad is the pain?"
+    extr: "1'den 10'a kadar bir ölçekte ağrı ne kadar şiddetli?"
+    d: 2
+    tone: ["Muayene", "Resmî"]
+    dis:
+      - "In a scale of 1 to 10 | Bu kalıpta “on” kullanılır."
+      - "On a level from 1 till 10 | Doğal bir kalıp değil."
+      - "At a scale 1 to 10 | Edat ve yapı yanlış."
+  - id: twice-a-day
+    w: twice a day
+    pos: phrase
+    tr: "günde iki kez"
+    ex: "Take these tablets [[twice a day]] after meals."
+    extr: "Bu tabletleri günde iki kez yemekten sonra alın."
+    d: 1
+    col: ["once a day", "three times a day"]
+    tone: ["İlaç talimatı", "Günlük"]
+    dis:
+      - "two times in day | Edat eksik ve doğal değil."
+      - "twice in a day | “in” gereksiz; kalıp “twice a day”."
+      - "double a day | “double” iki katı demektir."
+
+patterns:
+  - id: ive-been-feeling
+    t: "I've been feeling … since …"
+    ex: "I've [[been feeling]] tired since last week."
+    extr: "Geçen haftadan beri kendimi yorgun hissediyorum."
+    ttr: "… beri kendimi … hissediyorum."
+    slots: ["tired | yorgun", "sick | hasta", "dizzy | başı dönen", "anxious | kaygılı"]
+    chunks: ["I've been | -dır, -yorum (süregelen)", "feeling | hissediyorum", "since last week | geçen haftadan beri"]
+    g: present-perfect-continuous
+    ctx: ["Muayene"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "feel | “been” sonrası fiil -ing almalı: feeling."
+      - "felt | “I've been” ile bu biçim kullanılmaz."
+      - "feeled | “feel” düzensizdir; böyle bir biçim yok."
+    alt: ["I have been feeling tired since last week."]
+  - id: it-hurts-when
+    t: "It hurts when I …"
+    ex: "It [[hurts]] when I swallow."
+    extr: "Yutkunduğumda acıyor."
+    ttr: "… acıyor."
+    slots: ["swallow | yutkunduğumda", "walk | yürüdüğümde", "breathe deeply | derin nefes aldığımda", "bend my knee | dizimi büktüğümde"]
+    chunks: ["It hurts | acıyor", "when I | -dığımda", "swallow | eylem"]
+    g: present-simple
+    ctx: ["Muayene"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "hurt | Özne “it” olduğu için fiil -s almalı: hurts."
+      - "is hurt | “It is hurt” yaralanmış demektir; acıma hissi için “hurts”."
+      - "pains | “pain” genellikle isim olarak kullanılır."
+  - id: have-you-ever-had
+    t: "Have you ever had …?"
+    ex: "Have you [[ever had]] surgery?"
+    extr: "Hiç ameliyat oldunuz mu?"
+    ttr: "Hiç … oldunuz mu / geçirdiniz mi?"
+    slots: ["surgery | ameliyat", "a heart attack | kalp krizi", "an allergic reaction | alerjik reaksiyon"]
+    chunks: ["Have you | (siz) … mı", "ever | hiç", "had surgery | ameliyat oldunuz"]
+    g: present-perfect-continuous
+    ctx: ["Hasta öyküsü"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "ever have | “Have you” sonrası üçüncü hâl gerekir: had."
+      - "never had | Soru cümlesinde “ever” kullanılır."
+      - "ever having | Bu yapı burada kullanılmaz."
+  - id: youll-need-to
+    t: "You'll need to …"
+    ex: "You'll [[need to]] stay in bed for two days."
+    extr: "İki gün yatakta kalmanız gerekecek."
+    ttr: "… gerekecek."
+    slots: ["stay in bed for two days | iki gün yatakta kalmanız", "have a blood test | kan tahlili yaptırmanız", "drink plenty of water | bol su içmeniz"]
+    chunks: ["You'll | (siz) -acaksınız", "need to | -manız gerekecek", "stay in bed | yatakta kalmak"]
+    g: imperatives-advice
+    ctx: ["Tedavi"]
+    tone: ["Resmî", "Talimat"]
+    d: 2
+    dis:
+      - "need | “need” sonrası fiil için “to” gerekir."
+      - "needing to | “will” sonrası fiil yalın olmalı."
+      - "must to | “must” sonrası “to” kullanılmaz."
+  - id: make-sure
+    t: "Make sure you …"
+    ex: "Make [[sure]] you finish the whole course of antibiotics."
+    extr: "Antibiyotik kürünün tamamını bitirdiğinizden emin olun."
+    ttr: "… emin olun."
+    slots: ["finish the whole course | kürün tamamını bitirdiğinizden", "take it with food | yemekle aldığınızdan", "rest for a few days | birkaç gün dinlendiğinizden"]
+    chunks: ["Make sure | emin olun", "you finish | bitirdiğinizden", "the whole course | kürün tamamı"]
+    g: imperatives-advice
+    ctx: ["İlaç talimatı"]
+    tone: ["Talimat"]
+    d: 2
+    dis:
+      - "sore | Ağrılı demektir."
+      - "safe | Güvenli demektir; “make safe” burada anlamsız."
+      - "certainly | Zarftır; kalıp “make sure”."
+  - id: should-avoid
+    t: "You should avoid …"
+    ex: "You should [[avoid]] heavy lifting for a month."
+    extr: "Bir ay boyunca ağır kaldırmaktan kaçınmalısınız."
+    ttr: "… kaçınmalısınız."
+    slots: ["heavy lifting | ağır kaldırmaktan", "alcohol | alkolden", "spicy food | baharatlı yiyecekten"]
+    chunks: ["You should | -malısınız", "avoid | kaçınmak", "heavy lifting | ağır kaldırma"]
+    g: imperatives-advice
+    ctx: ["Tedavi"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "avoid to | “avoid” sonrası fiil -ing alır, “to” almaz."
+      - "prevent | Önlemek demektir; kişi bir şeyden “avoid” eder."
+      - "escape | Kaçmak demektir; burada anlamsız."
+  - id: is-it-serious
+    t: "Is it serious?"
+    ex: "Is it [[serious]], doctor?"
+    extr: "Ciddi mi, doktor?"
+    ttr: "… ciddi mi?"
+    slots: ["serious | ciddi", "contagious | bulaşıcı", "dangerous | tehlikeli"]
+    chunks: ["Is it | o … mı", "serious | ciddi"]
+    g: present-simple
+    ctx: ["Muayene"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "seriously | Zarftır; “is” sonrası sıfat gerekir."
+      - "series | Dizi demektir."
+      - "sirius | Bir yıldız adıdır."
+  - id: take-every
+    t: "Take … every … hours."
+    ex: "Take two tablets [[every]] six hours."
+    extr: "Her altı saatte bir iki tablet alın."
+    ttr: "Her … saatte bir … alın."
+    slots: ["two tablets | iki tablet", "one capsule | bir kapsül", "ten milliliters | on mililitre"]
+    chunks: ["Take | alın", "two tablets | miktar", "every six hours | her altı saatte bir"]
+    g: imperatives-advice
+    ctx: ["İlaç talimatı"]
+    tone: ["Talimat"]
+    d: 1
+    dis:
+      - "each | “each six hours” doğal değildir; “every” kullanılır."
+      - "all | “all six hours” altı saat boyunca demektir."
+      - "per | “per six hours” bu kalıpta kullanılmaz."
+  - id: im-going-to-check
+    t: "I'm going to check your …"
+    ex: "I'm [[going to]] check your temperature now."
+    extr: "Şimdi ateşinize bakacağım."
+    ttr: "Şimdi …(-ize) bakacağım."
+    slots: ["temperature | ateş", "blood pressure | tansiyon", "pulse | nabız"]
+    chunks: ["I'm going to | -acağım", "check | bakmak, kontrol etmek", "your temperature | ateşiniz"]
+    g: going-to-plans
+    ctx: ["Muayene"]
+    tone: ["Resmî"]
+    d: 1
+    dis:
+      - "go to | “going to” planlanan eylem için kullanılır."
+      - "going | “to” eksik."
+      - "gonna to | Konuşma dilinde “gonna” zaten “going to” demektir."
+  - id: any-history-of
+    t: "Is there any history of … in your family?"
+    ex: "Is there any [[history of]] diabetes in your family?"
+    extr: "Ailenizde diyabet öyküsü var mı?"
+    ttr: "Ailenizde … öyküsü var mı?"
+    slots: ["diabetes | diyabet", "heart disease | kalp hastalığı", "cancer | kanser"]
+    chunks: ["Is there any | … var mı", "history of | öyküsü", "in your family | ailenizde"]
+    g: to-be
+    ctx: ["Hasta öyküsü"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "story of | “story” hikâye demektir; tıbbi öykü “history”."
+      - "past of | Doğal bir kalıp değil."
+      - "history in | Bu kalıpta edat “of” olur."
+
+grammar:
+  - id: present-perfect-continuous
+    title: "Süregelen durumlar: have been + -ing ve have had"
+    short: "Geçmişte başlayıp hâlâ süren belirtiler için have been + fiil-ing ya da have had kullanılır; süre için for, başlangıç için since."
+    long: "I've been coughing for three days (üç gündür öksürüyorum). I've had this rash since Monday (pazartesiden beri bu döküntü var). Doktor sorusu: How long have you had this pain? Bitmiş bir olayda geçmiş zaman kullanılır: I fell yesterday. Hayat boyu deneyim için ever: Have you ever had surgery?"
+    ex: ["I've been coughing for three days. | Üç gündür öksürüyorum.", "How long have you had this pain? | Ne zamandır bu ağrı var?", "I've had a fever since Sunday. | Pazardan beri ateşim var."]
+  - id: imperatives-advice
+    title: "Talimat ve öneri: Take …, You should …, You'll need to …"
+    short: "İlaç ve tedavi talimatlarında emir kipi (Take, Avoid) ve should / need to / make sure yapıları kullanılır."
+    long: "Emir kipi doğrudan ve nettir: Take one tablet twice a day. Daha yumuşak öneri: You should rest. Zorunluluk: You'll need to have an X-ray. Uyarı: Make sure you drink enough water. Olumsuz: Don't take it on an empty stomach. Avoid sonrası fiil -ing alır: avoid driving."
+    ex: ["Take one tablet twice a day. | Günde iki kez bir tablet alın.", "Don't drive after taking this medicine. | Bu ilacı aldıktan sonra araba kullanmayın.", "You should avoid lifting heavy things. | Ağır şeyler kaldırmaktan kaçınmalısınız."]
+
+scenarios:
+  - id: describe-symptoms
+    title: "Doktora belirtileri anlatma"
+    sit: "İki gündür ateşin ve boğaz ağrın var. Doktor belirtilerini soruyor."
+    d: 2
+    targets: [symptom, fever, how-long-had]
+    turns:
+      - ["Doctor", "Hello, please have a seat. What seems to be the problem?", "Merhaba, buyurun oturun. Sorun nedir?"]
+      - choose:
+          - ["I've had a fever and a sore throat for two days.", true, "Süregelen belirti için “I've had … for two days” doğru."]
+          - ["I have fever since two days.", false, "Süre için “for”, süregelen durum için “I've had” gerekir."]
+          - ["I had a fever tomorrow.", false, "Zaman ifadesi ve fiil zamanı çelişiyor."]
+      - ["Doctor", "I see. On a scale of 1 to 10, how bad is the pain when you swallow?", "Anlıyorum. 1'den 10'a kadar bir ölçekte yutkunurken ağrı ne kadar şiddetli?"]
+      - choose:
+          - ["About seven. It hurts a lot when I swallow.", true, "Ölçekle cevap veriyor ve “It hurts when I …” kalıbını doğru kullanıyor."]
+          - ["It hurt me seven.", false, "Dilbilgisi ve anlam bozuk."]
+          - ["Seven times a day.", false, "Soru şiddeti soruyor, sıklığı değil."]
+      - ["Doctor", "Let me take a look at your throat. Say “ah”.", "Boğazınıza bir bakayım. “Aa” deyin."]
+  - id: pharmacy-instructions
+    title: "Eczanede ilaç talimatı"
+    sit: "Eczacı reçetendeki antibiyotiği veriyor ve nasıl kullanacağını anlatıyor."
+    d: 2
+    targets: [dose, twice-a-day, side-effect]
+    turns:
+      - ["Pharmacist", "Here's your antibiotic. Take one capsule twice a day, after meals.", "İşte antibiyotiğiniz. Günde iki kez, yemekten sonra bir kapsül alın."]
+      - choose:
+          - ["How long should I take it for?", true, "Tedavi süresini doğal bir soruyla soruyor."]
+          - ["How long I should take it?", false, "Soru cümlesinde yardımcı fiil özneden önce gelir: should I."]
+          - ["How much long should I take it?", false, "“how much long” denmez; “how long” yeterli."]
+      - ["Pharmacist", "For seven days. Make sure you finish the whole box, even if you feel better.", "Yedi gün. Kendinizi daha iyi hissetseniz bile kutunun tamamını bitirdiğinizden emin olun."]
+      - choose:
+          - ["Are there any side effects I should know about?", true, "Yan etkileri kibar ve doğru bir yapıyla soruyor."]
+          - ["Has it got side effect?", false, "Çoğul olmalı ve soru doğal değil."]
+          - ["What is the side dish of this medicine?", false, "“side dish” garnitür demektir."]
+      - ["Pharmacist", "Some people feel mild nausea. If you get a rash, stop taking it and call your doctor.", "Bazı kişilerde hafif bulantı olur. Döküntü çıkarsa almayı bırakın ve doktorunuzu arayın."]
+
+readings:
+  - id: discharge-note
+    title: "Discharge instructions"
+    kind: "Taburcu notu"
+    d: 2
+    s:
+      - ["You were treated for a mild ankle sprain.", "Hafif ayak bileği burkulması için tedavi edildiniz."]
+      - ["Keep your foot raised and use ice for 20 minutes three times a day.", "Ayağınızı yukarıda tutun ve günde üç kez 20 dakika buz uygulayın."]
+      - ["You may take paracetamol for the pain, up to four times a day.", "Ağrı için günde en fazla dört kez parasetamol alabilirsiniz."]
+      - ["Avoid sports for at least two weeks.", "En az iki hafta spordan kaçının."]
+      - ["Come back to the emergency department if the swelling gets worse or your toes feel cold.", "Şişlik kötüleşirse veya ayak parmaklarınız soğuk gelirse acil servise geri gelin."]
+    gloss: ["sprain | burkulma", "raised | yukarı kaldırılmış", "up to | -e kadar, en fazla", "swelling | şişlik"]
+    q:
+      - q: "Buz günde kaç kez uygulanmalı?"
+        o: ["Bir kez", "Üç kez", "Dört kez"]
+        a: 1
+        why: "“use ice for 20 minutes three times a day”"
+      - q: "Hangi durumda tekrar acile gelinmeli?"
+        o: ["Ağrı kesici bitince", "Şişlik kötüleşirse", "İki hafta dolunca"]
+        a: 1
+        why: "“if the swelling gets worse or your toes feel cold”"
+  - id: patient-message
+    title: "Message to the clinic"
+    kind: "Hasta mesajı"
+    d: 1
+    s:
+      - ["Hello, my name is Selin Arslan and I have an appointment on Thursday at 10.", "Merhaba, adım Selin Arslan, perşembe saat 10'da randevum var."]
+      - ["Unfortunately, I can't come because I have to travel for work.", "Maalesef iş için seyahat etmem gerektiğinden gelemiyorum."]
+      - ["Could I move the appointment to next Monday?", "Randevuyu gelecek pazartesiye alabilir miyim?"]
+      - ["Also, I'm almost out of my blood pressure medicine.", "Ayrıca tansiyon ilacım bitmek üzere."]
+      - ["Could the doctor send a new prescription to my pharmacy?", "Doktor eczaneme yeni bir reçete gönderebilir mi?"]
+    gloss: ["unfortunately | maalesef", "move | (randevuyu) ertelemek, kaydırmak", "be out of | (bir şey) bitmek", "prescription | reçete"]
+    q:
+      - q: "Selin neden perşembe gelemiyor?"
+        o: ["Hasta olduğu için", "İş seyahati olduğu için", "İlacı bittiği için"]
+        a: 1
+        why: "“I have to travel for work.”"
+      - q: "Selin doktordan ne istiyor?"
+        o: ["Yeni bir reçete", "Kan tahlili", "Taburcu notu"]
+        a: 0
+        why: "“Could the doctor send a new prescription to my pharmacy?”"
+
+writing:
+  id: describe-to-doctor
+  p: "Doktora göndereceğin 3–4 cümlelik bir mesaj yaz: hangi belirtilerin var, ne zamandır sürüyor ve ne istiyorsun (randevu, öneri vb.)?"
+  rubric: ["Belirtiler doğru kelimelerle anlatılmış (pain, fever, cough vb.)", "Süre için “for/since” ile “I've had / I've been” kullanılmış", "Kibar bir istek cümlesi var (Could I …? / Could you …?)"]
+  samples: ["Hello Dr. Kaya, I've had a bad cough and a fever since Sunday. I've also been feeling very tired. Could I get an appointment this week?"]
+  d: 2
+
+situations:
+  - { parent: "Muayene", name: "Belirti anlatmak", items: [symptom, pain, fever, dizzy, it-hurts-when, ive-been-feeling] }
+  - { parent: "Muayene", name: "Hasta öyküsü almak", items: [how-long-had, have-you-ever-had, any-history-of, allergic] }
+  - { parent: "Tedavi", name: "İlaç talimatı vermek", items: [dose, twice-a-day, take-every, make-sure, side-effect] }
+  - { parent: "Acil durum", name: "Acil durumu bildirmek", items: [emergency, get-worse] }

@@ -41,10 +41,16 @@ export function roleplayPrompt(domain: string, ctx: ContextRef): string {
     ctx.meaning_tr ? `Kullanıcının hedefi: ${ctx.meaning_tr}` : "",
     "Her yanıtın iki bölümden oluşur:",
     "1. Rolündeki İngilizce cevabın: 1–3 kısa, doğal cümle, tek bir <en>…</en> bloğu içinde. Rolünden çıkma; konuşmayı bir soru veya istekle sürdür.",
-    "2. Yeni satırda “Geri bildirim:” ile başlayan tek kısa Türkçe cümle: kullanıcının son mesajı doğruysa kısaca öv; hata varsa doğru hâlini ayrı bir satırda <en>…</en> içinde ver.",
+    "2. Yeni satırda “Geri bildirim:” ile başlayan Türkçe değerlendirme.",
+    "Geri bildirim kuralları (titiz ol):",
+    "- Kullanıcının son mesajını kelime kelime kontrol et: fiil zamanı (ör. yesterday + geçmiş zaman), yardımcı fiil (will + yalın fiil), özne-fiil uyumu, a/an/the, çoğul ekleri, edatlar, kelime sırası ve yazım.",
+    "- Hata varsa, mesajın TAMAMEN düzeltilmiş hâlini ayrı bir satırda <en>…</en> içinde ver ve her hatayı tek kısa Türkçe ifadeyle say (ör. “fix → fixed: dün olduğu için geçmiş zaman”). Hata olan bir cümleyi asla “doğru” diye övme.",
+    "- Hata yoksa tek kısa Türkçe cümleyle öv; daha doğal bir söyleyiş varsa onu <en> içinde öner.",
+    "- Rol içindeki cevabında kullanıcının hatasını düzeltme; düzeltmeler yalnız geri bildirim bölümünde olsun.",
     "Konuşma başlarken (kullanıcı “Let's start” derse) yalnız rolündeki ilk repliği yaz, geri bildirim yazma.",
     "Kullanıcı Türkçe yazarsa bunu İngilizce nasıl söyleyeceğini <en> içinde göster ve rolde devam et.",
-    "Kullanıcının seviyesine uygun, sade İngilizce kullan. Yaklaşık 8 turdan sonra ya da kullanıcı bitirmek isterse konuşmayı doğal biçimde kapat ve 2–3 cümlelik Türkçe bir özet ver: iyi yaptıkları ve çalışması gereken bir nokta.",
+    "Kullanıcının seviyesine uygun, sade İngilizce kullan.",
+    "Kullanıcı “Let's finish” derse ya da yaklaşık 8 turdan sonra: rolünü bir cümleyle kapat, sonra “Özet:” başlığıyla Türkçe değerlendirme yaz: “Puan: X/10” satırı (dilbilgisi, kelime seçimi ve hedefe ulaşma), iyi yaptığı bir şey, en sık yaptığı hata ve bir sonraki pratik için tek öneri. Özette kullanıcının kullanabileceği 2 faydalı ifadeyi <en> içinde ver.",
     "Uygunsuz veya senaryoyla ilgisiz isteklerde kibarca senaryoya dön.",
   ].filter(Boolean).join("\n");
 }

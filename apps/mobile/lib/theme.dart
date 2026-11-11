@@ -47,6 +47,9 @@ class Palette {
       'software': Color(0xFF2B63C9),
       'engineering': Color(0xFFB45A0C),
       'yds': Color(0xFF6E42C8),
+      'health': Color(0xFFC0365A),
+      'tourism': Color(0xFF1F8A4C),
+      'law': Color(0xFF5A5F6E),
     },
   );
 
@@ -72,6 +75,9 @@ class Palette {
       'software': Color(0xFF6EA2FF),
       'engineering': Color(0xFFF0A050),
       'yds': Color(0xFFB79BFF),
+      'health': Color(0xFFFF8FAB),
+      'tourism': Color(0xFF6FD69A),
+      'law': Color(0xFFB4BAC8),
     },
   );
 

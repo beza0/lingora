@@ -1,0 +1,533 @@
+id: tourism-hotel
+domain: tourism
+title: "Otel ve misafir karşılama"
+desc: "Resepsiyonda giriş-çıkış, rezervasyon, şikâyetleri karşılama ve öneri verme."
+sort: 1
+
+targets:
+  - id: reservation
+    w: reservation
+    pos: n
+    tr: "rezervasyon"
+    ex: "Do you have a [[reservation]] with us?"
+    extr: "Bizde rezervasyonunuz var mı?"
+    d: 1
+    col: ["make a reservation", "under the name of", "confirm a reservation"]
+    syn: ["booking"]
+    fam: ["reserve (f.) ayırtmak"]
+    tone: ["Resepsiyon", "Resmî"]
+    dis:
+      - "reservoir | Baraj gölü, hazne demektir."
+      - "resignation | İstifa demektir."
+      - "restoration | Restorasyon demektir."
+  - id: check-in
+    w: check in
+    pos: phrasal
+    tr: "otele giriş yapmak"
+    ex: "You can [[check in]] from 2 pm."
+    extr: "Saat 14.00'ten itibaren giriş yapabilirsiniz."
+    d: 1
+    col: ["check-in time", "early check-in", "check in online"]
+    ant: ["check out"]
+    tone: ["Resepsiyon", "Günlük"]
+    dis:
+      - "check up | Kontrol, muayene demektir."
+      - "check on | Birinin durumunu kontrol etmek demektir."
+      - "sign up | Kaydolmak demektir; otele giriş için kullanılmaz."
+  - id: check-out
+    w: check out
+    pos: phrasal
+    tr: "otelden çıkış yapmak"
+    ex: "What time do I need to [[check out]]?"
+    extr: "Saat kaçta çıkış yapmam gerekiyor?"
+    d: 1
+    col: ["late check-out", "check-out time"]
+    ant: ["check in"]
+    tone: ["Resepsiyon", "Günlük"]
+    dis:
+      - "check off | Listeden işaretlemek demektir."
+      - "go off | (Alarm) çalmak demektir."
+      - "get off | (Araçtan) inmek demektir."
+  - id: available-room
+    w: available
+    pos: adj
+    tr: "boş, müsait (oda)"
+    ex: "Is there a double room [[available]] for tonight?"
+    extr: "Bu gece için boş bir çift kişilik oda var mı?"
+    d: 1
+    col: ["rooms available", "available for tonight"]
+    fam: ["availability (i.) müsaitlik"]
+    tone: ["Resepsiyon", "Resmî"]
+    dis:
+      - "valuable | Değerli demektir."
+      - "avoidable | Kaçınılabilir demektir."
+      - "affordable | Uygun fiyatlı demektir; boş oda anlamı yok."
+  - id: fully-booked
+    w: fully booked
+    pos: phrase
+    tr: "tamamen dolu"
+    ex: "I'm sorry, we're [[fully booked]] this weekend."
+    extr: "Üzgünüm, bu hafta sonu tamamen doluyuz."
+    d: 2
+    syn: ["full"]
+    tone: ["Resepsiyon", "Resmî"]
+    dis:
+      - "fully booking | Edilgen anlam gerekir: booked."
+      - "fully books | Bu biçim burada kullanılmaz."
+      - "full book | “Dolu kitap” anlamına gelir; doğru kalıp değil."
+  - id: amenities
+    w: amenities
+    pos: n
+    tr: "olanaklar, imkânlar (havuz, spor salonu vb.)"
+    ex: "The hotel's [[amenities]] include a pool and a spa."
+    extr: "Otelin olanakları arasında havuz ve spa var."
+    d: 3
+    col: ["hotel amenities", "basic amenities"]
+    syn: ["facilities"]
+    tone: ["Tanıtım", "Resmî"]
+    dis:
+      - "amendments | Değişiklikler (yasa, belge) demektir."
+      - "ornaments | Süs eşyaları demektir."
+      - "apartments | Daireler demektir."
+  - id: complimentary
+    w: complimentary
+    pos: adj
+    tr: "ücretsiz, ikram"
+    ex: "Breakfast is [[complimentary]] for all guests."
+    extr: "Kahvaltı tüm misafirler için ücretsizdir."
+    d: 3
+    col: ["complimentary breakfast", "complimentary Wi-Fi"]
+    syn: ["free"]
+    conf: ["complementary | Tamamlayıcı demektir; yazımı karıştırılır."]
+    tone: ["Tanıtım", "Resmî"]
+    dis:
+      - "complementary | Tamamlayıcı demektir."
+      - "complicated | Karmaşık demektir."
+      - "competitive | Rekabetçi demektir."
+  - id: upgrade
+    w: upgrade
+    pos: v
+    tr: "daha üst sınıfa yükseltmek"
+    ex: "We can [[upgrade]] you to a sea-view room."
+    extr: "Sizi deniz manzaralı bir odaya yükseltebiliriz."
+    d: 2
+    col: ["upgrade to a suite", "a free upgrade"]
+    ant: ["downgrade"]
+    tone: ["Resepsiyon", "Resmî"]
+    dis:
+      - "update | Güncellemek demektir."
+      - "upload | Yüklemek demektir."
+      - "uphold | Desteklemek, sürdürmek demektir."
+  - id: deposit
+    w: deposit
+    pos: n
+    tr: "depozito, kapora"
+    ex: "We take a small [[deposit]] when you check in."
+    extr: "Girişte küçük bir depozito alıyoruz."
+    d: 2
+    col: ["pay a deposit", "refundable deposit"]
+    tone: ["Resepsiyon", "Resmî"]
+    dis:
+      - "deposition | İfade (mahkeme) demektir."
+      - "dessert | Tatlı demektir."
+      - "receipt | Fiş demektir."
+  - id: luggage
+    w: luggage
+    pos: n
+    tr: "bavul, bagaj"
+    ex: "Can I leave my [[luggage]] here until check-in?"
+    extr: "Girişe kadar bavulumu burada bırakabilir miyim?"
+    d: 1
+    col: ["store luggage", "hand luggage"]
+    syn: ["baggage"]
+    conf: ["luggages | Sayılamaz bir isimdir; çoğul eki almaz."]
+    tone: ["Resepsiyon", "Günlük"]
+    dis:
+      - "language | Dil demektir."
+      - "lounge | Bekleme salonu demektir."
+      - "luxury | Lüks demektir."
+  - id: housekeeping
+    w: housekeeping
+    pos: n
+    tr: "kat hizmetleri (oda temizliği)"
+    ex: "I'll ask [[housekeeping]] to bring extra towels."
+    extr: "Kat hizmetlerinden fazladan havlu getirmelerini isteyeceğim."
+    d: 2
+    tone: ["Otel içi", "Resmî"]
+    dis:
+      - "housewarming | Yeni ev partisi demektir."
+      - "bookkeeping | Muhasebe kaydı demektir."
+      - "householder | Ev sahibi demektir."
+  - id: invoice
+    w: invoice
+    pos: n
+    tr: "fatura"
+    ex: "Could you send the [[invoice]] to my company?"
+    extr: "Faturayı şirketime gönderebilir misiniz?"
+    d: 2
+    col: ["issue an invoice", "company invoice"]
+    syn: ["bill"]
+    tone: ["Resepsiyon", "Resmî"]
+    dis:
+      - "invitation | Davet demektir."
+      - "voice | Ses demektir."
+      - "invoke | Çağırmak, başvurmak demektir."
+  - id: inconvenience
+    w: inconvenience
+    pos: n
+    tr: "rahatsızlık, sıkıntı"
+    ex: "We apologize for the [[inconvenience]]."
+    extr: "Yaşattığımız rahatsızlık için özür dileriz."
+    d: 3
+    col: ["sorry for the inconvenience", "cause inconvenience"]
+    fam: ["inconvenient (s.) uygunsuz, sıkıntılı"]
+    tone: ["Şikâyet karşılama", "Resmî"]
+    dis:
+      - "convenience | Kolaylık demektir; anlam ters."
+      - "incidence | Görülme sıklığı demektir."
+      - "insistence | Israr demektir."
+  - id: recommend
+    w: recommend
+    pos: v
+    tr: "tavsiye etmek"
+    ex: "Can you [[recommend]] a good fish restaurant nearby?"
+    extr: "Yakınlarda iyi bir balık restoranı tavsiye edebilir misiniz?"
+    d: 1
+    col: ["highly recommend", "recommend a place"]
+    fam: ["recommendation (i.) tavsiye"]
+    tone: ["Öneri", "Günlük"]
+    dis:
+      - "remember | Hatırlamak demektir."
+      - "comment | Yorum yapmak demektir."
+      - "commend | Övmek demektir."
+  - id: within-walking
+    w: within walking distance
+    pos: phrase
+    tr: "yürüme mesafesinde"
+    ex: "The old town is [[within walking distance]] of the hotel."
+    extr: "Eski şehir otele yürüme mesafesinde."
+    d: 2
+    tone: ["Öneri", "Tanıtım"]
+    dis:
+      - "in walking distance | Yaygın kalıp “within walking distance”."
+      - "within walk distance | “walking” olmalı."
+      - "by walking distance | Edat yanlış."
+  - id: how-may-help
+    w: How may I help you?
+    pos: phrase
+    tr: "Size nasıl yardımcı olabilirim?"
+    ex: "Good evening, [[how may I help you]]?"
+    extr: "İyi akşamlar, size nasıl yardımcı olabilirim?"
+    d: 1
+    syn: ["How can I help you?"]
+    tone: ["Resepsiyon", "Resmî"]
+    dis:
+      - "what may I help you | Doğrusu “How may I help you”."
+      - "how may I help to you | “help” doğrudan nesne alır; “to” gereksiz."
+      - "how I may help you | Soru cümlesinde sıra “may I”."
+  - id: under-the-name
+    w: under the name of
+    pos: phrase
+    tr: "… adına (rezervasyon)"
+    ex: "I have a booking [[under the name of]] Demir."
+    extr: "Demir adına bir rezervasyonum var."
+    d: 2
+    tone: ["Resepsiyon", "Resmî"]
+    dis:
+      - "on the name of | Bu kalıpta edat “under”."
+      - "with the name of | Doğal bir kalıp değil."
+      - "by the name from | Edatlar yanlış."
+  - id: enjoy-your-stay
+    w: Enjoy your stay.
+    pos: phrase
+    tr: "İyi konaklamalar."
+    ex: "Here is your key card. [[Enjoy your stay]]!"
+    extr: "İşte oda kartınız. İyi konaklamalar!"
+    d: 1
+    tone: ["Resepsiyon", "Kibar"]
+    dis:
+      - "Enjoy your stop | “stop” durak demektir."
+      - "Enjoy to your stay | “enjoy” doğrudan nesne alır."
+      - "Enjoy your staying | Doğal değil; “stay” isim olarak kullanılır."
+  - id: look-into
+    w: look into
+    pos: phrasal
+    tr: "(bir sorunu) araştırmak, ilgilenmek"
+    ex: "I'll [[look into]] the problem with your air conditioning right away."
+    extr: "Klimanızdaki sorunla hemen ilgileneceğim."
+    d: 2
+    syn: ["investigate", "check"]
+    tone: ["Şikâyet karşılama", "Resmî"]
+    dis:
+      - "look after | Bakmak, ilgilenmek (birine) demektir; sorun araştırmaz."
+      - "look out | Dikkat etmek demektir."
+      - "look like | Benzemek demektir."
+  - id: in-advance
+    w: in advance
+    pos: phrase
+    tr: "önceden, peşin"
+    ex: "Please let us know your arrival time [[in advance]]."
+    extr: "Lütfen varış saatinizi bize önceden bildirin."
+    d: 2
+    col: ["book in advance", "pay in advance"]
+    syn: ["beforehand"]
+    tone: ["E-posta", "Resmî"]
+    dis:
+      - "in progress | Devam etmekte demektir."
+      - "on advance | Edat yanlış."
+      - "at advance | Edat yanlış."
+
+patterns:
+  - id: id-like-to-book
+    t: "I'd like to book … for …"
+    ex: "I'd like to [[book]] a double room for three nights."
+    extr: "Üç gece için çift kişilik bir oda ayırtmak istiyorum."
+    ttr: "… için … ayırtmak istiyorum."
+    slots: ["a double room | çift kişilik bir oda", "a table for two | iki kişilik bir masa", "an airport transfer | havalimanı transferi"]
+    chunks: ["I'd like to | -mak istiyorum", "book | ayırtmak", "for three nights | üç gece için"]
+    g: would-like
+    ctx: ["Rezervasyon"]
+    tone: ["Kibar"]
+    d: 1
+    dis:
+      - "booking | “like to” sonrası yalın fiil gerekir."
+      - "reserve for | Bu kalıpta “book” kullanılıyor; “reserve for” yapısı yanlış."
+      - "books | Özne “I” olduğu için -s almaz."
+  - id: could-i-have-name
+    t: "Could I have your …, please?"
+    ex: "Could I [[have]] your passport, please?"
+    extr: "Pasaportunuzu alabilir miyim, lütfen?"
+    ttr: "…(-nizi) alabilir miyim, lütfen?"
+    slots: ["passport | pasaport", "name | ad", "credit card | kredi kartı", "room number | oda numarası"]
+    chunks: ["Could I have | alabilir miyim", "your passport | pasaportunuz", "please | lütfen"]
+    g: would-like
+    ctx: ["Resepsiyon"]
+    tone: ["Kibar"]
+    d: 1
+    dis:
+      - "give | “Could I give” vermek demektir; anlam ters."
+      - "take | “Could I take” kabaca alıp götürmek gibi algılanır."
+      - "has | “Could I” sonrası yalın fiil gerekir."
+  - id: im-afraid-there
+    t: "I'm afraid there's a problem with …"
+    ex: "I'm [[afraid]] there's a problem with my room."
+    extr: "Korkarım odamla ilgili bir sorun var."
+    ttr: "Korkarım … ilgili bir sorun var."
+    slots: ["my room | odamla", "the bill | hesapla", "the shower | duşla"]
+    chunks: ["I'm afraid | korkarım, maalesef", "there's a problem | bir sorun var", "with my room | odamla ilgili"]
+    g: can-have-to
+    ctx: ["Şikâyet"]
+    tone: ["Kibar"]
+    d: 2
+    dis:
+      - "afraid of | “afraid of” bir şeyden korkmak demektir."
+      - "scared | Gerçekten korkmak demektir; nazik kalıp değil."
+      - "sorry about | Kalıp “I'm afraid there's …”."
+  - id: would-you-like
+    t: "Would you like …?"
+    ex: "Would you [[like]] a wake-up call?"
+    extr: "Uyandırma servisi ister misiniz?"
+    ttr: "… ister misiniz?"
+    slots: ["a wake-up call | uyandırma servisi", "a room with a view | manzaralı oda", "some help with your luggage | bavullarınız için yardım"]
+    chunks: ["Would you like | ister misiniz", "a wake-up call | teklif edilen şey"]
+    g: would-like
+    ctx: ["Resepsiyon", "Öneri"]
+    tone: ["Kibar"]
+    d: 1
+    dis:
+      - "want | “Would you want” daha az kibar ve doğal değil."
+      - "likes | “Would you” sonrası yalın fiil gerekir."
+      - "liking | “Would you” sonrası yalın fiil gerekir."
+  - id: is-included
+    t: "Is … included in the price?"
+    ex: "Is breakfast [[included]] in the price?"
+    extr: "Kahvaltı fiyata dahil mi?"
+    ttr: "… fiyata dahil mi?"
+    slots: ["breakfast | kahvaltı", "parking | otopark", "the airport transfer | havalimanı transferi"]
+    chunks: ["Is breakfast | kahvaltı … mı", "included | dahil", "in the price | fiyata"]
+    g: to-be
+    ctx: ["Rezervasyon"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "include | Edilgen yapı gerekir: included."
+      - "including | “Is … including” anlamsız."
+      - "inclusive in | Doğal kalıp değil."
+  - id: ill-send-someone
+    t: "I'll send someone to … right away."
+    ex: "I'll [[send someone]] to fix it right away."
+    extr: "Hemen tamir etmesi için birini göndereceğim."
+    ttr: "Hemen … birini göndereceğim."
+    slots: ["fix it | tamir etmesi için", "clean the room | odayı temizlemesi için", "check the heater | ısıtıcıya bakması için"]
+    chunks: ["I'll | -acağım", "send someone | birini göndermek", "right away | hemen"]
+    g: going-to-plans
+    ctx: ["Şikâyet karşılama"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "send to someone | “send someone to do” yapısında kişi doğrudan nesnedir."
+      - "sending someone | “will” sonrası yalın fiil gerekir."
+      - "sent someone | Gelecek için “will” + yalın fiil gerekir."
+  - id: how-do-i-get-to
+    t: "How do I get to …?"
+    ex: "How do I [[get to]] the museum from here?"
+    extr: "Buradan müzeye nasıl giderim?"
+    ttr: "…(-e) nasıl giderim?"
+    slots: ["the museum | müze", "the beach | plaj", "the bus station | otogar"]
+    chunks: ["How do I | nasıl", "get to | -e ulaşmak, gitmek", "the museum | yer"]
+    g: present-simple
+    ctx: ["Yol tarifi"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "go | “go to” da olur ama boşluğa “get to” kalıbı gelir."
+      - "arrive | “arrive” sonrası “at/in” gerekir."
+      - "reach to | “reach” edatsız kullanılır."
+  - id: its-a-minute-walk
+    t: "It's a …-minute walk from here."
+    ex: "It's a ten-[[minute walk]] from here."
+    extr: "Buradan on dakikalık yürüme mesafesinde."
+    ttr: "Buradan … dakikalık yürüme mesafesinde."
+    slots: ["ten | on", "five | beş", "fifteen | on beş"]
+    chunks: ["It's a | -dir", "ten-minute walk | on dakikalık yürüyüş", "from here | buradan"]
+    g: measurements-numbers
+    ctx: ["Yol tarifi"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "minutes walk | Sıfat gibi kullanıldığı için “minute” tekil olur."
+      - "minute walking | Doğal kalıp “minute walk”."
+      - "minute's walking | Doğal değil."
+  - id: unfortunately-we
+    t: "Unfortunately, we don't have …"
+    ex: "Unfortunately, we [[don't have]] any rooms with a balcony left."
+    extr: "Maalesef balkonlu odamız kalmadı."
+    ttr: "Maalesef … yok."
+    slots: ["any rooms with a balcony | balkonlu odamız", "a shuttle service | servis aracımız", "vegan options at breakfast | kahvaltıda vegan seçenek"]
+    chunks: ["Unfortunately | maalesef", "we don't have | (bizde) yok", "any rooms | hiç oda"]
+    g: present-simple
+    ctx: ["Resepsiyon"]
+    tone: ["Kibar"]
+    d: 2
+    dis:
+      - "haven't | Bu yapıda “don't have” daha doğaldır; “haven't any” eski İngiliz kullanımı."
+      - "doesn't have | Özne “we” olduğu için “don't”."
+      - "not have | Yardımcı fiil eksik."
+  - id: if-you-need-anything
+    t: "If you need anything, please …"
+    ex: "If you need anything, please [[call]] reception."
+    extr: "Bir şeye ihtiyacınız olursa lütfen resepsiyonu arayın."
+    ttr: "Bir şeye ihtiyacınız olursa lütfen …"
+    slots: ["call reception | resepsiyonu arayın", "dial 9 | 9'u tuşlayın", "let us know | bize haber verin"]
+    chunks: ["If you need anything | bir şeye ihtiyacınız olursa", "please | lütfen", "call reception | resepsiyonu arayın"]
+    g: first-conditional
+    ctx: ["Resepsiyon"]
+    tone: ["Kibar"]
+    d: 2
+    dis:
+      - "calling | Emir kipinde yalın fiil gerekir."
+      - "to call | “please” sonrası emir kipinde yalın fiil gelir."
+      - "will call | Koşul cümlesinde istek için emir kipi kullanılır."
+
+grammar:
+  - id: polite-hotel-language
+    title: "Otelde kibar dil: Could I …?, Would you like …?, I'm afraid …"
+    short: "Misafirle konuşurken doğrudan emir yerine Could I …?, Would you like …? ve kötü haber için I'm afraid … kullanılır."
+    long: "Bilgi isterken: Could I have your passport, please? Teklif ederken: Would you like a room with a view? Olumsuz haber verirken yumuşatmak için: I'm afraid we're fully booked. / Unfortunately, the pool is closed today. Özür: We apologize for the inconvenience. Misafir de aynı yapıları kullanır: Could you call a taxi for me?"
+    ex: ["Could I have your name, please? | Adınızı alabilir miyim, lütfen?", "Would you like some help with your luggage? | Bavullarınız için yardım ister misiniz?", "I'm afraid the restaurant is closed now. | Korkarım restoran şu an kapalı."]
+  - id: directions-prepositions
+    title: "Yol tarifi ve yer edatları"
+    short: "Yer tarif ederken next to, opposite, on the left, at the end of gibi edatlar ve go straight, turn left gibi emir kipleri kullanılır."
+    long: "Go straight on and turn left at the traffic lights. The pharmacy is next to the bank, opposite the post office. It's at the end of the street, on the right. Mesafe: It's a five-minute walk / It's within walking distance. Soru: How do I get to the beach? / Is it far from here?"
+    ex: ["Go straight and turn right at the corner. | Düz gidin ve köşeden sağa dönün.", "The café is opposite the museum. | Kafe müzenin karşısında.", "It's within walking distance. | Yürüme mesafesinde."]
+
+scenarios:
+  - id: hotel-check-in
+    title: "Resepsiyonda giriş"
+    sit: "Resepsiyonda çalışıyorsun. Bir misafir rezervasyonuyla geliyor; erken giriş istiyor ama odası henüz hazır değil."
+    d: 2
+    targets: [reservation, check-in, luggage]
+    turns:
+      - ["Guest", "Hi, I have a reservation under the name of Miller.", "Merhaba, Miller adına bir rezervasyonum var."]
+      - choose:
+          - ["Welcome, Mr. Miller. Could I have your passport, please?", true, "Kibar karşılama ve doğru istek kalıbı."]
+          - ["Give me your passport.", false, "Dilbilgisi doğru ama misafire karşı fazla sert."]
+          - ["Welcome. Could I give your passport?", false, "“Could I give” vermek demektir; anlam ters."]
+      - ["Guest", "Here you are. Is it possible to check in now? It's only eleven.", "Buyurun. Şimdi giriş yapmam mümkün mü? Saat daha on bir."]
+      - choose:
+          - ["I'm afraid your room isn't ready yet. You can leave your luggage with us and check in at two.", true, "Kötü haberi “I'm afraid” ile yumuşatıp çözüm sunuyor."]
+          - ["No. Come at two.", false, "Kısa ve kaba; çözüm sunmuyor."]
+          - ["I'm afraid of your room. Leave your luggages.", false, "“afraid of” korkmak demektir; “luggage” çoğul eki almaz."]
+      - ["Guest", "That's fine. Thank you.", "Olur. Teşekkürler."]
+  - id: handle-complaint
+    title: "Şikâyeti karşılama"
+    sit: "Bir misafir arıyor: odasının kliması çalışmıyor ve çok sıcak."
+    d: 3
+    targets: [look-into, inconvenience, housekeeping]
+    turns:
+      - ["Guest", "Hello, this is room 304. The air conditioning isn't working and it's really hot.", "Merhaba, 304 numaralı oda. Klima çalışmıyor ve çok sıcak."]
+      - choose:
+          - ["I'm very sorry about that. I'll send someone to fix it right away.", true, "Özür ve hızlı çözüm; doğru kalıp."]
+          - ["It's not my problem, sir.", false, "Misafire karşı kabul edilemez bir ton."]
+          - ["Sorry. I'll sent someone yesterday.", false, "Zaman çelişkili: “will” + yalın fiil ve gelecek zaman gerekir."]
+      - ["Guest", "Thank you. How long will it take?", "Teşekkürler. Ne kadar sürer?"]
+      - choose:
+          - ["About fifteen minutes. If it can't be fixed, we'll move you to another room.", true, "Süre veriyor ve yedek çözüm sunuyor."]
+          - ["It takes fifteen minutes ago.", false, "“ago” geçmiş için kullanılır; anlam bozuk."]
+          - ["I don't know, maybe tomorrow, maybe not.", false, "Belirsiz ve profesyonel değil."]
+      - ["Guest", "Great, thanks.", "Harika, teşekkürler."]
+
+readings:
+  - id: welcome-email
+    title: "Pre-arrival email"
+    kind: "Otel e-postası"
+    d: 2
+    s:
+      - ["Dear Ms. Yıldız, thank you for choosing the Blue Bay Hotel.", "Sayın Yıldız Hanım, Blue Bay Otel'i seçtiğiniz için teşekkür ederiz."]
+      - ["Check-in is from 2 pm and check-out is until 12 noon.", "Giriş saat 14.00'ten itibaren, çıkış ise öğlen 12.00'ye kadardır."]
+      - ["Breakfast is complimentary and is served from 7 to 10:30.", "Kahvaltı ücretsizdir ve 7.00–10.30 arası servis edilir."]
+      - ["If you would like an airport transfer, please let us know your flight number in advance.", "Havalimanı transferi isterseniz lütfen uçuş numaranızı önceden bildirin."]
+      - ["We look forward to welcoming you.", "Sizi ağırlamayı sabırsızlıkla bekliyoruz."]
+    gloss: ["complimentary | ücretsiz", "served | servis edilir", "in advance | önceden", "look forward to | dört gözle beklemek"]
+    q:
+      - q: "Kahvaltı için ücret ödenir mi?"
+        o: ["Evet, ayrıca ödenir", "Hayır, ücretsizdir", "Sadece hafta sonu ücretsizdir"]
+        a: 1
+        why: "“Breakfast is complimentary.” — complimentary = ücretsiz."
+      - q: "Transfer için misafir ne yapmalı?"
+        o: ["Uçuş numarasını önceden bildirmeli", "Resepsiyonu havalimanından aramalı", "Taksi çağırmalı"]
+        a: 0
+        why: "“please let us know your flight number in advance”"
+  - id: guest-review
+    title: "A guest review"
+    kind: "Misafir yorumu"
+    d: 2
+    s:
+      - ["We stayed at the hotel for four nights in June.", "Haziranda otelde dört gece kaldık."]
+      - ["The location is perfect: the old town is within walking distance.", "Konum mükemmel: eski şehir yürüme mesafesinde."]
+      - ["On the first night, the shower didn't work, but the staff fixed it within an hour.", "İlk gece duş çalışmadı ama personel bir saat içinde tamir etti."]
+      - ["They even upgraded us to a sea-view room for the inconvenience.", "Yaşattıkları sıkıntı için bizi deniz manzaralı bir odaya bile yükselttiler."]
+      - ["I would definitely recommend this hotel.", "Bu oteli kesinlikle tavsiye ederim."]
+    gloss: ["within walking distance | yürüme mesafesinde", "staff | personel", "upgraded | yükseltti", "definitely | kesinlikle"]
+    q:
+      - q: "İlk gece ne sorun yaşandı?"
+        o: ["Klima çalışmadı", "Duş çalışmadı", "Oda hazır değildi"]
+        a: 1
+        why: "“the shower didn't work”"
+      - q: "Otel sorunu nasıl telafi etti?"
+        o: ["Para iadesi yaptı", "Ücretsiz akşam yemeği verdi", "Deniz manzaralı odaya yükseltti"]
+        a: 2
+        why: "“They even upgraded us to a sea-view room for the inconvenience.”"
+
+writing:
+  id: reply-to-guest
+  p: "Bir misafir e-postayla erken giriş isteyip istemediğini ve kahvaltının dahil olup olmadığını soruyor. 3–4 cümlelik kibar bir cevap yaz."
+  rubric: ["Kibar açılış ve kapanış var", "Erken giriş için net bir cevap veya koşul var (I'm afraid / If …)", "Kahvaltı sorusuna “included / complimentary” ile cevap verilmiş"]
+  samples: ["Dear Mr. Brown, thank you for your email. Check-in is from 2 pm, but if your room is ready earlier, we will be happy to check you in. Breakfast is included in the price. We look forward to welcoming you."]
+  d: 2
+
+situations:
+  - { parent: "Resepsiyon", name: "Misafiri karşılamak", items: [how-may-help, under-the-name, could-i-have-name, enjoy-your-stay] }
+  - { parent: "Resepsiyon", name: "Rezervasyon almak", items: [reservation, id-like-to-book, available-room, fully-booked, is-included] }
+  - { parent: "Şikâyet", name: "Şikâyeti karşılamak", items: [inconvenience, look-into, ill-send-someone, im-afraid-there] }
+  - { parent: "Öneri", name: "Yer önermek ve yol tarif etmek", items: [recommend, within-walking, how-do-i-get-to, its-a-minute-walk] }

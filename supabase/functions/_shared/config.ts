@@ -78,6 +78,9 @@ export const DOMAIN_NAMES: Record<string, string> = {
   software: "Yazılım İngilizcesi",
   engineering: "Mühendislik İngilizcesi",
   yds: "YDS/YÖKDİL (akademik İngilizce)",
+  health: "Sağlık İngilizcesi",
+  tourism: "Turizm İngilizcesi",
+  law: "Hukuk İngilizcesi",
 };
 
 /** İstanbul'da (UTC+3, yaz saati yok) bir sonraki gece yarısı. */

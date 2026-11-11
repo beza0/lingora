@@ -14,7 +14,7 @@ describe("gerçek içerik", () => {
   });
 
   it("istenen toplamları karşılar", () => {
-    expect(report.totals).toMatchObject({ packs: 12, targets: 240, patterns: 120, scenarios: 24, readings: 24, grammar: 24, writing: 12 });
+    expect(report.totals).toMatchObject({ packs: 15, targets: 300, patterns: 150, scenarios: 30, readings: 30, grammar: 30, writing: 15 });
   });
 
   it("her seçenekli alıştırmada cevap indeksi doğru seçeneği gösterir", () => {

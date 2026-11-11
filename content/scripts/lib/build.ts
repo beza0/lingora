@@ -18,6 +18,9 @@ export const DOMAIN_ROWS = [
   { id: "software", name_tr: "Yazılım İngilizcesi", description_tr: "Toplantı, hata kaydı ve kod incelemesinde kullanılan İngilizce.", color_key: "software", sort: 2 },
   { id: "engineering", name_tr: "Mühendislik İngilizcesi", description_tr: "Ölçüm, test, teknik sorun ve çözüm önerisi.", color_key: "engineering", sort: 3 },
   { id: "yds", name_tr: "YDS/YÖKDİL", description_tr: "Akademik cümle yorumlama, paragraf ilişkileri ve çıkarım.", color_key: "yds", sort: 4 },
+  { id: "health", name_tr: "Sağlık İngilizcesi", description_tr: "Muayene, belirtiler, hasta öyküsü ve ilaç talimatı.", color_key: "health", sort: 5 },
+  { id: "tourism", name_tr: "Turizm İngilizcesi", description_tr: "Otel, resepsiyon, rezervasyon ve misafir karşılama.", color_key: "tourism", sort: 6 },
+  { id: "law", name_tr: "Hukuk İngilizcesi", description_tr: "Sözleşme dili, haklar ve yükümlülükler, hukuki yazışma.", color_key: "law", sort: 7 },
 ];
 
 export type Issue = { file: string; path: string; message: string; level: "error" | "warning" };

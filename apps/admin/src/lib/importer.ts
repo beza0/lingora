@@ -37,7 +37,7 @@ const REQUIRED: Record<string, string[]> = {
 };
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-const DOMAINS = new Set(["general", "software", "engineering", "yds"]);
+const DOMAINS = new Set(["general", "software", "engineering", "yds", "health", "tourism", "law"]);
 
 export function validateBundle(input: unknown): ImportPlan {
   const issues: ImportIssue[] = [];
@@ -159,7 +159,7 @@ export function planFromCsv(text: string): ImportPlan {
   rows.slice(1).forEach((r, i) => {
     const where = `satır ${i + 2}`;
     const slug = col(r, "slug");
-    const m = /^(general|software|engineering|yds):([a-z0-9][a-z0-9-]{1,60})$/.exec(slug);
+    const m = /^(general|software|engineering|yds|health|tourism|law):([a-z0-9][a-z0-9-]{1,60})$/.exec(slug);
     if (!m) return issues.push({ level: "error", where, message: "slug “alan:kimlik” biçiminde olmalı (ör. software:blocker)" });
     if (seen.has(slug)) return issues.push({ level: "error", where, message: `tekrarlanan slug: ${slug}` });
     seen.add(slug);

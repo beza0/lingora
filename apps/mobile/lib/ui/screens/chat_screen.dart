@@ -245,6 +245,8 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
     final backend = ref.watch(backendProvider);
     return Scaffold(
       appBar: AppBar(title: Text(_isRoleplay(ctx) ? 'Rol yapma' : 'AI\'a sor'), actions: [
+        if (_isRoleplay(ctx) && msgs.length >= 4 && !sending)
+          TextButton(onPressed: () => _send("Let's finish. Please give me my summary and score."), child: const Text('Bitir ve puanla')),
         if (used != null && limit != null)
           Center(child: Padding(padding: const EdgeInsets.only(right: 16), child: Text('Bugün $used/$limit', style: TextStyle(color: p.muted)))),
       ]),

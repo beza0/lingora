@@ -1,0 +1,532 @@
+id: law-contracts
+domain: law
+title: "Sözleşme dili ve hukuki yazışma"
+desc: "Taraflar, yükümlülükler, fesih, süre ve hukuki e-postalarda kullanılan temel İngilizce."
+sort: 1
+
+targets:
+  - id: contract
+    w: contract
+    pos: n
+    tr: "sözleşme"
+    ex: "Both parties signed the [[contract]] on 1 March."
+    extr: "Her iki taraf da sözleşmeyi 1 Mart'ta imzaladı."
+    d: 1
+    col: ["sign a contract", "breach of contract", "employment contract"]
+    syn: ["agreement"]
+    fam: ["contractual (s.) sözleşmeye dayalı", "contractor (i.) yüklenici"]
+    tone: ["Sözleşme", "Resmî"]
+    dis:
+      - "contact | İletişim demektir."
+      - "contrast | Karşıtlık demektir."
+      - "contest | Yarışma demektir."
+  - id: party
+    w: party
+    pos: n
+    tr: "taraf (sözleşmede)"
+    ex: "Each [[party]] must give 30 days' written notice."
+    extr: "Her taraf 30 gün önceden yazılı bildirimde bulunmalıdır."
+    d: 2
+    col: ["both parties", "third party", "the parties agree"]
+    other: "Günlük dilde “parti, eğlence” demektir."
+    tone: ["Sözleşme", "Resmî"]
+    dis:
+      - "part | Parça, bölüm demektir."
+      - "partner | Ortak demektir; sözleşmenin tarafı için genel terim “party”."
+      - "person | Kişi demektir; hukuki taraf için “party” kullanılır."
+  - id: clause
+    w: clause
+    pos: n
+    tr: "madde, hüküm (sözleşmede)"
+    ex: "Please read [[clause]] 7 on confidentiality carefully."
+    extr: "Lütfen gizlilikle ilgili 7. maddeyi dikkatle okuyun."
+    d: 2
+    col: ["termination clause", "penalty clause", "under clause 5"]
+    syn: ["provision"]
+    tone: ["Sözleşme", "Resmî"]
+    dis:
+      - "cause | Neden demektir."
+      - "close | Kapatmak demektir."
+      - "claws | Pençeler demektir."
+  - id: terminate
+    w: terminate
+    pos: v
+    tr: "feshetmek, sona erdirmek"
+    ex: "Either party may [[terminate]] this agreement with 30 days' notice."
+    extr: "Taraflardan her biri bu sözleşmeyi 30 gün önceden bildirimle feshedebilir."
+    d: 3
+    col: ["terminate a contract", "terminate early"]
+    fam: ["termination (i.) fesih"]
+    tone: ["Sözleşme", "Resmî"]
+    dis:
+      - "determine | Belirlemek demektir."
+      - "terminal | Terminal, son nokta demektir; isim veya sıfattır."
+      - "nominate | Aday göstermek demektir."
+  - id: breach
+    w: breach
+    pos: n
+    tr: "ihlal (sözleşme ihlali)"
+    ex: "Late payment is a [[breach]] of the agreement."
+    extr: "Geç ödeme, sözleşmenin ihlalidir."
+    d: 3
+    col: ["breach of contract", "material breach", "in breach of"]
+    syn: ["violation"]
+    tone: ["Sözleşme", "Resmî"]
+    dis:
+      - "beach | Plaj demektir."
+      - "branch | Şube demektir."
+      - "speech | Konuşma demektir."
+  - id: liable
+    w: liable
+    pos: adj
+    tr: "(hukuken) sorumlu"
+    ex: "The supplier is [[liable]] for any damage during delivery."
+    extr: "Tedarikçi, teslimat sırasındaki her türlü hasardan sorumludur."
+    d: 3
+    col: ["liable for", "held liable"]
+    fam: ["liability (i.) sorumluluk, yükümlülük"]
+    tone: ["Sözleşme", "Resmî"]
+    dis:
+      - "reliable | Güvenilir demektir."
+      - "likely | Muhtemel demektir."
+      - "livable | Yaşanabilir demektir."
+  - id: obligation
+    w: obligation
+    pos: n
+    tr: "yükümlülük"
+    ex: "The tenant has an [[obligation]] to keep the property clean."
+    extr: "Kiracının mülkü temiz tutma yükümlülüğü vardır."
+    d: 2
+    col: ["legal obligation", "fulfil an obligation"]
+    fam: ["oblige (f.) zorunlu kılmak", "obligatory (s.) zorunlu"]
+    tone: ["Sözleşme", "Resmî"]
+    dis:
+      - "observation | Gözlem demektir."
+      - "operation | İşlem, ameliyat demektir."
+      - "obligatory | Sıfattır; burada isim gerekir."
+  - id: comply
+    w: comply
+    pos: v
+    tr: "uymak (kurala, yasaya)"
+    ex: "All employees must [[comply]] with the data protection rules."
+    extr: "Tüm çalışanlar veri koruma kurallarına uymalıdır."
+    d: 3
+    col: ["comply with the law", "fail to comply"]
+    fam: ["compliance (i.) uyum", "compliant (s.) uygun"]
+    tone: ["Uyum", "Resmî"]
+    dis:
+      - "complain | Şikâyet etmek demektir."
+      - "complete | Tamamlamak demektir."
+      - "compile | Derlemek demektir."
+  - id: confidential
+    w: confidential
+    pos: adj
+    tr: "gizli, mahrem"
+    ex: "This information is strictly [[confidential]]."
+    extr: "Bu bilgi kesinlikle gizlidir."
+    d: 2
+    col: ["strictly confidential", "confidential information"]
+    fam: ["confidentiality (i.) gizlilik"]
+    conf: ["confident | Kendinden emin demektir."]
+    tone: ["Sözleşme", "E-posta"]
+    dis:
+      - "confident | Kendinden emin demektir."
+      - "conditional | Koşullu demektir."
+      - "coincidental | Tesadüfi demektir."
+  - id: valid
+    w: valid
+    pos: adj
+    tr: "geçerli"
+    ex: "The contract is [[valid]] for two years."
+    extr: "Sözleşme iki yıl geçerlidir."
+    d: 1
+    ant: ["invalid", "void"]
+    fam: ["validity (i.) geçerlilik"]
+    tone: ["Sözleşme", "Resmî"]
+    dis:
+      - "solid | Sağlam demektir."
+      - "vivid | Canlı demektir."
+      - "valued | Değer verilen demektir."
+  - id: deadline-legal
+    w: deadline
+    pos: n
+    tr: "son tarih"
+    ex: "The [[deadline]] for filing the appeal is 15 May."
+    extr: "İtiraz için başvuru son tarihi 15 Mayıs."
+    d: 1
+    col: ["meet a deadline", "miss a deadline", "extend the deadline"]
+    tone: ["E-posta", "Resmî"]
+    dis:
+      - "headline | Manşet demektir."
+      - "dead end | Çıkmaz demektir."
+      - "guideline | Yönerge demektir."
+  - id: amend
+    w: amend
+    pos: v
+    tr: "değiştirmek, tadil etmek"
+    ex: "We would like to [[amend]] the payment terms."
+    extr: "Ödeme koşullarını değiştirmek istiyoruz."
+    d: 3
+    col: ["amend a contract", "as amended"]
+    fam: ["amendment (i.) değişiklik"]
+    tone: ["Sözleşme", "Resmî"]
+    dis:
+      - "attend | Katılmak demektir."
+      - "mend | Tamir etmek demektir; belge için “amend” kullanılır."
+      - "append | Eklemek demektir."
+  - id: terms-and-conditions
+    w: terms and conditions
+    pos: phrase
+    tr: "şartlar ve koşullar"
+    ex: "Please accept the [[terms and conditions]] before you continue."
+    extr: "Devam etmeden önce lütfen şartları ve koşulları kabul edin."
+    d: 2
+    tone: ["Sözleşme", "Resmî"]
+    dis:
+      - "terms and situations | Kalıp “terms and conditions”."
+      - "times and conditions | “times” zamanlar demektir."
+      - "rules and terms | Kalıplaşmış ifade değil."
+  - id: lawyer
+    w: lawyer
+    pos: n
+    tr: "avukat"
+    ex: "You should ask a [[lawyer]] before you sign."
+    extr: "İmzalamadan önce bir avukata danışmalısınız."
+    d: 1
+    syn: ["attorney", "solicitor"]
+    tone: ["Günlük", "Resmî"]
+    dis:
+      - "layer | Katman demektir."
+      - "player | Oyuncu demektir."
+      - "lower | Daha alçak demektir."
+  - id: evidence-legal
+    w: evidence
+    pos: n
+    tr: "delil, kanıt"
+    ex: "The court found no [[evidence]] of fraud."
+    extr: "Mahkeme dolandırıcılığa dair hiçbir delil bulmadı."
+    d: 2
+    col: ["provide evidence", "evidence of"]
+    conf: ["evidences | Sayılamaz bir isimdir; çoğul eki almaz."]
+    tone: ["Dava", "Resmî"]
+    dis:
+      - "evident | Açık, belli demektir (sıfat)."
+      - "evidences | Sayılamaz isim; çoğul olmaz."
+      - "existence | Varlık demektir."
+  - id: in-accordance-with
+    w: in accordance with
+    pos: phrase
+    tr: "… uyarınca, … uygun olarak"
+    ex: "Payment will be made [[in accordance with]] clause 4."
+    extr: "Ödeme 4. madde uyarınca yapılacaktır."
+    d: 3
+    syn: ["according to", "under"]
+    tone: ["Sözleşme", "Resmî"]
+    dis:
+      - "in according to | Kalıp “in accordance with”."
+      - "in accordance to | Edat yanlış; “with” olmalı."
+      - "by accordance with | Edat yanlış."
+  - id: on-behalf-of
+    w: on behalf of
+    pos: phrase
+    tr: "… adına"
+    ex: "I am writing [[on behalf of]] my client, Mr. Aksoy."
+    extr: "Müvekkilim Bay Aksoy adına yazıyorum."
+    d: 2
+    tone: ["E-posta", "Resmî"]
+    dis:
+      - "on the behalf from | Edatlar yanlış."
+      - "in behalf to | Kalıp “on behalf of”."
+      - "instead of | Yerine demektir; temsil anlamı yok."
+  - id: notice
+    w: notice
+    pos: n
+    tr: "bildirim, ihbar"
+    ex: "You must give two months' [[notice]] before you leave."
+    extr: "Ayrılmadan önce iki ay önceden bildirimde bulunmalısınız."
+    d: 2
+    col: ["written notice", "notice period", "give notice"]
+    other: "Fiil olarak “fark etmek” demektir."
+    tone: ["Sözleşme", "İş hukuku"]
+    dis:
+      - "notes | Notlar demektir."
+      - "novice | Acemi demektir."
+      - "notion | Kavram, fikir demektir."
+  - id: hereby
+    w: hereby
+    pos: adv
+    tr: "işbu belge ile, bu yolla"
+    ex: "The parties [[hereby]] agree to the following terms."
+    extr: "Taraflar işbu belge ile aşağıdaki şartları kabul eder."
+    d: 3
+    tone: ["Sözleşme", "Çok resmî"]
+    dis:
+      - "nearby | Yakında demektir."
+      - "thereby | Böylece, bunun sonucunda demektir."
+      - "whereby | Aracılığıyla, ki bununla demektir."
+  - id: without-prejudice
+    w: without prejudice
+    pos: phrase
+    tr: "haklar saklı kalmak kaydıyla (uzlaşma yazışmalarında)"
+    ex: "This offer is made [[without prejudice]] to our client's rights."
+    extr: "Bu teklif müvekkilimizin hakları saklı kalmak kaydıyla yapılmaktadır."
+    d: 4
+    tone: ["Hukuki yazışma", "Çok resmî"]
+    dis:
+      - "without preference | Tercih olmadan demektir."
+      - "without permission | İzinsiz demektir."
+      - "with no pressure | Baskı olmadan demektir; hukuki kalıp değil."
+
+patterns:
+  - id: shall-obligation
+    t: "The … shall …"
+    ex: "The tenant [[shall]] pay the rent by the fifth day of each month."
+    extr: "Kiracı kirayı her ayın beşine kadar ödeyecektir."
+    ttr: "… -ecektir (yükümlülük)."
+    slots: ["pay the rent by the fifth day of each month | kirayı her ayın beşine kadar ödemek", "keep all information confidential | tüm bilgileri gizli tutmak", "deliver the goods within 10 days | malları 10 gün içinde teslim etmek"]
+    chunks: ["The tenant | kiracı", "shall | -ecektir (yükümlülük)", "pay the rent | kirayı ödemek"]
+    g: legal-modals
+    ctx: ["Sözleşme"]
+    tone: ["Çok resmî"]
+    d: 3
+    dis:
+      - "should | Tavsiye bildirir; sözleşmede yükümlülük için “shall” kullanılır."
+      - "would | Koşul veya kibarlık bildirir; yükümlülük değil."
+      - "shall to | “shall” sonrası “to” kullanılmaz."
+  - id: may-permission
+    t: "Either party may …"
+    ex: "Either party [[may]] terminate this agreement in writing."
+    extr: "Taraflardan her biri bu sözleşmeyi yazılı olarak feshedebilir."
+    ttr: "Taraflardan her biri … -ebilir."
+    slots: ["terminate this agreement in writing | bu sözleşmeyi yazılı olarak feshetmek", "request a meeting | toplantı talep etmek", "assign its rights with consent | onayla haklarını devretmek"]
+    chunks: ["Either party | taraflardan her biri", "may | -ebilir (izin, hak)", "terminate | feshetmek"]
+    g: legal-modals
+    ctx: ["Sözleşme"]
+    tone: ["Çok resmî"]
+    d: 3
+    dis:
+      - "must | Zorunluluk bildirir; hak için “may” kullanılır."
+      - "might | Olasılık bildirir; hak değil."
+      - "can to | Modal sonrası “to” kullanılmaz."
+  - id: subject-to
+    t: "… subject to …"
+    ex: "The price is [[subject to]] change without notice."
+    extr: "Fiyat önceden bildirilmeksizin değiştirilebilir."
+    ttr: "… -e tabidir."
+    slots: ["change without notice | önceden bildirimsiz değişiklik", "the approval of the board | yönetim kurulu onayı", "Turkish law | Türk hukuku"]
+    chunks: ["The price is | fiyat …", "subject to | -e tabidir", "change | değişiklik"]
+    g: legal-modals
+    ctx: ["Sözleşme"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "subjected for | Edat ve biçim yanlış."
+      - "object to | İtiraz etmek demektir."
+      - "subject of | “… konusu” demektir; anlam farklı."
+  - id: in-the-event-of
+    t: "In the event of …, …"
+    ex: "In the [[event of]] a dispute, the parties will first try mediation."
+    extr: "Bir uyuşmazlık durumunda taraflar önce arabuluculuğa başvuracaktır."
+    ttr: "… durumunda, …"
+    slots: ["a dispute | bir uyuşmazlık", "late payment | geç ödeme", "termination | fesih"]
+    chunks: ["In the event of | … durumunda", "a dispute | uyuşmazlık", "the parties will | taraflar …acaktır"]
+    g: legal-conditions
+    ctx: ["Sözleşme"]
+    tone: ["Çok resmî"]
+    d: 3
+    dis:
+      - "event for | Edat yanlış; “of” olmalı."
+      - "case to | Kalıp “in case of” ya da “in the event of”."
+      - "events of | Tekil olmalı."
+  - id: unless-otherwise
+    t: "Unless otherwise agreed, …"
+    ex: "Unless [[otherwise agreed]], all payments are due within 30 days."
+    extr: "Aksi kararlaştırılmadıkça tüm ödemelerin vadesi 30 gündür."
+    ttr: "Aksi … sürece, …"
+    slots: ["otherwise agreed | kararlaştırılmadığı", "otherwise stated | belirtilmediği", "otherwise required by law | yasaca gerekmediği"]
+    chunks: ["Unless | … medikçe", "otherwise agreed | aksi kararlaştırılmadıkça", "all payments are due | tüm ödemelerin vadesi"]
+    g: legal-conditions
+    ctx: ["Sözleşme"]
+    tone: ["Çok resmî"]
+    d: 4
+    dis:
+      - "other agreed | “otherwise” zarfı gerekir."
+      - "otherwise agree | Edilgen anlam gerekir: agreed."
+      - "otherwise agreeing | Doğal kalıp değil."
+  - id: please-find-attached
+    t: "Please find attached …"
+    ex: "Please find [[attached]] the signed copy of the contract."
+    extr: "Ekte sözleşmenin imzalı kopyasını bulabilirsiniz."
+    ttr: "Ekte … bulabilirsiniz."
+    slots: ["the signed copy of the contract | sözleşmenin imzalı kopyası", "our comments on the draft | taslağa ilişkin yorumlarımız", "the invoice for March | mart faturası"]
+    chunks: ["Please find | bulabilirsiniz", "attached | ekte", "the signed copy | imzalı kopya"]
+    g: polite-requests-could
+    ctx: ["E-posta"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "attach | Edilgen sıfat gerekir: attached."
+      - "attaching | Bu kalıpta “attached” kullanılır."
+      - "enclosed in | Kalıp bozuk."
+  - id: we-would-be-grateful
+    t: "We would be grateful if you could …"
+    ex: "We would be [[grateful]] if you could reply by Friday."
+    extr: "Cuma gününe kadar cevap verebilirseniz minnettar oluruz."
+    ttr: "… minnettar oluruz."
+    slots: ["reply by Friday | cuma gününe kadar cevap verebilirseniz", "send us the original documents | orijinal belgeleri gönderebilirseniz", "confirm the meeting date | toplantı tarihini teyit edebilirseniz"]
+    chunks: ["We would be grateful | minnettar oluruz", "if you could | -ebilirseniz", "reply by Friday | cuma gününe kadar cevap vermek"]
+    g: polite-requests-could
+    ctx: ["E-posta"]
+    tone: ["Çok resmî"]
+    d: 3
+    dis:
+      - "great | Harika demektir; “grateful” minnettar."
+      - "thankful to | “if you could” ile kalıp “grateful”."
+      - "gratitude | İsimdir; “be” sonrası sıfat gerekir."
+  - id: further-to
+    t: "Further to our …, …"
+    ex: "[[Further to]] our phone call, I am sending you the draft agreement."
+    extr: "Telefon görüşmemize istinaden size sözleşme taslağını gönderiyorum."
+    ttr: "…(-e) istinaden, …"
+    slots: ["our phone call | telefon görüşmemiz", "your email of 3 May | 3 Mayıs tarihli e-postanız", "yesterday's meeting | dünkü toplantı"]
+    chunks: ["Further to | -e istinaden", "our phone call | telefon görüşmemiz", "I am sending | gönderiyorum"]
+    g: polite-requests-could
+    ctx: ["E-posta"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "Farther to | “farther” fiziksel mesafe için kullanılır."
+      - "Further of | Edat yanlış."
+      - "Furthermore our | “furthermore” bağlaçtır; kalıp “further to”."
+  - id: is-entitled-to
+    t: "The … is entitled to …"
+    ex: "The employee is [[entitled to]] 14 days of paid leave."
+    extr: "Çalışan 14 gün ücretli izin hakkına sahiptir."
+    ttr: "… hakkına sahiptir."
+    slots: ["14 days of paid leave | 14 gün ücretli izin", "a full refund | tam para iadesi", "compensation | tazminat"]
+    chunks: ["The employee | çalışan", "is entitled to | … hakkına sahiptir", "paid leave | ücretli izin"]
+    g: legal-modals
+    ctx: ["İş hukuku"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "entitled for | Edat “to” olmalı."
+      - "titled to | “titled” başlıklı demektir."
+      - "entitle to | Edilgen yapı gerekir: is entitled to."
+  - id: failure-to
+    t: "Failure to … will result in …"
+    ex: "Failure to [[pay]] on time will result in a late fee."
+    extr: "Zamanında ödeme yapılmaması gecikme ücretiyle sonuçlanacaktır."
+    ttr: "… yapılmaması … ile sonuçlanacaktır."
+    slots: ["pay on time | zamanında ödeme", "attend the hearing | duruşmaya katılmama", "comply with the rules | kurallara uyulmaması"]
+    chunks: ["Failure to pay | ödeme yapılmaması", "will result in | ile sonuçlanacaktır", "a late fee | gecikme ücreti"]
+    g: legal-conditions
+    ctx: ["Sözleşme", "Uyarı"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "paying | “Failure to” sonrası yalın fiil gelir."
+      - "paid | “to” sonrası yalın fiil gerekir."
+      - "payment | “to” sonrası fiil gerekir."
+
+grammar:
+  - id: legal-modals
+    title: "Sözleşmede modal fiiller: shall, may, must, is entitled to"
+    short: "Sözleşmede shall yükümlülük, may hak/izin, must kesin zorunluluk bildirir; is entitled to bir hakka sahip olmayı anlatır."
+    long: "The supplier shall deliver the goods (tedarikçi teslim edecektir: yükümlülük). Either party may terminate (taraflar feshedebilir: hak). The buyer must pay within 30 days (zorunluluk). The employee is entitled to paid leave (hak). Günlük dilde shall nadir kullanılır ama sözleşmelerde standarttır. Olumsuz: shall not = yapmayacaktır (yasak)."
+    ex: ["The tenant shall not sublet the flat. | Kiracı daireyi başkasına kiraya vermeyecektir.", "Either party may terminate this agreement. | Taraflardan her biri bu sözleşmeyi feshedebilir.", "The buyer is entitled to a refund. | Alıcı para iadesi hakkına sahiptir."]
+  - id: legal-conditions
+    title: "Koşul ve istisna: in the event of, unless, failure to"
+    short: "Hukuki metinlerde koşullar if yerine çoğu zaman in the event of, provided that, unless ve failure to yapılarıyla anlatılır."
+    long: "In the event of a delay, the buyer will be informed (gecikme durumunda). Unless otherwise agreed (aksi kararlaştırılmadıkça). Provided that the payment is made, the goods will be delivered (ödemenin yapılması şartıyla). Failure to comply will result in termination (uyulmaması fesihle sonuçlanır)."
+    ex: ["In the event of a dispute, Turkish courts have jurisdiction. | Uyuşmazlık hâlinde Türk mahkemeleri yetkilidir.", "Unless otherwise stated, prices include VAT. | Aksi belirtilmedikçe fiyatlara KDV dahildir.", "Failure to pay will result in a penalty. | Ödeme yapılmaması cezayla sonuçlanır."]
+
+scenarios:
+  - id: review-contract-clause
+    title: "Müşteriyle sözleşme maddesini konuşma"
+    sit: "Bir avukatlık bürosunda çalışıyorsun. Yabancı bir müşteri kira sözleşmesindeki fesih maddesini soruyor."
+    d: 3
+    targets: [clause, terminate, notice]
+    turns:
+      - ["Client", "Can I end the lease early if I move to another city?", "Başka bir şehre taşınırsam kira sözleşmesini erken bitirebilir miyim?"]
+      - choose:
+          - ["Yes. Under clause 9, you may terminate the lease with two months' written notice.", true, "Maddeyi, hakkı (may) ve bildirim süresini doğru veriyor."]
+          - ["Yes, under clause 9 you shall terminate whenever.", false, "“shall” yükümlülük bildirir; ayrıca bildirim süresini atlıyor."]
+          - ["Yes, you can determine the lease.", false, "“determine” belirlemek demektir; fesih “terminate”."]
+      - ["Client", "Will I lose my deposit?", "Depozitomu kaybeder miyim?"]
+      - choose:
+          - ["Not if you give proper notice and leave the flat in good condition.", true, "Koşulu net ve doğal bir dille anlatıyor."]
+          - ["You will lose it in the event of.", false, "“in the event of” sonrasında bir isim gerekir; cümle eksik."]
+          - ["Your deposit is liable.", false, "“liable” kişi veya kurum için kullanılır; anlam bozuk."]
+      - ["Client", "Good. Could you send me that clause by email?", "Güzel. O maddeyi bana e-postayla gönderebilir misiniz?"]
+  - id: formal-reply
+    title: "Karşı tarafa resmî cevap"
+    sit: "Karşı tarafın avukatı sözleşme taslağına yorum gönderdi. Telefonda görüştükten sonra resmî bir e-posta yazacaksın."
+    d: 3
+    targets: [on-behalf-of, amend, deadline-legal]
+    turns:
+      - ["Senior lawyer", "Write to them and say we accept most changes, but not the new penalty clause.", "Onlara yaz; değişikliklerin çoğunu kabul ediyoruz ama yeni ceza maddesini kabul etmiyoruz de."]
+      - choose:
+          - ["Further to our phone call, on behalf of our client we accept most of the proposed amendments, except the new penalty clause.", true, "Resmî açılış, temsil ifadesi ve istisna doğru kurulmuş."]
+          - ["Hi, we like your changes but no penalty, thanks.", false, "Hukuki yazışma için fazla samimi ve belirsiz."]
+          - ["Farther to our phone call, we accept all amendments.", false, "“Farther” yanlış; ayrıca ceza maddesini reddetmiyor."]
+      - ["Senior lawyer", "Good. Ask them to reply before the deadline.", "Güzel. Son tarihten önce cevap vermelerini iste."]
+      - choose:
+          - ["We would be grateful if you could reply by 20 June.", true, "Kibar ve resmî istek kalıbı."]
+          - ["Reply by 20 June or else.", false, "Tehditkâr ve profesyonel değil."]
+          - ["We would be great if you reply 20 June.", false, "“great” yerine “grateful”, tarih için “by” gerekir."]
+
+readings:
+  - id: nda-extract
+    title: "Extract from a confidentiality agreement"
+    kind: "Sözleşme maddesi"
+    d: 3
+    s:
+      - ["The Recipient shall keep all Confidential Information strictly confidential.", "Alıcı taraf tüm Gizli Bilgileri kesinlikle gizli tutacaktır."]
+      - ["The Recipient may share Confidential Information only with employees who need it for the Project.", "Alıcı taraf Gizli Bilgileri yalnızca Proje için ihtiyaç duyan çalışanlarla paylaşabilir."]
+      - ["This obligation does not apply to information that is already public.", "Bu yükümlülük zaten kamuya açık bilgilere uygulanmaz."]
+      - ["The obligations in this clause will continue for three years after termination of this Agreement.", "Bu maddedeki yükümlülükler, bu Sözleşmenin feshinden sonra üç yıl devam edecektir."]
+      - ["Any breach of this clause entitles the Disclosing Party to seek compensation.", "Bu maddenin her türlü ihlali, bilgiyi açıklayan tarafa tazminat talep etme hakkı verir."]
+    gloss: ["Recipient | bilgiyi alan taraf", "apply to | -e uygulanmak", "termination | fesih", "compensation | tazminat"]
+    q:
+      - q: "Alıcı taraf gizli bilgiyi kimlerle paylaşabilir?"
+        o: ["Herkesle", "Projede bilgiye ihtiyaç duyan çalışanlarla", "Hiç kimseyle"]
+        a: 1
+        why: "“only with employees who need it for the Project” — may = izin."
+      - q: "Gizlilik yükümlülüğü sözleşme bittikten sonra ne kadar sürer?"
+        o: ["Hiç sürmez", "Bir yıl", "Üç yıl"]
+        a: 2
+        why: "“will continue for three years after termination”"
+  - id: client-email
+    title: "Email to a client"
+    kind: "Hukuki e-posta"
+    d: 2
+    s:
+      - ["Dear Ms. Carter, further to our meeting on Monday, please find attached the revised employment contract.", "Sayın Carter, pazartesi günkü toplantımıza istinaden ekte revize edilmiş iş sözleşmesini bulabilirsiniz."]
+      - ["We have amended clause 6 so that you are entitled to 20 days of paid leave.", "6. maddeyi, 20 gün ücretli izin hakkınız olacak şekilde değiştirdik."]
+      - ["The notice period remains one month for both parties.", "Bildirim süresi her iki taraf için de bir ay olarak kalıyor."]
+      - ["Please read the document carefully and let us know if you have any questions.", "Lütfen belgeyi dikkatle okuyun ve sorunuz olursa bize bildirin."]
+      - ["We would be grateful if you could return the signed copy by 30 April.", "İmzalı kopyayı 30 Nisan'a kadar iade edebilirseniz minnettar oluruz."]
+    gloss: ["revised | revize edilmiş", "amended | değiştirildi", "notice period | bildirim süresi", "remains | olarak kalıyor"]
+    q:
+      - q: "6. maddede ne değişti?"
+        o: ["Bildirim süresi", "Ücretli izin hakkı", "Maaş"]
+        a: 1
+        why: "“We have amended clause 6 so that you are entitled to 20 days of paid leave.”"
+      - q: "İmzalı kopya ne zamana kadar gönderilmeli?"
+        o: ["Pazartesiye kadar", "30 Nisan'a kadar", "Bir ay içinde"]
+        a: 1
+        why: "“return the signed copy by 30 April”"
+
+writing:
+  id: formal-legal-email
+  p: "Bir müşteriye 3–4 cümlelik resmî bir e-posta yaz: sözleşme taslağını ekte gönderdiğini, bir maddeyi değiştirdiğini ve belirli bir tarihe kadar cevap beklediğini belirt."
+  rubric: ["Resmî açılış ve kapanış (Dear …, Kind regards) kullanılmış", "“Please find attached” ve değişiklik için “amend” kullanılmış", "Son tarihli kibar bir istek var (We would be grateful if you could … by …)"]
+  samples: ["Dear Mr. Smith, please find attached the draft agreement. We have amended clause 4 regarding the payment terms. We would be grateful if you could send us your comments by 10 June. Kind regards, Elif Kaya"]
+  d: 3
+
+situations:
+  - { parent: "Sözleşme", name: "Yükümlülük ve hak bildirmek", items: [obligation, shall-obligation, may-permission, is-entitled-to, liable] }
+  - { parent: "Sözleşme", name: "Fesih ve ihlal", items: [terminate, breach, notice, failure-to] }
+  - { parent: "E-posta", name: "Resmî hukuki yazışma", items: [on-behalf-of, please-find-attached, we-would-be-grateful, further-to] }
+  - { parent: "Sözleşme", name: "Koşul ve istisna", items: [subject-to, in-the-event-of, unless-otherwise, in-accordance-with] }
