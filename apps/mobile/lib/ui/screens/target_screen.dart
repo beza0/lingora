@@ -41,6 +41,14 @@ class TargetScreen extends ConsumerWidget {
         const SizedBox(height: 12),
         Row(children: [Pill(statusLabel(status))]),
         const SizedBox(height: 16),
+        if (v.exampleEn.isNotEmpty) ...[
+          OutlinedButton.icon(
+            icon: const Icon(Icons.mic_none),
+            label: const Text('Örnek cümleyi sesli söyle'),
+            onPressed: () => context.push('/speak/${v.domainId}?target=$targetId'),
+          ),
+          const SizedBox(height: 8),
+        ],
         OutlinedButton.icon(
           icon: const Icon(Icons.chat_bubble_outline),
           label: const Text('Bunu AI\'a sor'),

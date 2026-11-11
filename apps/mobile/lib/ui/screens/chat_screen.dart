@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../../app_state.dart';
 import '../../data/roleplays.dart';
 import '../../services/backend.dart';
+import '../../services/recorder.dart';
 import '../../theme.dart';
 import '../widgets.dart';
 
@@ -96,6 +97,8 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
   StreamSubscription<(String, Map<String, Object?>)>? sub;
   int? used, limit;
   Map<String, Object?>? ctx;
+  final rec = VoiceRecorder();
+  bool listening = false, transcribing = false;
 
   @override
   void initState() {
@@ -126,8 +129,48 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
     _toBottom();
   }
 
+  /// Mikrofonla yaz: kaydı yazıya çevirip giriş kutusuna ekler.
+  Future<void> _mic() async {
+    if (transcribing) return;
+    if (!listening) {
+      try {
+        if (!await rec.start()) {
+          if (mounted) toast(context, 'Mikrofon izni verilmedi.');
+          return;
+        }
+        setState(() => listening = true);
+      } catch (_) {
+        if (mounted) toast(context, 'Bu cihazda mikrofon kullanılamıyor.');
+      }
+      return;
+    }
+    setState(() {
+      listening = false;
+      transcribing = true;
+    });
+    try {
+      final r = await rec.stop();
+      if (r != null && r.bytes.length > 1000) {
+        final text = await ref.read(backendProvider).transcribe(r.bytes, r.mime);
+        if (text.isNotEmpty) {
+          final cur = input.text.trim();
+          input.text = cur.isEmpty ? text : '$cur $text';
+          input.selection = TextSelection.collapsed(offset: input.text.length);
+        }
+      }
+    } on ApiError catch (e) {
+      if (mounted) toast(context, e.message);
+    } catch (_) {
+      if (mounted) toast(context, 'Ses yazıya çevrilemedi.');
+    } finally {
+      if (mounted) setState(() => transcribing = false);
+    }
+  }
+
   @override
   void dispose() {
+    rec.cancel();
+    rec.dispose();
     sub?.cancel();
     input.dispose();
     scroll.dispose();
@@ -271,7 +314,15 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                     decoration: InputDecoration(hintText: _isRoleplay(ctx) ? 'İngilizce cevabını yaz' : 'Sorunu yaz', counterText: ''),
                   ),
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 4),
+                IconButton(
+                  tooltip: listening ? 'Kaydı bitir' : 'Sesle yaz (İngilizce)',
+                  constraints: const BoxConstraints(minWidth: 44, minHeight: 48),
+                  onPressed: sending || transcribing ? null : _mic,
+                  icon: transcribing
+                      ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2))
+                      : Icon(listening ? Icons.stop_circle : Icons.mic_none, color: listening ? p.danger : p.primary),
+                ),
                 IconButton.filled(
                   tooltip: sending ? 'Durdur' : 'Gönder',
                   constraints: const BoxConstraints(minWidth: 48, minHeight: 48),

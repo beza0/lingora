@@ -7,7 +7,7 @@ import { chatSystemPrompt, type ContextRef, evalSystemPrompt, type EvalTask, eva
 import { localCheck, parseEvaluation } from "./evaluation.ts";
 
 export type AuthUser = { id: string; isAnonymous: boolean };
-export type QuotaKind = "chat" | "eval";
+export type QuotaKind = "chat" | "eval" | "speech" | "tts";
 export type QuotaResult = { allowed: boolean; reason?: "rate_limited" | "quota_exceeded"; used?: number; limit?: number };
 
 export interface AiDb {

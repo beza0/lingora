@@ -143,6 +143,10 @@ class UserData extends ChangeNotifier {
   String themeMode = 'system';
   double ttsRate = 0.45;
   bool soundOn = true;
+  int dailyGoal = 15; // günlük hedef: cevaplanan alıştırma + söylenen cümle sayısı
+  int? reminderHour; // günlük hatırlatma saati (yalnız telefon uygulamasında); null = kapalı
+  final Map<String, int> speakLog = {}; // gün (yyyy-MM-dd) → söylenen cümle
+  final Map<String, List<int>> speakScores = {}; // gün → puanlar (%)
   final Set<String> assessed = {};
   bool onboarded = false;
   bool dirtyMeta = false;
@@ -168,6 +172,16 @@ class UserData extends ChangeNotifier {
     themeMode = settings['theme'] as String? ?? 'system';
     ttsRate = (settings['tts_rate'] as num?)?.toDouble() ?? 0.45;
     soundOn = settings['sound'] as bool? ?? true;
+    dailyGoal = (settings['daily_goal'] as num?)?.toInt() ?? 15;
+    reminderHour = (settings['reminder_hour'] as num?)?.toInt();
+    final sl = _map(await store.getKv('speak_log'));
+    speakLog
+      ..clear()
+      ..addAll(sl.map((k, v) => MapEntry(k, (v as num).toInt())));
+    final ss = _map(await store.getKv('speak_scores'));
+    speakScores
+      ..clear()
+      ..addAll(ss.map((k, v) => MapEntry(k, ((v as List?) ?? const []).map((e) => (e as num).toInt()).toList())));
     assessed
       ..clear()
       ..addAll(((settings['assessed'] as List?) ?? const []).cast<String>());
@@ -191,7 +205,15 @@ class UserData extends ChangeNotifier {
   }
 
   Future<void> _saveSettings() =>
-      store.putKv('settings', jsonEncode({'theme': themeMode, 'tts_rate': ttsRate, 'sound': soundOn, 'onboarded': onboarded, 'assessed': assessed.toList()}));
+      store.putKv('settings', jsonEncode({
+        'theme': themeMode,
+        'tts_rate': ttsRate,
+        'sound': soundOn,
+        'onboarded': onboarded,
+        'assessed': assessed.toList(),
+        'daily_goal': dailyGoal,
+        if (reminderHour != null) 'reminder_hour': reminderHour,
+      }));
 
   Future<void> clearMetaDirty() async {
     dirtyMeta = false;
@@ -250,6 +272,86 @@ class UserData extends ChangeNotifier {
   Future<void> setSound(bool on) async {
     soundOn = on;
     await _saveSettings();
+    notifyListeners();
+  }
+
+  Future<void> setDailyGoal(int g) async {
+    dailyGoal = g.clamp(5, 100);
+    await _saveSettings();
+    notifyListeners();
+  }
+
+  Future<void> setReminderHour(int? h) async {
+    reminderHour = h;
+    await _saveSettings();
+    notifyListeners();
+  }
+
+  // ------------------------------------------------------------ etkinlik, seri, ilerleme
+  static String dayKey(DateTime t) {
+    final l = t.toLocal();
+    return '${l.year.toString().padLeft(4, '0')}-${l.month.toString().padLeft(2, '0')}-${l.day.toString().padLeft(2, '0')}';
+  }
+
+  /// Gün başına etkinlik sayısı (cevaplar + söylenen cümleler).
+  Map<String, int> activityByDay() {
+    final m = <String, int>{};
+    for (final e in events) {
+      final k = dayKey(e.answeredAt);
+      m[k] = (m[k] ?? 0) + 1;
+    }
+    speakLog.forEach((k, v) => m[k] = (m[k] ?? 0) + v);
+    return m;
+  }
+
+  int todayCount([DateTime? now]) => activityByDay()[dayKey(now ?? DateTime.now())] ?? 0;
+
+  /// Art arda çalışılan gün sayısı. Bugün henüz çalışılmadıysa dünden geriye sayılır.
+  int streak([DateTime? now]) {
+    final days = activityByDay();
+    var d = (now ?? DateTime.now()).toLocal();
+    d = DateTime(d.year, d.month, d.day);
+    if ((days[dayKey(d)] ?? 0) == 0) d = d.subtract(const Duration(days: 1));
+    var n = 0;
+    while ((days[dayKey(d)] ?? 0) > 0) {
+      n++;
+      d = DateTime(d.year, d.month, d.day - 1);
+    }
+    return n;
+  }
+
+  int bestStreak() {
+    final keys = activityByDay().entries.where((e) => e.value > 0).map((e) => DateTime.parse(e.key)).toList()..sort();
+    var best = 0, cur = 0;
+    DateTime? prev;
+    for (final d in keys) {
+      final gap = prev == null ? 0 : DateTime.utc(d.year, d.month, d.day).difference(DateTime.utc(prev.year, prev.month, prev.day)).inDays;
+      cur = gap == 1 ? cur + 1 : 1;
+      if (cur > best) best = cur;
+      prev = d;
+    }
+    return best;
+  }
+
+  /// Son [days] günün etkinlik sayıları (eskiden yeniye).
+  List<(DateTime, int)> lastDays(int days, [DateTime? now]) {
+    final m = activityByDay();
+    final t = (now ?? DateTime.now()).toLocal();
+    return [
+      for (var i = days - 1; i >= 0; i--)
+        (() {
+          final d = DateTime(t.year, t.month, t.day - i);
+          return (d, m[dayKey(d)] ?? 0);
+        })(),
+    ];
+  }
+
+  Future<void> logSpeech(int scorePercent, [DateTime? now]) async {
+    final k = dayKey(now ?? DateTime.now());
+    speakLog[k] = (speakLog[k] ?? 0) + 1;
+    (speakScores[k] ??= []).add(scorePercent.clamp(0, 100));
+    await store.putKv('speak_log', jsonEncode(speakLog));
+    await store.putKv('speak_scores', jsonEncode(speakScores));
     notifyListeners();
   }
 
@@ -393,9 +495,10 @@ class UserData extends ChangeNotifier {
   }
 
   /// Bu hafta (Pazartesiden itibaren, yerel saat) çalışılan günler.
-  Set<DateTime> activeDays() => events.map((e) {
-        final l = e.answeredAt.toLocal();
-        return DateTime(l.year, l.month, l.day);
+  /// Etkinlik olan günler (cevap veya konuşma pratiği).
+  Set<DateTime> activeDays() => activityByDay().entries.where((e) => e.value > 0).map((e) {
+        final d = DateTime.parse(e.key);
+        return DateTime(d.year, d.month, d.day);
       }).toSet();
 
   List<bool> firstAttemptsUnaided(String domainId) =>

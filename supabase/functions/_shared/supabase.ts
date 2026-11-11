@@ -3,6 +3,7 @@
 import { createClient } from "@supabase/supabase-js";
 import type { AiDb, AuthUser } from "./handlers.ts";
 import type { AccountDb } from "./account.ts";
+import type { AudioStore } from "./speech.ts";
 
 const env = (k: string) => Deno.env.get(k);
 
@@ -90,6 +91,26 @@ export function supabaseAccountDb(): AccountDb {
     async deleteAuthUser(userId) {
       const { error } = await db.auth.admin.deleteUser(userId);
       if (error) throw new Error(error.message);
+    },
+  };
+}
+
+export function supabaseAudioStore(bucket = "tts"): AudioStore {
+  const db = serviceClient();
+  const base = env("SUPABASE_URL") ?? "";
+  return {
+    async exists(key) {
+      const dir = key.slice(0, key.lastIndexOf("/"));
+      const name = key.slice(key.lastIndexOf("/") + 1);
+      const { data } = await db.storage.from(bucket).list(dir, { search: name, limit: 1 });
+      return Boolean(data?.some((f: any) => f.name === name));
+    },
+    async upload(key, bytes, contentType) {
+      const { error } = await db.storage.from(bucket).upload(key, bytes, { contentType, upsert: true, cacheControl: "31536000" });
+      if (error) throw new Error(error.message);
+    },
+    publicUrl(key) {
+      return `${base}/storage/v1/object/public/${bucket}/${key}`;
     },
   };
 }

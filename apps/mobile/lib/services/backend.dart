@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
@@ -276,6 +277,33 @@ class Backend extends ChangeNotifier {
       'task': {'skill': skill, 'prompt_tr': promptTr, 'expected': expected, 'accepted': accepted, 'answer': answer, if (rubric != null) 'rubric': rubric},
     });
     return _json(r);
+  }
+
+  /// Konuşma kaydını yazıya çevirir (sunucuda Whisper). Kota: misafir 20, hesap 60 / gün.
+  Future<String> transcribe(Uint8List audio, String mime) async {
+    final r = await _post('ai-transcribe', {'audio': base64Encode(audio), 'mime': mime});
+    return (_json(r)['text'] as String? ?? '').trim();
+  }
+
+  final Map<String, String> _ttsUrls = {};
+  bool _ttsDisabled = false;
+
+  /// İçerik cümlesinin sunucuda üretilmiş ses dosyası adresi. Sunucu seslendirmesi kapalıysa null.
+  Future<String?> ttsUrl(String text) async {
+    if (_ttsDisabled || _c == null) return null;
+    final key = text.trim();
+    final cached = _ttsUrls[key];
+    if (cached != null) return cached;
+    try {
+      final r = await _post('ai-tts', {'text': key});
+      final url = _json(r)['url'] as String?;
+      if (url != null) _ttsUrls[key] = url;
+      return url;
+    } on ApiError catch (e) {
+      // Sağlayıcı kapalı veya yapılandırılmamışsa bu oturumda tekrar denenmez; cihaz sesi kullanılır.
+      if (e.code == 'provider_error' || e.code == 'ai_not_configured' || e.code == 'quota_exceeded') _ttsDisabled = true;
+      return null;
+    }
   }
 
   /// AI sohbet; SSE olaylarını sırayla döndürür (meta, delta, done, error).

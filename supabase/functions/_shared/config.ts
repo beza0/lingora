@@ -15,6 +15,14 @@ export type AiConfig = {
   ipDailyLimit: number;
   ipHashSalt: string;
   historyLimit: number;
+  groqKey: string | null;
+  sttModel: string;
+  ttsModel: string;
+  ttsVoice: string;
+  dailySpeechGuest: number;
+  dailySpeechUser: number;
+  dailyTtsGuest: number;
+  dailyTtsUser: number;
 };
 
 export function loadConfig(get: (k: string) => string | undefined): AiConfig {
@@ -42,6 +50,15 @@ export function loadConfig(get: (k: string) => string | undefined): AiConfig {
     ipDailyLimit: int("AI_IP_DAILY_LIMIT", 60),
     ipHashSalt: get("IP_HASH_SALT") ?? "lingora",
     historyLimit: 10,
+    // Ses (konuşma → yazı ve seslendirme) her zaman Groq ile; sohbet sağlayıcısından bağımsız.
+    groqKey: (get("GROQ_API_KEY") ?? "").trim() || null,
+    sttModel: get("AI_STT_MODEL") ?? "whisper-large-v3-turbo",
+    ttsModel: get("AI_TTS_MODEL") ?? "canopylabs/orpheus-v1-english",
+    ttsVoice: get("AI_TTS_VOICE") ?? "hannah",
+    dailySpeechGuest: int("AI_DAILY_SPEECH_GUEST", 20),
+    dailySpeechUser: int("AI_DAILY_SPEECH_USER", 60),
+    dailyTtsGuest: int("AI_DAILY_TTS_GUEST", 60),
+    dailyTtsUser: int("AI_DAILY_TTS_USER", 200),
   };
 }
 

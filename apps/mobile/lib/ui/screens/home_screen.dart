@@ -31,17 +31,47 @@ class HomeScreen extends ConsumerWidget {
             if (backend.syncing) const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2)),
           ]),
           const SizedBox(height: 12),
-          // Haftalık etkinlik
+          // Seri, günlük hedef ve haftalık etkinlik
           Card(
             child: Padding(
               padding: const EdgeInsets.all(14),
-              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                for (var i = 0; i < 7; i++)
-                  _DayDot(
-                    label: const ['Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct', 'Pz'][i],
-                    done: days.contains(monday.add(Duration(days: i))),
-                    today: monday.add(Duration(days: i)) == DateTime(today.year, today.month, today.day),
-                  ),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+                Builder(builder: (context) {
+                  final streak = user.streak();
+                  final done = user.todayCount();
+                  final goal = user.dailyGoal;
+                  final reached = done >= goal;
+                  return InkWell(
+                    borderRadius: BorderRadius.circular(12),
+                    onTap: () => context.push('/progress'),
+                    child: Row(children: [
+                      Text(streak > 0 ? '🔥' : '🌱', style: const TextStyle(fontSize: 28)),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                          Text(streak > 0 ? '$streak günlük seri' : 'Seriye bugün başla', style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
+                          const SizedBox(height: 6),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(6),
+                            child: LinearProgressIndicator(value: (done / goal).clamp(0.0, 1.0), minHeight: 8, backgroundColor: p.surface2, color: reached ? p.success : p.primary),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(reached ? 'Günlük hedef tamam: $done / $goal' : 'Günlük hedef: $done / $goal', style: TextStyle(color: p.muted, fontSize: 13)),
+                        ]),
+                      ),
+                      Icon(Icons.chevron_right, color: p.muted),
+                    ]),
+                  );
+                }),
+                const SizedBox(height: 14),
+                Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                  for (var i = 0; i < 7; i++)
+                    _DayDot(
+                      label: const ['Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct', 'Pz'][i],
+                      done: days.contains(monday.add(Duration(days: i))),
+                      today: monday.add(Duration(days: i)) == DateTime(today.year, today.month, today.day),
+                    ),
+                ]),
               ]),
             ),
           ),
@@ -72,6 +102,7 @@ class HomeScreen extends ConsumerWidget {
                 reduced: plan.reducedNew,
                 onStart: plan.isEmpty ? null : () => context.push('/session/${d.domainId}'),
                 onAssess: user.assessed.contains(d.domainId) ? null : () => context.push('/assessment/${d.domainId}'),
+                onSpeak: () => context.push('/speak/${d.domainId}'),
               );
             }),
             const SizedBox(height: 12),
@@ -124,8 +155,10 @@ class _DomainCard extends StatelessWidget {
   final bool reduced;
   final VoidCallback? onStart;
   final VoidCallback? onAssess;
+  final VoidCallback? onSpeak;
   const _DomainCard({
     this.onAssess,
+    this.onSpeak,
     required this.domainId,
     required this.name,
     required this.due,
@@ -167,6 +200,10 @@ class _DomainCard extends StatelessWidget {
             onPressed: onStart,
             child: Text(onStart == null ? 'Bugünlük bu kadar' : 'Çalış · yaklaşık $minutes dk · tahmini'),
           ),
+          if (onSpeak != null) ...[
+            const SizedBox(height: 8),
+            OutlinedButton.icon(onPressed: onSpeak, icon: const Icon(Icons.mic_none, size: 18), label: const Text('Konuşma pratiği')),
+          ],
         ]),
       ),
     );

@@ -13,9 +13,11 @@ import 'ui/screens/onboarding_screen.dart';
 import 'ui/screens/pack_screen.dart';
 import 'ui/screens/phrasebook_screen.dart';
 import 'ui/screens/profile_screen.dart';
+import 'ui/screens/progress_screen.dart';
 import 'ui/screens/reading_screen.dart';
 import 'ui/screens/scenario_screen.dart';
 import 'ui/screens/session_screen.dart';
+import 'ui/screens/speak_screen.dart';
 import 'ui/screens/target_screen.dart';
 import 'ui/screens/writing_screen.dart';
 
@@ -44,6 +46,8 @@ GoRouter buildRouter(WidgetRef ref) {
       ),
       GoRoute(path: '/session/:domain', builder: (_, s) => SessionScreen(domainId: s.pathParameters['domain']!)),
       GoRoute(path: '/assessment/:domain', builder: (_, s) => AssessmentScreen(domainId: s.pathParameters['domain']!)),
+      GoRoute(path: '/speak/:domain', builder: (_, s) => SpeakScreen(domainId: s.pathParameters['domain']!, targetId: s.uri.queryParameters['target'])),
+      GoRoute(path: '/progress', builder: (_, __) => const ProgressScreen()),
       GoRoute(path: '/writing/:id', builder: (_, s) => WritingScreen(taskId: s.pathParameters['id']!)),
       GoRoute(path: '/target/:id', builder: (_, s) => TargetScreen(targetId: s.pathParameters['id']!)),
       GoRoute(path: '/pack/:id', builder: (_, s) => PackScreen(packId: s.pathParameters['id']!)),

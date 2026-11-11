@@ -163,3 +163,22 @@ int adjustLevel(int level, List<bool> lastFirstAttemptsUnaided) {
   if (rate < 0.60) return (level - 1).clamp(1, 5);
   return level;
 }
+
+/// Konuşma pratiği için cümleler: önce başlanmış hedeflerin örnekleri (karışık), sonra sıradaki yeniler.
+/// Diyalog biçimindeki ("A: … B: …") ve çok uzun cümleler atlanır.
+List<String> pickSpeakingTargets(ContentRepo content, String domainId, Map<String, CardState> cards, {int count = 6, int? seed}) {
+  final all = content.targetsForDomain(domainId);
+  bool usable(String id) {
+    final v = content.view(id);
+    if (v == null) return false;
+    final s = cleanSentence(v.exampleEn);
+    return s.isNotEmpty && !RegExp(r'\b[AB]:').hasMatch(s) && s.split(' ').length <= 16;
+  }
+
+  final started = all.where((id) => cards.containsKey(id) && usable(id)).toList()..shuffle(math.Random(seed));
+  final fresh = all.where((id) => !cards.containsKey(id) && usable(id)).toList();
+  return [...started, ...fresh].take(count).toList();
+}
+
+/// İçerikteki vurgu işaretlerini ([[…]]) kaldırır.
+String cleanSentence(String s) => s.replaceAll('[[', '').replaceAll(']]', '').trim();

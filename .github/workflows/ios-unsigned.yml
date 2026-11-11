@@ -34,6 +34,7 @@ jobs:
       - name: Uygulama adı ve derin bağlantı
         run: |
           /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName Lingora" ios/Runner/Info.plist
+          /usr/libexec/PlistBuddy -c "Add :NSMicrophoneUsageDescription string 'Konuşma pratiğinde söylediğin cümleyi yazıya çevirmek için mikrofon kullanılır.'" ios/Runner/Info.plist || true
           /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes array" ios/Runner/Info.plist || true
           /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes:0 dict" ios/Runner/Info.plist || true
           /usr/libexec/PlistBuddy -c "Add :CFBundleURLTypes:0:CFBundleURLSchemes array" ios/Runner/Info.plist || true
