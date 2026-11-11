@@ -22,6 +22,12 @@ export function Login() {
     if (error) setError("Giriş yapılamadı: e-posta veya parola hatalı.");
   };
 
+  const google = async () => {
+    setError(null);
+    const { error } = await supabase!.auth.signInWithOAuth({ provider: "google", options: { redirectTo: window.location.origin } });
+    if (error) setError("Google ile giriş başlatılamadı.");
+  };
+
   return (
     <div className="grid min-h-screen place-items-center p-6">
       <Card className="flex w-full max-w-[400px] flex-col gap-4 p-8">
@@ -36,6 +42,8 @@ export function Login() {
             <button type="button" className="underline" onClick={() => supabase?.auth.signOut()}>Başka hesapla gir</button>
           </Banner>
         )}
+        <Button type="button" onClick={google}>Google ile giriş yap</Button>
+        <p className="text-center text-sm text-muted">veya e-postayla</p>
         <form onSubmit={submit} className="flex flex-col gap-3">
           <Field label="E-posta"><input className={inputClass} type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></Field>
           <Field label="Parola"><input className={inputClass} type="password" autoComplete="current-password" required value={password} onChange={(e) => setPassword(e.target.value)} /></Field>

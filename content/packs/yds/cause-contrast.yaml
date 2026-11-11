@@ -381,9 +381,9 @@ patterns:
   - id: unlike
     t: "Unlike …, …"
     ex: "[[Unlike]] her brother, she enjoys math."
-    extr: "Ağabeyinin aksine matematiği seviyor."
+    extr: "Erkek kardeşinin aksine matematiği seviyor."
     ttr: "… aksine matematiği seviyor."
-    slots: ["her brother | Ağabeyinin", "most students | Çoğu öğrencinin", "her parents | Ailesinin"]
+    slots: ["her brother | Erkek kardeşinin", "most students | Çoğu öğrencinin", "her parents | Ailesinin"]
     chunks: ["Unlike her brother | ağabeyinin aksine", "she enjoys math | matematiği seviyor"]
     g: linkers-contrast
     ctx: ["Cümle tamamlama"]
