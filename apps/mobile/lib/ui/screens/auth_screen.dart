@@ -177,8 +177,6 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                     },
               child: const Text('Şifremi unuttum'),
             ),
-          const SizedBox(height: 16),
-          Text('Google ile giriş yakında eklenecek.', textAlign: TextAlign.center, style: TextStyle(color: p.muted, fontSize: 13)),
         ],
       ]),
     );
