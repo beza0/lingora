@@ -21,7 +21,10 @@ jobs:
           cache: true
 
       - name: Platform klasörleri
-        run: flutter create --org com.beyzaacar --project-name lingora --platforms=ios .
+        run: |
+          flutter create --org com.beyzaacar --project-name lingora --platforms=ios .
+          # flutter create örnek sayaç testini ekler; uygulamaya ait değil
+          rm -f test/widget_test.dart
 
       - name: Bağımlılıklar ve testler
         run: |
