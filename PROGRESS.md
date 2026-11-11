@@ -1,6 +1,6 @@
 # İlerleme
 
-Son güncelleme: 2026-11-09
+Son güncelleme: 2026-11-12
 
 ## Tamamlananlar
 
@@ -34,13 +34,14 @@ Son güncelleme: 2026-11-09
 | Gerçek AI çağrısı (Groq, `openai/gpt-oss-120b`) | `ai-chat` SSE akışı `<en>` bloklarıyla İngilizce ifadeler + Türkçe açıklama döndü; `ai-evaluate` şemaya uygun değerlendirme döndü. Kota (misafir 1/3 sohbet, 1/10 değerlendirme), token sayımı ve mesaj kaydı doğrulandı; test verisi silindi |
 | Flutter (Vercel derlemesinde) | `flutter analyze` hatasız, `flutter test` 27/27 geçti (eşleştirme ve seviye testi dahil), web derlemesi başarılı |
 | Web sürümü elle deneme (telefon boyutu) | Açılış → alan seçimi → Bugün → oturum (tanıtım, anlam sorusu, yanlış/doğru geri bildirimi, çıkış onayı) → AI sohbet (gerçek Groq yanıtı, kota 1/3) çalıştı; yerel veritabanı IndexedDB üzerinde açıldı |
+| iOS imzasız derleme (GitHub Actions, macOS) | Başarılı; `Lingora-unsigned-ipa` (9,5 MB). Telefonda kurulum Sideloadly ile, cihazda denenmedi |
+| Google ile giriş (canlı) | Google hesabı oluştu, misafir ilerlemesi (cevap + alan) hesaba taşındı, misafir silindi |
 | `pnpm db:verify` (PostgreSQL 16) | Bütün doğrulamalar geçti: migration'lar, RLS (kullanıcılar arası erişim engeli), durum kuralları, kota ve iade, birleştirme (idempotent), toplu durum değiştirme, içerik yükleme |
 
 ## Çalıştırılmayan kontroller ve sebebi
 
 | Kontrol | Sebep |
 | --- | --- |
-| iOS yerel derlemesi | GitHub Actions iş akışı hazır (`.github/workflows/ios-unsigned.yml`), henüz çalıştırılmadı; kurulum Sideloadly ile |
 | Android derlemesi | Denenmedi |
 | Rol yapma ve yazma görevlerinin telefonda elle denenmesi | Kod Vercel'de derlenip test edildi; tarayıcıda deneme bu raporda ayrıca belirtilir |
 | Panelin gerçek PostgREST ile uçtan uca denenmesi | Yerel Supabase yığını yok. |
@@ -49,5 +50,6 @@ Son güncelleme: 2026-11-09
 
 - İçerik incelenmedi (test sürümü); uygulamada “İncelenmedi” rozetiyle gösterilecek.
 - Apple ile giriş kapalı; push bildirimleri yok.
-- Google ile giriş henüz yapılandırılmadı (Google Cloud OAuth istemcisi gerekiyor).
+- Google girişi Google Cloud'da “Testing” modunda: yalnız test kullanıcısı olarak eklenen adresler girebilir.
+- Web'de cihazda İngilizce ses yoksa sesli okuma yapılmaz, ses ekleme yolu gösterilir.
 - Test kullanıcıları ve geçici tablolar temizlendi; veritabanında kullanıcı yok, yalnız içerik var.
