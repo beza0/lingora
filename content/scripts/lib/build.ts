@@ -161,7 +161,7 @@ export function buildBundle(loaded: LoadedPack[], issues: Issue[]): Bundle {
       });
       p.slots.forEach((s, j) => {
         const [en, tr] = split(s);
-        b.pattern_slots.push({ id: uid(`slot:${key}:${j}`), pattern_id: pid, text_en: en, text_tr: tr, sentence_tr: p.ttr.replace("…", tr), sort: j });
+        b.pattern_slots.push({ id: uid(`slot:${key}:${j}`), pattern_id: pid, text_en: en, text_tr: tr, sentence_tr: slotSentence(p.ttr, tr), sort: j });
       });
       const tUuid = uid("target:" + key);
       b.learning_targets.push({ id: tUuid, slug: key, kind: "pattern", sense_id: null, pattern_id: pid, difficulty: p.d, status: "draft" });
@@ -373,4 +373,24 @@ function patternExercises(pack: Pack, file: string, err: (f: string, p: string, 
     });
   });
   return rows;
+}
+
+/**
+ * Kalıbın Türkçe şablonuna parçayı yerleştirir. Şablonda tek bir boşluk yoksa ya da ek işareti
+ * (“-ecektir”, “(-e)”) varsa düzgün cümle kurulamaz; o zaman cümle üretilmez (null).
+ */
+export function slotSentence(ttr: string, tr: string): string | null {
+  const gaps = ttr.split("…").length - 1;
+  if (gaps !== 1 || /\(-|… -|…-/.test(ttr)) return null;
+  // Soru eki ünlü uyumu: “… mi?” şablonunda parçanın son ünlüsüne göre mı/mi/mu/mü
+  const s = ttr.replace(/… m[ıiuü](?=[?\s.!,]|$)/u, `… m${questionVowel(tr)}`).replace("…", tr);
+  const first = s.charAt(0);
+  const up = first === "i" ? "İ" : first === "ı" ? "I" : first.toLocaleUpperCase("tr");
+  return up + s.slice(1);
+}
+
+function questionVowel(word: string): string {
+  const v = [...word.toLocaleLowerCase("tr")].reverse().find((c) => "aıoueiöü".includes(c));
+  if (!v) return "i";
+  return "aı".includes(v) ? "ı" : "ei".includes(v) ? "i" : "ou".includes(v) ? "u" : "ü";
 }

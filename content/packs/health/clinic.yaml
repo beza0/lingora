@@ -378,7 +378,7 @@ patterns:
     t: "Is it serious?"
     ex: "Is it [[serious]], doctor?"
     extr: "Ciddi mi, doktor?"
-    ttr: "… ciddi mi?"
+    ttr: "… mi?"
     slots: ["serious | ciddi", "contagious | bulaşıcı", "dangerous | tehlikeli"]
     chunks: ["Is it | o … mı", "serious | ciddi"]
     g: present-simple

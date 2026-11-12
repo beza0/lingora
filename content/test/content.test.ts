@@ -122,3 +122,20 @@ describe("yardımcılar", () => {
     expect(PACKS_DIR.endsWith("packs")).toBe(true);
   });
 });
+
+import { slotSentence } from "../scripts/lib/build.ts";
+describe("kalıp parçası cümlesi", () => {
+  it("tek boşlukta parçayı yerleştirir ve büyük harfle başlatır", () => {
+    expect(slotSentence("… çalışmıyor.", "klima")).toBe("Klima çalışmıyor.");
+    expect(slotSentence("… ister misiniz?", "içecek")).toBe("İçecek ister misiniz?");
+    expect(slotSentence("… mi?", "bulaşıcı")).toBe("Bulaşıcı mı?");
+    expect(slotSentence("… mi?", "ciddi")).toBe("Ciddi mi?");
+    expect(slotSentence("… müsait misin?", "cuma akşamı")).toBe("Cuma akşamı müsait misin?");
+    expect(slotSentence("… fiyata dahil mi?", "otopark")).toBe("Otopark fiyata dahil mi?");
+  });
+  it("birden çok boşluk veya ek işareti varsa cümle üretmez", () => {
+    expect(slotSentence("… beri kendimi … hissediyorum.", "yorgun")).toBeNull();
+    expect(slotSentence("… -ecektir (yükümlülük).", "ödemek")).toBeNull();
+    expect(slotSentence("…(-e) nasıl giderim?", "müze")).toBeNull();
+  });
+});
