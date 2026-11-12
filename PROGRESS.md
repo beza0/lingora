@@ -10,9 +10,14 @@ Son güncelleme: 2026-11-12
 | Veritabanı | 5 migration: içerik tabloları, kullanıcı tabloları, RLS, durum tetikleyicileri ve revizyon kaydı, AI kota fonksiyonları, misafir birleştirme, toplu durum değiştirme |
 | İçerik | 12 paket (4 alan × 3): 240 anlam, 120 kalıp, 24 yapı notu, 24 senaryo, 24 okuma, yazma görevleri, Cümle Rehberi; 1427 türetilmiş alıştırma. Hepsi taslak. |
 | Edge Functions | `ai-chat` (SSE), `ai-evaluate` (yerel kontrol + AI + şema doğrulama), `merge-guest`, `delete-account`; sağlayıcı katmanı, kota ve iade, hata kodları |
-| Yönetim paneli | Giriş, içerik listesi ve süzme, hedef düzenleme, toplu inceleme/yayınlama, varlık tabloları, içe aktarma (önizlemeli), raporlar, değişiklik geçmişi |
+| Yönetim paneli | https://lingora-admin.vercel.app (Google ile giriş, yönetici: Beyza). Giriş, içerik listesi ve süzme, hedef düzenleme, toplu inceleme/yayınlama, varlık tabloları, içe aktarma (önizlemeli), raporlar, değişiklik geçmişi |
 | Mobil uygulama (Flutter) | Açılış/alan seçimi, Bugün, çalışma oturumu (tanıtım, 6 alıştırma türü, ipucu, geri bildirim, özet), FSRS, seviye ayarı, Keşfet (arama, paket, hedef ayrıntısı, Cümle Rehberi, okuma, senaryo), AI sohbet (SSE, `<en>` kartları, kota), başlangıç seviye testi (alan başına 5–8 soru, uyarlamalı), eşleştirme alıştırması, yazma görevleri (AI değerlendirme + örnek cevaplar), AI ile rol yapma (alan başına 3 senaryo, her turda Türkçe geri bildirim), ses efektleri, İngilizce sesli okuma, Koleksiyon, Profil (hesap, birleştirme, beceri, ayarlar, dışa aktarma, hesap silme), drift ile yerel kayıt ve eşitleme |
 | Web sürümü (iPhone'da Ana Ekrana Ekle) | https://lingora-beza0s-projects.vercel.app — her `main` gönderiminde Vercel derler: `flutter analyze` + `flutter test` + `flutter build web` |
+| Konuşma pratiği | `ai-transcribe` (Groq Whisper) canlı doğrulandı; konuşma ekranı, hedef sayfasından tek cümle, sohbette sesle yazma |
+| Sunucu seslendirmesi | `ai-tts` (Groq Orpheus) + depolama önbelleği hazır; Groq'ta model şartları kabul edilene kadar cihaz sesine düşer |
+| Alışkanlık ve ilerleme | Seri, günlük hedef, İlerleme ekranı, iPhone'da günlük hatırlatma bildirimi |
+| Yeni alanlar | Sağlık, Turizm, Hukuk (3 paket, 90 hedef, rol yapma senaryoları); toplam 7 alan, 15 paket, 450 hedef, 1784 alıştırma |
+| İçerik ön kontrolü | 450 hedef ve 150 kalıp gözden geçirildi; kalıp parçası Türkçe cümle üretimindeki hatalar düzeltildi (41 cümle üretilmiyor, 51 düzeldi) |
 | Belgeler | README, kararlar, mimari, API sözleşmesi, FSRS, içerik rehberi, Flutter devir talimatı |
 
 ## Çalıştırılan kontroller
