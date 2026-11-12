@@ -25,6 +25,11 @@ jobs:
           flutter create --org com.beyzaacar --project-name lingora --platforms=ios .
           # flutter create örnek sayaç testini ekler; uygulamaya ait değil
           rm -f test/widget_test.dart
+          # Uygulama ikonu: her boyut 1024'lük marka ikonundan üretilir
+          for f in ios/Runner/Assets.xcassets/AppIcon.appiconset/*.png; do
+            w=$(sips -g pixelWidth "$f" | awk '/pixelWidth/{print $2}')
+            sips -z "$w" "$w" assets/brand/icon-1024.png --out "$f" >/dev/null
+          done
 
       - name: Bağımlılıklar ve testler
         run: |
