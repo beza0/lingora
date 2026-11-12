@@ -21,6 +21,7 @@ class ApiError implements Exception {
 
   static const offline = ApiError('offline', 'İnternet bağlantısı yok. Hazır içeriklerle çalışmaya devam edebilirsin.');
   static const noBackend = ApiError('no_backend', 'Sunucu ayarları bu sürümde yok. Uygulama çevrimdışı çalışıyor.');
+  static const consent = ApiError('consent_required', 'AI özellikleri kapalı. Açmak için Profil → Ayarlar → AI özellikleri.');
 }
 
 enum AccountKind { none, guest, email }
@@ -259,6 +260,12 @@ class Backend extends ChangeNotifier {
     }
   }
 
+  /// AI'a kişisel metin veya ses gönderen çağrılar yalnız açık rıza varsa yapılır (KVKK: yurt dışına aktarım).
+  bool get aiAllowed => _data?.aiConsent ?? false;
+  void _requireConsent() {
+    if (!aiAllowed) throw ApiError.consent;
+  }
+
   Map<String, Object?> _json(http.Response r) {
     if (r.statusCode >= 400) throw errorFrom(r);
     return (jsonDecode(utf8.decode(r.bodyBytes)) as Map).cast<String, Object?>();
@@ -273,6 +280,7 @@ class Backend extends ChangeNotifier {
     String skill = 'vocab',
     List<String>? rubric,
   }) async {
+    _requireConsent();
     final r = await _post('ai-evaluate', {
       'task': {'skill': skill, 'prompt_tr': promptTr, 'expected': expected, 'accepted': accepted, 'answer': answer, if (rubric != null) 'rubric': rubric},
     });
@@ -281,6 +289,7 @@ class Backend extends ChangeNotifier {
 
   /// Konuşma kaydını yazıya çevirir (sunucuda Whisper). Kota: misafir 20, hesap 60 / gün.
   Future<String> transcribe(Uint8List audio, String mime) async {
+    _requireConsent();
     final r = await _post('ai-transcribe', {'audio': base64Encode(audio), 'mime': mime});
     return (_json(r)['text'] as String? ?? '').trim();
   }
@@ -310,6 +319,7 @@ class Backend extends ChangeNotifier {
   Stream<(String, Map<String, Object?>)> chat({String? threadId, required String message, String? domainId, Map<String, Object?>? context}) async* {
     final c = _c;
     if (c == null) throw ApiError.noBackend;
+    _requireConsent();
     await ensureSession();
     final token = c.auth.currentSession?.accessToken;
     if (token == null) throw ApiError.offline;

@@ -7,6 +7,7 @@ import 'ui/screens/assessment_screen.dart';
 import 'ui/screens/auth_screen.dart';
 import 'ui/screens/chat_screen.dart';
 import 'ui/screens/collection_screen.dart';
+import 'ui/screens/consent_screen.dart';
 import 'ui/screens/explore_screen.dart';
 import 'ui/screens/home_screen.dart';
 import 'ui/screens/onboarding_screen.dart';
@@ -30,10 +31,14 @@ GoRouter buildRouter(WidgetRef ref) {
       final onboarding = state.matchedLocation.startsWith('/welcome');
       if (!user.onboarded && !onboarding) return '/welcome';
       if (user.onboarded && onboarding) return '/home';
+      final consent = state.matchedLocation == '/consent';
+      if (user.onboarded && user.needsConsent && !consent) return '/consent';
+      if (consent && !user.needsConsent) return '/home';
       return null;
     },
     routes: [
       GoRoute(path: '/welcome', builder: (_, __) => const OnboardingScreen()),
+      GoRoute(path: '/consent', builder: (_, __) => const ConsentScreen()),
       ShellRoute(
         builder: (context, state, child) => _Shell(location: state.matchedLocation, child: child),
         routes: [

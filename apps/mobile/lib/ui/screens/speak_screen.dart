@@ -117,6 +117,12 @@ class _SpeakScreenState extends ConsumerState<SpeakScreen> {
       return Scaffold(appBar: AppBar(title: const Text('Konuşma pratiği')), body: const EmptyState(icon: Icons.mic_none, title: 'Söylenecek cümle yok', body: 'Bu alanda konuşma pratiğine uygun cümle bulunamadı.'));
     }
     if (index >= items.length) return _summary(context);
+    if (!ref.watch(userProvider).aiConsent) {
+      return Scaffold(
+        appBar: AppBar(title: const Text('Konuşma pratiği')),
+        body: ListView(padding: const EdgeInsets.all(16), children: const [AiConsentCard(feature: 'Konuşma pratiği')]),
+      );
+    }
     final v = content.view(items[index])!;
     final sentence = cleanSentence(v.exampleEn);
     final showEn = !hideEnglish || phase == _Phase.result;

@@ -33,6 +33,7 @@ class _ChatListScreenState extends ConsumerState<ChatListScreen> {
           const SizedBox(height: 6),
           Text('“Bunu İngilizce nasıl derim?”, “Bu cümle doğru mu?” gibi sorular sorabilirsin.', style: TextStyle(color: p.muted)),
           const SizedBox(height: 16),
+          if (!ref.watch(userProvider).aiConsent) ...[const AiConsentCard(feature: 'Sohbet ve rol yapma'), const SizedBox(height: 12)],
           FilledButton.icon(
             onPressed: () async {
               await context.push('/chat/new');
@@ -251,7 +252,9 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
           Center(child: Padding(padding: const EdgeInsets.only(right: 16), child: Text('Bugün $used/$limit', style: TextStyle(color: p.muted)))),
       ]),
       body: SafeArea(
-        child: Column(children: [
+        child: !ref.watch(userProvider).aiConsent
+            ? ListView(padding: const EdgeInsets.all(20), children: const [AiConsentCard(feature: 'Sohbet ve rol yapma')])
+            : Column(children: [
           Expanded(
             child: blocking != null
                 ? _Blocking(error: blocking!, guest: backend.account == AccountKind.guest)

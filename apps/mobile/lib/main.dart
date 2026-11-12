@@ -1,3 +1,5 @@
+import 'dart:ui' show PlatformDispatcher;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -9,10 +11,20 @@ import 'data/local_store.dart';
 import 'data/user_data.dart';
 import 'router.dart';
 import 'services/backend.dart';
+import 'services/telemetry.dart';
 import 'theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Yakalanmayan hatalar anonim olarak kaydedilir (Telemetry, kişisel veri göndermez)
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    Telemetry.instance.error(details.exception, details.stack, type: 'flutter:${details.exception.runtimeType}');
+  };
+  PlatformDispatcher.instance.onError = (error, stack) {
+    Telemetry.instance.error(error, stack);
+    return true;
+  };
   final raw = await rootBundle.loadString('assets/content/content.json');
   final content = ContentRepo.fromJsonString(raw);
 
@@ -26,6 +38,8 @@ Future<void> main() async {
   }
   final user = UserData(store)..domainOf = content.domainOfTarget;
   await user.load();
+  await Telemetry.instance.init(store, usage: user.usageStats);
+  user.addListener(() => Telemetry.instance.usageEnabled = user.usageStats);
   final backend = Backend();
 
   runApp(ProviderScope(
@@ -41,6 +55,7 @@ Future<void> main() async {
   backend.attach(user);
   await backend.init();
   await backend.finishPendingMerge(user);
+  Telemetry.instance.event('app_open', {'account': backend.account.name, 'domains': user.activeDomains.length});
   final drafts = await backend.fetchShowDrafts();
   if (drafts != null) content.showDrafts = drafts;
   await backend.sync(user, pull: user.events.isEmpty && backend.account == AccountKind.email);
@@ -54,6 +69,21 @@ class LingoraApp extends ConsumerStatefulWidget {
 
 class _LingoraAppState extends ConsumerState<LingoraApp> {
   late final router = buildRouter(ref);
+
+  @override
+  void initState() {
+    super.initState();
+    router.routeInformationProvider.addListener(_onRoute);
+    _onRoute();
+  }
+
+  void _onRoute() => Telemetry.instance.screen(router.routeInformationProvider.value.uri.path);
+
+  @override
+  void dispose() {
+    router.routeInformationProvider.removeListener(_onRoute);
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

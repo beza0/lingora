@@ -9,6 +9,7 @@ import '../../app_state.dart';
 import '../../config.dart';
 import '../../services/backend.dart';
 import '../../theme.dart';
+import '../legal.dart';
 import '../widgets.dart';
 
 class ProfileScreen extends ConsumerStatefulWidget {
@@ -129,6 +130,18 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               ),
             ),
             SwitchListTile(
+              title: const Text('AI özellikleri'),
+              subtitle: const Text('Sohbet, rol yapma, yazma değerlendirmesi ve konuşma pratiği. Açıkken yazdıkların ve ses kayıtların Groq (ABD) tarafından işlenir.'),
+              value: user.aiConsent,
+              onChanged: (v) => user.setAiConsent(v),
+            ),
+            SwitchListTile(
+              title: const Text('Anonim kullanım istatistikleri'),
+              subtitle: const Text('Hangi ekranların kullanıldığını hesabınla ilişkilendirmeden gönderir; uygulamayı iyileştirmemize yardım eder.'),
+              value: user.usageStats,
+              onChanged: (v) => user.setUsageStats(v),
+            ),
+            SwitchListTile(
               title: const Text('Ses efektleri'),
               subtitle: const Text('Doğru, yanlış ve düğme sesleri'),
               value: user.soundOn,
@@ -148,7 +161,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                 final guest = backend.account == AccountKind.guest;
                 return ListTile(
                   title: const Text('Bugünkü AI kullanımı'),
-                  subtitle: Text('Sohbet ${u['chat'] ?? 0}/${guest ? 3 : 20} · Değerlendirme ${u['eval'] ?? 0}/${guest ? 10 : 50}'),
+                  subtitle: Text('Sohbet ${u['chat'] ?? 0}/${guest ? 10 : 20} · Değerlendirme ${u['eval'] ?? 0}/${guest ? 10 : 50}'),
                 );
               },
             ),
@@ -157,6 +170,13 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
         const SectionTitle('VERİLERİN'),
         Card(
           child: Column(children: [
+            for (final page in LegalPage.values)
+              ListTile(
+                leading: const Icon(Icons.description_outlined),
+                title: Text(page.title),
+                trailing: const Icon(Icons.open_in_new, size: 18),
+                onTap: () => openLegal(context, page),
+              ),
             ListTile(
               leading: const Icon(Icons.download_outlined),
               title: const Text('Verilerimi dışa aktar'),

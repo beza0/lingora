@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../app_state.dart';
 import '../services/backend.dart';
 import '../theme.dart';
+import 'legal.dart';
 
 /// İncelenmemiş (taslak) içerik rozeti. Test sürümünde bütün içerik taslaktır.
 class DraftBadge extends StatelessWidget {
@@ -201,4 +202,36 @@ Future<void> showReportSheet(BuildContext context, WidgetRef ref, {required Stri
       ),
     ),
   );
+}
+
+
+/// AI özellikleri kapalıyken gösterilir: neden kapalı olduğunu söyler ve açık rızayla açmayı sağlar.
+class AiConsentCard extends ConsumerWidget {
+  final String feature;
+  const AiConsentCard({super.key, this.feature = 'Bu özellik'});
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final p = context.pal;
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Row(children: [
+            Icon(Icons.auto_awesome_outlined, color: p.primary),
+            const SizedBox(width: 8),
+            const Expanded(child: Text('AI özellikleri kapalı', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16))),
+          ]),
+          const SizedBox(height: 8),
+          Text('$feature AI ile çalışıyor. Açarsan yazdıkların ve ses kayıtların işlenmek üzere yurt dışındaki '
+              'hizmet sağlayıcıya (Groq, ABD) gönderilir; ses kayıtları saklanmaz.'),
+          const LegalLink(LegalPage.kvkk, label: 'Ayrıntılar: KVKK aydınlatma metni'),
+          const SizedBox(height: 4),
+          FilledButton(
+            onPressed: () => ref.read(userProvider).setAiConsent(true),
+            child: const Text('Açık rıza veriyorum, AI\'ı aç'),
+          ),
+        ]),
+      ),
+    );
+  }
 }

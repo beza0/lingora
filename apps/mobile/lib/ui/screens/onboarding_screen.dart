@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app_state.dart';
+import '../../services/telemetry.dart';
 import '../../theme.dart';
 import '../widgets.dart';
 
@@ -99,7 +100,10 @@ class _DomainPickerScreenState extends ConsumerState<DomainPickerScreen> {
                 : () async {
                     final user = ref.read(userProvider);
                     await user.setDomains(selected);
-                    if (!widget.editing) await user.completeOnboarding();
+                    if (!widget.editing) {
+                      await user.completeOnboarding();
+                      Telemetry.instance.event('onboarding_done', {'domains': selected.length});
+                    }
                     ref.read(backendProvider).sync(user);
                     if (context.mounted) widget.editing ? context.pop() : context.go('/home');
                   },

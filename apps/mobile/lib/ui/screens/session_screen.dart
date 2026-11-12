@@ -10,6 +10,7 @@ import '../../services/sound_fx.dart';
 import '../../srs/answer_check.dart';
 import '../../srs/session.dart';
 import '../../theme.dart';
+import '../../services/telemetry.dart';
 import '../widgets.dart';
 import 'target_screen.dart';
 
@@ -103,6 +104,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
       if (next != d.level) await user.setLevel(widget.domainId, next);
     }
     ref.read(backendProvider).sync(user);
+    Telemetry.instance.event('session_done', {'domain': widget.domainId, 'answers': firstAttempts.length});
   }
 
   Future<void> _record(SessionStep s, Json ex, _Result r) async {

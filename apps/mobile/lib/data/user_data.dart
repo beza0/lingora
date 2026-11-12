@@ -150,6 +150,10 @@ class UserData extends ChangeNotifier {
   final Set<String> assessed = {};
   bool onboarded = false;
   bool dirtyMeta = false;
+  int termsVersion = 0; // kabul edilen kullanım şartları / gizlilik sürümü
+  bool aiConsent = false; // AI özellikleri için yurt dışına aktarım açık rızası
+  bool usageStats = true; // anonim kullanım istatistikleri
+  String? learningGoal; // ilk açılışta seçilen hedef (is, sinav, seyahat, gunluk)
 
   Future<void> load() async {
     final cardRows = await store.allCards();
@@ -186,6 +190,10 @@ class UserData extends ChangeNotifier {
       ..clear()
       ..addAll(((settings['assessed'] as List?) ?? const []).cast<String>());
     onboarded = settings['onboarded'] as bool? ?? false;
+    termsVersion = (settings['terms_version'] as num?)?.toInt() ?? 0;
+    aiConsent = settings['ai_consent'] as bool? ?? false;
+    learningGoal = settings['learning_goal'] as String?;
+    usageStats = settings['usage_stats'] as bool? ?? true;
     dirtyMeta = (await store.getKv('dirty_meta')) == '1';
     notifyListeners();
   }
@@ -213,6 +221,10 @@ class UserData extends ChangeNotifier {
         'assessed': assessed.toList(),
         'daily_goal': dailyGoal,
         if (reminderHour != null) 'reminder_hour': reminderHour,
+        'terms_version': termsVersion,
+        'ai_consent': aiConsent,
+        'usage_stats': usageStats,
+        if (learningGoal != null) 'learning_goal': learningGoal,
       }));
 
   Future<void> clearMetaDirty() async {
@@ -267,6 +279,35 @@ class UserData extends ChangeNotifier {
     assessed.add(domainId);
     await _saveSettings();
     await setLevel(domainId, level);
+  }
+
+  /// Kullanım şartları ve gizlilik metni sürümü. Metin değişince artırılır; kullanıcı yeniden onaylar.
+  static const currentTermsVersion = 1;
+  bool get needsConsent => termsVersion < currentTermsVersion;
+
+  Future<void> acceptTerms({required bool ai}) async {
+    termsVersion = currentTermsVersion;
+    aiConsent = ai;
+    await _saveSettings();
+    notifyListeners();
+  }
+
+  Future<void> setAiConsent(bool on) async {
+    aiConsent = on;
+    await _saveSettings();
+    notifyListeners();
+  }
+
+  Future<void> setUsageStats(bool on) async {
+    usageStats = on;
+    await _saveSettings();
+    notifyListeners();
+  }
+
+  Future<void> setLearningGoal(String goal) async {
+    learningGoal = goal;
+    await _saveSettings();
+    notifyListeners();
   }
 
   Future<void> setSound(bool on) async {
@@ -513,6 +554,9 @@ class UserData extends ChangeNotifier {
     custom.clear();
     onboarded = false;
     dirtyMeta = false;
+    termsVersion = 0;
+    aiConsent = false;
+    learningGoal = null;
     notifyListeners();
   }
 
