@@ -31,6 +31,30 @@ class HomeScreen extends ConsumerWidget {
             if (backend.syncing) const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2)),
           ]),
           const SizedBox(height: 12),
+          // İlk açılış: hızlı bir ilk başarı
+          if (user.events.isEmpty && user.activeDomains.isNotEmpty) ...[
+            Card(
+              color: p.primarySoft,
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+                  Row(children: [
+                    Icon(Icons.rocket_launch_outlined, color: p.primary),
+                    const SizedBox(width: 8),
+                    const Expanded(child: Text('İlk dersin hazır', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18))),
+                  ]),
+                  const SizedBox(height: 6),
+                  Text('2 dakikada ilk kelimelerini öğren. Hata yapmaktan çekinme; bilmediklerin doğru zamanda tekrar karşına çıkacak.', style: TextStyle(color: p.text)),
+                  const SizedBox(height: 12),
+                  FilledButton(
+                    onPressed: () => context.push('/session/${user.activeDomains.first.domainId}'),
+                    child: const Text('Hemen başla'),
+                  ),
+                ]),
+              ),
+            ),
+            const SizedBox(height: 12),
+          ],
           // Seri, günlük hedef ve haftalık etkinlik
           Card(
             child: Padding(

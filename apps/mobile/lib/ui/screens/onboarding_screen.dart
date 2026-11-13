@@ -14,10 +14,20 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  bool picking = false;
+  int step = 0; // 0 karşılama, 1 hedef, 2 alanlar
+  List<String> suggested = const [];
   @override
   Widget build(BuildContext context) {
-    if (picking) return const DomainPickerScreen(editing: false);
+    if (step == 2) return DomainPickerScreen(editing: false, suggested: suggested);
+    if (step == 1) {
+      return GoalScreen(
+        onBack: () => setState(() => step = 0),
+        onDone: (domains) => setState(() {
+          suggested = domains;
+          step = 2;
+        }),
+      );
+    }
     final p = context.pal;
     return Scaffold(
       body: SafeArea(
@@ -44,7 +54,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
             const Spacer(flex: 2),
-            FilledButton(onPressed: () => setState(() => picking = true), child: const Text('Başla')),
+            FilledButton(onPressed: () => setState(() => step = 1), child: const Text('Başla')),
             const SizedBox(height: 12),
             OutlinedButton(onPressed: () => context.push('/auth?mode=login'), child: const Text('Zaten hesabım var')),
           ]),
@@ -54,15 +64,106 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 }
 
+/// İlk açılış: öğrenme amacı ve günlük hedef. Amaca göre alan önerir.
+class GoalScreen extends ConsumerStatefulWidget {
+  final VoidCallback onBack;
+  final void Function(List<String> suggestedDomains) onDone;
+  const GoalScreen({super.key, required this.onBack, required this.onDone});
+  @override
+  ConsumerState<GoalScreen> createState() => _GoalScreenState();
+}
+
+const _goals = <(String, IconData, String, String, List<String>)>[
+  ('is', Icons.work_outline, 'İş ve kariyer', 'Toplantı, e-posta, iş görüşmesi', ['general', 'software']),
+  ('sinav', Icons.school_outlined, 'Sınav', 'YDS, YÖKDİL, akademik okuma', ['yds']),
+  ('seyahat', Icons.flight_takeoff, 'Seyahat', 'Otel, havalimanı, yol sorma', ['tourism', 'general']),
+  ('gunluk', Icons.forum_outlined, 'Günlük konuşma', 'Tanışma, alışveriş, sohbet', ['general']),
+  ('meslek', Icons.medical_services_outlined, 'Mesleğim için', 'Mühendislik, sağlık, hukuk', ['engineering', 'health', 'law']),
+];
+
+class _GoalScreenState extends ConsumerState<GoalScreen> {
+  String? goal;
+  int minutes = 10;
+
+  @override
+  Widget build(BuildContext context) {
+    final p = context.pal;
+    return Scaffold(
+      appBar: AppBar(leading: BackButton(onPressed: widget.onBack), title: const Text('Hedefin')),
+      body: ListView(padding: const EdgeInsets.fromLTRB(20, 0, 20, 24), children: [
+        const Text('İngilizceyi en çok ne için istiyorsun?', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+        const SizedBox(height: 6),
+        Text('Sana uygun alanları önereceğiz; sonra değiştirebilirsin.', style: TextStyle(color: p.muted)),
+        const SizedBox(height: 16),
+        for (final g in _goals) ...[
+          Semantics(
+            selected: goal == g.$1,
+            button: true,
+            child: Card(
+              color: goal == g.$1 ? p.primarySoft : null,
+              child: ListTile(
+                leading: Icon(g.$2, color: p.primary),
+                title: Text(g.$3, style: const TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: Text(g.$4),
+                trailing: goal == g.$1 ? Icon(Icons.check_circle, color: p.primary) : null,
+                onTap: () => setState(() => goal = g.$1),
+              ),
+            ),
+          ),
+          const SizedBox(height: 6),
+        ],
+        const SizedBox(height: 16),
+        const Text('Günde ne kadar zaman ayırabilirsin?', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+        const SizedBox(height: 10),
+        SegmentedButton<int>(
+          segments: const [
+            ButtonSegment(value: 5, label: Text('5 dk')),
+            ButtonSegment(value: 10, label: Text('10 dk')),
+            ButtonSegment(value: 20, label: Text('20 dk')),
+          ],
+          selected: {minutes},
+          onSelectionChanged: (v) => setState(() => minutes = v.first),
+        ),
+        const SizedBox(height: 8),
+        Text('Kısa ama her gün çalışmak, uzun ama ara sıra çalışmaktan daha etkili.', style: TextStyle(color: p.muted, fontSize: 13)),
+      ]),
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 8, 20, 12),
+          child: FilledButton(
+            onPressed: goal == null
+                ? null
+                : () async {
+                    final user = ref.read(userProvider);
+                    await user.setLearningGoal(goal!);
+                    // Dakikayı günlük hedef sayısına çevir: dakikada yaklaşık 3 alıştırma
+                    await user.setDailyGoal(minutes * 3);
+                    Telemetry.instance.event('goal', {'goal': goal, 'minutes': minutes});
+                    widget.onDone(_goals.firstWhere((g) => g.$1 == goal).$5);
+                  },
+            child: const Text('Devam'),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class DomainPickerScreen extends ConsumerStatefulWidget {
   final bool editing;
-  const DomainPickerScreen({super.key, required this.editing});
+  final List<String> suggested;
+  const DomainPickerScreen({super.key, required this.editing, this.suggested = const []});
   @override
   ConsumerState<DomainPickerScreen> createState() => _DomainPickerScreenState();
 }
 
 class _DomainPickerScreenState extends ConsumerState<DomainPickerScreen> {
-  late final List<String> selected = ref.read(userProvider).activeDomains.map((d) => d.domainId).toList();
+  late final List<String> selected = () {
+    final current = ref.read(userProvider).activeDomains.map((d) => d.domainId).toList();
+    if (current.isNotEmpty || widget.editing) return current;
+    final known = ref.read(contentProvider).domainList.map((d) => d['id'] as String).toSet();
+    return widget.suggested.where(known.contains).toList();
+  }();
 
   @override
   Widget build(BuildContext context) {
@@ -74,6 +175,10 @@ class _DomainPickerScreenState extends ConsumerState<DomainPickerScreen> {
         if (!widget.editing) ...[
           const Text('Hangi alanlarda çalışmak istersin?', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
           const SizedBox(height: 6),
+          if (widget.suggested.isNotEmpty) ...[
+            Text('Hedefine göre önerdiklerimizi seçtik.', style: TextStyle(color: p.primary, fontWeight: FontWeight.w600)),
+            const SizedBox(height: 4),
+          ],
         ],
         Text('Birden fazla seçebilirsin. Sıra, ana sayfadaki sırayı belirler.', style: TextStyle(color: p.muted)),
         const SizedBox(height: 16),

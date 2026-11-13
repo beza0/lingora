@@ -204,7 +204,11 @@ class _SpeakScreenState extends ConsumerState<SpeakScreen> {
     final recording = phase == _Phase.recording;
     final checking = phase == _Phase.checking;
     return Column(children: [
-      SizedBox(
+      Semantics(
+        button: true,
+        label: checking ? 'Dinleniyor' : (recording ? 'Kaydı bitir' : 'Cümleyi söylemek için kaydı başlat'),
+        excludeSemantics: true,
+        child: SizedBox(
         width: 88,
         height: 88,
         child: FilledButton(
@@ -213,6 +217,7 @@ class _SpeakScreenState extends ConsumerState<SpeakScreen> {
           child: checking
               ? const SizedBox(width: 28, height: 28, child: CircularProgressIndicator(strokeWidth: 3, color: Colors.white))
               : Icon(recording ? Icons.stop : Icons.mic, size: 40, color: Colors.white),
+        ),
         ),
       ),
       const SizedBox(height: 10),
@@ -234,8 +239,18 @@ class _SpeakScreenState extends ConsumerState<SpeakScreen> {
         const SizedBox(height: 6),
         Text('Duyulan: “${m.heard.isEmpty ? '—' : m.heard}”', style: TextStyle(color: p.muted)),
         if (missed.isNotEmpty) ...[
+          const SizedBox(height: 8),
+          const Text('Duyulmayan veya farklı duyulan kelimeler — dokunup tek tek dinle:'),
           const SizedBox(height: 6),
-          Text('Duyulmayan veya farklı duyulan: ${missed.join(', ')}. Bu kelimeleri dinleyip tekrar söyleyebilirsin.'),
+          Wrap(spacing: 6, runSpacing: 6, children: [
+            for (final w in missed)
+              ActionChip(
+                avatar: const Icon(Icons.volume_up_outlined, size: 18),
+                label: Text(w),
+                tooltip: '$w kelimesini dinle',
+                onPressed: () => speakOrExplain(context, ref, w.replaceAll(RegExp(r"[^A-Za-z0-9'’-]"), '')),
+              ),
+          ]),
         ],
       ]),
     );

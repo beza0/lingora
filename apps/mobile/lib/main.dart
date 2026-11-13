@@ -91,6 +91,11 @@ class _LingoraAppState extends ConsumerState<LingoraApp> {
     return MaterialApp.router(
       title: 'Lingora',
       debugShowCheckedModeBanner: false,
+      // Sistem yazı boyutuna uyulur; düzen bozulmasın diye en fazla 1,6 kat
+      builder: (context, child) {
+        final mq = MediaQuery.of(context);
+        return MediaQuery(data: mq.copyWith(textScaler: mq.textScaler.clamp(minScaleFactor: 0.9, maxScaleFactor: 1.6)), child: child!);
+      },
       theme: buildTheme(Palette.light, Brightness.light),
       darkTheme: buildTheme(Palette.dark, Brightness.dark),
       themeMode: switch (mode) {
