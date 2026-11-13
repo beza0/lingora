@@ -13,6 +13,7 @@ import { TargetEditor } from "./pages/TargetEditor";
 import { Entities } from "./pages/Entities";
 import { Import } from "./pages/Import";
 import { Reports } from "./pages/Reports";
+import { Metrics } from "./pages/Metrics";
 import { History } from "./pages/History";
 
 const queryClient = new QueryClient({ defaultOptions: { queries: { retry: 1, refetchOnWindowFocus: false } } });
@@ -49,6 +50,7 @@ createRoot(document.getElementById("root")!).render(
                 <Route path="/entities/:table" element={<Entities />} />
                 <Route path="/import" element={<Import />} />
                 <Route path="/reports" element={<Reports />} />
+                <Route path="/metrics" element={<Metrics />} />
                 <Route path="/history" element={<History />} />
               </Route>
             </Routes>

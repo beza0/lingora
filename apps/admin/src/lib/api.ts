@@ -121,3 +121,14 @@ export async function applyImport(plan: ImportPlan, onProgress?: (table: string,
     }
   }
 }
+
+export type Metrics = {
+  days: { day: string; active: number; new: number; cohort: number; d1: number; d7: number }[];
+  events: { event: string; count: number; installs: number }[];
+  errors: { error_type: string; message: string | null; screen: string | null; count: number; last: string; app_version: string | null }[];
+  totals: { installs: number; accounts: number; guests: number };
+};
+
+export async function getMetrics(days = 30) {
+  return must(await db().rpc("admin_metrics", { p_days: days })) as Metrics;
+}

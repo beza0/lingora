@@ -9,6 +9,7 @@ const items = [
   { to: "/entities/packs", label: "Paketler ve diğer içerik" },
   { to: "/import", label: "Toplu aktarım" },
   { to: "/reports", label: "Hata bildirimleri" },
+  { to: "/metrics", label: "Metrikler" },
   { to: "/history", label: "Değişiklik geçmişi" },
 ];
 
