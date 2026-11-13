@@ -1,0 +1,536 @@
+id: law-court
+domain: law
+title: "Dava ve mahkeme süreci"
+desc: "Dava açma, duruşma, tanık, karar ve itiraz süreçlerinde kullanılan temel İngilizce."
+sort: 2
+
+targets:
+  - id: lawsuit
+    w: lawsuit
+    pos: n
+    tr: "dava"
+    ex: "The company filed a [[lawsuit]] against its former supplier."
+    extr: "Şirket eski tedarikçisine karşı dava açtı."
+    d: 2
+    col: ["file a lawsuit", "settle a lawsuit", "lawsuit against"]
+    syn: ["case", "suit"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "law school | Hukuk fakültesi demektir."
+      - "lawn suit | Anlamsız bir ifade."
+      - "lawsuits | Tek bir davadan söz ediliyor."
+  - id: plaintiff
+    w: plaintiff
+    pos: n
+    tr: "davacı"
+    ex: "The [[plaintiff]] is asking for 50,000 euros in damages."
+    extr: "Davacı 50.000 avro tazminat talep ediyor."
+    d: 3
+    col: ["the plaintiff's lawyer", "plaintiff and defendant"]
+    syn: ["claimant (İng.)"]
+    conf: ["defendant | Davalı; davacının karşı tarafı."]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "defendant | Davalı demektir; davacı değil."
+      - "plaintive | Hüzünlü, yakınan demektir."
+      - "planet | Gezegen demektir."
+  - id: defendant
+    w: defendant
+    pos: n
+    tr: "davalı, sanık"
+    ex: "The [[defendant]] denies all the allegations."
+    extr: "Davalı tüm iddiaları reddediyor."
+    d: 3
+    col: ["the defendant's lawyer", "the defendant pleaded"]
+    fam: ["defend (f.) savunmak", "defence (i.) savunma"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "dependant | Bakmakla yükümlü olunan kişi demektir."
+      - "plaintiff | Davacı demektir."
+      - "descendant | Torun, soyundan gelen demektir."
+  - id: hearing
+    w: hearing
+    pos: n
+    tr: "duruşma"
+    ex: "The next [[hearing]] is scheduled for 14 March."
+    extr: "Bir sonraki duruşma 14 Mart'a planlandı."
+    d: 2
+    col: ["court hearing", "attend a hearing", "postpone the hearing"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "hearing aid | İşitme cihazı demektir."
+      - "heating | Isıtma demektir."
+      - "herring | Ringa balığı demektir."
+  - id: judge
+    w: judge
+    pos: n
+    tr: "hâkim, yargıç"
+    ex: "The [[judge]] asked both parties to submit their documents."
+    extr: "Hâkim iki taraftan da belgelerini sunmalarını istedi."
+    d: 1
+    col: ["the judge ruled", "presiding judge"]
+    fam: ["judgment (i.) karar, hüküm"]
+    tone: ["Hukuk"]
+    dis:
+      - "jury | Jüri demektir."
+      - "judgement | Karar demektir; kişi değil."
+      - "jug | Sürahi demektir."
+  - id: witness
+    w: witness
+    pos: n
+    tr: "tanık"
+    ex: "The [[witness]] saw the accident from her window."
+    extr: "Tanık kazayı penceresinden gördü."
+    d: 2
+    col: ["call a witness", "witness statement", "expert witness"]
+    fam: ["witness (f.) tanık olmak"]
+    tone: ["Hukuk"]
+    dis:
+      - "witless | Akılsız demektir."
+      - "witch | Cadı demektir."
+      - "fitness | Zindelik demektir."
+  - id: ruling
+    w: ruling
+    pos: n
+    tr: "(mahkeme) karar(ı)"
+    ex: "The court's [[ruling]] can be appealed within two weeks."
+    extr: "Mahkemenin kararına iki hafta içinde itiraz edilebilir."
+    d: 3
+    col: ["court ruling", "issue a ruling", "rule in favour of"]
+    syn: ["decision", "judgment"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "ruler | Cetvel ya da hükümdar demektir."
+      - "rolling | Yuvarlanan demektir."
+      - "routine | Rutin demektir."
+  - id: appeal
+    w: appeal
+    pos: v
+    tr: "(karara) itiraz etmek, üst mahkemeye başvurmak"
+    ex: "We intend to [[appeal]] against the decision."
+    extr: "Karara itiraz etmeyi düşünüyoruz."
+    d: 3
+    col: ["appeal against", "court of appeal", "lodge an appeal"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "apply | Başvurmak (genel); karar itirazı için “appeal”."
+      - "appear | Görünmek demektir."
+      - "applaud | Alkışlamak demektir."
+  - id: settle
+    w: settle
+    pos: v
+    tr: "(davayı) sulhen çözmek, uzlaşmak"
+    ex: "The parties agreed to [[settle]] the dispute out of court."
+    extr: "Taraflar anlaşmazlığı mahkeme dışında çözmeyi kabul etti."
+    d: 3
+    col: ["settle out of court", "settlement agreement"]
+    fam: ["settlement (i.) sulh, uzlaşma"]
+    tone: ["Hukuk"]
+    dis:
+      - "settle down | Yerleşmek, sakinleşmek demektir."
+      - "set | Koymak demektir."
+      - "saddle | Eyer demektir."
+  - id: dispute
+    w: dispute
+    pos: n
+    tr: "uyuşmazlık, anlaşmazlık"
+    ex: "The [[dispute]] concerns unpaid invoices from last year."
+    extr: "Uyuşmazlık geçen yılın ödenmemiş faturalarıyla ilgili."
+    d: 2
+    col: ["legal dispute", "resolve a dispute", "in dispute"]
+    syn: ["disagreement", "conflict"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "dispose | Elden çıkarmak demektir."
+      - "dispatch | Sevk etmek demektir."
+      - "despite | -e rağmen demektir."
+  - id: damages
+    w: damages
+    pos: n
+    tr: "tazminat (miktarı)"
+    ex: "The court awarded the employee 20,000 euros in [[damages]]."
+    extr: "Mahkeme çalışana 20.000 avro tazminat verdi."
+    d: 3
+    col: ["claim damages", "award damages", "pay damages"]
+    conf: ["damage | Tekil hâli hasar demektir; tazminat için çoğul “damages”."]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "damage | Hasar demektir."
+      - "dangers | Tehlikeler demektir."
+      - "managers | Yöneticiler demektir."
+  - id: statement
+    w: statement
+    pos: n
+    tr: "ifade, beyan"
+    ex: "Please read your [[statement]] carefully before you sign it."
+    extr: "İmzalamadan önce lütfen ifadenizi dikkatle okuyun."
+    d: 2
+    col: ["make a statement", "witness statement", "written statement"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "statue | Heykel demektir."
+      - "state | Devlet ya da durum demektir."
+      - "settlement | Uzlaşma demektir."
+  - id: allegation
+    w: allegation
+    pos: n
+    tr: "iddia"
+    ex: "There is no evidence to support the [[allegation]]."
+    extr: "İddiayı destekleyen hiçbir delil yok."
+    d: 3
+    col: ["deny the allegations", "serious allegation"]
+    fam: ["allege (f.) iddia etmek", "alleged (s.) iddia edilen"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "allocation | Tahsis demektir."
+      - "alligator | Timsah demektir."
+      - "allegiance | Bağlılık demektir."
+  - id: jurisdiction
+    w: jurisdiction
+    pos: n
+    tr: "yargı yetkisi"
+    ex: "This court has no [[jurisdiction]] over disputes abroad."
+    extr: "Bu mahkemenin yurt dışındaki uyuşmazlıklar üzerinde yargı yetkisi yok."
+    d: 4
+    col: ["have jurisdiction over", "outside the jurisdiction"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "justification | Gerekçe demektir."
+      - "jurisprudence | İçtihat, hukuk bilimi demektir."
+      - "direction | Yön demektir."
+  - id: verdict
+    w: verdict
+    pos: n
+    tr: "(jüri) kararı, hüküm"
+    ex: "The jury reached a [[verdict]] after two days."
+    extr: "Jüri iki gün sonra karara vardı."
+    d: 3
+    col: ["reach a verdict", "guilty verdict"]
+    tone: ["Hukuk"]
+    dis:
+      - "verdant | Yemyeşil demektir."
+      - "version | Sürüm demektir."
+      - "verbal | Sözlü demektir."
+  - id: legal-advice
+    w: legal advice
+    pos: n
+    tr: "hukuki danışmanlık, hukuki görüş"
+    ex: "You should get [[legal advice]] before you sign anything."
+    extr: "Bir şey imzalamadan önce hukuki danışmanlık almalısınız."
+    d: 2
+    col: ["seek legal advice", "free legal advice"]
+    conf: ["advise | Fiil (tavsiye etmek); isim “advice”."]
+    tone: ["Hukuk"]
+    dis:
+      - "legal advise | “advise” fiildir; isim “advice”."
+      - "legal advices | “advice” sayılamaz."
+      - "legal device | “device” cihaz demektir."
+  - id: court-fees
+    w: court fees
+    pos: n
+    tr: "yargılama giderleri, harçlar"
+    ex: "The losing party usually pays the [[court fees]]."
+    extr: "Yargılama giderlerini genellikle kaybeden taraf öder."
+    d: 3
+    col: ["legal costs", "pay the court fees"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "court feeds | “feeds” beslemeler demektir."
+      - "cord fees | “cord” kablo, ip demektir."
+      - "court free | “free” ücretsiz demektir."
+  - id: file
+    w: file
+    pos: v
+    tr: "(dava, başvuru) açmak, sunmak"
+    ex: "You must [[file]] the claim within three years."
+    extr: "Talebi üç yıl içinde açmalısınız."
+    d: 3
+    col: ["file a claim", "file a complaint", "file for divorce"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "fill | Doldurmak demektir."
+      - "fire | Kovmak demektir."
+      - "fail | Başarısız olmak demektir."
+  - id: adjourned
+    w: adjourned
+    pos: adj
+    tr: "ertelenmiş (duruşma)"
+    ex: "The hearing was [[adjourned]] until next month."
+    extr: "Duruşma gelecek aya ertelendi."
+    d: 4
+    col: ["adjourn a hearing", "the court is adjourned"]
+    syn: ["postponed"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "adjusted | Ayarlanmış demektir."
+      - "adjoined | Bitişik demektir."
+      - "abandoned | Terk edilmiş demektir."
+  - id: guilty
+    w: guilty
+    pos: adj
+    tr: "suçlu"
+    ex: "He was found [[guilty]] of fraud."
+    extr: "Dolandırıcılıktan suçlu bulundu."
+    d: 2
+    col: ["found guilty", "plead guilty", "not guilty"]
+    fam: ["guilt (i.) suç, suçluluk"]
+    tone: ["Hukuk"]
+    dis:
+      - "guilt | İsim; burada sıfat gerekir."
+      - "gully | Dere yatağı demektir."
+      - "quietly | Sessizce demektir."
+
+patterns:
+  - id: we-intend-to
+    t: "We intend to … on behalf of our client."
+    ex: "We [[intend to]] file a claim on behalf of our client."
+    extr: "Müvekkilimiz adına bir talepte bulunmayı düşünüyoruz."
+    ttr: "Müvekkilimiz adına … düşünüyoruz."
+    slots: ["file a claim | talepte bulunmayı", "appeal the decision | karara itiraz etmeyi", "settle the dispute | uyuşmazlığı sulhen çözmeyi"]
+    chunks: ["We intend to | -meyi düşünüyoruz", "on behalf of our client | müvekkilimiz adına"]
+    g: legal-modals
+    ctx: ["Hukuki yazışma"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "intend filing | “intend” genellikle “to + fiil” alır."
+      - "attend to | “attend” katılmak demektir."
+      - "intent to | İsim; fiil “intend” gerekir."
+  - id: the-hearing-has-been
+    t: "The hearing has been … to …"
+    ex: "The hearing has been [[postponed]] to 3 June."
+    extr: "Duruşma 3 Haziran'a ertelendi."
+    ttr: "Duruşma 3 Haziran'a …"
+    slots: ["postponed | ertelendi.", "moved | alındı.", "rescheduled | yeniden planlandı."]
+    chunks: ["The hearing | duruşma", "has been postponed | ertelendi", "to 3 June | 3 Haziran'a"]
+    g: past-passive
+    ctx: ["Dava süreci"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "has postponed | Edilgen anlam için “has been postponed”."
+      - "is postpone | Üçüncü hâl gerekir."
+      - "has been postpone | Üçüncü hâl gerekir: postponed."
+  - id: according-to-the-witness
+    t: "According to the …, …"
+    ex: "According to the [[witness]], the car was going too fast."
+    extr: "Tanığa göre araba çok hızlı gidiyordu."
+    ttr: "…, araba çok hızlı gidiyordu."
+    slots: ["witness | Tanığa göre", "police report | Polis raporuna göre", "expert | Bilirkişiye göre"]
+    chunks: ["According to | -e göre", "the witness | tanık"]
+    g: reporting-verbs
+    ctx: ["Dava süreci"]
+    tone: ["Resmî", "Nesnel"]
+    d: 2
+    dis:
+      - "According the | “to” eksik."
+      - "Accordingly to | “accordingly” bu nedenle demektir."
+      - "According with | Edat “to” olmalı."
+  - id: my-client-denies
+    t: "My client denies …"
+    ex: "My client [[denies]] any wrongdoing."
+    extr: "Müvekkilim herhangi bir yanlış yaptığını reddediyor."
+    ttr: "Müvekkilim … reddediyor."
+    slots: ["any wrongdoing | herhangi bir yanlış yaptığını", "the allegations | iddiaları", "breaching the contract | sözleşmeyi ihlal ettiğini"]
+    chunks: ["My client | müvekkilim", "denies | reddediyor", "any wrongdoing | herhangi bir kusuru"]
+    g: reporting-verbs
+    ctx: ["Dava süreci"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "refuses | “refuse” bir şeyi yapmayı reddetmek demektir; iddiayı inkâr için “deny”."
+      - "denys | Yazım: denies."
+      - "rejects to | Yapı yanlış."
+  - id: the-court-ruled-that
+    t: "The court ruled that …"
+    ex: "The court [[ruled that]] the contract was void."
+    extr: "Mahkeme sözleşmenin geçersiz olduğuna karar verdi."
+    ttr: "Mahkeme … karar verdi."
+    slots: ["the contract was void | sözleşmenin geçersiz olduğuna", "the employer must pay damages | işverenin tazminat ödemesi gerektiğine", "the claim was time-barred | talebin zamanaşımına uğradığına"]
+    chunks: ["The court ruled | mahkeme karar verdi", "that … | …-dığına"]
+    g: reporting-verbs
+    ctx: ["Karar"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "ruled about | “ruled that” ile yan cümle kurulur."
+      - "ruled to | Bu anlamda “to” kullanılmaz."
+      - "rolled that | “rolled” yuvarlandı demektir."
+  - id: we-would-advise
+    t: "We would advise you to …"
+    ex: "We would [[advise]] you to keep all receipts."
+    extr: "Tüm fişleri saklamanızı tavsiye ederiz."
+    ttr: "… tavsiye ederiz."
+    slots: ["keep all receipts | Tüm fişleri saklamanızı", "seek legal advice | Hukuki danışmanlık almanızı", "respond in writing | Yazılı olarak cevap vermenizi"]
+    chunks: ["We would advise you | size tavsiye ederiz", "to keep | saklamanızı"]
+    g: legal-modals
+    ctx: ["Hukuki yazışma"]
+    tone: ["Resmî", "Kibar"]
+    d: 3
+    dis:
+      - "advice you | “advice” isimdir; fiil “advise”."
+      - "advise you keeping | Yapı “advise someone to + fiil”."
+      - "advise to you | Kişi doğrudan nesne olur: advise you."
+  - id: you-are-required-to
+    t: "You are required to submit … by …"
+    ex: "You are [[required to]] submit the documents by Friday."
+    extr: "Belgeleri cumaya kadar sunmanız gerekmektedir."
+    ttr: "… sunmanız gerekmektedir."
+    slots: ["submit the documents by Friday | Belgeleri cumaya kadar", "submit the evidence by 10 May | Delilleri 10 Mayıs'a kadar", "submit your statement within 7 days | İfadenizi 7 gün içinde"]
+    chunks: ["You are required to | -meniz gerekmektedir", "by Friday | cumaya kadar"]
+    g: legal-modals
+    ctx: ["Resmî yazı"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "required for | Fiil öncesi “to” gerekir."
+      - "require to | Edilgen yapı: are required to."
+      - "requested submitting | Yapı yanlış."
+  - id: in-light-of
+    t: "In light of …, we …"
+    ex: "In [[light of]] the new evidence, we will ask for a retrial."
+    extr: "Yeni deliller ışığında yeniden yargılama talep edeceğiz."
+    ttr: "… ışığında yeniden yargılama talep edeceğiz."
+    slots: ["the new evidence | Yeni deliller", "the expert report | Bilirkişi raporu", "these facts | Bu olgular"]
+    chunks: ["In light of | ışığında", "we will ask for | talep edeceğiz"]
+    g: legal-conditions
+    ctx: ["Hukuki yazışma"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "In lights of | Kalıp tekil: light."
+      - "On light of | Edat “in” olmalı."
+      - "In the light from | Kalıp “in (the) light of”."
+  - id: the-deadline-for
+    t: "The deadline for … is …"
+    ex: "The [[deadline]] for filing an appeal is 14 days."
+    extr: "İtiraz için süre 14 gündür."
+    ttr: "… için süre 14 gündür."
+    slots: ["filing an appeal | İtiraz", "submitting evidence | Delil sunma", "responding to the claim | Talebe cevap verme"]
+    chunks: ["The deadline for | … için son tarih / süre", "is 14 days | 14 gündür"]
+    g: legal-conditions
+    ctx: ["Dava süreci"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "dead line | Tek kelime yazılır."
+      - "headline | Başlık demektir."
+      - "deadlock | Çıkmaz demektir."
+  - id: without-admitting
+    t: "without admitting …"
+    ex: "The company agreed to pay [[without admitting]] liability."
+    extr: "Şirket sorumluluğu kabul etmeden ödemeyi kabul etti."
+    ttr: "Şirket … kabul etmeden ödemeyi kabul etti."
+    slots: ["liability | sorumluluğu", "any fault | herhangi bir kusuru", "the allegations | iddiaları"]
+    chunks: ["without admitting | kabul etmeden", "liability | sorumluluk"]
+    g: legal-conditions
+    ctx: ["Sulh"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "without admit | Edat sonrası -ing gelir."
+      - "without to admit | “to” kullanılmaz."
+      - "without admission of to | Yapı bozuk."
+
+grammar:
+  - id: court-passive-reporting
+    title: "Mahkeme dili: edilgen yapı ve aktarma fiilleri"
+    short: "Mahkeme sürecini anlatırken edilgen (was adjourned, was found guilty) ve aktarma fiilleri (ruled that, claimed that, denied …) sık kullanılır."
+    long: "Edilgen: The hearing was adjourned (duruşma ertelendi). He was found guilty (suçlu bulundu). The case was dismissed (dava reddedildi). Aktarma: The court ruled that … (mahkeme … karar verdi), The plaintiff claims that … (davacı … iddia ediyor), The defendant denied the allegations (davalı iddiaları reddetti). deny sonrası isim ya da -ing gelir: denied breaching the contract."
+    ex: ["The case was dismissed. | Dava reddedildi.", "The plaintiff claims that the goods were damaged. | Davacı malların hasarlı olduğunu iddia ediyor.", "The defendant denied breaching the contract. | Davalı sözleşmeyi ihlal ettiğini reddetti."]
+  - id: formal-advice-requirements
+    title: "Resmî tavsiye ve zorunluluk: must, are required to, we would advise"
+    short: "Avukat yazışmasında zorunluluk “must / are required to”, tavsiye “we would advise you to / it is advisable to” ile verilir."
+    long: "Zorunluluk: You must file the appeal within 14 days. You are required to attend the hearing. Tavsiye: We would advise you to keep copies of all documents. It is advisable to seek legal advice. Olasılık: The court may ask for further evidence. Yumuşak dil: We would be grateful if you could send …"
+    ex: ["You are required to attend the hearing in person. | Duruşmaya bizzat katılmanız gerekmektedir.", "We would advise you not to sign the agreement yet. | Sözleşmeyi henüz imzalamamanızı tavsiye ederiz.", "The court may ask for further evidence. | Mahkeme ek delil isteyebilir."]
+
+scenarios:
+  - id: client-meeting
+    title: "Müvekkille ilk görüşme"
+    sit: "Bir hukuk bürosunda stajyersin. Yabancı bir müvekkil, eski işvereninin maaşını ödemediğini söylüyor."
+    d: 3
+    targets: [dispute, lawsuit, statement]
+    turns:
+      - ["Client", "My former employer hasn't paid my last two salaries. What can I do?", "Eski işverenim son iki maaşımı ödemedi. Ne yapabilirim?"]
+      - choose:
+          - ["I'm sorry to hear that. Do you have your employment contract and payslips?", true, "Empati kurup gerekli belgeleri soruyor."]
+          - ["You must sue them tomorrow.", false, "Bilgi almadan kesin tavsiye vermek uygun değil."]
+          - ["Why you didn't ask money?", false, "Soru yapısı bozuk ve suçlayıcı."]
+      - ["Client", "Yes, I have both. Should I go to court?", "Evet, ikisi de var. Mahkemeye gitmeli miyim?"]
+      - choose:
+          - ["First we would advise you to send a formal letter. If they don't pay, we can file a lawsuit.", true, "Aşamalı ve resmî bir tavsiye veriyor."]
+          - ["Yes, court is always the best.", false, "Kesin ve gerçekçi olmayan bir yargı."]
+          - ["We would advice you to wait.", false, "“advice” isimdir; fiil “advise” olmalı."]
+      - ["Client", "That sounds sensible. How long do I have to file a claim?", "Mantıklı görünüyor. Talep için ne kadar sürem var?"]
+  - id: hearing-update
+    title: "Duruşma ertelendi"
+    sit: "Yabancı müvekkile telefonda duruşmanın ertelendiğini haber veriyorsun."
+    d: 3
+    targets: [hearing, adjourned, witness]
+    turns:
+      - ["Client", "Hello, is everything ready for tomorrow's hearing?", "Merhaba, yarınki duruşma için her şey hazır mı?"]
+      - choose:
+          - ["I'm afraid the hearing has been adjourned until 3 June.", true, "Kötü haberi kibarca ve doğru edilgen yapıyla veriyor."]
+          - ["The hearing adjourned you.", false, "Anlamsız bir cümle."]
+          - ["Tomorrow is cancel.", false, "Eksik ve yanlış yapı."]
+      - ["Client", "Oh no. Why?", "Olamaz. Neden?"]
+      - choose:
+          - ["One of the witnesses is ill and can't attend.", true, "Gerekçeyi açık ve doğru anlatıyor."]
+          - ["Because witness sick.", false, "Fiil ve tanımlık eksik."]
+          - ["I don't know, the judge is lazy.", false, "Profesyonel olmayan bir açıklama."]
+      - ["Client", "I see. Do I need to do anything before then?", "Anlıyorum. O zamana kadar bir şey yapmam gerekiyor mu?"]
+
+readings:
+  - id: court-notice
+    title: "Notice of hearing"
+    kind: "Duruşma tebligatı"
+    d: 3
+    s:
+      - ["You are hereby notified that a hearing will take place on 14 March at 10:00.", "14 Mart saat 10.00'da bir duruşma yapılacağı işbu yazıyla tarafınıza bildirilir."]
+      - ["The hearing will be held at Court Room 3, Istanbul Commercial Court.", "Duruşma İstanbul Ticaret Mahkemesi 3 No'lu Salonda yapılacaktır."]
+      - ["You are required to attend in person or be represented by a lawyer.", "Bizzat katılmanız veya bir avukat tarafından temsil edilmeniz gerekmektedir."]
+      - ["Any written evidence must be submitted no later than seven days before the hearing.", "Yazılı deliller duruşmadan en geç yedi gün önce sunulmalıdır."]
+      - ["If you fail to attend, the court may decide the case in your absence.", "Katılmamanız hâlinde mahkeme davayı yokluğunuzda karara bağlayabilir."]
+    gloss: ["hereby notified | işbu yazıyla bildirilir", "in person | bizzat", "be represented by | tarafından temsil edilmek", "in your absence | yokluğunuzda"]
+    q:
+      - q: "Yazılı deliller en geç ne zaman sunulmalı?"
+        o: ["Duruşma günü", "Duruşmadan yedi gün önce", "Duruşmadan bir gün sonra"]
+        a: 1
+        why: "“no later than seven days before the hearing”"
+      - q: "Katılım olmazsa ne olabilir?"
+        o: ["Duruşma iptal edilir", "Dava yokluğunda karara bağlanabilir", "Ceza ödenir"]
+        a: 1
+        why: "“the court may decide the case in your absence”"
+  - id: case-summary
+    title: "Case summary"
+    kind: "Dava özeti"
+    d: 3
+    s:
+      - ["The plaintiff, a software company, claims that the defendant failed to pay for services delivered in 2025.", "Davacı bir yazılım şirketi, davalının 2025'te verilen hizmetlerin bedelini ödemediğini iddia ediyor."]
+      - ["The defendant denies the allegation and argues that the software did not work as agreed.", "Davalı iddiayı reddediyor ve yazılımın kararlaştırıldığı gibi çalışmadığını ileri sürüyor."]
+      - ["An expert witness examined the system and found several serious defects.", "Bir bilirkişi sistemi inceledi ve birkaç ciddi kusur buldu."]
+      - ["The court ruled that the defendant must pay half of the invoice.", "Mahkeme davalının faturanın yarısını ödemesi gerektiğine karar verdi."]
+      - ["Both parties have 14 days to appeal against the ruling.", "Her iki tarafın da karara itiraz etmek için 14 günü var."]
+    gloss: ["services delivered | verilen hizmetler", "argue | ileri sürmek", "defect | kusur", "appeal against | -e itiraz etmek"]
+    q:
+      - q: "Davalı neden ödeme yapmadığını söylüyor?"
+        o: ["Fatura hiç gelmediği için", "Yazılım kararlaştırıldığı gibi çalışmadığı için", "Şirket iflas ettiği için"]
+        a: 1
+        why: "“argues that the software did not work as agreed”"
+      - q: "Mahkeme ne karar verdi?"
+        o: ["Davalı faturanın tamamını ödeyecek", "Davalı faturanın yarısını ödeyecek", "Dava reddedildi"]
+        a: 1
+        why: "“the defendant must pay half of the invoice”"
+
+writing:
+  id: client-update-email
+  p: "Yabancı bir müvekkile 3–4 cümlelik resmî bir e-posta yaz: duruşmanın ertelendiğini bildir, yeni tarihi ver ve ondan istenen bir belgeyi belirt."
+  rubric: ["Resmî açılış ve kapanış var (Dear …, Kind regards)", "Edilgen yapı doğru kullanılmış (has been adjourned / postponed)", "İstenen işlem açık ve kibar (You are required to … / We would be grateful if …)"]
+  samples: ["Dear Mr Smith, I am writing to inform you that the hearing has been adjourned until 3 June at 10:00. One of the witnesses is unable to attend on the original date. We would be grateful if you could send us a copy of your employment contract by 20 May. Kind regards, Selin Demir"]
+  d: 3
+
+situations:
+  - { parent: "Dava", name: "Taraflar ve dava açma", items: [lawsuit, plaintiff, defendant, dispute, file, jurisdiction, we-intend-to, the-deadline-for] }
+  - { parent: "Dava", name: "Duruşma ve deliller", items: [hearing, judge, witness, statement, allegation, adjourned, the-hearing-has-been, according-to-the-witness, my-client-denies] }
+  - { parent: "Karar", name: "Karar, itiraz ve sulh", items: [ruling, verdict, guilty, appeal, settle, damages, court-fees, the-court-ruled-that, without-admitting, in-light-of] }
+  - { parent: "Danışmanlık", name: "Müvekkile tavsiye", items: [legal-advice, we-would-advise, you-are-required-to] }

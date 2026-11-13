@@ -1,0 +1,527 @@
+id: tourism-city
+domain: tourism
+title: "Şehirde gezmek ve yemek"
+desc: "Restoranda sipariş, toplu taşıma, bilet alma, müze ve tur bilgisi, yol sorma."
+sort: 3
+
+targets:
+  - id: table-for
+    w: a table for
+    pos: phrase
+    tr: "… kişilik masa"
+    ex: "Could we have [[a table for]] four, please?"
+    extr: "Dört kişilik bir masa alabilir miyiz, lütfen?"
+    d: 1
+    col: ["a table for two", "a table by the window"]
+    tone: ["Restoran", "Kibar"]
+    dis:
+      - "a desk for | Çalışma masası demektir."
+      - "a table of | Kalıpta “for” kullanılır."
+      - "a tablet for | “tablet” hap ya da cihaz demektir."
+  - id: menu
+    w: menu
+    pos: n
+    tr: "menü, yemek listesi"
+    ex: "Could we see the [[menu]], please?"
+    extr: "Menüyü görebilir miyiz, lütfen?"
+    d: 1
+    col: ["set menu", "the menu of the day", "kids' menu"]
+    tone: ["Restoran"]
+    dis:
+      - "many | Çok demektir."
+      - "money | Para demektir."
+      - "manual | Kılavuz demektir."
+  - id: vegetarian
+    w: vegetarian
+    pos: adj
+    tr: "vejetaryen"
+    ex: "Do you have any [[vegetarian]] dishes?"
+    extr: "Vejetaryen yemekleriniz var mı?"
+    d: 1
+    col: ["vegetarian option", "vegan", "gluten-free"]
+    tone: ["Restoran"]
+    dis:
+      - "veterinarian | Veteriner demektir."
+      - "vegetable | Sebze demektir; isim."
+      - "vegetation | Bitki örtüsü demektir."
+  - id: the-check
+    w: the check
+    pos: n
+    tr: "hesap (restoranda)"
+    ex: "Could we have [[the check]], please?"
+    extr: "Hesabı alabilir miyiz, lütfen?"
+    d: 1
+    col: ["the bill (İng.)", "split the check"]
+    syn: ["the bill"]
+    tone: ["Restoran", "Kibar"]
+    dis:
+      - "the account | Banka hesabı demektir."
+      - "the cheque | Banka çeki demektir."
+      - "the count | Sayım demektir."
+  - id: tip
+    w: tip
+    pos: n
+    tr: "bahşiş"
+    ex: "Is the [[tip]] included in the bill?"
+    extr: "Bahşiş hesaba dahil mi?"
+    d: 1
+    col: ["leave a tip", "service charge"]
+    tone: ["Restoran"]
+    dis:
+      - "top | Üst demektir."
+      - "tap | Musluk demektir."
+      - "trip | Gezi demektir."
+  - id: specialty
+    w: specialty
+    pos: n
+    tr: "spesiyal, en meşhur yemek"
+    ex: "What's the [[specialty]] of the house?"
+    extr: "Evin spesiyali nedir?"
+    d: 2
+    col: ["local specialty", "chef's special"]
+    syn: ["signature dish"]
+    tone: ["Restoran"]
+    dis:
+      - "speciality store | Dükkân demek olur."
+      - "special tea | Özel çay demektir."
+      - "specialist | Uzman demektir."
+  - id: ticket-machine
+    w: ticket machine
+    pos: n
+    tr: "bilet makinesi"
+    ex: "You can buy a day pass from the [[ticket machine]]."
+    extr: "Günlük kartı bilet makinesinden alabilirsiniz."
+    d: 1
+    col: ["use the ticket machine", "ticket office"]
+    tone: ["Ulaşım"]
+    dis:
+      - "ticket machinery | Sanayi makineleri demek olur."
+      - "tick machine | “tick” işaret demektir."
+      - "ticket mechanic | Tamirci demektir."
+  - id: day-pass
+    w: day pass
+    pos: n
+    tr: "günlük ulaşım kartı / bileti"
+    ex: "A [[day pass]] is cheaper if you take more than three rides."
+    extr: "Üçten fazla binişte günlük kart daha ucuz."
+    d: 2
+    col: ["travel card", "weekly pass", "single ticket"]
+    tone: ["Ulaşım"]
+    dis:
+      - "day past | “past” geçmiş demektir."
+      - "date pass | Anlamsız bir ifade."
+      - "day passing | Doğal değil."
+  - id: stop
+    w: stop
+    pos: n
+    tr: "durak"
+    ex: "Get off at the next [[stop]] for the museum."
+    extr: "Müze için bir sonraki durakta inin."
+    d: 1
+    col: ["bus stop", "the next stop", "get off at"]
+    tone: ["Ulaşım"]
+    dis:
+      - "step | Adım demektir."
+      - "shop | Dükkân demektir."
+      - "stuff | Eşya, şey demektir."
+  - id: change-trains
+    w: change
+    pos: v
+    tr: "(araç) aktarma yapmak, değiştirmek"
+    ex: "You need to [[change]] at Central Station for the airport line."
+    extr: "Havalimanı hattı için Merkez İstasyonu'nda aktarma yapmanız gerekiyor."
+    d: 2
+    col: ["change trains", "change buses", "change at"]
+    tone: ["Ulaşım"]
+    dis:
+      - "exchange | Takas ya da döviz bozdurmak demektir."
+      - "charge | Ücret almak demektir."
+      - "chance | Şans demektir."
+  - id: opening-hours
+    w: opening hours
+    pos: n
+    tr: "açılış saatleri, çalışma saatleri"
+    ex: "What are the museum's [[opening hours]]?"
+    extr: "Müzenin çalışma saatleri nedir?"
+    d: 1
+    col: ["opening hours", "open until", "closed on Mondays"]
+    tone: ["Gezi"]
+    dis:
+      - "open hours | Doğal değil; “opening hours” kullanılır."
+      - "opening houses | “houses” evler demektir."
+      - "operating ours | “ours” bizimki demektir."
+  - id: admission
+    w: admission
+    pos: n
+    tr: "giriş ücreti, giriş"
+    ex: "[[Admission]] is free on the first Sunday of the month."
+    extr: "Ayın ilk pazarı giriş ücretsiz."
+    d: 2
+    col: ["admission fee", "free admission"]
+    syn: ["entry"]
+    tone: ["Gezi", "Resmî"]
+    dis:
+      - "addition | Ekleme demektir."
+      - "admiration | Hayranlık demektir."
+      - "ambition | Hırs demektir."
+  - id: guided-tour
+    w: guided tour
+    pos: n
+    tr: "rehberli tur"
+    ex: "Is there a [[guided tour]] in English?"
+    extr: "İngilizce rehberli tur var mı?"
+    d: 1
+    col: ["join a guided tour", "audio guide"]
+    tone: ["Gezi"]
+    dis:
+      - "guide tour | Sıfat biçimi gerekir: guided."
+      - "guarded tour | “guarded” korunan demektir."
+      - "guiding tour | Doğal değil."
+  - id: sightseeing
+    w: sightseeing
+    pos: n
+    tr: "(turistik) gezi, görülecek yerleri gezme"
+    ex: "We spent the whole day [[sightseeing]] in the old town."
+    extr: "Bütün günü eski şehirde gezerek geçirdik."
+    d: 2
+    col: ["go sightseeing", "sightseeing tour"]
+    tone: ["Gezi", "Günlük"]
+    dis:
+      - "side seeing | “side” yan demektir."
+      - "site seeing | Yazımı yanlış."
+      - "sight saying | “saying” söyleme demektir."
+  - id: souvenir
+    w: souvenir
+    pos: n
+    tr: "hediyelik eşya, hatıra"
+    ex: "Where can I buy some local [[souvenirs]]?"
+    extr: "Yerel hediyelik eşyaları nereden alabilirim?"
+    d: 1
+    col: ["souvenir shop", "buy souvenirs"]
+    tone: ["Alışveriş"]
+    dis:
+      - "survivor | Hayatta kalan demektir."
+      - "supervisor | Amir demektir."
+      - "sovereign | Egemen demektir."
+  - id: cash-only
+    w: cash only
+    pos: phrase
+    tr: "yalnız nakit"
+    ex: "Sorry, it's [[cash only]] here."
+    extr: "Üzgünüm, burada yalnız nakit geçiyor."
+    d: 1
+    col: ["pay in cash", "pay by card", "contactless"]
+    tone: ["Alışveriş", "Günlük"]
+    dis:
+      - "cash lonely | “lonely” yalnız (duygu) demektir."
+      - "card only | Ters anlam."
+      - "catch only | “catch” yakalamak demektir."
+  - id: crowded
+    w: crowded
+    pos: adj
+    tr: "kalabalık"
+    ex: "The museum is less [[crowded]] early in the morning."
+    extr: "Müze sabah erken saatlerde daha az kalabalık."
+    d: 1
+    col: ["very crowded", "crowded place"]
+    syn: ["busy", "packed"]
+    tone: ["Gezi", "Günlük"]
+    dis:
+      - "clouded | Bulutlu, bulanık demektir."
+      - "crowned | Taç giydirilmiş demektir."
+      - "crawled | Sürünmüş demektir."
+  - id: worth-visiting
+    w: worth visiting
+    pos: phrase
+    tr: "görmeye değer"
+    ex: "Is the castle [[worth visiting]]?"
+    extr: "Kale görmeye değer mi?"
+    d: 2
+    col: ["worth a visit", "worth seeing", "worth it"]
+    tone: ["Gezi"]
+    dis:
+      - "worth to visit | “worth” sonrası -ing gelir."
+      - "worthy visiting | Sıfat biçimi yanlış."
+      - "worse visiting | “worse” daha kötü demektir."
+  - id: on-foot
+    w: on foot
+    pos: phrase
+    tr: "yürüyerek"
+    ex: "It's about ten minutes [[on foot]]."
+    extr: "Yürüyerek yaklaşık on dakika."
+    d: 1
+    col: ["on foot", "by bus", "by taxi"]
+    tone: ["Ulaşım", "Günlük"]
+    dis:
+      - "by foot | Yaygın ama standart biçim “on foot”."
+      - "with foot | Edat yanlış."
+      - "on feet | Kalıp tekil: on foot."
+  - id: contain
+    w: contains
+    pos: v
+    tr: "içermek"
+    ex: "Does this dish [[contain]] nuts?"
+    extr: "Bu yemekte kuruyemiş var mı?"
+    d: 2
+    col: ["may contain nuts", "contains dairy"]
+    fam: ["ingredient (i.) içerik, malzeme"]
+    tone: ["Restoran"]
+    dis:
+      - "continue | Devam etmek demektir."
+      - "contact | İletişim kurmak demektir."
+      - "content | İçerik (isim) ya da memnun demektir."
+
+patterns:
+  - id: id-like-to-order
+    t: "I'll have the …, please."
+    ex: "I'll [[have]] the grilled fish, please."
+    extr: "Izgara balık alayım, lütfen."
+    ttr: "… alayım, lütfen."
+    slots: ["the grilled fish | Izgara balık", "the soup of the day | Günün çorbasını", "a glass of water | Bir bardak su"]
+    chunks: ["I'll have | alayım", "the grilled fish | ızgara balık", "please | lütfen"]
+    g: would-like
+    ctx: ["Restoran"]
+    tone: ["Kibar", "Günlük"]
+    d: 1
+    dis:
+      - "I have | Sipariş anında karar için “I'll have” kullanılır."
+      - "I'll take to | “to” fazladan."
+      - "I'll having | “will” sonrası yalın fiil gelir."
+  - id: is-it-far-from
+    t: "Is it far from here to …?"
+    ex: "Is it [[far]] from here to the old town?"
+    extr: "Buradan eski şehre uzak mı?"
+    ttr: "Buradan … uzak mı?"
+    slots: ["the old town | eski şehre", "the station | istasyona", "the beach | plaja"]
+    chunks: ["Is it far | uzak mı", "from here | buradan", "to the old town | eski şehre"]
+    g: directions-prepositions
+    ctx: ["Yol sorma"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "fair | Adil ya da fuar demektir."
+      - "farther | Daha uzak; karşılaştırma değil."
+      - "fear | Korku demektir."
+  - id: which-line-goes-to
+    t: "Which line goes to …?"
+    ex: "Which [[line]] goes to the airport?"
+    extr: "Havalimanına hangi hat gidiyor?"
+    ttr: "… hangi hat gidiyor?"
+    slots: ["the airport | Havalimanına", "the city centre | Şehir merkezine", "the stadium | Stadyuma"]
+    chunks: ["Which line | hangi hat", "goes to | -e gidiyor"]
+    g: present-simple
+    ctx: ["Ulaşım"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "lane | Şerit demektir."
+      - "lines | Tek hat soruluyor; fiil de tekil."
+      - "link | Bağlantı demektir."
+  - id: does-it-come-with
+    t: "Does it come with …?"
+    ex: "Does it [[come with]] salad?"
+    extr: "Yanında salata geliyor mu?"
+    ttr: "Yanında … geliyor mu?"
+    slots: ["salad | salata", "fries | patates kızartması", "bread | ekmek"]
+    chunks: ["Does it come | geliyor mu", "with salad | salatayla"]
+    g: present-simple
+    ctx: ["Restoran"]
+    tone: ["Soru"]
+    d: 2
+    dis:
+      - "come by | “come by” uğramak demektir."
+      - "comes with | Soruda “does” varken fiil yalın olur."
+      - "come within | “within” içinde demektir."
+  - id: can-i-pay-by
+    t: "Can I pay by …?"
+    ex: "Can I [[pay by]] card?"
+    extr: "Kartla ödeyebilir miyim?"
+    ttr: "… ödeyebilir miyim?"
+    slots: ["card | Kartla", "contactless | Temassız", "phone | Telefonla"]
+    chunks: ["Can I pay | ödeyebilir miyim", "by card | kartla"]
+    g: polite-requests-could
+    ctx: ["Alışveriş", "Restoran"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "pay with cash | Nakit için “in cash” kullanılır; kartta “by card”."
+      - "pay on card | Edat yanlış."
+      - "pay for card | “pay for” bir şeyin parasını ödemek demektir."
+  - id: how-much-is-a-ticket
+    t: "How much is a … ticket?"
+    ex: "How much is a [[return]] ticket?"
+    extr: "Gidiş-dönüş bilet ne kadar?"
+    ttr: "… bilet ne kadar?"
+    slots: ["return | Gidiş-dönüş", "single | Tek yön", "student | Öğrenci"]
+    chunks: ["How much is | ne kadar", "a return ticket | gidiş-dönüş bilet"]
+    g: present-simple
+    ctx: ["Ulaşım", "Gezi"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "returned | “returned” geri dönmüş demektir."
+      - "round | “round trip” ABD'de kullanılır; tek başına “round ticket” doğal değil."
+      - "retire | Emekli olmak demektir."
+  - id: what-would-you-recommend
+    t: "What would you recommend for …?"
+    ex: "What would you [[recommend]] for a first-time visitor?"
+    extr: "İlk kez gelen biri için ne önerirsiniz?"
+    ttr: "… için ne önerirsiniz?"
+    slots: ["a first-time visitor | İlk kez gelen biri", "dinner tonight | Bu akşam yemek", "a rainy day | Yağmurlu bir gün"]
+    chunks: ["What would you recommend | ne önerirsiniz", "for … | … için"]
+    g: would-like
+    ctx: ["Gezi", "Restoran"]
+    tone: ["Kibar", "Soru"]
+    d: 2
+    dis:
+      - "recommendation | İsim; burada fiil gerekir."
+      - "recommend to | “for” kullanılır."
+      - "advise for | “advise” yapısı farklı: advise someone to …"
+  - id: is-there-a-near-here
+    t: "Is there a … near here?"
+    ex: "Is there a [[pharmacy]] near here?"
+    extr: "Yakınlarda bir eczane var mı?"
+    ttr: "Yakınlarda … var mı?"
+    slots: ["pharmacy | bir eczane", "cash machine | bir ATM", "good café | iyi bir kafe"]
+    chunks: ["Is there a | var mı", "near here | yakınlarda"]
+    g: directions-prepositions
+    ctx: ["Yol sorma"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "Are there a | Tekil isimle “Is there” kullanılır."
+      - "Is there a … nearly here | “nearly” neredeyse demektir."
+      - "Is it a … near here | Var olup olmadığını sormak için “there” gerekir."
+  - id: we-booked-a-tour
+    t: "We've booked a tour of … for …"
+    ex: "We've [[booked]] a tour of the palace for 10 am."
+    extr: "Saray için saat 10'a bir tur ayırttık."
+    ttr: "… bir tur ayırttık."
+    slots: ["the palace for 10 am | Saray için saat 10'a", "the old town for Saturday | Eski şehir için cumartesiye", "the islands for tomorrow | Adalar için yarına"]
+    chunks: ["We've booked | ayırttık", "a tour of | … turu", "for 10 am | saat 10'a"]
+    g: present-perfect-results
+    ctx: ["Gezi"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "We've book | Üçüncü hâl gerekir: booked."
+      - "We booked to | “to” fazladan."
+      - "We've booking | -ing biçimi kullanılmaz."
+  - id: could-you-take-a-photo
+    t: "Could you take a photo of …?"
+    ex: "Could you [[take a photo]] of us, please?"
+    extr: "Bizim bir fotoğrafımızı çekebilir misiniz, lütfen?"
+    ttr: "… fotoğrafını çekebilir misiniz, lütfen?"
+    slots: ["us | Bizim bir", "me | Benim bir", "us in front of the fountain | Çeşmenin önünde bizim bir"]
+    chunks: ["Could you | -ebilir misiniz", "take a photo | fotoğraf çekmek", "of us | bizim"]
+    g: polite-requests-could
+    ctx: ["Gezi"]
+    tone: ["Kibar"]
+    d: 1
+    dis:
+      - "make a photo | Kalıp “take a photo”."
+      - "do a photo | Doğal değil."
+      - "take a photo to us | Edat yanlış: of us."
+
+grammar:
+  - id: ordering-food
+    title: "Sipariş vermek: I'll have …, Could I get …?, without …"
+    short: "Restoranda sipariş “I'll have …” ya da “Could I get …?” ile verilir; değişiklik “with / without / on the side” ile istenir."
+    long: "Sipariş: I'll have the chicken. / Could I get a coffee, please? Değişiklik: without onions (soğansız), with extra cheese (ekstra peynirli), dressing on the side (sos ayrı). Soru: Does it come with …? / Does this contain nuts? Hesap: Could we have the check, please? / Can we pay separately? Garsonun sorusu: Are you ready to order? / Anything else?"
+    ex: ["I'll have the pasta without mushrooms. | Mantarsız makarna alayım.", "Could I get the dressing on the side? | Sosu ayrı alabilir miyim?", "Can we pay separately? | Ayrı ayrı ödeyebilir miyiz?"]
+  - id: transport-prepositions
+    title: "Ulaşım edatları: by bus, on foot, get on / get off, change at"
+    short: "Araçla gitmek “by + araç”, yürümek “on foot”; araca binmek “get on”, inmek “get off”, aktarma “change at”."
+    long: "by bus / by train / by taxi (araçla), on foot (yürüyerek). Otobüs ve trene: get on / get off; arabaya ve taksiye: get in / get out of. Aktarma: change at Central Station. Durak: at the next stop. Yön: towards the city centre (merkeze doğru). Süre: It takes 20 minutes by bus."
+    ex: ["It takes 20 minutes by bus. | Otobüsle 20 dakika sürüyor.", "Get off at the third stop. | Üçüncü durakta inin.", "Change at Central Station for line 2. | 2 numaralı hat için Merkez İstasyonu'nda aktarma yapın."]
+
+scenarios:
+  - id: restaurant-order
+    title: "Restoranda sipariş"
+    sit: "Arkadaşınla bir restorandasın. Fındık alerjin var ve sipariş vermek istiyorsun."
+    d: 1
+    targets: [contain, menu, the-check]
+    turns:
+      - ["Waiter", "Good evening. Are you ready to order?", "İyi akşamlar. Sipariş vermeye hazır mısınız?"]
+      - choose:
+          - ["Yes. Does the chicken salad contain nuts? I'm allergic.", true, "Alerjisini söyleyip içeriği soruyor."]
+          - ["Yes, give chicken.", false, "Kaba ve eksik."]
+          - ["Yes, I'm allergy nuts.", false, "“allergic to nuts” olmalı."]
+      - ["Waiter", "It has walnuts, but we can make it without them.", "İçinde ceviz var ama onsuz yapabiliriz."]
+      - choose:
+          - ["Great, I'll have it without walnuts, please.", true, "“I'll have … without …” ile doğru sipariş."]
+          - ["OK, I have it with walnuts.", false, "Alerjisi var; mantıksız."]
+          - ["Great, I'll having it.", false, "“will” sonrası yalın fiil gelir."]
+      - ["Waiter", "Perfect. And to drink?", "Harika. İçecek olarak?"]
+  - id: buying-transport-ticket
+    title: "Toplu taşıma bileti almak"
+    sit: "Metro istasyonundasın. Gün boyunca şehri gezeceksin ve hangi bileti alacağını soruyorsun."
+    d: 2
+    targets: [day-pass, change-trains, stop]
+    turns:
+      - ["Staff", "Hi, can I help you?", "Merhaba, yardımcı olabilir miyim?"]
+      - choose:
+          - ["Yes, I'm going to travel around the city all day. Which ticket should I buy?", true, "Planını söyleyip doğru soruyu soruyor."]
+          - ["Ticket, all day, which?", false, "Cümle kurulmamış."]
+          - ["I want to buy the metro.", false, "Metroyu satın almak anlamına geliyor."]
+      - ["Staff", "A day pass is best. It's 8 euros and you can use buses and trains.", "Günlük kart en iyisi. 8 avro, otobüs ve trenlerde kullanabilirsiniz."]
+      - choose:
+          - ["Great. And which line goes to the museum?", true, "Bilgiyi alıp yol soruyor."]
+          - ["Great. Which line go to museum?", false, "Fiil çekimi ve tanımlık eksik."]
+          - ["Is it free?", false, "Fiyat zaten söylendi."]
+      - ["Staff", "Take line 2 and change at Central Station. Get off at the third stop.", "2 numaralı hatta binin ve Merkez İstasyonu'nda aktarma yapın. Üçüncü durakta inin."]
+
+readings:
+  - id: museum-info
+    title: "Visitor information"
+    kind: "Müze bilgilendirmesi"
+    d: 2
+    s:
+      - ["The museum is open from 9 am to 6 pm, Tuesday to Sunday.", "Müze salıdan pazara 09.00–18.00 arası açıktır."]
+      - ["Last admission is one hour before closing.", "Son giriş, kapanıştan bir saat öncedir."]
+      - ["Tickets are cheaper online, and admission is free for under-18s.", "Biletler internetten daha ucuzdur ve 18 yaş altı için giriş ücretsizdir."]
+      - ["Free guided tours in English start at 11 am and 3 pm.", "İngilizce ücretsiz rehberli turlar 11.00 ve 15.00'te başlar."]
+      - ["Large bags must be left in the cloakroom.", "Büyük çantalar vestiyere bırakılmalıdır."]
+    gloss: ["last admission | son giriş", "under-18s | 18 yaş altındakiler", "cloakroom | vestiyer, emanet"]
+    q:
+      - q: "Müze hangi gün kapalı?"
+        o: ["Pazartesi", "Salı", "Pazar"]
+        a: 0
+        why: "“open … Tuesday to Sunday” — pazartesi yok."
+      - q: "Saat 17.30'da müzeye girilebilir mi?"
+        o: ["Evet", "Hayır, son giriş 17.00", "Yalnız rehberli turla"]
+        a: 1
+        why: "“Last admission is one hour before closing.” Kapanış 18.00."
+  - id: restaurant-review
+    title: "A short review"
+    kind: "Restoran yorumu"
+    d: 2
+    s:
+      - ["We had dinner here on our first night in Lisbon.", "Lizbon'daki ilk gecemizde burada akşam yemeği yedik."]
+      - ["The grilled fish was fresh and the portions were generous.", "Izgara balık tazeydi ve porsiyonlar boldu."]
+      - ["It was quite crowded, so we waited about twenty minutes for a table.", "Oldukça kalabalıktı, bu yüzden masa için yaklaşık yirmi dakika bekledik."]
+      - ["The staff were friendly and recommended a great local wine.", "Çalışanlar güler yüzlüydü ve harika bir yerel şarap önerdiler."]
+      - ["It's cash only, so bring some money with you.", "Yalnız nakit geçiyor, yanınıza para alın."]
+    gloss: ["portion | porsiyon", "generous | bol, cömert", "staff | çalışanlar, personel"]
+    q:
+      - q: "Yorumu yazan kişiler neden beklemiş?"
+        o: ["Yemek geç geldiği için", "Restoran kalabalık olduğu için", "Rezervasyonları olmadığı için"]
+        a: 1
+        why: "“It was quite crowded, so we waited …”"
+      - q: "Ödeme hakkında ne söyleniyor?"
+        o: ["Kart geçiyor", "Yalnız nakit", "Bahşiş zorunlu"]
+        a: 1
+        why: "“It's cash only”"
+
+writing:
+  id: travel-review
+  p: "Gezdiğin bir şehirdeki restoran ya da müze için 3–4 cümlelik kısa bir yorum yaz: ne yaptın, neyi beğendin, başkalarına ne önerirsin?"
+  rubric: ["Deneyim geçmiş zamanla anlatılmış (We visited / We had)", "Beğenilen ve beğenilmeyen bir şey sıfatlarla anlatılmış", "Öneri cümlesi var (I'd recommend … / It's worth …)"]
+  samples: ["We visited the city museum on Saturday morning. It wasn't crowded, and the guided tour in English was really interesting. The café was a bit expensive, though. I'd recommend booking tickets online — it's cheaper."]
+  d: 2
+
+situations:
+  - { parent: "Restoran", name: "Masa, menü ve sipariş", items: [table-for, menu, vegetarian, specialty, contain, id-like-to-order, does-it-come-with, what-would-you-recommend] }
+  - { parent: "Restoran", name: "Hesap ve ödeme", items: [the-check, tip, cash-only, can-i-pay-by] }
+  - { parent: "Ulaşım", name: "Bilet ve hatlar", items: [ticket-machine, day-pass, stop, change-trains, on-foot, which-line-goes-to, how-much-is-a-ticket, is-it-far-from] }
+  - { parent: "Gezi", name: "Müze, tur ve alışveriş", items: [opening-hours, admission, guided-tour, sightseeing, souvenir, crowded, worth-visiting, is-there-a-near-here, we-booked-a-tour, could-you-take-a-photo] }

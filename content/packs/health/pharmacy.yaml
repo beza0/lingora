@@ -1,0 +1,543 @@
+id: health-pharmacy
+domain: health
+title: "Eczanede ve ilaç kullanımı"
+desc: "Reçete, doz, yan etki ve ilaç etkileşimi hakkında soru sorma ve bilgi verme."
+sort: 2
+
+targets:
+  - id: over-the-counter
+    w: over the counter
+    pos: phrase
+    tr: "reçetesiz (satılan)"
+    ex: "You can buy this cream [[over the counter]]."
+    extr: "Bu kremi reçetesiz alabilirsiniz."
+    d: 2
+    col: ["over-the-counter medicine", "available over the counter"]
+    syn: ["without a prescription"]
+    tone: ["Eczane", "Günlük"]
+    dis:
+      - "under the counter | Gizlice, el altından demektir."
+      - "on the counter | Tezgâhın üstünde demektir."
+      - "over the top | Abartılı demektir."
+  - id: tablet
+    w: tablet
+    pos: n
+    tr: "tablet, hap"
+    ex: "Take one [[tablet]] with a glass of water."
+    extr: "Bir bardak suyla bir tablet alın."
+    d: 1
+    col: ["take a tablet", "chewable tablet", "a pack of tablets"]
+    syn: ["pill"]
+    conf: ["capsule | Jelatin kılıflı kapsül; tablet sıkıştırılmış haptır."]
+    tone: ["Eczane", "Günlük"]
+    dis:
+      - "table | Masa demektir."
+      - "ticket | Bilet demektir."
+      - "tablespoon | Yemek kaşığı demektir."
+  - id: dosage
+    w: dosage
+    pos: n
+    tr: "dozaj, kullanım miktarı"
+    ex: "Please check the [[dosage]] on the label before giving it to a child."
+    extr: "Çocuğa vermeden önce lütfen etiketteki dozajı kontrol edin."
+    d: 2
+    col: ["recommended dosage", "adult dosage", "exceed the dosage"]
+    fam: ["dose (i.) tek seferlik doz"]
+    conf: ["dose | Bir seferde alınan miktar; dosage kullanım düzeninin tamamı (ne kadar, ne sıklıkla)."]
+    tone: ["Eczane", "Resmî"]
+    dis:
+      - "damage | Hasar demektir."
+      - "voltage | Gerilim demektir."
+      - "postage | Posta ücreti demektir."
+  - id: empty-stomach
+    w: on an empty stomach
+    pos: phrase
+    tr: "aç karnına"
+    ex: "Don't take ibuprofen [[on an empty stomach]]."
+    extr: "İbuprofeni aç karnına almayın."
+    d: 2
+    col: ["take it on an empty stomach", "with food"]
+    tone: ["Eczane", "Talimat"]
+    dis:
+      - "with an empty stomach | Kalıpta “on” kullanılır."
+      - "on a hungry stomach | Doğal bir ifade değil."
+      - "in an empty stomach | Edat yanlış."
+  - id: drowsy
+    w: drowsy
+    pos: adj
+    tr: "uyku hâli olan, uyuşuk"
+    ex: "This medicine may make you [[drowsy]], so don't drive."
+    extr: "Bu ilaç uyku hâli yapabilir, o yüzden araba kullanmayın."
+    d: 2
+    col: ["feel drowsy", "make you drowsy", "non-drowsy"]
+    syn: ["sleepy"]
+    tone: ["Eczane", "Uyarı"]
+    dis:
+      - "dizzy | Baş dönmesi demektir; uyku hâli değil."
+      - "drowned | Boğulmuş demektir."
+      - "dusty | Tozlu demektir."
+  - id: interaction
+    w: interaction
+    pos: n
+    tr: "(ilaç) etkileşim(i)"
+    ex: "Are there any [[interactions]] with my blood pressure pills?"
+    extr: "Tansiyon ilaçlarımla herhangi bir etkileşimi var mı?"
+    d: 3
+    col: ["drug interaction", "check for interactions"]
+    fam: ["interact (f.) etkileşime girmek"]
+    tone: ["Eczane", "Resmî"]
+    dis:
+      - "intersection | Kavşak demektir."
+      - "introduction | Tanıtım, giriş demektir."
+      - "interruption | Kesinti demektir."
+  - id: refill
+    w: refill
+    pos: n
+    tr: "(reçeteyi) yenileme, ilacın tekrar verilmesi"
+    ex: "Can I get a [[refill]] of my prescription without seeing the doctor?"
+    extr: "Doktora görünmeden reçetemi yeniletebilir miyim?"
+    d: 2
+    col: ["prescription refill", "ask for a refill"]
+    fam: ["refill (f.) yeniden doldurmak"]
+    tone: ["Eczane"]
+    dis:
+      - "refund | Para iadesi demektir."
+      - "review | İnceleme demektir."
+      - "relief | Rahatlama demektir."
+  - id: expiry-date
+    w: expiry date
+    pos: n
+    tr: "son kullanma tarihi"
+    ex: "Always check the [[expiry date]] before you use eye drops."
+    extr: "Göz damlasını kullanmadan önce her zaman son kullanma tarihine bakın."
+    d: 1
+    col: ["past the expiry date", "check the expiry date"]
+    syn: ["expiration date (ABD)"]
+    tone: ["Eczane", "Günlük"]
+    dis:
+      - "delivery date | Teslim tarihi demektir."
+      - "birth date | Doğum tarihi demektir."
+      - "due date | Son ödeme ya da doğum tarihi demektir."
+  - id: painkiller
+    w: painkiller
+    pos: n
+    tr: "ağrı kesici"
+    ex: "Could you recommend a mild [[painkiller]] for a headache?"
+    extr: "Baş ağrısı için hafif bir ağrı kesici önerebilir misiniz?"
+    d: 1
+    col: ["take a painkiller", "strong painkiller"]
+    syn: ["pain reliever"]
+    tone: ["Eczane", "Günlük"]
+    dis:
+      - "pain | Ağrının kendisi demektir."
+      - "killer | Öldürücü, katil demektir."
+      - "painter | Ressam ya da boyacı demektir."
+  - id: ointment
+    w: ointment
+    pos: n
+    tr: "merhem"
+    ex: "Apply the [[ointment]] to the rash twice a day."
+    extr: "Merhemi günde iki kez döküntüye sürün."
+    d: 2
+    col: ["apply an ointment", "antibiotic ointment"]
+    syn: ["cream"]
+    tone: ["Eczane"]
+    dis:
+      - "appointment | Randevu demektir."
+      - "ornament | Süs demektir."
+      - "argument | Tartışma demektir."
+  - id: symptoms-persist
+    w: if symptoms persist
+    pos: phrase
+    tr: "belirtiler geçmezse"
+    ex: "[[If symptoms persist]] for more than three days, see a doctor."
+    extr: "Belirtiler üç günden fazla geçmezse doktora görünün."
+    d: 2
+    col: ["symptoms persist", "persistent cough"]
+    fam: ["persistent (s.) inatçı, süregelen"]
+    tone: ["Eczane", "Uyarı", "Resmî"]
+    dis:
+      - "If symptoms insist | “insist” ısrar etmek demektir; belirti için kullanılmaz."
+      - "If symptoms resist | “resist” direnmek demektir."
+      - "If symptoms consist | “consist” oluşmak demektir."
+  - id: pregnant
+    w: pregnant
+    pos: adj
+    tr: "hamile"
+    ex: "Is it safe to take this if I'm [[pregnant]]?"
+    extr: "Hamileysem bunu almak güvenli mi?"
+    d: 1
+    col: ["pregnant or breastfeeding", "be pregnant"]
+    fam: ["pregnancy (i.) hamilelik"]
+    tone: ["Eczane", "Muayene"]
+    dis:
+      - "prevent | Önlemek demektir."
+      - "present | Hediye ya da mevcut demektir."
+      - "pleasant | Hoş demektir."
+  - id: generic
+    w: generic
+    pos: adj
+    tr: "jenerik (eşdeğer ilaç)"
+    ex: "Is there a cheaper [[generic]] version of this medicine?"
+    extr: "Bu ilacın daha ucuz bir eşdeğeri var mı?"
+    d: 3
+    col: ["generic drug", "generic version", "brand name"]
+    tone: ["Eczane"]
+    dis:
+      - "genetic | Genetik demektir."
+      - "general | Genel demektir."
+      - "genuine | Gerçek, hakiki demektir."
+  - id: shake-well
+    w: shake well
+    pos: phrase
+    tr: "iyice çalkalayın"
+    ex: "[[Shake well]] before use."
+    extr: "Kullanmadan önce iyice çalkalayın."
+    d: 1
+    col: ["shake well before use"]
+    tone: ["Etiket", "Talimat"]
+    dis:
+      - "Shake good | Zarf gerekir: well."
+      - "Shaking well | Etiket talimatı emir kipiyle yazılır."
+      - "Shook well | Geçmiş zaman talimat olmaz."
+  - id: store
+    w: store
+    pos: v
+    tr: "saklamak, muhafaza etmek"
+    ex: "[[Store]] the syrup in the fridge after opening."
+    extr: "Şurubu açtıktan sonra buzdolabında saklayın."
+    d: 2
+    col: ["store in a cool, dry place", "store below 25°C"]
+    syn: ["keep"]
+    fam: ["storage (i.) saklama"]
+    tone: ["Etiket", "Talimat"]
+    dis:
+      - "stare | Dik dik bakmak demektir."
+      - "stir | Karıştırmak demektir."
+      - "story | Hikâye demektir."
+
+  - id: allergic-reaction
+    w: allergic reaction
+    pos: n
+    tr: "alerjik reaksiyon"
+    ex: "Stop taking it if you have an [[allergic reaction]]."
+    extr: "Alerjik reaksiyon gösterirseniz kullanmayı bırakın."
+    d: 2
+    col: ["have an allergic reaction", "severe allergic reaction"]
+    fam: ["allergy (i.) alerji", "allergic to (s.) -e alerjisi olan"]
+    tone: ["Eczane", "Uyarı"]
+    dis:
+      - "allergy reaction | Doğru biçim sıfatla: allergic reaction."
+      - "allergic action | “action” eylem demektir."
+      - "energetic reaction | Enerjik tepki demektir."
+  - id: syrup
+    w: syrup
+    pos: n
+    tr: "şurup"
+    ex: "Give the child five millilitres of [[syrup]] every six hours."
+    extr: "Çocuğa altı saatte bir beş mililitre şurup verin."
+    d: 1
+    col: ["cough syrup", "a spoonful of syrup"]
+    tone: ["Eczane", "Günlük"]
+    dis:
+      - "serum | Serum demektir."
+      - "soup | Çorba demektir."
+      - "sirup | Yazım hatası; doğrusu syrup."
+  - id: finish-the-course
+    w: finish the course
+    pos: phrase
+    tr: "tedavi kürünü bitirmek"
+    ex: "Even if you feel better, [[finish the course]] of antibiotics."
+    extr: "Kendinizi iyi hissetseniz bile antibiyotik kürünü bitirin."
+    d: 2
+    col: ["complete the course", "a course of antibiotics"]
+    tone: ["Eczane", "Talimat"]
+    dis:
+      - "finish the lesson | Ders demektir; tedavi değil."
+      - "finish the race | Yarış demektir."
+      - "close the course | Doğal bir ifade değil."
+  - id: miss-a-dose
+    w: miss a dose
+    pos: phrase
+    tr: "bir dozu atlamak, unutmak"
+    ex: "If you [[miss a dose]], take it as soon as you remember."
+    extr: "Bir dozu unutursanız hatırlar hatırlamaz alın."
+    d: 2
+    col: ["miss a dose", "double dose", "the next dose"]
+    tone: ["Eczane", "Talimat"]
+    dis:
+      - "lose a dose | “lose” kaybetmek; kalıp “miss a dose”."
+      - "forget the dosage | Anlam kayıyor; dozaj düzenini unutmak olur."
+      - "miss a dosing | Doğal değil."
+  - id: swallow-whole
+    w: swallow whole
+    pos: phrase
+    tr: "bütün olarak yutmak (çiğnemeden)"
+    ex: "These capsules must be [[swallowed whole]]; do not chew them."
+    extr: "Bu kapsüller bütün olarak yutulmalı; çiğnemeyin."
+    d: 2
+    col: ["swallow whole", "do not crush or chew"]
+    tone: ["Etiket", "Talimat"]
+    dis:
+      - "Swallow all | “all” hepsi demektir; bütün hâlde değil."
+      - "Follow whole | “follow” takip etmek demektir."
+      - "Swallow hole | “hole” delik demektir."
+
+patterns:
+  - id: is-it-safe-to
+    t: "Is it safe to take … with …?"
+    ex: "Is it [[safe to take]] this with alcohol?"
+    extr: "Bunu alkolle birlikte almak güvenli mi?"
+    ttr: "Bunu … ile birlikte almak güvenli mi?"
+    slots: ["alcohol | alkol", "my other medicine | diğer ilacım", "coffee | kahve"]
+    chunks: ["Is it safe | güvenli mi", "to take | almak", "with alcohol | alkolle"]
+    g: polite-requests-could
+    ctx: ["Eczane"]
+    tone: ["Kibar", "Soru"]
+    d: 2
+    dis:
+      - "safe taking | “safe” sonrası “to + fiil” gelir."
+      - "safety to take | “safety” isimdir; burada sıfat “safe” gerekir."
+      - "safe take | “to” eksik."
+  - id: how-often-should
+    t: "How often should I …?"
+    ex: "How [[often]] should I use the inhaler?"
+    extr: "İnhaleri ne sıklıkla kullanmalıyım?"
+    ttr: "… ne sıklıkla kullanmalıyım?"
+    slots: ["the inhaler | inhaleri", "these drops | bu damlaları", "the cream | kremi"]
+    chunks: ["How often | ne sıklıkla", "should I | -malıyım", "use | kullanmak"]
+    g: polite-requests-could
+    ctx: ["Eczane"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "much | “How much” miktar sorar, sıklık değil."
+      - "long | “How long” süre sorar."
+      - "many | “How many” sayılabilir adet sorar."
+  - id: do-i-need-a-prescription
+    t: "Do I need a prescription for …?"
+    ex: "Do I need a [[prescription]] for these antibiotics?"
+    extr: "Bu antibiyotikler için reçete gerekiyor mu?"
+    ttr: "… için reçete gerekiyor mu?"
+    slots: ["these antibiotics | bu antibiyotikler", "this eye drop | bu göz damlası", "sleeping pills | uyku hapları"]
+    chunks: ["Do I need | gerekiyor mu", "a prescription | reçete", "for … | … için"]
+    g: polite-requests-could
+    ctx: ["Eczane"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "recipe | Yemek tarifi demektir."
+      - "receipt | Fiş, makbuz demektir."
+      - "description | Tanım demektir."
+  - id: dont-take-more-than
+    t: "Don't take more than … in 24 hours."
+    ex: "Don't take [[more than]] four tablets in 24 hours."
+    extr: "24 saatte dörtten fazla tablet almayın."
+    ttr: "24 saatte … fazlasını almayın."
+    slots: ["four tablets | dört tabletten", "eight capsules | sekiz kapsülden", "two sachets | iki poşetten"]
+    chunks: ["Don't take | almayın", "more than | -den fazla", "in 24 hours | 24 saatte"]
+    g: imperatives-advice
+    ctx: ["Etiket", "Talimat"]
+    tone: ["Uyarı"]
+    d: 2
+    dis:
+      - "more then | “then” sonra demektir; karşılaştırma “than”."
+      - "most than | “most” en çok demektir."
+      - "much than | Karşılaştırmada “more than” kullanılır."
+  - id: can-i-take-it-while
+    t: "Can I take it while I'm …?"
+    ex: "Can I take it [[while]] I'm breastfeeding?"
+    extr: "Emzirirken bunu alabilir miyim?"
+    ttr: "… bunu alabilir miyim?"
+    slots: ["breastfeeding | Emzirirken", "on antibiotics | Antibiyotik kullanırken", "driving | Araba kullanırken"]
+    chunks: ["Can I take it | alabilir miyim", "while I'm … | …-ken"]
+    g: polite-requests-could
+    ctx: ["Eczane"]
+    tone: ["Soru"]
+    d: 2
+    dis:
+      - "during I'm | “during” sonrası isim gelir, cümle gelmez."
+      - "when I'm be | “be” fazladan kullanılmış."
+      - "meanwhile I'm | “meanwhile” bu arada demektir; bağlaç olarak kullanılmaz."
+  - id: it-should-be-taken
+    t: "It should be taken …"
+    ex: "It [[should be taken]] with food."
+    extr: "Yemekle birlikte alınmalıdır."
+    ttr: "… alınmalıdır."
+    slots: ["with food | Yemekle birlikte", "before bedtime | Yatmadan önce", "every eight hours | Sekiz saatte bir"]
+    chunks: ["It should be | -malıdır", "taken | alınmış (edilgen)", "with food | yemekle"]
+    g: passive-voice-basics
+    ctx: ["Etiket", "Talimat"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "should take | Edilgen anlam için “be taken” gerekir."
+      - "should be take | Edilgende üçüncü hâl: taken."
+      - "should taken | “be” eksik."
+
+  - id: what-if-i-miss
+    t: "What should I do if I …?"
+    ex: "What should I do [[if I]] miss a dose?"
+    extr: "Bir dozu unutursam ne yapmalıyım?"
+    ttr: "… ne yapmalıyım?"
+    slots: ["miss a dose | Bir dozu unutursam", "feel sick | Midem bulanırsa", "get a rash | Döküntü olursa"]
+    chunks: ["What should I do | ne yapmalıyım", "if I … | eğer …-rsam"]
+    g: polite-requests-could
+    ctx: ["Eczane"]
+    tone: ["Soru"]
+    d: 2
+    dis:
+      - "when I will | Koşul yan cümlesinde “will” kullanılmaz."
+      - "if I would | Bu yapıda “would” gereksiz."
+      - "if I'll | Koşul cümlesinde gelecek zaman eki kullanılmaz."
+  - id: keep-out-of-reach
+    t: "Keep … out of the reach of children."
+    ex: "Keep all medicines [[out of the reach]] of children."
+    extr: "Tüm ilaçları çocukların ulaşamayacağı yerde tutun."
+    ttr: "… çocukların ulaşamayacağı yerde tutun."
+    slots: ["all medicines | Tüm ilaçları", "this bottle | Bu şişeyi", "the tablets | Tabletleri"]
+    chunks: ["Keep | tutun", "out of the reach of | ulaşamayacağı yerde"]
+    g: imperatives-advice
+    ctx: ["Etiket"]
+    tone: ["Uyarı", "Resmî"]
+    d: 2
+    dis:
+      - "out of the hand | Kalıp “reach” ile kurulur."
+      - "far of the reach | “far of” yanlış; “out of” kullanılır."
+      - "out the reach | “of” eksik."
+  - id: im-allergic-to
+    t: "I'm allergic to …"
+    ex: "I'm [[allergic to]] penicillin."
+    extr: "Penisiline alerjim var."
+    ttr: "… alerjim var."
+    slots: ["penicillin | Penisiline", "aspirin | Aspirine", "nuts | Kuruyemişe"]
+    chunks: ["I'm allergic | alerjim var", "to … | -e"]
+    g: present-simple
+    ctx: ["Eczane", "Muayene"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "allergic of | Edat “to” olmalı."
+      - "allergy to | Sıfat gerekir: allergic."
+      - "allergic with | Edat yanlış."
+  - id: do-you-have-anything-for
+    t: "Do you have anything for …?"
+    ex: "Do you have [[anything for]] a sore throat?"
+    extr: "Boğaz ağrısı için bir şeyiniz var mı?"
+    ttr: "… için bir şeyiniz var mı?"
+    slots: ["a sore throat | Boğaz ağrısı", "a cough | Öksürük", "insect bites | Böcek ısırıkları"]
+    chunks: ["Do you have | var mı", "anything | bir şey", "for … | … için"]
+    g: polite-requests-could
+    ctx: ["Eczane"]
+    tone: ["Günlük", "Kibar"]
+    d: 1
+    dis:
+      - "something to | “for” gerekir: something/anything for."
+      - "nothing for | Olumsuz anlam verir."
+      - "anything about | “about” hakkında demektir."
+
+grammar:
+  - id: pharmacy-frequency
+    title: "Sıklık ve süre: twice a day, every 8 hours, for a week"
+    short: "İlaç talimatlarında sıklık “… a day / every … hours”, süre “for …”, zaman “before / after / with” ile söylenir."
+    long: "Sıklık: once a day (günde bir), twice a day (günde iki), three times a day (günde üç), every eight hours (sekiz saatte bir). Süre: for five days (beş gün boyunca), until the pack is finished (kutu bitene kadar). Zaman: before meals (yemekten önce), after meals (yemekten sonra), with food (yemekle), at bedtime (yatarken). Soru: How often …? (ne sıklıkla), How long …? (ne kadar süre)."
+    ex: ["Take one tablet every eight hours. | Sekiz saatte bir tablet alın.", "Use the drops three times a day for a week. | Damlaları bir hafta boyunca günde üç kez kullanın.", "How long should I take it for? | Ne kadar süre almalıyım?"]
+
+  - id: if-clauses-instructions
+    title: "Koşullu talimatlar: If you …, take / stop / see"
+    short: "Prospektüslerde “If + şimdiki zaman, emir kipi” yapısı sık geçer: belirli bir durumda ne yapılacağını söyler."
+    long: "Yapı: If + özne + şimdiki zaman, emir kipi. If you miss a dose, take it as soon as you remember. If you feel dizzy, do not drive. If symptoms persist, see a doctor. “if” cümlesinde will kullanılmaz: If you will feel … yanlıştır. Yerine “in case of + isim” de kullanılabilir: In case of overdose, contact a doctor."
+    ex: ["If you feel dizzy, do not drive. | Başınız dönerse araç kullanmayın.", "If symptoms persist, see a doctor. | Belirtiler geçmezse doktora görünün.", "In case of an allergic reaction, stop taking it. | Alerjik reaksiyon durumunda kullanmayı bırakın."]
+
+scenarios:
+  - id: pharmacy-advice
+    title: "Eczacıdan öneri isteme"
+    sit: "Boğazın ağrıyor ve hafif ateşin var. Eczacıdan reçetesiz bir şey önermesini istiyorsun."
+    d: 2
+    targets: [painkiller, over-the-counter, drowsy, dosage]
+    turns:
+      - ["Pharmacist", "Hi, how can I help you today?", "Merhaba, bugün size nasıl yardımcı olabilirim?"]
+      - choose:
+          - ["I have a sore throat and a slight fever. Can you recommend something?", true, "Belirtiyi anlatıp kibarca öneri istiyor."]
+          - ["I want medicine for throat.", false, "Fazla kısa ve kaba; belirti anlatılmamış."]
+          - ["Give me antibiotic, please.", false, "Antibiyotik reçetesiz verilmez; belirtiyi anlatmak gerekir."]
+      - ["Pharmacist", "These lozenges are available over the counter. Take one every three hours. Do you take any other medicine?", "Bu pastiller reçetesiz satılıyor. Üç saatte bir tane alın. Başka ilaç kullanıyor musunuz?"]
+      - choose:
+          - ["Yes, I take blood pressure pills. Is it safe to take them together?", true, "Kullandığı ilacı söyleyip etkileşimi soruyor."]
+          - ["Yes, I take. Is safe?", false, "Nesne ve özne eksik; anlaşılmıyor."]
+          - ["No problem, I take everything.", false, "Soruya cevap vermiyor ve güvenli değil."]
+      - ["Pharmacist", "That's fine, there are no interactions. If symptoms persist for more than three days, please see a doctor.", "Sorun yok, etkileşimi yok. Belirtiler üç günden fazla sürerse lütfen doktora görünün."]
+
+  - id: pick-up-prescription
+    title: "Reçeteli ilacı almak"
+    sit: "Doktorun yazdığı antibiyotiği almaya gittin. Penisiline alerjin var."
+    d: 2
+    targets: [allergic-reaction, finish-the-course, miss-a-dose]
+    turns:
+      - ["Pharmacist", "Here's your prescription. Do you have any allergies?", "İşte reçeteniz. Herhangi bir alerjiniz var mı?"]
+      - choose:
+          - ["Yes, I'm allergic to penicillin.", true, "Alerjiyi doğru kalıpla söylüyor."]
+          - ["Yes, I have allergic penicillin.", false, "“allergic to” kalıbı bozuk."]
+          - ["No, I like penicillin.", false, "Alerji sorusuna uygun değil."]
+      - ["Pharmacist", "Good that you told me. This one isn't penicillin, so it's safe for you. Take it for seven days and finish the course.", "Söylemeniz iyi oldu. Bu penisilin değil, sizin için güvenli. Yedi gün kullanın ve kürü bitirin."]
+      - choose:
+          - ["What should I do if I miss a dose?", true, "Unutulan doz için doğru soru."]
+          - ["What I do if I forget?", false, "Soru yapısı eksik: should + özne."]
+          - ["Can I stop when I feel better?", false, "Eczacı kürü bitirmeyi söyledi; bu soru talimatla çelişiyor."]
+      - ["Pharmacist", "Take it as soon as you remember, but never take a double dose.", "Hatırlar hatırlamaz alın ama asla çift doz almayın."]
+
+readings:
+  - id: medicine-label
+    title: "Patient information leaflet"
+    kind: "Prospektüs"
+    d: 2
+    s:
+      - ["Read all of this leaflet carefully before you start taking this medicine.", "Bu ilacı almaya başlamadan önce bu prospektüsün tamamını dikkatle okuyun."]
+      - ["Adults: take one or two tablets every four to six hours.", "Yetişkinler: dört ila altı saatte bir, bir veya iki tablet alın."]
+      - ["Do not take more than eight tablets in 24 hours.", "24 saatte sekiz tabletten fazla almayın."]
+      - ["This medicine may cause drowsiness. If affected, do not drive.", "Bu ilaç uyku hâli yapabilir. Etkilenirseniz araç kullanmayın."]
+      - ["Store below 25°C and keep out of the reach of children.", "25°C'nin altında saklayın ve çocukların ulaşamayacağı yerde tutun."]
+    gloss: ["leaflet | prospektüs, broşür", "drowsiness | uyku hâli", "if affected | etkilenirseniz", "out of the reach of | ulaşamayacağı yerde"]
+    q:
+      - q: "Bir yetişkin 24 saatte en fazla kaç tablet alabilir?"
+        o: ["Dört", "Altı", "Sekiz"]
+        a: 2
+        why: "“Do not take more than eight tablets in 24 hours.”"
+      - q: "İlaç uyku hâli yaparsa ne yapılmamalı?"
+        o: ["Yemek yenmemeli", "Araç kullanılmamalı", "Su içilmemeli"]
+        a: 1
+        why: "“If affected, do not drive.”"
+
+  - id: pharmacy-email
+    title: "Your prescription is ready"
+    kind: "Eczane bildirimi"
+    d: 2
+    s:
+      - ["Your repeat prescription is ready to collect.", "Tekrarlanan reçeteniz hazır, alabilirsiniz."]
+      - ["Please bring your ID when you come to the pharmacy.", "Eczaneye gelirken kimliğinizi getirin."]
+      - ["One of your medicines is out of stock, so we have given you a generic version.", "İlaçlarınızdan biri stokta olmadığı için eşdeğerini verdik."]
+      - ["It contains the same active ingredient and works in the same way.", "Aynı etken maddeyi içerir ve aynı şekilde etki eder."]
+      - ["If you have any questions, our pharmacist can talk to you in private.", "Sorunuz varsa eczacımız sizinle özel olarak görüşebilir."]
+    gloss: ["repeat prescription | tekrarlanan reçete", "collect | teslim almak", "active ingredient | etken madde", "in private | özel olarak, baş başa"]
+    q:
+      - q: "Eczaneye giderken ne götürülmeli?"
+        o: ["Eski kutular", "Kimlik", "Doktor raporu"]
+        a: 1
+        why: "“Please bring your ID”"
+      - q: "Neden eşdeğer ilaç verildi?"
+        o: ["Daha ucuz olduğu için", "Orijinali stokta olmadığı için", "Doktor istediği için"]
+        a: 1
+        why: "“One of your medicines is out of stock”"
+
+writing:
+  id: ask-pharmacist
+  p: "Eczacıya göndereceğin 3–4 cümlelik bir mesaj yaz: hangi ilacı kullanıyorsun, neyi merak ediyorsun (doz, yan etki, başka ilaçla birlikte kullanım) ve ne istiyorsun?"
+  rubric: ["İlaç ve sorun açıkça belirtilmiş", "Kibar soru yapısı kullanılmış (Is it safe to …? / Could you …?)", "Sıklık veya süre doğru ifade edilmiş (twice a day, for a week)"]
+  samples: ["Hello, I'm taking amoxicillin twice a day for a tooth infection. Is it safe to take it with ibuprofen for the pain? Could you also tell me if I should take it with food? Thank you."]
+  d: 2
+
+situations:
+  - { parent: "Eczane", name: "Öneri ve reçete sormak", items: [over-the-counter, painkiller, generic, refill, syrup, do-i-need-a-prescription, do-you-have-anything-for] }
+  - { parent: "Eczane", name: "Kullanım talimatı", items: [tablet, dosage, empty-stomach, swallow-whole, finish-the-course, miss-a-dose, how-often-should, dont-take-more-than, it-should-be-taken, what-if-i-miss] }
+  - { parent: "Eczane", name: "Güvenlik ve yan etki", items: [drowsy, interaction, pregnant, allergic-reaction, symptoms-persist, is-it-safe-to, can-i-take-it-while, im-allergic-to] }
+  - { parent: "Etiket", name: "Etiketi okumak", items: [expiry-date, shake-well, store, ointment, keep-out-of-reach] }

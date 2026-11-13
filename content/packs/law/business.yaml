@@ -1,0 +1,529 @@
+id: law-business
+domain: law
+title: "İş hukuku ve şirket işlemleri"
+desc: "İş sözleşmesi, fesih, vekâletname, marka ve kişisel veri konularında temel hukuki İngilizce."
+sort: 3
+
+targets:
+  - id: employment-contract
+    w: employment contract
+    pos: n
+    tr: "iş sözleşmesi"
+    ex: "Your [[employment contract]] states a notice period of one month."
+    extr: "İş sözleşmeniz bir aylık ihbar süresi öngörüyor."
+    d: 2
+    col: ["sign an employment contract", "fixed-term contract", "permanent contract"]
+    tone: ["Hukuk", "İş"]
+    dis:
+      - "employer contract | Doğal değil; “employment contract” kullanılır."
+      - "employee contact | “contact” iletişim demektir."
+      - "employment contrast | “contrast” karşıtlık demektir."
+  - id: notice-period
+    w: notice period
+    pos: n
+    tr: "ihbar süresi"
+    ex: "The [[notice period]] for both parties is four weeks."
+    extr: "Her iki taraf için ihbar süresi dört haftadır."
+    d: 2
+    col: ["serve your notice period", "give notice"]
+    tone: ["Hukuk", "İş"]
+    dis:
+      - "notice paper | “paper” kâğıt demektir."
+      - "noticed period | Sıfat biçimi yanlış."
+      - "notification time | Doğal ama hukuki terim değil."
+  - id: severance-pay
+    w: severance pay
+    pos: n
+    tr: "kıdem tazminatı"
+    ex: "Employees with more than one year of service are entitled to [[severance pay]]."
+    extr: "Bir yıldan fazla kıdemi olan çalışanların kıdem tazminatı hakkı vardır."
+    d: 3
+    col: ["be entitled to severance pay", "calculate severance pay"]
+    syn: ["redundancy pay (İng.)"]
+    tone: ["Hukuk", "İş"]
+    dis:
+      - "several pay | “several” birkaç demektir."
+      - "severe pay | “severe” şiddetli demektir."
+      - "service pay | Doğal bir terim değil."
+  - id: dismissal
+    w: dismissal
+    pos: n
+    tr: "işten çıkarma"
+    ex: "She claims her [[dismissal]] was unfair."
+    extr: "İşten çıkarılmasının haksız olduğunu iddia ediyor."
+    d: 3
+    col: ["unfair dismissal", "wrongful dismissal"]
+    fam: ["dismiss (f.) işten çıkarmak"]
+    tone: ["Hukuk", "İş"]
+    dis:
+      - "dismal | Kasvetli demektir."
+      - "dispersal | Dağıtma demektir."
+      - "dismay | Dehşet, hayal kırıklığı demektir."
+  - id: probation-period
+    w: probation period
+    pos: n
+    tr: "deneme süresi"
+    ex: "The first two months are a [[probation period]]."
+    extr: "İlk iki ay deneme süresidir."
+    d: 2
+    col: ["during the probation period", "pass your probation"]
+    syn: ["trial period"]
+    tone: ["İş"]
+    dis:
+      - "probability period | “probability” olasılık demektir."
+      - "proving period | Doğal değil."
+      - "protection period | “protection” koruma demektir."
+  - id: non-compete-clause
+    w: non-compete clause
+    pos: n
+    tr: "rekabet yasağı maddesi"
+    ex: "The [[non-compete clause]] lasts for one year after you leave."
+    extr: "Rekabet yasağı maddesi ayrıldıktan sonra bir yıl sürüyor."
+    d: 3
+    col: ["non-compete agreement", "breach a non-compete clause"]
+    tone: ["Hukuk", "İş"]
+    dis:
+      - "non-complete clause | “complete” tamamlamak demektir."
+      - "no-competition close | “close” kapatmak demektir."
+      - "non-compute clause | “compute” hesaplamak demektir."
+  - id: power-of-attorney
+    w: power of attorney
+    pos: n
+    tr: "vekâletname"
+    ex: "You can give your lawyer [[power of attorney]] to sign on your behalf."
+    extr: "Avukatınıza sizin adınıza imza atması için vekâletname verebilirsiniz."
+    d: 3
+    col: ["grant power of attorney", "notarised power of attorney"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "power of authority | Doğal bir terim değil."
+      - "attorney of power | Kelime sırası yanlış."
+      - "power for attorney | Edat yanlış."
+  - id: notarised
+    w: notarised
+    pos: adj
+    tr: "noter onaylı"
+    ex: "The translation must be [[notarised]] before you submit it."
+    extr: "Çeviri sunulmadan önce noter onaylı olmalı."
+    d: 3
+    col: ["notarised copy", "get something notarised"]
+    syn: ["notarized (ABD)"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "noticed | Fark edilmiş demektir."
+      - "notified | Bildirilmiş demektir."
+      - "normalised | Normalleştirilmiş demektir."
+  - id: shareholder
+    w: shareholder
+    pos: n
+    tr: "hissedar, pay sahibi"
+    ex: "Each [[shareholder]] has the right to vote at the general meeting."
+    extr: "Her hissedarın genel kurulda oy kullanma hakkı vardır."
+    d: 2
+    col: ["majority shareholder", "shareholders' agreement"]
+    syn: ["stockholder (ABD)"]
+    tone: ["Hukuk", "Şirket"]
+    dis:
+      - "stakeholder | Paydaş demektir; hisse sahibi olmak zorunda değil."
+      - "shopholder | Anlamsız bir ifade."
+      - "share holder's | Fazladan iyelik eki."
+  - id: articles-of-association
+    w: articles of association
+    pos: n
+    tr: "esas sözleşme (şirket ana sözleşmesi)"
+    ex: "The [[articles of association]] set out how the company is managed."
+    extr: "Esas sözleşme şirketin nasıl yönetileceğini belirler."
+    d: 4
+    col: ["amend the articles of association"]
+    tone: ["Hukuk", "Şirket"]
+    dis:
+      - "articles of association's | Fazladan iyelik eki."
+      - "articles of assassination | “assassination” suikast demektir."
+      - "items of association | Hukuki terim değil."
+  - id: trademark
+    w: trademark
+    pos: n
+    tr: "marka (tescilli)"
+    ex: "We registered the logo as a [[trademark]] last year."
+    extr: "Logoyu geçen yıl marka olarak tescil ettirdik."
+    d: 2
+    col: ["register a trademark", "trademark infringement"]
+    tone: ["Hukuk", "Şirket"]
+    dis:
+      - "trade mark down | Anlamsız bir ifade."
+      - "tradition | Gelenek demektir."
+      - "trade market | “market” pazar demektir."
+  - id: intellectual-property
+    w: intellectual property
+    pos: n
+    tr: "fikrî mülkiyet"
+    ex: "All code you write belongs to the company as [[intellectual property]]."
+    extr: "Yazdığınız tüm kodlar fikrî mülkiyet olarak şirkete aittir."
+    d: 3
+    col: ["intellectual property rights", "IP"]
+    tone: ["Hukuk", "Şirket"]
+    dis:
+      - "intelligent property | “intelligent” zeki demektir."
+      - "intellectual properties | Hukuk terimi genellikle tekil kullanılır."
+      - "intellectual proper | “proper” uygun demektir."
+  - id: personal-data
+    w: personal data
+    pos: n
+    tr: "kişisel veri"
+    ex: "We only process [[personal data]] with the user's consent."
+    extr: "Kişisel verileri yalnız kullanıcının rızasıyla işliyoruz."
+    d: 2
+    col: ["process personal data", "protect personal data", "data protection"]
+    tone: ["Hukuk", "Uyum"]
+    dis:
+      - "personal date | “date” tarih ya da randevu demektir."
+      - "personnel data | “personnel” personel demektir."
+      - "personal datas | “data” bu kullanımda -s almaz."
+  - id: consent
+    w: consent
+    pos: n
+    tr: "rıza, onay"
+    ex: "Users can withdraw their [[consent]] at any time."
+    extr: "Kullanıcılar rızalarını istedikleri zaman geri çekebilir."
+    d: 2
+    col: ["give consent", "withdraw consent", "explicit consent"]
+    tone: ["Hukuk", "Uyum"]
+    dis:
+      - "content | İçerik demektir."
+      - "concern | Endişe demektir."
+      - "consensus | Uzlaşı demektir."
+  - id: data-breach
+    w: data breach
+    pos: n
+    tr: "veri ihlali"
+    ex: "A [[data breach]] must be reported to the authority within 72 hours."
+    extr: "Veri ihlali 72 saat içinde kuruma bildirilmelidir."
+    d: 3
+    col: ["report a data breach", "suffer a data breach"]
+    tone: ["Hukuk", "Uyum"]
+    dis:
+      - "data break | “break” mola ya da kırmak demektir."
+      - "data branch | “branch” şube demektir."
+      - "date breach | “date” tarih demektir."
+  - id: compliance
+    w: compliance
+    pos: n
+    tr: "(mevzuata) uyum"
+    ex: "Our [[compliance]] team checks every new contract."
+    extr: "Uyum ekibimiz her yeni sözleşmeyi kontrol ediyor."
+    d: 3
+    col: ["in compliance with", "compliance officer", "ensure compliance"]
+    fam: ["comply (f.) uymak", "compliant (s.) uyumlu"]
+    tone: ["Hukuk", "Şirket"]
+    dis:
+      - "complaint | Şikâyet demektir."
+      - "compliment | İltifat demektir."
+      - "completion | Tamamlama demektir."
+  - id: signatory
+    w: signatory
+    pos: n
+    tr: "imza yetkilisi, imzacı"
+    ex: "Only an authorised [[signatory]] can sign on behalf of the company."
+    extr: "Şirket adına yalnız yetkili imzacı imza atabilir."
+    d: 4
+    col: ["authorised signatory", "signatory to the agreement"]
+    tone: ["Hukuk", "Şirket"]
+    dis:
+      - "signature | İmzanın kendisi; kişi değil."
+      - "signal | Sinyal demektir."
+      - "signage | Tabela demektir."
+  - id: due-diligence
+    w: due diligence
+    pos: n
+    tr: "durum tespiti, hukuki inceleme (satın alma öncesi)"
+    ex: "We will carry out [[due diligence]] before the acquisition."
+    extr: "Satın almadan önce hukuki inceleme yapacağız."
+    d: 4
+    col: ["carry out due diligence", "legal due diligence"]
+    tone: ["Hukuk", "Şirket"]
+    dis:
+      - "due date | Son tarih demektir."
+      - "do diligence | Yazım yanlış."
+      - "due delivery | Teslimat demektir."
+  - id: binding
+    w: binding
+    pos: adj
+    tr: "bağlayıcı"
+    ex: "This offer is not legally [[binding]] until both parties sign."
+    extr: "Bu teklif her iki taraf imzalayana kadar hukuken bağlayıcı değildir."
+    d: 3
+    col: ["legally binding", "binding agreement"]
+    tone: ["Hukuk", "Resmî"]
+    dis:
+      - "bonding | Bağ kurma demektir."
+      - "blinding | Kör edici demektir."
+      - "bending | Bükülme demektir."
+  - id: resign
+    w: resign
+    pos: v
+    tr: "istifa etmek"
+    ex: "If you [[resign]], you must still work your notice period."
+    extr: "İstifa ederseniz ihbar sürenizi yine de çalışmanız gerekir."
+    d: 2
+    col: ["resign from", "letter of resignation"]
+    fam: ["resignation (i.) istifa"]
+    tone: ["İş"]
+    dis:
+      - "re-sign | Yeniden imzalamak demektir."
+      - "design | Tasarlamak demektir."
+      - "resume | Devam etmek demektir."
+
+patterns:
+  - id: under-the-terms-of
+    t: "Under the terms of …, …"
+    ex: "Under the [[terms of]] your contract, you must give one month's notice."
+    extr: "Sözleşmenizin şartlarına göre bir ay önceden bildirimde bulunmalısınız."
+    ttr: "… şartlarına göre bir ay önceden bildirimde bulunmalısınız."
+    slots: ["your contract | Sözleşmenizin", "the agreement | Anlaşmanın", "the policy | Politikanın"]
+    chunks: ["Under the terms of | … şartlarına göre", "you must give notice | bildirimde bulunmalısınız"]
+    g: legal-modals
+    ctx: ["Sözleşme"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "Under the term of | Kalıp çoğul: terms."
+      - "Below the terms of | “below” aşağıda demektir."
+      - "Under the terms from | Edat “of” olmalı."
+  - id: is-entitled-to-days
+    t: "Every employee is entitled to …"
+    ex: "Every employee is [[entitled to]] 14 days of paid leave."
+    extr: "Her çalışanın 14 gün ücretli izin hakkı vardır."
+    ttr: "Her çalışanın … hakkı vardır."
+    slots: ["14 days of paid leave | 14 gün ücretli izin", "a written contract | yazılı sözleşme", "a payslip every month | her ay maaş bordrosu"]
+    chunks: ["is entitled to | … hakkı vardır", "paid leave | ücretli izin"]
+    g: legal-modals
+    ctx: ["İş hukuku"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "entitled for | Edat “to” olmalı."
+      - "titled to | “titled” başlıklı demektir."
+      - "entitle to | Edilgen yapı: is entitled to."
+  - id: give-notice-of
+    t: "I am writing to give notice of my …"
+    ex: "I am writing to give [[notice]] of my resignation."
+    extr: "İstifamı bildirmek için yazıyorum."
+    ttr: "… bildirmek için yazıyorum."
+    slots: ["resignation | İstifamı", "intention to terminate the contract | Sözleşmeyi feshetme niyetimi", "change of address | Adres değişikliğimi"]
+    chunks: ["I am writing to | … için yazıyorum", "give notice of | bildirmek"]
+    g: formal-advice-requirements
+    ctx: ["Resmî mektup"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "give a notice of | Bu kalıpta “notice” tanımlıksız kullanılır."
+      - "write to notice | “notice” fiil olarak fark etmek demektir."
+      - "giving notice of | “writing to” sonrası yalın fiil gelir."
+  - id: we-process-your-data-to
+    t: "We process your personal data to …"
+    ex: "We [[process]] your personal data to provide our services."
+    extr: "Kişisel verilerinizi hizmetlerimizi sunmak için işliyoruz."
+    ttr: "Kişisel verilerinizi … için işliyoruz."
+    slots: ["provide our services | hizmetlerimizi sunmak", "comply with the law | kanuna uymak", "improve the app | uygulamayı geliştirmek"]
+    chunks: ["We process | işliyoruz", "your personal data | kişisel verilerinizi", "to provide | sunmak için"]
+    g: present-simple
+    ctx: ["Gizlilik politikası"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "proceed | Devam etmek demektir."
+      - "progress | İlerleme demektir."
+      - "processing your | Özne sonrası çekimli fiil gerekir."
+  - id: subject-to-approval
+    t: "… is subject to the approval of …"
+    ex: "The transfer of shares is [[subject to]] the approval of the board."
+    extr: "Hisse devri yönetim kurulunun onayına tabidir."
+    ttr: "Hisse devri … onayına tabidir."
+    slots: ["the board | yönetim kurulunun", "the shareholders | hissedarların", "the authority | kurumun"]
+    chunks: ["is subject to | -e tabidir", "the approval of | … onayı"]
+    g: legal-conditions
+    ctx: ["Şirket"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "subjected to approval | “subjected to” maruz bırakılmak demektir."
+      - "subject for | Edat “to” olmalı."
+      - "object to | İtiraz etmek demektir."
+  - id: shall-not-disclose
+    t: "The employee shall not disclose …"
+    ex: "The employee shall not [[disclose]] any confidential information."
+    extr: "Çalışan hiçbir gizli bilgiyi ifşa etmeyecektir."
+    ttr: "Çalışan … ifşa etmeyecektir."
+    slots: ["any confidential information | hiçbir gizli bilgiyi", "client data | müşteri verilerini", "the terms of this agreement | bu sözleşmenin şartlarını"]
+    chunks: ["shall not | -meyecektir (yükümlülük)", "disclose | ifşa etmek"]
+    g: legal-modals
+    ctx: ["Sözleşme"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "discuss | Tartışmak demektir."
+      - "enclose | Ekte göndermek demektir."
+      - "disclosed | “shall not” sonrası yalın fiil gelir."
+  - id: please-sign-and-return
+    t: "Please sign and return … by …"
+    ex: "Please [[sign and return]] the attached contract by Monday."
+    extr: "Lütfen ekteki sözleşmeyi pazartesiye kadar imzalayıp geri gönderin."
+    ttr: "Lütfen … imzalayıp geri gönderin."
+    slots: ["the attached contract by Monday | ekteki sözleşmeyi pazartesiye kadar", "both copies by Friday | her iki nüshayı cumaya kadar", "the consent form within 7 days | onam formunu 7 gün içinde"]
+    chunks: ["Please sign | lütfen imzalayın", "and return | ve geri gönderin", "by Monday | pazartesiye kadar"]
+    g: formal-advice-requirements
+    ctx: ["Resmî yazı"]
+    tone: ["Resmî", "Kibar"]
+    d: 2
+    dis:
+      - "sign and turn | “turn” döndürmek demektir."
+      - "signing and returning | Rica cümlesinde yalın fiil gelir."
+      - "sign and return back | “return back” gereksiz tekrar."
+  - id: in-the-event-of-dismissal
+    t: "In the event of …, the employee will …"
+    ex: "In the [[event of]] dismissal, the employee will receive severance pay."
+    extr: "İşten çıkarılma durumunda çalışan kıdem tazminatı alır."
+    ttr: "… durumunda çalışan kıdem tazminatı alır."
+    slots: ["dismissal | İşten çıkarılma", "redundancy | Kadro fazlası nedeniyle çıkarılma", "the closure of the company | Şirketin kapanması"]
+    chunks: ["In the event of | … durumunda", "the employee will receive | çalışan alır"]
+    g: legal-conditions
+    ctx: ["Sözleşme"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "In event of | Tanımlık eksik: In the event of."
+      - "On the event of | Edat “in” olmalı."
+      - "In the even of | “even” bile demektir."
+  - id: we-confirm-that
+    t: "We hereby confirm that …"
+    ex: "We hereby [[confirm]] that Ms Demir has worked for us since 2022."
+    extr: "Sayın Demir'in 2022'den beri bizde çalıştığını işbu yazıyla teyit ederiz."
+    ttr: "… işbu yazıyla teyit ederiz."
+    slots: ["Ms Demir has worked for us since 2022 | Sayın Demir'in 2022'den beri bizde çalıştığını", "the payment has been received | Ödemenin alındığını", "the documents are authentic | Belgelerin aslına uygun olduğunu"]
+    chunks: ["We hereby confirm | işbu yazıyla teyit ederiz", "that … | …-dığını"]
+    g: formal-advice-requirements
+    ctx: ["Resmî yazı"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "conform | Uymak demektir."
+      - "confront | Yüzleşmek demektir."
+      - "confirming | Özne sonrası çekimli fiil gerekir."
+  - id: withdraw-consent
+    t: "You can withdraw your consent by …"
+    ex: "You can [[withdraw]] your consent by changing your settings."
+    extr: "Ayarlarınızı değiştirerek rızanızı geri çekebilirsiniz."
+    ttr: "… rızanızı geri çekebilirsiniz."
+    slots: ["changing your settings | Ayarlarınızı değiştirerek", "sending us an email | Bize e-posta göndererek", "deleting your account | Hesabınızı silerek"]
+    chunks: ["You can withdraw | geri çekebilirsiniz", "your consent | rızanızı", "by changing | değiştirerek"]
+    g: present-simple
+    ctx: ["Gizlilik politikası"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "withdrawn | “can” sonrası yalın fiil gelir."
+      - "draw back | Geri çekilmek (fiziksel) demektir."
+      - "withhold | Alıkoymak demektir."
+
+grammar:
+  - id: employment-law-modals
+    title: "Hak ve yükümlülük: be entitled to, must, shall, may"
+    short: "İş hukukunda hak “be entitled to”, yükümlülük “must / shall”, izin “may” ile ifade edilir."
+    long: "Hak: Employees are entitled to paid leave (çalışanların ücretli izin hakkı vardır). Yükümlülük: The employer must pay salaries on time. Sözleşme dili: The employee shall give four weeks' notice (… verecektir). İzin: The employee may work from home two days a week (… çalışabilir). Yasak: The employee shall not disclose confidential information."
+    ex: ["Employees are entitled to 14 days of paid leave. | Çalışanların 14 gün ücretli izin hakkı vardır.", "The employee shall give four weeks' notice. | Çalışan dört hafta önceden bildirimde bulunacaktır.", "The employee may work remotely on Fridays. | Çalışan cuma günleri uzaktan çalışabilir."]
+  - id: formal-letters-legal
+    title: "Resmî mektup kalıpları: I am writing to …, Please find attached …, We hereby …"
+    short: "Hukuki ve resmî yazışmalar amaç cümlesiyle başlar, ek ve teyit kalıplarıyla devam eder, resmî kapanışla biter."
+    long: "Açılış: Dear Ms Smith / Dear Sir or Madam. Amaç: I am writing to inform you that … / I am writing to give notice of … Ek: Please find attached a copy of … Teyit: We hereby confirm that … Rica: We would be grateful if you could … İstek: Please sign and return … by … Kapanış: Kind regards / Yours sincerely (isim biliniyorsa) / Yours faithfully (bilinmiyorsa, İngiliz kullanımı)."
+    ex: ["I am writing to give notice of my resignation. | İstifamı bildirmek için yazıyorum.", "Please find attached the signed contract. | İmzalı sözleşme ekte sunulmuştur.", "We hereby confirm that the payment has been received. | Ödemenin alındığını işbu yazıyla teyit ederiz."]
+
+scenarios:
+  - id: hr-resignation
+    title: "İK ile istifa görüşmesi"
+    sit: "Uluslararası bir şirkette çalışıyorsun ve istifa etmek istiyorsun. İK uzmanıyla konuşuyorsun."
+    d: 3
+    targets: [resign, notice-period, employment-contract]
+    turns:
+      - ["HR", "Hi, you wanted to talk to me?", "Merhaba, benimle konuşmak istemiştiniz?"]
+      - choose:
+          - ["Yes. I've decided to resign. What is my notice period?", true, "Kararını net söyleyip ihbar süresini soruyor."]
+          - ["Yes, I am resign today.", false, "Fiil yapısı yanlış: I'm resigning / I want to resign."]
+          - ["Yes. Give me my money.", false, "Kaba ve konuyla doğrudan ilgili değil."]
+      - ["HR", "Under the terms of your employment contract, it's four weeks. You'll need to put it in writing.", "İş sözleşmenizin şartlarına göre dört hafta. Bunu yazılı olarak bildirmeniz gerekecek."]
+      - choose:
+          - ["Of course. I'll send you a formal letter today. Am I entitled to my unused leave?", true, "Süreci kabul edip hakkını kibarca soruyor."]
+          - ["OK. Can I don't work the four weeks?", false, "Soru yapısı bozuk."]
+          - ["Writing is not necessary.", false, "Sözleşme şartına aykırı."]
+      - ["HR", "Yes, any unused leave will be paid in your final salary.", "Evet, kullanılmamış izinler son maaşınızla ödenecek."]
+  - id: privacy-question
+    title: "Kullanıcının veri sorusu"
+    sit: "Bir uygulama şirketinin destek ekibindesin. Yabancı bir kullanıcı verilerini sorup rızasını geri çekmek istiyor."
+    d: 3
+    targets: [personal-data, consent, data-breach]
+    turns:
+      - ["User", "What personal data do you keep about me?", "Hakkımda hangi kişisel verileri tutuyorsunuz?"]
+      - choose:
+          - ["We keep your email address and your learning progress. You can download a copy from your profile.", true, "Açık bilgi verip kullanıcıya yol gösteriyor."]
+          - ["Everything, don't worry.", false, "Belirsiz ve güven vermeyen bir cevap."]
+          - ["Data is secret, I can't say.", false, "Kullanıcının bilgi alma hakkı var."]
+      - ["User", "OK. I'd like to withdraw my consent for the AI features.", "Tamam. AI özellikleri için verdiğim rızayı geri çekmek istiyorum."]
+      - choose:
+          - ["Of course. You can withdraw your consent by turning off “AI features” in Settings. Your other data won't be affected.", true, "Talebi kabul edip nasıl yapılacağını ve sonucunu anlatıyor."]
+          - ["You can't withdraw it now.", false, "Rıza her zaman geri çekilebilir."]
+          - ["Please withdrawn it in settings.", false, "Fiil biçimi yanlış."]
+      - ["User", "Great, thank you for explaining.", "Harika, açıkladığınız için teşekkürler."]
+
+readings:
+  - id: employment-clause
+    title: "Termination of employment"
+    kind: "İş sözleşmesi maddesi"
+    d: 4
+    s:
+      - ["Either party may terminate this agreement by giving four weeks' written notice.", "Taraflardan her biri dört hafta önceden yazılı bildirimde bulunarak bu sözleşmeyi feshedebilir."]
+      - ["During the probation period, the notice period is one week.", "Deneme süresi boyunca ihbar süresi bir haftadır."]
+      - ["The Company may dismiss the Employee without notice in the event of serious misconduct.", "Ciddi kusurlu davranış hâlinde Şirket, Çalışanı bildirimsiz olarak işten çıkarabilir."]
+      - ["Upon termination, the Employee shall return all company property.", "Fesih üzerine Çalışan tüm şirket mallarını iade edecektir."]
+      - ["Any unused annual leave will be paid in the final salary.", "Kullanılmamış yıllık izinler son maaşla ödenecektir."]
+    gloss: ["either party | taraflardan her biri", "written notice | yazılı bildirim", "misconduct | kusurlu davranış", "upon termination | fesih üzerine"]
+    q:
+      - q: "Deneme süresinde ihbar süresi ne kadar?"
+        o: ["Bir hafta", "İki hafta", "Dört hafta"]
+        a: 0
+        why: "“During the probation period, the notice period is one week.”"
+      - q: "Hangi durumda bildirim olmadan işten çıkarma mümkün?"
+        o: ["Deneme süresinde", "Ciddi kusurlu davranışta", "İzin kullanılmadığında"]
+        a: 1
+        why: "“without notice in the event of serious misconduct”"
+  - id: privacy-notice-extract
+    title: "How we use your data"
+    kind: "Gizlilik bildirimi"
+    d: 3
+    s:
+      - ["We process your personal data to provide and improve our services.", "Kişisel verilerinizi hizmetlerimizi sunmak ve geliştirmek için işliyoruz."]
+      - ["We never sell your data to third parties.", "Verilerinizi asla üçüncü taraflara satmayız."]
+      - ["Some data is processed by service providers outside your country, with your explicit consent.", "Bazı veriler, açık rızanızla, ülkeniz dışındaki hizmet sağlayıcılar tarafından işlenir."]
+      - ["You can withdraw your consent at any time in your settings.", "Rızanızı istediğiniz zaman ayarlardan geri çekebilirsiniz."]
+      - ["If a data breach occurs, we will inform you without undue delay.", "Bir veri ihlali olursa sizi gecikmeksizin bilgilendiririz."]
+    gloss: ["third parties | üçüncü taraflar", "explicit consent | açık rıza", "without undue delay | gecikmeksizin"]
+    q:
+      - q: "Şirket verilerle ilgili ne yapmayacağını söylüyor?"
+        o: ["Yurt dışına göndermeyecek", "Üçüncü taraflara satmayacak", "Hiç işlemeyecek"]
+        a: 1
+        why: "“We never sell your data to third parties.”"
+      - q: "Veri ihlalinde ne olacak?"
+        o: ["Kullanıcı gecikmeksizin bilgilendirilecek", "Hesap kapatılacak", "Hiçbir şey yapılmayacak"]
+        a: 0
+        why: "“we will inform you without undue delay”"
+
+writing:
+  id: resignation-letter
+  p: "İşvereninize 3–4 cümlelik resmî bir istifa mektubu yaz: istifa ettiğini, son çalışma gününü ve devir teslim için yardım teklifini belirt."
+  rubric: ["Resmî açılış ve kapanış var (Dear …, Kind regards / Yours sincerely)", "Amaç cümlesi doğru (I am writing to give notice of my resignation)", "Tarih ve ihbar süresi açık; nazik bir teşekkür veya yardım teklifi var"]
+  samples: ["Dear Ms Kaya, I am writing to give notice of my resignation from my position as Junior Developer. In line with my contract, my last working day will be 30 June. I would like to thank you for the opportunities I have had, and I will do my best to ensure a smooth handover. Kind regards, Can Yıldız"]
+  d: 3
+
+situations:
+  - { parent: "İş hukuku", name: "Sözleşme ve haklar", items: [employment-contract, probation-period, notice-period, severance-pay, non-compete-clause, binding, under-the-terms-of, is-entitled-to-days, in-the-event-of-dismissal, shall-not-disclose] }
+  - { parent: "İş hukuku", name: "Ayrılık ve fesih", items: [resign, dismissal, give-notice-of] }
+  - { parent: "Şirket", name: "Şirket işlemleri", items: [shareholder, articles-of-association, signatory, power-of-attorney, notarised, due-diligence, trademark, intellectual-property, subject-to-approval, please-sign-and-return, we-confirm-that] }
+  - { parent: "Uyum", name: "Kişisel veri ve uyum", items: [personal-data, consent, data-breach, compliance, we-process-your-data-to, withdraw-consent] }

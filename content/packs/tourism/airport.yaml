@@ -1,0 +1,530 @@
+id: tourism-airport
+domain: tourism
+title: "Havalimanı ve uçuş"
+desc: "Check-in, güvenlik, kapı değişikliği, rötar, aktarma ve kayıp bagaj konuşmaları."
+sort: 2
+
+targets:
+  - id: boarding-pass
+    w: boarding pass
+    pos: n
+    tr: "biniş kartı"
+    ex: "Please show your [[boarding pass]] and passport at the gate."
+    extr: "Lütfen kapıda biniş kartınızı ve pasaportunuzu gösterin."
+    d: 1
+    col: ["mobile boarding pass", "print a boarding pass"]
+    tone: ["Havalimanı", "Resmî"]
+    dis:
+      - "boarding card game | Anlamsız bir ifade."
+      - "board pass | Doğru biçim “boarding pass”."
+      - "passing board | Kelime sırası ve anlam yanlış."
+  - id: gate
+    w: gate
+    pos: n
+    tr: "(uçuş) kapı(sı)"
+    ex: "Your flight now departs from [[gate]] 14."
+    extr: "Uçuşunuz artık 14 numaralı kapıdan kalkıyor."
+    d: 1
+    col: ["gate change", "go to the gate", "the gate closes"]
+    tone: ["Havalimanı"]
+    dis:
+      - "get | Almak, edinmek demektir."
+      - "gap | Boşluk demektir."
+      - "great | Harika demektir."
+  - id: delayed
+    w: delayed
+    pos: adj
+    tr: "rötarlı, gecikmeli"
+    ex: "Our flight is [[delayed]] by two hours."
+    extr: "Uçuşumuz iki saat rötarlı."
+    d: 1
+    col: ["be delayed by", "a delayed flight"]
+    fam: ["delay (i./f.) gecikme, geciktirmek"]
+    tone: ["Havalimanı", "Günlük"]
+    dis:
+      - "deleted | Silinmiş demektir."
+      - "delighted | Çok memnun demektir."
+      - "detailed | Ayrıntılı demektir."
+  - id: cancelled
+    w: cancelled
+    pos: adj
+    tr: "iptal edilmiş"
+    ex: "If your flight is [[cancelled]], you can ask for a refund."
+    extr: "Uçuşunuz iptal edilirse para iadesi isteyebilirsiniz."
+    d: 1
+    col: ["cancelled flight", "be cancelled due to"]
+    tone: ["Havalimanı"]
+    dis:
+      - "canceled out | Birbirini götürmek demektir."
+      - "concealed | Gizlenmiş demektir."
+      - "counselled | Danışmanlık verilmiş demektir."
+  - id: carry-on
+    w: carry-on
+    pos: n
+    tr: "kabin bagajı"
+    ex: "You're allowed one [[carry-on]] and one small personal item."
+    extr: "Bir kabin bagajı ve bir küçük kişisel eşya hakkınız var."
+    d: 2
+    col: ["carry-on bag", "carry-on allowance"]
+    syn: ["hand luggage", "cabin bag"]
+    tone: ["Havalimanı"]
+    dis:
+      - "carry out | Yürütmek, uygulamak demektir."
+      - "carriage | Vagon, taşıma demektir."
+      - "check-in bag | Bagaja verilen valizdir; kabin bagajı değil."
+  - id: checked-baggage
+    w: checked baggage
+    pos: n
+    tr: "bagaja verilen valiz"
+    ex: "Your ticket includes 20 kilos of [[checked baggage]]."
+    extr: "Biletiniz 20 kiloluk bagaj hakkı içeriyor."
+    d: 2
+    col: ["baggage allowance", "excess baggage"]
+    syn: ["hold luggage"]
+    tone: ["Havalimanı"]
+    dis:
+      - "checked bags game | Anlamsız bir ifade."
+      - "check baggages | “baggage” sayılamaz; -s almaz."
+      - "checking baggage | Kalıp sıfatla: checked baggage."
+  - id: layover
+    w: layover
+    pos: n
+    tr: "aktarma beklemesi"
+    ex: "I have a three-hour [[layover]] in Frankfurt."
+    extr: "Frankfurt'ta üç saatlik aktarma beklemem var."
+    d: 2
+    col: ["a long layover", "layover in"]
+    syn: ["stopover"]
+    tone: ["Seyahat"]
+    dis:
+      - "leftover | Artık, yemek artığı demektir."
+      - "makeover | Baştan yapma, değişim demektir."
+      - "takeover | Devralma demektir."
+  - id: connecting-flight
+    w: connecting flight
+    pos: n
+    tr: "aktarmalı uçuş, bağlantı uçuşu"
+    ex: "I'm worried I'll miss my [[connecting flight]]."
+    extr: "Bağlantı uçuşumu kaçırmaktan endişeliyim."
+    d: 2
+    col: ["miss a connecting flight", "make a connection"]
+    tone: ["Havalimanı"]
+    dis:
+      - "connected flight | Kalıp “connecting flight”."
+      - "collecting flight | “collect” toplamak demektir."
+      - "correcting flight | “correct” düzeltmek demektir."
+  - id: aisle-seat
+    w: aisle seat
+    pos: n
+    tr: "koridor tarafı koltuk"
+    ex: "Could I have an [[aisle seat]], please?"
+    extr: "Koridor tarafında bir koltuk alabilir miyim, lütfen?"
+    d: 2
+    col: ["window seat", "middle seat", "aisle seat"]
+    tone: ["Havalimanı", "Kibar"]
+    dis:
+      - "isle seat | “isle” ada demektir."
+      - "ally seat | “ally” müttefik demektir."
+      - "aisle sit | “sit” fiildir; isim “seat”."
+  - id: security-check
+    w: security check
+    pos: n
+    tr: "güvenlik kontrolü"
+    ex: "Please remove your laptop from your bag at the [[security check]]."
+    extr: "Güvenlik kontrolünde lütfen dizüstü bilgisayarınızı çantanızdan çıkarın."
+    d: 1
+    col: ["go through security", "security queue"]
+    tone: ["Havalimanı"]
+    dis:
+      - "safety check | Genel güvenlik denetimi; havalimanında “security” kullanılır."
+      - "secure check | Sıfat değil isim gerekir."
+      - "security cheque | “cheque” çek (banka) demektir."
+  - id: customs
+    w: customs
+    pos: n
+    tr: "gümrük"
+    ex: "Do you have anything to declare at [[customs]]?"
+    extr: "Gümrükte beyan edecek bir şeyiniz var mı?"
+    d: 2
+    col: ["go through customs", "customs officer", "declare at customs"]
+    fam: ["declare (f.) beyan etmek"]
+    tone: ["Havalimanı", "Resmî"]
+    dis:
+      - "custom | Tekil hâli gelenek demektir."
+      - "costumes | Kostümler demektir."
+      - "customers | Müşteriler demektir."
+  - id: lost-luggage
+    w: lost luggage
+    pos: n
+    tr: "kayıp bagaj"
+    ex: "Where is the [[lost luggage]] desk?"
+    extr: "Kayıp bagaj masası nerede?"
+    d: 1
+    col: ["report lost luggage", "baggage claim"]
+    tone: ["Havalimanı"]
+    dis:
+      - "last luggage | “last” son demektir."
+      - "loose luggage | “loose” gevşek demektir."
+      - "lost luggages | “luggage” sayılamaz."
+  - id: baggage-claim
+    w: baggage claim
+    pos: n
+    tr: "bagaj teslim alanı"
+    ex: "Your suitcases will arrive at [[baggage claim]] belt 5."
+    extr: "Valizleriniz 5 numaralı bagaj bandına gelecek."
+    d: 2
+    col: ["baggage claim area", "baggage reclaim (İng.)"]
+    tone: ["Havalimanı"]
+    dis:
+      - "baggage complain | “complain” şikâyet etmek demektir."
+      - "baggage name | Anlamsız bir ifade."
+      - "bag claiming | Doğal bir ifade değil."
+  - id: departure
+    w: departure
+    pos: n
+    tr: "kalkış, gidiş"
+    ex: "Please arrive two hours before [[departure]]."
+    extr: "Lütfen kalkıştan iki saat önce gelin."
+    d: 1
+    col: ["departure time", "departures board", "departure lounge"]
+    fam: ["depart (f.) kalkmak", "arrival (i.) varış"]
+    tone: ["Havalimanı", "Resmî"]
+    dis:
+      - "department | Bölüm demektir."
+      - "departed | Ayrılmış, ölmüş demektir."
+      - "deportation | Sınır dışı etme demektir."
+  - id: board
+    w: board
+    pos: v
+    tr: "(uçağa) binmek"
+    ex: "Passengers in rows 20 to 35 may now [[board]]."
+    extr: "20 ile 35. sıralar arasındaki yolcular şimdi uçağa binebilir."
+    d: 2
+    col: ["now boarding", "board the plane", "boarding time"]
+    syn: ["get on"]
+    tone: ["Havalimanı", "Anons"]
+    dis:
+      - "bored | Sıkılmış demektir."
+      - "aboard | Zarftır; “be aboard” biçiminde kullanılır."
+      - "border | Sınır demektir."
+  - id: overweight
+    w: overweight
+    pos: adj
+    tr: "(bagaj) fazla kilolu"
+    ex: "Your bag is three kilos [[overweight]], so there's an extra fee."
+    extr: "Çantanız üç kilo fazla, bu yüzden ek ücret var."
+    d: 2
+    col: ["overweight baggage", "excess baggage fee"]
+    tone: ["Havalimanı"]
+    dis:
+      - "overwhelm | Bunaltmak demektir."
+      - "overtime | Fazla mesai demektir."
+      - "overnight | Gece boyunca demektir."
+  - id: compensation
+    w: compensation
+    pos: n
+    tr: "tazminat"
+    ex: "You may be entitled to [[compensation]] if your flight is delayed by more than three hours."
+    extr: "Uçuşunuz üç saatten fazla gecikirse tazminat hakkınız olabilir."
+    d: 3
+    col: ["claim compensation", "be entitled to compensation"]
+    fam: ["compensate (f.) tazmin etmek"]
+    tone: ["Havalimanı", "Resmî"]
+    dis:
+      - "competition | Yarışma demektir."
+      - "complication | Komplikasyon demektir."
+      - "conversation | Sohbet demektir."
+  - id: final-call
+    w: final call
+    pos: n
+    tr: "son çağrı (anons)"
+    ex: "This is the [[final call]] for flight TK 1985 to London."
+    extr: "Londra'ya giden TK 1985 sefer sayılı uçuş için son çağrı."
+    d: 2
+    col: ["last call", "final boarding call"]
+    tone: ["Anons"]
+    dis:
+      - "finally call | Zarf; isim tamlaması gerekir."
+      - "final cold | “cold” soğuk demektir."
+      - "final calls | Tek bir anons kastediliyor."
+  - id: fasten-seatbelt
+    w: fasten your seatbelt
+    pos: phrase
+    tr: "emniyet kemerinizi bağlayın"
+    ex: "Please [[fasten your seatbelt]] and return your seat to the upright position."
+    extr: "Lütfen emniyet kemerinizi bağlayın ve koltuğunuzu dik konuma getirin."
+    d: 2
+    col: ["fasten your seatbelt", "unfasten"]
+    tone: ["Anons", "Uçakta"]
+    dis:
+      - "fast your seatbelt | “fast” hızlı demektir; fiil “fasten”."
+      - "close your seatbelt | Doğal değil; kemer “fasten” edilir."
+      - "fasten your seat | Kemer değil koltuk demek olur."
+  - id: jet-lag
+    w: jet lag
+    pos: n
+    tr: "saat farkı yorgunluğu"
+    ex: "It took me three days to get over the [[jet lag]]."
+    extr: "Saat farkı yorgunluğunu atlatmam üç gün sürdü."
+    d: 2
+    col: ["get over jet lag", "suffer from jet lag", "jet-lagged"]
+    tone: ["Seyahat", "Günlük"]
+    dis:
+      - "jet leg | “leg” bacak demektir."
+      - "jet lack | “lack” eksiklik demektir."
+      - "jet log | “log” kütük ya da kayıt demektir."
+
+patterns:
+  - id: my-flight-has-been
+    t: "My flight has been …"
+    ex: "My flight has [[been cancelled]]."
+    extr: "Uçuşum iptal edildi."
+    ttr: "Uçuşum …"
+    slots: ["cancelled | iptal edildi.", "delayed | ertelendi.", "moved to tomorrow | yarına alındı."]
+    chunks: ["My flight | uçuşum", "has been cancelled | iptal edildi"]
+    g: present-perfect-results
+    ctx: ["Havalimanı"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "has cancelled | Edilgen anlam için “has been cancelled” gerekir."
+      - "is cancel | Üçüncü hâl gerekir: cancelled."
+      - "have been cancelled | Özne tekil: has."
+  - id: what-time-does-boarding
+    t: "What time does … start?"
+    ex: "What time does [[boarding]] start?"
+    extr: "Biniş saat kaçta başlıyor?"
+    ttr: "… saat kaçta başlıyor?"
+    slots: ["boarding | Biniş", "check-in | Check-in", "the transfer | Transfer"]
+    chunks: ["What time | saat kaçta", "does … start | başlıyor"]
+    g: present-simple
+    ctx: ["Havalimanı"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "board | Fiil; burada isim “boarding” gerekir."
+      - "boarded | Geçmiş zaman sıfatı; uygun değil."
+      - "bored | Sıkılmış demektir."
+  - id: could-you-help-me-find
+    t: "Could you help me find …?"
+    ex: "Could you help me [[find]] gate 22?"
+    extr: "22 numaralı kapıyı bulmama yardım edebilir misiniz?"
+    ttr: "… bulmama yardım edebilir misiniz?"
+    slots: ["gate 22 | 22 numaralı kapıyı", "the transfer desk | Aktarma masasını", "my bag | Çantamı"]
+    chunks: ["Could you help me | bana yardım edebilir misiniz", "find … | …-ı bulmak"]
+    g: polite-requests-could
+    ctx: ["Havalimanı"]
+    tone: ["Kibar"]
+    d: 1
+    dis:
+      - "finding | “help me” sonrası yalın fiil gelir."
+      - "to finding | “to” sonrası -ing gelmez."
+      - "found | Geçmiş zaman uygun değil."
+  - id: im-connecting-to
+    t: "I'm connecting to … — will I make it?"
+    ex: "I'm [[connecting]] to Rome — will I make it?"
+    extr: "Roma'ya aktarma yapıyorum, yetişebilecek miyim?"
+    ttr: "… aktarma yapıyorum, yetişebilecek miyim?"
+    slots: ["Rome | Roma'ya", "a flight to Paris | Paris uçuşuna", "Istanbul | İstanbul'a"]
+    chunks: ["I'm connecting to | … aktarma yapıyorum", "will I make it? | yetişebilecek miyim?"]
+    g: present-continuous
+    ctx: ["Aktarma"]
+    tone: ["Endişe", "Günlük"]
+    d: 3
+    dis:
+      - "I connect to | Planlanmış yolculuk için “I'm connecting” daha doğal."
+      - "I'm connected to | “connected” bağlı (internet) anlamı verir."
+      - "I'm connection to | İsim değil fiil gerekir."
+  - id: my-bag-hasnt-arrived
+    t: "My … hasn't arrived."
+    ex: "My [[suitcase]] hasn't arrived."
+    extr: "Valizim gelmedi."
+    ttr: "… gelmedi."
+    slots: ["suitcase | Valizim", "backpack | Sırt çantam", "stroller | Bebek arabam"]
+    chunks: ["My suitcase | valizim", "hasn't arrived | gelmedi"]
+    g: present-perfect-results
+    ctx: ["Bagaj"]
+    tone: ["Şikâyet"]
+    d: 2
+    dis:
+      - "case | Durum ya da kutu demektir; valiz için suitcase."
+      - "suit | Takım elbise demektir."
+      - "suitcases | Tek valizden söz ediliyor; fiil tekil."
+  - id: is-there-a-fee-for
+    t: "Is there a fee for …?"
+    ex: "Is there a [[fee]] for extra baggage?"
+    extr: "Ek bagaj için ücret var mı?"
+    ttr: "… için ücret var mı?"
+    slots: ["extra baggage | Ek bagaj", "choosing a seat | Koltuk seçmek", "changing the date | Tarih değiştirmek"]
+    chunks: ["Is there a fee | ücret var mı", "for … | … için"]
+    g: polite-requests-could
+    ctx: ["Havalimanı"]
+    tone: ["Soru"]
+    d: 2
+    dis:
+      - "free | Ücretsiz demektir."
+      - "fear | Korku demektir."
+      - "feet | Ayaklar demektir."
+  - id: id-like-to-change
+    t: "I'd like to change my … to …"
+    ex: "I'd like to [[change]] my flight to Friday."
+    extr: "Uçuşumu cumaya değiştirmek istiyorum."
+    ttr: "Uçuşumu … değiştirmek istiyorum."
+    slots: ["Friday | cumaya", "an earlier one | daha erken bir uçuşa", "the 6 pm flight | akşam altıdaki uçuşa"]
+    chunks: ["I'd like to | -mek istiyorum", "change my flight | uçuşumu değiştirmek", "to Friday | cumaya"]
+    g: would-like
+    ctx: ["Havalimanı", "Bilet"]
+    tone: ["Kibar"]
+    d: 2
+    dis:
+      - "changing | “like to” sonrası yalın fiil gelir."
+      - "exchange | Takas etmek; bilet tarihi için “change” kullanılır."
+      - "chance | Şans demektir."
+  - id: please-proceed-to
+    t: "Passengers … please proceed to gate …"
+    ex: "All passengers please [[proceed to]] gate 7."
+    extr: "Tüm yolcuların 7 numaralı kapıya ilerlemesi rica olunur."
+    ttr: "… 7 numaralı kapıya ilerlemesi rica olunur."
+    slots: ["All passengers | Tüm yolcuların", "Passengers travelling to Berlin | Berlin'e giden yolcuların", "Business class passengers | Business sınıfı yolcuların"]
+    chunks: ["please proceed | ilerlemesi rica olunur", "to gate 7 | 7 numaralı kapıya"]
+    g: polite-requests-could
+    ctx: ["Anons"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "process to | “process” işlemek demektir."
+      - "precede to | “precede” önce gelmek demektir."
+      - "proceed at | Yön için “to” kullanılır."
+  - id: how-long-is-the-delay
+    t: "How long is the …?"
+    ex: "How long is the [[delay]]?"
+    extr: "Rötar ne kadar?"
+    ttr: "… ne kadar?"
+    slots: ["delay | Rötar", "layover | Aktarma beklemesi", "flight | Uçuş"]
+    chunks: ["How long | ne kadar", "is the delay | rötar"]
+    g: present-simple
+    ctx: ["Havalimanı"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "delayed | Sıfat; burada isim “delay” gerekir."
+      - "relay | Bayrak yarışı ya da aktarmak demektir."
+      - "display | Ekran demektir."
+  - id: i-have-nothing-to
+    t: "I have nothing to …"
+    ex: "I have nothing to [[declare]]."
+    extr: "Beyan edecek bir şeyim yok."
+    ttr: "… bir şeyim yok."
+    slots: ["declare | Beyan edecek", "add | Ekleyecek", "check in | Bagaja verecek"]
+    chunks: ["I have nothing | hiçbir şeyim yok", "to declare | beyan edecek"]
+    g: present-simple
+    ctx: ["Gümrük"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "declaring | “nothing to” sonrası yalın fiil gelir."
+      - "clear | Temizlemek ya da açık demektir."
+      - "decline | Reddetmek demektir."
+
+grammar:
+  - id: announcements-passive
+    title: "Anons dili: edilgen yapı ve “please + fiil”"
+    short: "Havalimanı anonsları edilgen yapı (has been delayed) ve rica bildiren “please proceed / please have … ready” kalıplarıyla kurulur."
+    long: "Edilgen: Flight BA 678 has been delayed (rötar yaptı), has been cancelled (iptal edildi), is now boarding (biniş başladı). Rica: Passengers are kindly requested to … / Please proceed to gate 9. / Please have your boarding pass ready. Zaman: The gate will close in ten minutes. Yolcunun cümlesi: My flight has been cancelled. Has the gate changed?"
+    ex: ["Flight LH 1301 has been delayed. | LH 1301 sefer sayılı uçuş rötar yaptı.", "Please have your boarding pass ready. | Lütfen biniş kartınızı hazır bulundurun.", "The gate will close in ten minutes. | Kapı on dakika içinde kapanacak."]
+  - id: complaints-polite
+    title: "Kibar şikâyet ve talep: I'm afraid …, Would it be possible to …?"
+    short: "Rötar ya da kayıp bagajda sorunu sakin söyleyip çözüm istemek için I'm afraid …, I was wondering if …, Would it be possible to …? kullanılır."
+    long: "Sorunu belirt: I'm afraid my bag hasn't arrived. Çözüm iste: Would it be possible to rebook me on the next flight? Daha yumuşak: I was wondering if you could help me. Hak sor: Am I entitled to a meal voucher? Teşekkür: Thanks for your help — I really appreciate it."
+    ex: ["I'm afraid my bag hasn't arrived. | Maalesef çantam gelmedi.", "Would it be possible to rebook me on the next flight? | Beni bir sonraki uçuşa aktarmanız mümkün mü?", "Am I entitled to a meal voucher? | Yemek kuponu hakkım var mı?"]
+
+scenarios:
+  - id: check-in-desk
+    title: "Check-in bankosunda"
+    sit: "İstanbul'dan Londra'ya uçuyorsun. Check-in bankosundasın ve koridor tarafı koltuk istiyorsun."
+    d: 1
+    targets: [aisle-seat, overweight, boarding-pass]
+    turns:
+      - ["Agent", "Good morning. Can I see your passport, please? Are you checking any bags?", "Günaydın. Pasaportunuzu görebilir miyim? Bagaja verecek çantanız var mı?"]
+      - choose:
+          - ["Yes, just this suitcase. Could I have an aisle seat, please?", true, "Soruyu cevaplayıp kibarca koltuk istiyor."]
+          - ["Yes, this. Aisle.", false, "Fazla kısa ve kaba."]
+          - ["I want window seat for my bag.", false, "Anlamsız bir istek."]
+      - ["Agent", "Sure. Your bag is two kilos overweight, I'm afraid. There's a fee of 30 euros.", "Tabii. Korkarım çantanız iki kilo fazla. 30 avroluk bir ücret var."]
+      - choose:
+          - ["Oh, can I move a few things into my carry-on instead?", true, "Ücret yerine makul bir çözüm öneriyor."]
+          - ["Why I pay?", false, "Soru yapısı bozuk ve kaba."]
+          - ["OK, I'll leave the bag here.", false, "Mantıklı bir çözüm değil."]
+      - ["Agent", "Of course. Here's your boarding pass. Boarding starts at 9:40 at gate 12.", "Tabii. İşte biniş kartınız. Biniş 9.40'ta 12 numaralı kapıda başlıyor."]
+  - id: missed-connection
+    title: "Aktarmayı kaçırmak"
+    sit: "İlk uçuşun rötar yaptı ve aktarmanı kaçırdın. Aktarma masasındasın."
+    d: 3
+    targets: [delayed, connecting-flight, compensation]
+    turns:
+      - ["Agent", "Hello, how can I help?", "Merhaba, nasıl yardımcı olabilirim?"]
+      - choose:
+          - ["My first flight was delayed and I've missed my connecting flight to Rome.", true, "Durumu net ve doğru zamanlarla anlatıyor."]
+          - ["I miss connection Rome because delay.", false, "Fiil zamanı ve bağlaçlar eksik."]
+          - ["I want to go home now.", false, "Sorunu anlatmıyor."]
+      - ["Agent", "I'm sorry about that. I can rebook you on the 6 pm flight.", "Bunun için üzgünüm. Sizi akşam altıdaki uçuşa aktarabilirim."]
+      - choose:
+          - ["Thank you. Am I entitled to a meal voucher while I wait?", true, "Teşekkür edip hakkını kibarca soruyor."]
+          - ["Give me hotel and food.", false, "Emir kipi kaba kaçıyor."]
+          - ["Thank you. Is the delay my fault?", false, "Konuyla ilgisiz bir soru."]
+      - ["Agent", "Yes, here's a voucher for 15 euros. You can also claim compensation online.", "Evet, işte 15 avroluk bir kupon. İnternetten tazminat da talep edebilirsiniz."]
+
+readings:
+  - id: delay-email
+    title: "Important: change to your flight"
+    kind: "Havayolu e-postası"
+    d: 2
+    s:
+      - ["We're sorry to inform you that your flight LH 1301 on 12 May has been cancelled.", "12 Mayıs'taki LH 1301 sefer sayılı uçuşunuzun iptal edildiğini üzülerek bildiririz."]
+      - ["We have rebooked you on flight LH 1305, which departs at 18:15 on the same day.", "Sizi aynı gün 18.15'te kalkan LH 1305 sefer sayılı uçuşa aktardık."]
+      - ["Your seat and baggage allowance remain the same.", "Koltuğunuz ve bagaj hakkınız aynı kalıyor."]
+      - ["If the new flight does not suit you, you can change it free of charge or request a full refund.", "Yeni uçuş size uymuyorsa ücretsiz değiştirebilir veya tam iade isteyebilirsiniz."]
+      - ["Please check in online no later than 23 hours before departure.", "Lütfen kalkıştan en geç 23 saat önce çevrim içi check-in yapın."]
+    gloss: ["rebook | yeniden rezervasyon yapmak", "allowance | hak (bagaj hakkı)", "free of charge | ücretsiz", "no later than | en geç"]
+    q:
+      - q: "Yolcuya ne yapıldı?"
+        o: ["Para iadesi yapıldı", "Başka bir uçuşa aktarıldı", "Otel verildi"]
+        a: 1
+        why: "“We have rebooked you on flight LH 1305”"
+      - q: "Yeni uçuş uymazsa yolcu ne yapabilir?"
+        o: ["Ek ücretle değiştirebilir", "Ücretsiz değiştirebilir veya tam iade alabilir", "Hiçbir şey yapamaz"]
+        a: 1
+        why: "“you can change it free of charge or request a full refund”"
+  - id: airport-signs
+    title: "At the airport"
+    kind: "Havalimanı tabelaları ve anonslar"
+    d: 1
+    s:
+      - ["Departures: please check in at least two hours before your flight.", "Dış hatlar gidiş: lütfen uçuşunuzdan en az iki saat önce check-in yapın."]
+      - ["Liquids must be in containers of 100 ml or less.", "Sıvılar 100 ml veya daha küçük kaplarda olmalıdır."]
+      - ["Do not leave your bags unattended.", "Çantalarınızı başıboş bırakmayın."]
+      - ["Flight TK 1985 to London is now boarding at gate 14.", "Londra'ya giden TK 1985 sefer sayılı uçuşun biniş işlemi 14 numaralı kapıda başladı."]
+      - ["Baggage from flight TK 1986 will arrive at belt 5.", "TK 1986 sefer sayılı uçuşun bagajları 5 numaralı banda gelecek."]
+    gloss: ["at least | en az", "container | kap", "unattended | gözetimsiz, başıboş", "belt | (bagaj) bant"]
+    q:
+      - q: "Sıvı kapları en fazla kaç ml olabilir?"
+        o: ["50 ml", "100 ml", "500 ml"]
+        a: 1
+        why: "“containers of 100 ml or less”"
+      - q: "TK 1985 için hangi işlem başladı?"
+        o: ["Check-in", "Biniş", "Bagaj teslimi"]
+        a: 1
+        why: "“is now boarding at gate 14”"
+
+writing:
+  id: delay-complaint
+  p: "Uçuşun 4 saat rötar yaptı ve aktarmanı kaçırdın. Havayoluna 3–4 cümlelik kibar bir şikâyet e-postası yaz: ne oldu, nasıl etkilendin ve ne istiyorsun?"
+  rubric: ["Olay doğru zamanlarla anlatılmış (was delayed, I missed / I've missed)", "Talep kibar ve açık (I would like to claim … / Would it be possible …?)", "Uçuş numarası, tarih gibi somut bilgi var"]
+  samples: ["Dear Sir or Madam, my flight TK 1985 from Istanbul to London on 12 May was delayed by four hours. As a result, I missed my connecting flight to Dublin and had to stay overnight. I would like to claim compensation for the delay. Kind regards, Ayşe Yılmaz"]
+  d: 3
+
+situations:
+  - { parent: "Havalimanı", name: "Check-in ve bagaj", items: [boarding-pass, carry-on, checked-baggage, overweight, aisle-seat, is-there-a-fee-for, what-time-does-boarding] }
+  - { parent: "Havalimanı", name: "Güvenlik, kapı ve biniş", items: [security-check, gate, departure, board, final-call, fasten-seatbelt, please-proceed-to, could-you-help-me-find] }
+  - { parent: "Sorunlar", name: "Rötar, iptal ve aktarma", items: [delayed, cancelled, layover, connecting-flight, compensation, my-flight-has-been, im-connecting-to, how-long-is-the-delay, id-like-to-change] }
+  - { parent: "Varış", name: "Varış, bagaj ve gümrük", items: [baggage-claim, lost-luggage, customs, jet-lag, my-bag-hasnt-arrived, i-have-nothing-to] }

@@ -1,0 +1,534 @@
+id: health-ward
+domain: health
+title: "Serviste hasta bakımı"
+desc: "Yatış, ölçümler, ağrı değerlendirmesi, ameliyat hazırlığı ve taburculuk konuşmaları."
+sort: 3
+
+targets:
+  - id: admit
+    w: admit
+    pos: v
+    tr: "(hastaneye) yatırmak"
+    ex: "We need to [[admit]] you for a few days for observation."
+    extr: "Gözlem için sizi birkaç günlüğüne yatırmamız gerekiyor."
+    d: 2
+    col: ["be admitted to hospital", "admit a patient"]
+    fam: ["admission (i.) yatış, kabul"]
+    tone: ["Hastane", "Resmî"]
+    dis:
+      - "admire | Hayran olmak demektir."
+      - "adopt | Evlat edinmek ya da benimsemek demektir."
+      - "omit | Atlamak, dahil etmemek demektir."
+  - id: discharge
+    w: discharge
+    pos: v
+    tr: "taburcu etmek"
+    ex: "If your tests are normal, we'll [[discharge]] you tomorrow."
+    extr: "Tahlilleriniz normalse sizi yarın taburcu edeceğiz."
+    d: 2
+    col: ["be discharged", "discharge summary", "discharge from hospital"]
+    tone: ["Hastane", "Resmî"]
+    dis:
+      - "charge | Ücret almak ya da şarj etmek demektir."
+      - "disturb | Rahatsız etmek demektir."
+      - "dismiss | Görevden almak ya da göndermek demektir."
+  - id: ward
+    w: ward
+    pos: n
+    tr: "(hastane) servis(i), koğuş"
+    ex: "Visiting hours on this [[ward]] are from two to eight."
+    extr: "Bu serviste ziyaret saatleri ikiden sekize kadar."
+    d: 2
+    col: ["children's ward", "surgical ward", "on the ward"]
+    tone: ["Hastane"]
+    dis:
+      - "word | Kelime demektir."
+      - "award | Ödül demektir."
+      - "war | Savaş demektir."
+  - id: vital-signs
+    w: vital signs
+    pos: n
+    tr: "yaşamsal bulgular (nabız, tansiyon, ateş, solunum)"
+    ex: "The nurse checks your [[vital signs]] every four hours."
+    extr: "Hemşire yaşamsal bulgularınızı dört saatte bir kontrol ediyor."
+    d: 3
+    col: ["check vital signs", "stable vital signs"]
+    syn: ["vitals"]
+    tone: ["Hastane", "Resmî"]
+    dis:
+      - "vital science | Anlamsız bir ifade."
+      - "virtual signs | “virtual” sanal demektir."
+      - "visual signs | Görsel işaretler demektir."
+  - id: pulse
+    w: pulse
+    pos: n
+    tr: "nabız"
+    ex: "Your [[pulse]] is a little fast. Are you feeling anxious?"
+    extr: "Nabzınız biraz hızlı. Endişeli mi hissediyorsunuz?"
+    d: 1
+    col: ["take someone's pulse", "a weak pulse", "pulse rate"]
+    syn: ["heart rate"]
+    tone: ["Hastane", "Muayene"]
+    dis:
+      - "pause | Duraklama demektir."
+      - "purse | Kadın cüzdanı demektir."
+      - "pulse oil | Anlamsız bir ifade."
+  - id: drip
+    w: drip
+    pos: n
+    tr: "serum, damar yolu (IV)"
+    ex: "You'll be on a [[drip]] until you can eat and drink again."
+    extr: "Yeniden yiyip içebilene kadar serumda kalacaksınız."
+    d: 2
+    col: ["be on a drip", "put up a drip", "IV drip"]
+    syn: ["IV"]
+    tone: ["Hastane"]
+    dis:
+      - "trip | Gezi demektir."
+      - "grip | Kavramak demektir."
+      - "drop | Damla ya da düşmek demektir."
+  - id: nil-by-mouth
+    w: nil by mouth
+    pos: phrase
+    tr: "ağızdan hiçbir şey verilmez (aç kalma)"
+    ex: "You'll be [[nil by mouth]] from midnight before your operation."
+    extr: "Ameliyatınızdan önceki gece yarısından itibaren ağızdan hiçbir şey almayacaksınız."
+    d: 3
+    col: ["nil by mouth", "no food or drink"]
+    syn: ["fasting"]
+    tone: ["Hastane", "Resmî"]
+    dis:
+      - "nothing by hand | Anlamsız bir ifade."
+      - "full by mouth | Ters anlam verir."
+      - "nil by nose | Kalıp “by mouth” ile kurulur."
+  - id: surgery
+    w: surgery
+    pos: n
+    tr: "ameliyat, cerrahi"
+    ex: "How long will I need to stay in hospital after the [[surgery]]?"
+    extr: "Ameliyattan sonra hastanede ne kadar kalmam gerekecek?"
+    d: 1
+    col: ["have surgery", "minor surgery", "after surgery"]
+    syn: ["operation"]
+    fam: ["surgeon (i.) cerrah", "surgical (s.) cerrahi"]
+    tone: ["Hastane"]
+    dis:
+      - "survey | Anket demektir."
+      - "surgeon | Cerrah demektir; ameliyatın kendisi değil."
+      - "surface | Yüzey demektir."
+  - id: consent-form
+    w: consent form
+    pos: n
+    tr: "onam formu"
+    ex: "Please read and sign the [[consent form]] before the procedure."
+    extr: "İşlemden önce lütfen onam formunu okuyup imzalayın."
+    d: 2
+    col: ["sign a consent form", "give consent", "informed consent"]
+    tone: ["Hastane", "Resmî"]
+    dis:
+      - "content form | “content” içerik demektir."
+      - "concert form | “concert” konser demektir."
+      - "consent from | Kelime sırası ve edat yanlış."
+  - id: stitches
+    w: stitches
+    pos: n
+    tr: "dikişler"
+    ex: "Your [[stitches]] will be removed in ten days."
+    extr: "Dikişleriniz on gün içinde alınacak."
+    d: 2
+    col: ["have stitches", "remove the stitches"]
+    tone: ["Hastane", "Günlük"]
+    dis:
+      - "switches | Anahtarlar demektir."
+      - "stretches | Esneme hareketleri demektir."
+      - "itches | Kaşıntılar demektir."
+  - id: wound
+    w: wound
+    pos: n
+    tr: "yara"
+    ex: "Keep the [[wound]] clean and dry."
+    extr: "Yarayı temiz ve kuru tutun."
+    d: 2
+    col: ["clean the wound", "an open wound", "wound dressing"]
+    syn: ["cut", "injury"]
+    tone: ["Hastane", "Talimat"]
+    dis:
+      - "wand | Asa demektir."
+      - "sound | Ses demektir."
+      - "round | Yuvarlak demektir."
+  - id: pain-relief
+    w: pain relief
+    pos: n
+    tr: "ağrı giderme, ağrı kesici tedavi"
+    ex: "Let me know if you need more [[pain relief]] during the night."
+    extr: "Gece daha fazla ağrı kesiciye ihtiyacınız olursa bana söyleyin."
+    d: 2
+    col: ["need pain relief", "give pain relief"]
+    syn: ["painkillers"]
+    tone: ["Hastane"]
+    dis:
+      - "pain belief | “belief” inanç demektir."
+      - "pain release | Doğal bir ifade değil."
+      - "pain relief's | Fazladan iyelik eki."
+  - id: call-button
+    w: call button
+    pos: n
+    tr: "hemşire çağrı düğmesi"
+    ex: "Press the [[call button]] if you need anything."
+    extr: "Bir şeye ihtiyacınız olursa çağrı düğmesine basın."
+    d: 1
+    col: ["press the call button"]
+    tone: ["Hastane", "Günlük"]
+    dis:
+      - "call bottom | “bottom” alt demektir."
+      - "cold button | “cold” soğuk demektir."
+      - "call buttons | Tek bir düğmeden söz ediliyor."
+  - id: groggy
+    w: groggy
+    pos: adj
+    tr: "sersem, kendine tam gelmemiş"
+    ex: "You may feel [[groggy]] for a few hours after the anaesthetic."
+    extr: "Anesteziden sonra birkaç saat sersem hissedebilirsiniz."
+    d: 3
+    col: ["feel groggy", "a bit groggy"]
+    syn: ["drowsy", "dazed"]
+    tone: ["Hastane", "Günlük"]
+    dis:
+      - "grumpy | Huysuz demektir."
+      - "foggy | Sisli demektir."
+      - "greedy | Açgözlü demektir."
+  - id: next-of-kin
+    w: next of kin
+    pos: n
+    tr: "en yakın akraba (acil durumda aranacak kişi)"
+    ex: "Who should we contact as your [[next of kin]]?"
+    extr: "En yakın akrabanız olarak kimi aramalıyız?"
+    d: 3
+    col: ["next of kin details", "inform the next of kin"]
+    tone: ["Hastane", "Resmî"]
+    dis:
+      - "next of kind | “kind” tür demektir."
+      - "near of kin | Kalıp “next of kin”."
+      - "next to kin | Edat yanlış."
+  - id: mobilise
+    w: mobilise
+    pos: v
+    tr: "(hastayı) ayağa kaldırmak, hareket ettirmek"
+    ex: "We'll help you [[mobilise]] the day after the operation."
+    extr: "Ameliyattan sonraki gün ayağa kalkmanıza yardım edeceğiz."
+    d: 3
+    col: ["get up and walk", "early mobilisation"]
+    syn: ["get you moving"]
+    tone: ["Hastane", "Resmî"]
+    dis:
+      - "mobile | Hareketli ya da cep telefonu demektir; fiil değil."
+      - "memorise | Ezberlemek demektir."
+      - "minimise | En aza indirmek demektir."
+  - id: blood-test
+    w: blood test
+    pos: n
+    tr: "kan tahlili"
+    ex: "The results of your [[blood test]] will be ready this afternoon."
+    extr: "Kan tahlilinizin sonuçları bu öğleden sonra hazır olacak."
+    d: 1
+    col: ["have a blood test", "blood test results"]
+    tone: ["Hastane", "Muayene"]
+    dis:
+      - "blood taste | “taste” tat demektir."
+      - "blood text | “text” metin demektir."
+      - "blood rest | “rest” dinlenme demektir."
+  - id: scan
+    w: scan
+    pos: n
+    tr: "tarama, görüntüleme (MR, tomografi, ultrason)"
+    ex: "The doctor wants you to have a [[scan]] of your knee."
+    extr: "Doktor dizinizin görüntülemesini istiyor."
+    d: 2
+    col: ["have a scan", "MRI scan", "CT scan"]
+    tone: ["Hastane"]
+    dis:
+      - "scam | Dolandırıcılık demektir."
+      - "skin | Deri demektir."
+      - "can | Kutu ya da -ebilmek demektir."
+  - id: ward-round
+    w: ward round
+    pos: n
+    tr: "vizit"
+    ex: "The consultant will see you on the [[ward round]] tomorrow morning."
+    extr: "Uzman doktor sizi yarın sabah vizitte görecek."
+    d: 3
+    col: ["on the ward round", "morning ward round"]
+    tone: ["Hastane", "Resmî"]
+    dis:
+      - "word round | “word” kelime demektir."
+      - "ward around | “around” etrafında demektir."
+      - "ward tour | Doğal bir ifade değil."
+  - id: comfortable
+    w: comfortable
+    pos: adj
+    tr: "rahat"
+    ex: "Are you [[comfortable]], or would you like another pillow?"
+    extr: "Rahat mısınız, yoksa bir yastık daha ister misiniz?"
+    d: 1
+    col: ["feel comfortable", "make yourself comfortable"]
+    fam: ["comfort (i.) rahatlık", "uncomfortable (s.) rahatsız"]
+    tone: ["Hastane", "Günlük"]
+    dis:
+      - "comfortably | Zarftır; “are you” sonrası sıfat gerekir."
+      - "convertible | Dönüştürülebilir demektir."
+      - "comforting | Teselli edici demektir."
+
+patterns:
+  - id: on-a-scale-of
+    t: "On a scale of 0 to 10, how … is it?"
+    ex: "On a scale of 0 to 10, how [[bad]] is the pain now?"
+    extr: "0'dan 10'a bir ölçekte ağrı şu an ne kadar kötü?"
+    ttr: "0'dan 10'a bir ölçekte … ne kadar kötü?"
+    slots: ["the pain now | ağrı şu an", "the nausea | bulantı", "the itching | kaşıntı"]
+    chunks: ["On a scale of 0 to 10 | 0'dan 10'a bir ölçekte", "how bad | ne kadar kötü"]
+    g: ward-questions
+    ctx: ["Hastane"]
+    tone: ["Soru", "Resmî"]
+    d: 2
+    dis:
+      - "badly | “how” sonrası sıfat gerekir: bad."
+      - "worse | Karşılaştırma değil, şiddet soruluyor."
+      - "bed | Yatak demektir."
+  - id: im-going-to
+    t: "I'm just going to … , is that OK?"
+    ex: "I'm just going to [[take]] your blood pressure, is that OK?"
+    extr: "Şimdi tansiyonunuzu ölçeceğim, olur mu?"
+    ttr: "Şimdi …, olur mu?"
+    slots: ["take your blood pressure | tansiyonunuzu ölçeceğim", "check your dressing | pansumanınıza bakacağım", "listen to your chest | göğsünüzü dinleyeceğim"]
+    chunks: ["I'm just going to | şimdi …-eceğim", "is that OK? | olur mu?"]
+    g: ward-questions
+    ctx: ["Hastane"]
+    tone: ["Kibar"]
+    d: 2
+    dis:
+      - "taking | “going to” sonrası yalın fiil gelir."
+      - "took | Geçmiş zaman uygun değil."
+      - "takes | “going to” sonrası -s almaz."
+  - id: have-you-had-anything
+    t: "Have you had anything to … since …?"
+    ex: "Have you had anything to [[eat]] since midnight?"
+    extr: "Gece yarısından beri bir şey yediniz mi?"
+    ttr: "Gece yarısından beri bir şey … mi?"
+    slots: ["eat | yediniz", "drink | içtiniz", "smoke | sigara içtiniz"]
+    chunks: ["Have you had | … mi", "anything to eat | yiyecek bir şey", "since midnight | gece yarısından beri"]
+    g: present-perfect-continuous
+    ctx: ["Ameliyat hazırlığı"]
+    tone: ["Soru"]
+    d: 2
+    dis:
+      - "eating | “anything to” sonrası yalın fiil gelir."
+      - "ate | Geçmiş zaman biçimi burada kullanılmaz."
+      - "eaten | “to” sonrası üçüncü hâl gelmez."
+  - id: you-ll-be-able-to
+    t: "You'll be able to … after …"
+    ex: "You'll be [[able to]] go home after the doctor sees you."
+    extr: "Doktor sizi gördükten sonra eve gidebileceksiniz."
+    ttr: "Doktor sizi gördükten sonra … -ebileceksiniz."
+    slots: ["go home | eve gid", "eat normally | normal yemek yi", "take a shower | duş al"]
+    chunks: ["You'll be able to | -ebileceksiniz", "after … | …-den sonra"]
+    g: imperatives-advice
+    ctx: ["Taburculuk"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "able of | Edat “to” olmalı."
+      - "can to | “can” sonrası “to” gelmez."
+      - "enable to | “enable” birini bir şeye olanak tanımak demektir."
+  - id: try-to-avoid
+    t: "Try to avoid … for …"
+    ex: "Try to [[avoid]] lifting anything heavy for six weeks."
+    extr: "Altı hafta boyunca ağır bir şey kaldırmamaya çalışın."
+    ttr: "Altı hafta boyunca … çalışın."
+    slots: ["lifting anything heavy | ağır bir şey kaldırmamaya", "driving | araba kullanmamaya", "swimming | yüzmemeye"]
+    chunks: ["Try to | -maya çalışın", "avoid + -ing | -mekten kaçınmak", "for six weeks | altı hafta boyunca"]
+    g: imperatives-advice
+    ctx: ["Taburculuk"]
+    tone: ["Tavsiye"]
+    d: 2
+    dis:
+      - "avoid to lift | “avoid” sonrası -ing gelir."
+      - "avoid lift | Fiil -ing almalı."
+      - "prevent lifting | “prevent” engellemek; kişinin kendi davranışı için “avoid” kullanılır."
+  - id: let-me-know-if
+    t: "Let me know if you …"
+    ex: "Let me [[know]] if you feel sick."
+    extr: "Midenizin bulandığını hissederseniz bana söyleyin."
+    ttr: "… bana söyleyin."
+    slots: ["feel sick | Midenizin bulandığını hissederseniz", "need anything | Bir şeye ihtiyacınız olursa", "have any pain | Ağrınız olursa"]
+    chunks: ["Let me know | bana haber verin", "if you … | eğer …-rsanız"]
+    g: imperatives-advice
+    ctx: ["Hastane"]
+    tone: ["Kibar"]
+    d: 1
+    dis:
+      - "Let me knowing | “let me” sonrası yalın fiil gelir."
+      - "Let me to know | “let” sonrası “to” gelmez."
+      - "Let me known | Üçüncü hâl kullanılmaz."
+  - id: when-can-i
+    t: "When can I …?"
+    ex: "When [[can I]] go back to work?"
+    extr: "İşe ne zaman dönebilirim?"
+    ttr: "Ne zaman …?"
+    slots: ["go back to work | işe dönebilirim", "have a shower | duş alabilirim", "drive again | yeniden araba kullanabilirim"]
+    chunks: ["When can I | ne zaman …-ebilirim", "go back to work | işe dönmek"]
+    g: ward-questions
+    ctx: ["Taburculuk"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "When I can | Soruda yardımcı fiil özneden önce gelir."
+      - "When could I to | “to” fazladan."
+      - "When can I going | Yalın fiil gerekir."
+  - id: youll-need-to-come-back
+    t: "You'll need to come back for …"
+    ex: "You'll need to [[come back]] for a check-up in two weeks."
+    extr: "İki hafta sonra kontrol için tekrar gelmeniz gerekecek."
+    ttr: "… için tekrar gelmeniz gerekecek."
+    slots: ["a check-up | Kontrol", "your stitches to be removed | Dikişlerinizin alınması", "another blood test | Bir kan tahlili daha"]
+    chunks: ["You'll need to | -meniz gerekecek", "come back | geri gelmek", "for a check-up | kontrol için"]
+    g: imperatives-advice
+    ctx: ["Taburculuk"]
+    tone: ["Resmî"]
+    d: 2
+    dis:
+      - "came back | “need to” sonrası yalın fiil gelir."
+      - "coming back | “to” sonrası -ing gelmez."
+      - "come again back | Kelime sırası yanlış."
+  - id: is-there-anyone
+    t: "Is there anyone who can …?"
+    ex: "Is there anyone who can [[pick you up]] from the hospital?"
+    extr: "Sizi hastaneden alabilecek biri var mı?"
+    ttr: "… biri var mı?"
+    slots: ["pick you up from the hospital | Sizi hastaneden alabilecek", "stay with you tonight | Bu gece yanınızda kalabilecek", "help you at home | Evde size yardım edebilecek"]
+    chunks: ["Is there anyone | biri var mı", "who can … | …-ebilecek"]
+    g: ward-questions
+    ctx: ["Taburculuk"]
+    tone: ["Soru", "Kibar"]
+    d: 2
+    dis:
+      - "pick up you | Zamir bölünebilen fiilin ortasına gelir: pick you up."
+      - "picking you up | “can” sonrası yalın fiil gelir."
+      - "pick you on | Edat yanlış."
+  - id: its-normal-to
+    t: "It's normal to … for a few days."
+    ex: "It's [[normal]] to feel tired for a few days."
+    extr: "Birkaç gün yorgun hissetmek normal."
+    ttr: "Birkaç gün … normal."
+    slots: ["feel tired | yorgun hissetmek", "have some swelling | biraz şişlik olması", "feel a little pain | biraz ağrı hissetmek"]
+    chunks: ["It's normal | normal", "to feel tired | yorgun hissetmek", "for a few days | birkaç gün"]
+    g: imperatives-advice
+    ctx: ["Taburculuk"]
+    tone: ["Güven verici"]
+    d: 1
+    dis:
+      - "normally | Zarftır; “It's” sonrası sıfat gerekir."
+      - "normal feeling | Yapı “normal to + fiil”."
+      - "norm | İsimdir; sıfat gerekir."
+
+grammar:
+  - id: ward-questions
+    title: "Hastaya kibar soru: How …? Is there …? When can I …?"
+    short: "Serviste sorular kısa ve kibardır. Soru kelimesi + yardımcı fiil + özne sırası kullanılır; “just”, “Is that OK?” yumuşatır."
+    long: "Soru sırası: How + sıfat + is it? (How bad is the pain?), When + can + I …? (When can I go home?). Var mı sorusu: Is there anyone who …? / Is there anything …? Yumuşatma: I'm just going to …, is that OK? ve Would you like …? Hastanın sorusunda da aynı sıra korunur: Can I have some water? (I can have değil)."
+    ex: ["How bad is the pain now? | Ağrı şu an ne kadar kötü?", "I'm just going to check your drip, is that OK? | Şimdi serumunuza bakacağım, olur mu?", "When can I have something to eat? | Ne zaman bir şey yiyebilirim?"]
+  - id: future-plans-hospital
+    title: "Planlanan işlemler: will / be going to / be + -ing"
+    short: "Kesinleşmiş hastane planları için “be going to” veya “be + -ing”, tahmin ve söz için “will” kullanılır."
+    long: "Planlanmış işlem: You're having surgery tomorrow at nine (yarın dokuzda ameliyat oluyorsunuz). Niyet: We're going to take some blood (biraz kan alacağız). Tahmin: You'll feel better in a few days (birkaç güne kendinizi daha iyi hissedeceksiniz). Söz: I'll bring you some water (size su getireceğim). Edilgen gelecek: Your stitches will be removed next week."
+    ex: ["You're having an X-ray this afternoon. | Bu öğleden sonra röntgen çektireceksiniz.", "We're going to keep you here tonight. | Bu gece sizi burada tutacağız.", "You'll feel much better tomorrow. | Yarın çok daha iyi hissedeceksiniz."]
+
+scenarios:
+  - id: pre-op-check
+    title: "Ameliyat öncesi kontrol"
+    sit: "Yarın sabah ameliyat olacaksın. Hemşire son kontrolleri yapıyor."
+    d: 2
+    targets: [nil-by-mouth, consent-form, surgery]
+    turns:
+      - ["Nurse", "Good evening. You're having your surgery at eight tomorrow. Have you signed the consent form?", "İyi akşamlar. Yarın sekizde ameliyat oluyorsunuz. Onam formunu imzaladınız mı?"]
+      - choose:
+          - ["Yes, I signed it this afternoon.", true, "Bitmiş bir işi doğru zamanla söylüyor."]
+          - ["Yes, I sign it tomorrow.", false, "Zaman uyumsuz; imzalama işi geçmişte olmalı."]
+          - ["What is consent?", false, "Formu bilmiyorsa sorabilir ama soru eksik ve kaba."]
+      - ["Nurse", "Good. Remember, you're nil by mouth from midnight. Have you had anything to eat since dinner?", "Güzel. Unutmayın, gece yarısından itibaren ağızdan hiçbir şey almıyorsunuz. Akşam yemeğinden beri bir şey yediniz mi?"]
+      - choose:
+          - ["No, just some water. Is that OK?", true, "Doğru bilgiyi verip uygun olup olmadığını soruyor."]
+          - ["No, I don't ate anything.", false, "“don't” sonrası yalın fiil gerekir."]
+          - ["I will eat a sandwich at midnight.", false, "Talimata aykırı."]
+      - ["Nurse", "Water is fine until midnight. Press the call button if you need anything.", "Gece yarısına kadar su içebilirsiniz. Bir şeye ihtiyacınız olursa çağrı düğmesine basın."]
+  - id: discharge-talk
+    title: "Taburculuk konuşması"
+    sit: "Ameliyattan iki gün sonra taburcu oluyorsun. Hemşire evde dikkat etmen gerekenleri anlatıyor."
+    d: 2
+    targets: [discharge, wound, stitches]
+    turns:
+      - ["Nurse", "The doctor says you can be discharged today. Is there anyone who can pick you up?", "Doktor bugün taburcu olabileceğinizi söylüyor. Sizi alabilecek biri var mı?"]
+      - choose:
+          - ["Yes, my sister is coming at three.", true, "Planlanmış bir olay için “is coming” doğal."]
+          - ["Yes, my sister come three o'clock.", false, "Fiil çekimi ve edat eksik."]
+          - ["No, I'll drive myself.", false, "Ameliyattan sonra araba kullanmak uygun değil."]
+      - ["Nurse", "Great. Keep the wound clean and dry. Your stitches will be removed in ten days.", "Harika. Yarayı temiz ve kuru tutun. Dikişleriniz on gün içinde alınacak."]
+      - choose:
+          - ["When can I have a shower?", true, "Bakımla ilgili doğru soru yapısı."]
+          - ["When I can have shower?", false, "Soru sırası ve tanımlık eksik."]
+          - ["Can I swim tomorrow?", false, "Yara kuru tutulmalıyken yüzmek uygun değil."]
+      - ["Nurse", "You can shower after 48 hours, but don't soak the wound.", "48 saat sonra duş alabilirsiniz ama yarayı ıslatıp bekletmeyin."]
+
+readings:
+  - id: visiting-rules
+    title: "Information for visitors"
+    kind: "Servis duyurusu"
+    d: 2
+    s:
+      - ["Visiting hours on Ward 4 are from 2 pm to 8 pm every day.", "4. Serviste ziyaret saatleri her gün 14.00–20.00 arasıdır."]
+      - ["No more than two visitors are allowed at a bed at one time.", "Bir yatağın yanında aynı anda en fazla iki ziyaretçiye izin verilir."]
+      - ["Please clean your hands when you enter and leave the ward.", "Lütfen servise girerken ve çıkarken ellerinizi temizleyin."]
+      - ["Do not visit if you have had a cold or stomach bug in the last 48 hours.", "Son 48 saatte soğuk algınlığı veya mide virüsü geçirdiyseniz ziyarete gelmeyin."]
+      - ["Flowers are not allowed for infection control reasons.", "Enfeksiyon kontrolü nedeniyle çiçeğe izin verilmez."]
+    gloss: ["at one time | aynı anda", "stomach bug | mide virüsü", "infection control | enfeksiyon kontrolü"]
+    q:
+      - q: "Aynı anda bir yatağı kaç kişi ziyaret edebilir?"
+        o: ["Bir", "İki", "Dört"]
+        a: 1
+        why: "“No more than two visitors are allowed at a bed at one time.”"
+      - q: "Çiçek neden yasak?"
+        o: ["Yer olmadığı için", "Enfeksiyon kontrolü için", "Alerji yaptığı için"]
+        a: 1
+        why: "“for infection control reasons”"
+  - id: wound-care-sheet
+    title: "Caring for your wound at home"
+    kind: "Taburcu broşürü"
+    d: 2
+    s:
+      - ["Keep your dressing on for 48 hours after the operation.", "Ameliyattan sonra pansumanınızı 48 saat çıkarmayın."]
+      - ["After that, you can shower, but pat the wound dry with a clean towel.", "Sonra duş alabilirsiniz ama yarayı temiz bir havluyla tampon yaparak kurulayın."]
+      - ["Some redness and swelling around the wound is normal.", "Yaranın çevresinde biraz kızarıklık ve şişlik olması normaldir."]
+      - ["Contact us if the wound becomes hot, very painful or starts to leak.", "Yara ısınır, çok ağrır veya akıntı yapmaya başlarsa bize ulaşın."]
+      - ["Your stitches will be removed at your GP practice in 10 to 14 days.", "Dikişleriniz 10–14 gün içinde aile hekiminizde alınacak."]
+    gloss: ["dressing | pansuman, yara örtüsü", "pat dry | tampon yaparak kurulamak", "leak | akıntı yapmak", "GP | aile hekimi"]
+    q:
+      - q: "Pansuman ne kadar süre çıkarılmamalı?"
+        o: ["24 saat", "48 saat", "10 gün"]
+        a: 1
+        why: "“Keep your dressing on for 48 hours”"
+      - q: "Hangi durum normal kabul ediliyor?"
+        o: ["Yaranın akıntı yapması", "Biraz kızarıklık ve şişlik", "Yaranın ısınması"]
+        a: 1
+        why: "“Some redness and swelling around the wound is normal.”"
+
+writing:
+  id: discharge-message
+  p: "Taburcu olduktan sonra servis hemşiresine 3–4 cümlelik bir mesaj yaz: nasıl olduğunu anlat, yaranla ilgili bir soru sor ve kontrol randevusunu teyit et."
+  rubric: ["Durumunu anlatmak için uygun zaman kullanılmış (I've been / I feel)", "Yara veya ilaçla ilgili açık bir soru var (Is it normal …? / When can I …?)", "Kibar bir kapanış ve randevu teyidi var"]
+  samples: ["Hello, I was discharged from Ward 4 on Monday. I've been feeling much better, but there is some redness around the wound. Is that normal? Could you also confirm that my check-up is on 24 May? Thank you."]
+  d: 2
+
+situations:
+  - { parent: "Yatış", name: "Yatış ve bilgiler", items: [admit, ward, next-of-kin, consent-form, comfortable, call-button] }
+  - { parent: "Bakım", name: "Ölçüm ve tedavi", items: [vital-signs, pulse, drip, pain-relief, blood-test, scan, ward-round, on-a-scale-of, im-going-to, let-me-know-if] }
+  - { parent: "Ameliyat", name: "Ameliyat hazırlığı ve sonrası", items: [nil-by-mouth, surgery, groggy, mobilise, have-you-had-anything] }
+  - { parent: "Taburculuk", name: "Eve dönüş", items: [discharge, wound, stitches, you-ll-be-able-to, try-to-avoid, when-can-i, youll-need-to-come-back, is-there-anyone, its-normal-to] }
