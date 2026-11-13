@@ -132,3 +132,7 @@ export type Metrics = {
 export async function getMetrics(days = 30) {
   return must(await db().rpc("admin_metrics", { p_days: days })) as Metrics;
 }
+
+export async function setUserPlan(email: string, plan: "free" | "premium", days: number | null) {
+  return must(await db().rpc("admin_set_plan", { p_email: email, p_plan: plan, p_days: days })) as { user_id: string; plan: string };
+}

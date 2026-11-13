@@ -10,6 +10,7 @@ const items = [
   { to: "/import", label: "Toplu aktarım" },
   { to: "/reports", label: "Hata bildirimleri" },
   { to: "/metrics", label: "Metrikler" },
+  { to: "/plans", label: "Premium planları" },
   { to: "/history", label: "Değişiklik geçmişi" },
 ];
 
