@@ -8,6 +8,7 @@ import 'ui/screens/auth_screen.dart';
 import 'ui/screens/chat_screen.dart';
 import 'ui/screens/collection_screen.dart';
 import 'ui/screens/consent_screen.dart';
+import 'ui/screens/premium_screen.dart';
 import 'ui/screens/explore_screen.dart';
 import 'ui/screens/home_screen.dart';
 import 'ui/screens/onboarding_screen.dart';
@@ -53,6 +54,7 @@ GoRouter buildRouter(WidgetRef ref) {
       GoRoute(path: '/assessment/:domain', builder: (_, s) => AssessmentScreen(domainId: s.pathParameters['domain']!)),
       GoRoute(path: '/speak/:domain', builder: (_, s) => SpeakScreen(domainId: s.pathParameters['domain']!, targetId: s.uri.queryParameters['target'])),
       GoRoute(path: '/progress', builder: (_, __) => const ProgressScreen()),
+      GoRoute(path: '/premium', builder: (_, __) => const PremiumScreen()),
       GoRoute(path: '/writing/:id', builder: (_, s) => WritingScreen(taskId: s.pathParameters['id']!)),
       GoRoute(path: '/target/:id', builder: (_, s) => TargetScreen(targetId: s.pathParameters['id']!)),
       GoRoute(path: '/pack/:id', builder: (_, s) => PackScreen(packId: s.pathParameters['id']!)),

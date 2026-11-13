@@ -376,6 +376,18 @@ class Backend extends ChangeNotifier {
     return rows.map((r) => r.cast<String, Object?>()).toList();
   }
 
+  /// Kullanıcının planı: "free" veya "premium". Misafir ve çevrimdışıda her zaman "free".
+  Future<String> myPlan() async {
+    final c = _c;
+    if (c == null || account != AccountKind.email) return 'free';
+    try {
+      final r = await c.rpc('my_plan') as Map;
+      return (r['plan'] as String?) ?? 'free';
+    } catch (_) {
+      return 'free';
+    }
+  }
+
   Future<Map<String, int>> aiUsageToday() async {
     final c = _c;
     if (c == null || user == null) return const {};

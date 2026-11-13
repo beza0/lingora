@@ -6,6 +6,7 @@ import '../../app_state.dart';
 import '../../services/backend.dart';
 import '../../srs/session.dart';
 import '../../theme.dart';
+import '../share_card.dart';
 import '../widgets.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -83,7 +84,14 @@ class HomeScreen extends ConsumerWidget {
                           Text(reached ? 'Günlük hedef tamam: $done / $goal' : 'Günlük hedef: $done / $goal', style: TextStyle(color: p.muted, fontSize: 13)),
                         ]),
                       ),
-                      Icon(Icons.chevron_right, color: p.muted),
+                      if (streak >= 2)
+                        IconButton(
+                          tooltip: 'Serini paylaş',
+                          icon: Icon(Icons.ios_share, color: p.primary),
+                          onPressed: () => shareStreak(context, streak, user.cards.length),
+                        )
+                      else
+                        Icon(Icons.chevron_right, color: p.muted),
                     ]),
                   );
                 }),

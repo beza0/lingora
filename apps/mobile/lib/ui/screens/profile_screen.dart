@@ -113,6 +113,16 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
             ListTile(title: const Text('Alanları düzenle'), trailing: const Icon(Icons.chevron_right), onTap: () => context.push('/domains')),
           ]),
         ),
+        const SizedBox(height: 12),
+        Card(
+          child: ListTile(
+            leading: Icon(Icons.workspace_premium, color: p.primary),
+            title: const Text('Lingora Premium', style: TextStyle(fontWeight: FontWeight.w700)),
+            subtitle: const Text('Daha fazla AI pratiği, yeni paketlere erken erişim'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => context.push('/premium'),
+          ),
+        ),
         const SectionTitle('AYARLAR'),
         Card(
           child: Column(children: [
