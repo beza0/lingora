@@ -1,0 +1,514 @@
+id: b1-experiences
+domain: b1
+title: "Deneyimler ve değişimler"
+desc: "Present perfect (ever / never / already / yet / just), for / since; past simple ile farkı."
+sort: 1
+
+targets:
+  - id: ever
+    w: ever
+    pos: adv
+    tr: "hiç (soruda, hayatın boyunca)"
+    ex: "Have you [[ever]] been to Japan?"
+    extr: "Hiç Japonya'ya gittin mi?"
+    d: 2
+    tone: ["Deneyim"]
+    dis:
+      - "never | Soruda “hiç” için “ever” kullanılır."
+      - "every | “Her” demektir."
+      - "yet | Soruda “henüz” anlamı verir; deneyim sorusunda “ever”."
+  - id: already
+    w: already
+    pos: adv
+    tr: "çoktan, zaten"
+    ex: "I've [[already]] finished the report."
+    extr: "Raporu çoktan bitirdim."
+    d: 2
+    tone: ["Durum"]
+    dis:
+      - "yet | Olumlu cümlede “yet” kullanılmaz."
+      - "all ready | “Hepsi hazır” demektir."
+      - "still | “Hâlâ” demektir; “finished” ile uyuşmaz."
+  - id: yet
+    w: yet
+    pos: adv
+    tr: "henüz, daha"
+    ex: "Have you booked the tickets [[yet]]?"
+    extr: "Biletleri ayırttın mı daha?"
+    d: 2
+    tone: ["Durum"]
+    dis:
+      - "already | Soruda şaşkınlık anlamı verir; “henüz” için “yet”."
+      - "still | “Hâlâ” demektir; cümle sonunda bu anlam vermez."
+      - "just | “Az önce” demektir; soru sonunda kullanılmaz."
+  - id: just
+    w: just
+    pos: adv
+    tr: "az önce, yeni"
+    ex: "She's [[just]] left the office."
+    extr: "Ofisten az önce çıktı."
+    d: 2
+    tone: ["Durum"]
+    dis:
+      - "yet | Olumlu cümlede kullanılmaz."
+      - "ever | Olumlu cümlede bu anlamda kullanılmaz."
+      - "justly | “Adil bir şekilde” demektir."
+  - id: since
+    w: since
+    pos: prep
+    tr: "-den beri (başlangıç noktası)"
+    ex: "I've lived here [[since]] 2019."
+    extr: "2019'dan beri burada yaşıyorum."
+    d: 2
+    conf: ["for | Süre bildirir: for five years."]
+    tone: ["Zaman"]
+    dis:
+      - "for | Süreyle kullanılır; yıl (başlangıç) için “since”."
+      - "from | “from 2019” tek başına “-den beri” anlamını vermez."
+      - "ago | Geçmiş zamanla kullanılır."
+  - id: for-duration
+    w: for
+    pos: prep
+    tr: "-dir, süresince (süre)"
+    ex: "We've known each other [[for]] ten years."
+    extr: "Birbirimizi on yıldır tanıyoruz."
+    d: 2
+    tone: ["Zaman"]
+    dis:
+      - "since | Başlangıç noktası ister; “ten years” bir süre."
+      - "during | “Esnasında” demektir; süre sayısıyla kullanılmaz."
+      - "ago | Present perfect ile kullanılmaz."
+  - id: experience
+    w: experience
+    pos: n
+    tr: "deneyim, tecrübe"
+    ex: "Living abroad was an amazing [[experience]]."
+    extr: "Yurt dışında yaşamak muhteşem bir deneyimdi."
+    d: 2
+    fam: ["experienced (s.) deneyimli"]
+    tone: ["Deneyim"]
+    dis:
+      - "experiment | Deney demektir."
+      - "expertise | Uzmanlık demektir."
+      - "expense | Gider demektir."
+  - id: abroad
+    w: abroad
+    pos: adv
+    tr: "yurt dışında, yurt dışına"
+    ex: "Have you ever studied [[abroad]]?"
+    extr: "Hiç yurt dışında okudun mu?"
+    d: 2
+    conf: ["aboard | Gemide, uçakta."]
+    tone: ["Seyahat"]
+    dis:
+      - "aboard | Gemide/uçakta demektir."
+      - "in abroad | “abroad” edatsız kullanılır."
+      - "a broad | “Geniş bir” demektir."
+  - id: improve
+    w: improve
+    pos: v
+    tr: "gelişmek, geliştirmek"
+    ex: "Your English has [[improved]] a lot this year."
+    extr: "İngilizcen bu yıl çok gelişti."
+    d: 2
+    fam: ["improvement (i.) gelişme"]
+    tone: ["Değişim"]
+    dis:
+      - "improve | “has” sonrası üçüncü hâl gerekir."
+      - "approved | Onaylandı demektir."
+      - "proved | Kanıtladı demektir."
+  - id: recently
+    w: recently
+    pos: adv
+    tr: "son zamanlarda"
+    ex: "Have you seen any good films [[recently]]?"
+    extr: "Son zamanlarda iyi bir film izledin mi?"
+    d: 2
+    syn: ["lately"]
+    tone: ["Zaman"]
+    dis:
+      - "recent | Sıfat; zarf gerekir."
+      - "really | “Gerçekten” demektir."
+      - "rarely | “Nadiren” demektir."
+  - id: achieve
+    w: achieve
+    pos: v
+    tr: "başarmak, elde etmek"
+    ex: "She has [[achieved]] all her goals this year."
+    extr: "Bu yıl tüm hedeflerine ulaştı."
+    d: 3
+    fam: ["achievement (i.) başarı"]
+    tone: ["Başarı"]
+    dis:
+      - "archived | Arşivlendi demektir."
+      - "arrived | Vardı demektir."
+      - "achieve | “has” sonrası üçüncü hâl gerekir."
+  - id: give-up
+    w: give up
+    pos: phrasal
+    tr: "bırakmak, vazgeçmek"
+    ex: "My dad has [[given up]] smoking."
+    extr: "Babam sigarayı bıraktı."
+    d: 2
+    tone: ["Değişim"]
+    dis:
+      - "given in | “Teslim olmak, boyun eğmek” demektir."
+      - "gave up | “has” sonrası üçüncü hâl gerekir."
+      - "given out | “Dağıtmak” demektir."
+  - id: take-up
+    w: take up
+    pos: phrasal
+    tr: "(bir uğraşa) başlamak"
+    ex: "I've [[taken up]] yoga to reduce stress."
+    extr: "Stresi azaltmak için yogaya başladım."
+    d: 3
+    tone: ["Hobi"]
+    dis:
+      - "taken off | Havalanmak, çıkarmak demektir."
+      - "taken on | Üstlenmek, işe almak demektir."
+      - "took up | “I've” sonrası üçüncü hâl gerekir."
+  - id: confident
+    w: confident
+    pos: adj
+    tr: "kendinden emin, özgüvenli"
+    ex: "I feel more [[confident]] when I speak English now."
+    extr: "Artık İngilizce konuşurken kendimi daha özgüvenli hissediyorum."
+    d: 2
+    fam: ["confidence (i.) özgüven"]
+    tone: ["Duygu"]
+    dis:
+      - "confidential | Gizli demektir."
+      - "confused | Kafası karışmış demektir."
+      - "confidence | İsim; sıfat gerekir."
+  - id: proud
+    w: proud
+    pos: adj
+    tr: "gururlu"
+    ex: "We're very [[proud]] of you."
+    extr: "Seninle gurur duyuyoruz."
+    d: 2
+    col: ["proud of something", "feel proud"]
+    tone: ["Duygu"]
+    dis:
+      - "pride | İsim; sıfat gerekir."
+      - "prove | Kanıtlamak demektir."
+      - "loud | Yüksek sesli demektir."
+  - id: miss
+    w: miss
+    pos: v
+    tr: "özlemek; kaçırmak"
+    ex: "I've [[missed]] my family since I moved to Berlin."
+    extr: "Berlin'e taşındığımdan beri ailemi özledim."
+    d: 2
+    other: "kaçırmak: miss the bus"
+    tone: ["Duygu"]
+    dis:
+      - "messed | “Dağıttı, berbat etti” demektir."
+      - "missing | “I've” sonrası üçüncü hâl gerekir."
+      - "mist | Sis demektir."
+  - id: so-far
+    w: so far
+    pos: phrase
+    tr: "şimdiye kadar"
+    ex: "[[So far]] I've visited twelve countries."
+    extr: "Şimdiye kadar on iki ülke gezdim."
+    d: 2
+    syn: ["up to now"]
+    tone: ["Zaman"]
+    dis:
+      - "Too far | “Çok uzak” demektir."
+      - "As far | Tek başına anlam vermez."
+      - "So long | “Hoşça kal” veya “o kadar uzun” demektir."
+  - id: in-my-life
+    w: in my life
+    pos: phrase
+    tr: "hayatımda"
+    ex: "I've never been so tired [[in my life]]."
+    extr: "Hayatımda hiç bu kadar yorulmadım."
+    d: 2
+    tone: ["Deneyim"]
+    dis:
+      - "on my life | Edat yanlış."
+      - "in my live | “live” fiil; isim “life”."
+      - "at my life | Edat yanlış."
+  - id: be-used-to
+    w: get used to
+    pos: phrase
+    tr: "alışmak"
+    ex: "I've finally [[got used to]] the cold weather."
+    extr: "Sonunda soğuk havaya alıştım."
+    d: 3
+    conf: ["used to + fiil | Eskiden yapardım."]
+    tone: ["Değişim"]
+    dis:
+      - "used to | “Eskiden …rdi” demektir; “alışmak” değil."
+      - "got use to | Doğru biçim “used”."
+      - "got using to | Kalıp “get used to”."
+
+  - id: once
+    w: once
+    pos: adv
+    tr: "bir kez, bir keresinde"
+    ex: "I've only been on a plane [[once]]."
+    extr: "Uçağa sadece bir kez bindim."
+    d: 2
+    col: ["once or twice", "once a week"]
+    tone: ["Deneyim"]
+    dis:
+      - "one | Sayı; zarf olarak “bir kez” için “once”."
+      - "ones | Zamir çoğulu; anlamsız olur."
+      - "onto | “Üzerine” demektir."
+
+patterns:
+  - id: have-you-ever
+    t: "Have you ever …?"
+    ex: "Have you ever [[tried]] Korean food?"
+    extr: "Hiç Kore yemeği denedin mi?"
+    ttr: "Hiç … denedin mi?"
+    slots: ["Korean food | Kore yemeği", "skiing | kayak", "bungee jumping | bungee jumping"]
+    chunks: ["Have you ever | hiç …dın mı", "tried | denemek (üçüncü hâl)"]
+    g: b1-present-perfect
+    ctx: ["Sohbet"]
+    tone: ["Soru"]
+    d: 2
+    dis:
+      - "try | “Have” sonrası üçüncü hâl gerekir."
+      - "trying | “Have” sonrası üçüncü hâl gerekir."
+      - "tryed | Doğru yazım “tried”."
+  - id: ive-never
+    t: "I've never … before."
+    ex: "I've never [[seen]] snow before."
+    extr: "Daha önce hiç kar görmedim."
+    ttr: "Daha önce hiç … görmedim."
+    slots: ["snow | kar", "a whale | balina", "the Northern Lights | kuzey ışıklarını"]
+    chunks: ["I've never | hiç …madım", "seen | görmek (üçüncü hâl)", "before | daha önce"]
+    g: b1-present-perfect
+    ctx: ["Deneyim"]
+    tone: ["Anlatı"]
+    d: 2
+    dis:
+      - "saw | “have” sonrası üçüncü hâl gerekir."
+      - "see | “have” sonrası üçüncü hâl gerekir."
+      - "seeing | “have” sonrası üçüncü hâl gerekir."
+  - id: ive-been-for
+    t: "I've been … for …"
+    ex: "I've [[been]] a nurse for six years."
+    extr: "Altı yıldır hemşireyim."
+    ttr: "… yıldır hemşireyim."
+    slots: ["six | Altı", "two | İki", "ten | On"]
+    chunks: ["I've been | …dır …im", "a nurse | hemşire", "for six years | altı yıldır"]
+    g: b1-for-since
+    ctx: ["Meslek"]
+    tone: ["Anlatı"]
+    d: 2
+    dis:
+      - "am | “for six years” geçmişten bugüne süre; present perfect gerekir."
+      - "was | Hâlâ devam eden durum; geçmiş zaman değil."
+      - "be | Üçüncü hâl “been” gerekir."
+  - id: how-long-have-you
+    t: "How long have you …?"
+    ex: "How long have you [[worked]] here?"
+    extr: "Ne zamandır burada çalışıyorsun?"
+    ttr: "Ne zamandır …?"
+    slots: ["worked here | burada çalışıyorsun", "lived in İzmir | İzmir'de yaşıyorsun", "known Can | Can'ı tanıyorsun"]
+    chunks: ["How long | ne zamandır", "have you worked | çalışıyorsun", "here | burada"]
+    g: b1-for-since
+    ctx: ["Sohbet"]
+    tone: ["Soru"]
+    d: 2
+    dis:
+      - "work | “have” sonrası üçüncü hâl gerekir."
+      - "working | Present perfect continuous için “been working” gerekir."
+      - "works | “have” sonrası üçüncü hâl gerekir."
+  - id: havent-yet
+    t: "I haven't … yet."
+    ex: "I haven't [[decided]] yet."
+    extr: "Henüz karar vermedim."
+    ttr: "Henüz …"
+    slots: ["decided | karar vermedim", "replied | cevap vermedim", "paid | ödemedim"]
+    chunks: ["I haven't decided | karar vermedim", "yet | henüz"]
+    g: b1-present-perfect
+    ctx: ["Durum"]
+    tone: ["Olumsuz"]
+    d: 2
+    dis:
+      - "decide | “haven't” sonrası üçüncü hâl gerekir."
+      - "decision | İsim; fiil gerekir."
+      - "deciding | “haven't” sonrası üçüncü hâl gerekir."
+  - id: ive-just
+    t: "I've just …"
+    ex: "I've just [[sent]] you the file."
+    extr: "Dosyayı sana az önce gönderdim."
+    ttr: "… sana az önce gönderdim."
+    slots: ["the file | Dosyayı", "the link | Bağlantıyı", "the photos | Fotoğrafları"]
+    chunks: ["I've just sent | az önce gönderdim", "you the file | sana dosyayı"]
+    g: b1-present-perfect
+    ctx: ["İş"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "send | “have” sonrası üçüncü hâl gerekir."
+      - "sended | “send” düzensizdir: sent."
+      - "sending | “have” sonrası üçüncü hâl gerekir."
+  - id: since-i-was
+    t: "… since I was …"
+    ex: "I've played the guitar since I [[was]] twelve."
+    extr: "On iki yaşımdan beri gitar çalıyorum."
+    ttr: "… beri gitar çalıyorum."
+    slots: ["twelve | On iki yaşımdan", "a child | Çocukluğumdan", "at school | Okul yıllarımdan"]
+    chunks: ["I've played | çalıyorum (o zamandan beri)", "since I was twelve | on iki yaşımdan beri"]
+    g: b1-for-since
+    ctx: ["Anlatı"]
+    tone: ["Anlatı"]
+    d: 3
+    dis:
+      - "am | “since” sonrası geçmişteki başlangıç: was."
+      - "have been | “since” sonrası başlangıç anı past simple olur."
+      - "were | “I” ile “was” kullanılır."
+  - id: did-vs-have
+    t: "I've been to … . I went there in …"
+    ex: "I've been to Rome. I [[went]] there in 2022."
+    extr: "Roma'ya gittim; 2022'de gitmiştim."
+    ttr: "… gittim; 2022'de gitmiştim."
+    slots: ["Rome | Roma'ya", "Paris | Paris'e", "Cairo | Kahire'ye"]
+    chunks: ["I've been to | (hayatımda) gittim", "I went there | oraya gittim", "in 2022 | 2022'de"]
+    g: b1-present-perfect
+    ctx: ["Deneyim"]
+    tone: ["Anlatı"]
+    d: 3
+    dis:
+      - "have gone | Belli bir tarih (in 2022) varken past simple kullanılır."
+      - "have been | Belli bir tarih varken past simple kullanılır."
+      - "go | Geçmiş zaman gerekir."
+  - id: its-the-first-time
+    t: "It's the first time I've …"
+    ex: "It's the first time I've [[driven]] on the left."
+    extr: "Soldan ilk kez araba kullanıyorum."
+    ttr: "… ilk kez araba kullanıyorum."
+    slots: ["on the left | Soldan", "in the snow | Karda", "at night | Gece"]
+    chunks: ["It's the first time | ilk kez", "I've driven | araba kullandım"]
+    g: b1-present-perfect
+    ctx: ["Deneyim"]
+    tone: ["Anlatı"]
+    d: 3
+    dis:
+      - "drove | “I've” sonrası üçüncü hâl gerekir."
+      - "drive | “I've” sonrası üçüncü hâl gerekir."
+      - "drived | “drive” düzensizdir: driven."
+  - id: has-changed
+    t: "… has changed a lot since …"
+    ex: "My life has [[changed]] a lot since I moved."
+    extr: "Taşındığımdan beri hayatım çok değişti."
+    ttr: "… beri hayatım çok değişti."
+    slots: ["I moved | Taşındığımdan", "I graduated | Mezun olduğumdan", "I had my son | Oğlum doğduğundan"]
+    chunks: ["My life has changed | hayatım değişti", "a lot | çok", "since I moved | taşındığımdan beri"]
+    g: b1-for-since
+    ctx: ["Değişim"]
+    tone: ["Anlatı"]
+    d: 2
+    dis:
+      - "change | “has” sonrası üçüncü hâl gerekir."
+      - "changing | “has” sonrası üçüncü hâl gerekir."
+      - "chanced | “Şans eseri oldu” anlamında, yanlış fiil."
+
+grammar:
+  - id: b1-present-perfect
+    title: "Present perfect: deneyim ve sonucu bugünü etkileyen olaylar"
+    short: "Zamanı belli olmayan deneyimler ve etkisi bugün süren olaylar have / has + üçüncü hâl ile anlatılır. Zaman belliyse past simple kullanılır."
+    long: "Kuruluş: have/has + V3 (I've seen, she has left). Kullanımlar: (1) Deneyim — Have you ever been to Van? I've never tried it. (2) Yakın geçmiş ve sonucu — I've lost my keys (şimdi yok). I've just eaten. (3) Henüz/çoktan — Have you finished yet? I've already paid. Past simple ile fark: belli bir zaman söylenince past simple — I've been to Rome (ne zaman olduğu önemsiz) / I went there in 2022 (zaman belli). Dikkat: yesterday, last week, in 2020, ago gibi ifadeler present perfect ile kullanılmaz. been to = gidip geldi; gone to = gitti, hâlâ orada."
+    ex: ["Have you ever met a famous person? | Hiç ünlü biriyle tanıştın mı?", "I've already seen this film. | Bu filmi zaten izledim.", "She's gone to the bank. She'll be back soon. | Bankaya gitti, birazdan döner."]
+  - id: b1-for-since
+    title: "for / since ve “ne zamandır”"
+    short: "Geçmişte başlayıp hâlâ süren durumlar present perfect ile anlatılır. Süre için for, başlangıç noktası için since kullanılır."
+    long: "for + süre: for two hours, for ten years, for a long time. since + başlangıç: since Monday, since 2015, since I was a child. Soru: How long have you lived here? Türkçede “İki yıldır burada yaşıyorum” şimdiki zamanla söylenir; İngilizcede present perfect gerekir: I've lived here for two years (I live here for two years yanlış). Eylem fiillerinde süreç vurgusu için present perfect continuous da olur: I've been waiting for an hour. Durum fiilleri (know, be, have, like) continuous yapılmaz: I've known her since school."
+    ex: ["We've been married for twelve years. | On iki yıldır evliyiz.", "He has worked here since March. | Marttan beri burada çalışıyor.", "How long have you had this car? | Bu araba ne zamandır sende?"]
+
+scenarios:
+  - id: job-interview-experience
+    title: "İş görüşmesinde deneyim anlatmak"
+    sit: "Bir otelde resepsiyon pozisyonu için görüşmedesin. Görüşmeci deneyimini soruyor."
+    d: 2
+    targets: [experience, abroad, since, achieve]
+    turns:
+      - ["Manager", "Tell me about your experience. Have you ever worked in a hotel?", "Bize deneyiminden bahset. Hiç bir otelde çalıştın mı?"]
+      - choose:
+          - ["Yes, I have. I've worked at a hotel in Bodrum since 2023.", true, "Hâlâ süren iş için present perfect ve “since”."]
+          - ["Yes, I did. I work at a hotel since 2023.", false, "“since” ile present perfect gerekir."]
+          - ["Yes, I have. I've worked at a hotel for 2023.", false, "Yıl başlangıç noktası; “since” gerekir."]
+      - ["Manager", "Great. Have you ever worked abroad?", "Harika. Hiç yurt dışında çalıştın mı?"]
+      - choose:
+          - ["Yes. I spent a summer in Ireland in 2021. It was a great experience.", true, "Belli zaman için past simple doğru."]
+          - ["Yes. I've spent a summer in Ireland in 2021.", false, "Belli bir yıl varken past simple kullanılır."]
+          - ["Yes. I've been in abroad.", false, "“abroad” edatsız kullanılır."]
+      - ["Manager", "Excellent. What have you learned from it?", "Mükemmel. Bundan ne öğrendin?"]
+  - id: catching-up
+    title: "Uzun zamandır görmediğin bir arkadaş"
+    sit: "Üç yıldır görmediğin bir arkadaşınla karşılaştın."
+    d: 2
+    targets: [just, take-up, so-far, give-up]
+    turns:
+      - ["Ozan", "Hey! I haven't seen you for ages! What's new?", "Hey! Seni çok uzun zamandır görmedim! Ne var ne yok?"]
+      - choose:
+          - ["Lots! I've just moved to a new flat and I've taken up running.", true, "Yakın geçmiş için “just” ve present perfect."]
+          - ["Lots! I just move and I take up running.", false, "Fiiller present perfect olmalı."]
+          - ["Lots! I've just moved and I've took up running.", false, "“take” üçüncü hâli “taken”."]
+      - ["Ozan", "Running? Wow. How far have you run?", "Koşu mu? Vay. Ne kadar koştun?"]
+      - choose:
+          - ["So far I've done two 10K races. And I've given up sugar!", true, "“So far” ve present perfect doğru."]
+          - ["So far I did two races last month and next month.", false, "Zaman ifadeleri çelişiyor."]
+          - ["So far I've give up sugar.", false, "Üçüncü hâl “given”."]
+      - ["Ozan", "Amazing. You look great!", "Harika. Çok iyi görünüyorsun!"]
+
+readings:
+  - id: life-in-a-new-country
+    title: "Two years in Canada"
+    kind: "Blog yazısı"
+    d: 2
+    s:
+      - ["I moved to Toronto two years ago, and my life has changed completely.", "İki yıl önce Toronto'ya taşındım ve hayatım tamamen değişti."]
+      - ["At first I missed my family and Turkish food a lot.", "İlk başta ailemi ve Türk yemeklerini çok özledim."]
+      - ["Since then I've made many friends and found a good job.", "O zamandan beri birçok arkadaş edindim ve iyi bir iş buldum."]
+      - ["I still haven't got used to the winters, though — they're really long!", "Ama kışlara hâlâ alışamadım — gerçekten çok uzunlar!"]
+      - ["I've visited Turkey twice so far, and each time it was hard to leave.", "Şimdiye kadar Türkiye'ye iki kez gittim ve her seferinde ayrılmak zor oldu."]
+    gloss: ["completely | tamamen", "since then | o zamandan beri", "though | yine de, ama"]
+    q:
+      - q: "Yazar hâlâ neye alışamamış?"
+        o: ["Yemeklere", "Kışlara", "İşine"]
+        a: 1
+        why: "“I still haven't got used to the winters”"
+      - q: "“I moved … two years ago” cümlesinde neden past simple var?"
+        o: ["Çünkü “ago” ile belli bir geçmiş zaman veriliyor", "Çünkü taşınma hâlâ sürüyor", "Çünkü olumsuz bir cümle"]
+        a: 0
+        why: "“ago” geçmişte belli bir zamanı gösterir; present perfect ile kullanılmaz."
+  - id: volunteer-profile
+    title: "Volunteer of the month"
+    kind: "Bülten yazısı"
+    d: 2
+    s:
+      - ["This month's volunteer is Gül, a retired teacher.", "Bu ayın gönüllüsü emekli öğretmen Gül."]
+      - ["She has helped at our animal shelter since 2020.", "2020'den beri hayvan barınağımızda yardım ediyor."]
+      - ["So far she has found homes for more than eighty cats.", "Şimdiye kadar seksenden fazla kediye yuva buldu."]
+      - ["Last year she also started a reading club for children.", "Geçen yıl çocuklar için bir okuma kulübü de başlattı."]
+      - ["We are very proud to have her in our team.", "Onun ekibimizde olmasından gurur duyuyoruz."]
+    gloss: ["volunteer | gönüllü", "animal shelter | hayvan barınağı", "retired | emekli"]
+    q:
+      - q: "Gül ne zamandan beri barınakta gönüllü?"
+        o: ["Geçen yıldan beri", "2020'den beri", "Emekli olduğundan beri"]
+        a: 1
+        why: "“She has helped at our animal shelter since 2020.”"
+      - q: "Okuma kulübü ne zaman başladı?"
+        o: ["2020'de", "Geçen yıl", "Bu ay"]
+        a: 1
+        why: "“Last year she also started a reading club”"
+
+writing:
+  id: b1-life-changes
+  p: "Son birkaç yılda hayatında neler değişti? 5–7 cümleyle anlat; present perfect ve past simple'ı doğru yerde kullan."
+  rubric: ["Present perfect: zamanı belli olmayan değişimler (I've started, I've learned)", "Past simple: belli zamanlı olaylar (in 2022, last year)", "for / since doğru kullanılmış"]
+  samples: ["A lot has changed in my life recently. I graduated from university in 2024 and moved to İstanbul last year. I've worked as a junior designer since January. I've also taken up swimming, and I've lost five kilos so far. I haven't got used to the traffic yet, but I really love my new job."]
+  d: 3
+
+situations:
+  - { parent: "Deneyim", name: "Deneyimlerden bahsetme", items: [ever, once, experience, abroad, in-my-life, so-far, have-you-ever, ive-never, its-the-first-time, did-vs-have] }
+  - { parent: "Durum", name: "Yapılanlar ve yapılmayanlar", items: [already, yet, just, recently, havent-yet, ive-just] }
+  - { parent: "Değişim", name: "Değişim ve gelişim", items: [since, for-duration, improve, achieve, give-up, take-up, confident, proud, miss, be-used-to, ive-been-for, how-long-have-you, since-i-was, has-changed] }

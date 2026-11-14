@@ -1,0 +1,518 @@
+id: b1-advice-and-choices
+domain: b1
+title: "Tavsiye, koşullar ve tercihler"
+desc: "1. ve 2. tip if cümleleri, should / had better, fiilden sonra -ing mi to mu?"
+sort: 2
+
+targets:
+  - id: advice
+    w: advice
+    pos: n
+    tr: "tavsiye, öğüt"
+    ex: "Can you give me some [[advice]] about my CV?"
+    extr: "CV'm hakkında bana biraz tavsiye verebilir misin?"
+    d: 2
+    fam: ["advise (f.) tavsiye etmek"]
+    conf: ["advise | Fiil: I advise you to rest."]
+    tone: ["Tavsiye"]
+    dis:
+      - "advices | “advice” sayılamaz; çoğul olmaz."
+      - "advise | Fiil; “some” sonrası isim gerekir."
+      - "adventure | Macera demektir."
+  - id: suggest
+    w: suggest
+    pos: v
+    tr: "önermek"
+    ex: "I [[suggest]] taking the train instead of driving."
+    extr: "Araba kullanmak yerine treni almanı öneririm."
+    d: 3
+    fam: ["suggestion (i.) öneri"]
+    tone: ["Tavsiye"]
+    dis:
+      - "suggestion | İsim; fiil gerekir."
+      - "suspect | Şüphelenmek demektir."
+      - "digest | Sindirmek demektir."
+  - id: unless
+    w: unless
+    pos: conj
+    tr: "-medikçe, eğer … değilse"
+    ex: "You'll miss the bus [[unless]] you leave now."
+    extr: "Hemen çıkmazsan otobüsü kaçıracaksın."
+    d: 3
+    syn: ["if … not"]
+    tone: ["Koşul"]
+    dis:
+      - "if | “if you leave now” anlamı tersine çevirir."
+      - "until | “-e kadar” demektir."
+      - "without | Edat; cümle bağlamaz."
+  - id: in-case
+    w: in case
+    pos: conj
+    tr: "ne olur ne olmaz diye, -ebilir diye"
+    ex: "Take an umbrella [[in case]] it rains."
+    extr: "Yağmur yağabilir diye şemsiye al."
+    d: 3
+    conf: ["if | “Eğer yağarsa”; in case önlem bildirir."]
+    tone: ["Tavsiye"]
+    dis:
+      - "in the case | Kalıp tanımlıksız: in case."
+      - "in fact | “Aslında” demektir."
+      - "because | Sebep bildirir; önlem değil."
+  - id: avoid
+    w: avoid
+    pos: v
+    tr: "kaçınmak"
+    ex: "Try to [[avoid]] eating late at night."
+    extr: "Gece geç saatte yemek yemekten kaçınmaya çalış."
+    d: 2
+    col: ["avoid doing something", "avoid the traffic"]
+    tone: ["Tavsiye"]
+    dis:
+      - "void | Geçersiz demektir."
+      - "afford | Gücü yetmek demektir."
+      - "avoidance | İsim; fiil gerekir."
+  - id: afford
+    w: afford
+    pos: v
+    tr: "(parası) yetmek, karşılayabilmek"
+    ex: "We can't [[afford]] a new car this year."
+    extr: "Bu yıl yeni bir arabaya paramız yetmiyor."
+    d: 3
+    fam: ["affordable (s.) uygun fiyatlı"]
+    tone: ["Para"]
+    dis:
+      - "effort | Çaba demektir."
+      - "afraid | Korkmuş demektir."
+      - "avoid | Kaçınmak demektir."
+  - id: decide
+    w: decide
+    pos: v
+    tr: "karar vermek"
+    ex: "She [[decided]] to study medicine."
+    extr: "Tıp okumaya karar verdi."
+    d: 2
+    fam: ["decision (i.) karar"]
+    tone: ["Karar"]
+    dis:
+      - "decision | İsim; fiil gerekir."
+      - "divided | Böldü demektir."
+      - "decided on to | “decide on” sonrası isim gelir."
+  - id: enjoy
+    w: enjoy
+    pos: v
+    tr: "keyif almak, sevmek"
+    ex: "I really [[enjoy]] cooking for my friends."
+    extr: "Arkadaşlarıma yemek yapmaktan gerçekten keyif alıyorum."
+    d: 2
+    col: ["enjoy doing something", "enjoy yourself"]
+    tone: ["Tercih"]
+    dis:
+      - "enjoys | “I” ile fiile -s gelmez."
+      - "join | Katılmak demektir."
+      - "enjoy to | “enjoy” sonrası -ing gelir."
+  - id: mind
+    w: mind
+    pos: v
+    tr: "sakınca görmek, rahatsız olmak"
+    ex: "Do you [[mind]] waiting a few minutes?"
+    extr: "Birkaç dakika beklemenin sakıncası var mı?"
+    d: 3
+    col: ["Do you mind if …?", "I don't mind"]
+    tone: ["Kibar"]
+    dis:
+      - "mean | Kastetmek demektir."
+      - "remind | Hatırlatmak demektir."
+      - "minds | “Do” varken fiil yalın olur."
+  - id: risk
+    w: risk
+    pos: n
+    tr: "risk, tehlike"
+    ex: "Is there any [[risk]] if I cancel now?"
+    extr: "Şimdi iptal edersem bir risk var mı?"
+    d: 2
+    col: ["take a risk", "at risk"]
+    tone: ["Karar"]
+    dis:
+      - "rice | Pirinç demektir."
+      - "risky | Sıfat (riskli); isim gerekir."
+      - "wrist | Bilek demektir."
+  - id: option
+    w: option
+    pos: n
+    tr: "seçenek"
+    ex: "Working from home is a good [[option]] for parents."
+    extr: "Evden çalışmak ebeveynler için iyi bir seçenek."
+    d: 2
+    syn: ["choice"]
+    tone: ["Karar"]
+    dis:
+      - "opinion | Görüş demektir."
+      - "operation | Ameliyat, işlem demektir."
+      - "optional | Sıfat (isteğe bağlı); isim gerekir."
+  - id: instead-of
+    w: instead of
+    pos: prep
+    tr: "yerine"
+    ex: "Why don't you walk [[instead of]] taking a taxi?"
+    extr: "Neden taksiye binmek yerine yürümüyorsun?"
+    d: 2
+    tone: ["Tavsiye"]
+    dis:
+      - "instead | “of” eksik."
+      - "in place | “in place of” olmalı; “of” eksik."
+      - "rather of | Kalıp “rather than”."
+  - id: worth
+    w: worth
+    pos: adj
+    tr: "değer (bir şeye)"
+    ex: "The museum is definitely [[worth]] visiting."
+    extr: "Müze kesinlikle görülmeye değer."
+    d: 3
+    col: ["worth it", "worth + -ing"]
+    tone: ["Tavsiye"]
+    dis:
+      - "worthy | “worthy of” ile kullanılır."
+      - "worse | Daha kötü demektir."
+      - "worthless | Değersiz demektir; anlam tersine döner."
+  - id: lottery
+    w: lottery
+    pos: n
+    tr: "piyango"
+    ex: "If I won the [[lottery]], I'd travel the world."
+    extr: "Piyangoyu kazansaydım dünyayı gezerdim."
+    d: 2
+    tone: ["Hayal"]
+    dis:
+      - "lot | “Çok” veya “arsa” demektir."
+      - "lorry | Kamyon demektir."
+      - "battery | Pil demektir."
+  - id: stressed
+    w: stressed
+    pos: adj
+    tr: "stresli"
+    ex: "If you feel [[stressed]], take a short walk."
+    extr: "Stresli hissediyorsan kısa bir yürüyüş yap."
+    d: 2
+    conf: ["stressful | Stres yaratan (iş, gün)."]
+    tone: ["Duygu"]
+    dis:
+      - "stressful | Kişi için “stressed”; “stressful” bir durumu anlatır."
+      - "stress | İsim; sıfat gerekir."
+      - "dressed | Giyinmiş demektir."
+  - id: rest
+    w: rest
+    pos: v
+    tr: "dinlenmek"
+    ex: "You should [[rest]] for a couple of days."
+    extr: "Birkaç gün dinlenmelisin."
+    d: 2
+    tone: ["Sağlık", "Tavsiye"]
+    dis:
+      - "rested | “should” sonrası yalın fiil gelir."
+      - "resting | “should” sonrası yalın fiil gelir."
+      - "rust | Paslanmak demektir."
+  - id: deadline
+    w: deadline
+    pos: n
+    tr: "son teslim tarihi"
+    ex: "If we miss the [[deadline]], we'll lose the client."
+    extr: "Son teslim tarihini kaçırırsak müşteriyi kaybederiz."
+    d: 2
+    col: ["meet a deadline", "miss a deadline"]
+    tone: ["İş"]
+    dis:
+      - "headline | Manşet demektir."
+      - "dead end | Çıkmaz sokak demektir."
+      - "timeline | Zaman çizelgesi demektir."
+  - id: manage-to
+    w: manage to
+    pos: phrase
+    tr: "-meyi başarmak"
+    ex: "I finally [[managed to]] fix my bike."
+    extr: "Sonunda bisikletimi tamir etmeyi başardım."
+    d: 3
+    tone: ["Başarı"]
+    dis:
+      - "managed | “to” eksik."
+      - "managed fixing | “manage” sonrası “to + fiil” gelir."
+      - "managing to | Geçmiş anlatılıyor: managed to."
+  - id: look-forward-to
+    w: look forward to
+    pos: phrase
+    tr: "dört gözle beklemek"
+    ex: "I'm [[looking forward to]] seeing you."
+    extr: "Seni görmeyi dört gözle bekliyorum."
+    d: 3
+    conf: ["to + -ing | Burada “to” edattır; sonrasında -ing gelir."]
+    tone: ["Kibar", "E-posta"]
+    dis:
+      - "looking forward | “to” eksik."
+      - "looking front to | Kalıp “forward”."
+      - "looking for to | “look for” aramak demektir."
+  - id: had-better
+    w: had better
+    pos: phrase
+    tr: "-se iyi olur (uyarı)"
+    ex: "You'd [[better]] hurry or you'll be late."
+    extr: "Acele etsen iyi olur, yoksa geç kalacaksın."
+    d: 3
+    conf: ["should | Daha yumuşak tavsiye."]
+    tone: ["Uyarı"]
+    dis:
+      - "best | Kalıp “had better”."
+      - "good | Kalıp “had better”."
+      - "more | Anlamsız olur."
+
+patterns:
+  - id: if-will
+    t: "If you …, you'll …"
+    ex: "If you study every day, you'll [[pass]] the exam."
+    extr: "Her gün çalışırsan sınavı geçersin."
+    ttr: "Her gün çalışırsan …"
+    slots: ["pass the exam | sınavı geçersin", "see results | sonuç görürsün", "feel better | kendini daha iyi hissedersin"]
+    chunks: ["If you study | çalışırsan", "you'll pass | geçersin"]
+    g: b1-conditionals
+    ctx: ["Tavsiye"]
+    tone: ["Koşul"]
+    d: 2
+    dis:
+      - "passed | “will” sonrası yalın fiil gelir."
+      - "passing | “will” sonrası yalın fiil gelir."
+      - "to pass | “will” sonrası “to” gelmez."
+  - id: if-i-were-you
+    t: "If I were you, I'd …"
+    ex: "If I were you, I'd [[talk]] to your manager."
+    extr: "Senin yerinde olsam müdürünle konuşurdum."
+    ttr: "Senin yerinde olsam …"
+    slots: ["talk to your manager | müdürünle konuşurdum", "take the job | işi kabul ederdim", "wait a bit | biraz beklerdim"]
+    chunks: ["If I were you | senin yerinde olsam", "I'd talk | konuşurdum"]
+    g: b1-conditionals
+    ctx: ["Tavsiye"]
+    tone: ["Kibar"]
+    d: 2
+    dis:
+      - "talked | “would” sonrası yalın fiil gelir."
+      - "will talk | 2. tip koşulda “would” kullanılır."
+      - "talking | “would” sonrası yalın fiil gelir."
+  - id: if-i-had
+    t: "If I had …, I would …"
+    ex: "If I [[had]] more time, I would learn the piano."
+    extr: "Daha çok vaktim olsaydı piyano öğrenirdim."
+    ttr: "Daha çok vaktim olsaydı …"
+    slots: ["learn the piano | piyano öğrenirdim", "travel more | daha çok seyahat ederdim", "read more books | daha çok kitap okurdum"]
+    chunks: ["If I had | olsaydı", "more time | daha çok vakit", "I would learn | öğrenirdim"]
+    g: b1-conditionals
+    ctx: ["Hayal"]
+    tone: ["Koşul"]
+    d: 3
+    dis:
+      - "have | Gerçek dışı koşulda geçmiş biçim: had."
+      - "would have | “if” tarafında “would” kullanılmaz."
+      - "will have | 2. tip koşulda “if” tarafı past simple olur."
+  - id: you-should
+    t: "You should … / You shouldn't …"
+    ex: "You [[shouldn't]] drink coffee before bed."
+    extr: "Yatmadan önce kahve içmemelisin."
+    ttr: "Yatmadan önce … içmemelisin."
+    slots: ["coffee | kahve", "energy drinks | enerji içeceği", "too much water | çok fazla su"]
+    chunks: ["You shouldn't | -memelisin", "drink coffee | kahve içmek", "before bed | yatmadan önce"]
+    g: b1-conditionals
+    ctx: ["Tavsiye"]
+    tone: ["Tavsiye"]
+    d: 2
+    dis:
+      - "don't should | “should” ile “do” kullanılmaz."
+      - "shouldn't to | “should” sonrası “to” gelmez."
+      - "mustn't to | “to” fazladan."
+  - id: why-dont-you
+    t: "Why don't you …?"
+    ex: "Why don't you [[ask]] for a discount?"
+    extr: "Neden indirim istemiyorsun? (İste bence.)"
+    ttr: "Neden … istemiyorsun?"
+    slots: ["for a discount | indirim", "for help | yardım", "for a day off | izin"]
+    chunks: ["Why don't you | neden …mıyorsun (öneri)", "ask for | istemek"]
+    g: b1-conditionals
+    ctx: ["Öneri"]
+    tone: ["Samimi"]
+    d: 2
+    dis:
+      - "asking | “don't” sonrası yalın fiil gelir."
+      - "to ask | “don't” sonrası yalın fiil gelir."
+      - "asked | “don't” sonrası yalın fiil gelir."
+  - id: i-enjoy-ing
+    t: "I enjoy / I don't mind / I can't stand …-ing"
+    ex: "I can't stand [[waiting]] in queues."
+    extr: "Kuyrukta beklemeye hiç dayanamam."
+    ttr: "… hiç dayanamam."
+    slots: ["waiting in queues | Kuyrukta beklemeye", "getting up early | Erken kalkmaya", "driving in traffic | Trafikte araba kullanmaya"]
+    chunks: ["I can't stand | dayanamam", "waiting | beklemek", "in queues | kuyrukta"]
+    g: b1-gerund-infinitive
+    ctx: ["Tercih"]
+    tone: ["Görüş"]
+    d: 2
+    dis:
+      - "to wait | “can't stand” sonrası genelde -ing kullanılır."
+      - "wait | “stand” sonrası yalın fiil kullanılmaz."
+      - "waited | Geçmiş biçim burada kullanılmaz."
+  - id: i-want-to
+    t: "I'd like / I want / I've decided to …"
+    ex: "I've decided [[to]] change my job."
+    extr: "İşimi değiştirmeye karar verdim."
+    ttr: "… karar verdim."
+    slots: ["change my job | İşimi değiştirmeye", "move to the coast | Sahile taşınmaya", "learn German | Almanca öğrenmeye"]
+    chunks: ["I've decided | karar verdim", "to change | değiştirmeye", "my job | işimi"]
+    g: b1-gerund-infinitive
+    ctx: ["Karar"]
+    tone: ["Anlatı"]
+    d: 2
+    dis:
+      - "for | “decide” sonrası “to + fiil” gelir."
+      - "on | “decide on” sonrası isim gelir; fiil değil."
+      - "of | “decide of” diye bir yapı yok; “decide to + fiil”."
+  - id: its-worth-ing
+    t: "It's (not) worth …-ing"
+    ex: "It's not worth [[arguing]] about it."
+    extr: "Bunun hakkında tartışmaya değmez."
+    ttr: "… değmez."
+    slots: ["arguing about it | Bunun hakkında tartışmaya", "waiting for him | Onu beklemeye", "repairing that old phone | O eski telefonu tamir ettirmeye"]
+    chunks: ["It's not worth | değmez", "arguing | tartışmak"]
+    g: b1-gerund-infinitive
+    ctx: ["Tavsiye"]
+    tone: ["Görüş"]
+    d: 3
+    dis:
+      - "to argue | “worth” sonrası -ing gelir."
+      - "argue | “worth” sonrası -ing gelir."
+      - "argument | Kalıpta fiil (-ing) gerekir."
+  - id: do-you-mind-if
+    t: "Do you mind if I …?"
+    ex: "Do you mind if I [[open]] the window?"
+    extr: "Pencereyi açmamın sakıncası var mı?"
+    ttr: "… sakıncası var mı?"
+    slots: ["open the window | Pencereyi açmamın", "sit here | Buraya oturmamın", "leave early | Erken çıkmamın"]
+    chunks: ["Do you mind if | sakıncası var mı", "I open | açmam"]
+    g: b1-gerund-infinitive
+    ctx: ["Kibar istek"]
+    tone: ["Kibar"]
+    d: 3
+    dis:
+      - "opening | “if I” sonrası çekimli fiil gelir."
+      - "to open | “if I” sonrası çekimli fiil gelir."
+      - "will open | “if” cümlesinde “will” kullanılmaz."
+  - id: unless-you
+    t: "… unless you …"
+    ex: "The shop won't give you a refund [[unless]] you have the receipt."
+    extr: "Fişin yoksa mağaza para iadesi yapmaz."
+    ttr: "… mağaza para iadesi yapmaz."
+    slots: ["you have the receipt | Fişin yoksa", "you return it within 14 days | 14 gün içinde iade etmezsen", "the item is unused | Ürün kullanılmamış olmadıkça"]
+    chunks: ["won't give you a refund | iade yapmaz", "unless you have | yoksa", "the receipt | fiş"]
+    g: b1-conditionals
+    ctx: ["Alışveriş"]
+    tone: ["Koşul"]
+    d: 3
+    dis:
+      - "if | “if you have” anlamı tersine çevirir."
+      - "until | “-e kadar” demektir."
+      - "except | Edat; cümle bağlamaz."
+
+grammar:
+  - id: b1-conditionals
+    title: "if cümleleri (1. ve 2. tip) ve tavsiye"
+    short: "Gerçek olasılık: If + present, will + fiil. Hayal ve gerçek dışı durum: If + past, would + fiil. Tavsiye için should / If I were you, I'd …"
+    long: "1. tip (olası): If it rains, we'll stay at home. 2. tip (hayal / düşük olasılık): If I had a car, I would drive to work. “If I were you, I'd …” tavsiyede yaygındır (be fiili tüm öznelerde were olabilir). unless = if … not: Unless you hurry, you'll miss it. Tavsiye: You should / shouldn't …, You'd better … (daha güçlü, uyarı), Why don't you …? Dikkat: if tarafında will / would kullanılmaz — If I will see him yanlış. Türkçe “-se/-sa” iki tipin de karşılığı olabilir; olasılığa bak."
+    ex: ["If you leave now, you'll catch the train. | Şimdi çıkarsan trene yetişirsin.", "If I lived by the sea, I'd swim every day. | Deniz kenarında yaşasam her gün yüzerdim.", "You'd better call her before it's too late. | Çok geç olmadan onu arasan iyi olur."]
+  - id: b1-gerund-infinitive
+    title: "Fiilden sonra -ing mi, to mu?"
+    short: "Bazı fiillerden sonra -ing (enjoy, mind, avoid, suggest), bazılarından sonra to + fiil (want, decide, hope, manage, afford) gelir."
+    long: "-ing alanlar: enjoy, mind, avoid, finish, suggest, keep, can't stand, it's worth, look forward to (to edattır!). to alanlar: want, would like, decide, hope, plan, promise, manage, afford, need, learn. Her ikisi (az anlam farkıyla): like, love, start, begin. Edatlardan sonra hep -ing: interested in learning, good at cooking, instead of driving, before leaving. Dikkat: I'm looking forward to see you yanlış → to seeing you."
+    ex: ["Do you mind closing the door? | Kapıyı kapatır mısın?", "We can't afford to buy a house yet. | Henüz ev almaya paramız yetmiyor.", "She's good at solving problems. | Problem çözmekte iyidir."]
+
+scenarios:
+  - id: friend-needs-advice
+    title: "Arkadaşına tavsiye"
+    sit: "Arkadaşın iki iş teklifi arasında kaldı ve senden fikir istiyor."
+    d: 2
+    targets: [advice, option, worth, decide]
+    turns:
+      - ["Melis", "I need some advice. One job pays more, but the other is closer to home.", "Biraz tavsiyeye ihtiyacım var. Bir iş daha çok ödüyor ama diğeri eve daha yakın."]
+      - choose:
+          - ["If I were you, I'd choose the closer one. Commuting every day is really tiring.", true, "2. tip koşulla doğru tavsiye."]
+          - ["If I am you, I will choose the closer one.", false, "Tavsiyede kalıp “If I were you, I'd …”."]
+          - ["If I were you, I'd choosing the closer one.", false, "“would” sonrası yalın fiil gelir."]
+      - ["Melis", "But the salary difference is big.", "Ama maaş farkı büyük."]
+      - choose:
+          - ["Then it might be worth asking the closer company for a better offer.", true, "“worth + -ing” doğru kullanılmış."]
+          - ["Then it might be worth to ask for a better offer.", false, "“worth” sonrası -ing gelir."]
+          - ["Then you should to ask for a better offer.", false, "“should” sonrası “to” gelmez."]
+      - ["Melis", "Good idea. I'll call them tomorrow and decide after that.", "İyi fikir. Yarın onları arayıp sonra karar vereceğim."]
+  - id: doctor-advice
+    title: "Doktor tavsiyesi"
+    sit: "Uyku sorunun için doktora gittin. Doktor alışkanlıklarını soruyor."
+    d: 2
+    targets: [stressed, avoid, rest, enjoy]
+    turns:
+      - ["Doctor", "So, you can't sleep well. Do you drink coffee in the evening?", "Demek iyi uyuyamıyorsunuz. Akşamları kahve içiyor musunuz?"]
+      - choose:
+          - ["Yes, I do. And I usually feel stressed because of work.", true, "Kısa cevap ve durum doğru anlatılmış."]
+          - ["Yes, I am. And I feel stressful.", false, "“Do you …?” sorusuna “I do”; kişi için “stressed”."]
+          - ["Yes, I do drink. I stress.", false, "Doğal değil."]
+      - ["Doctor", "You should avoid drinking coffee after 4 pm. And if you rest a bit after work, you'll sleep better.", "Saat 4'ten sonra kahve içmekten kaçınmalısınız. İşten sonra biraz dinlenirseniz daha iyi uyursunuz."]
+      - choose:
+          - ["OK. I enjoy walking, so I'll go for a walk every evening.", true, "“enjoy + -ing” ve plan doğru."]
+          - ["OK. I enjoy to walk, so I walk.", false, "“enjoy” sonrası -ing gelir."]
+          - ["OK. If I will walk, I sleep better.", false, "“if” tarafında “will” kullanılmaz."]
+      - ["Doctor", "Perfect. Let's see how you feel in two weeks.", "Mükemmel. İki hafta sonra nasıl hissettiğinize bakalım."]
+
+readings:
+  - id: advice-column
+    title: "Ask Aylin"
+    kind: "Tavsiye köşesi"
+    d: 3
+    s:
+      - ["Dear Aylin, my flatmate never cleans the kitchen and I'm tired of doing everything.", "Sevgili Aylin, ev arkadaşım mutfağı hiç temizlemiyor ve her şeyi yapmaktan bıktım."]
+      - ["If I say something, I'm afraid she'll get angry. — Kerem", "Bir şey söylersem kızacağından korkuyorum. — Kerem"]
+      - ["Dear Kerem, avoiding the problem won't make it disappear.", "Sevgili Kerem, sorundan kaçınmak onu yok etmez."]
+      - ["If I were you, I'd suggest making a cleaning plan together.", "Senin yerinde olsam birlikte bir temizlik planı yapmayı önerirdim."]
+      - ["Unless you talk to her calmly, nothing will change. — Aylin", "Onunla sakin bir şekilde konuşmazsan hiçbir şey değişmez. — Aylin"]
+    gloss: ["flatmate | ev arkadaşı", "be tired of | bıkmak", "calmly | sakince"]
+    q:
+      - q: "Aylin'in önerisi ne?"
+        o: ["Evden taşınmak", "Birlikte temizlik planı yapmak", "Hiçbir şey söylememek"]
+        a: 1
+        why: "“I'd suggest making a cleaning plan together.”"
+      - q: "“Unless you talk to her calmly” ne anlama gelir?"
+        o: ["Onunla sakince konuşursan", "Onunla sakince konuşmazsan", "Onunla konuştuktan sonra"]
+        a: 1
+        why: "“unless” = if … not."
+  - id: dream-question
+    title: "What would you do?"
+    kind: "Anket cevapları"
+    d: 2
+    s:
+      - ["We asked our readers: what would you do if you had a year off?", "Okurlarımıza sorduk: Bir yıl izniniz olsa ne yapardınız?"]
+      - ["Deniz, 29: I'd travel around South America and learn Spanish.", "Deniz, 29: Güney Amerika'yı gezer ve İspanyolca öğrenirdim."]
+      - ["Hakan, 41: I wouldn't go anywhere. I'd spend more time with my kids.", "Hakan, 41: Hiçbir yere gitmezdim. Çocuklarımla daha çok vakit geçirirdim."]
+      - ["Sena, 35: If I could, I'd open a small bakery by the sea.", "Sena, 35: Yapabilsem deniz kenarında küçük bir fırın açardım."]
+      - ["What about you?", "Peki ya siz?"]
+    gloss: ["a year off | bir yıl izin", "spend time | vakit geçirmek", "bakery | fırın, pastane"]
+    q:
+      - q: "Hakan bir yıl izinde ne yapardı?"
+        o: ["Seyahat ederdi", "Çocuklarıyla vakit geçirirdi", "Fırın açardı"]
+        a: 1
+        why: "“I'd spend more time with my kids.”"
+      - q: "Metindeki cümleler neden “would” ile kurulmuş?"
+        o: ["Geçmişi anlattıkları için", "Hayali bir durumu anlattıkları için", "Kesin planları anlattıkları için"]
+        a: 1
+        why: "Soru gerçek dışı bir durum: 2. tip koşul."
+
+writing:
+  id: b1-advice-email
+  p: "Bir arkadaşın İngilizce konuşmaktan çekindiğini yazdı. Ona 5–6 cümlelik bir tavsiye mesajı yaz."
+  rubric: ["En az bir if cümlesi (1. veya 2. tip) doğru kurulmuş", "should / Why don't you / If I were you ile tavsiye verilmiş", "En az bir -ing / to fiil yapısı doğru (enjoy watching, try to speak)"]
+  samples: ["Hi Burcu! Don't worry, everyone feels nervous at first. If I were you, I'd practise a little every day. Why don't you try watching series with English subtitles? You should also find a speaking partner — it's worth trying even if it feels strange. If you keep going, you'll feel more confident in a few months. Good luck!"]
+  d: 3
+
+situations:
+  - { parent: "Tavsiye", name: "Tavsiye verme ve isteme", items: [advice, suggest, rest, avoid, instead-of, worth, had-better, if-i-were-you, you-should, why-dont-you, its-worth-ing] }
+  - { parent: "Koşul", name: "Olasılıklar ve hayaller", items: [unless, in-case, lottery, risk, deadline, if-will, if-i-had, unless-you] }
+  - { parent: "Tercih", name: "Sevdiklerin, kararların, isteklerin", items: [decide, enjoy, mind, afford, option, stressed, manage-to, look-forward-to, i-enjoy-ing, i-want-to, do-you-mind-if] }

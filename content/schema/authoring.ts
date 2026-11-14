@@ -2,7 +2,7 @@
 // Kısa anahtarlar bilinçli: 12 paket elle yazılıyor, okunabilir ve kısa kalmalı.
 import { z } from "zod";
 
-export const DOMAINS = ["general", "software", "engineering", "yds", "health", "tourism", "law"] as const;
+export const DOMAINS = ["general", "software", "engineering", "yds", "health", "tourism", "law", "a1", "a2", "b1", "b2", "c1", "c2"] as const;
 export type DomainId = (typeof DOMAINS)[number];
 
 const id = z.string().regex(/^[a-z0-9][a-z0-9-]{1,60}$/, "kimlik: küçük harf, rakam ve tire");
@@ -36,7 +36,7 @@ export const TargetSchema = z
   .strict();
 
 // Başka paketteki hedefi yeniden kullanma: { use: "general:schedule" }
-export const TargetRefSchema = z.object({ use: z.string().regex(/^(general|software|engineering|yds|health|tourism|law):[a-z0-9-]+$/) }).strict();
+export const TargetRefSchema = z.object({ use: z.string().regex(/^(general|software|engineering|yds|health|tourism|law|a1|a2|b1|b2|c1|c2):[a-z0-9-]+$/) }).strict();
 
 export const PatternSchema = z
   .object({

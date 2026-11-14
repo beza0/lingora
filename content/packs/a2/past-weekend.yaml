@@ -1,0 +1,526 @@
+id: a2-past-weekend
+domain: a2
+title: "Geçen hafta sonu ve anılar"
+desc: "Past simple (düzenli / düzensiz fiiller), was / were; geçmişte olanları anlatma."
+sort: 1
+
+targets:
+  - id: yesterday
+    w: yesterday
+    pos: adv
+    tr: "dün"
+    ex: "I called my grandmother [[yesterday]]."
+    extr: "Dün babaanneme telefon ettim."
+    d: 1
+    col: ["yesterday morning", "the day before yesterday"]
+    tone: ["Zaman"]
+    dis:
+      - "tomorrow | Yarın demektir; fiil geçmiş zamanda."
+      - "next week | Gelecek hafta demektir; “called” geçmiş zaman."
+      - "yesterdays | Zarf çoğul yapılmaz."
+  - id: last-weekend
+    w: last weekend
+    pos: phrase
+    tr: "geçen hafta sonu"
+    ex: "What did you do [[last weekend]]?"
+    extr: "Geçen hafta sonu ne yaptın?"
+    d: 1
+    col: ["last night", "last summer", "last year"]
+    tone: ["Zaman"]
+    dis:
+      - "the last weekend | “Geçen” anlamında tanımlık kullanılmaz."
+      - "next weekend | Gelecek hafta sonu demektir; “did” ile uyuşmaz."
+      - "in last weekend | “last” ile edat kullanılmaz."
+  - id: ago
+    w: ago
+    pos: adv
+    tr: "önce (zaman)"
+    ex: "We moved here two years [[ago]]."
+    extr: "Buraya iki yıl önce taşındık."
+    d: 2
+    conf: ["before | “before” tek başına “daha önce”; süre + önce = “ago”."]
+    tone: ["Zaman"]
+    dis:
+      - "behind | “Arkasında” demektir."
+      - "after | “Sonra” demektir."
+      - "since | “-den beri” demektir; geçmiş zamanla bu yapıda kullanılmaz."
+  - id: went
+    w: went
+    pos: v
+    tr: "gitti (go fiilinin geçmişi)"
+    ex: "We [[went]] to the beach on Saturday."
+    extr: "Cumartesi plaja gittik."
+    d: 1
+    fam: ["go – went – gone"]
+    tone: ["Geçmiş"]
+    dis:
+      - "goed | “go” düzensizdir; geçmişi “went”."
+      - "gone | Üçüncü hâl; yardımcı fiil olmadan kullanılmaz."
+      - "go | Geçmiş zaman gerekir."
+  - id: saw
+    w: saw
+    pos: v
+    tr: "gördü (see fiilinin geçmişi)"
+    ex: "I [[saw]] a great film last night."
+    extr: "Dün gece harika bir film izledim."
+    d: 1
+    fam: ["see – saw – seen"]
+    tone: ["Geçmiş"]
+    dis:
+      - "seed | Tohum demektir."
+      - "seen | Üçüncü hâl; tek başına geçmiş anlatmaz."
+      - "sawed | “saw” (testere) fiilinin geçmişi; görmek değil."
+  - id: bought
+    w: bought
+    pos: v
+    tr: "satın aldı (buy fiilinin geçmişi)"
+    ex: "She [[bought]] a new jacket at the market."
+    extr: "Pazardan yeni bir ceket aldı."
+    d: 2
+    fam: ["buy – bought – bought"]
+    conf: ["brought | “bring” (getirmek) fiilinin geçmişi."]
+    tone: ["Geçmiş", "Alışveriş"]
+    dis:
+      - "brought | Getirdi demektir."
+      - "buyed | “buy” düzensizdir."
+      - "boat | Tekne demektir."
+  - id: was-were
+    w: were
+    pos: v
+    tr: "idi, -di (çoğul ve you için)"
+    ex: "The tickets [[were]] very expensive."
+    extr: "Biletler çok pahalıydı."
+    d: 1
+    fam: ["was (tekil: I / he / she / it)"]
+    tone: ["Geçmiş"]
+    dis:
+      - "was | Çoğul özneyle “were” kullanılır."
+      - "are | Şimdiki zaman; geçmiş anlatılıyor."
+      - "did | “be” yerine “did” kullanılmaz."
+  - id: had-a-great-time
+    w: have a great time
+    pos: phrase
+    tr: "çok iyi vakit geçirmek"
+    ex: "We [[had a great time]] at the party."
+    extr: "Partide çok iyi vakit geçirdik."
+    d: 2
+    syn: ["enjoy yourself"]
+    tone: ["Günlük"]
+    dis:
+      - "had a great hour | Kalıp “a great time”."
+      - "made a great time | “make” ile kullanılmaz."
+      - "spent a great fun | Doğal bir kalıp değil."
+  - id: stay
+    w: stay
+    pos: v
+    tr: "kalmak (bir yerde)"
+    ex: "We [[stayed]] at a small hotel in Kaş."
+    extr: "Kaş'ta küçük bir otelde kaldık."
+    d: 1
+    col: ["stay at a hotel", "stay with friends", "stay at home"]
+    tone: ["Seyahat"]
+    dis:
+      - "stood | “Durdu, ayakta durdu” demektir."
+      - "stay | Geçmiş zaman gerekir."
+      - "staid | “Ağırbaşlı” demektir (sıfat)."
+  - id: visit
+    w: visit
+    pos: v
+    tr: "ziyaret etmek, gezmek"
+    ex: "Last summer we [[visited]] my cousins in Germany."
+    extr: "Geçen yaz Almanya'daki kuzenlerimi ziyaret ettik."
+    d: 1
+    tone: ["Seyahat"]
+    dis:
+      - "visit | Geçmiş zaman gerekir."
+      - "visitor | Ziyaretçi demektir (isim)."
+      - "visitation | İsim; fiil gerekir."
+  - id: boring
+    w: boring
+    pos: adj
+    tr: "sıkıcı"
+    ex: "The film was really [[boring]], so we left early."
+    extr: "Film gerçekten sıkıcıydı, o yüzden erken çıktık."
+    d: 2
+    conf: ["bored | Sıkılmış (kişi). The film was boring; I was bored."]
+    tone: ["Görüş"]
+    dis:
+      - "bored | Kişinin duygusu; filmi anlatmak için “boring”."
+      - "borrowing | Ödünç alma demektir."
+      - "boarding | Binme (uçağa) demektir."
+  - id: delicious
+    w: delicious
+    pos: adj
+    tr: "çok lezzetli"
+    ex: "The fish at that restaurant was [[delicious]]."
+    extr: "O restorandaki balık çok lezzetliydi."
+    d: 2
+    syn: ["tasty"]
+    tone: ["Yemek"]
+    dis:
+      - "delicate | Narin demektir."
+      - "dangerous | Tehlikeli demektir."
+      - "suspicious | Şüpheli demektir."
+  - id: crowded
+    w: crowded
+    pos: adj
+    tr: "kalabalık"
+    ex: "The museum was very [[crowded]] on Sunday."
+    extr: "Müze pazar günü çok kalabalıktı."
+    d: 2
+    ant: ["empty", "quiet"]
+    tone: ["Tanımlama"]
+    dis:
+      - "crowd | İsim (kalabalık); sıfat gerekir."
+      - "crowned | Taç giymiş demektir."
+      - "clouded | Bulutlanmış demektir."
+  - id: lose
+    w: lose
+    pos: v
+    tr: "kaybetmek"
+    ex: "I [[lost]] my keys on the way home."
+    extr: "Eve giderken anahtarlarımı kaybettim."
+    d: 2
+    fam: ["lose – lost – lost", "loss (i.) kayıp"]
+    conf: ["loose | Bol, gevşek (sıfat)."]
+    tone: ["Geçmiş"]
+    dis:
+      - "loosed | “loose” fiili gevşetmek; kaybetmek değil."
+      - "lose | Geçmiş zaman gerekir."
+      - "lossed | Böyle bir biçim yok; geçmişi “lost”."
+  - id: arrive
+    w: arrive
+    pos: v
+    tr: "varmak, ulaşmak"
+    ex: "Our train [[arrived]] late because of the snow."
+    extr: "Trenimiz kar yüzünden geç geldi."
+    d: 2
+    col: ["arrive at the station", "arrive in a city"]
+    tone: ["Seyahat"]
+    dis:
+      - "arrive | Geçmiş zaman gerekir."
+      - "arrived to | “arrive” sonrası “at / in” gelir."
+      - "derived | Türetti demektir."
+  - id: forget
+    w: forget
+    pos: v
+    tr: "unutmak"
+    ex: "I [[forgot]] my umbrella at the café."
+    extr: "Şemsiyemi kafede unuttum."
+    d: 2
+    fam: ["forget – forgot – forgotten"]
+    tone: ["Geçmiş"]
+    dis:
+      - "forgetted | “forget” düzensizdir."
+      - "forgiven | Affedilmiş demektir."
+      - "forget | Geçmiş zaman gerekir."
+  - id: holiday
+    w: holiday
+    pos: n
+    tr: "tatil"
+    ex: "Where did you go on [[holiday]]?"
+    extr: "Tatilde nereye gittin?"
+    d: 1
+    col: ["go on holiday", "a summer holiday"]
+    syn: ["vacation (ABD)"]
+    tone: ["Seyahat"]
+    dis:
+      - "holidays | “go on holiday” kalıbında tekil kullanılır."
+      - "holy day | Kutsal gün demektir."
+      - "hobby | Hobi demektir."
+  - id: take-photos
+    w: take photos
+    pos: phrase
+    tr: "fotoğraf çekmek"
+    ex: "We [[took]] a lot of photos of the old town."
+    extr: "Eski şehrin çok fotoğrafını çektik."
+    d: 1
+    fam: ["take – took – taken"]
+    tone: ["Seyahat"]
+    dis:
+      - "made | Fotoğraf için “take” kullanılır."
+      - "taked | “take” düzensizdir."
+      - "did | “do a photo” doğal değil."
+  - id: wedding
+    w: wedding
+    pos: n
+    tr: "düğün"
+    ex: "My cousin's [[wedding]] was on Saturday."
+    extr: "Kuzenimin düğünü cumartesiydi."
+    d: 1
+    fam: ["get married (f.) evlenmek"]
+    tone: ["Günlük"]
+    dis:
+      - "wedding's | Gereksiz iyelik eki."
+      - "weekend | Hafta sonu demektir."
+      - "welding | Kaynak (metal) demektir."
+  - id: on-the-way
+    w: on the way
+    pos: phrase
+    tr: "yolda, giderken"
+    ex: "We stopped for lunch [[on the way]] to Antalya."
+    extr: "Antalya'ya giderken öğle yemeği için durduk."
+    d: 2
+    tone: ["Seyahat"]
+    dis:
+      - "in the way | “Önünü kesmek, engel olmak” demektir."
+      - "by the way | “Bu arada” demektir."
+      - "on a way | Kalıp “on the way”."
+
+patterns:
+  - id: what-did-you-do
+    t: "What did you do …?"
+    ex: "What [[did]] you do on Saturday?"
+    extr: "Cumartesi ne yaptın?"
+    ttr: "… ne yaptın?"
+    slots: ["on Saturday | Cumartesi", "last night | Dün gece", "in the summer | Yazın"]
+    chunks: ["What did you do | ne yaptın", "on Saturday | cumartesi"]
+    g: a2-past-simple
+    ctx: ["Sohbet"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "do | Geçmiş soruluyor; “did” gerekir."
+      - "were | Fiil cümlesinde soru “did” ile kurulur."
+      - "done | Yardımcı fiil olmadan üçüncü hâl kullanılmaz."
+  - id: i-went-to
+    t: "I went to … with …"
+    ex: "I [[went]] to a concert with my sister."
+    extr: "Kız kardeşimle bir konsere gittim."
+    ttr: "Kız kardeşimle … gittim."
+    slots: ["a concert | bir konsere", "the cinema | sinemaya", "a new restaurant | yeni bir restorana"]
+    chunks: ["I went to | -e gittim", "with my sister | kız kardeşimle"]
+    g: a2-past-simple
+    ctx: ["Sohbet"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "go | Geçmiş zaman gerekir."
+      - "goed | “go” düzensizdir."
+      - "was go | “was” ile yalın fiil kullanılmaz."
+  - id: didnt-go
+    t: "I didn't … because …"
+    ex: "I [[didn't]] go out because it was raining."
+    extr: "Yağmur yağdığı için dışarı çıkmadım."
+    ttr: "… için dışarı çıkmadım."
+    slots: ["it was raining | Yağmur yağdığı", "I was tired | Yorgun olduğum", "I had an exam | Sınavım olduğu"]
+    chunks: ["I didn't go out | dışarı çıkmadım", "because | çünkü"]
+    g: a2-past-simple
+    ctx: ["Sohbet"]
+    tone: ["Olumsuz"]
+    d: 2
+    dis:
+      - "don't | Geçmiş için “didn't”."
+      - "wasn't | Fiil cümlesi “didn't” ile olumsuz yapılır."
+      - "not | Yardımcı fiil eksik."
+  - id: it-was
+    t: "It was really …"
+    ex: "It [[was]] really fun."
+    extr: "Gerçekten eğlenceliydi."
+    ttr: "Gerçekten …ydi."
+    slots: ["fun | eğlenceli", "interesting | ilginç", "tiring | yorucu"]
+    chunks: ["It was | -ydi", "really fun | gerçekten eğlenceli"]
+    g: a2-was-were
+    ctx: ["Görüş"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "were | “It” ile “was” kullanılır."
+      - "is | Geçmiş anlatılıyor."
+      - "did | “be” yerine “did” kullanılmaz."
+  - id: were-you-at
+    t: "Were you at … ?"
+    ex: "[[Were]] you at home last night?"
+    extr: "Dün gece evde miydin?"
+    ttr: "Dün gece … miydin?"
+    slots: ["at home | evde", "at work | işte", "at the party | partide"]
+    chunks: ["Were you | miydin", "at home | evde", "last night | dün gece"]
+    g: a2-was-were
+    ctx: ["Sohbet"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "Was | “you” ile “Were” kullanılır."
+      - "Did | “at home” yer bildirir; “be” sorusu gerekir."
+      - "Are | Geçmiş soruluyor."
+  - id: when-i-was
+    t: "When I was …, I …"
+    ex: "When I was a child, I [[lived]] in a village."
+    extr: "Çocukken bir köyde yaşardım."
+    ttr: "…ken bir köyde yaşardım."
+    slots: ["a child | Çocuk", "young | Küçük", "a student | Öğrenci"]
+    chunks: ["When I was a child | çocukken", "I lived | yaşardım", "in a village | bir köyde"]
+    g: a2-past-simple
+    ctx: ["Anı"]
+    tone: ["Anlatı"]
+    d: 2
+    dis:
+      - "live | Geçmiş zaman gerekir."
+      - "was live | “was” ile yalın fiil kullanılmaz."
+      - "living | Yardımcı fiil olmadan -ing kullanılmaz."
+  - id: how-was-your
+    t: "How was your …?"
+    ex: "How [[was]] your trip?"
+    extr: "Gezin nasıl geçti?"
+    ttr: "… nasıl geçti?"
+    slots: ["trip | Gezin", "weekend | Hafta sonun", "exam | Sınavın"]
+    chunks: ["How was | nasıldı", "your trip | gezin"]
+    g: a2-was-were
+    ctx: ["Sohbet"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "did | “How did your trip?” eksik; “be” sorusu gerekir."
+      - "were | “your trip” tekil."
+      - "is | Geçmiş soruluyor."
+  - id: there-were-lots-of
+    t: "There were lots of … at …"
+    ex: "There [[were]] lots of people at the festival."
+    extr: "Festivalde bir sürü insan vardı."
+    ttr: "Festivalde bir sürü … vardı."
+    slots: ["people | insan", "food stalls | yemek tezgâhı", "children | çocuk"]
+    chunks: ["There were | vardı", "lots of people | bir sürü insan"]
+    g: a2-was-were
+    ctx: ["Anlatı"]
+    tone: ["Tanımlama"]
+    d: 2
+    dis:
+      - "was | Çoğul isimle “were” kullanılır."
+      - "had | “There had” yanlış."
+      - "are | Geçmiş anlatılıyor."
+  - id: first-then-after-that
+    t: "First we …, then we …"
+    ex: "First we had lunch, [[then]] we went to the museum."
+    extr: "Önce öğle yemeği yedik, sonra müzeye gittik."
+    ttr: "Önce öğle yemeği yedik, sonra … gittik."
+    slots: ["the museum | müzeye", "the beach | plaja", "the old town | eski şehre"]
+    chunks: ["First | önce", "then | sonra", "after that | ondan sonra"]
+    g: a2-past-simple
+    ctx: ["Anlatı"]
+    tone: ["Anlatı"]
+    d: 2
+    dis:
+      - "than | Karşılaştırma için kullanılır (-den daha)."
+      - "after | “after” tek başına bağlaç olarak burada kullanılmaz; “after that” denir."
+      - "so | Sonuç bildirir; sıralama değil."
+  - id: did-you-enjoy
+    t: "Did you enjoy …?"
+    ex: "Did you [[enjoy]] the concert?"
+    extr: "Konser hoşuna gitti mi?"
+    ttr: "… hoşuna gitti mi?"
+    slots: ["the concert | Konser", "the film | Film", "your holiday | Tatilin"]
+    chunks: ["Did you enjoy | hoşuna gitti mi", "the concert | konser"]
+    g: a2-past-simple
+    ctx: ["Sohbet"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "enjoyed | “Did” varken fiil yalın olur."
+      - "enjoying | “Did” ile -ing kullanılmaz."
+      - "enjoy to | “enjoy” sonrası “to” gelmez."
+
+grammar:
+  - id: a2-past-simple
+    title: "Past simple: geçmişte bitmiş olaylar"
+    short: "Geçmişte bitmiş bir olay için fiile -ed eklenir (worked) veya düzensiz biçim kullanılır (went). Soru ve olumsuzda did / didn't + yalın fiil."
+    long: "Düzenli: work → worked, stay → stayed, study → studied, stop → stopped. Düzensiz fiiller ezberlenir: go → went, see → saw, buy → bought, have → had, take → took, make → made, eat → ate, lose → lost. Olumsuz: didn't + yalın fiil — I didn't see him. Soru: Did + özne + yalın fiil — Did you go out? Kısa cevap: Yes, I did. / No, I didn't. Zaman ifadeleri: yesterday, last week, two days ago, in 2020. Dikkat: did / didn't varken fiil geçmişe çevrilmez — Did you went? yanlış."
+    ex: ["We visited Mardin last summer. | Geçen yaz Mardin'i gezdik.", "I didn't buy anything. | Hiçbir şey almadım.", "Did she call you? — No, she didn't. | Seni aradı mı? — Hayır, aramadı."]
+  - id: a2-was-were
+    title: "was / were: am-is-are'nin geçmişi"
+    short: "Geçmişte bir durumu anlatırken I / he / she / it ile was, you / we / they ile were kullanılır."
+    long: "Olumlu: I was tired. They were at home. Olumsuz: wasn't / weren't — The hotel wasn't expensive. Soru: Was it good? Were you there? Kısa cevap: Yes, it was. / No, they weren't. Var/yok: There was a problem. / There were many people. Dikkat: sıfat ve yer anlatırken was/were kullanılır, did değil — “How did the film?” yanlış; doğrusu “How was the film?”"
+    ex: ["The weather was perfect. | Hava mükemmeldi.", "We weren't at home on Sunday. | Pazar günü evde değildik.", "Was the museum open? — Yes, it was. | Müze açık mıydı? — Evet, açıktı."]
+
+scenarios:
+  - id: monday-chat
+    title: "Pazartesi sabahı sohbet"
+    sit: "İş arkadaşın hafta sonunu nasıl geçirdiğini soruyor."
+    d: 1
+    targets: [last-weekend, went, had-a-great-time, crowded]
+    turns:
+      - ["Anna", "Morning! How was your weekend?", "Günaydın! Hafta sonun nasıldı?"]
+      - choose:
+          - ["It was great, thanks. I went to Bursa with my family.", true, "“was” ve “went” doğru kullanılmış."]
+          - ["It is great. I go to Bursa.", false, "Geçmiş anlatılıyor; geçmiş zaman gerekir."]
+          - ["It were great.", false, "“It” ile “was” kullanılır."]
+      - ["Anna", "Nice! What did you do there?", "Güzel! Orada ne yaptınız?"]
+      - choose:
+          - ["We visited the old bazaar and ate İskender. We had a great time.", true, "Past simple ile doğru sıralanmış."]
+          - ["We visit the old bazaar and eat İskender.", false, "Fiiller geçmiş zamanda olmalı."]
+          - ["We did visited the old bazaar.", false, "“did” ile fiil yalın olur; olumlu cümlede “did” gerekmez."]
+      - ["Anna", "Was it crowded?", "Kalabalık mıydı?"]
+      - choose:
+          - ["Yes, it was. There were lots of tourists.", true, "Kısa cevap ve “there were” doğru."]
+          - ["Yes, it did.", false, "“Was it …?” sorusuna “it was” ile cevap verilir."]
+          - ["Yes, there was lots of tourists.", false, "Çoğul isimle “there were”."]
+  - id: lost-bag
+    title: "Kayıp çanta"
+    sit: "Otobüste çantanı unuttun ve kayıp eşya bürosuna gittin."
+    d: 2
+    targets: [lose, forget, yesterday, on-the-way]
+    turns:
+      - ["Officer", "Good morning. How can I help?", "Günaydın. Nasıl yardımcı olabilirim?"]
+      - choose:
+          - ["I lost my bag yesterday. I forgot it on the number 12 bus.", true, "Geçmiş zamanla net açıklama."]
+          - ["I lose my bag yesterday.", false, "“yesterday” geçmiş zaman ister: lost."]
+          - ["I losted my bag.", false, "“lose” düzensizdir: lost."]
+      - ["Officer", "What time did you get off the bus?", "Otobüsten saat kaçta indiniz?"]
+      - choose:
+          - ["At about half past five, on the way home from work.", true, "Saat ve bağlam verilmiş."]
+          - ["I get off at half past five.", false, "Soru geçmişte; cevap geçmişte olmalı."]
+          - ["I did got off at five.", false, "“did” sonrası fiil yalın olur."]
+      - ["Officer", "Let me check… Is it a black backpack?", "Bir bakayım… Siyah bir sırt çantası mı?"]
+
+readings:
+  - id: postcard-cappadocia
+    title: "A postcard from Cappadocia"
+    kind: "Kartpostal"
+    d: 2
+    s:
+      - ["Hi Ece! We arrived in Cappadocia on Friday evening.", "Selam Ece! Kapadokya'ya cuma akşamı vardık."]
+      - ["On Saturday we got up at four and took a balloon tour.", "Cumartesi saat dörtte kalktık ve balon turuna katıldık."]
+      - ["It was cold, but the view was amazing!", "Soğuktu ama manzara muhteşemdi!"]
+      - ["We didn't visit the underground city because it was too crowded.", "Yeraltı şehrini gezmedik çünkü çok kalabalıktı."]
+      - ["We're going back home tomorrow. See you soon! — Burak", "Yarın eve dönüyoruz. Görüşmek üzere! — Burak"]
+    gloss: ["balloon tour | balon turu", "view | manzara", "underground city | yeraltı şehri"]
+    q:
+      - q: "Burak cumartesi sabahı ne yaptı?"
+        o: ["Yeraltı şehrini gezdi", "Balon turuna katıldı", "Eve döndü"]
+        a: 1
+        why: "“On Saturday we got up at four and took a balloon tour.”"
+      - q: "Neden yeraltı şehrine gitmediler?"
+        o: ["Kapalıydı", "Çok kalabalıktı", "Hava soğuktu"]
+        a: 1
+        why: "“because it was too crowded”"
+  - id: bad-day
+    title: "A bad day"
+    kind: "Kısa hikâye"
+    d: 2
+    s:
+      - ["Last Tuesday was a terrible day for Selim.", "Geçen salı Selim için berbat bir gündü."]
+      - ["He didn't hear his alarm and woke up at nine.", "Alarmını duymadı ve dokuzda uyandı."]
+      - ["He ran to the bus stop, but the bus left without him.", "Otobüs durağına koştu ama otobüs onsuz gitti."]
+      - ["At work, he noticed he forgot his laptop at home.", "İşte dizüstü bilgisayarını evde unuttuğunu fark etti."]
+      - ["In the evening his friends took him out for dinner, and he finally smiled.", "Akşam arkadaşları onu yemeğe çıkardı ve sonunda gülümsedi."]
+    gloss: ["alarm | çalar saat", "notice | fark etmek", "finally | sonunda"]
+    q:
+      - q: "Selim neden geç uyandı?"
+        o: ["Hastaydı", "Alarmını duymadı", "Otobüsü kaçırdı"]
+        a: 1
+        why: "“He didn't hear his alarm”"
+      - q: "Gün nasıl bitti?"
+        o: ["Daha da kötü", "Arkadaşlarıyla yemekle güzel bitti", "İşte geç saate kadar kaldı"]
+        a: 1
+        why: "“his friends took him out for dinner, and he finally smiled”"
+
+writing:
+  id: a2-last-weekend
+  p: "Geçen hafta sonunu 5–6 cümleyle anlat: nereye gittin, kiminle, ne yaptın, nasıldı?"
+  rubric: ["Past simple doğru (düzenli ve düzensiz fiiller)", "En az bir was / were cümlesi", "Sıralama sözcükleri var (first, then, after that)"]
+  samples: ["Last weekend I went to Eskişehir with two friends. First we visited the Odunpazarı houses, then we had lunch by the river. The food was delicious. In the evening we saw a play, but it was a bit boring. We came back on Sunday by train. It was a lovely weekend."]
+  d: 2
+
+situations:
+  - { parent: "Geçmiş", name: "Hafta sonunu anlatma", items: [yesterday, last-weekend, went, saw, had-a-great-time, what-did-you-do, i-went-to, how-was-your, did-you-enjoy, first-then-after-that] }
+  - { parent: "Geçmiş", name: "Tatil ve gezi", items: [holiday, stay, visit, take-photos, arrive, on-the-way, crowded, delicious, there-were-lots-of, it-was] }
+  - { parent: "Geçmiş", name: "Sorunlar ve anılar", items: [lose, forget, ago, bought, was-were, were-you-at, didnt-go, when-i-was, boring, wedding] }

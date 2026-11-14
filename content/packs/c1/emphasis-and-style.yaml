@@ -1,0 +1,521 @@
+id: c1-emphasis-and-style
+domain: c1
+title: "Vurgu ve etkili anlatım"
+desc: "Devrik yapı (Not only…, Rarely…, Hardly… when), cleft cümleler (What I need is…, It was … that…), ileri düzey kelimeler."
+sort: 1
+
+targets:
+  - id: compelling
+    w: compelling
+    pos: adj
+    tr: "ikna edici, çok etkileyici"
+    ex: "She made a [[compelling]] case for changing the policy."
+    extr: "Politikanın değiştirilmesi için ikna edici bir gerekçe sundu."
+    d: 4
+    syn: ["convincing", "persuasive"]
+    tone: ["Resmî", "Tartışma"]
+    dis:
+      - "compulsory | Zorunlu demektir."
+      - "competing | Rekabet eden demektir."
+      - "complaining | Şikâyet eden demektir."
+  - id: undermine
+    w: undermine
+    pos: v
+    tr: "zayıflatmak, baltalamak"
+    ex: "Constant criticism can [[undermine]] a child's confidence."
+    extr: "Sürekli eleştiri bir çocuğun özgüvenini zayıflatabilir."
+    d: 4
+    ant: ["strengthen", "boost"]
+    tone: ["Resmî"]
+    dis:
+      - "underline | Altını çizmek demektir."
+      - "underestimate | Hafife almak demektir; nesneyle anlam değişir."
+      - "undermines | “can” sonrası yalın fiil gelir."
+  - id: acknowledge
+    w: acknowledge
+    pos: v
+    tr: "kabul etmek, teslim etmek"
+    ex: "The company [[acknowledged]] that mistakes had been made."
+    extr: "Şirket hatalar yapıldığını kabul etti."
+    d: 4
+    fam: ["acknowledgement (i.) kabul; teşekkür"]
+    tone: ["Resmî"]
+    dis:
+      - "knowledge | Bilgi demektir (isim)."
+      - "acquainted | Tanışık demektir."
+      - "accomplished | Başarılmış demektir."
+  - id: substantial
+    w: substantial
+    pos: adj
+    tr: "önemli ölçüde, kayda değer (miktar)"
+    ex: "There has been a [[substantial]] increase in rents."
+    extr: "Kiralarda kayda değer bir artış oldu."
+    d: 4
+    syn: ["considerable", "significant"]
+    tone: ["Resmî", "Akademik"]
+    dis:
+      - "substitute | Yedek, ikame demektir."
+      - "subsidiary | Yan kuruluş, ikincil demektir."
+      - "substance | Madde (isim) demektir."
+  - id: inevitably
+    w: inevitably
+    pos: adv
+    tr: "kaçınılmaz olarak"
+    ex: "[[Inevitably]], the project went over budget."
+    extr: "Kaçınılmaz olarak proje bütçeyi aştı."
+    d: 4
+    tone: ["Resmî"]
+    dis:
+      - "Inevitable | Sıfat; cümle başında zarf gerekir."
+      - "Invariably | “Her zaman, istisnasız” demektir."
+      - "Inadvertently | “Farkında olmadan” demektir."
+  - id: reluctant
+    w: reluctant
+    pos: adj
+    tr: "gönülsüz, isteksiz"
+    ex: "He was [[reluctant]] to admit he was wrong."
+    extr: "Haksız olduğunu kabul etmeye gönülsüzdü."
+    d: 4
+    syn: ["unwilling"]
+    ant: ["eager", "willing"]
+    tone: ["Tanımlama"]
+    dis:
+      - "relevant | İlgili, alakalı demektir."
+      - "redundant | Gereksiz demektir."
+      - "reluctance | İsim; sıfat gerekir."
+  - id: scrutiny
+    w: scrutiny
+    pos: n
+    tr: "titiz inceleme, mercek altı"
+    ex: "The new law has come under intense [[scrutiny]]."
+    extr: "Yeni yasa yoğun bir şekilde mercek altına alındı."
+    d: 5
+    fam: ["scrutinise (f.) titizlikle incelemek"]
+    tone: ["Resmî", "Medya"]
+    dis:
+      - "security | Güvenlik demektir."
+      - "scruple | Vicdani tereddüt demektir."
+      - "curiosity | Merak demektir."
+  - id: feasible
+    w: feasible
+    pos: adj
+    tr: "yapılabilir, uygulanabilir"
+    ex: "Is it [[feasible]] to finish the project by June?"
+    extr: "Projeyi hazirana kadar bitirmek mümkün mü?"
+    d: 4
+    syn: ["viable", "practicable"]
+    tone: ["İş", "Resmî"]
+    dis:
+      - "visible | Görünür demektir."
+      - "flexible | Esnek demektir."
+      - "feasibility | İsim; sıfat gerekir."
+  - id: alleviate
+    w: alleviate
+    pos: v
+    tr: "hafifletmek"
+    ex: "The new bridge should [[alleviate]] traffic congestion."
+    extr: "Yeni köprü trafik sıkışıklığını hafifletmeli."
+    d: 5
+    syn: ["ease", "relieve"]
+    tone: ["Resmî"]
+    dis:
+      - "accelerate | Hızlandırmak demektir; anlam terse döner."
+      - "elevate | Yükseltmek demektir."
+      - "alienate | Yabancılaştırmak demektir."
+  - id: pivotal
+    w: pivotal
+    pos: adj
+    tr: "kilit, belirleyici"
+    ex: "She played a [[pivotal]] role in the negotiations."
+    extr: "Müzakerelerde kilit bir rol oynadı."
+    d: 4
+    syn: ["crucial", "key"]
+    tone: ["Resmî"]
+    dis:
+      - "pivot | İsim/fiil; sıfat gerekir."
+      - "partial | Kısmi, taraflı demektir."
+      - "pivoting | Fiilimsi; sıfat olarak bu anlamı vermez."
+  - id: foster
+    w: foster
+    pos: v
+    tr: "teşvik etmek, geliştirmek, beslemek"
+    ex: "Good teachers [[foster]] curiosity in their students."
+    extr: "İyi öğretmenler öğrencilerinde merakı besler."
+    d: 4
+    syn: ["encourage", "nurture"]
+    other: "evlat edinmeden bakmak (foster a child)"
+    tone: ["Resmî"]
+    dis:
+      - "faster | Daha hızlı demektir."
+      - "forest | Orman demektir."
+      - "fosters | “teachers” çoğul; fiil yalın olur."
+  - id: mitigate
+    w: mitigate
+    pos: v
+    tr: "azaltmak, etkisini hafifletmek"
+    ex: "We need a plan to [[mitigate]] the risks."
+    extr: "Riskleri azaltmak için bir plana ihtiyacımız var."
+    d: 5
+    tone: ["İş", "Resmî"]
+    dis:
+      - "migrate | Göç etmek demektir."
+      - "militate | “militate against” engel olmak; burada yanlış yapı."
+      - "motivate | Motive etmek demektir."
+  - id: discrepancy
+    w: discrepancy
+    pos: n
+    tr: "tutarsızlık, uyuşmazlık"
+    ex: "There's a [[discrepancy]] between the two reports."
+    extr: "İki rapor arasında bir tutarsızlık var."
+    d: 5
+    syn: ["inconsistency"]
+    tone: ["İş", "Akademik"]
+    dis:
+      - "discretion | Takdir yetkisi, ağzı sıkılık demektir."
+      - "discovery | Keşif demektir."
+      - "dependency | Bağımlılık demektir."
+  - id: put-forward
+    w: put forward
+    pos: phrasal
+    tr: "(fikir, öneri) ortaya atmak"
+    ex: "Several proposals were [[put forward]] at the meeting."
+    extr: "Toplantıda birkaç öneri ortaya atıldı."
+    d: 4
+    syn: ["propose", "suggest"]
+    tone: ["Resmî"]
+    dis:
+      - "put off | Ertelemek demektir."
+      - "put up | Asmak, misafir etmek demektir."
+      - "put away | Kaldırmak, yerine koymak demektir."
+  - id: by-no-means
+    w: by no means
+    pos: phrase
+    tr: "hiç de, asla (değil)"
+    ex: "The results are [[by no means]] final."
+    extr: "Sonuçlar hiç de kesin değil."
+    d: 4
+    syn: ["not at all"]
+    tone: ["Resmî"]
+    dis:
+      - "by all means | “Elbette, tabii ki” demektir; anlam zıt."
+      - "by no mean | Kalıp çoğul: means."
+      - "in no means | Edat “by”."
+  - id: notably
+    w: notably
+    pos: adv
+    tr: "özellikle, bilhassa"
+    ex: "Several countries, [[notably]] Japan, have ageing populations."
+    extr: "Birçok ülke, özellikle Japonya, yaşlanan bir nüfusa sahip."
+    d: 4
+    syn: ["particularly", "especially"]
+    tone: ["Akademik"]
+    dis:
+      - "notable | Sıfat; zarf gerekir."
+      - "nobly | Asilce demektir."
+      - "notoriously | Kötü şöhretiyle demektir."
+  - id: come-across
+    w: come across
+    pos: phrasal
+    tr: "rastlamak; (bir izlenim) vermek"
+    ex: "I [[came across]] an interesting article on sleep."
+    extr: "Uykuyla ilgili ilginç bir makaleye rastladım."
+    d: 4
+    other: "izlenim vermek: He comes across as arrogant."
+    tone: ["Günlük", "Resmî"]
+    dis:
+      - "came over | Uğradı demektir."
+      - "came along | Eşlik etti, ilerledi demektir."
+      - "came through | Atlattı demektir."
+  - id: seldom
+    w: seldom
+    pos: adv
+    tr: "nadiren"
+    ex: "[[Seldom]] have I seen such a beautiful sunset."
+    extr: "Böyle güzel bir gün batımını nadiren gördüm."
+    d: 5
+    syn: ["rarely"]
+    tone: ["Edebî", "Resmî"]
+    dis:
+      - "Seldomly | Böyle bir zarf biçimi yok."
+      - "Sold | Satıldı demektir."
+      - "Selfish | Bencil demektir."
+  - id: nuance
+    w: nuance
+    pos: n
+    tr: "nüans, ince fark"
+    ex: "Translators must capture every [[nuance]] of the original."
+    extr: "Çevirmenler orijinal metnin her nüansını yakalamalıdır."
+    d: 4
+    syn: ["subtlety"]
+    tone: ["Akademik"]
+    dis:
+      - "nuisance | Baş belası, sıkıntı demektir."
+      - "nuances | “every” sonrası tekil gelir."
+      - "finance | Finans demektir."
+  - id: profound
+    w: profound
+    pos: adj
+    tr: "derin, köklü (etki, değişim)"
+    ex: "The war had a [[profound]] effect on his writing."
+    extr: "Savaşın onun yazarlığı üzerinde derin bir etkisi oldu."
+    d: 4
+    syn: ["deep", "far-reaching"]
+    tone: ["Resmî", "Edebî"]
+    dis:
+      - "profane | Saygısız, kutsala aykırı demektir."
+      - "profit | Kâr demektir."
+      - "proficient | Yetkin, usta demektir."
+
+patterns:
+  - id: not-only-but-also
+    t: "Not only did …, but … also …"
+    ex: "Not only [[did]] she win the race, but she also broke the record."
+    extr: "Yalnızca yarışı kazanmakla kalmadı, rekoru da kırdı."
+    ttr: "Yalnızca … kalmadı, rekoru da kırdı."
+    slots: ["win the race | yarışı kazanmakla", "finish first | birinci olmakla", "beat her rival | rakibini yenmekle"]
+    chunks: ["Not only did she win | yalnızca kazanmakla kalmadı", "but she also broke | aynı zamanda kırdı"]
+    g: c1-inversion
+    ctx: ["Vurgu"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "she | Devrik yapıda yardımcı fiil özneden önce gelir: did she."
+      - "had | Geçmişte basit olay için “did”."
+      - "does | Geçmiş anlatılıyor."
+  - id: rarely-have-i
+    t: "Rarely have I …"
+    ex: "Rarely [[have]] I met someone so generous."
+    extr: "Bu kadar cömert biriyle nadiren karşılaştım."
+    ttr: "… nadiren karşılaştım."
+    slots: ["someone so generous | Bu kadar cömert biriyle", "such a talented team | Bu kadar yetenekli bir ekiple", "anyone so calm | Bu kadar sakin biriyle"]
+    chunks: ["Rarely have I | nadiren …dım", "met someone so generous | bu kadar cömert biriyle karşılaşmak"]
+    g: c1-inversion
+    ctx: ["Vurgu"]
+    tone: ["Edebî"]
+    d: 5
+    dis:
+      - "I have | “Rarely” başta ise yardımcı fiil özneden önce gelir."
+      - "did | “met” üçüncü hâl; “have” ile kullanılır."
+      - "has | “I” ile “have” kullanılır."
+  - id: hardly-when
+    t: "Hardly had … when …"
+    ex: "Hardly [[had]] we sat down when the fire alarm went off."
+    extr: "Daha yeni oturmuştuk ki yangın alarmı çaldı."
+    ttr: "Daha yeni oturmuştuk ki …"
+    slots: ["the fire alarm went off | yangın alarmı çaldı", "the lights went out | ışıklar söndü", "the phone rang | telefon çaldı"]
+    chunks: ["Hardly had we sat down | daha yeni oturmuştuk", "when | ki"]
+    g: c1-inversion
+    ctx: ["Anlatı"]
+    tone: ["Edebî"]
+    d: 5
+    dis:
+      - "have | Geçmişteki önceki olay için past perfect: had."
+      - "did | “sat” üçüncü hâl; “had” ile kullanılır."
+      - "we had | Devrik yapıda yardımcı fiil özneden önce gelir."
+  - id: under-no-circumstances
+    t: "Under no circumstances should …"
+    ex: "Under no circumstances [[should]] you share your password."
+    extr: "Şifreni hiçbir koşulda paylaşmamalısın."
+    ttr: "… hiçbir koşulda paylaşmamalısın."
+    slots: ["your password | Şifreni", "your PIN | PIN kodunu", "this document | Bu belgeyi"]
+    chunks: ["Under no circumstances | hiçbir koşulda", "should you share | paylaşmalısın (devrik)"]
+    g: c1-inversion
+    ctx: ["Uyarı"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "you should | Olumsuz ifade başta ise devrik yapı gerekir."
+      - "shouldn't | “no” zaten olumsuzluk verir; çift olumsuz olur."
+      - "must not | Çift olumsuz olur ve devrik yapı yok."
+  - id: what-i-need-is
+    t: "What I need is …"
+    ex: "[[What]] I need is a few days off."
+    extr: "Benim ihtiyacım olan birkaç gün izin."
+    ttr: "Benim ihtiyacım olan …"
+    slots: ["a few days off | birkaç gün izin", "more time | daha fazla zaman", "a clear plan | net bir plan"]
+    chunks: ["What I need | ihtiyacım olan şey", "is a few days off | birkaç gün izin"]
+    g: c1-cleft-sentences
+    ctx: ["Vurgu"]
+    tone: ["Doğrudan"]
+    d: 4
+    dis:
+      - "That | Cleft cümlede “What” kullanılır."
+      - "Which | Başta bağımsız “Which” bu anlamı vermez."
+      - "The thing what | “the thing that” olmalı."
+  - id: it-was-that
+    t: "It was … who/that …"
+    ex: "It was my grandmother [[who]] taught me to cook."
+    extr: "Bana yemek yapmayı öğreten babaannemdi."
+    ttr: "Bana yemek yapmayı öğreten …"
+    slots: ["my grandmother | babaannemdi", "my uncle | amcamdı", "an old neighbour | yaşlı bir komşumdu"]
+    chunks: ["It was my grandmother | (o kişi) babaannemdi", "who taught me | bana öğreten"]
+    g: c1-cleft-sentences
+    ctx: ["Vurgu"]
+    tone: ["Anlatı"]
+    d: 4
+    dis:
+      - "which | İnsan için “who / that”."
+      - "whom | Özne konumunda “who”."
+      - "what | Cleft yapıda “It was … what” kullanılmaz."
+  - id: what-surprised-me
+    t: "What surprised me most was …"
+    ex: "What surprised me most [[was]] how friendly people were."
+    extr: "Beni en çok şaşırtan, insanların ne kadar cana yakın olduğuydu."
+    ttr: "Beni en çok şaşırtan …"
+    slots: ["how friendly people were | insanların ne kadar cana yakın olduğuydu", "how cheap the food was | yemeklerin ne kadar ucuz olduğuydu", "how quiet the city was | şehrin ne kadar sessiz olduğuydu"]
+    chunks: ["What surprised me most | beni en çok şaşırtan", "was how friendly | ne kadar cana yakın olduğuydu"]
+    g: c1-cleft-sentences
+    ctx: ["Anlatı"]
+    tone: ["Anlatı"]
+    d: 4
+    dis:
+      - "were | “What …” tekil özne gibi davranır: was."
+      - "is | Geçmiş anlatılıyor."
+      - "had | Anlamsız olur."
+  - id: the-reason-why
+    t: "The reason why … is that …"
+    ex: "The reason why I left is [[that]] I wanted a new challenge."
+    extr: "Ayrılmamın nedeni yeni bir meydan okuma istememdi."
+    ttr: "Ayrılmamın nedeni …"
+    slots: ["I wanted a new challenge | yeni bir meydan okuma istememdi", "the salary was too low | maaşın çok düşük olmasıydı", "I moved cities | şehir değiştirmemdi"]
+    chunks: ["The reason why I left | ayrılmamın nedeni", "is that | şudur ki"]
+    g: c1-cleft-sentences
+    ctx: ["Açıklama"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "when | Anlamsız olur; “is that …” gerekir."
+      - "why | “why” zaten kullanıldı; tekrar olur."
+      - "what | “is what I wanted” anlamı bozar."
+  - id: only-then
+    t: "Only then did … realise …"
+    ex: "Only then [[did]] I realise how serious it was."
+    extr: "Ancak o zaman durumun ne kadar ciddi olduğunu fark ettim."
+    ttr: "Ancak o zaman … fark ettim."
+    slots: ["how serious it was | durumun ne kadar ciddi olduğunu", "my mistake | hatamı", "what she meant | ne demek istediğini"]
+    chunks: ["Only then | ancak o zaman", "did I realise | fark ettim (devrik)"]
+    g: c1-inversion
+    ctx: ["Anlatı"]
+    tone: ["Edebî"]
+    d: 5
+    dis:
+      - "I did | “Only then” başta ise devrik yapı gerekir."
+      - "I | Yardımcı fiil eksik."
+      - "had | “realise” yalın; “did” gerekir."
+  - id: all-i-want
+    t: "All I want is …"
+    ex: "All I want [[is]] a quiet weekend."
+    extr: "Tek istediğim sakin bir hafta sonu."
+    ttr: "Tek istediğim …"
+    slots: ["a quiet weekend | sakin bir hafta sonu", "an honest answer | dürüst bir cevap", "some peace | biraz huzur"]
+    chunks: ["All I want | tek istediğim", "is a quiet weekend | sakin bir hafta sonu"]
+    g: c1-cleft-sentences
+    ctx: ["Vurgu"]
+    tone: ["Günlük"]
+    d: 4
+    dis:
+      - "are | “All I want” tekil özne gibi davranır."
+      - "be | Çekimli fiil gerekir."
+      - "it's | “All I want it's” iki özne olur."
+
+grammar:
+  - id: c1-inversion
+    title: "Devrik yapı (inversion): Not only, Rarely, Never, Hardly"
+    short: "Olumsuz veya kısıtlayıcı bir ifade cümle başına alındığında yardımcı fiil özneden önce gelir: Rarely have I seen …"
+    long: "Kalıplar: Never have I … / Rarely / Seldom have I … / Not only did she …, but she also … / Hardly / Scarcely had we … when … / No sooner had we … than … / Under no circumstances should you … / Only then / Only after … did I … / Little did they know … Yardımcı fiil yoksa do/does/did eklenir: Not only did he apologise… Resmî yazıda, konuşmada ve hikâye anlatımında vurgu için kullanılır. Dikkat: devrik yapı yalnız başa alınan ifadeden sonraki ana cümleye uygulanır: Only after she left did I understand (did I, not did she)."
+    ex: ["Never have I felt so welcome. | Hiç bu kadar hoş karşılandığımı hissetmemiştim.", "No sooner had I arrived than it started to rain. | Varır varmaz yağmur başladı.", "Little did we know what was coming. | Neler olacağından habersizdik."]
+  - id: c1-cleft-sentences
+    title: "Cleft cümleler: What I need is…, It was … that…"
+    short: "Bir bilgiyi öne çıkarmak için cümle ikiye bölünür: What I need is a break. / It was Ayşe who called."
+    long: "What-cleft: What I love about this city is its food. (Bu şehirde sevdiğim şey yemekleri.) Fiil vurgusu: What she did was (to) call the police. It-cleft: It was in 2019 that we met. / It's the price that worries me. All / The thing / The reason: All I need is … / The thing is (that) … / The reason (why) … is that … Türkçedeki vurgu (“Beni arayan Ayşe'ydi”) İngilizcede sıralamayla değil bu yapılarla sağlanır. Dikkat: What-cleft öznesi tekil sayılır: What we need is more volunteers."
+    ex: ["What annoys me is the noise. | Beni rahatsız eden şey gürültü.", "It was the manager who made the final decision. | Son kararı veren müdürdü.", "What we did was cancel the trip. | Yaptığımız şey geziyi iptal etmekti."]
+
+scenarios:
+  - id: presenting-a-proposal
+    title: "Yönetime öneri sunmak"
+    sit: "Şirkette esnek çalışma saatleri için yönetime bir öneri sunuyorsun."
+    d: 4
+    targets: [compelling, put-forward, feasible, substantial]
+    turns:
+      - ["Director", "So, what exactly are you proposing?", "Peki, tam olarak ne öneriyorsunuz?"]
+      - choose:
+          - ["What we're proposing is a flexible start time between 8 and 10.", true, "Cleft cümleyle öneri net vurgulanmış."]
+          - ["That we're proposing is flexible start time.", false, "Cleft için “What” gerekir."]
+          - ["We proposing flexible time.", false, "Yardımcı fiil eksik."]
+      - ["Director", "Is it feasible? Won't some teams be understaffed in the morning?", "Uygulanabilir mi? Bazı ekipler sabah eksik personelle kalmaz mı?"]
+      - choose:
+          - ["We've looked into that. Not only would cover be maintained, but productivity would also rise substantially.", true, "Devrik yapı ve “substantially” doğru kullanılmış."]
+          - ["Not only cover would be maintained, but also productivity.", false, "Devrik yapıda yardımcı fiil özneden önce gelir."]
+          - ["Yes it's feasible, I think, maybe.", false, "Zayıf ve gerekçesiz."]
+      - ["Director", "That's a compelling argument. Send me the full proposal.", "İkna edici bir argüman. Bana önerinin tamamını gönderin."]
+  - id: describing-an-experience
+    title: "Etkileyici bir deneyimi anlatmak"
+    sit: "Bir mülakatta “Seni en çok etkileyen deneyim neydi?” diye soruluyor."
+    d: 4
+    targets: [pivotal, seldom, come-across, nuance]
+    turns:
+      - ["Interviewer", "Tell me about an experience that changed you.", "Seni değiştiren bir deneyimden bahset."]
+      - choose:
+          - ["It was a volunteering trip to Hatay that changed my perspective.", true, "It-cleft ile deneyim vurgulanmış."]
+          - ["It was a volunteering trip what changed me.", false, "It-cleft'te “that / which” kullanılır, “what” değil."]
+          - ["Was a trip changed me.", false, "Özne ve yapı eksik."]
+      - ["Interviewer", "What did you learn from it?", "Bundan ne öğrendin?"]
+      - choose:
+          - ["Rarely have I seen people work together so well. It was pivotal in my decision to study social work.", true, "Devrik yapı ve “pivotal” doğru."]
+          - ["Rarely I have seen people work so well.", false, "“Rarely” başta ise “have I” gerekir."]
+          - ["Seldom I saw people work together.", false, "“Seldom” başta ise devrik yapı gerekir."]
+      - ["Interviewer", "That's very interesting. Thank you.", "Çok ilginç. Teşekkürler."]
+
+readings:
+  - id: speech-excerpt
+    title: "Graduation speech"
+    kind: "Konuşma metni"
+    d: 4
+    s:
+      - ["Four years ago, few of us imagined standing here today.", "Dört yıl önce pek azımız bugün burada duracağımızı hayal ederdi."]
+      - ["Not only did we survive a pandemic, but we also learned to support one another.", "Yalnızca bir salgını atlatmakla kalmadık, birbirimizi desteklemeyi de öğrendik."]
+      - ["What made the difference was not talent, but persistence.", "Farkı yaratan yetenek değil, azimdi."]
+      - ["It was our teachers who fostered that persistence, often without recognition.", "Bu azmi, çoğu zaman takdir görmeden, besleyen öğretmenlerimizdi."]
+      - ["Never again should we take such support for granted.", "Böyle bir desteği bir daha asla hafife almamalıyız."]
+    gloss: ["persistence | azim, sebat", "recognition | takdir, tanınma", "one another | birbiri"]
+    q:
+      - q: "Konuşmacıya göre farkı ne yarattı?"
+        o: ["Yetenek", "Azim", "Şans"]
+        a: 1
+        why: "“What made the difference was not talent, but persistence.”"
+      - q: "“It was our teachers who fostered that persistence” cümlesinde vurgulanan ne?"
+        o: ["Azmin kendisi", "Azmi besleyenlerin öğretmenler olması", "Takdir görmemek"]
+        a: 1
+        why: "It-cleft yapısı “öğretmenler” bilgisini öne çıkarır."
+  - id: policy-report
+    title: "Traffic policy review"
+    kind: "Resmî rapor özeti"
+    d: 5
+    s:
+      - ["The congestion charge, introduced in 2023, has come under considerable scrutiny.", "2023'te getirilen trafik sıkışıklığı ücreti ciddi biçimde mercek altına alındı."]
+      - ["Critics argue that it undermines small businesses in the city centre.", "Eleştirmenler bunun şehir merkezindeki küçük işletmeleri zayıflattığını savunuyor."]
+      - ["However, the data show a substantial drop in air pollution, notably near schools.", "Ancak veriler, özellikle okulların yakınında, hava kirliliğinde önemli bir düşüş gösteriyor."]
+      - ["There is, admittedly, a discrepancy between official figures and those of independent groups.", "Kabul etmek gerekir ki resmî rakamlarla bağımsız grupların rakamları arasında bir tutarsızlık var."]
+      - ["The report recommends measures to mitigate the impact on local shops.", "Rapor, yerel dükkânlar üzerindeki etkiyi hafifletecek önlemler öneriyor."]
+    gloss: ["congestion charge | trafik sıkışıklığı ücreti", "admittedly | kabul etmek gerekir ki", "measures | önlemler"]
+    q:
+      - q: "Eleştirmenlerin temel kaygısı ne?"
+        o: ["Hava kirliliği", "Küçük işletmelerin zarar görmesi", "Okulların kapanması"]
+        a: 1
+        why: "“it undermines small businesses in the city centre”"
+      - q: "Rapor ne öneriyor?"
+        o: ["Ücretin kaldırılmasını", "Yerel dükkânlara etkiyi azaltacak önlemleri", "Daha çok veri toplanmasını"]
+        a: 1
+        why: "“recommends measures to mitigate the impact on local shops”"
+
+writing:
+  id: c1-persuasive-paragraph
+  p: "Belediyeye, şehir merkezinin hafta sonları araç trafiğine kapatılmasını öneren 6–8 cümlelik ikna edici bir paragraf yaz."
+  rubric: ["En az bir devrik yapı (Not only…, Rarely…, Under no circumstances…)", "En az bir cleft cümle (What we need is…, It is … that…)", "İleri düzey kelimeler doğal biçimde kullanılmış (substantial, alleviate, foster…)", "Karşı görüşe kısa bir cevap var"]
+  samples: ["What our city centre needs is space for people, not cars. Closing it to traffic at weekends would not only alleviate pollution, but it would also foster a stronger sense of community. Rarely do residents get the chance to enjoy their streets without noise. Some shop owners are reluctant, fearing a drop in customers; however, evidence from other cities shows a substantial rise in foot traffic. It is local businesses, in fact, that benefit most. Under no circumstances should we ignore this opportunity."]
+  d: 4
+
+situations:
+  - { parent: "Vurgu", name: "Devrik yapı ile vurgu", items: [seldom, by-no-means, not-only-but-also, rarely-have-i, hardly-when, under-no-circumstances, only-then] }
+  - { parent: "Vurgu", name: "Cleft cümleler", items: [what-i-need-is, it-was-that, what-surprised-me, the-reason-why, all-i-want] }
+  - { parent: "Resmî dil", name: "İleri düzey kelimeler", items: [compelling, profound, undermine, acknowledge, substantial, inevitably, reluctant, scrutiny, feasible, alleviate, pivotal, foster, mitigate, discrepancy, put-forward, notably, come-across, nuance] }

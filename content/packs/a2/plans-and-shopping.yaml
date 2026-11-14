@@ -1,0 +1,517 @@
+id: a2-plans-and-shopping
+domain: a2
+title: "Planlar, alışveriş ve karşılaştırma"
+desc: "going to ve present continuous ile gelecek planları; comparative ve superlative; alışverişte konuşma."
+sort: 2
+
+targets:
+  - id: tomorrow
+    w: tomorrow
+    pos: adv
+    tr: "yarın"
+    ex: "I'm meeting Ali [[tomorrow]] at five."
+    extr: "Yarın saat beşte Ali'yle buluşuyorum."
+    d: 1
+    col: ["tomorrow morning", "the day after tomorrow"]
+    tone: ["Zaman"]
+    dis:
+      - "yesterday | Dün demektir; plan anlatılıyor."
+      - "tomorrows | Zarf çoğul yapılmaz."
+      - "to morning | Anlamsız bir ifadedir."
+  - id: next-month
+    w: next month
+    pos: phrase
+    tr: "gelecek ay"
+    ex: "We're going to move house [[next month]]."
+    extr: "Gelecek ay taşınacağız."
+    d: 1
+    col: ["next week", "next year", "next summer"]
+    tone: ["Zaman"]
+    dis:
+      - "the next month | “Gelecek” anlamında tanımlık kullanılmaz."
+      - "last month | Geçen ay demektir; “going to” ile uyuşmaz."
+      - "in next month | “next” ile edat kullanılmaz."
+  - id: plan
+    w: plan
+    pos: n
+    tr: "plan"
+    ex: "Do you have any [[plans]] for the summer?"
+    extr: "Yaz için bir planın var mı?"
+    d: 1
+    col: ["make plans", "change your plans"]
+    tone: ["Günlük"]
+    dis:
+      - "plants | Bitkiler demektir."
+      - "planes | Uçaklar demektir."
+      - "plays | Oyunlar demektir."
+  - id: save-money
+    w: save money
+    pos: phrase
+    tr: "para biriktirmek"
+    ex: "I'm going to [[save money]] for a new laptop."
+    extr: "Yeni bir dizüstü bilgisayar için para biriktireceğim."
+    d: 2
+    conf: ["spend money | Para harcamak."]
+    tone: ["Para"]
+    dis:
+      - "keep money | Doğal değil; “save money” denir."
+      - "save moneys | “money” sayılamaz; çoğul olmaz."
+      - "safe money | “safe” güvenli (sıfat) demektir."
+  - id: cheap
+    w: cheap
+    pos: adj
+    tr: "ucuz"
+    ex: "This T-shirt is very [[cheap]]: only 100 lira."
+    extr: "Bu tişört çok ucuz: sadece 100 lira."
+    d: 1
+    ant: ["expensive"]
+    tone: ["Alışveriş"]
+    dis:
+      - "chip | Cips, çip demektir."
+      - "cheep | Cıvıldamak demektir."
+      - "expensive | “only 100 lira” ile çelişir."
+  - id: expensive
+    w: expensive
+    pos: adj
+    tr: "pahalı"
+    ex: "Restaurants in the city centre are more [[expensive]]."
+    extr: "Şehir merkezindeki restoranlar daha pahalı."
+    d: 1
+    tone: ["Alışveriş"]
+    dis:
+      - "expensiver | Uzun sıfatlar “more” ile karşılaştırılır."
+      - "expense | Gider (isim) demektir."
+      - "extensive | Kapsamlı demektir."
+  - id: try-on
+    w: try on
+    pos: phrasal
+    tr: "(giysiyi) denemek"
+    ex: "Can I [[try on]] these jeans?"
+    extr: "Bu kotu deneyebilir miyim?"
+    d: 2
+    col: ["try something on", "the changing room"]
+    tone: ["Alışveriş"]
+    dis:
+      - "try off | Böyle bir kalıp yok; giysi denemek “try on”."
+      - "try in | Doğru edat “on”."
+      - "put up | “Asmak, misafir etmek” demektir."
+  - id: size
+    w: size
+    pos: n
+    tr: "beden, boyut"
+    ex: "Do you have this in a bigger [[size]]?"
+    extr: "Bunun daha büyük bedeni var mı?"
+    d: 1
+    col: ["What size are you?", "size 38"]
+    tone: ["Alışveriş"]
+    dis:
+      - "side | Yan, taraf demektir."
+      - "seize | Yakalamak, el koymak demektir."
+      - "sight | Görüş, manzara demektir."
+  - id: receipt
+    w: receipt
+    pos: n
+    tr: "fiş, makbuz"
+    ex: "Please keep the [[receipt]] if you want to return it."
+    extr: "İade etmek isterseniz fişi saklayın."
+    d: 2
+    tone: ["Alışveriş"]
+    dis:
+      - "recipe | Yemek tarifi demektir."
+      - "receive | Almak (teslim almak) demektir."
+      - "recent | Yakın zamanda olan demektir."
+  - id: discount
+    w: discount
+    pos: n
+    tr: "indirim"
+    ex: "There's a 20% [[discount]] on all shoes this week."
+    extr: "Bu hafta tüm ayakkabılarda %20 indirim var."
+    d: 2
+    syn: ["sale (indirim dönemi)"]
+    tone: ["Alışveriş"]
+    dis:
+      - "account | Hesap demektir."
+      - "discover | Keşfetmek demektir."
+      - "count | Saymak demektir."
+  - id: better
+    w: better
+    pos: adj
+    tr: "daha iyi"
+    ex: "This phone is [[better]] than my old one."
+    extr: "Bu telefon eskisinden daha iyi."
+    d: 1
+    fam: ["good – better – the best"]
+    tone: ["Karşılaştırma"]
+    dis:
+      - "gooder | “good” düzensizdir: better."
+      - "more good | “good” düzensizdir: better."
+      - "best | En iyi demektir; “than” ile kullanılmaz."
+  - id: the-best
+    w: the best
+    pos: phrase
+    tr: "en iyi"
+    ex: "This is [[the best]] pizza in town."
+    extr: "Burası şehirdeki en iyi pizza."
+    d: 1
+    tone: ["Karşılaştırma"]
+    dis:
+      - "the better | İki şeyi karşılaştırmaz; “en iyi” için “the best”."
+      - "the most good | “good” düzensizdir."
+      - "best than | “than” karşılaştırma içindir."
+  - id: worse
+    w: worse
+    pos: adj
+    tr: "daha kötü"
+    ex: "The traffic is [[worse]] today than yesterday."
+    extr: "Trafik bugün dünden daha kötü."
+    d: 2
+    fam: ["bad – worse – the worst"]
+    tone: ["Karşılaştırma"]
+    dis:
+      - "badder | “bad” düzensizdir: worse."
+      - "worst | En kötü demektir; “than” ile kullanılmaz."
+      - "more bad | “bad” düzensizdir."
+  - id: comfortable
+    w: comfortable
+    pos: adj
+    tr: "rahat"
+    ex: "These shoes are more [[comfortable]] than my old ones."
+    extr: "Bu ayakkabılar eskilerinden daha rahat."
+    d: 2
+    ant: ["uncomfortable"]
+    tone: ["Alışveriş", "Tanımlama"]
+    dis:
+      - "comfortabler | Uzun sıfatlar “more” ile karşılaştırılır."
+      - "comfort | İsim (konfor); sıfat gerekir."
+      - "comforting | Teselli edici demektir."
+  - id: book-a-table
+    w: book a table
+    pos: phrase
+    tr: "masa ayırtmak"
+    ex: "I'm going to [[book a table]] for Saturday night."
+    extr: "Cumartesi akşamı için masa ayırtacağım."
+    d: 2
+    tone: ["Plan", "Restoran"]
+    dis:
+      - "buy a table | Masa satın almak demektir."
+      - "book the table | Belirsiz bir masa; “a table” denir."
+      - "take a table | Rezervasyon anlamı vermez."
+  - id: invite
+    w: invite
+    pos: v
+    tr: "davet etmek"
+    ex: "We're going to [[invite]] all our neighbours."
+    extr: "Tüm komşularımızı davet edeceğiz."
+    d: 2
+    fam: ["invitation (i.) davet"]
+    tone: ["Plan"]
+    dis:
+      - "invent | İcat etmek demektir."
+      - "invest | Yatırım yapmak demektir."
+      - "invitation | İsim; fiil gerekir."
+  - id: probably
+    w: probably
+    pos: adv
+    tr: "muhtemelen"
+    ex: "It will [[probably]] rain this afternoon."
+    extr: "Bu öğleden sonra muhtemelen yağmur yağacak."
+    d: 2
+    syn: ["likely"]
+    tone: ["Tahmin"]
+    dis:
+      - "probable | Sıfat; fiilden önce zarf gerekir."
+      - "problem | Sorun demektir."
+      - "properly | Düzgün bir şekilde demektir."
+  - id: free-time
+    w: free time
+    pos: n
+    tr: "boş zaman"
+    ex: "What do you like doing in your [[free time]]?"
+    extr: "Boş zamanında ne yapmayı seversin?"
+    d: 1
+    syn: ["spare time"]
+    tone: ["Günlük"]
+    dis:
+      - "free times | Bu kalıpta tekil kullanılır."
+      - "empty time | Doğal değil."
+      - "three time | “Üç zaman” gibi anlamsız."
+  - id: hopefully
+    w: hopefully
+    pos: adv
+    tr: "umarım, inşallah"
+    ex: "[[Hopefully]] the weather will be nice for the picnic."
+    extr: "Umarım piknik için hava güzel olur."
+    d: 2
+    tone: ["Tahmin"]
+    dis:
+      - "Hopeful | Sıfat; cümle başında zarf gerekir."
+      - "Helpfully | Yardımsever bir şekilde demektir."
+      - "Hopelessly | Umutsuzca demektir."
+  - id: pay-by-card
+    w: pay by card
+    pos: phrase
+    tr: "kartla ödemek"
+    ex: "Can I [[pay by card]], or is it cash only?"
+    extr: "Kartla ödeyebilir miyim, yoksa sadece nakit mi?"
+    d: 1
+    col: ["pay in cash", "pay contactless"]
+    tone: ["Alışveriş"]
+    dis:
+      - "pay with card | “by card” kalıbı kullanılır."
+      - "pay on card | Edat yanlış."
+      - "pay for card | Kartın parasını ödemek demektir."
+
+patterns:
+  - id: im-going-to
+    t: "I'm going to … next …"
+    ex: "I'm going to [[learn]] to drive next year."
+    extr: "Seneye araba kullanmayı öğreneceğim."
+    ttr: "Seneye … öğreneceğim."
+    slots: ["to drive | araba kullanmayı", "to swim | yüzmeyi", "Spanish | İspanyolca"]
+    chunks: ["I'm going to | -eceğim (niyet)", "learn | öğrenmek", "next year | seneye"]
+    g: a2-future-plans
+    ctx: ["Plan"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "learning | “going to” sonrası yalın fiil gelir."
+      - "learned | “going to” sonrası yalın fiil gelir."
+      - "learns | “going to” sonrası yalın fiil gelir."
+  - id: are-you-going-to
+    t: "Are you going to … ?"
+    ex: "Are you going [[to]] watch the match tonight?"
+    extr: "Bu akşam maçı izleyecek misin?"
+    ttr: "Bu akşam … izleyecek misin?"
+    slots: ["the match | maçı", "the new series | yeni diziyi", "the final | finali"]
+    chunks: ["Are you going to | -ecek misin", "watch | izlemek", "tonight | bu akşam"]
+    g: a2-future-plans
+    ctx: ["Plan"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "for | “going to” kalıbı “to” ile kurulur."
+      - "at | Kalıp “going to + fiil”."
+      - "will | “going will” diye bir yapı yok."
+  - id: im-meeting-on
+    t: "I'm … on …"
+    ex: "I'm [[meeting]] my friends on Friday."
+    extr: "Cuma günü arkadaşlarımla buluşuyorum."
+    ttr: "Cuma günü …"
+    slots: ["meeting my friends | arkadaşlarımla buluşuyorum", "flying to İzmir | İzmir'e uçuyorum", "seeing the dentist | dişçiye gidiyorum"]
+    chunks: ["I'm meeting | buluşuyorum (ayarlanmış plan)", "on Friday | cuma günü"]
+    g: a2-future-plans
+    ctx: ["Plan"]
+    tone: ["Günlük"]
+    d: 2
+    dis:
+      - "meet | “I'm” sonrası -ing gerekir."
+      - "met | Geçmiş zaman; plan anlatılıyor."
+      - "to meet | “I'm to meet” resmî ve farklı anlamdadır."
+  - id: is-than
+    t: "… is …-er than …"
+    ex: "The train is [[faster]] than the bus."
+    extr: "Tren otobüsten daha hızlı."
+    ttr: "Tren otobüsten daha …"
+    slots: ["faster | hızlı", "cheaper | ucuz", "quieter | sessiz"]
+    chunks: ["The train is | tren", "faster than | -den daha hızlı", "the bus | otobüs"]
+    g: a2-comparatives
+    ctx: ["Karşılaştırma"]
+    tone: ["Tanımlama"]
+    d: 1
+    dis:
+      - "more fast | Kısa sıfatlara -er eklenir."
+      - "fastest | En hızlı demektir; “than” ile kullanılmaz."
+      - "fast | “than” ile karşılaştırma biçimi gerekir."
+  - id: more-than
+    t: "… is more … than …"
+    ex: "Living in İstanbul is more [[expensive]] than living in Sivas."
+    extr: "İstanbul'da yaşamak Sivas'ta yaşamaktan daha pahalı."
+    ttr: "İstanbul'da yaşamak Sivas'ta yaşamaktan daha …"
+    slots: ["expensive | pahalı", "exciting | heyecan verici", "stressful | stresli"]
+    chunks: ["is more expensive | daha pahalı", "than | -den"]
+    g: a2-comparatives
+    ctx: ["Karşılaştırma"]
+    tone: ["Görüş"]
+    d: 2
+    dis:
+      - "expensiver | Uzun sıfatlar “more” ile karşılaştırılır."
+      - "most expensive | “En” anlamı; “than” ile kullanılmaz."
+      - "expensive more | Sıralama yanlış."
+  - id: the-most
+    t: "It's the most … in …"
+    ex: "It's the [[most]] beautiful beach in Turkey."
+    extr: "Türkiye'deki en güzel plaj."
+    ttr: "Türkiye'deki en … plaj."
+    slots: ["beautiful | güzel", "popular | popüler", "famous | ünlü"]
+    chunks: ["the most beautiful | en güzel", "in Turkey | Türkiye'de"]
+    g: a2-comparatives
+    ctx: ["Karşılaştırma"]
+    tone: ["Tanımlama"]
+    d: 2
+    dis:
+      - "more | “Daha” demektir; “en” için “most”."
+      - "much | Karşılaştırma yapmaz."
+      - "best | “best beautiful” yanlış."
+  - id: can-i-try
+    t: "Can I try … on?"
+    ex: "Can I [[try]] this jacket on?"
+    extr: "Bu ceketi deneyebilir miyim?"
+    ttr: "… deneyebilir miyim?"
+    slots: ["this jacket | Bu ceketi", "these shoes | Bu ayakkabıları", "a smaller size | Daha küçük bir bedeni"]
+    chunks: ["Can I try | deneyebilir miyim", "this jacket on | bu ceketi (üstüme)"]
+    g: a2-comparatives
+    ctx: ["Alışveriş"]
+    tone: ["Kibar"]
+    d: 1
+    dis:
+      - "tried | “Can” sonrası yalın fiil gelir."
+      - "trying | “Can” sonrası yalın fiil gelir."
+      - "test | Giysi için “try on” kullanılır."
+  - id: how-much-is-are
+    t: "How much is/are …?"
+    ex: "How much [[are]] these sunglasses?"
+    extr: "Bu güneş gözlüğü ne kadar?"
+    ttr: "… ne kadar?"
+    slots: ["these sunglasses | Bu güneş gözlüğü", "these boots | Bu botlar", "the headphones | Kulaklıklar"]
+    chunks: ["How much | ne kadar", "are these sunglasses | bu güneş gözlüğü"]
+    g: a2-comparatives
+    ctx: ["Alışveriş"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "is | “sunglasses” çoğuldur; “are” gerekir."
+      - "many | Fiyat için “How much”."
+      - "do | “How much do these” eksik kalır."
+  - id: not-as-as
+    t: "… isn't as … as …"
+    ex: "My new flat isn't [[as]] big as my old one."
+    extr: "Yeni dairem eskisi kadar büyük değil."
+    ttr: "Yeni dairem eskisi kadar … değil."
+    slots: ["big | büyük", "bright | aydınlık", "noisy | gürültülü"]
+    chunks: ["isn't as big | o kadar büyük değil", "as my old one | eskisi kadar"]
+    g: a2-comparatives
+    ctx: ["Karşılaştırma"]
+    tone: ["Olumsuz"]
+    d: 2
+    dis:
+      - "like | “as … as” kalıbında “like” kullanılmaz."
+      - "more | “as … as” kalıbı bozulur."
+      - "than | Kalıp “as … as”."
+  - id: will-probably
+    t: "I think it will …"
+    ex: "I think it [[will]] be sunny tomorrow."
+    extr: "Bence yarın hava güneşli olacak."
+    ttr: "Bence yarın hava … olacak."
+    slots: ["sunny | güneşli", "cold | soğuk", "windy | rüzgârlı"]
+    chunks: ["I think | bence", "it will be | olacak", "tomorrow | yarın"]
+    g: a2-future-plans
+    ctx: ["Tahmin"]
+    tone: ["Görüş"]
+    d: 2
+    dis:
+      - "is going | “is going be” eksik; “to” gerekir."
+      - "will to | “will” sonrası “to” gelmez."
+      - "was | Geçmiş zaman; yarın anlatılıyor."
+
+grammar:
+  - id: a2-future-plans
+    title: "Gelecek: going to, present continuous ve will"
+    short: "Niyet ve planlar için going to, saati/yeri belli ayarlanmış planlar için present continuous, anlık karar ve tahmin için will kullanılır."
+    long: "going to + yalın fiil: önceden verilmiş karar — I'm going to start a course. Present continuous: ayarlanmış plan — I'm flying to Van on Monday (bilet alındı). will + yalın fiil: tahmin veya o an verilen karar — I think it will rain. / I'll help you. Olumsuz: I'm not going to … / I won't … Soru: Are you going to …? / Will you …? Zaman ifadeleri: tomorrow, next week, this weekend, in two days. Dikkat: “going to” sonrası fiil yalın kalır: going to visit (going to visiting değil)."
+    ex: ["I'm going to cook pasta tonight. | Bu akşam makarna yapacağım.", "We're having a party on Saturday. | Cumartesi parti veriyoruz.", "It's cold. I'll close the window. | Hava soğuk. Pencereyi kapatayım."]
+  - id: a2-comparatives
+    title: "Karşılaştırma: -er / more, the -est / the most, as … as"
+    short: "İki şeyi karşılaştırırken kısa sıfatlara -er (cheaper), uzunlara more (more expensive) eklenir ve than kullanılır. “En” için the -est / the most."
+    long: "Kısa sıfat: cheap → cheaper → the cheapest; big → bigger → the biggest; easy → easier → the easiest. Uzun sıfat: comfortable → more comfortable → the most comfortable. Düzensiz: good → better → the best; bad → worse → the worst; far → further → the furthest. Eşitlik: as big as (kadar büyük); not as cheap as (kadar ucuz değil). Dikkat: “more cheaper” gibi iki karşılaştırma bir arada kullanılmaz."
+    ex: ["My bag is heavier than yours. | Benim çantam seninkinden daha ağır.", "This is the most popular café in the area. | Burası bölgedeki en popüler kafe.", "The test wasn't as hard as I thought. | Sınav düşündüğüm kadar zor değildi."]
+
+scenarios:
+  - id: weekend-plans
+    title: "Hafta sonu planı yapmak"
+    sit: "Bir arkadaşın hafta sonu planlarını soruyor ve birlikte bir şey yapmayı teklif ediyor."
+    d: 2
+    targets: [plan, book-a-table, invite, probably]
+    turns:
+      - ["Ece", "Do you have any plans for Saturday?", "Cumartesi için bir planın var mı?"]
+      - choose:
+          - ["Yes, I'm meeting my cousin in the morning, but I'm free in the evening.", true, "Ayarlanmış plan için present continuous doğru."]
+          - ["Yes, I meet my cousin tomorrow morning yesterday.", false, "Zaman ifadeleri çelişiyor."]
+          - ["Yes, I'm going meet my cousin.", false, "“going to” kalıbında “to” eksik."]
+      - ["Ece", "Great! Shall we have dinner? I can book a table.", "Harika! Akşam yemeği yiyelim mi? Masa ayırtabilirim."]
+      - choose:
+          - ["Good idea. I'll probably be home by six, so let's say eight?", true, "Tahmin için “will probably” ve öneri."]
+          - ["Good idea. I probably am home by six.", false, "Gelecek için “I'll probably be” gerekir."]
+          - ["Good idea. I'm going to be probably home.", false, "“probably” yeri yanlış; doğal değil."]
+      - ["Ece", "Perfect. I'm going to invite Mert too.", "Mükemmel. Mert'i de davet edeceğim."]
+  - id: clothes-shop
+    title: "Mağazada"
+    sit: "Bir mağazada ceket bakıyorsun ve satış görevlisiyle konuşuyorsun."
+    d: 1
+    targets: [try-on, size, cheap, pay-by-card]
+    turns:
+      - ["Assistant", "Hi, can I help you?", "Merhaba, yardımcı olabilir miyim?"]
+      - choose:
+          - ["Yes, can I try this jacket on? Do you have it in a medium size?", true, "Kibar istek ve beden sorusu doğru."]
+          - ["Yes, I want try this jacket.", false, "“want to try” olmalı ve giysi için “try on” kullanılır."]
+          - ["Yes, can I test this jacket?", false, "Giysi için “try on” kullanılır."]
+      - ["Assistant", "Sure, here you are. The changing room is over there.", "Tabii, buyurun. Deneme kabini şurada."]
+      - choose:
+          - ["Thanks. It's nice, but it's more expensive than the blue one. Is there a discount?", true, "Karşılaştırma ve indirim sorusu doğru."]
+          - ["It's more expensiver than the blue one.", false, "“more” ve “-er” birlikte kullanılmaz."]
+          - ["It's expensive than the blue one.", false, "Karşılaştırma için “more expensive” gerekir."]
+      - ["Assistant", "Yes, there's 15% off today. Do you want to pay by card?", "Evet, bugün %15 indirim var. Kartla mı ödemek istersiniz?"]
+
+readings:
+  - id: summer-plans-message
+    title: "Summer plans"
+    kind: "Mesaj"
+    d: 2
+    s:
+      - ["Hi Leyla! My exams finish next week, so I'm going to have a long holiday.", "Selam Leyla! Sınavlarım gelecek hafta bitiyor, yani uzun bir tatil yapacağım."]
+      - ["I'm flying to Trabzon on the 5th of July to stay with my grandparents.", "Büyükannemle büyükbabamın yanında kalmak için 5 Temmuz'da Trabzon'a uçuyorum."]
+      - ["In August I'm going to work in a café to save money.", "Ağustosta para biriktirmek için bir kafede çalışacağım."]
+      - ["The job isn't as exciting as a holiday, but it will be useful.", "İş, tatil kadar heyecanlı değil ama faydalı olacak."]
+      - ["What about you? Are you going to visit us?", "Peki ya sen? Bizi ziyaret edecek misin?"]
+    gloss: ["grandparents | büyükanne ve büyükbaba", "save money | para biriktirmek", "useful | faydalı"]
+    q:
+      - q: "Yazan kişi ağustosta ne yapacak?"
+        o: ["Trabzon'a gidecek", "Bir kafede çalışacak", "Sınavlara girecek"]
+        a: 1
+        why: "“In August I'm going to work in a café”"
+      - q: "Trabzon yolculuğu neden present continuous ile anlatılmış?"
+        o: ["Geçmişte olduğu için", "Tarihi belli, ayarlanmış bir plan olduğu için", "Sadece bir tahmin olduğu için"]
+        a: 1
+        why: "Tarih belli bir uçuş: ayarlanmış plan → I'm flying."
+  - id: phone-comparison
+    title: "Which phone should I buy?"
+    kind: "Ürün karşılaştırması"
+    d: 2
+    s:
+      - ["The Nova X is cheaper than the Sky 5, but its camera isn't as good.", "Nova X, Sky 5'ten daha ucuz ama kamerası o kadar iyi değil."]
+      - ["The Sky 5 has the biggest screen and the longest battery life.", "Sky 5'in en büyük ekranı ve en uzun pil ömrü var."]
+      - ["However, it's heavier and more expensive.", "Ancak daha ağır ve daha pahalı."]
+      - ["If you take a lot of photos, the Sky 5 is the better choice.", "Çok fotoğraf çekiyorsan Sky 5 daha iyi bir seçim."]
+      - ["If you want a light, cheap phone, buy the Nova X.", "Hafif ve ucuz bir telefon istiyorsan Nova X'i al."]
+    gloss: ["battery life | pil ömrü", "however | ancak", "choice | seçim"]
+    q:
+      - q: "Hangi telefonun pili daha uzun gider?"
+        o: ["Nova X", "Sky 5", "İkisi aynı"]
+        a: 1
+        why: "“The Sky 5 has … the longest battery life.”"
+      - q: "Az parası olan ve hafif telefon isteyen biri hangisini almalı?"
+        o: ["Nova X", "Sky 5", "Metinde öneri yok"]
+        a: 0
+        why: "“If you want a light, cheap phone, buy the Nova X.”"
+
+writing:
+  id: a2-plans-message
+  p: "Bir arkadaşına önümüzdeki ay için planlarını anlatan 5–6 cümlelik bir mesaj yaz. En az bir karşılaştırma cümlesi kullan."
+  rubric: ["going to veya present continuous ile plan anlatılmış", "En az bir karşılaştırma var (-er / more / as … as)", "Mesaj selamlama ve kapanışla bitmiş"]
+  samples: ["Hi Arda! Next month is going to be busy. I'm starting a new job on the 3rd, and I'm going to move to a smaller flat. It's further from the centre, but it's cheaper than my old one. On the 20th I'm visiting my parents in Edirne. Are you free at the end of the month? Let's meet! — Deniz"]
+  d: 2
+
+situations:
+  - { parent: "Plan", name: "Plan yapma ve davet", items: [tomorrow, next-month, plan, book-a-table, invite, free-time, im-going-to, are-you-going-to, im-meeting-on] }
+  - { parent: "Plan", name: "Tahmin ve umut", items: [probably, hopefully, save-money, will-probably] }
+  - { parent: "Alışveriş", name: "Mağazada", items: [cheap, expensive, try-on, size, receipt, discount, pay-by-card, can-i-try, how-much-is-are] }
+  - { parent: "Karşılaştırma", name: "Ürünleri ve yerleri karşılaştırma", items: [better, the-best, worse, comfortable, is-than, more-than, the-most, not-as-as] }

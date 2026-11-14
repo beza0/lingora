@@ -1,0 +1,524 @@
+id: a1-me-and-my-world
+domain: a1
+title: "Ben ve çevrem"
+desc: "am / is / are, my / your / his / her; aile, meslekler, sayılar ve kendini tanıtma."
+sort: 1
+
+targets:
+  - id: name
+    w: name
+    pos: n
+    tr: "isim, ad"
+    ex: "My [[name]] is Zeynep."
+    extr: "Benim adım Zeynep."
+    d: 1
+    col: ["first name", "last name", "What's your name?"]
+    tone: ["Günlük", "Tanışma"]
+    dis:
+      - "nose | Burun demektir."
+      - "number | Numara demektir."
+      - "game | Oyun demektir."
+  - id: brother
+    w: brother
+    pos: n
+    tr: "erkek kardeş, ağabey"
+    ex: "My [[brother]] is twelve years old."
+    extr: "Erkek kardeşim on iki yaşında."
+    d: 1
+    ant: ["sister"]
+    tone: ["Aile"]
+    dis:
+      - "bother | Rahatsız etmek demektir."
+      - "brush | Fırça demektir."
+      - "brown | Kahverengi demektir."
+  - id: sister
+    w: sister
+    pos: n
+    tr: "kız kardeş, abla"
+    ex: "I have one [[sister]]. Her name is Ayşe."
+    extr: "Bir kız kardeşim var. Adı Ayşe."
+    d: 1
+    tone: ["Aile"]
+    dis:
+      - "sitter | Bakıcı demektir."
+      - "winter | Kış demektir."
+      - "brother | “Her name” ile uyuşmaz; erkek kardeş demektir."
+  - id: parents
+    w: parents
+    pos: n
+    tr: "anne baba, ebeveynler"
+    ex: "My [[parents]] are teachers."
+    extr: "Annem ve babam öğretmen."
+    d: 1
+    fam: ["mother (i.) anne", "father (i.) baba"]
+    tone: ["Aile"]
+    dis:
+      - "parent | “are” ve “teachers” çoğul ister."
+      - "parks | Parklar demektir."
+      - "pants | Pantolon demektir."
+  - id: married
+    w: married
+    pos: adj
+    tr: "evli"
+    ex: "Is your sister [[married]]?"
+    extr: "Kız kardeşin evli mi?"
+    d: 1
+    ant: ["single"]
+    col: ["get married", "married to someone"]
+    tone: ["Aile"]
+    dis:
+      - "marry | Fiil (evlenmek); “Is … ?” sorusunda sıfat gerekir."
+      - "marked | İşaretli demektir."
+      - "mirror | Ayna demektir."
+  - id: friend
+    w: friend
+    pos: n
+    tr: "arkadaş"
+    ex: "This is my [[friend]], Deniz."
+    extr: "Bu benim arkadaşım Deniz."
+    d: 1
+    col: ["best friend", "an old friend"]
+    tone: ["Günlük"]
+    dis:
+      - "fried | Kızarmış demektir."
+      - "free | Serbest, ücretsiz demektir."
+      - "fiend | Şeytan, kötü ruh demektir."
+  - id: student
+    w: student
+    pos: n
+    tr: "öğrenci"
+    ex: "I'm a [[student]] at Ankara University."
+    extr: "Ankara Üniversitesi'nde öğrenciyim."
+    d: 1
+    fam: ["study (f.) okumak, ders çalışmak"]
+    tone: ["Okul"]
+    dis:
+      - "studio | Stüdyo demektir."
+      - "study | Fiil veya “çalışma odası”; “a … at” yapısına uymaz."
+      - "stadium | Stadyum demektir."
+  - id: teacher
+    w: teacher
+    pos: n
+    tr: "öğretmen"
+    ex: "My mother is a [[teacher]]."
+    extr: "Annem öğretmen."
+    d: 1
+    fam: ["teach (f.) öğretmek"]
+    tone: ["Meslek"]
+    dis:
+      - "teach | Fiil; “a …” isim ister."
+      - "teaching | Öğretmenlik (iş) demektir; kişi değil."
+      - "cheater | Hileci demektir."
+  - id: doctor
+    w: doctor
+    pos: n
+    tr: "doktor"
+    ex: "Her father is a [[doctor]] in a big hospital."
+    extr: "Onun babası büyük bir hastanede doktor."
+    d: 1
+    tone: ["Meslek"]
+    dis:
+      - "door | Kapı demektir."
+      - "dollar | Dolar demektir."
+      - "daughter | Kız evlat demektir; meslek değil."
+  - id: job
+    w: job
+    pos: n
+    tr: "iş, meslek"
+    ex: "What's your [[job]]? I'm a nurse."
+    extr: "Mesleğin ne? Hemşireyim."
+    d: 1
+    col: ["a good job", "a new job"]
+    tone: ["Meslek", "Günlük"]
+    dis:
+      - "joke | Şaka demektir."
+      - "jog | Koşu yapmak demektir."
+      - "jar | Kavanoz demektir."
+  - id: years-old
+    w: years old
+    pos: phrase
+    tr: "yaşında"
+    ex: "I'm twenty-five [[years old]]."
+    extr: "Yirmi beş yaşındayım."
+    d: 1
+    tone: ["Tanışma"]
+    dis:
+      - "year old | “twenty-five” çoğul ister: years."
+      - "years age | Kalıp “years old”."
+      - "years older | “Daha yaşlı” demektir."
+  - id: from
+    w: from
+    pos: prep
+    tr: "-den, -li (nereli olduğunu söylerken)"
+    ex: "I'm [[from]] Trabzon."
+    extr: "Ben Trabzonluyum."
+    d: 1
+    col: ["Where are you from?", "come from"]
+    tone: ["Tanışma"]
+    dis:
+      - "for | “İçin” demektir."
+      - "form | Form demektir."
+      - "of | Nereli olmayı “of” ile söylemeyiz."
+  - id: live
+    w: live
+    pos: v
+    tr: "yaşamak, oturmak"
+    ex: "We [[live]] in a small flat in İzmir."
+    extr: "İzmir'de küçük bir dairede oturuyoruz."
+    d: 1
+    col: ["live in a city", "live with your family"]
+    tone: ["Günlük"]
+    dis:
+      - "lives | “We” ile fiile -s gelmez."
+      - "leave | Ayrılmak demektir."
+      - "love | Sevmek demektir."
+  - id: phone-number
+    w: phone number
+    pos: n
+    tr: "telefon numarası"
+    ex: "What's your [[phone number]]?"
+    extr: "Telefon numaran ne?"
+    d: 1
+    tone: ["Günlük"]
+    dis:
+      - "phone name | “Telefon adı” diye bir şey yok."
+      - "phone numbers | Tek bir numara soruluyor; fiil “is”."
+      - "fun number | Anlamsız bir ifadedir."
+  - id: address
+    w: address
+    pos: n
+    tr: "adres"
+    ex: "My [[address]] is 12 Park Street."
+    extr: "Adresim Park Sokağı No: 12."
+    d: 1
+    tone: ["Günlük", "Resmî"]
+    dis:
+      - "dress | Elbise demektir."
+      - "access | Erişim demektir."
+      - "actress | Kadın oyuncu demektir."
+  - id: tall
+    w: tall
+    pos: adj
+    tr: "uzun boylu"
+    ex: "My brother is very [[tall]]."
+    extr: "Ağabeyim çok uzun boylu."
+    d: 1
+    ant: ["short"]
+    tone: ["Tanımlama"]
+    dis:
+      - "tail | Kuyruk demektir."
+      - "toll | Geçiş ücreti demektir."
+      - "long | Kişi boyu için “tall” kullanılır."
+  - id: friendly
+    w: friendly
+    pos: adj
+    tr: "cana yakın, güler yüzlü"
+    ex: "Our neighbours are very [[friendly]]."
+    extr: "Komşularımız çok cana yakın."
+    d: 1
+    syn: ["kind", "nice"]
+    tone: ["Tanımlama"]
+    dis:
+      - "friend | İsim; “very” sonrası sıfat gerekir."
+      - "fried | Kızarmış demektir."
+      - "freely | Serbestçe demektir (zarf)."
+  - id: hungry
+    w: hungry
+    pos: adj
+    tr: "aç (karnı acıkmış)"
+    ex: "I'm [[hungry]]. Let's eat something."
+    extr: "Acıktım. Bir şeyler yiyelim."
+    d: 1
+    conf: ["angry | “Kızgın” demektir; telaffuzu yakın."]
+    tone: ["Günlük"]
+    dis:
+      - "angry | Kızgın demektir; “yiyelim” ile uyuşmaz."
+      - "hungary | Ülke adı (Macaristan) ve büyük harfle yazılır."
+      - "hurry | Acele demektir."
+  - id: tired
+    w: tired
+    pos: adj
+    tr: "yorgun"
+    ex: "She is [[tired]] after work."
+    extr: "İşten sonra yorgun."
+    d: 1
+    tone: ["Günlük"]
+    dis:
+      - "tried | “Denedi” demektir."
+      - "tiring | Yorucu demektir; kişi için “tired”."
+      - "tire | Lastik demektir."
+  - id: country
+    w: country
+    pos: n
+    tr: "ülke"
+    ex: "Turkey is a big [[country]]."
+    extr: "Türkiye büyük bir ülke."
+    d: 1
+    col: ["a foreign country", "my country"]
+    tone: ["Günlük"]
+    dis:
+      - "county | İlçe/bölge demektir."
+      - "counter | Tezgâh demektir."
+      - "city | Şehir demektir; Türkiye bir ülke."
+
+patterns:
+  - id: my-name-is
+    t: "My name is …"
+    ex: "My name [[is]] Kerem."
+    extr: "Benim adım Kerem."
+    ttr: "Benim adım …"
+    slots: ["Kerem | Kerem", "Elif | Elif", "Murat | Murat"]
+    chunks: ["My name | benim adım", "is | -dır"]
+    g: a1-be
+    ctx: ["Tanışma"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "am | “am” yalnız “I” ile kullanılır."
+      - "are | “My name” tekil; “is” gerekir."
+      - "be | Çekimsiz “be” cümlede kullanılmaz."
+  - id: im-a
+    t: "I'm a/an …"
+    ex: "[[I'm]] an engineer."
+    extr: "Ben mühendisim."
+    ttr: "Ben …"
+    slots: ["an engineer | mühendisim", "a nurse | hemşireyim", "a student | öğrenciyim"]
+    chunks: ["I'm | ben …im", "an engineer | (bir) mühendis"]
+    g: a1-be
+    ctx: ["Tanışma", "Meslek"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "I | Fiil eksik: “I am” gerekir."
+      - "I'm is | İki fiil olmaz."
+      - "Me | “Me” özne olarak kullanılmaz."
+  - id: where-are-you-from
+    t: "Where are you from? — I'm from …"
+    ex: "Where [[are]] you from?"
+    extr: "Nerelisin?"
+    ttr: "Ben …lıyım."
+    slots: ["Ankara | Ankara", "Bursa | Bursa", "Germany | Almanya"]
+    chunks: ["Where | nereden", "are you from | -lısın"]
+    g: a1-be
+    ctx: ["Tanışma"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "is | “you” ile “are” kullanılır."
+      - "do | “from” ile fiilsiz soru; “are” gerekir."
+      - "am | “am” yalnız “I” ile."
+  - id: this-is-my
+    t: "This is my …"
+    ex: "This [[is]] my mother."
+    extr: "Bu benim annem."
+    ttr: "Bu benim …"
+    slots: ["mother | annem", "best friend | en iyi arkadaşım", "teacher | öğretmenim"]
+    chunks: ["This is | bu", "my mother | benim annem"]
+    g: a1-possessives
+    ctx: ["Tanıştırma"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "are | “This” tekil; “is” gerekir."
+      - "these | “Bunlar” demektir; fiil değil."
+      - "it's | “This it's” iki özne olur."
+  - id: his-her-name
+    t: "His/Her name is …"
+    ex: "[[Her]] name is Selin."
+    extr: "Onun (kızın) adı Selin."
+    ttr: "Onun adı …"
+    slots: ["Selin | Selin", "Emre | Emre", "Ali | Ali"]
+    chunks: ["Her name | onun (kadın) adı", "is Selin | Selin"]
+    g: a1-possessives
+    ctx: ["Tanıştırma"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "She | Özne; isimden önce iyelik “her” gelir."
+      - "Hers | Tek başına kullanılır: It's hers."
+      - "Shes | Böyle bir sözcük yok."
+  - id: how-old-are-you
+    t: "How old are you? — I'm … years old."
+    ex: "How [[old]] are you?"
+    extr: "Kaç yaşındasın?"
+    ttr: "… yaşındayım."
+    slots: ["twenty | Yirmi", "thirty-two | Otuz iki", "eighteen | On sekiz"]
+    chunks: ["How old | kaç yaşında", "are you | -sın"]
+    g: a1-be
+    ctx: ["Tanışma"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "many | “How many” sayı sorar; yaş için “How old”."
+      - "much | “How much” fiyat/miktar sorar."
+      - "age | “How age” diye soru kurulmaz."
+  - id: are-you-a
+    t: "Are you a …? — Yes, I am. / No, I'm not."
+    ex: "[[Are]] you a teacher?"
+    extr: "Öğretmen misin?"
+    ttr: "… misin?"
+    slots: ["teacher | Öğretmen", "student | Öğrenci", "doctor | Doktor"]
+    chunks: ["Are you | misin", "a teacher | öğretmen"]
+    g: a1-be
+    ctx: ["Tanışma"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "Do | “be” cümlesinde soru “Are you …?” ile kurulur."
+      - "Is | “you” ile “Are” gerekir."
+      - "Am | “Am” yalnız “I” ile."
+  - id: isnt-arent
+    t: "He isn't … / They aren't …"
+    ex: "My parents [[aren't]] at home."
+    extr: "Annemle babam evde değil."
+    ttr: "Annemle babam … değil."
+    slots: ["at home | evde", "at work | işte", "here | burada"]
+    chunks: ["My parents | annemle babam", "aren't | değil", "at home | evde"]
+    g: a1-be
+    ctx: ["Günlük"]
+    tone: ["Olumsuz"]
+    d: 1
+    dis:
+      - "isn't | Özne çoğul; “aren't” gerekir."
+      - "don't | “be” cümlesi “don't” ile olumsuz yapılmaz."
+      - "not | Fiil eksik: “are not” gerekir."
+  - id: whats-your
+    t: "What's your …?"
+    ex: "What's [[your]] email address?"
+    extr: "E-posta adresin ne?"
+    ttr: "… ne?"
+    slots: ["email address | E-posta adresin", "phone number | Telefon numaran", "surname | Soyadın"]
+    chunks: ["What's | ne", "your email address | e-posta adresin"]
+    g: a1-possessives
+    ctx: ["Form doldurma"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "you | Özne; isimden önce iyelik “your” gelir."
+      - "you're | “You are” demektir."
+      - "yours | Tek başına kullanılır: This is yours."
+  - id: we-are-from
+    t: "We're … / They're …"
+    ex: "[[They're]] my cousins from London."
+    extr: "Onlar Londra'dan kuzenlerim."
+    ttr: "Onlar …"
+    slots: ["my cousins | kuzenlerim", "my neighbours | komşularım", "my classmates | sınıf arkadaşlarım"]
+    chunks: ["They're | onlar …", "my cousins | kuzenlerim"]
+    g: a1-be
+    ctx: ["Tanıştırma"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "Their | İyelik (onların); fiil eksik kalır."
+      - "There | “Orada” demektir."
+      - "They's | Böyle bir kısaltma yok."
+
+grammar:
+  - id: a1-be
+    title: "am / is / are (olmak fiili)"
+    short: "Türkçedeki “-im, -sin, -dir” ekleri İngilizcede am / is / are ile yapılır: I am, he/she/it is, we/you/they are."
+    long: "Olumlu: I am (I'm), you are (you're), he/she/it is (he's), we/they are (we're). Olumsuz: not eklenir — I'm not, he isn't, they aren't. Soru: fiil başa gelir — Are you a student? Is she married? Kısa cevap: Yes, I am. / No, she isn't. Dikkat: “be” cümlesinde do/does kullanılmaz; “Do you a student?” yanlıştır. Meslek söylerken a/an unutulmaz: She is a doctor."
+    ex: ["I'm a student. | Ben öğrenciyim.", "Is he married? — No, he isn't. | O evli mi? — Hayır, değil.", "We aren't from Ankara. | Biz Ankaralı değiliz."]
+  - id: a1-possessives
+    title: "my / your / his / her / our / their ve 's"
+    short: "Sahiplik isimden önce gelen sözcükle gösterilir: my book (kitabım), her name (onun adı). Kişi adıyla 's eklenir: Ali's car."
+    long: "I → my, you → your, he → his, she → her, it → its, we → our, they → their. Bu sözcükler her zaman bir isimden önce gelir: my brother, their house. Kişi adlarıyla 's kullanılır: Ayşe's phone (Ayşe'nin telefonu), my father's job. Dikkat: it's = it is; its = onun (cansız). Türkçede “onun” erkek ve kadın için aynıdır; İngilizcede his (erkek) / her (kadın) ayrılır."
+    ex: ["This is my sister. Her name is Elif. | Bu benim kız kardeşim. Onun adı Elif.", "Murat's job is interesting. | Murat'ın işi ilginç.", "Their house is near the sea. | Onların evi denize yakın."]
+
+scenarios:
+  - id: first-day-class
+    title: "Dil kursunda ilk gün"
+    sit: "Dil kursundaki ilk dersindesin. Yanındaki öğrenci seninle tanışmak istiyor."
+    d: 1
+    targets: [name, from, student, years-old]
+    turns:
+      - ["Sam", "Hi! I'm Sam. What's your name?", "Merhaba! Ben Sam. Adın ne?"]
+      - choose:
+          - ["Hi Sam, I'm Defne. Nice to meet you.", true, "Adını söylüyor ve kibarca selamlıyor."]
+          - ["Hi, my name Defne.", false, "“is” eksik: My name is Defne."]
+          - ["Hi, I Defne.", false, "Fiil eksik: I'm Defne."]
+      - ["Sam", "Nice to meet you too. Where are you from?", "Ben de memnun oldum. Nerelisin?"]
+      - choose:
+          - ["I'm from Konya. And you?", true, "“I'm from …” doğru yapı ve soruyu geri soruyor."]
+          - ["I from Konya.", false, "“am” eksik."]
+          - ["I'm of Konya.", false, "Nereli olmak “from” ile söylenir."]
+      - ["Sam", "I'm from Canada. Are you a student here?", "Ben Kanadalıyım. Burada öğrenci misin?"]
+      - choose:
+          - ["Yes, I am. I'm a student at the university too.", true, "Kısa cevap ve ek bilgi doğru."]
+          - ["Yes, I do.", false, "“Are you …?” sorusunun cevabı “Yes, I am.”"]
+          - ["Yes, I'm.", false, "Kısa olumlu cevapta kısaltma yapılmaz: Yes, I am."]
+  - id: family-photo
+    title: "Aile fotoğrafı"
+    sit: "Bir arkadaşına telefonundaki aile fotoğrafını gösteriyorsun."
+    d: 1
+    targets: [parents, sister, brother, married]
+    turns:
+      - ["Lucy", "Nice photo! Who are these people?", "Güzel fotoğraf! Bu insanlar kim?"]
+      - choose:
+          - ["These are my parents, and this is my sister.", true, "Çoğul için “These are”, tekil için “this is”."]
+          - ["This are my parents.", false, "Çoğul isimle “These are” gerekir."]
+          - ["These is my parents.", false, "“These” ile “are” kullanılır."]
+      - ["Lucy", "Is your sister married?", "Kız kardeşin evli mi?"]
+      - choose:
+          - ["Yes, she is. Her husband is a doctor.", true, "Kısa cevap ve “her husband” doğru."]
+          - ["Yes, she is. His husband is a doctor.", false, "Kadın için iyelik “her” olur."]
+          - ["Yes, she does.", false, "“Is …?” sorusuna “she is” ile cevap verilir."]
+      - ["Lucy", "And who is this tall boy?", "Peki bu uzun boylu çocuk kim?"]
+      - choose:
+          - ["That's my brother, Can. He's fifteen.", true, "Kişiyi tanıtıyor ve yaşını söylüyor."]
+          - ["He my brother.", false, "“is” eksik."]
+          - ["That's my brother. She's fifteen.", false, "Erkek için “he” kullanılır."]
+
+readings:
+  - id: about-me
+    title: "About me"
+    kind: "Kısa tanıtım yazısı"
+    d: 1
+    s:
+      - ["Hello! My name is Arda and I'm nineteen years old.", "Merhaba! Benim adım Arda ve on dokuz yaşındayım."]
+      - ["I'm from Eskişehir, but I live in İstanbul now.", "Eskişehirliyim ama şimdi İstanbul'da yaşıyorum."]
+      - ["I'm a student at a technical university.", "Bir teknik üniversitede öğrenciyim."]
+      - ["My father is a bus driver and my mother is a nurse.", "Babam otobüs şoförü, annem hemşire."]
+      - ["I have one sister. She isn't a student; she's a cook.", "Bir kız kardeşim var. O öğrenci değil; aşçı."]
+    gloss: ["bus driver | otobüs şoförü", "nurse | hemşire", "cook | aşçı"]
+    q:
+      - q: "Arda şu anda nerede yaşıyor?"
+        o: ["Eskişehir'de", "İstanbul'da", "Ankara'da"]
+        a: 1
+        why: "“but I live in İstanbul now”"
+      - q: "Arda'nın kız kardeşi ne iş yapıyor?"
+        o: ["Öğrenci", "Hemşire", "Aşçı"]
+        a: 2
+        why: "“She isn't a student; she's a cook.”"
+  - id: new-neighbours
+    title: "Our new neighbours"
+    kind: "Kısa paragraf"
+    d: 1
+    s:
+      - ["We have new neighbours. They're from Spain.", "Yeni komşularımız var. İspanyalılar."]
+      - ["Their names are Pablo and Lucia.", "Adları Pablo ve Lucia."]
+      - ["Pablo is an engineer and Lucia is a teacher.", "Pablo mühendis, Lucia öğretmen."]
+      - ["Their son is five years old. His name is Leo.", "Oğulları beş yaşında. Adı Leo."]
+      - ["They're very friendly, and Leo's English is very good!", "Çok cana yakınlar ve Leo'nun İngilizcesi çok iyi!"]
+    gloss: ["neighbour | komşu", "son | oğul", "engineer | mühendis"]
+    q:
+      - q: "Komşular nereli?"
+        o: ["İspanya", "İtalya", "Türkiye"]
+        a: 0
+        why: "“They're from Spain.”"
+      - q: "Leo kim?"
+        o: ["Mühendis", "Komşuların oğlu", "Öğretmen"]
+        a: 1
+        why: "“Their son is five years old. His name is Leo.”"
+
+writing:
+  id: a1-introduce-yourself
+  p: "Kendini 4–5 cümleyle tanıt: adın, yaşın, nerelisin, ne iş yapıyorsun ve ailende kimler var?"
+  rubric: ["am / is / are doğru kullanılmış", "my / his / her doğru seçilmiş", "Meslekten önce a / an var (I'm a teacher)"]
+  samples: ["Hi, my name is Merve and I'm twenty-three years old. I'm from Samsun, but I live in Ankara. I'm a nurse. My father is a driver and my mother is a teacher. I have one brother; his name is Efe."]
+  d: 1
+
+situations:
+  - { parent: "Tanışma", name: "Kendini tanıtma", items: [name, from, years-old, student, job, live, my-name-is, im-a, where-are-you-from, how-old-are-you, are-you-a] }
+  - { parent: "Tanışma", name: "Aileni ve arkadaşlarını tanıtma", items: [brother, sister, parents, married, friend, this-is-my, his-her-name, we-are-from] }
+  - { parent: "Günlük", name: "Bilgi verme ve kişileri anlatma", items: [phone-number, address, whats-your, tall, friendly, hungry, tired, isnt-arent] }

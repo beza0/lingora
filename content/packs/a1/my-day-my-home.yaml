@@ -1,0 +1,516 @@
+id: a1-my-day-my-home
+domain: a1
+title: "Günüm ve evim"
+desc: "Present simple ve there is / there are; günlük rutin, saatler, ev ve yemek."
+sort: 2
+
+targets:
+  - id: get-up
+    w: get up
+    pos: phrasal
+    tr: "kalkmak (yataktan)"
+    ex: "I [[get up]] at seven o'clock."
+    extr: "Saat yedide kalkarım."
+    d: 1
+    conf: ["wake up | Uyanmak; “get up” yataktan kalkmak."]
+    tone: ["Rutin"]
+    dis:
+      - "get on | Araca binmek demektir."
+      - "gets up | “I” ile fiile -s gelmez."
+      - "give up | Vazgeçmek demektir."
+  - id: breakfast
+    w: breakfast
+    pos: n
+    tr: "kahvaltı"
+    ex: "We have [[breakfast]] in the kitchen."
+    extr: "Kahvaltıyı mutfakta yaparız."
+    d: 1
+    col: ["have breakfast", "a big breakfast"]
+    tone: ["Rutin", "Yemek"]
+    dis:
+      - "breakfasts | Genel anlamda tekil ve tanımlıksız kullanılır."
+      - "break | Mola demektir."
+      - "bread | Ekmek demektir; “have bread” başka anlam verir."
+  - id: go-to-work
+    w: go to work
+    pos: phrase
+    tr: "işe gitmek"
+    ex: "My father [[goes to work]] by bus."
+    extr: "Babam işe otobüsle gider."
+    d: 1
+    col: ["go to school", "go home"]
+    tone: ["Rutin"]
+    dis:
+      - "go to work | “My father” ile fiile -es gelir."
+      - "goes to the work | “work” burada tanımlıksız kullanılır."
+      - "goes at work | Yön için “to” gerekir."
+  - id: usually
+    w: usually
+    pos: adv
+    tr: "genellikle"
+    ex: "I [[usually]] drink tea in the morning."
+    extr: "Sabahları genellikle çay içerim."
+    d: 1
+    syn: ["normally"]
+    tone: ["Rutin"]
+    dis:
+      - "usual | Sıfat; fiilden önce zarf gerekir."
+      - "use | Kullanmak demektir."
+      - "useful | Faydalı demektir."
+  - id: never
+    w: never
+    pos: adv
+    tr: "asla, hiç"
+    ex: "She [[never]] eats meat."
+    extr: "O hiç et yemez."
+    d: 1
+    ant: ["always"]
+    tone: ["Rutin"]
+    dis:
+      - "not | “She not eats” yanlış; “doesn't eat” veya “never eats”."
+      - "ever | Olumlu cümlede “hiç” anlamı vermez."
+      - "nothing | “Hiçbir şey” demektir."
+  - id: always
+    w: always
+    pos: adv
+    tr: "her zaman"
+    ex: "He [[always]] walks to school."
+    extr: "O her zaman okula yürüyerek gider."
+    d: 1
+    tone: ["Rutin"]
+    dis:
+      - "also | “Ayrıca” demektir."
+      - "all ways | “Bütün yollar” demektir."
+      - "away | “Uzakta” demektir."
+  - id: weekend
+    w: weekend
+    pos: n
+    tr: "hafta sonu"
+    ex: "We visit my grandmother at the [[weekend]]."
+    extr: "Hafta sonu babaanneme gideriz."
+    d: 1
+    col: ["at the weekend", "on weekends"]
+    tone: ["Günlük"]
+    dis:
+      - "weekday | Hafta içi günü demektir."
+      - "week | Hafta demektir; “at the week” denmez."
+      - "weakened | Zayıflamış demektir."
+  - id: kitchen
+    w: kitchen
+    pos: n
+    tr: "mutfak"
+    ex: "There's a big table in the [[kitchen]]."
+    extr: "Mutfakta büyük bir masa var."
+    d: 1
+    tone: ["Ev"]
+    dis:
+      - "chicken | Tavuk demektir."
+      - "kitten | Yavru kedi demektir."
+      - "kit | Takım, set demektir."
+  - id: bedroom
+    w: bedroom
+    pos: n
+    tr: "yatak odası"
+    ex: "My flat has two [[bedrooms]]."
+    extr: "Dairemin iki yatak odası var."
+    d: 1
+    tone: ["Ev"]
+    dis:
+      - "bedroom | “two” sonrası çoğul gerekir."
+      - "bathrooms | Banyolar demektir."
+      - "beds | Yataklar demektir; oda sayısı sorulmuyor."
+  - id: near
+    w: near
+    pos: prep
+    tr: "yakınında"
+    ex: "Our house is [[near]] the park."
+    extr: "Evimiz parkın yakınında."
+    d: 1
+    ant: ["far from"]
+    tone: ["Ev", "Yer"]
+    dis:
+      - "nearly | “Neredeyse” demektir."
+      - "near to the | “near the park” yeterli; “to the the” tekrar olur."
+      - "next | “next to” olmadan kullanılmaz."
+  - id: next-to
+    w: next to
+    pos: prep
+    tr: "yanında, bitişiğinde"
+    ex: "The bathroom is [[next to]] the bedroom."
+    extr: "Banyo yatak odasının yanında."
+    d: 1
+    tone: ["Ev", "Yer"]
+    dis:
+      - "next | “to” eksik."
+      - "near of | “near” edatla kullanılmaz: near the bedroom."
+      - "beside of | “beside” edatla kullanılmaz."
+  - id: cook
+    w: cook
+    pos: v
+    tr: "yemek pişirmek"
+    ex: "My mother [[cooks]] dinner every evening."
+    extr: "Annem her akşam yemek pişirir."
+    d: 1
+    fam: ["cook (i.) aşçı", "cooker (i.) ocak"]
+    tone: ["Ev", "Yemek"]
+    dis:
+      - "cook | “My mother” ile fiile -s gelir."
+      - "cooking | Yardımcı fiil olmadan -ing kullanılmaz."
+      - "cooker | Ocak demektir (isim)."
+  - id: watch-tv
+    w: watch TV
+    pos: phrase
+    tr: "televizyon izlemek"
+    ex: "We [[watch TV]] after dinner."
+    extr: "Akşam yemeğinden sonra televizyon izleriz."
+    d: 1
+    conf: ["look at | Bakmak; TV için “watch” kullanılır."]
+    tone: ["Rutin"]
+    dis:
+      - "look TV | TV için “watch” kullanılır."
+      - "see TV | Doğal değil; “watch TV” denir."
+      - "watches TV | “We” ile -es gelmez."
+  - id: early
+    w: early
+    pos: adv
+    tr: "erken"
+    ex: "I go to bed [[early]] on weekdays."
+    extr: "Hafta içi erken yatarım."
+    d: 1
+    ant: ["late"]
+    tone: ["Rutin"]
+    dis:
+      - "earlier | “Daha erken” demektir; karşılaştırma yok."
+      - "easy | Kolay demektir."
+      - "ear | Kulak demektir."
+  - id: busy
+    w: busy
+    pos: adj
+    tr: "meşgul, yoğun"
+    ex: "Mondays are always [[busy]] for me."
+    extr: "Pazartesiler benim için hep yoğundur."
+    d: 1
+    tone: ["Günlük"]
+    dis:
+      - "business | İş, şirket demektir (isim)."
+      - "bossy | Buyurgan demektir."
+      - "dizzy | Başı dönmüş demektir."
+  - id: fridge
+    w: fridge
+    pos: n
+    tr: "buzdolabı"
+    ex: "There's some milk in the [[fridge]]."
+    extr: "Buzdolabında biraz süt var."
+    d: 1
+    syn: ["refrigerator"]
+    tone: ["Ev"]
+    dis:
+      - "bridge | Köprü demektir."
+      - "freezer | Dondurucu demektir; süt genelde buzdolabında durur."
+      - "fringe | Kahkül, saçak demektir."
+  - id: like
+    w: like
+    pos: v
+    tr: "sevmek, hoşlanmak"
+    ex: "Do you [[like]] coffee?"
+    extr: "Kahve sever misin?"
+    d: 1
+    col: ["like doing something", "really like"]
+    tone: ["Günlük"]
+    dis:
+      - "likes | Soruda “do” varken fiil yalın olur."
+      - "liking | “do” ile -ing kullanılmaz."
+      - "look | Bakmak demektir."
+  - id: half-past
+    w: half past
+    pos: phrase
+    tr: "buçuk (saat)"
+    ex: "The film starts at [[half past]] eight."
+    extr: "Film sekiz buçukta başlıyor."
+    d: 1
+    col: ["quarter past", "quarter to"]
+    tone: ["Saat"]
+    dis:
+      - "half to | Saatte “buçuk” için “half past” denir."
+      - "half after | İngiliz kullanımında “half past” denir."
+      - "half pass | “pass” geçmek fiili; doğru sözcük “past”."
+  - id: every-day
+    w: every day
+    pos: phrase
+    tr: "her gün"
+    ex: "I walk my dog [[every day]]."
+    extr: "Köpeğimi her gün yürüyüşe çıkarırım."
+    d: 1
+    conf: ["everyday | Bitişik yazılırsa “gündelik” (sıfat) demektir."]
+    tone: ["Rutin"]
+    dis:
+      - "all day | “Bütün gün” demektir."
+      - "every days | “every” sonrası tekil gelir."
+      - "each days | “each” sonrası tekil gelir."
+  - id: rent
+    w: rent
+    pos: n
+    tr: "kira"
+    ex: "The [[rent]] for this flat is quite high."
+    extr: "Bu dairenin kirası oldukça yüksek."
+    d: 2
+    col: ["pay the rent", "rent a flat"]
+    tone: ["Ev"]
+    dis:
+      - "rest | Dinlenme demektir."
+      - "rain | Yağmur demektir."
+      - "rant | Söylenme demektir."
+
+patterns:
+  - id: i-usually
+    t: "I usually … in the morning."
+    ex: "I usually [[have]] a shower in the morning."
+    extr: "Sabahları genellikle duş alırım."
+    ttr: "Sabahları genellikle …"
+    slots: ["have a shower | duş alırım", "go for a run | koşuya çıkarım", "read the news | haberleri okurum"]
+    chunks: ["I usually | genellikle", "have a shower | duş alırım", "in the morning | sabahları"]
+    g: a1-present-simple
+    ctx: ["Rutin"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "has | “I” ile fiile -s gelmez."
+      - "having | Yardımcı fiil olmadan -ing kullanılmaz."
+      - "am have | İki fiil yan yana olmaz."
+  - id: she-works-as
+    t: "She works …"
+    ex: "She [[works]] in a bank."
+    extr: "O bir bankada çalışıyor."
+    ttr: "O … çalışıyor."
+    slots: ["in a bank | bir bankada", "at a hospital | bir hastanede", "from home | evden"]
+    chunks: ["She works | o çalışıyor", "in a bank | bir bankada"]
+    g: a1-present-simple
+    ctx: ["Meslek"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "work | “She” ile fiile -s gelir."
+      - "is work | “is” ve yalın fiil birlikte olmaz."
+      - "working | Yardımcı fiil olmadan -ing kullanılmaz."
+  - id: do-you-like
+    t: "Do you like …?"
+    ex: "[[Do]] you like spicy food?"
+    extr: "Acı yemek sever misin?"
+    ttr: "… sever misin?"
+    slots: ["spicy food | Acı yemek", "football | Futbol", "jazz | Caz"]
+    chunks: ["Do you like | sever misin", "spicy food | acı yemek"]
+    g: a1-present-simple
+    ctx: ["Sohbet"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "Does | “you” ile “Do” kullanılır."
+      - "Are | Present simple sorusu “Do” ile kurulur."
+      - "Is | “you” ile “Is” kullanılmaz."
+  - id: he-doesnt
+    t: "He doesn't …"
+    ex: "He [[doesn't]] drink coffee."
+    extr: "O kahve içmez."
+    ttr: "O … içmez."
+    slots: ["coffee | kahve", "tea | çay", "cola | kola"]
+    chunks: ["He doesn't | o …mez", "drink coffee | kahve içmek"]
+    g: a1-present-simple
+    ctx: ["Günlük"]
+    tone: ["Olumsuz"]
+    d: 1
+    dis:
+      - "don't | “He” ile “doesn't” kullanılır."
+      - "isn't | Fiil cümlesi “isn't” ile olumsuz yapılmaz."
+      - "not | Yardımcı fiil eksik."
+  - id: there-is-a
+    t: "There's a … in the …"
+    ex: "[[There's]] a sofa in the living room."
+    extr: "Oturma odasında bir kanepe var."
+    ttr: "Oturma odasında … var."
+    slots: ["a sofa | bir kanepe", "a big window | büyük bir pencere", "a plant | bir bitki"]
+    chunks: ["There's a sofa | bir kanepe var", "in the living room | oturma odasında"]
+    g: a1-there-is-are
+    ctx: ["Ev"]
+    tone: ["Tanımlama"]
+    d: 1
+    dis:
+      - "It's | “Var” anlamı için “There's” gerekir."
+      - "There are | Tekil isimle “There's” kullanılır."
+      - "Have | “Var” anlamında “there is” kullanılır."
+  - id: there-are-two
+    t: "There are … in my …"
+    ex: "There [[are]] two bathrooms in my flat."
+    extr: "Dairemde iki banyo var."
+    ttr: "Dairemde … var."
+    slots: ["two bathrooms | iki banyo", "three bedrooms | üç yatak odası", "many books | çok kitap"]
+    chunks: ["There are | var", "two bathrooms | iki banyo", "in my flat | dairemde"]
+    g: a1-there-is-are
+    ctx: ["Ev"]
+    tone: ["Tanımlama"]
+    d: 1
+    dis:
+      - "is | Çoğul isimle “are” kullanılır."
+      - "have | “There have” yanlış; “there are”."
+      - "be | Çekimsiz “be” kullanılmaz."
+  - id: is-there-a
+    t: "Is there a … ?"
+    ex: "Is [[there]] a supermarket near your house?"
+    extr: "Evinin yakınında bir süpermarket var mı?"
+    ttr: "Evinin yakınında … var mı?"
+    slots: ["a supermarket | bir süpermarket", "a bus stop | bir otobüs durağı", "a gym | bir spor salonu"]
+    chunks: ["Is there | var mı", "a supermarket | bir süpermarket", "near your house | evinin yakınında"]
+    g: a1-there-is-are
+    ctx: ["Ev", "Yer"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "it | “Is it” var olup olmadığını sormaz."
+      - "their | “Onların” demektir."
+      - "they | “Is they” yanlış bir yapıdır."
+  - id: what-time-do-you
+    t: "What time do you …?"
+    ex: "What time [[do]] you finish work?"
+    extr: "İşi saat kaçta bitirirsin?"
+    ttr: "Saat kaçta …?"
+    slots: ["finish work | işi bitirirsin", "get up | kalkarsın", "have lunch | öğle yemeği yersin"]
+    chunks: ["What time | saat kaçta", "do you finish | bitirirsin", "work | iş"]
+    g: a1-present-simple
+    ctx: ["Rutin"]
+    tone: ["Soru"]
+    d: 1
+    dis:
+      - "does | “you” ile “do” kullanılır."
+      - "are | Fiil cümlesinde soru “do” ile kurulur."
+      - "did | Geçmiş zaman; rutin soruluyor."
+  - id: at-oclock
+    t: "I … at … o'clock."
+    ex: "I have lunch [[at]] one o'clock."
+    extr: "Saat birde öğle yemeği yerim."
+    ttr: "Saat … öğle yemeği yerim."
+    slots: ["one | birde", "twelve | on ikide", "two | ikide"]
+    chunks: ["I have lunch | öğle yemeği yerim", "at one o'clock | saat birde"]
+    g: a1-present-simple
+    ctx: ["Saat"]
+    tone: ["Günlük"]
+    d: 1
+    dis:
+      - "in | Saatlerde “at” kullanılır."
+      - "on | “on” günlerle kullanılır."
+      - "to | Yön edatıdır; saat için “at”."
+  - id: there-isnt-any
+    t: "There isn't any … / There aren't any …"
+    ex: "There [[isn't]] any bread left."
+    extr: "Hiç ekmek kalmadı."
+    ttr: "Hiç … kalmadı."
+    slots: ["bread | ekmek", "milk | süt", "coffee | kahve"]
+    chunks: ["There isn't any | hiç … yok", "bread | ekmek", "left | kalmış"]
+    g: a1-there-is-are
+    ctx: ["Ev", "Yemek"]
+    tone: ["Olumsuz"]
+    d: 2
+    dis:
+      - "aren't | “bread” sayılamaz; “isn't” gerekir."
+      - "doesn't | “There” cümlesi “doesn't” ile olumsuz yapılmaz."
+      - "hasn't | “There hasn't any” yanlış."
+
+grammar:
+  - id: a1-present-simple
+    title: "Present simple: alışkanlıklar ve rutinler"
+    short: "Her gün, genellikle, asla gibi alışkanlıklar present simple ile anlatılır. He / she / it ile fiile -s eklenir: she works."
+    long: "Olumlu: I/you/we/they work; he/she/it works (go → goes, watch → watches, study → studies, have → has). Olumsuz: don't / doesn't + yalın fiil — She doesn't work on Sundays. Soru: Do / Does + özne + yalın fiil — Does he like tea? Kısa cevap: Yes, he does. Sıklık zarfları (always, usually, often, sometimes, never) fiilden önce, “be” fiilinden sonra gelir: I usually walk. / I'm always late. Dikkat: “doesn't” ve “does” varken fiile -s eklenmez: Does she works? yanlış."
+    ex: ["My brother gets up at six. | Ağabeyim altıda kalkar.", "We don't watch TV in the morning. | Sabahları televizyon izlemeyiz.", "Does your mother cook every day? — Yes, she does. | Annen her gün yemek yapar mı? — Evet."]
+  - id: a1-there-is-are
+    title: "there is / there are (var / yok)"
+    short: "Bir yerde bir şeyin var olduğunu söylerken tekil için there is, çoğul için there are kullanılır."
+    long: "Tekil ve sayılamayan: There's a bed. / There's some milk. Çoğul: There are two chairs. Olumsuz: There isn't a lift. / There aren't any shops. Soru: Is there a garden? — Yes, there is. / Are there any windows? — No, there aren't. Sayılamayan isimlerde (bread, water, milk) olumsuz ve soruda “any” kullanılır. Dikkat: Türkçedeki “var” için “have” kullanılmaz; “My house has a garden” da doğrudur ama “In my house have a garden” yanlıştır."
+    ex: ["There's a small garden behind the house. | Evin arkasında küçük bir bahçe var.", "There aren't any chairs in the kitchen. | Mutfakta hiç sandalye yok.", "Is there a bank near here? — Yes, there is. | Buralarda banka var mı? — Evet, var."]
+
+scenarios:
+  - id: daily-routine-chat
+    title: "Günlük rutin sohbeti"
+    sit: "Yeni bir iş arkadaşı günlük rutinini soruyor."
+    d: 1
+    targets: [get-up, usually, go-to-work, early]
+    turns:
+      - ["Tom", "You're always here early! What time do you get up?", "Hep erkencisin! Saat kaçta kalkıyorsun?"]
+      - choose:
+          - ["I usually get up at six. I go to work by metro.", true, "Rutin present simple ile doğru anlatılıyor."]
+          - ["I usually getting up at six.", false, "Yardımcı fiil olmadan -ing kullanılmaz."]
+          - ["I get usually up at six.", false, "Sıklık zarfı fiilden önce gelir."]
+      - ["Tom", "Wow. Do you have breakfast at home?", "Vay. Kahvaltıyı evde mi yapıyorsun?"]
+      - choose:
+          - ["No, I don't. I have breakfast at the office.", true, "Kısa cevap ve açıklama doğru."]
+          - ["No, I doesn't.", false, "“I” ile “don't” kullanılır."]
+          - ["No, I not have.", false, "Olumsuz için “don't have” gerekir."]
+      - ["Tom", "Good idea. The café downstairs is great.", "İyi fikir. Alt kattaki kafe harika."]
+  - id: flat-viewing
+    title: "Ev görmeye gitmek"
+    sit: "Kiralık bir daireye bakıyorsun ve ev sahibine sorular soruyorsun."
+    d: 1
+    targets: [bedroom, kitchen, near, rent]
+    turns:
+      - ["Owner", "Come in! This is the living room.", "Buyurun! Burası oturma odası."]
+      - choose:
+          - ["It's nice. How many bedrooms are there?", true, "Çoğul isimle “are there” doğru."]
+          - ["It's nice. How many bedroom is there?", false, "“How many” çoğul isim ve “are” ister."]
+          - ["It's nice. How much bedrooms have?", false, "Sayılabilen isim için “How many” kullanılır."]
+      - ["Owner", "There are two bedrooms and a big kitchen.", "İki yatak odası ve büyük bir mutfak var."]
+      - choose:
+          - ["Great. Is there a bus stop near here?", true, "“Is there …?” doğru soru."]
+          - ["Great. Is it a bus stop near here?", false, "Var olup olmadığı “Is there” ile sorulur."]
+          - ["Great. Has a bus stop near here?", false, "Özne ve doğru yapı eksik."]
+      - ["Owner", "Yes, there's one next to the supermarket.", "Evet, süpermarketin yanında bir tane var."]
+
+readings:
+  - id: a-day-in-my-life
+    title: "A day in my life"
+    kind: "Blog yazısı"
+    d: 1
+    s:
+      - ["I'm Kaan and I work in a hotel.", "Ben Kaan, bir otelde çalışıyorum."]
+      - ["I get up at half past five because my work starts at seven.", "Beş buçukta kalkıyorum çünkü işim yedide başlıyor."]
+      - ["I don't have breakfast at home; I eat at the hotel.", "Kahvaltıyı evde yapmıyorum; otelde yiyorum."]
+      - ["I finish work at three and I usually go to the gym.", "Saat üçte işi bitiriyorum ve genellikle spor salonuna gidiyorum."]
+      - ["In the evening I cook dinner and go to bed early.", "Akşam yemek yapıyorum ve erken yatıyorum."]
+    gloss: ["half past five | beş buçuk", "finish work | işi bitirmek", "go to bed | yatmak"]
+    q:
+      - q: "Kaan neden çok erken kalkıyor?"
+        o: ["Spor yapmak için", "İşi yedide başladığı için", "Kahvaltı hazırlamak için"]
+        a: 1
+        why: "“because my work starts at seven”"
+      - q: "Kaan işten sonra genellikle ne yapıyor?"
+        o: ["Spor salonuna gidiyor", "Televizyon izliyor", "Otelde kalıyor"]
+        a: 0
+        why: "“I usually go to the gym.”"
+  - id: flat-advert
+    title: "Flat for rent"
+    kind: "Kiralık ev ilanı"
+    d: 1
+    s:
+      - ["Flat for rent in Kadıköy, near the sea.", "Kadıköy'de, denize yakın kiralık daire."]
+      - ["There are two bedrooms, a living room and a small kitchen.", "İki yatak odası, bir oturma odası ve küçük bir mutfak var."]
+      - ["There's a balcony, but there isn't a lift.", "Balkon var ama asansör yok."]
+      - ["The bus stop is next to the building.", "Otobüs durağı binanın yanında."]
+      - ["Pets are not allowed.", "Evcil hayvan kabul edilmiyor."]
+    gloss: ["flat | daire", "lift | asansör", "pets | evcil hayvanlar"]
+    q:
+      - q: "Dairede hangisi yok?"
+        o: ["Balkon", "Asansör", "Mutfak"]
+        a: 1
+        why: "“there isn't a lift”"
+      - q: "Kedisi olan biri bu daireyi kiralayabilir mi?"
+        o: ["Evet", "Hayır", "İlanda bilgi yok"]
+        a: 1
+        why: "“Pets are not allowed.”"
+
+writing:
+  id: a1-my-day
+  p: "Sıradan bir gününü 4–5 cümleyle anlat: kaçta kalkarsın, ne yersin, nereye gidersin, akşam ne yaparsın?"
+  rubric: ["Present simple doğru kullanılmış (he/she ile -s)", "Saatler “at” ile verilmiş", "En az bir sıklık zarfı var (usually, always, never)"]
+  samples: ["I get up at seven o'clock. I usually have eggs and tea for breakfast. I go to work by bus and I start at nine. In the evening I cook dinner and watch TV. I never go to bed late."]
+  d: 1
+
+situations:
+  - { parent: "Rutin", name: "Sabah ve iş", items: [get-up, breakfast, go-to-work, usually, always, never, early, every-day, i-usually, she-works-as, what-time-do-you, at-oclock] }
+  - { parent: "Ev", name: "Evini anlatma", items: [kitchen, bedroom, near, next-to, fridge, rent, there-is-a, there-are-two, is-there-a, there-isnt-any] }
+  - { parent: "Günlük", name: "Sevdiklerin ve boş zaman", items: [cook, watch-tv, like, weekend, busy, half-past, do-you-like, he-doesnt] }

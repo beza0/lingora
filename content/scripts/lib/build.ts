@@ -21,6 +21,12 @@ export const DOMAIN_ROWS = [
   { id: "health", name_tr: "Sağlık İngilizcesi", description_tr: "Muayene, belirtiler, hasta öyküsü ve ilaç talimatı.", color_key: "health", sort: 5 },
   { id: "tourism", name_tr: "Turizm İngilizcesi", description_tr: "Otel, resepsiyon, rezervasyon ve misafir karşılama.", color_key: "tourism", sort: 6 },
   { id: "law", name_tr: "Hukuk İngilizcesi", description_tr: "Sözleşme dili, haklar ve yükümlülükler, hukuki yazışma.", color_key: "law", sort: 7 },
+  { id: "a1", name_tr: "A1 · Başlangıç", description_tr: "am/is/are, present simple, there is/are; kendini, aileni ve gününü anlatma.", color_key: "a1", sort: 11 },
+  { id: "a2", name_tr: "A2 · Temel", description_tr: "Past simple, gelecek planları, karşılaştırma; geçmişi ve planları anlatma.", color_key: "a2", sort: 12 },
+  { id: "b1", name_tr: "B1 · Orta", description_tr: "Present perfect, if cümleleri, -ing/to; deneyim, tavsiye ve görüş.", color_key: "b1", sort: 13 },
+  { id: "b2", name_tr: "B2 · Orta üstü", description_tr: "Relative clauses, bağlaçlar, 3. tip if, wish; tartışma ve pişmanlık.", color_key: "b2", sort: 14 },
+  { id: "c1", name_tr: "C1 · İleri", description_tr: "Devrik yapı, cleft cümleler, akademik ve resmî dil.", color_key: "c1", sort: 15 },
+  { id: "c2", name_tr: "C2 · Ustalık", description_tr: "Subjunctive, karma if, deyimler ve üslup inceliği.", color_key: "c2", sort: 16 },
 ];
 
 export type Issue = { file: string; path: string; message: string; level: "error" | "warning" };

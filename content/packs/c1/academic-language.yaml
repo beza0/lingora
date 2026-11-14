@@ -1,0 +1,514 @@
+id: c1-academic-language
+domain: c1
+title: "Akademik dil ve temkinli anlatım"
+desc: "Hedging (tend to, appear to, it could be argued), passive reporting (is thought to), isimleştirme; araştırma ve rapor dili."
+sort: 2
+
+targets:
+  - id: hypothesis
+    w: hypothesis
+    pos: n
+    tr: "hipotez, varsayım"
+    ex: "The results support our original [[hypothesis]]."
+    extr: "Sonuçlar ilk hipotezimizi destekliyor."
+    d: 4
+    fam: ["hypotheses (çoğul)", "hypothetical (s.) varsayımsal"]
+    tone: ["Akademik"]
+    dis:
+      - "hypotheses | “our original” tek bir hipotezi gösterir."
+      - "hypocrisy | İkiyüzlülük demektir."
+      - "hypothetical | Sıfat; isim gerekir."
+  - id: assess
+    w: assess
+    pos: v
+    tr: "değerlendirmek"
+    ex: "We need to [[assess]] the impact of the new policy."
+    extr: "Yeni politikanın etkisini değerlendirmemiz gerekiyor."
+    d: 4
+    fam: ["assessment (i.) değerlendirme"]
+    tone: ["Akademik", "İş"]
+    dis:
+      - "access | Erişmek demektir."
+      - "assist | Yardım etmek demektir."
+      - "assessment | İsim; “to” sonrası fiil gerekir."
+  - id: assumption
+    w: assumption
+    pos: n
+    tr: "varsayım"
+    ex: "This model is based on the [[assumption]] that prices remain stable."
+    extr: "Bu model fiyatların sabit kalacağı varsayımına dayanıyor."
+    d: 4
+    fam: ["assume (f.) varsaymak"]
+    tone: ["Akademik"]
+    dis:
+      - "assume | Fiil; “the” sonrası isim gerekir."
+      - "consumption | Tüketim demektir."
+      - "assurance | Güvence demektir."
+  - id: significant
+    w: significant
+    pos: adj
+    tr: "anlamlı, önemli"
+    ex: "There was no [[significant]] difference between the two groups."
+    extr: "İki grup arasında anlamlı bir fark yoktu."
+    d: 4
+    fam: ["significance (i.) önem; anlamlılık"]
+    tone: ["Akademik"]
+    dis:
+      - "signified | “Simgeledi” demektir."
+      - "sufficient | Yeterli demektir."
+      - "significance | İsim; sıfat gerekir."
+  - id: correlation
+    w: correlation
+    pos: n
+    tr: "korelasyon, ilişki (istatistik)"
+    ex: "There is a strong [[correlation]] between sleep and mood."
+    extr: "Uyku ile ruh hâli arasında güçlü bir ilişki var."
+    d: 4
+    conf: ["causation | Nedensellik; korelasyon nedensellik değildir."]
+    tone: ["Akademik"]
+    dis:
+      - "corporation | Şirket demektir."
+      - "collaboration | İş birliği demektir."
+      - "correction | Düzeltme demektir."
+  - id: findings
+    w: findings
+    pos: n
+    tr: "bulgular"
+    ex: "Our [[findings]] suggest that remote workers are less stressed."
+    extr: "Bulgularımız uzaktan çalışanların daha az stresli olduğunu gösteriyor."
+    d: 4
+    tone: ["Akademik"]
+    dis:
+      - "funding | Fon, finansman demektir."
+      - "foundings | Böyle bir sözcük kullanılmaz."
+      - "finding | “suggest” çoğul özne ister: findings."
+  - id: indicate
+    w: indicate
+    pos: v
+    tr: "göstermek, işaret etmek"
+    ex: "The data [[indicate]] a slow recovery."
+    extr: "Veriler yavaş bir toparlanmaya işaret ediyor."
+    d: 4
+    fam: ["indicator (i.) gösterge"]
+    tone: ["Akademik"]
+    dis:
+      - "dedicate | Adamak demektir."
+      - "indict | Suçlamak (hukuk) demektir."
+      - "indication | İsim; fiil gerekir."
+  - id: imply
+    w: imply
+    pos: v
+    tr: "ima etmek, anlamına gelmek"
+    ex: "A low score does not necessarily [[imply]] a lack of effort."
+    extr: "Düşük bir puan mutlaka çaba eksikliği anlamına gelmez."
+    d: 4
+    conf: ["infer | Çıkarım yapmak (okuyucu yapar)."]
+    tone: ["Akademik"]
+    dis:
+      - "apply | Başvurmak, uygulamak demektir."
+      - "implies | “does not” sonrası yalın fiil gelir."
+      - "supply | Sağlamak demektir."
+  - id: crucial
+    w: crucial
+    pos: adj
+    tr: "hayati, çok önemli"
+    ex: "Early diagnosis is [[crucial]] for successful treatment."
+    extr: "Başarılı bir tedavi için erken teşhis hayati önemde."
+    d: 4
+    syn: ["vital", "essential"]
+    tone: ["Akademik"]
+    dis:
+      - "cruel | Zalim demektir."
+      - "crucible | Pota demektir."
+      - "critical of | “critical” burada “of” ile eleştirel anlamı verir."
+  - id: account-for
+    w: account for
+    pos: phrasal
+    tr: "açıklamak; (oranını) oluşturmak"
+    ex: "Women [[account for]] 60% of our students."
+    extr: "Öğrencilerimizin %60'ını kadınlar oluşturuyor."
+    d: 5
+    other: "açıklamak: How do you account for this result?"
+    tone: ["Akademik"]
+    dis:
+      - "count on | Güvenmek demektir."
+      - "accounts for | “Women” çoğul; fiil yalın olur."
+      - "account to | Edat “for”."
+  - id: in-terms-of
+    w: in terms of
+    pos: phrase
+    tr: "açısından, bakımından"
+    ex: "[[In terms of]] cost, the second option is better."
+    extr: "Maliyet açısından ikinci seçenek daha iyi."
+    d: 4
+    tone: ["Akademik", "İş"]
+    dis:
+      - "In term of | Kalıp çoğul: terms."
+      - "On terms of | Edat “in”."
+      - "In terms with | Edat “of”."
+  - id: thereby
+    w: thereby
+    pos: adv
+    tr: "böylece, bu sayede"
+    ex: "The city planted trees, [[thereby]] reducing summer temperatures."
+    extr: "Şehir ağaç dikti ve böylece yaz sıcaklıklarını düşürdü."
+    d: 5
+    tone: ["Akademik"]
+    dis:
+      - "whereby | “… ki onunla” demektir; isimden sonra gelir."
+      - "therefore | Yeni bir cümle başlatır; -ing ile bu yapıda kullanılmaz."
+      - "nearby | Yakında demektir."
+  - id: underlying
+    w: underlying
+    pos: adj
+    tr: "altta yatan, temel"
+    ex: "We need to address the [[underlying]] causes of poverty."
+    extr: "Yoksulluğun altta yatan nedenlerini ele almalıyız."
+    d: 5
+    tone: ["Akademik"]
+    dis:
+      - "underline | Altını çizmek (fiil) demektir."
+      - "overlying | Üstte yer alan demektir."
+      - "underlining | Altını çizme demektir."
+  - id: emerge
+    w: emerge
+    pos: v
+    tr: "ortaya çıkmak"
+    ex: "A clear pattern [[emerged]] from the interviews."
+    extr: "Görüşmelerden net bir örüntü ortaya çıktı."
+    d: 4
+    fam: ["emergence (i.) ortaya çıkış"]
+    tone: ["Akademik"]
+    dis:
+      - "merged | Birleşti demektir."
+      - "emergency | Acil durum demektir."
+      - "emerge | Geçmiş anlatılıyor."
+  - id: robust
+    w: robust
+    pos: adj
+    tr: "sağlam, güçlü (yöntem, kanıt)"
+    ex: "The study uses a [[robust]] method with a large sample."
+    extr: "Çalışma, geniş bir örneklemle sağlam bir yöntem kullanıyor."
+    d: 5
+    syn: ["sound", "rigorous"]
+    tone: ["Akademik"]
+    dis:
+      - "robbed | Soyuldu demektir."
+      - "robotic | Robotik demektir."
+      - "rusty | Paslı demektir."
+  - id: tend-to
+    w: tend to
+    pos: phrase
+    tr: "-me eğiliminde olmak"
+    ex: "Older users [[tend to]] prefer phone support."
+    extr: "Yaşlı kullanıcılar telefonla desteği tercih etme eğiliminde."
+    d: 4
+    tone: ["Temkinli dil"]
+    dis:
+      - "tends to | “users” çoğul; fiil yalın olur."
+      - "tend for | Edat “to”."
+      - "intend to | Niyet etmek demektir."
+  - id: sample
+    w: sample
+    pos: n
+    tr: "örneklem, numune"
+    ex: "The [[sample]] consisted of 500 university students."
+    extr: "Örneklem 500 üniversite öğrencisinden oluşuyordu."
+    d: 4
+    tone: ["Akademik"]
+    dis:
+      - "simple | Basit demektir."
+      - "simply | “Basitçe” demektir (zarf)."
+      - "samples | “consisted” tek bir grubu anlatır."
+  - id: whereby
+    w: whereby
+    pos: conj
+    tr: "ki onunla, -diği (sistem, yöntem)"
+    ex: "They introduced a system [[whereby]] staff can work flexible hours."
+    extr: "Çalışanların esnek saatlerle çalışabildiği bir sistem getirdiler."
+    d: 5
+    syn: ["by which"]
+    tone: ["Resmî"]
+    dis:
+      - "thereby | Böylece demektir; isimden sonra ilgi cümlesi kurmaz."
+      - "whereas | Oysa demektir."
+      - "wherever | Her nerede demektir."
+  - id: valid
+    w: valid
+    pos: adj
+    tr: "geçerli"
+    ex: "That's a [[valid]] point, but we need more data."
+    extr: "Bu geçerli bir nokta, ama daha fazla veriye ihtiyacımız var."
+    d: 4
+    ant: ["invalid"]
+    tone: ["Akademik"]
+    dis:
+      - "valued | Değer verilen demektir."
+      - "vivid | Canlı demektir."
+      - "validity | İsim; sıfat gerekir."
+  - id: limitation
+    w: limitation
+    pos: n
+    tr: "sınırlılık, kısıt"
+    ex: "One [[limitation]] of this study is its small sample."
+    extr: "Bu çalışmanın bir sınırlılığı küçük örneklemi."
+    d: 4
+    tone: ["Akademik"]
+    dis:
+      - "limitations | “One” sonrası tekil gelir."
+      - "imitation | Taklit demektir."
+      - "limitless | Sınırsız demektir (sıfat)."
+
+patterns:
+  - id: it-could-be-argued
+    t: "It could be argued that …"
+    ex: "It could be [[argued]] that social media increases loneliness."
+    extr: "Sosyal medyanın yalnızlığı artırdığı ileri sürülebilir."
+    ttr: "… ileri sürülebilir."
+    slots: ["social media increases loneliness | Sosyal medyanın yalnızlığı artırdığı", "exams measure memory, not skill | Sınavların beceriyi değil ezberi ölçtüğü", "cities are becoming less affordable | Şehirlerin giderek daha pahalı hâle geldiği"]
+    chunks: ["It could be argued | ileri sürülebilir", "that … | -diği"]
+    g: c1-hedging
+    ctx: ["Akademik yazı"]
+    tone: ["Temkinli"]
+    d: 4
+    dis:
+      - "argue | Edilgen yapıda üçüncü hâl gerekir."
+      - "arguing | Edilgen yapıda üçüncü hâl gerekir."
+      - "argument | İsim; fiil gerekir."
+  - id: appears-to
+    t: "… appears to …"
+    ex: "The treatment [[appears]] to reduce symptoms."
+    extr: "Tedavinin belirtileri azalttığı görülüyor."
+    ttr: "Tedavinin … görülüyor."
+    slots: ["reduce symptoms | belirtileri azalttığı", "work in most patients | çoğu hastada işe yaradığı", "have few side effects | az yan etkisi olduğu"]
+    chunks: ["The treatment appears | tedavinin … görülüyor", "to reduce symptoms | belirtileri azalttığı"]
+    g: c1-hedging
+    ctx: ["Akademik yazı"]
+    tone: ["Temkinli"]
+    d: 4
+    dis:
+      - "appear | “The treatment” tekil; -s gerekir."
+      - "is appearing | Durum fiilleri continuous yapılmaz."
+      - "appearance | İsim; fiil gerekir."
+  - id: is-thought-to
+    t: "… is thought / believed to …"
+    ex: "The painting is [[thought]] to be over 500 years old."
+    extr: "Tablonun 500 yıldan daha eski olduğu düşünülüyor."
+    ttr: "Tablonun … olduğu düşünülüyor."
+    slots: ["over 500 years old | 500 yıldan daha eski", "a fake | sahte", "by a famous artist | ünlü bir sanatçıya ait"]
+    chunks: ["The painting is thought | tablonun … düşünülüyor", "to be | olduğu"]
+    g: c1-hedging
+    ctx: ["Bilgi verme"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "think | Edilgen yapıda üçüncü hâl gerekir."
+      - "thinking | Edilgen yapıda üçüncü hâl gerekir."
+      - "thought that | “is thought to be” yapısında “that” kullanılmaz."
+  - id: there-is-evidence-that
+    t: "There is (growing) evidence that …"
+    ex: "There is growing [[evidence]] that exercise improves memory."
+    extr: "Egzersizin hafızayı geliştirdiğine dair giderek artan kanıtlar var."
+    ttr: "… dair giderek artan kanıtlar var."
+    slots: ["exercise improves memory | Egzersizin hafızayı geliştirdiğine", "noise affects learning | Gürültünün öğrenmeyi etkilediğine", "diet influences mood | Beslenmenin ruh hâlini etkilediğine"]
+    chunks: ["There is growing evidence | giderek artan kanıtlar var", "that exercise improves | egzersizin geliştirdiğine"]
+    g: c1-hedging
+    ctx: ["Akademik yazı"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "evidences | “evidence” sayılamaz."
+      - "evident | Sıfat; isim gerekir."
+      - "proves | Fiil; isim gerekir."
+  - id: the-results-suggest
+    t: "The results suggest that …"
+    ex: "The results [[suggest]] that the method is effective."
+    extr: "Sonuçlar yöntemin etkili olduğunu düşündürüyor."
+    ttr: "Sonuçlar … düşündürüyor."
+    slots: ["the method is effective | yöntemin etkili olduğunu", "more research is needed | daha fazla araştırma gerektiğini", "age is not a factor | yaşın bir etken olmadığını"]
+    chunks: ["The results suggest | sonuçlar düşündürüyor", "that the method is effective | yöntemin etkili olduğunu"]
+    g: c1-hedging
+    ctx: ["Akademik yazı"]
+    tone: ["Temkinli"]
+    d: 4
+    dis:
+      - "suggests | “The results” çoğul; fiil yalın olur."
+      - "suggesting | Çekimli fiil gerekir."
+      - "suggestion | İsim; fiil gerekir."
+  - id: the-increase-in
+    t: "The … in … has led to …"
+    ex: "The [[increase]] in rents has led to a housing crisis."
+    extr: "Kiralardaki artış bir konut krizine yol açtı."
+    ttr: "Kiralardaki … bir konut krizine yol açtı."
+    slots: ["increase | artış", "sharp rise | keskin yükseliş", "rapid growth | hızlı büyüme"]
+    chunks: ["The increase in rents | kiralardaki artış", "has led to | yol açtı", "a housing crisis | bir konut krizi"]
+    g: c1-nominalisation
+    ctx: ["Akademik yazı"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "increasing | İsim gerekir; isimleştirme “the increase”."
+      - "increased | Sıfat/fiil; “The … in” yapısında isim gerekir."
+      - "increase of | Kalıp “increase in”."
+  - id: due-to-the
+    t: "Due to the … of …, …"
+    ex: "Due to the [[lack]] of funding, the project was cancelled."
+    extr: "Fon eksikliği nedeniyle proje iptal edildi."
+    ttr: "… nedeniyle proje iptal edildi."
+    slots: ["lack of funding | Fon eksikliği", "lack of interest | İlgi eksikliği", "lack of staff | Personel eksikliği"]
+    chunks: ["Due to the lack of | … eksikliği nedeniyle", "the project was cancelled | proje iptal edildi"]
+    g: c1-nominalisation
+    ctx: ["Rapor"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "lacking | İsim gerekir."
+      - "lacked | İsim gerekir."
+      - "absent | Sıfat; “the … of” yapısında isim gerekir."
+  - id: to-a-large-extent
+    t: "To a large extent, …"
+    ex: "To a large [[extent]], success depends on preparation."
+    extr: "Başarı büyük ölçüde hazırlığa bağlıdır."
+    ttr: "… büyük ölçüde hazırlığa bağlıdır."
+    slots: ["success | Başarı", "the outcome | Sonuç", "a good result | İyi bir sonuç"]
+    chunks: ["To a large extent | büyük ölçüde", "depends on | -e bağlıdır"]
+    g: c1-hedging
+    ctx: ["Akademik yazı"]
+    tone: ["Temkinli"]
+    d: 4
+    dis:
+      - "extend | Fiil (uzatmak); isim “extent”."
+      - "extension | Uzantı demektir."
+      - "extant | Hâlâ var olan demektir."
+  - id: this-may-be-due-to
+    t: "This may be due to …"
+    ex: "This may be [[due]] to differences in sample size."
+    extr: "Bu, örneklem büyüklüğündeki farklardan kaynaklanıyor olabilir."
+    ttr: "Bu, … kaynaklanıyor olabilir."
+    slots: ["differences in sample size | örneklem büyüklüğündeki farklardan", "measurement errors | ölçüm hatalarından", "seasonal effects | mevsimsel etkilerden"]
+    chunks: ["This may be due to | bundan kaynaklanıyor olabilir", "differences in | -deki farklar"]
+    g: c1-hedging
+    ctx: ["Tartışma bölümü"]
+    tone: ["Temkinli"]
+    d: 4
+    dis:
+      - "because | “because to” yanlış; “because of” olur."
+      - "owe | Borçlu olmak demektir."
+      - "duty | Görev demektir."
+  - id: with-regard-to
+    t: "With regard to …, …"
+    ex: "With [[regard]] to your request, we will reply within five days."
+    extr: "Talebinizle ilgili olarak beş gün içinde dönüş yapacağız."
+    ttr: "… ilgili olarak beş gün içinde dönüş yapacağız."
+    slots: ["your request | Talebinizle", "your complaint | Şikâyetinizle", "the invoice | Faturayla"]
+    chunks: ["With regard to | ile ilgili olarak", "we will reply | dönüş yapacağız"]
+    g: c1-nominalisation
+    ctx: ["Resmî yazışma"]
+    tone: ["Resmî"]
+    d: 4
+    dis:
+      - "regards | Kalıp tekil: with regard to."
+      - "regarding | “With regarding” yanlış; ya “Regarding …” ya “With regard to …”."
+      - "regardless | “Ne olursa olsun” demektir; kalıp bozulur."
+
+grammar:
+  - id: c1-hedging
+    title: "Temkinli dil (hedging) ve edilgen bildirme"
+    short: "Akademik yazıda kesin iddialardan kaçınılır: tend to, appear to, may, suggest, it could be argued that, is thought to be."
+    long: "Fiiller: suggest, indicate, appear, seem, tend to (proves, shows yerine). Modallar: may, might, could. Zarflar: possibly, arguably, largely, to some extent. Edilgen bildirme: It is believed that … / X is thought to be … / X is said to have … (She is said to have left the country.) Kalıplar: It could be argued that … / There is evidence that … / This may be due to … Türkçede “-dığı düşünülmektedir, -abilir” yapılarına karşılık gelir. Aşırı hedging metni zayıflatır; iddia gücünü kanıta göre ayarla."
+    ex: ["These findings suggest that the policy may have been effective. | Bu bulgular politikanın etkili olmuş olabileceğini düşündürüyor.", "The virus is believed to have originated in bats. | Virüsün yarasalardan kaynaklandığına inanılıyor.", "Students tend to perform better in the morning. | Öğrenciler sabahları daha iyi performans gösterme eğiliminde."]
+  - id: c1-nominalisation
+    title: "İsimleştirme (nominalisation) ve resmî bağlantılar"
+    short: "Resmî yazıda fiil yerine isim kullanılır: prices increased → the increase in prices; they failed → their failure."
+    long: "increase → an increase in, decline → a decline in, fail → failure, decide → decision, analyse → analysis, improve → improvement, lack → a lack of. Örnek: Because the government did not act quickly, unemployment rose. → The government's failure to act quickly led to a rise in unemployment. Bağlantı ifadeleri: due to / owing to + isim, in terms of, with regard to, in light of, as a result of. Bu yapı bilgiyi yoğunlaştırır ve nesnel bir ton verir; aşırı kullanımı metni ağırlaştırır."
+    ex: ["The rapid growth of online shopping has changed city centres. | Çevrim içi alışverişin hızlı büyümesi şehir merkezlerini değiştirdi.", "Owing to a lack of evidence, the case was dropped. | Kanıt yetersizliği nedeniyle dava düştü.", "In light of these findings, we recommend further research. | Bu bulgular ışığında daha fazla araştırma öneriyoruz."]
+
+scenarios:
+  - id: thesis-meeting
+    title: "Danışmanla tez görüşmesi"
+    sit: "Tez danışmanınla bulgularını konuşuyorsun. Danışman iddialarının fazla kesin olduğunu düşünüyor."
+    d: 4
+    targets: [findings, significant, limitation, sample]
+    turns:
+      - ["Supervisor", "You write that social media 'causes' anxiety. Can you prove that?", "Sosyal medyanın kaygıya ‘neden olduğunu’ yazmışsın. Bunu kanıtlayabilir misin?"]
+      - choose:
+          - ["Not exactly. The findings suggest a significant correlation, but not causation.", true, "Temkinli dil ve doğru terimler."]
+          - ["Yes, it is 100% proved.", false, "Akademik dilde aşırı kesin."]
+          - ["The findings suggests it causes.", false, "“findings” çoğul; “suggest” olmalı ve iddia hâlâ fazla kesin."]
+      - ["Supervisor", "Good. And what about your sample?", "Güzel. Peki ya örneklemin?"]
+      - choose:
+          - ["One limitation is that the sample only included university students, so the results may not apply to other groups.", true, "Sınırlılık temkinli dille açıklanmış."]
+          - ["The sample is perfect, no problem.", false, "Akademik değerlendirme yok."]
+          - ["One limitations is the sample.", false, "“One” sonrası tekil gelir."]
+      - ["Supervisor", "Exactly. Add that to your discussion section.", "Kesinlikle. Bunu tartışma bölümüne ekle."]
+  - id: formal-email-reply
+    title: "Resmî e-postaya cevap"
+    sit: "Bir müşteri gecikmeli teslimat için şikâyet etti. Resmî bir dille cevap veriyorsun."
+    d: 4
+    targets: [in-terms-of, account-for, thereby, crucial]
+    turns:
+      - ["Client", "Why was our order delayed by two weeks?", "Siparişimiz neden iki hafta gecikti?"]
+      - choose:
+          - ["With regard to the delay, it was due to a shortage of components at our supplier.", true, "Resmî bağlantı ve isimleştirme doğru."]
+          - ["Because our supplier did bad.", false, "Resmî değil ve belirsiz."]
+          - ["With regarding the delay, because shortage.", false, "Kalıp bozuk ve cümle eksik."]
+      - ["Client", "How will you prevent this in future?", "Gelecekte bunu nasıl önleyeceksiniz?"]
+      - choose:
+          - ["We have added a second supplier, thereby reducing the risk of similar delays.", true, "“thereby + -ing” doğru kullanılmış."]
+          - ["We added a second supplier, therefore reducing risk.", false, "“therefore” bu yapıda kullanılmaz; “thereby” gerekir."]
+          - ["We will try, maybe.", false, "Profesyonel değil."]
+      - ["Client", "Thank you for the explanation.", "Açıklamanız için teşekkürler."]
+
+readings:
+  - id: abstract
+    title: "Study abstract"
+    kind: "Makale özeti"
+    d: 5
+    s:
+      - ["This study examines the relationship between screen time and sleep quality among teenagers.", "Bu çalışma gençlerde ekran süresi ile uyku kalitesi arasındaki ilişkiyi inceliyor."]
+      - ["The sample consisted of 1,200 students aged 13 to 17.", "Örneklem 13-17 yaş arası 1.200 öğrenciden oluşuyordu."]
+      - ["The findings indicate a moderate negative correlation between evening screen use and sleep duration.", "Bulgular, akşam ekran kullanımı ile uyku süresi arasında orta düzeyde negatif bir ilişkiye işaret ediyor."]
+      - ["However, the data do not imply that screens alone account for poor sleep.", "Ancak veriler kötü uykunun tek açıklamasının ekranlar olduğu anlamına gelmiyor."]
+      - ["A key limitation is the reliance on self-reported data.", "Önemli bir sınırlılık, öz bildirime dayalı verilere dayanılmasıdır."]
+    gloss: ["moderate | orta düzeyde", "self-reported | öz bildirime dayalı", "reliance | dayanma, bağımlılık"]
+    q:
+      - q: "Çalışmanın bulgusu nedir?"
+        o: ["Ekranlar kötü uykunun tek nedenidir", "Akşam ekran kullanımı arttıkça uyku süresi kısalma eğiliminde", "Ekran süresi uykuyu etkilemiyor"]
+        a: 1
+        why: "Orta düzeyde negatif korelasyon: biri artınca diğeri azalma eğiliminde."
+      - q: "Yazarların belirttiği sınırlılık ne?"
+        o: ["Örneklemin küçük olması", "Verilerin katılımcıların kendi beyanına dayanması", "Sadece yetişkinlerin incelenmesi"]
+        a: 1
+        why: "“the reliance on self-reported data”"
+  - id: news-analysis
+    title: "Why are young people leaving?"
+    kind: "Analiz yazısı"
+    d: 5
+    s:
+      - ["Young graduates are thought to be leaving the region at a record rate.", "Genç mezunların bölgeden rekor bir hızla ayrıldığı düşünülüyor."]
+      - ["The decline in local industry has, to a large extent, reduced job opportunities.", "Yerel sanayideki düşüş, iş fırsatlarını büyük ölçüde azalttı."]
+      - ["It could also be argued that poor public transport plays a role.", "Yetersiz toplu taşımanın da bir rol oynadığı ileri sürülebilir."]
+      - ["Some towns have introduced schemes whereby graduates receive housing support.", "Bazı kasabalar, mezunların konut desteği aldığı programlar başlattı."]
+      - ["It is too early, however, to assess whether these schemes are effective.", "Ancak bu programların etkili olup olmadığını değerlendirmek için henüz çok erken."]
+    gloss: ["record rate | rekor hız", "scheme | program, plan", "housing support | konut desteği"]
+    q:
+      - q: "Gençlerin ayrılmasının temel nedeni olarak ne gösteriliyor?"
+        o: ["Yerel sanayinin gerilemesi", "Yüksek kiralar", "Kötü hava"]
+        a: 0
+        why: "“The decline in local industry has, to a large extent, reduced job opportunities.”"
+      - q: "Konut desteği programlarının sonucu hakkında ne söyleniyor?"
+        o: ["Çok başarılı oldular", "Başarısız oldular", "Değerlendirmek için henüz erken"]
+        a: 2
+        why: "“It is too early … to assess whether these schemes are effective.”"
+
+writing:
+  id: c1-research-summary
+  p: "Kendi ilgi alanından bir konuda (ör. uzaktan çalışma, uyku, sosyal medya) kısa bir araştırma özeti yaz: amaç, yöntem, bulgu ve sınırlılık. 6–8 cümle."
+  rubric: ["Temkinli dil kullanılmış (suggest, may, tend to, appear to)", "En az bir isimleştirme (the increase in, a lack of, the failure to)", "Bulgu ve sınırlılık ayrı ayrı belirtilmiş", "Akademik kelimeler doğru kullanılmış (sample, findings, significant)"]
+  samples: ["This study investigated the effect of remote work on employee wellbeing. The sample consisted of 300 office workers in three Turkish cities. The findings suggest that remote workers tend to report lower stress levels, although the difference was not statistically significant for parents with young children. The increase in flexibility appears to be the main benefit. However, a lack of social contact was frequently mentioned. One limitation is that the data were self-reported. Further research with a larger sample may provide more robust evidence."]
+  d: 5
+
+situations:
+  - { parent: "Akademik", name: "Araştırma dili", items: [hypothesis, assess, assumption, significant, correlation, findings, indicate, imply, sample, limitation, robust, valid, emerge] }
+  - { parent: "Akademik", name: "Temkinli anlatım", items: [tend-to, it-could-be-argued, appears-to, is-thought-to, there-is-evidence-that, the-results-suggest, to-a-large-extent, this-may-be-due-to] }
+  - { parent: "Resmî dil", name: "Bağlantılar ve isimleştirme", items: [crucial, account-for, in-terms-of, thereby, underlying, whereby, the-increase-in, due-to-the, with-regard-to] }

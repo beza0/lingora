@@ -1,0 +1,515 @@
+id: b2-regrets-and-hypotheses
+domain: b2
+title: "Pişmanlıklar ve olasılıklar"
+desc: "3. tip if, wish / if only, should have / must have / might have; geçmiş hakkında tahmin ve pişmanlık."
+sort: 2
+
+targets:
+  - id: regret
+    w: regret
+    pos: v
+    tr: "pişman olmak"
+    ex: "I [[regret]] not studying harder at school."
+    extr: "Okulda daha çok çalışmadığım için pişmanım."
+    d: 3
+    col: ["regret doing something", "deeply regret"]
+    tone: ["Duygu"]
+    dis:
+      - "regrets | “I” ile fiile -s gelmez."
+      - "remind | Hatırlatmak demektir."
+      - "regard | Saymak, görmek demektir."
+  - id: if-only
+    w: if only
+    pos: phrase
+    tr: "keşke"
+    ex: "[[If only]] I had listened to you!"
+    extr: "Keşke seni dinleseydim!"
+    d: 3
+    syn: ["I wish"]
+    tone: ["Duygu"]
+    dis:
+      - "Only if | “Sadece … ise” demektir."
+      - "If ever | “Eğer hiç” demektir."
+      - "Even if | “-se bile” demektir."
+  - id: wish
+    w: wish
+    pos: v
+    tr: "keşke … olsa, dilemek"
+    ex: "I [[wish]] I lived closer to the sea."
+    extr: "Keşke denize daha yakın yaşasam."
+    d: 3
+    conf: ["hope | Gerçekleşebilecek şey için: I hope you win."]
+    tone: ["Duygu"]
+    dis:
+      - "hope | Gerçek dışı istekte “wish” kullanılır."
+      - "want | “I want I lived” yanlış yapı."
+      - "wishes | “I” ile fiile -s gelmez."
+  - id: mistake
+    w: mistake
+    pos: n
+    tr: "hata"
+    ex: "Leaving that job was a big [[mistake]]."
+    extr: "O işten ayrılmak büyük bir hataydı."
+    d: 3
+    col: ["make a mistake", "by mistake"]
+    tone: ["Değerlendirme"]
+    dis:
+      - "mistaken | Sıfat (yanılmış); isim gerekir."
+      - "mistrust | Güvensizlik demektir."
+      - "misuse | Kötüye kullanma demektir."
+  - id: blame
+    w: blame
+    pos: v
+    tr: "suçlamak"
+    ex: "Don't [[blame]] yourself — it wasn't your fault."
+    extr: "Kendini suçlama — senin hatan değildi."
+    d: 3
+    col: ["blame someone for something", "be to blame"]
+    tone: ["Duygu"]
+    dis:
+      - "flame | Alev demektir."
+      - "blank | Boş demektir."
+      - "blames | “Don't” sonrası yalın fiil gelir."
+  - id: fault
+    w: fault
+    pos: n
+    tr: "kusur, hata (sorumluluk)"
+    ex: "The accident wasn't the driver's [[fault]]."
+    extr: "Kaza sürücünün hatası değildi."
+    d: 3
+    conf: ["mistake | Yanlışlık; fault = sorumluluk/kusur."]
+    tone: ["Değerlendirme"]
+    dis:
+      - "fold | Katlamak demektir."
+      - "vault | Kasa, tonoz demektir."
+      - "fall | Düşmek demektir."
+  - id: luckily
+    w: luckily
+    pos: adv
+    tr: "neyse ki, şans eseri"
+    ex: "[[Luckily]], nobody was hurt."
+    extr: "Neyse ki kimse yaralanmadı."
+    d: 3
+    syn: ["fortunately"]
+    tone: ["Anlatı"]
+    dis:
+      - "Lucky | Sıfat; cümle başında zarf gerekir."
+      - "Likely | Muhtemel demektir."
+      - "Lovely | Hoş, güzel demektir."
+  - id: miss-a-chance
+    w: miss a chance
+    pos: phrase
+    tr: "bir fırsatı kaçırmak"
+    ex: "I [[missed a chance]] to work in London."
+    extr: "Londra'da çalışma fırsatını kaçırdım."
+    d: 3
+    col: ["a missed opportunity"]
+    tone: ["Pişmanlık"]
+    dis:
+      - "mist a chance | “mist” sis demektir."
+      - "missed a luck | Kalıp “chance”."
+      - "passed a chance | Doğal değil."
+  - id: probably-must-have
+    w: must have
+    pos: phrase
+    tr: "-miş olmalı (geçmiş hakkında güçlü tahmin)"
+    ex: "The streets are wet. It [[must have]] rained last night."
+    extr: "Sokaklar ıslak. Dün gece yağmur yağmış olmalı."
+    d: 4
+    conf: ["should have | Pişmanlık/eleştiri bildirir."]
+    tone: ["Tahmin"]
+    dis:
+      - "must | Geçmiş tahmin için “must have + V3”."
+      - "must has | “must” sonrası yalın “have” gelir."
+      - "must had | “must” sonrası yalın “have” gelir."
+  - id: cant-have
+    w: can't have
+    pos: phrase
+    tr: "-miş olamaz"
+    ex: "She [[can't have]] seen us — she didn't wave."
+    extr: "Bizi görmüş olamaz — el sallamadı."
+    d: 4
+    tone: ["Tahmin"]
+    dis:
+      - "can't has | “can't” sonrası yalın “have” gelir."
+      - "can't | Geçmiş tahmin için “can't have + V3”."
+      - "couldn't to have | “to” fazladan."
+  - id: might-have
+    w: might have
+    pos: phrase
+    tr: "-miş olabilir"
+    ex: "He [[might have]] missed the train."
+    extr: "Treni kaçırmış olabilir."
+    d: 4
+    syn: ["may have", "could have"]
+    tone: ["Tahmin"]
+    dis:
+      - "might | Geçmiş için “might have + V3”."
+      - "might has | “might” sonrası yalın “have” gelir."
+      - "mighty | Güçlü demektir."
+  - id: should-have
+    w: should have
+    pos: phrase
+    tr: "-meliydi (ama yapılmadı)"
+    ex: "You [[should have]] told me earlier."
+    extr: "Bana daha önce söylemeliydin."
+    d: 3
+    tone: ["Pişmanlık", "Eleştiri"]
+    dis:
+      - "should | Geçmiş için “should have + V3”."
+      - "should had | “should” sonrası yalın “have” gelir."
+      - "should of | Konuşma dilindeki yazım hatası; doğrusu “should have”."
+  - id: otherwise
+    w: otherwise
+    pos: adv
+    tr: "aksi hâlde, yoksa"
+    ex: "I took a taxi; [[otherwise]] I would have been late."
+    extr: "Taksiye bindim; yoksa geç kalırdım."
+    d: 3
+    tone: ["Bağlaç"]
+    dis:
+      - "other way | Doğal değil."
+      - "likewise | “Aynı şekilde” demektir."
+      - "however | Karşıtlık bildirir."
+  - id: take-for-granted
+    w: take for granted
+    pos: phrase
+    tr: "hafife almak, olağan saymak"
+    ex: "Don't [[take]] your friends for granted."
+    extr: "Arkadaşlarının değerini hafife alma."
+    d: 4
+    tone: ["Deyim"]
+    dis:
+      - "make | Kalıp “take … for granted”."
+      - "took | “Don't” sonrası yalın fiil gelir."
+      - "bring | Kalıp “take … for granted”."
+  - id: turn-out
+    w: turn out
+    pos: phrasal
+    tr: "(sonunda) … çıkmak, anlaşılmak"
+    ex: "The rumour [[turned out]] to be false."
+    extr: "Söylentinin yanlış olduğu ortaya çıktı."
+    d: 4
+    tone: ["Anlatı"]
+    dis:
+      - "turned off | Kapatıldı demektir."
+      - "turned up | Ortaya çıktı (geldi) demektir; bu yapıda kullanılmaz."
+      - "turned over | Ters çevrildi demektir."
+  - id: consequence
+    w: consequence
+    pos: n
+    tr: "sonuç (genelde olumsuz)"
+    ex: "He didn't think about the [[consequences]] of his decision."
+    extr: "Kararının sonuçlarını düşünmedi."
+    d: 4
+    tone: ["Akademik"]
+    dis:
+      - "consequently | Zarf; isim gerekir."
+      - "sequences | Diziler demektir."
+      - "conferences | Konferanslar demektir."
+  - id: by-chance
+    w: by chance
+    pos: phrase
+    tr: "tesadüfen"
+    ex: "We met [[by chance]] at a friend's wedding."
+    extr: "Bir arkadaşın düğününde tesadüfen tanıştık."
+    d: 3
+    syn: ["by accident"]
+    tone: ["Anlatı"]
+    dis:
+      - "with chance | Edat “by”."
+      - "in chance | Edat “by”."
+      - "by a chance | Kalıp tanımlıksız."
+  - id: realise
+    w: realise
+    pos: v
+    tr: "fark etmek, anlamak"
+    ex: "I didn't [[realise]] the shop was closed."
+    extr: "Dükkânın kapalı olduğunu fark etmedim."
+    d: 3
+    fam: ["realisation (i.) farkındalık"]
+    tone: ["Anlatı"]
+    dis:
+      - "realised | “didn't” sonrası yalın fiil gelir."
+      - "realize to | “to” fazladan."
+      - "release | Serbest bırakmak demektir."
+  - id: in-hindsight
+    w: in hindsight
+    pos: phrase
+    tr: "geriye dönüp bakınca"
+    ex: "[[In hindsight]], I should have chosen a different major."
+    extr: "Geriye dönüp bakınca farklı bir bölüm seçmeliydim."
+    d: 4
+    syn: ["looking back"]
+    tone: ["Pişmanlık"]
+    dis:
+      - "In insight | “insight” içgörü demektir."
+      - "On hindsight | Edat “in”."
+      - "In sight | “Görünürde” demektir."
+  - id: apologise
+    w: apologise
+    pos: v
+    tr: "özür dilemek"
+    ex: "I [[apologise]] for the delay."
+    extr: "Gecikme için özür dilerim."
+    d: 3
+    col: ["apologise for something", "apologise to someone"]
+    tone: ["Resmî"]
+    dis:
+      - "apology | İsim; fiil gerekir."
+      - "apologise of | Edat “for”."
+      - "appreciate | Takdir etmek demektir."
+
+patterns:
+  - id: if-had-would-have
+    t: "If I had …, I would have …"
+    ex: "If I had left earlier, I would have [[caught]] the train."
+    extr: "Daha erken çıksaydım trene yetişirdim."
+    ttr: "Daha erken çıksaydım …"
+    slots: ["caught the train | trene yetişirdim", "found a seat | yer bulurdum", "avoided the traffic | trafiğe girmezdim"]
+    chunks: ["If I had left | çıksaydım", "I would have caught | yetişirdim"]
+    g: b2-third-conditional-wish
+    ctx: ["Pişmanlık"]
+    tone: ["Koşul"]
+    d: 3
+    dis:
+      - "catch | “would have” sonrası üçüncü hâl gerekir."
+      - "catched | “catch” düzensizdir: caught."
+      - "caughted | Böyle bir biçim yok."
+  - id: if-hadnt
+    t: "If you hadn't …, we wouldn't have …"
+    ex: "If you [[hadn't]] helped me, I wouldn't have finished on time."
+    extr: "Bana yardım etmeseydin zamanında bitiremezdim."
+    ttr: "Bana yardım etmeseydin …"
+    slots: ["I wouldn't have finished on time | zamanında bitiremezdim", "I'd have failed | kalırdım", "I'd have given up | pes ederdim"]
+    chunks: ["If you hadn't helped | yardım etmeseydin", "I wouldn't have finished | bitiremezdim"]
+    g: b2-third-conditional-wish
+    ctx: ["Teşekkür"]
+    tone: ["Koşul"]
+    d: 3
+    dis:
+      - "didn't | 3. tipte if tarafı past perfect: hadn't."
+      - "wouldn't | “if” tarafında “would” kullanılmaz."
+      - "haven't | Present perfect; gerçek dışı geçmiş için “hadn't”."
+  - id: i-wish-i-had
+    t: "I wish I had …"
+    ex: "I wish I [[had]] brought my camera."
+    extr: "Keşke fotoğraf makinemi getirseydim."
+    ttr: "Keşke … getirseydim."
+    slots: ["my camera | fotoğraf makinemi", "a jacket | bir ceket", "more money | daha çok para"]
+    chunks: ["I wish | keşke", "I had brought | getirseydim"]
+    g: b2-third-conditional-wish
+    ctx: ["Pişmanlık"]
+    tone: ["Duygu"]
+    d: 3
+    dis:
+      - "have | Geçmişle ilgili keşke: had + V3."
+      - "would | “I wish I would” kendi eylemin için kullanılmaz."
+      - "did | “did brought” yanlış."
+  - id: i-wish-could
+    t: "I wish I could …"
+    ex: "I wish I [[could]] speak Italian."
+    extr: "Keşke İtalyanca konuşabilsem."
+    ttr: "Keşke … konuşabilsem."
+    slots: ["Italian | İtalyanca", "Japanese | Japonca", "Arabic | Arapça"]
+    chunks: ["I wish | keşke", "I could speak | konuşabilsem"]
+    g: b2-third-conditional-wish
+    ctx: ["Hayal"]
+    tone: ["Duygu"]
+    d: 3
+    dis:
+      - "can | Şimdiki gerçek dışı istek için “could”."
+      - "will | “I wish I will” yanlış."
+      - "could to | “could” sonrası “to” gelmez."
+  - id: you-should-have
+    t: "You should have …"
+    ex: "You should have [[booked]] the tickets earlier."
+    extr: "Biletleri daha önce ayırtmalıydın."
+    ttr: "… daha önce ayırtmalıydın."
+    slots: ["the tickets | Biletleri", "a table | Masayı", "the hotel | Oteli"]
+    chunks: ["You should have booked | ayırtmalıydın", "earlier | daha önce"]
+    g: b2-past-modals
+    ctx: ["Eleştiri"]
+    tone: ["Doğrudan"]
+    d: 3
+    dis:
+      - "book | “should have” sonrası üçüncü hâl gerekir."
+      - "booking | “should have” sonrası üçüncü hâl gerekir."
+      - "to book | “should have” sonrası üçüncü hâl gerekir."
+  - id: must-have-been
+    t: "It must have been …"
+    ex: "It must have [[been]] a difficult decision."
+    extr: "Zor bir karar olmuş olmalı."
+    ttr: "… olmuş olmalı."
+    slots: ["a difficult decision | Zor bir karar", "a long journey | Uzun bir yolculuk", "a shock | Büyük bir şok"]
+    chunks: ["It must have been | olmuş olmalı", "a difficult decision | zor bir karar"]
+    g: b2-past-modals
+    ctx: ["Empati"]
+    tone: ["Kibar"]
+    d: 4
+    dis:
+      - "be | “must have” sonrası üçüncü hâl gerekir."
+      - "was | “must have” sonrası üçüncü hâl gerekir."
+      - "being | “must have” sonrası üçüncü hâl gerekir."
+  - id: might-have-left
+    t: "He might / could have …"
+    ex: "He might have [[left]] his phone at home."
+    extr: "Telefonunu evde bırakmış olabilir."
+    ttr: "… evde bırakmış olabilir."
+    slots: ["his phone | Telefonunu", "his wallet | Cüzdanını", "his keys | Anahtarlarını"]
+    chunks: ["He might have left | bırakmış olabilir", "at home | evde"]
+    g: b2-past-modals
+    ctx: ["Tahmin"]
+    tone: ["Nötr"]
+    d: 4
+    dis:
+      - "leave | “might have” sonrası üçüncü hâl gerekir."
+      - "leaved | “leave” düzensizdir: left."
+      - "leaving | “might have” sonrası üçüncü hâl gerekir."
+  - id: wouldnt-have-if
+    t: "I wouldn't have … if I'd known …"
+    ex: "I wouldn't have come if I'd [[known]] it was so expensive."
+    extr: "Bu kadar pahalı olduğunu bilseydim gelmezdim."
+    ttr: "… bilseydim gelmezdim."
+    slots: ["it was so expensive | Bu kadar pahalı olduğunu", "you were busy | Meşgul olduğunu", "it was cancelled | İptal edildiğini"]
+    chunks: ["I wouldn't have come | gelmezdim", "if I'd known | bilseydim"]
+    g: b2-third-conditional-wish
+    ctx: ["Pişmanlık"]
+    tone: ["Koşul"]
+    d: 4
+    dis:
+      - "knew | “I'd” (I had) sonrası üçüncü hâl gerekir."
+      - "know | “I'd” sonrası üçüncü hâl gerekir."
+      - "knowed | “know” düzensizdir: known."
+  - id: it-turned-out
+    t: "It turned out that …"
+    ex: "It [[turned out]] that the shop was closed on Sundays."
+    extr: "Dükkânın pazarları kapalı olduğu ortaya çıktı."
+    ttr: "… ortaya çıktı."
+    slots: ["the shop was closed on Sundays | Dükkânın pazarları kapalı olduğu", "he was right | Onun haklı olduğu", "we had the wrong address | Yanlış adreste olduğumuz"]
+    chunks: ["It turned out | ortaya çıktı", "that the shop was closed | dükkânın kapalı olduğu"]
+    g: b2-past-modals
+    ctx: ["Anlatı"]
+    tone: ["Anlatı"]
+    d: 4
+    dis:
+      - "turned up | “Gelip çıkmak” demektir; bu yapıda kullanılmaz."
+      - "turns out | Geçmiş anlatılıyor."
+      - "turned in | Teslim etmek demektir."
+  - id: im-sorry-i-didnt
+    t: "I'm sorry I didn't … / I should have …"
+    ex: "I'm sorry I didn't [[call]] you back."
+    extr: "Seni geri aramadığım için üzgünüm."
+    ttr: "… için üzgünüm."
+    slots: ["call you back | Seni geri aramadığım", "reply sooner | Daha önce cevap vermediğim", "come to your party | Partine gelmediğim"]
+    chunks: ["I'm sorry | üzgünüm", "I didn't call you back | seni geri aramadım"]
+    g: b2-past-modals
+    ctx: ["Özür"]
+    tone: ["Kibar"]
+    d: 3
+    dis:
+      - "called | “didn't” sonrası yalın fiil gelir."
+      - "calling | “didn't” sonrası yalın fiil gelir."
+      - "to call | “didn't” sonrası yalın fiil gelir."
+
+grammar:
+  - id: b2-third-conditional-wish
+    title: "3. tip if ve wish / if only"
+    short: "Geçmişte olmamış bir şeyi hayal ederken If + had + V3, would have + V3 kullanılır. Keşke cümleleri: şimdi için wish + past, geçmiş için wish + had + V3."
+    long: "3. tip: If I had known, I would have helped. (Bilseydim yardım ederdim — ama bilmiyordum.) Olumsuz: If she hadn't missed the bus, she wouldn't have been late. Kısaltmalar: I'd known = I had known; I'd have = I would have. wish: Şimdiki durumdan şikâyet — I wish I had more time / I wish I could drive. Geçmiş pişmanlık — I wish I had studied medicine. If only aynı anlamda ama daha güçlü: If only I'd listened! Başkasının davranışından şikâyet: I wish you would stop shouting. Dikkat: if tarafında would kullanılmaz: If I would have known yanlış."
+    ex: ["If we had booked earlier, we would have got a cheaper flight. | Daha erken ayırtsaydık daha ucuz uçuş bulurduk.", "I wish I had taken that job. | Keşke o işi kabul etseydim.", "If only it would stop raining! | Keşke yağmur dursa!"]
+  - id: b2-past-modals
+    title: "Geçmiş modallar: should have, must have, might have, can't have"
+    short: "Modal + have + V3 geçmişle ilgili eleştiri (should have), güçlü tahmin (must have), olasılık (might / could have) ve imkânsızlık (can't have) bildirir."
+    long: "should have + V3: yapılması gerekirdi ama yapılmadı — We should have left earlier. shouldn't have: yapılmamalıydı — I shouldn't have said that. must have + V3: kanıta dayalı güçlü tahmin — She must have been tired. might / may / could have + V3: olasılık — They might have got lost. can't / couldn't have + V3: olamaz — He can't have finished already! Dikkat: “must not have” olumsuz tahmin için genelde kullanılmaz; “can't have” tercih edilir. Modal sonrası have yalındır: should had yanlış."
+    ex: ["You shouldn't have paid so much. | Bu kadar çok ödememeliydin.", "The lights are off. They must have gone out. | Işıklar kapalı. Dışarı çıkmış olmalılar.", "She can't have forgotten — I reminded her twice. | Unutmuş olamaz — ona iki kez hatırlattım."]
+
+scenarios:
+  - id: missed-flight
+    title: "Kaçırılan uçak"
+    sit: "Arkadaşınla havalimanına geç kaldınız ve uçağı kaçırdınız."
+    d: 3
+    targets: [should-have, if-only, blame, otherwise]
+    turns:
+      - ["Ali", "I can't believe we missed it! The gate closed five minutes ago.", "İnanamıyorum, kaçırdık! Kapı beş dakika önce kapandı."]
+      - choose:
+          - ["I know. We should have left home an hour earlier.", true, "Geçmiş eleştiri için “should have + V3”."]
+          - ["I know. We should left home earlier.", false, "“should have left” olmalı."]
+          - ["I know. We must have left earlier.", false, "“must have” tahmin bildirir; pişmanlık değil."]
+      - ["Ali", "If we hadn't stopped for coffee, we would have made it.", "Kahve için durmasaydık yetişirdik."]
+      - choose:
+          - ["Maybe, but don't blame yourself. The traffic was terrible too.", true, "Teselli ve “blame yourself” doğru."]
+          - ["If we wouldn't stop, we made it.", false, "3. tip yapısı bozuk."]
+          - ["Yes, it's your fault totally.", false, "Kaba ve doğal değil."]
+      - ["Ali", "You're right. Let's ask about the next flight.", "Haklısın. Bir sonraki uçuşu soralım."]
+  - id: missing-colleague
+    title: "Toplantıya gelmeyen iş arkadaşı"
+    sit: "Önemli bir toplantıya iş arkadaşın Kerem gelmedi. Ekip olarak nedenini tahmin ediyorsunuz."
+    d: 4
+    targets: [might-have, probably-must-have, cant-have, turn-out]
+    turns:
+      - ["Lena", "Where's Kerem? He's never late.", "Kerem nerede? Asla geç kalmaz."]
+      - choose:
+          - ["He might have got stuck in traffic. There was an accident on the bridge.", true, "Olasılık için “might have + V3”."]
+          - ["He might get stuck in traffic yesterday.", false, "Geçmiş tahmin için “might have got”."]
+          - ["He must got stuck.", false, "“must have got” olmalı."]
+      - ["Lena", "But he takes the metro.", "Ama metroyla geliyor."]
+      - choose:
+          - ["True. Then he can't have been in traffic. He must have forgotten the meeting.", true, "“can't have” ve “must have” doğru tahminler."]
+          - ["True. Then he mustn't have been in traffic.", false, "Olumsuz tahminde “can't have” tercih edilir."]
+          - ["True. Then he can't be in traffic yesterday.", false, "Geçmiş için “can't have been”."]
+      - ["Lena", "Here's a message from him… It turns out his son is ill.", "Ondan bir mesaj geldi… Anlaşılan oğlu hastaymış."]
+
+readings:
+  - id: career-regret
+    title: "The road not taken"
+    kind: "Kişisel yazı"
+    d: 4
+    s:
+      - ["When I was eighteen, I was offered a place at a music school in Vienna.", "On sekiz yaşımdayken Viyana'daki bir müzik okulunda yer teklif edildi."]
+      - ["My parents thought it was too risky, so I studied economics instead.", "Ailem bunun çok riskli olduğunu düşündü, ben de onun yerine ekonomi okudum."]
+      - ["If I had gone to Vienna, I might have become a professional pianist.", "Viyana'ya gitseydim profesyonel bir piyanist olabilirdim."]
+      - ["In hindsight, though, I don't regret my choice: I met my wife at university.", "Yine de geriye dönüp bakınca seçimimden pişman değilim: Eşimle üniversitede tanıştım."]
+      - ["I still wish I played more often, so I've started taking lessons again.", "Hâlâ keşke daha sık çalabilsem diyorum, bu yüzden yeniden ders almaya başladım."]
+    gloss: ["was offered | teklif edildi", "instead | onun yerine", "in hindsight | geriye dönüp bakınca"]
+    q:
+      - q: "Yazar neden Viyana'ya gitmedi?"
+        o: ["Parası yetmediği için", "Ailesi çok riskli bulduğu için", "Okula kabul edilmediği için"]
+        a: 1
+        why: "“My parents thought it was too risky”"
+      - q: "Yazar seçiminden pişman mı?"
+        o: ["Evet, çok pişman", "Hayır, çünkü eşiyle üniversitede tanıştı", "Metinde söylenmiyor"]
+        a: 1
+        why: "“I don't regret my choice: I met my wife at university.”"
+  - id: mystery-note
+    title: "The empty office"
+    kind: "Kısa hikâye"
+    d: 4
+    s:
+      - ["When Naz arrived at the office, the door was open but nobody was there.", "Naz ofise vardığında kapı açıktı ama kimse yoktu."]
+      - ["The coffee on the desk was still warm, so someone must have left only minutes earlier.", "Masadaki kahve hâlâ sıcaktı, yani biri sadece birkaç dakika önce çıkmış olmalıydı."]
+      - ["It can't have been the cleaner, because she only comes in the evening.", "Temizlikçi olamazdı, çünkü o sadece akşamları geliyor."]
+      - ["Naz thought her boss might have gone to the meeting room.", "Naz, patronunun toplantı odasına gitmiş olabileceğini düşündü."]
+      - ["It turned out that everyone was hiding there with a birthday cake for her.", "Herkesin orada, onun için bir doğum günü pastasıyla saklandığı ortaya çıktı."]
+    gloss: ["still warm | hâlâ sıcak", "cleaner | temizlikçi", "hide | saklanmak"]
+    q:
+      - q: "Naz neden birinin az önce çıktığını düşündü?"
+        o: ["Kapı açıktı", "Kahve hâlâ sıcaktı", "Bir not vardı"]
+        a: 1
+        why: "“The coffee … was still warm, so someone must have left only minutes earlier.”"
+      - q: "Temizlikçi neden şüpheli değildi?"
+        o: ["Sadece akşamları geliyor", "O gün izinliydi", "Toplantı odasındaydı"]
+        a: 0
+        why: "“she only comes in the evening”"
+
+writing:
+  id: b2-regret-story
+  p: "Hayatında farklı karar verseydin ne olurdu? 6–8 cümlelik bir paragraf yaz; 3. tip if, wish ve en az bir geçmiş modal kullan."
+  rubric: ["3. tip if doğru (If I had …, I would have …)", "wish / if only ile pişmanlık ya da istek", "should have / might have / must have doğru kullanılmış", "Olaylar mantıklı bir sırayla anlatılmış"]
+  samples: ["Three years ago I had to choose between a job in Ankara and a master's degree in Germany. I chose the job because I didn't want to leave my family. If I had gone to Germany, I would have learned German and I might have found a job there. Sometimes I wish I had been braver. On the other hand, I've learned a lot at work, and I've been promoted twice. My manager says I must have been the fastest learner in the team. In hindsight, I shouldn't have worried so much — both options were good."]
+  d: 4
+
+situations:
+  - { parent: "Pişmanlık", name: "Keşkeler ve pişmanlıklar", items: [regret, if-only, wish, mistake, should-have, miss-a-chance, in-hindsight, if-had-would-have, i-wish-i-had, i-wish-could, you-should-have, wouldnt-have-if] }
+  - { parent: "Tahmin", name: "Geçmiş hakkında tahmin", items: [probably-must-have, cant-have, might-have, turn-out, realise, must-have-been, might-have-left, it-turned-out] }
+  - { parent: "Anlatı", name: "Sorumluluk ve özür", items: [blame, fault, apologise, luckily, otherwise, consequence, by-chance, take-for-granted, if-hadnt, im-sorry-i-didnt] }

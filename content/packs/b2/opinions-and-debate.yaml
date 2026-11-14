@@ -1,0 +1,522 @@
+id: b2-opinions-and-debate
+domain: b2
+title: "Görüş bildirme ve tartışma"
+desc: "Relative clauses (who / which / whose, virgüllü ve virgülsüz), although / despite / whereas; fikrini savunma."
+sort: 1
+
+targets:
+  - id: point-of-view
+    w: point of view
+    pos: n
+    tr: "bakış açısı"
+    ex: "I understand your [[point of view]], but I disagree."
+    extr: "Bakış açını anlıyorum ama katılmıyorum."
+    d: 3
+    syn: ["perspective", "standpoint"]
+    tone: ["Tartışma"]
+    dis:
+      - "point of views | Tekil bakış açısı: point of view."
+      - "view of point | Sıralama yanlış."
+      - "point of sight | Kalıp “point of view”."
+  - id: argue
+    w: argue
+    pos: v
+    tr: "savunmak, ileri sürmek; tartışmak"
+    ex: "Some experts [[argue]] that homework is not useful."
+    extr: "Bazı uzmanlar ödevin faydalı olmadığını savunuyor."
+    d: 3
+    fam: ["argument (i.) argüman; tartışma"]
+    tone: ["Akademik", "Tartışma"]
+    dis:
+      - "argument | İsim; fiil gerekir."
+      - "argued about | Kalıp bozulur; “argue that …” gerekir."
+      - "argues | “experts” çoğul; fiil yalın olur."
+  - id: although
+    w: although
+    pos: conj
+    tr: "-e rağmen, -se de"
+    ex: "[[Although]] it was expensive, the course was worth it."
+    extr: "Pahalı olmasına rağmen kurs buna değdi."
+    d: 3
+    syn: ["even though", "though"]
+    conf: ["despite | Sonrasında isim veya -ing gelir."]
+    tone: ["Bağlaç"]
+    dis:
+      - "Despite | Sonrasında özne + fiil gelmez; “despite its price”."
+      - "However | Cümleler arasında kullanılır, cümle içinde bağlaç değildir."
+      - "Because | Sebep bildirir; karşıtlık değil."
+  - id: despite
+    w: despite
+    pos: prep
+    tr: "-e rağmen (isimle)"
+    ex: "They went hiking [[despite]] the bad weather."
+    extr: "Kötü havaya rağmen yürüyüşe çıktılar."
+    d: 3
+    syn: ["in spite of"]
+    tone: ["Bağlaç"]
+    dis:
+      - "although | Sonrasında özne + fiil gerekir."
+      - "despite of | “despite” edat almaz."
+      - "in spite | “of” eksik."
+  - id: whereas
+    w: whereas
+    pos: conj
+    tr: "oysa, -ken (karşılaştırma)"
+    ex: "My brother loves crowds, [[whereas]] I prefer quiet places."
+    extr: "Ağabeyim kalabalıkları sever, oysa ben sessiz yerleri tercih ederim."
+    d: 3
+    syn: ["while"]
+    tone: ["Bağlaç", "Akademik"]
+    dis:
+      - "whether | “-ip -mediği” demektir."
+      - "wherever | “Her nerede” demektir."
+      - "because | Sebep bildirir."
+  - id: on-the-other-hand
+    w: on the other hand
+    pos: phrase
+    tr: "öte yandan"
+    ex: "Cities offer more jobs. [[On the other hand]], they're more expensive."
+    extr: "Şehirler daha çok iş imkânı sunar. Öte yandan daha pahalıdır."
+    d: 3
+    tone: ["Tartışma"]
+    dis:
+      - "On the another hand | Kalıp “the other hand”."
+      - "In the other hand | Edat “on”."
+      - "At the other hand | Edat “on”."
+  - id: convince
+    w: convince
+    pos: v
+    tr: "ikna etmek"
+    ex: "She finally [[convinced]] me to join the gym."
+    extr: "Sonunda beni spor salonuna yazılmaya ikna etti."
+    d: 3
+    fam: ["convincing (s.) ikna edici"]
+    tone: ["Tartışma"]
+    dis:
+      - "convicted | Mahkûm etti demektir."
+      - "convenient | Uygun, elverişli demektir."
+      - "convince | Geçmiş anlatılıyor."
+  - id: evidence
+    w: evidence
+    pos: n
+    tr: "kanıt"
+    ex: "There's no [[evidence]] that this diet works."
+    extr: "Bu diyetin işe yaradığına dair hiçbir kanıt yok."
+    d: 3
+    conf: ["evidences | “evidence” sayılamaz."]
+    tone: ["Akademik"]
+    dis:
+      - "evidences | Sayılamaz; çoğul olmaz."
+      - "evident | Sıfat (açık, belli); isim gerekir."
+      - "incidence | Görülme sıklığı demektir."
+  - id: issue
+    w: issue
+    pos: n
+    tr: "mesele, sorun, konu"
+    ex: "Climate change is a global [[issue]]."
+    extr: "İklim değişikliği küresel bir mesele."
+    d: 3
+    syn: ["problem", "matter"]
+    tone: ["Tartışma"]
+    dis:
+      - "tissue | Kâğıt mendil, doku demektir."
+      - "issued | “Yayımlandı” anlamında fiil."
+      - "isle | Ada demektir."
+  - id: benefit
+    w: benefit
+    pos: n
+    tr: "fayda, yarar"
+    ex: "One [[benefit]] of remote work is saving time."
+    extr: "Uzaktan çalışmanın bir faydası zaman kazanmaktır."
+    d: 3
+    fam: ["beneficial (s.) yararlı"]
+    ant: ["drawback", "disadvantage"]
+    tone: ["Tartışma"]
+    dis:
+      - "benefits | “One” sonrası tekil gelir."
+      - "beneficial | Sıfat; isim gerekir."
+      - "benefactor | Hayırsever kişi demektir."
+  - id: drawback
+    w: drawback
+    pos: n
+    tr: "dezavantaj, sakınca"
+    ex: "The main [[drawback]] is the long commute."
+    extr: "Asıl dezavantaj uzun işe gidiş-geliş süresi."
+    d: 3
+    syn: ["disadvantage", "downside"]
+    tone: ["Tartışma"]
+    dis:
+      - "drawing | Çizim demektir."
+      - "backdrop | Arka plan, fon demektir."
+      - "throwback | Geçmişe dönüş demektir."
+  - id: impact
+    w: impact
+    pos: n
+    tr: "etki"
+    ex: "Social media has a huge [[impact]] on teenagers."
+    extr: "Sosyal medyanın gençler üzerinde büyük bir etkisi var."
+    d: 3
+    col: ["have an impact on", "a positive impact"]
+    tone: ["Akademik"]
+    dis:
+      - "impact to | “impact on” kullanılır; burada yalnız isim isteniyor."
+      - "input | Girdi demektir."
+      - "impart | Aktarmak demektir."
+  - id: in-my-opinion
+    w: in my opinion
+    pos: phrase
+    tr: "bence, kanımca"
+    ex: "[[In my opinion]], public transport should be free."
+    extr: "Bence toplu taşıma ücretsiz olmalı."
+    d: 3
+    syn: ["I believe", "From my point of view"]
+    tone: ["Görüş"]
+    dis:
+      - "According to me | Doğal değil; “In my opinion” denir."
+      - "On my opinion | Edat “in”."
+      - "In my opinions | Kalıp tekil."
+  - id: obviously
+    w: obviously
+    pos: adv
+    tr: "belli ki, açıkça"
+    ex: "[[Obviously]], nobody wants higher taxes."
+    extr: "Belli ki kimse daha yüksek vergi istemiyor."
+    d: 3
+    syn: ["clearly"]
+    tone: ["Görüş"]
+    dis:
+      - "Obvious | Sıfat; cümle başında zarf gerekir."
+      - "Previously | Daha önce demektir."
+      - "Obediently | İtaatkârca demektir."
+  - id: support
+    w: support
+    pos: v
+    tr: "desteklemek"
+    ex: "Most parents [[support]] the new school rule."
+    extr: "Çoğu veli yeni okul kuralını destekliyor."
+    d: 3
+    tone: ["Tartışma"]
+    dis:
+      - "supports | “parents” çoğul; fiil yalın olur."
+      - "suppose | Varsaymak demektir."
+      - "supporting | Yardımcı fiil olmadan -ing kullanılmaz."
+  - id: oppose
+    w: oppose
+    pos: v
+    tr: "karşı çıkmak"
+    ex: "Many residents [[oppose]] the new shopping centre."
+    extr: "Birçok sakin yeni alışveriş merkezine karşı çıkıyor."
+    d: 3
+    fam: ["opposition (i.) muhalefet", "opposite (s.) karşıt"]
+    tone: ["Tartışma"]
+    dis:
+      - "oppose to | “oppose” edat almaz; “be opposed to” denir."
+      - "opposite | Sıfat (karşı); fiil gerekir."
+      - "propose | Önermek demektir."
+  - id: whose
+    w: whose
+    pos: conj
+    tr: "ki onun …, -in (ilgi zamiri)"
+    ex: "That's the writer [[whose]] book won the prize."
+    extr: "Kitabı ödül kazanan yazar o."
+    d: 3
+    conf: ["who's | who is / who has kısaltması."]
+    tone: ["Gramer"]
+    dis:
+      - "who's | “who is” demektir."
+      - "who | Sahiplik bildirmez; “whose book”."
+      - "which | İnsan için ve sahiplikte kullanılmaz."
+  - id: as-a-result
+    w: as a result
+    pos: phrase
+    tr: "sonuç olarak, bunun sonucunda"
+    ex: "Prices rose sharply. [[As a result]], sales fell."
+    extr: "Fiyatlar keskin bir şekilde arttı. Bunun sonucunda satışlar düştü."
+    d: 3
+    syn: ["consequently", "therefore"]
+    tone: ["Bağlaç"]
+    dis:
+      - "As result | “a” eksik."
+      - "In a result | Edat “as”."
+      - "For a result | Edat “as”."
+  - id: fair
+    w: fair
+    pos: adj
+    tr: "adil"
+    ex: "I don't think it's [[fair]] to blame the students."
+    extr: "Öğrencileri suçlamanın adil olduğunu düşünmüyorum."
+    d: 3
+    ant: ["unfair"]
+    tone: ["Görüş"]
+    dis:
+      - "fare | Bilet ücreti demektir."
+      - "fear | Korku demektir."
+      - "fairly | Zarf (oldukça); sıfat gerekir."
+  - id: to-some-extent
+    w: to some extent
+    pos: phrase
+    tr: "bir dereceye kadar"
+    ex: "I agree with you [[to some extent]]."
+    extr: "Sana bir dereceye kadar katılıyorum."
+    d: 3
+    syn: ["partly"]
+    tone: ["Görüş"]
+    dis:
+      - "in some extent | Edat “to”."
+      - "to some extend | “extend” fiil; isim “extent”."
+      - "at some extent | Edat “to”."
+
+patterns:
+  - id: the-person-who
+    t: "… is the person who …"
+    ex: "She's the colleague [[who]] helped me with the project."
+    extr: "Projede bana yardım eden iş arkadaşı o."
+    ttr: "… iş arkadaşı o."
+    slots: ["helped me with the project | Projede bana yardım eden", "trained me | Beni eğiten", "organised the event | Etkinliği düzenleyen"]
+    chunks: ["the colleague | iş arkadaşı", "who helped me | bana yardım eden"]
+    g: b2-relative-clauses
+    ctx: ["Tanımlama"]
+    tone: ["Nötr"]
+    d: 3
+    dis:
+      - "which | İnsanlar için “who”."
+      - "whose | Sahiplik bildirir; burada özne gerekir."
+      - "what | İlgi zamiri olarak kullanılmaz."
+  - id: non-defining-which
+    t: "…, which …, …"
+    ex: "The report, [[which]] was published yesterday, shows a rise in prices."
+    extr: "Dün yayımlanan rapor fiyatlarda bir artış gösteriyor."
+    ttr: "Dün yayımlanan rapor …"
+    slots: ["shows a rise in prices | fiyatlarda bir artış gösteriyor", "contains some errors | bazı hatalar içeriyor", "is quite long | oldukça uzun"]
+    chunks: ["The report, | rapor", "which was published yesterday, | dün yayımlanan"]
+    g: b2-relative-clauses
+    ctx: ["Bilgi verme"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "that | Virgüllü (ek bilgi veren) yan cümlede “that” kullanılmaz."
+      - "who | Nesneler için “which”."
+      - "what | İlgi zamiri olarak kullanılmaz."
+  - id: although-still
+    t: "Although …, …"
+    ex: "Although he trained hard, he [[didn't]] win the race."
+    extr: "Çok çalışmasına rağmen yarışı kazanamadı."
+    ttr: "… rağmen yarışı kazanamadı."
+    slots: ["he trained hard | Çok çalışmasına", "he was the favourite | Favori olmasına", "the crowd supported him | Seyircinin desteğine"]
+    chunks: ["Although he trained hard | çok çalışmasına rağmen", "he didn't win | kazanamadı"]
+    g: b2-concession
+    ctx: ["Anlatı"]
+    tone: ["Nötr"]
+    d: 3
+    dis:
+      - "but didn't | “Although” ile “but” birlikte kullanılmaz."
+      - "doesn't | Geçmiş anlatılıyor."
+      - "wasn't | Fiil cümlesi; “didn't win”."
+  - id: despite-ing
+    t: "Despite …-ing / Despite the …, …"
+    ex: "Despite [[having]] little money, they travelled a lot."
+    extr: "Az paraları olmasına rağmen çok seyahat ettiler."
+    ttr: "… rağmen çok seyahat ettiler."
+    slots: ["having little money | Az paraları olmasına", "the high prices | Yüksek fiyatlara", "working full-time | Tam zamanlı çalışmalarına"]
+    chunks: ["Despite having | -mesine rağmen", "little money | az para"]
+    g: b2-concession
+    ctx: ["Anlatı"]
+    tone: ["Nötr"]
+    d: 3
+    dis:
+      - "they had | “Despite” sonrası özne + fiil gelmez."
+      - "of having | “despite” edat almaz."
+      - "have | Edattan sonra -ing gelir."
+  - id: i-see-your-point-but
+    t: "I see your point, but …"
+    ex: "I see your [[point]], but I think it's too risky."
+    extr: "Ne demek istediğini anlıyorum ama bence çok riskli."
+    ttr: "Ne demek istediğini anlıyorum ama bence …"
+    slots: ["it's too risky | çok riskli", "it's too early | çok erken", "it's not realistic | gerçekçi değil"]
+    chunks: ["I see your point | ne demek istediğini anlıyorum", "but I think | ama bence"]
+    g: b2-concession
+    ctx: ["Tartışma"]
+    tone: ["Kibar"]
+    d: 3
+    dis:
+      - "points | Kalıp tekil: I see your point."
+      - "view | “see your view” doğal değil."
+      - "pointing | Kalıp “I see your point”."
+  - id: one-reason-is-that
+    t: "One reason for this is that …"
+    ex: "One [[reason]] for this is that rents are rising."
+    extr: "Bunun bir nedeni kiraların artması."
+    ttr: "Bunun bir nedeni …"
+    slots: ["rents are rising | kiraların artması", "salaries are low | maaşların düşük olması", "there are few jobs | iş olanaklarının az olması"]
+    chunks: ["One reason for this | bunun bir nedeni", "is that | -dır ki"]
+    g: b2-concession
+    ctx: ["Akademik yazı"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "reasons | “One” sonrası tekil gelir."
+      - "result | Sonuç demektir; anlam terse döner."
+      - "cause of | Kalıp bozulur: “cause of this”."
+  - id: the-place-where
+    t: "… the place where …"
+    ex: "This is the café [[where]] we first met."
+    extr: "İlk tanıştığımız kafe burası."
+    ttr: "… kafe burası."
+    slots: ["we first met | İlk tanıştığımız", "I wrote my thesis | Tezimi yazdığım", "they hold the quiz night | Bilgi yarışmasının yapıldığı"]
+    chunks: ["the café | kafe", "where we first met | ilk tanıştığımız"]
+    g: b2-relative-clauses
+    ctx: ["Tanımlama"]
+    tone: ["Anlatı"]
+    d: 3
+    dis:
+      - "which | “which” sonrası edat gerekir (in which); “where” yeterli."
+      - "who | İnsanlar için kullanılır."
+      - "when | Zaman bildirir."
+  - id: whose-pattern
+    t: "… whose … is/was …"
+    ex: "I met a man [[whose]] brother works at NASA."
+    extr: "Kardeşi NASA'da çalışan bir adamla tanıştım."
+    ttr: "… bir adamla tanıştım."
+    slots: ["brother works at NASA | Kardeşi NASA'da çalışan", "wife is a famous singer | Eşi ünlü bir şarkıcı olan", "dog won a prize | Köpeği ödül kazanan"]
+    chunks: ["a man | bir adam", "whose brother | kardeşi"]
+    g: b2-relative-clauses
+    ctx: ["Anlatı"]
+    tone: ["Nötr"]
+    d: 3
+    dis:
+      - "who's | “who is” demektir."
+      - "who his | Sahiplik “whose” ile tek sözcükle yapılır."
+      - "which | İnsan ve sahiplikte kullanılmaz."
+  - id: while-some-others
+    t: "While some people …, others …"
+    ex: "While some people prefer cities, [[others]] would rather live in the countryside."
+    extr: "Bazı insanlar şehirleri tercih ederken, diğerleri kırsalda yaşamayı yeğler."
+    ttr: "Bazı insanlar … diğerleri kırsalda yaşamayı yeğler."
+    slots: ["prefer cities, | şehirleri tercih ederken,", "love noise, | gürültüyü severken,", "need nightlife, | gece hayatına ihtiyaç duyarken,"]
+    chunks: ["While some people | bazı insanlar …ken", "others would rather | diğerleri … yeğler"]
+    g: b2-concession
+    ctx: ["Akademik yazı"]
+    tone: ["Resmî"]
+    d: 3
+    dis:
+      - "the others | Belirli bir grup değil; “others”."
+      - "another | Tekil; çoğul fiil “would rather” ile uyuşmaz."
+      - "other | Tek başına isim olarak “others” gerekir."
+  - id: it-depends-on
+    t: "It depends on whether …"
+    ex: "It depends [[on]] whether we get the funding."
+    extr: "Fonu alıp almamamıza bağlı."
+    ttr: "… bağlı."
+    slots: ["we get the funding | Fonu alıp almamamıza", "the weather is good | Havanın iyi olup olmamasına", "she agrees | Onun kabul edip etmemesine"]
+    chunks: ["It depends on | -e bağlı", "whether we get | alıp almamamız"]
+    g: b2-concession
+    ctx: ["Tartışma"]
+    tone: ["Nötr"]
+    d: 3
+    dis:
+      - "of | “depend” edatı “on”."
+      - "from | “depend from” yanlış."
+      - "to | “depend to” yanlış."
+
+grammar:
+  - id: b2-relative-clauses
+    title: "Relative clauses: who / which / that / whose / where"
+    short: "İsmi tanımlayan yan cümleler who (insan), which (nesne), whose (sahiplik), where (yer) ile kurulur. Virgüllü cümleler sadece ek bilgi verir ve that almaz."
+    long: "Tanımlayıcı (virgülsüz): Hangi kişi/şey olduğunu söyler — The man who called you is my boss. Burada who/which yerine that de olur; nesne konumundaysa zamir düşebilir: The book (that) I read. Ek bilgi veren (virgüllü): Kişi/şey zaten bellidir — My sister, who lives in Ankara, is a lawyer. Bu tipte that kullanılmaz ve zamir düşmez. whose = -in …-ı: a student whose phone was stolen. where = yer: the town where I grew up. Türkçede bu yapılar “-en, -dığı” sıfat-fiilleriyle karşılanır: “Ankara'da yaşayan kız kardeşim”."
+    ex: ["The laptop that I bought last week has stopped working. | Geçen hafta aldığım dizüstü bilgisayar çalışmayı bıraktı.", "Our manager, who has worked here for 20 years, is retiring. | 20 yıldır burada çalışan müdürümüz emekli oluyor.", "That's the hotel where we stayed on our honeymoon. | Balayımızda kaldığımız otel orası."]
+  - id: b2-concession
+    title: "Karşıtlık ve görüş: although, despite, however, whereas"
+    short: "although + cümle, despite / in spite of + isim veya -ing, however iki cümle arasında, whereas / while iki şeyi karşılaştırırken kullanılır."
+    long: "Although it rained, we went out. = Despite the rain, we went out. = It rained. However, we went out. Despite + -ing: Despite feeling ill, she came. Although ile but aynı cümlede kullanılmaz (Türkçedeki “-e rağmen … ama” yapısını çevirmeyin). whereas / while: I like tea, whereas my wife prefers coffee. Görüş bildirme: In my opinion, … / I see your point, but … / To some extent, I agree. / On the other hand, … Sonuç: As a result, … / Therefore, …"
+    ex: ["Although the flat is small, it's very bright. | Daire küçük olmasına rağmen çok aydınlık.", "Despite the delay, we arrived on time. | Gecikmeye rağmen zamanında vardık.", "Some people love winter, whereas others can't wait for summer. | Bazıları kışı severken, diğerleri yazı iple çeker."]
+
+scenarios:
+  - id: team-debate
+    title: "Toplantıda fikir ayrılığı"
+    sit: "Ekipte dört günlük çalışma haftası tartışılıyor. Bir iş arkadaşın karşı çıkıyor."
+    d: 3
+    targets: [point-of-view, benefit, drawback, to-some-extent]
+    turns:
+      - ["Can", "I don't think a four-day week would work. We'd never finish our projects.", "Dört günlük haftanın işe yarayacağını sanmıyorum. Projelerimizi asla bitiremeyiz."]
+      - choose:
+          - ["I see your point, but studies show people are more productive when they're rested.", true, "Karşı görüşü kabul edip kanıtla cevap veriyor."]
+          - ["You are wrong. It is good.", false, "Kaba ve gerekçesiz."]
+          - ["Although I see your point, but I disagree.", false, "“Although” ile “but” birlikte kullanılmaz."]
+      - ["Can", "Maybe, but what about clients who need us on Fridays?", "Belki, ama cuma günü bize ihtiyaç duyan müşteriler ne olacak?"]
+      - choose:
+          - ["That's a fair point. To some extent, a rota could solve that.", true, "Haklı noktayı kabul edip çözüm öneriyor."]
+          - ["That's a fair point. Despite we could make a rota.", false, "“Despite” sonrası özne + fiil gelmez."]
+          - ["That's fair point to some extend.", false, "“a” eksik ve “extent” olmalı."]
+      - ["Can", "OK, I'm willing to try it for a month.", "Tamam, bir ay denemeye razıyım."]
+  - id: neighbourhood-meeting
+    title: "Mahalle toplantısı"
+    sit: "Mahallene yeni bir alışveriş merkezi yapılması planlanıyor. Toplantıda söz aldın."
+    d: 3
+    targets: [oppose, impact, in-my-opinion, despite]
+    turns:
+      - ["Chair", "Does anyone want to comment on the new shopping centre?", "Yeni alışveriş merkezi hakkında yorum yapmak isteyen var mı?"]
+      - choose:
+          - ["Yes. In my opinion, it'll have a negative impact on the small shops which have been here for decades.", true, "Görüş ve relative clause doğru."]
+          - ["Yes. According to me, it's bad.", false, "“According to me” doğal değil ve gerekçe yok."]
+          - ["Yes. I oppose to it.", false, "“oppose” edat almaz."]
+      - ["Chair", "But it would create jobs, wouldn't it?", "Ama iş imkânı yaratırdı, değil mi?"]
+      - choose:
+          - ["Some, yes. However, despite the new jobs, many local businesses would probably close.", true, "“However” ve “despite + isim” doğru."]
+          - ["Some, yes. Although the new jobs, many businesses would close.", false, "“Although” sonrası cümle gerekir."]
+          - ["Some, yes. Despite of the new jobs, many would close.", false, "“despite” edat almaz."]
+      - ["Chair", "Thank you. Let's hear from the other side as well.", "Teşekkürler. Diğer tarafı da dinleyelim."]
+
+readings:
+  - id: remote-work-essay
+    title: "Is remote work here to stay?"
+    kind: "Görüş yazısı"
+    d: 3
+    s:
+      - ["Remote work, which became common during the pandemic, is still popular.", "Pandemi sırasında yaygınlaşan uzaktan çalışma hâlâ popüler."]
+      - ["Supporters argue that it saves time and money, since there is no commute.", "Destekçileri, işe gidip gelme olmadığı için zaman ve para kazandırdığını savunuyor."]
+      - ["On the other hand, some managers believe that teamwork suffers.", "Öte yandan bazı yöneticiler ekip çalışmasının zarar gördüğüne inanıyor."]
+      - ["Although there is evidence for both views, most companies have chosen a hybrid model.", "Her iki görüş için de kanıtlar olsa da şirketlerin çoğu hibrit modeli seçti."]
+      - ["In my opinion, this compromise is the fairest option for everyone.", "Bence bu orta yol herkes için en adil seçenek."]
+    gloss: ["commute | işe gidip gelme", "suffer | zarar görmek", "compromise | orta yol, uzlaşma"]
+    q:
+      - q: "Bazı yöneticilerin uzaktan çalışmayla ilgili endişesi ne?"
+        o: ["Pahalı olması", "Ekip çalışmasının zarar görmesi", "Daha çok zaman alması"]
+        a: 1
+        why: "“some managers believe that teamwork suffers”"
+      - q: "Yazarın kendi görüşü ne?"
+        o: ["Tamamen uzaktan çalışma", "Tamamen ofis", "Hibrit model"]
+        a: 2
+        why: "“this compromise is the fairest option” — hibrit model."
+  - id: city-vs-country
+    title: "City or countryside?"
+    kind: "Karşılaştırma yazısı"
+    d: 3
+    s:
+      - ["People who grow up in cities often find the countryside too quiet.", "Şehirde büyüyen insanlar kırsalı çoğu zaman fazla sessiz bulur."]
+      - ["Cities offer better job opportunities, whereas villages offer a calmer lifestyle.", "Şehirler daha iyi iş fırsatları sunar, oysa köyler daha sakin bir yaşam tarzı sunar."]
+      - ["Despite the high cost of living, young people continue to move to big cities.", "Yüksek yaşam maliyetine rağmen gençler büyük şehirlere taşınmaya devam ediyor."]
+      - ["As a result, many villages are losing their populations.", "Bunun sonucunda birçok köy nüfusunu kaybediyor."]
+      - ["However, remote work may slowly change this trend.", "Ancak uzaktan çalışma bu eğilimi yavaş yavaş değiştirebilir."]
+    gloss: ["opportunity | fırsat", "cost of living | yaşam maliyeti", "trend | eğilim"]
+    q:
+      - q: "Köyler neden nüfus kaybediyor?"
+        o: ["Gençler büyük şehirlere taşındığı için", "Yaşam maliyeti yüksek olduğu için", "Uzaktan çalışma yüzünden"]
+        a: 0
+        why: "“young people continue to move to big cities. As a result, many villages are losing …”"
+      - q: "“whereas” bu metinde ne işe yarıyor?"
+        o: ["Sebep bildiriyor", "İki şeyi karşılaştırıyor", "Sonuç bildiriyor"]
+        a: 1
+        why: "Şehirler ile köyleri karşılaştırıyor."
+
+writing:
+  id: b2-opinion-paragraph
+  p: "“Üniversite eğitimi ücretsiz olmalı mı?” konusunda 6–8 cümlelik bir görüş paragrafı yaz. Karşı görüşe de değin."
+  rubric: ["Görüş net bir giriş cümlesiyle verilmiş (In my opinion / I believe)", "Karşı görüş although / despite / on the other hand ile ele alınmış", "En az bir relative clause var (who / which / whose)", "Sonuç cümlesi var (As a result / Therefore / Overall)"]
+  samples: ["In my opinion, university education should be free for students who cannot afford it. Education is a right, and talented young people should not lose opportunities because of money. On the other hand, free education for everyone would be very expensive for the government. Despite this, a system which supports low-income students seems fair to me. Countries that invest in education usually have stronger economies. Therefore, I believe free education, at least for those in need, benefits the whole society."]
+  d: 3
+
+situations:
+  - { parent: "Tartışma", name: "Görüş bildirme", items: [point-of-view, in-my-opinion, obviously, to-some-extent, fair, argue, i-see-your-point-but, it-depends-on] }
+  - { parent: "Tartışma", name: "Artılar, eksiler ve kanıt", items: [benefit, drawback, impact, evidence, issue, support, oppose, convince, one-reason-is-that] }
+  - { parent: "Bağlaç", name: "Karşıtlık ve sonuç", items: [although, despite, whereas, on-the-other-hand, as-a-result, although-still, despite-ing, while-some-others] }
+  - { parent: "Gramer", name: "İsmi tanımlama", items: [whose, the-person-who, non-defining-which, the-place-where, whose-pattern] }
