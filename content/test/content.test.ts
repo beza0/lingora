@@ -14,7 +14,7 @@ describe("gerçek içerik", () => {
   });
 
   it("istenen toplamları karşılar", () => {
-    expect(report.totals).toMatchObject({ packs: 21, targets: 420, patterns: 210, scenarios: 42, readings: 42, grammar: 42, writing: 21 });
+    expect(report.totals).toMatchObject({ packs: 33, targets: 660, patterns: 330, scenarios: 66, readings: 66, grammar: 66, writing: 33 });
   });
 
   it("her seçenekli alıştırmada cevap indeksi doğru seçeneği gösterir", () => {
@@ -132,6 +132,7 @@ describe("kalıp parçası cümlesi", () => {
     expect(slotSentence("… mi?", "ciddi")).toBe("Ciddi mi?");
     expect(slotSentence("… müsait misin?", "cuma akşamı")).toBe("Cuma akşamı müsait misin?");
     expect(slotSentence("… fiyata dahil mi?", "otopark")).toBe("Otopark fiyata dahil mi?");
+    expect(slotSentence("Benim adım …", "Kerem")).toBe("Benim adım Kerem.");
   });
   it("birden çok boşluk veya ek işareti varsa cümle üretmez", () => {
     expect(slotSentence("… beri kendimi … hissediyorum.", "yorgun")).toBeNull();

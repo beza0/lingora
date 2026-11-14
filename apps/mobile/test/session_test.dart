@@ -16,10 +16,10 @@ void main() {
     content = ContentRepo.fromJsonString(File('assets/content/content.json').readAsStringSync());
   });
 
-  test('içerik paketi: 7 alan, 21 paket, 630 hedef, her hedefin görünümü var', () {
-    expect(content.domainList.length, 7);
-    expect(content.packs.length, 21);
-    expect(content.targets.length, 630);
+  test('içerik paketi: 13 alan, 33 paket, 990 hedef, her hedefin görünümü var', () {
+    expect(content.domainList.length, 13);
+    expect(content.packs.length, 33);
+    expect(content.targets.length, 990);
     for (final id in content.targets.keys) {
       final v = content.view(id);
       expect(v, isNotNull, reason: id);
@@ -28,12 +28,15 @@ void main() {
     }
   });
 
-  test('ilk dört alanda 90, yeni alanlarda 90 hedef', () {
+  test('meslek alanlarında 90, seviye alanlarında 60 hedef', () {
     for (final d in ['general', 'software', 'engineering', 'yds']) {
       expect(content.targetsForDomain(d).length, 90, reason: d);
     }
     for (final d in ['health', 'tourism', 'law']) {
       expect(content.targetsForDomain(d).length, 90, reason: d);
+    }
+    for (final d in ContentRepo.levelDomainIds) {
+      expect(content.targetsForDomain(d).length, 60, reason: d);
     }
   });
 

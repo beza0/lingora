@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app_state.dart';
+import '../../data/content.dart';
 import '../../services/telemetry.dart';
 import '../../theme.dart';
 import '../widgets.dart';
@@ -79,6 +80,7 @@ const _goals = <(String, IconData, String, String, List<String>)>[
   ('seyahat', Icons.flight_takeoff, 'Seyahat', 'Otel, havalimanı, yol sorma', ['tourism', 'general']),
   ('gunluk', Icons.forum_outlined, 'Günlük konuşma', 'Tanışma, alışveriş, sohbet', ['general']),
   ('meslek', Icons.medical_services_outlined, 'Mesleğim için', 'Mühendislik, sağlık, hukuk', ['engineering', 'health', 'law']),
+  ('seviye', Icons.stairs_outlined, 'Seviyemi yükseltmek', 'A1–C2 gramer ve kelime dersleri', ['a2', 'b1']),
 ];
 
 class _GoalScreenState extends ConsumerState<GoalScreen> {
@@ -169,6 +171,7 @@ class _DomainPickerScreenState extends ConsumerState<DomainPickerScreen> {
   Widget build(BuildContext context) {
     final content = ref.watch(contentProvider);
     final p = context.pal;
+    final firstLevel = content.domainList.where((d) => ContentRepo.isLevelDomain(d['id'] as String)).firstOrNull;
     return Scaffold(
       appBar: AppBar(title: Text(widget.editing ? 'Alanlarım' : 'Alanlarını seç')),
       body: ListView(padding: const EdgeInsets.fromLTRB(20, 0, 20, 24), children: [
@@ -183,6 +186,16 @@ class _DomainPickerScreenState extends ConsumerState<DomainPickerScreen> {
         Text('Birden fazla seçebilirsin. Sıra, ana sayfadaki sırayı belirler.', style: TextStyle(color: p.muted)),
         const SizedBox(height: 16),
         for (final d in content.domainList) ...[
+          if (d == firstLevel) ...[
+            const SizedBox(height: 8),
+            const Text('Seviyeye göre', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+            const SizedBox(height: 4),
+            Text('A1’den C2’ye gramer, kelime ve kalıp dersleri. Seviyeni bilmiyorsan A2 veya B1 ile başla.', style: TextStyle(color: p.muted)),
+            const SizedBox(height: 12),
+          ] else if (d == content.domainList.first && firstLevel != null) ...[
+            const Text('Alana göre', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+            const SizedBox(height: 12),
+          ],
           _DomainTile(
             id: d['id'] as String,
             name: d['name_tr'] as String,

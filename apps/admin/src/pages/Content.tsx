@@ -4,7 +4,7 @@ import { keepPreviousData, useMutation, useQuery, useQueryClient } from "@tansta
 import { listTargets, PAGE_SIZE, setTargetStatus, type TargetFilter } from "../lib/api";
 import { Banner, Button, Card, ErrorText, inputClass, Loading, PageHeader, StatusChip } from "../components/ui";
 
-const DOMAINS = [["", "Tüm alanlar"], ["general", "Genel"], ["software", "Yazılım"], ["engineering", "Mühendislik"], ["yds", "YDS/YÖKDİL"], ["health", "Sağlık"], ["tourism", "Turizm"], ["law", "Hukuk"]];
+const DOMAINS = [["", "Tüm alanlar"], ["general", "Genel"], ["software", "Yazılım"], ["engineering", "Mühendislik"], ["yds", "YDS/YÖKDİL"], ["health", "Sağlık"], ["tourism", "Turizm"], ["law", "Hukuk"], ["a1", "A1"], ["a2", "A2"], ["b1", "B1"], ["b2", "B2"], ["c1", "C1"], ["c2", "C2"]];
 const STATUSES = [["", "Tüm durumlar"], ["draft", "Taslak"], ["reviewed", "İncelendi"], ["published", "Yayımlandı"], ["archived", "Arşivlendi"]];
 const KINDS = [["", "Tüm türler"], ["sense", "Kelime / ifade"], ["pattern", "Kalıp"]];
 

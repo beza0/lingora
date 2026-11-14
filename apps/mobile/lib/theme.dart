@@ -50,6 +50,12 @@ class Palette {
       'health': Color(0xFFC0365A),
       'tourism': Color(0xFF1F8A4C),
       'law': Color(0xFF5A5F6E),
+      'a1': Color(0xFF2E8B57),
+      'a2': Color(0xFF1E8C8C),
+      'b1': Color(0xFF2F6FBF),
+      'b2': Color(0xFF5B4FC4),
+      'c1': Color(0xFF8E3FB0),
+      'c2': Color(0xFFB0306A),
     },
   );
 
@@ -78,6 +84,12 @@ class Palette {
       'health': Color(0xFFFF8FAB),
       'tourism': Color(0xFF6FD69A),
       'law': Color(0xFFB4BAC8),
+      'a1': Color(0xFF6FD69A),
+      'a2': Color(0xFF5FD3D0),
+      'b1': Color(0xFF7FB0FF),
+      'b2': Color(0xFFA79BFF),
+      'c1': Color(0xFFD08BF0),
+      'c2': Color(0xFFFF8DBB),
     },
   );
 

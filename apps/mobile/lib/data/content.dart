@@ -190,6 +190,10 @@ class ContentRepo {
     return l;
   }
 
+  /// CEFR seviye alanları (A1–C2); alan seçicide ayrı bölümde gösterilir.
+  static const levelDomainIds = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
+  static bool isLevelDomain(String id) => levelDomainIds.contains(id);
+
   List<Json> packsFor(String domainId) => packs.where((p) => p['domain_id'] == domainId && visible(p)).toList();
 
   /// Bir alanın hedefleri, paket sırasıyla.

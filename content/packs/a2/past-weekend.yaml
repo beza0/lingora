@@ -317,8 +317,8 @@ patterns:
     t: "It was really …"
     ex: "It [[was]] really fun."
     extr: "Gerçekten eğlenceliydi."
-    ttr: "Gerçekten …ydi."
-    slots: ["fun | eğlenceli", "interesting | ilginç", "tiring | yorucu"]
+    ttr: "Gerçekten …"
+    slots: ["fun | eğlenceliydi", "interesting | ilginçti", "tiring | yorucuydu"]
     chunks: ["It was | -ydi", "really fun | gerçekten eğlenceli"]
     g: a2-was-were
     ctx: ["Görüş"]

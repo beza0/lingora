@@ -1,0 +1,512 @@
+id: c2-idioms-and-precision
+domain: c2
+title: "Deyimler ve kesin anlatım"
+desc: "Subjunctive (I suggest that he be…), karma if cümleleri, deyimler ve sabit ifadeler; anadil düzeyine yakın doğallık."
+sort: 1
+
+targets:
+  - id: beat-around-the-bush
+    w: beat around the bush
+    pos: phrase
+    tr: "lafı dolandırmak"
+    ex: "Stop [[beating around the bush]] and tell me what happened."
+    extr: "Lafı dolandırmayı bırak da ne olduğunu anlat."
+    d: 5
+    tone: ["Deyim", "Samimi"]
+    dis:
+      - "beating around the tree | Deyim “bush” ile kurulur."
+      - "hitting around the bush | Deyim “beat” ile kurulur."
+      - "beating about the bushes | Deyimde tekil “bush”."
+  - id: the-elephant-in-the-room
+    w: the elephant in the room
+    pos: phrase
+    tr: "herkesin bildiği ama konuşmadığı sorun"
+    ex: "The budget cut was [[the elephant in the room]] at every meeting."
+    extr: "Bütçe kesintisi her toplantıda herkesin bildiği ama konuşmadığı konuydu."
+    d: 5
+    tone: ["Deyim", "İş"]
+    dis:
+      - "the elephant in the house | Deyim “room” ile kurulur."
+      - "an elephant on the room | Edat ve tanımlık yanlış."
+      - "the lion in the room | Deyim “elephant” ile kurulur."
+  - id: a-blessing-in-disguise
+    w: a blessing in disguise
+    pos: phrase
+    tr: "her işte bir hayır vardır; görünüşte kötü ama sonunda iyi"
+    ex: "Losing that job was [[a blessing in disguise]]."
+    extr: "O işi kaybetmek aslında hayırlı oldu."
+    d: 5
+    tone: ["Deyim"]
+    dis:
+      - "a blessing in costume | Deyim “disguise” ile kurulur."
+      - "a curse in disguise | Anlam terse döner."
+      - "a blessing on disguise | Edat “in”."
+  - id: cut-corners
+    w: cut corners
+    pos: phrase
+    tr: "işi baştan savma yapmak, kestirme yola sapmak"
+    ex: "If you [[cut corners]] on safety, someone will get hurt."
+    extr: "Güvenlikte kestirmeden gidersen biri zarar görür."
+    d: 5
+    tone: ["Deyim", "İş"]
+    dis:
+      - "cut edges | Deyim “corners” ile kurulur."
+      - "cut the corner | Deyim çoğul ve tanımlıksız."
+      - "turn corners | “Köşeleri dönmek” demektir."
+  - id: get-the-hang-of
+    w: get the hang of
+    pos: phrase
+    tr: "-in püf noktasını kavramak, alışmak"
+    ex: "It took me months to [[get the hang of]] driving in İstanbul."
+    extr: "İstanbul'da araba kullanmanın püf noktasını kavramam aylar sürdü."
+    d: 5
+    tone: ["Deyim", "Samimi"]
+    dis:
+      - "get the hand of | Deyim “hang” ile kurulur."
+      - "get the hang on | Edat “of”."
+      - "take the hang of | Fiil “get”."
+  - id: on-the-fence
+    w: on the fence
+    pos: phrase
+    tr: "kararsız, iki arada"
+    ex: "I'm still [[on the fence]] about accepting the offer."
+    extr: "Teklifi kabul etme konusunda hâlâ kararsızım."
+    d: 5
+    syn: ["undecided"]
+    tone: ["Deyim"]
+    dis:
+      - "over the fence | “Çitin öbür tarafında” demektir."
+      - "on the wall | Deyim “fence” ile kurulur."
+      - "in the fence | Edat “on”."
+  - id: notwithstanding
+    w: notwithstanding
+    pos: prep
+    tr: "-e rağmen (çok resmî)"
+    ex: "[[Notwithstanding]] the risks, the board approved the merger."
+    extr: "Risklere rağmen yönetim kurulu birleşmeyi onayladı."
+    d: 5
+    syn: ["despite", "in spite of"]
+    tone: ["Hukuki", "Çok resmî"]
+    dis:
+      - "Nevertheless | Zarf; isimden önce edat olarak kullanılmaz."
+      - "Notwithstand | Böyle bir sözcük yok."
+      - "Withstanding | Dayanma demektir."
+  - id: ubiquitous
+    w: ubiquitous
+    pos: adj
+    tr: "her yerde bulunan, yaygın"
+    ex: "Smartphones have become [[ubiquitous]] in the last decade."
+    extr: "Akıllı telefonlar son on yılda her yerde bulunur hâle geldi."
+    d: 5
+    syn: ["omnipresent", "pervasive"]
+    tone: ["Akademik", "Edebî"]
+    dis:
+      - "unanimous | Oy birliğiyle demektir."
+      - "ambiguous | Belirsiz demektir."
+      - "iniquitous | Haksız, adaletsiz demektir."
+  - id: meticulous
+    w: meticulous
+    pos: adj
+    tr: "titiz, son derece dikkatli"
+    ex: "She keeps [[meticulous]] records of every experiment."
+    extr: "Her deneyin titiz kayıtlarını tutar."
+    d: 5
+    syn: ["painstaking", "thorough"]
+    tone: ["Tanımlama"]
+    dis:
+      - "ridiculous | Gülünç demektir."
+      - "miraculous | Mucizevi demektir."
+      - "meticulously | Zarf; isimden önce sıfat gerekir."
+  - id: ambivalent
+    w: ambivalent
+    pos: adj
+    tr: "karışık duygular içinde, ikircikli"
+    ex: "I feel [[ambivalent]] about moving abroad."
+    extr: "Yurt dışına taşınma konusunda içimde karışık duygular var."
+    d: 5
+    tone: ["Duygu"]
+    dis:
+      - "ambitious | Hırslı demektir."
+      - "ambient | Ortam (sesi, ışığı) demektir."
+      - "equivalent | Eşdeğer demektir."
+  - id: exacerbate
+    w: exacerbate
+    pos: v
+    tr: "kötüleştirmek, şiddetlendirmek"
+    ex: "Cutting public spending could [[exacerbate]] inequality."
+    extr: "Kamu harcamalarını kısmak eşitsizliği daha da kötüleştirebilir."
+    d: 5
+    syn: ["aggravate", "worsen"]
+    ant: ["alleviate"]
+    tone: ["Akademik"]
+    dis:
+      - "exaggerate | Abartmak demektir."
+      - "exonerate | Aklamak demektir."
+      - "exacerbates | “could” sonrası yalın fiil gelir."
+  - id: unprecedented
+    w: unprecedented
+    pos: adj
+    tr: "eşi benzeri görülmemiş"
+    ex: "The city faced an [[unprecedented]] heatwave last summer."
+    extr: "Şehir geçen yaz eşi benzeri görülmemiş bir sıcak dalgasıyla karşılaştı."
+    d: 5
+    tone: ["Medya", "Resmî"]
+    dis:
+      - "precedent | İsim (emsal); sıfat gerekir."
+      - "unprecedent | Böyle bir sözcük yok."
+      - "precedented | Olumsuz ön ek eksik; anlam bozulur."
+  - id: tip-of-the-iceberg
+    w: the tip of the iceberg
+    pos: phrase
+    tr: "buzdağının görünen yüzü"
+    ex: "These complaints are just [[the tip of the iceberg]]."
+    extr: "Bu şikâyetler sadece buzdağının görünen yüzü."
+    d: 5
+    tone: ["Deyim"]
+    dis:
+      - "the top of the iceberg | Deyim “tip” ile kurulur."
+      - "the tip of the mountain | Deyim “iceberg” ile kurulur."
+      - "a tip of an iceberg | Deyimde belirli tanımlık kullanılır."
+  - id: hit-the-nail-on-the-head
+    w: hit the nail on the head
+    pos: phrase
+    tr: "tam üstüne basmak, cuk oturtmak"
+    ex: "You've [[hit the nail on the head]] — the real problem is trust."
+    extr: "Tam üstüne bastın — asıl sorun güven."
+    d: 5
+    tone: ["Deyim"]
+    dis:
+      - "hit the nail in the head | Edat “on”."
+      - "hit the hammer on the head | Deyim “nail” ile kurulur."
+      - "hitten the nail on the head | “hit” fiilinin üçüncü hâli “hit”."
+  - id: insist-that
+    w: insist that
+    pos: phrase
+    tr: "-mesinde ısrar etmek"
+    ex: "The doctor [[insisted that]] she stay in bed."
+    extr: "Doktor onun yatakta kalmasında ısrar etti."
+    d: 5
+    tone: ["Resmî"]
+    dis:
+      - "insisted on that | “insist on” sonrası isim/-ing gelir."
+      - "insisted to | “insist to” yanlış."
+      - "insisted for | Edat yanlış."
+  - id: it-is-imperative
+    w: imperative
+    pos: adj
+    tr: "zorunlu, şart"
+    ex: "It is [[imperative]] that every employee complete the training."
+    extr: "Her çalışanın eğitimi tamamlaması şarttır."
+    d: 5
+    syn: ["essential", "vital"]
+    tone: ["Çok resmî"]
+    dis:
+      - "imperial | İmparatorluğa ait demektir."
+      - "impervious | Geçirmez, etkilenmez demektir."
+      - "imperfect | Kusurlu demektir."
+  - id: so-to-speak
+    w: so to speak
+    pos: phrase
+    tr: "tabiri caizse"
+    ex: "He's the black sheep of the family, [[so to speak]]."
+    extr: "Tabiri caizse ailenin kara koyunu o."
+    d: 5
+    syn: ["as it were"]
+    tone: ["Konuşma"]
+    dis:
+      - "so to say | İngilizcede kalıp “so to speak”."
+      - "as to speak | Kalıp “so to speak”."
+      - "so speaking | Kalıp bozuk."
+  - id: for-the-time-being
+    w: for the time being
+    pos: phrase
+    tr: "şimdilik"
+    ex: "[[For the time being]], we'll keep the old system."
+    extr: "Şimdilik eski sistemi koruyacağız."
+    d: 5
+    syn: ["for now"]
+    tone: ["Resmî"]
+    dis:
+      - "For the being time | Sıralama yanlış."
+      - "In the time being | Edat “for”."
+      - "For time being | Tanımlık eksik."
+  - id: albeit
+    w: albeit
+    pos: conj
+    tr: "her ne kadar … olsa da, -mekle birlikte"
+    ex: "The plan worked, [[albeit]] more slowly than expected."
+    extr: "Plan, beklenenden daha yavaş da olsa işe yaradı."
+    d: 5
+    syn: ["although"]
+    tone: ["Resmî"]
+    dis:
+      - "albeit of | “albeit” edat almaz."
+      - "all but | “Neredeyse” demektir."
+      - "although it | “although” sonrası tam cümle gerekir; burada “albeit” uygun."
+  - id: take-with-a-pinch-of-salt
+    w: take with a pinch of salt
+    pos: phrase
+    tr: "ihtiyatla yaklaşmak, tam inanmamak"
+    ex: "I'd [[take]] his promises with a pinch of salt."
+    extr: "Onun vaatlerine ihtiyatla yaklaşırdım."
+    d: 5
+    tone: ["Deyim"]
+    dis:
+      - "make | Deyim “take” ile kurulur."
+      - "eat | Deyim “take” ile kurulur."
+      - "took | “I'd” (I would) sonrası yalın fiil gelir."
+
+patterns:
+  - id: suggest-that-subjunctive
+    t: "I suggest (that) he …"
+    ex: "I suggest that he [[be]] informed immediately."
+    extr: "Ona hemen haber verilmesini öneririm."
+    ttr: "… hemen haber verilmesini öneririm."
+    slots: ["he | Ona", "the client | Müşteriye", "the team | Ekibe"]
+    chunks: ["I suggest that | -mesini öneririm", "he be informed | ona haber verilmesi"]
+    g: c2-subjunctive
+    ctx: ["Resmî öneri"]
+    tone: ["Çok resmî"]
+    d: 5
+    dis:
+      - "is | Subjunctive'de çekimsiz “be” kullanılır."
+      - "was | Subjunctive'de çekimsiz “be” kullanılır."
+      - "will be | Subjunctive'de modal kullanılmaz."
+  - id: it-is-essential-that
+    t: "It is essential that … (base form)"
+    ex: "It is essential that every applicant [[submit]] the form by Friday."
+    extr: "Her başvuru sahibinin formu cumaya kadar teslim etmesi şart."
+    ttr: "Her başvuru sahibinin … şart."
+    slots: ["submit the form by Friday | formu cumaya kadar teslim etmesi", "attend the interview | görüşmeye katılması", "provide two references | iki referans göstermesi"]
+    chunks: ["It is essential that | -mesi şart", "every applicant submit | her başvuru sahibinin teslim etmesi"]
+    g: c2-subjunctive
+    ctx: ["Resmî yazı"]
+    tone: ["Çok resmî"]
+    d: 5
+    dis:
+      - "submits | Subjunctive'de üçüncü tekil -s almaz."
+      - "submitted | Subjunctive'de yalın fiil kullanılır."
+      - "to submit | “that” sonrası özne + yalın fiil gelir."
+  - id: mixed-conditional-now
+    t: "If I had …, I would be … now."
+    ex: "If I had taken that job, I [[would]] be living in Berlin now."
+    extr: "O işi kabul etseydim şimdi Berlin'de yaşıyor olurdum."
+    ttr: "O işi kabul etseydim şimdi … olurdum."
+    slots: ["be living in Berlin | Berlin'de yaşıyor", "be much richer | çok daha zengin", "be speaking fluent German | akıcı Almanca konuşuyor"]
+    chunks: ["If I had taken | kabul etseydim (geçmiş)", "I would be living | yaşıyor olurdum (şimdi)"]
+    g: c2-mixed-conditionals
+    ctx: ["Pişmanlık"]
+    tone: ["Koşul"]
+    d: 5
+    dis:
+      - "would have | “now” ile şimdiki sonuç: would be."
+      - "will | Gerçek dışı koşulda “would”."
+      - "had | Ana cümlede “would” gerekir."
+  - id: mixed-conditional-past
+    t: "If I were …, I would have …"
+    ex: "If I [[were]] more organised, I wouldn't have missed the deadline."
+    extr: "Daha düzenli biri olsaydım son teslim tarihini kaçırmazdım."
+    ttr: "Daha … biri olsaydım son teslim tarihini kaçırmazdım."
+    slots: ["organised | düzenli", "careful | dikkatli", "disciplined | disiplinli"]
+    chunks: ["If I were more organised | daha düzenli olsaydım (genel özellik)", "I wouldn't have missed | kaçırmazdım (geçmiş)"]
+    g: c2-mixed-conditionals
+    ctx: ["Öz değerlendirme"]
+    tone: ["Koşul"]
+    d: 5
+    dis:
+      - "be | Çekimsiz “be” burada kullanılmaz."
+      - "am | Gerçek dışı koşulda geçmiş biçim gerekir."
+      - "would be | “if” tarafında “would” kullanılmaz."
+  - id: its-high-time
+    t: "It's (high) time we …"
+    ex: "It's high time we [[started]] taking this seriously."
+    extr: "Bunu ciddiye almaya başlamamızın vakti çoktan geldi."
+    ttr: "… vakti çoktan geldi."
+    slots: ["started taking this seriously | Bunu ciddiye almaya başlamamızın", "left | Çıkmamızın", "had a proper talk | Doğru düzgün konuşmamızın"]
+    chunks: ["It's high time | vakti çoktan geldi", "we started | başlamamızın"]
+    g: c2-subjunctive
+    ctx: ["Eleştiri"]
+    tone: ["Vurgulu"]
+    d: 5
+    dis:
+      - "starting | Özneden sonra çekimli fiil gerekir."
+      - "have started | “It's time” sonrası past simple gelir."
+      - "will start | “It's time” sonrası past simple gelir."
+  - id: would-rather-you
+    t: "I'd rather you didn't …"
+    ex: "I'd rather you [[didn't]] mention it to anyone."
+    extr: "Bunu kimseye söylemesen daha iyi olur."
+    ttr: "… daha iyi olur."
+    slots: ["mention it to anyone | Bunu kimseye söylemesen", "smoke in here | Burada sigara içmesen", "call after ten | Saat ondan sonra aramasan"]
+    chunks: ["I'd rather | tercih ederim", "you didn't mention | söylemesen"]
+    g: c2-subjunctive
+    ctx: ["Kibar ricalar"]
+    tone: ["Kibar"]
+    d: 5
+    dis:
+      - "not to | Yapı bozulur; özneden sonra “didn't” gerekir."
+      - "won't | Modal kullanılmaz."
+      - "not | Yardımcı fiil eksik."
+  - id: as-if
+    t: "… as if/though …"
+    ex: "He talks as if he [[were]] the boss."
+    extr: "Sanki patronmuş gibi konuşuyor."
+    ttr: "Sanki … gibi konuşuyor."
+    slots: ["the boss | patronmuş", "an expert | uzmanmış", "the only one who knows | bir tek o biliyormuş"]
+    chunks: ["He talks | konuşuyor", "as if he were | sanki …mış gibi"]
+    g: c2-subjunctive
+    ctx: ["Tanımlama"]
+    tone: ["Eleştirel"]
+    d: 5
+    dis:
+      - "been | Üçüncü hâl tek başına kullanılmaz."
+      - "be | “as if” sonrası çekimsiz “be” kullanılmaz."
+      - "being | “as if” sonrası çekimli fiil gerekir."
+  - id: were-it-not-for
+    t: "Were it not for …, …"
+    ex: "Were it not for your help, we [[would]] never have finished."
+    extr: "Senin yardımın olmasaydı asla bitiremezdik."
+    ttr: "… olmasaydı asla bitiremezdik."
+    slots: ["your help | Senin yardımın", "the volunteers | Gönüllüler", "her experience | Onun deneyimi"]
+    chunks: ["Were it not for | … olmasaydı (devrik if)", "we would never have finished | asla bitiremezdik"]
+    g: c2-mixed-conditionals
+    ctx: ["Teşekkür"]
+    tone: ["Resmî"]
+    d: 5
+    dis:
+      - "will | Gerçek dışı koşulda “would”."
+      - "had | Ana cümlede “would” gerekir."
+      - "can | Gerçek dışı koşulda “would” gerekir."
+  - id: should-you-need
+    t: "Should you need …, please …"
+    ex: "Should you [[need]] any further information, please contact us."
+    extr: "Daha fazla bilgiye ihtiyaç duyarsanız lütfen bize ulaşın."
+    ttr: "… ihtiyaç duyarsanız lütfen bize ulaşın."
+    slots: ["any further information | Daha fazla bilgiye", "assistance | Yardıma", "an invoice | Faturaya"]
+    chunks: ["Should you need | ihtiyaç duyarsanız (devrik if)", "please contact us | lütfen bize ulaşın"]
+    g: c2-mixed-conditionals
+    ctx: ["Resmî e-posta"]
+    tone: ["Çok resmî"]
+    d: 5
+    dis:
+      - "needs | “Should” sonrası yalın fiil gelir."
+      - "needed | “Should” sonrası yalın fiil gelir."
+      - "to need | “Should” sonrası “to” gelmez."
+  - id: be-that-as-it-may
+    t: "Be that as it may, …"
+    ex: "Be that as it [[may]], we still need a decision today."
+    extr: "Her ne olursa olsun, bugün yine de bir karar vermemiz gerekiyor."
+    ttr: "Her ne olursa olsun, …"
+    slots: ["we still need a decision today | bugün yine de bir karar vermemiz gerekiyor", "the rules are the rules | kurallar kuraldır", "we can't change the date | tarihi değiştiremeyiz"]
+    chunks: ["Be that as it may | her ne olursa olsun", "we still need | yine de gerekiyor"]
+    g: c2-subjunctive
+    ctx: ["Tartışma"]
+    tone: ["Resmî"]
+    d: 5
+    dis:
+      - "might | Sabit kalıp “as it may”."
+      - "can | Sabit kalıp “as it may”."
+      - "be | Kalıp bozulur."
+
+grammar:
+  - id: c2-subjunctive
+    title: "Subjunctive ve gerçek dışı geçmiş biçimler"
+    short: "suggest, insist, recommend, it is essential/imperative that sonrasında özne + yalın fiil gelir (he be, she go). It's time, would rather, as if sonrasında geçmiş biçim gerçek dışılık bildirir."
+    long: "Mandative subjunctive: I recommend that she apply early. It is vital that he be present. (-s yok, “be” çekimsiz.) İngiliz İngilizcesinde “should + fiil” de kullanılır: … that she should apply. Sabit ifadeler: Be that as it may, Come what may, So be it, God save the Queen. Gerçek dışı geçmiş: It's (high) time we left. / I'd rather you stayed. / He acts as if he owned the place. / If only I knew. Bu yapılar resmî yazıda ve sözleşmelerde sık görülür; Türkçede “-mesi gerekir, -sin” yapılarına karşılık gelir."
+    ex: ["The committee recommended that the project be postponed. | Komite projenin ertelenmesini önerdi.", "It's time you got a proper job. | Artık doğru düzgün bir iş bulmanın vakti geldi.", "Come what may, I'll support you. | Ne olursa olsun seni destekleyeceğim."]
+  - id: c2-mixed-conditionals
+    title: "Karma if ve devrik koşul (Had I known…, Should you…)"
+    short: "Geçmişteki koşulun şimdiki sonucu: If I had …, I would be … now. Kalıcı özelliğin geçmişteki sonucu: If I were …, I would have … Resmî dilde if düşer ve devrik yapı kurulur."
+    long: "Geçmiş → şimdi: If she hadn't moved to İzmir, she wouldn't be so happy now. Şimdi/kalıcı → geçmiş: If he weren't so stubborn, he would have apologised. Devrik koşul (if olmadan): Had I known = If I had known; Were I in your position = If I were in your position; Should you need help = If you (happen to) need help; Were it not for / Had it not been for = olmasaydı. Devrik koşullarda olumsuzluk kısaltılmaz: Had I not seen it (Hadn't I seen yanlış)."
+    ex: ["Had I known about the strike, I would have taken the ferry. | Grevden haberim olsaydı vapura binerdim.", "If I hadn't learned English, I wouldn't have this job now. | İngilizce öğrenmeseydim şimdi bu işim olmazdı.", "Were I in your shoes, I would accept the offer. | Senin yerinde olsam teklifi kabul ederdim."]
+
+scenarios:
+  - id: board-meeting
+    title: "Yönetim kurulu toplantısı"
+    sit: "Bir yönetim kurulu toplantısında yeni projenin ertelenmesini öneriyorsun."
+    d: 5
+    targets: [it-is-imperative, notwithstanding, for-the-time-being, the-elephant-in-the-room]
+    turns:
+      - ["Chair", "Let's discuss the launch date. What's your recommendation?", "Lansman tarihini konuşalım. Öneriniz nedir?"]
+      - choose:
+          - ["I recommend that the launch be postponed until the safety tests are complete.", true, "Subjunctive (be postponed) doğru."]
+          - ["I recommend that the launch is postpone.", false, "Yapı bozuk: “be postponed” olmalı."]
+          - ["I recommend to postpone the launch it.", false, "Gramer hatalı."]
+      - ["Chair", "But the marketing campaign has already started.", "Ama pazarlama kampanyası çoktan başladı."]
+      - choose:
+          - ["Notwithstanding the campaign, it is imperative that the product be safe. Frankly, that's the elephant in the room.", true, "Çok resmî edat, subjunctive ve deyim doğru."]
+          - ["Notwithstanding of the campaign, the product must safe.", false, "“notwithstanding” edat almaz ve fiil eksik."]
+          - ["Despite the campaign is started, safety important.", false, "“Despite” sonrası cümle gelmez; fiil eksik."]
+      - ["Chair", "Point taken. For the time being, we'll hold the launch.", "Anlaşıldı. Şimdilik lansmanı bekletiyoruz."]
+  - id: honest-feedback
+    title: "Dürüst geri bildirim"
+    sit: "Bir arkadaşın yazdığı iş planını okudun. Senden açık sözlü bir yorum istiyor."
+    d: 5
+    targets: [beat-around-the-bush, hit-the-nail-on-the-head, cut-corners, on-the-fence]
+    turns:
+      - ["Emre", "Don't beat around the bush. What do you really think of my plan?", "Lafı dolandırma. Planım hakkında gerçekten ne düşünüyorsun?"]
+      - choose:
+          - ["Honestly, the idea is great, but you've cut corners on the financial part.", true, "Deyim doğru ve geri bildirim yapıcı."]
+          - ["Honestly, you cut the corner on finance.", false, "Deyim “cut corners” (çoğul, tanımlıksız)."]
+          - ["Honestly, it's bad.", false, "Gerekçesiz ve yapıcı değil."]
+      - ["Emre", "You've hit the nail on the head. I wasn't sure about the numbers.", "Tam üstüne bastın. Rakamlardan emin değildim."]
+      - choose:
+          - ["If I were you, I'd get an accountant to check them. Had I done that with my café, I'd be in a much better position now.", true, "Tavsiye ve devrik karma koşul doğru."]
+          - ["Had I did that, I'd be better now.", false, "Devrik koşulda “Had I done”."]
+          - ["If I had done that, I would have be better now.", false, "Karma koşulda “I would be … now”."]
+      - ["Emre", "Thanks. I was on the fence, but now I'll definitely do that.", "Sağ ol. Kararsızdım ama şimdi kesinlikle yapacağım."]
+
+readings:
+  - id: op-ed-tech
+    title: "The attention economy"
+    kind: "Köşe yazısı"
+    d: 5
+    s:
+      - ["Smartphones are now so ubiquitous that we rarely notice how much of our attention they consume.", "Akıllı telefonlar artık öyle yaygın ki dikkatimizin ne kadarını tükettiklerini nadiren fark ediyoruz."]
+      - ["The complaints about screen addiction are, I suspect, merely the tip of the iceberg.", "Ekran bağımlılığıyla ilgili şikâyetler, sanırım, buzdağının sadece görünen yüzü."]
+      - ["Were it not for a few meticulous researchers, we would know very little about the problem.", "Birkaç titiz araştırmacı olmasaydı sorun hakkında çok az şey bilirdik."]
+      - ["It is high time regulators took the issue seriously, albeit without banning the technology outright.", "Teknolojiyi tamamen yasaklamadan da olsa, düzenleyicilerin konuyu ciddiye almasının vakti çoktan geldi."]
+      - ["Claims from the industry itself, however, should be taken with a pinch of salt.", "Ancak sektörün kendi iddialarına ihtiyatla yaklaşılmalı."]
+    gloss: ["consume | tüketmek", "regulator | düzenleyici kurum", "outright | tamamen, doğrudan"]
+    q:
+      - q: "Yazar sektörün iddialarına nasıl yaklaşılmasını öneriyor?"
+        o: ["Tamamen güvenilmesini", "İhtiyatla yaklaşılmasını", "Görmezden gelinmesini"]
+        a: 1
+        why: "“should be taken with a pinch of salt” = tam inanmamak, ihtiyatlı olmak."
+      - q: "Yazar teknolojinin yasaklanmasını istiyor mu?"
+        o: ["Evet, tamamen", "Hayır, yasaklamadan düzenlenmesini istiyor", "Metinde söz edilmiyor"]
+        a: 1
+        why: "“albeit without banning the technology outright”"
+  - id: memoir
+    title: "A blessing in disguise"
+    kind: "Anı"
+    d: 5
+    s:
+      - ["When the publisher rejected my first novel, I felt utterly crushed.", "Yayınevi ilk romanımı reddettiğinde kendimi tamamen yıkılmış hissettim."]
+      - ["Had they accepted it, I would probably still be writing the same kind of book today.", "Kabul etselerdi muhtemelen bugün hâlâ aynı türden kitaplar yazıyor olurdum."]
+      - ["Instead, I spent two years rewriting it, and it took me that long to get the hang of dialogue.", "Bunun yerine iki yıl yeniden yazmakla geçirdim; diyaloğun püf noktasını kavramam o kadar sürdü."]
+      - ["My editor insisted that I cut a third of the chapters, which felt unprecedented at the time.", "Editörüm bölümlerin üçte birini çıkarmamda ısrar etti; bu o zaman eşi görülmemiş bir şey gibi gelmişti."]
+      - ["In hindsight, that rejection was a blessing in disguise.", "Geriye dönüp bakınca, o ret aslında hayırlı olmuş."]
+    gloss: ["utterly | tamamen", "crushed | yıkılmış", "rewrite | yeniden yazmak"]
+    q:
+      - q: "“Had they accepted it, I would probably still be writing…” cümlesi ne anlatıyor?"
+        o: ["Geçmişteki bir koşulun şimdiki sonucunu", "Gelecekteki bir planı", "Geçmişte gerçekten olmuş bir olayı"]
+        a: 0
+        why: "Karma koşul: geçmiş koşul (had accepted) → şimdiki sonuç (would be writing)."
+      - q: "Yazar reddedilmeyi şimdi nasıl görüyor?"
+        o: ["Büyük bir haksızlık", "Hayırlı bir şey", "Önemsiz bir olay"]
+        a: 1
+        why: "“that rejection was a blessing in disguise”"
+
+writing:
+  id: c2-reflective-essay
+  p: "Hayatında kötü görünüp sonradan iyi sonuçlanan bir olayı 7–9 cümlelik düşünceli bir paragrafta anlat. En az bir deyim, bir karma/devrik koşul ve bir subjunctive yapı kullan."
+  rubric: ["En az iki deyim doğal biçimde kullanılmış", "Karma veya devrik koşul doğru (Had I…, If I had…, I would be … now)", "Subjunctive veya gerçek dışı geçmiş biçim (insisted that he be, it's time we…)", "Üslup tutarlı ve doğal"]
+  samples: ["Being made redundant at thirty-two felt like the end of the world, so to speak. For weeks I was on the fence about whether to look for a similar job or retrain completely. My sister insisted that I take a coding course, and I reluctantly agreed. It took me months to get the hang of it, and there were moments when I wanted to give up. Had I not lost that job, I would still be sitting in an office I didn't enjoy. Instead, I now work for a small company that genuinely values my ideas. Looking back, the redundancy was a blessing in disguise, albeit a painful one."]
+  d: 5
+
+situations:
+  - { parent: "Deyimler", name: "Konuşmada deyimler", items: [beat-around-the-bush, the-elephant-in-the-room, a-blessing-in-disguise, cut-corners, get-the-hang-of, on-the-fence, tip-of-the-iceberg, hit-the-nail-on-the-head, so-to-speak, take-with-a-pinch-of-salt] }
+  - { parent: "Resmî dil", name: "Subjunctive ve çok resmî ifadeler", items: [insist-that, it-is-imperative, notwithstanding, for-the-time-being, albeit, suggest-that-subjunctive, it-is-essential-that, its-high-time, would-rather-you, as-if, be-that-as-it-may] }
+  - { parent: "Koşul", name: "Karma ve devrik koşullar", items: [mixed-conditional-now, mixed-conditional-past, were-it-not-for, should-you-need] }
+  - { parent: "Kelime", name: "Kesin ve incelikli kelimeler", items: [ubiquitous, meticulous, ambivalent, exacerbate, unprecedented] }

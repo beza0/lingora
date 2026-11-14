@@ -236,11 +236,15 @@ class UserData extends ChangeNotifier {
   List<UserDomain> get activeDomains => domains.where((d) => d.active).toList()..sort((a, b) => a.sort.compareTo(b.sort));
   UserDomain? domain(String id) => domains.where((d) => d.domainId == id).firstOrNull;
 
+  /// Seviye alanlarında (A1–C2) başlangıç zorluğu seviyeye göre; diğerlerinde 2.
+  static int defaultLevelFor(String domainId) =>
+      const {'a1': 1, 'a2': 2, 'b1': 3, 'b2': 4, 'c1': 5, 'c2': 5}[domainId] ?? 2;
+
   Future<void> setDomains(List<String> ids) async {
     for (var i = 0; i < ids.length; i++) {
       final d = domain(ids[i]);
       if (d == null) {
-        domains.add(UserDomain(ids[i], sort: i));
+        domains.add(UserDomain(ids[i], sort: i, level: defaultLevelFor(ids[i])));
       } else {
         d.active = true;
         d.sort = i;

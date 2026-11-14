@@ -1,0 +1,517 @@
+id: c2-style-and-rhetoric
+domain: c2
+title: "Üslup ve retorik"
+desc: "Participle clauses (Having finished…, Given that…), ellipsis ve ikame (I hope so, do so); yazıda ton, yoğunluk ve etki."
+sort: 2
+
+targets:
+  - id: succinct
+    w: succinct
+    pos: adj
+    tr: "özlü, kısa ve net"
+    ex: "Her summary was clear and [[succinct]]."
+    extr: "Özeti açık ve özlüydü."
+    d: 5
+    syn: ["concise"]
+    ant: ["verbose", "long-winded"]
+    tone: ["Üslup"]
+    dis:
+      - "succulent | Sulu, lezzetli demektir."
+      - "successive | Ardışık demektir."
+      - "succinctly | Zarf; sıfat gerekir."
+  - id: verbose
+    w: verbose
+    pos: adj
+    tr: "gereksiz uzun, laf kalabalığı yapan"
+    ex: "The report is far too [[verbose]]; cut it by half."
+    extr: "Rapor fazlasıyla uzun ve laf kalabalığı dolu; yarı yarıya kısalt."
+    d: 5
+    syn: ["wordy", "long-winded"]
+    tone: ["Üslup"]
+    dis:
+      - "verbal | Sözlü demektir."
+      - "versatile | Çok yönlü demektir."
+      - "vertical | Dikey demektir."
+  - id: eloquent
+    w: eloquent
+    pos: adj
+    tr: "etkili ve akıcı konuşan, belagatli"
+    ex: "She gave an [[eloquent]] speech about human rights."
+    extr: "İnsan hakları üzerine etkili ve akıcı bir konuşma yaptı."
+    d: 5
+    fam: ["eloquence (i.) belagat"]
+    tone: ["Üslup"]
+    dis:
+      - "eloquently | Zarf; sıfat gerekir."
+      - "elongated | Uzatılmış demektir."
+      - "eloquence | İsim; sıfat gerekir."
+  - id: convey
+    w: convey
+    pos: v
+    tr: "aktarmak, iletmek"
+    ex: "It's hard to [[convey]] sarcasm in a text message."
+    extr: "Kısa mesajla alaycılığı aktarmak zor."
+    d: 5
+    tone: ["Üslup"]
+    dis:
+      - "convoy | Konvoy demektir."
+      - "conveys | “to” sonrası yalın fiil gelir."
+      - "convene | Toplanmak, toplantıya çağırmak demektir."
+  - id: allude-to
+    w: allude to
+    pos: phrase
+    tr: "ima etmek, dolaylı olarak değinmek"
+    ex: "The poem [[alludes to]] a famous myth."
+    extr: "Şiir ünlü bir efsaneye dolaylı olarak değiniyor."
+    d: 5
+    fam: ["allusion (i.) ima, gönderme"]
+    conf: ["elude | Kaçmak, akıldan kaçmak."]
+    tone: ["Edebî"]
+    dis:
+      - "eludes to | “elude” kaçmak demektir."
+      - "alludes on | Edat “to”."
+      - "allows to | “İzin verir” demektir."
+  - id: connotation
+    w: connotation
+    pos: n
+    tr: "çağrışım, yan anlam"
+    ex: "“Cheap” often has a negative [[connotation]]."
+    extr: "“Cheap” sözcüğünün çoğu zaman olumsuz bir çağrışımı vardır."
+    d: 5
+    conf: ["denotation | Sözlük anlamı."]
+    tone: ["Dil"]
+    dis:
+      - "denotation | Sözlük anlamıdır; olumsuzluk çağrışımla ilgilidir."
+      - "connection | Bağlantı demektir."
+      - "notation | Gösterim, yazım sistemi demektir."
+  - id: juxtapose
+    w: juxtapose
+    pos: v
+    tr: "yan yana koymak (karşıtlık için)"
+    ex: "The film [[juxtaposes]] wealth and poverty in the same street."
+    extr: "Film aynı sokakta zenginlik ile yoksulluğu yan yana koyuyor."
+    d: 5
+    fam: ["juxtaposition (i.) yan yana koyma"]
+    tone: ["Edebî"]
+    dis:
+      - "juxtapose | “The film” tekil; -s gerekir."
+      - "suppose | Varsaymak demektir."
+      - "expose | Açığa çıkarmak demektir."
+  - id: paradox
+    w: paradox
+    pos: n
+    tr: "paradoks, çelişki"
+    ex: "It's a [[paradox]] that more choice can make us less happy."
+    extr: "Daha fazla seçeneğin bizi daha az mutlu edebilmesi bir paradoks."
+    d: 5
+    fam: ["paradoxically (z.) paradoksal olarak"]
+    tone: ["Akademik"]
+    dis:
+      - "parody | Parodi demektir."
+      - "paradigm | Paradigma, model demektir."
+      - "paradise | Cennet demektir."
+  - id: scathing
+    w: scathing
+    pos: adj
+    tr: "sert, yerden yere vuran (eleştiri)"
+    ex: "The critic wrote a [[scathing]] review of the play."
+    extr: "Eleştirmen oyun hakkında yerden yere vuran bir yazı yazdı."
+    d: 5
+    syn: ["withering", "harsh"]
+    tone: ["Medya"]
+    dis:
+      - "scathed | “Yaralanmış” demektir; eleştiri için “scathing”."
+      - "skating | Paten kayma demektir."
+      - "scalding | Haşlayıcı (sıcak) demektir."
+  - id: understatement
+    w: understatement
+    pos: n
+    tr: "hafif kalan ifade, olduğundan az gösterme"
+    ex: "Calling the storm “a bit windy” is an [[understatement]]."
+    extr: "Fırtınaya “biraz rüzgârlı” demek çok hafif kalır."
+    d: 5
+    ant: ["exaggeration", "overstatement"]
+    tone: ["Üslup"]
+    dis:
+      - "overstatement | Abartı demektir; anlam zıt."
+      - "understanding | Anlayış demektir."
+      - "undertaking | Üstlenilen iş demektir."
+  - id: ostensibly
+    w: ostensibly
+    pos: adv
+    tr: "görünüşte, güya"
+    ex: "He called, [[ostensibly]] to apologise, but really to ask for money."
+    extr: "Güya özür dilemek için aradı ama aslında para istemek içindi."
+    d: 5
+    syn: ["apparently", "supposedly"]
+    tone: ["Edebî"]
+    dis:
+      - "ostentatiously | Gösterişli bir şekilde demektir."
+      - "extensively | Kapsamlı biçimde demektir."
+      - "ostensible | Sıfat; zarf gerekir."
+  - id: given-that
+    w: given that
+    pos: conj
+    tr: "-diği göz önüne alındığında"
+    ex: "[[Given that]] it's his first job, he's doing remarkably well."
+    extr: "İlk işi olduğu göz önüne alındığında oldukça iyi gidiyor."
+    d: 5
+    syn: ["considering that"]
+    tone: ["Resmî"]
+    dis:
+      - "Giving that | Kalıp “given”."
+      - "Given to | Kalıp “given that”."
+      - "Gave that | Kalıp “given”."
+  - id: needless-to-say
+    w: needless to say
+    pos: phrase
+    tr: "söylemeye gerek yok ki"
+    ex: "[[Needless to say]], we never went back to that hotel."
+    extr: "Söylemeye gerek yok, o otele bir daha hiç gitmedik."
+    d: 5
+    tone: ["Anlatı"]
+    dis:
+      - "Needless to tell | Kalıp “to say”."
+      - "Needlessly to say | Kalıp “needless”."
+      - "No need saying | Doğal değil."
+  - id: rhetorical-question
+    w: rhetorical question
+    pos: n
+    tr: "cevap beklenmeyen soru, retorik soru"
+    ex: "“Who doesn't want to be happy?” is a [[rhetorical question]]."
+    extr: "“Kim mutlu olmak istemez ki?” retorik bir sorudur."
+    d: 5
+    tone: ["Dil"]
+    dis:
+      - "theoretical question | Kuramsal soru demektir."
+      - "historical question | Tarihî soru demektir."
+      - "rhetoric question | Sıfat biçimi “rhetorical”."
+  - id: coherent
+    w: coherent
+    pos: adj
+    tr: "tutarlı, mantıklı bir bütün oluşturan"
+    ex: "Your argument needs to be more [[coherent]]."
+    extr: "Argümanının daha tutarlı olması gerekiyor."
+    d: 5
+    fam: ["coherence (i.) tutarlılık"]
+    ant: ["incoherent"]
+    tone: ["Akademik"]
+    dis:
+      - "inherent | Doğasında olan demektir."
+      - "adherent | Taraftar demektir."
+      - "coherence | İsim; sıfat gerekir."
+  - id: subtle
+    w: subtle
+    pos: adj
+    tr: "ince, belli belirsiz"
+    ex: "There's a [[subtle]] difference between the two words."
+    extr: "İki sözcük arasında ince bir fark var."
+    d: 5
+    fam: ["subtlety (i.) incelik"]
+    tone: ["Dil"]
+    dis:
+      - "subtitle | Altyazı demektir."
+      - "settle | Yerleşmek, çözmek demektir."
+      - "supple | Esnek, yumuşak demektir."
+  - id: to-put-it-mildly
+    w: to put it mildly
+    pos: phrase
+    tr: "en hafif deyimle"
+    ex: "The meeting was, [[to put it mildly]], a disaster."
+    extr: "Toplantı, en hafif deyimle, bir felaketti."
+    d: 5
+    tone: ["Üslup"]
+    dis:
+      - "to put it mild | Zarf gerekir: mildly."
+      - "to say it mildly | Kalıp “put”."
+      - "putting it mildly to | Kalıp bozuk."
+  - id: prose
+    w: prose
+    pos: n
+    tr: "düzyazı; yazı üslubu"
+    ex: "His [[prose]] is simple, yet deeply moving."
+    extr: "Yazı üslubu sade ama derinden etkileyici."
+    d: 5
+    tone: ["Edebî"]
+    dis:
+      - "pose | Poz demektir."
+      - "prone | Eğilimli demektir."
+      - "pros | Artılar demektir."
+  - id: vivid
+    w: vivid
+    pos: adj
+    tr: "canlı (anlatım, renk, anı)"
+    ex: "The author gives a [[vivid]] description of the market."
+    extr: "Yazar pazarın canlı bir tasvirini yapıyor."
+    d: 5
+    tone: ["Edebî"]
+    dis:
+      - "valid | Geçerli demektir."
+      - "vivacity | İsim (canlılık); sıfat gerekir."
+      - "vividly | Zarf; isimden önce sıfat gerekir."
+  - id: the-gist
+    w: the gist
+    pos: n
+    tr: "ana fikir, özü"
+    ex: "I didn't understand every word, but I got [[the gist]]."
+    extr: "Her kelimeyi anlamadım ama ana fikri kavradım."
+    d: 5
+    tone: ["Konuşma"]
+    dis:
+      - "the list | Liste demektir."
+      - "the gift | Hediye demektir."
+      - "a gist | Kalıp “get the gist”."
+
+patterns:
+  - id: having-finished
+    t: "Having …, he/she …"
+    ex: "Having [[finished]] her degree, she moved to Lisbon."
+    extr: "Diplomasını aldıktan sonra Lizbon'a taşındı."
+    ttr: "… sonra Lizbon'a taşındı."
+    slots: ["finished her degree | Diplomasını aldıktan", "saved enough money | Yeterince para biriktirdikten", "sold the house | Evi sattıktan"]
+    chunks: ["Having finished | bitirdikten sonra", "she moved | taşındı"]
+    g: c2-participle-clauses
+    ctx: ["Anlatı"]
+    tone: ["Edebî"]
+    d: 5
+    dis:
+      - "finish | “Having” sonrası üçüncü hâl gerekir."
+      - "finishing | “Having” sonrası üçüncü hâl gerekir."
+      - "been finished | Edilgen anlam olur; özne bitirendir."
+  - id: not-knowing
+    t: "Not knowing …, I …"
+    ex: "Not [[knowing]] what to say, I just smiled."
+    extr: "Ne diyeceğimi bilemeyince sadece gülümsedim."
+    ttr: "… sadece gülümsedim."
+    slots: ["what to say | Ne diyeceğimi bilemeyince", "anyone there | Orada kimseyi tanımadığım için", "the answer | Cevabı bilmediğim için"]
+    chunks: ["Not knowing | bilmediğim için", "I just smiled | sadece gülümsedim"]
+    g: c2-participle-clauses
+    ctx: ["Anlatı"]
+    tone: ["Edebî"]
+    d: 5
+    dis:
+      - "know | Participle clause -ing ile kurulur."
+      - "known | Edilgen anlam verir."
+      - "to know | “Not to know” amaç bildirir; anlam bozulur."
+  - id: built-in
+    t: "… in …, the … is …"
+    ex: "[[Built]] in 1890, the bridge is still in use."
+    extr: "1890'da inşa edilen köprü hâlâ kullanılıyor."
+    ttr: "… inşa edilen köprü hâlâ kullanılıyor."
+    slots: ["in 1890 | 1890'da", "by the Ottomans | Osmanlılar tarafından", "of local stone | Yerel taştan"]
+    chunks: ["Built in 1890 | 1890'da inşa edilen", "the bridge is still in use | köprü hâlâ kullanılıyor"]
+    g: c2-participle-clauses
+    ctx: ["Bilgi verme"]
+    tone: ["Resmî"]
+    d: 5
+    dis:
+      - "Building | Etken anlam olur; köprü inşa edilmiştir."
+      - "Build | Yalın fiil participle clause kurmaz."
+      - "Builded | “build” düzensizdir: built."
+  - id: given-the
+    t: "Given the …, it's not surprising that …"
+    ex: "Given the [[circumstances]], it's not surprising that he resigned."
+    extr: "Koşullar göz önüne alındığında istifa etmesi şaşırtıcı değil."
+    ttr: "… göz önüne alındığında istifa etmesi şaşırtıcı değil."
+    slots: ["circumstances | Koşullar", "pressure | Baskı", "scandal | Skandal"]
+    chunks: ["Given the circumstances | koşullar göz önüne alındığında", "it's not surprising | şaşırtıcı değil"]
+    g: c2-participle-clauses
+    ctx: ["Yorum"]
+    tone: ["Resmî"]
+    d: 5
+    dis:
+      - "circumstance | Bu kalıpta çoğul kullanılır."
+      - "circumstantial | Sıfat; isim gerekir."
+      - "circumstancing | Böyle bir sözcük yok."
+  - id: i-hope-so-not
+    t: "I hope so. / I'm afraid not."
+    ex: "Will it rain tomorrow? — I hope [[not]]."
+    extr: "Yarın yağmur yağacak mı? — Umarım yağmaz."
+    ttr: "Umarım …"
+    slots: ["not | yağmaz", "so | yağar", "not, we're having a picnic | yağmaz, piknik yapacağız"]
+    chunks: ["I hope not | umarım …mez", "I hope so | umarım öyledir"]
+    g: c2-ellipsis-substitution
+    ctx: ["Konuşma"]
+    tone: ["Doğal"]
+    d: 5
+    dis:
+      - "no | Kalıp “I hope not”."
+      - "don't | “I hope don't” eksik bir yapı."
+      - "not it | Kalıp bozulur."
+  - id: do-so
+    t: "… if you wish to do so."
+    ex: "You may cancel your membership if you wish to do [[so]]."
+    extr: "Dilerseniz üyeliğinizi iptal edebilirsiniz."
+    ttr: "Dilerseniz …"
+    slots: ["cancel your membership | üyeliğinizi iptal edebilirsiniz", "change your seat | koltuğunuzu değiştirebilirsiniz", "leave a comment | yorum bırakabilirsiniz"]
+    chunks: ["if you wish | dilerseniz", "to do so | bunu yapmak"]
+    g: c2-ellipsis-substitution
+    ctx: ["Resmî yazı"]
+    tone: ["Resmî"]
+    d: 5
+    dis:
+      - "so that | Kalıp bozulur; “do so” yeterli."
+      - "such | “do such” yanlış."
+      - "same | “do same” yanlış."
+  - id: the-former-the-latter
+    t: "… the former …, the latter …"
+    ex: "Tea and coffee are both popular; the [[former]] is cheaper, the latter stronger."
+    extr: "Çay ve kahve ikisi de popüler; ilki daha ucuz, ikincisi daha sert."
+    ttr: "Çay ve kahve ikisi de popüler; ilki daha …, ikincisi daha sert."
+    slots: ["cheaper | ucuz", "healthier | sağlıklı", "more traditional | geleneksel"]
+    chunks: ["the former | ilki (önce anılan)", "the latter | ikincisi (sonra anılan)"]
+    g: c2-ellipsis-substitution
+    ctx: ["Akademik yazı"]
+    tone: ["Resmî"]
+    d: 5
+    dis:
+      - "formerly | “Eskiden” demektir (zarf)."
+      - "latter | Çay önce anıldı; “former” olmalı."
+      - "formal | Resmî demektir."
+  - id: as-did-so-did
+    t: "…, as did … / … and so did …"
+    ex: "She voted against the plan, as [[did]] most of her colleagues."
+    extr: "Plana karşı oy verdi; meslektaşlarının çoğu da öyle yaptı."
+    ttr: "Plana karşı oy verdi; … öyle yaptı."
+    slots: ["most of her colleagues | meslektaşlarının çoğu da", "her manager | müdürü de", "the whole team | bütün ekip de"]
+    chunks: ["as did | … da öyle yaptı (devrik)", "most of her colleagues | meslektaşlarının çoğu"]
+    g: c2-ellipsis-substitution
+    ctx: ["Anlatı"]
+    tone: ["Resmî"]
+    d: 5
+    dis:
+      - "voted | Ellipsis'te yardımcı fiil “did” yeterli."
+      - "does | Geçmiş anlatılıyor."
+      - "was | “voted” eylem fiili; yardımcı fiil “did”."
+  - id: what-with
+    t: "What with … and …, …"
+    ex: "What [[with]] the traffic and the rain, we arrived an hour late."
+    extr: "Trafik de yağmur da derken bir saat geç vardık."
+    ttr: "… derken bir saat geç vardık."
+    slots: ["the traffic and the rain | Trafik de yağmur da", "work and the kids | İş de çocuklar da", "the strike and the snow | Grev de kar da"]
+    chunks: ["What with … and … | … de … de derken", "we arrived late | geç vardık"]
+    g: c2-participle-clauses
+    ctx: ["Konuşma"]
+    tone: ["Doğal"]
+    d: 5
+    dis:
+      - "about | Kalıp “what with”."
+      - "for | Kalıp “what with”."
+      - "if | Kalıp “what with”."
+  - id: so-much-so-that
+    t: "…, so much so that …"
+    ex: "She loved the city, so much [[so]] that she never left."
+    extr: "Şehri o kadar çok sevdi ki bir daha hiç ayrılmadı."
+    ttr: "Şehri o kadar çok sevdi ki …"
+    slots: ["she never left | bir daha hiç ayrılmadı", "she bought a flat there | orada bir daire aldı", "she learned the local dialect | yerel ağzı öğrendi"]
+    chunks: ["so much so that | o kadar ki", "she never left | hiç ayrılmadı"]
+    g: c2-ellipsis-substitution
+    ctx: ["Anlatı"]
+    tone: ["Vurgulu"]
+    d: 5
+    dis:
+      - "such | Kalıp “so much so that”."
+      - "that | Kalıp bozulur."
+      - "as | Kalıp “so much so that”."
+
+grammar:
+  - id: c2-participle-clauses
+    title: "Participle clauses: Having done…, Built in…, Given that…"
+    short: "Yan cümleler -ing, V3 veya having + V3 ile kısaltılır: Having finished, she left. / Built in 1890, the bridge… Özne iki cümlede aynı olmalıdır."
+    long: "-ing (etken, eşzamanlı ya da neden): Feeling tired, I went to bed. / Not knowing the way, we asked. Having + V3 (önce olan eylem): Having read the report, she called the client. V3 (edilgen): Written in 1920, the novel is still popular. Kalıplaşmış ifadeler: Given that…, Considering…, Generally speaking…, Judging by… Dikkat (sarkan ortaç): Walking home, the rain started. yanlıştır — yürüyen yağmur değil; doğrusu: Walking home, I got caught in the rain. What with … and … konuşma dilinde nedenleri sıralar."
+    ex: ["Having lived abroad for years, he found it hard to settle back home. | Yıllarca yurt dışında yaşadıktan sonra memlekete yeniden alışmakta zorlandı.", "Surrounded by mountains, the village is hard to reach in winter. | Dağlarla çevrili köye kışın ulaşmak zor.", "Judging by her smile, the interview went well. | Gülümsemesine bakılırsa görüşme iyi geçmiş."]
+  - id: c2-ellipsis-substitution
+    title: "Ellipsis ve ikame: so / not, do so, the former / the latter"
+    short: "Tekrardan kaçınmak için cümle parçaları düşürülür veya so, not, do so, one, the former / the latter gibi sözcüklerle ikame edilir."
+    long: "so / not: I think so. / I hope not. / I'm afraid so. do so (resmî): Applicants who wish to do so may submit a portfolio. Yardımcı fiille ellipsis: I haven't finished, but Ali has. / She left early, as did I. / He can swim and so can I. / Neither do I. one / ones: I'd like the red one. the former / the latter: önce ve sonra anılanı gösterir. Vurgu: so much so that …, if so / if not. Türkçede doğal olan tekrarlar İngilizcede genelde ikameyle kaçınılır; bu, akıcı ve olgun bir üslubun işaretidir."
+    ex: ["Is the shop open on Sundays? — I believe so. | Dükkân pazar günü açık mı? — Sanırım öyle.", "Some students passed; others did not. | Bazı öğrenciler geçti; bazıları geçmedi.", "If you have any questions, please do not hesitate to ask. If not, we'll continue. | Sorunuz varsa çekinmeden sorun. Yoksa devam edelim."]
+
+scenarios:
+  - id: editing-session
+    title: "Editörle metin üzerinde çalışmak"
+    sit: "Bir dergiye yazdığın yazıyı editörünle gözden geçiriyorsun. Editör üslubu eleştiriyor."
+    d: 5
+    targets: [verbose, succinct, coherent, the-gist]
+    turns:
+      - ["Editor", "The ideas are good, but the introduction is rather verbose.", "Fikirler iyi ama giriş biraz uzun ve laf kalabalığı dolu."]
+      - choose:
+          - ["Fair enough. I'll make it more succinct and get to the point faster.", true, "Eleştiriyi kabul edip somut çözüm öneriyor."]
+          - ["Fair enough. I'll make it more verbose.", false, "Anlam terse döndü."]
+          - ["Fair. I make it succinctly.", false, "Gramer hatalı ve sıfat yerine zarf kullanılmış."]
+      - ["Editor", "Also, the second section doesn't follow on from the first.", "Ayrıca ikinci bölüm birinciden mantıklı biçimde devam etmiyor."]
+      - choose:
+          - ["Having reread it, I see what you mean. I'll add a link so the argument is more coherent.", true, "Participle clause ve “coherent” doğru."]
+          - ["Having reread it, the argument isn't coherent.", false, "Sarkan ortaç: yeniden okuyan argüman değil, sensin."]
+          - ["Rereading it, I am see your point.", false, "“am see” yanlış."]
+      - ["Editor", "Great. Readers should get the gist from the first paragraph.", "Harika. Okurlar ana fikri ilk paragraftan anlamalı."]
+  - id: book-club
+    title: "Kitap kulübü tartışması"
+    sit: "Kitap kulübünde bir romanı tartışıyorsunuz."
+    d: 5
+    targets: [vivid, juxtapose, allude-to, prose]
+    turns:
+      - ["Mina", "What did you think of the novel?", "Romanı nasıl buldun?"]
+      - choose:
+          - ["I loved it. The prose is simple, yet the descriptions are incredibly vivid.", true, "Edebî kelimeler doğru kullanılmış."]
+          - ["I loved it. The prose is valid.", false, "“valid” geçerli demektir; edebî tasvirde anlamsız."]
+          - ["I loved. Very vivid prose it is.", false, "Nesne eksik ve sıralama doğal değil."]
+      - ["Mina", "I agree. And the ending alludes to the first chapter, doesn't it?", "Katılıyorum. Ve son bölüm ilk bölüme gönderme yapıyor, değil mi?"]
+      - choose:
+          - ["It does, and so does the title. The author juxtaposes the two scenes beautifully.", true, "Ellipsis (It does, so does …) ve “juxtapose” doğru."]
+          - ["It is, and so is the title.", false, "“alludes” eylem fiili; yardımcı fiil “does”."]
+          - ["Yes, it alludes on the first chapter.", false, "Edat “to”."]
+      - ["Mina", "Exactly. Needless to say, I'm reading her next book.", "Aynen. Söylemeye gerek yok, sıradaki kitabını okuyorum."]
+
+readings:
+  - id: review
+    title: "Theatre review"
+    kind: "Eleştiri yazısı"
+    d: 5
+    s:
+      - ["Staged ostensibly as a comedy, the play is in fact a bleak meditation on loneliness.", "Görünüşte komedi olarak sahnelenen oyun aslında yalnızlık üzerine kasvetli bir düşünce yolculuğu."]
+      - ["The playwright juxtaposes noisy family dinners with long, silent scenes in an empty flat.", "Oyun yazarı gürültülü aile yemeklerini boş bir dairedeki uzun, sessiz sahnelerle yan yana koyuyor."]
+      - ["Having seen the original production, I found this version less coherent.", "Orijinal sahnelemeyi izlemiş biri olarak bu versiyonu daha az tutarlı buldum."]
+      - ["The lead actor is superb; the supporting cast, to put it mildly, less so.", "Başrol oyuncusu mükemmel; yardımcı oyuncular ise, en hafif deyimle, o kadar değil."]
+      - ["Despite some scathing reviews, the show has sold out every night.", "Bazı yerden yere vuran eleştirilere rağmen gösterinin biletleri her gece tükendi."]
+    gloss: ["bleak | kasvetli", "meditation | derin düşünme", "sold out | biletleri tükenmiş"]
+    q:
+      - q: "Yazara göre oyun aslında ne hakkında?"
+        o: ["Aile komedisi", "Yalnızlık", "Tiyatro tarihi"]
+        a: 1
+        why: "“ostensibly as a comedy … in fact a bleak meditation on loneliness”"
+      - q: "“the supporting cast, to put it mildly, less so” ne demek?"
+        o: ["Yardımcı oyuncular da mükemmel", "Yardımcı oyuncular hiç iyi değil (kibarca söylenmiş)", "Yardımcı oyuncular sahneye çıkmadı"]
+        a: 1
+        why: "Ellipsis: “less so” = less superb; “to put it mildly” eleştiriyi yumuşatır."
+  - id: style-guide
+    title: "Writing well"
+    kind: "Yazım kılavuzu"
+    d: 5
+    s:
+      - ["Good writing is succinct: every word must earn its place.", "İyi yazı özlüdür: her sözcük yerini hak etmelidir."]
+      - ["Given that readers skim, the main point should come first.", "Okurların göz gezdirdiği düşünülürse ana fikir önce gelmelidir."]
+      - ["Avoid words with unintended connotations; “cheap” and “inexpensive” are not interchangeable.", "İstenmeyen çağrışımları olan sözcüklerden kaçının; “cheap” ile “inexpensive” birbirinin yerine kullanılamaz."]
+      - ["Rhetorical questions can engage readers, but use them sparingly — the former effect fades quickly if overused.", "Retorik sorular okuru içine çekebilir ama idareli kullanın; aşırı kullanılırsa bu etki çabuk kaybolur."]
+      - ["Above all, read your work aloud: if you stumble, so will your reader.", "Her şeyden önce yazınızı yüksek sesle okuyun: siz takılırsanız okurunuz da takılır."]
+    gloss: ["skim | göz gezdirmek", "interchangeable | birbirinin yerine kullanılabilir", "sparingly | idareli, az"]
+    q:
+      - q: "Kılavuza göre ana fikir nerede olmalı?"
+        o: ["Sonda", "Başta", "Ortada"]
+        a: 1
+        why: "“Given that readers skim, the main point should come first.”"
+      - q: "“if you stumble, so will your reader” cümlesindeki yapı nedir?"
+        o: ["Ellipsis/ikame: okur da takılır", "Edilgen yapı", "Retorik soru"]
+        a: 0
+        why: "“so will your reader” = your reader will stumble too."
+
+writing:
+  id: c2-review
+  p: "Son okuduğun bir kitap, izlediğin bir film ya da oyun hakkında 7–9 cümlelik bir eleştiri yaz. Üslup sözcükleri, en az bir participle clause ve bir ellipsis/ikame kullan."
+  rubric: ["En az bir participle clause (Having…, Set in…, Given…)", "En az bir ellipsis veya ikame (so do I, as did…, the former / the latter, less so)", "Değerlendirme dengeli: güçlü ve zayıf yönler", "Üslup sözcükleri doğru (vivid, coherent, succinct, subtle…)"]
+  samples: ["Set in 1970s İzmir, the film follows two sisters who run a failing bakery. The cinematography is vivid, capturing the city's light beautifully, and the dialogue is succinct and often funny. The older sister is played with real subtlety; the younger, unfortunately, less so. Having built the tension so carefully, the director rushes the final act, which feels less coherent than the rest. Needless to say, the ending divided the audience, as did the music. Still, it is a moving portrait of family loyalty, and one I would happily watch again."]
+  d: 5
+
+situations:
+  - { parent: "Üslup", name: "Yazıyı değerlendirme", items: [succinct, verbose, eloquent, coherent, subtle, vivid, prose, scathing, understatement, the-gist] }
+  - { parent: "Üslup", name: "Edebî ve retorik dil", items: [convey, allude-to, connotation, juxtapose, paradox, ostensibly, rhetorical-question, to-put-it-mildly, needless-to-say] }
+  - { parent: "Gramer", name: "Kısaltma ve ikame", items: [given-that, having-finished, not-knowing, built-in, given-the, what-with, i-hope-so-not, do-so, the-former-the-latter, as-did-so-did, so-much-so-that] }

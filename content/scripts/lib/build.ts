@@ -392,7 +392,9 @@ export function slotSentence(ttr: string, tr: string): string | null {
   const s = ttr.replace(/… m[ıiuü](?=[?\s.!,]|$)/u, `… m${questionVowel(tr)}`).replace("…", tr);
   const first = s.charAt(0);
   const up = first === "i" ? "İ" : first === "ı" ? "I" : first.toLocaleUpperCase("tr");
-  return up + s.slice(1);
+  const out = (up + s.slice(1)).trimEnd();
+  // Şablon “…” ile bitiyorsa cümle sonu noktası eksik kalır
+  return /[.!?…:;)”"]$/.test(out) ? out : out + ".";
 }
 
 function questionVowel(word: string): string {

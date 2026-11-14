@@ -81,6 +81,12 @@ export const DOMAIN_NAMES: Record<string, string> = {
   health: "Sağlık İngilizcesi",
   tourism: "Turizm İngilizcesi",
   law: "Hukuk İngilizcesi",
+  a1: "A1 seviyesi Genel İngilizce (çok basit kelimeler ve kısa cümleler kullan)",
+  a2: "A2 seviyesi Genel İngilizce (basit ve günlük dil kullan)",
+  b1: "B1 seviyesi Genel İngilizce (orta düzey, açık ve doğal dil)",
+  b2: "B2 seviyesi Genel İngilizce (orta üstü; görüş, tartışma ve bağlaçlar)",
+  c1: "C1 seviyesi İngilizce (ileri düzey, resmî ve akademik dil)",
+  c2: "C2 seviyesi İngilizce (ustalık; deyimler, üslup ve incelikler)",
 };
 
 /** İstanbul'da (UTC+3, yaz saati yok) bir sonraki gece yarısı. */
