@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lingora/data/badges.dart';
 import 'package:lingora/data/content.dart';
 import 'package:lingora/data/local_store.dart';
 import 'package:lingora/data/user_data.dart';
@@ -167,5 +168,30 @@ void main() {
     expect(u.cards.containsKey(id), isFalse);
     await u.toggleSaved(id);
     expect(u.isSaved(id), isFalse);
+  });
+
+  test('zorlandıklarım: unutulan hedefler önce, yeni kartlar dahil edilmez, her hedefe iki soru', () {
+    final ids = content.targetsForDomain('a2');
+    CardState card(int lapses, {CardPhase phase = CardPhase.review}) => CardState(
+        stability: 10, difficulty: 5, due: now.add(const Duration(days: 3)), reps: 4, lapses: lapses, phase: phase, step: 0, lastReview: now.subtract(const Duration(days: 1)));
+    final cards = {ids[0]: card(0), ids[1]: card(3), ids[2]: card(1), ids[3]: card(2, phase: CardPhase.newCard)};
+    final weak = weakTargets(content: content, cards: cards, now: now, domainId: 'a2');
+    expect(weak, [ids[1], ids[2]]);
+    final plan = buildWeakSession(content: content, domainId: 'a2', cards: cards, now: now);
+    expect(plan.dueTargets, weak);
+    expect(plan.steps.length, 4);
+    expect(plan.steps.every((s) => s.kind == StepKind.exercise), isTrue);
+    expect(buildWeakSession(content: content, domainId: 'b1', cards: cards, now: now).isEmpty, isTrue);
+  });
+
+  test('rozetler: boş kullanıcıda hiçbiri kazanılmamış, ilk cevapla ilk rozet', () async {
+    final u = UserData(MemoryStore());
+    await u.load();
+    expect(computeBadges(u, content).where((b) => b.earned), isEmpty);
+    final id = content.targetsForDomain('a1').first;
+    await u.recordAnswer(targetId: id, domainId: 'a1', exerciseId: null, sessionId: 's', skill: 'vocab', outcome: Outcome.correct, hintsUsed: 0, scheduled: true, at: now);
+    final b = computeBadges(u, content);
+    expect(b.firstWhere((x) => x.id == 'first').earned, isTrue);
+    expect(b.firstWhere((x) => x.id == 'answers100').current, 1);
   });
 }

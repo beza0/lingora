@@ -16,7 +16,9 @@ import 'target_screen.dart';
 
 class SessionScreen extends ConsumerStatefulWidget {
   final String domainId;
-  const SessionScreen({super.key, required this.domainId});
+  /// true: yalnız zorlandığın hedeflerden oluşan tekrar oturumu
+  final bool weak;
+  const SessionScreen({super.key, required this.domainId, this.weak = false});
   @override
   ConsumerState<SessionScreen> createState() => _SessionScreenState();
 }
@@ -61,7 +63,9 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
     super.initState();
     final user = ref.read(userProvider);
     final level = user.domain(widget.domainId)?.level ?? 2;
-    plan = buildSession(content: ref.read(contentProvider), domainId: widget.domainId, cards: user.cards, level: level, now: DateTime.now().toUtc());
+    plan = widget.weak
+        ? buildWeakSession(content: ref.read(contentProvider), domainId: widget.domainId, cards: user.cards, now: DateTime.now().toUtc())
+        : buildSession(content: ref.read(contentProvider), domainId: widget.domainId, cards: user.cards, level: level, now: DateTime.now().toUtc());
     steps = List.of(plan.steps);
   }
 
@@ -330,6 +334,7 @@ class _SessionScreenState extends ConsumerState<SessionScreen> {
                   reviewCount: plan.dueTargets.length,
                   minutes: DateTime.now().difference(startedAt).inMinutes,
                   empty: plan.isEmpty,
+                  weak: widget.weak,
                 )
               : s.kind == StepKind.intro
                   ? _Intro(view: content.view(s.targetId), onNext: () => _next(), onKnow: () => _iKnowIt(s))
@@ -718,16 +723,18 @@ class _Intro extends StatelessWidget {
 
 class _Summary extends StatelessWidget {
   final int correct, answered, newCount, reviewCount, minutes;
-  final bool empty;
-  const _Summary({required this.correct, required this.answered, required this.newCount, required this.reviewCount, required this.minutes, required this.empty});
+  final bool empty, weak;
+  const _Summary({required this.correct, required this.answered, required this.newCount, required this.reviewCount, required this.minutes, required this.empty, this.weak = false});
   @override
   Widget build(BuildContext context) {
     final p = context.pal;
     if (empty) {
       return EmptyState(
         icon: Icons.check_circle_outline,
-        title: 'Şimdilik çalışılacak bir şey yok',
-        body: 'Tekrar zamanı gelen hedef yok ve bu alandaki yeni hedefler bitti.',
+        title: weak ? 'Zorlandığın bir hedef yok' : 'Şimdilik çalışılacak bir şey yok',
+        body: weak
+            ? 'Bu alanda unuttuğun ya da hatırlaması zorlaşan bir hedef görünmüyor. Böyle devam!'
+            : 'Tekrar zamanı gelen hedef yok ve bu alandaki yeni hedefler bitti.',
         action: FilledButton(onPressed: () => context.pop(), child: const Text('Ana sayfaya dön')),
       );
     }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app_state.dart';
+import '../../data/badges.dart';
 import '../../services/reminders.dart';
 import '../../srs/fsrs.dart';
 import '../../theme.dart';
@@ -135,6 +136,14 @@ class ProgressScreen extends ConsumerWidget {
               ),
             );
           }),
+        Builder(builder: (context) {
+          final badges = computeBadges(user, content);
+          final earned = badges.where((b) => b.earned).length;
+          return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            SectionTitle('ROZETLER ($earned/${badges.length})'),
+            Wrap(spacing: 8, runSpacing: 8, children: [for (final b in badges) _BadgeTile(b)]),
+          ]);
+        }),
         const SectionTitle('GÜNLÜK HEDEF'),
         Wrap(spacing: 8, runSpacing: 8, children: [
           for (final g in const [5, 10, 15, 25, 40])
@@ -242,3 +251,42 @@ class _ReminderSetting extends ConsumerWidget {
   }
 }
 
+class _BadgeTile extends StatelessWidget {
+  final Achievement b;
+  const _BadgeTile(this.b);
+  @override
+  Widget build(BuildContext context) {
+    final p = context.pal;
+    return Semantics(
+      label: '${b.title}: ${b.description}. ${b.earned ? 'Kazanıldı' : '${b.current} / ${b.goal}'}',
+      child: Tooltip(
+        message: b.description,
+        child: Container(
+          width: 104,
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: b.earned ? p.primarySoft : p.surface,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: b.earned ? p.primary : p.border),
+          ),
+          child: Column(children: [
+            Opacity(opacity: b.earned ? 1 : 0.35, child: Text(b.icon, style: const TextStyle(fontSize: 26))),
+            const SizedBox(height: 4),
+            Text(b.title, textAlign: TextAlign.center, maxLines: 2, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: b.earned ? p.primaryText : p.muted)),
+            const SizedBox(height: 6),
+            if (b.earned)
+              Icon(Icons.check_circle, size: 16, color: p.success)
+            else ...[
+              ClipRRect(
+                borderRadius: BorderRadius.circular(99),
+                child: LinearProgressIndicator(value: b.progress, minHeight: 4, backgroundColor: p.surface2),
+              ),
+              const SizedBox(height: 2),
+              Text('${b.current > b.goal ? b.goal : b.current}/${b.goal}', style: TextStyle(fontSize: 10, color: p.muted)),
+            ],
+          ]),
+        ),
+      ),
+    );
+  }
+}

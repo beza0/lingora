@@ -135,6 +135,8 @@ class HomeScreen extends ConsumerWidget {
                 onStart: plan.isEmpty ? null : () => context.push('/session/${d.domainId}'),
                 onAssess: user.assessed.contains(d.domainId) ? null : () => context.push('/assessment/${d.domainId}'),
                 onSpeak: () => context.push('/speak/${d.domainId}'),
+                weak: weakTargets(content: content, cards: user.cards, now: now, domainId: d.domainId).length,
+                onWeak: () => context.push('/session/${d.domainId}?mode=weak'),
               );
             }),
             const SizedBox(height: 12),
@@ -188,9 +190,13 @@ class _DomainCard extends StatelessWidget {
   final VoidCallback? onStart;
   final VoidCallback? onAssess;
   final VoidCallback? onSpeak;
+  final int weak;
+  final VoidCallback? onWeak;
   const _DomainCard({
     this.onAssess,
     this.onSpeak,
+    this.weak = 0,
+    this.onWeak,
     required this.domainId,
     required this.name,
     required this.due,
@@ -235,6 +241,14 @@ class _DomainCard extends StatelessWidget {
           if (onSpeak != null) ...[
             const SizedBox(height: 8),
             OutlinedButton.icon(onPressed: onSpeak, icon: const Icon(Icons.mic_none, size: 18), label: const Text('Konuşma pratiği')),
+          ],
+          if (weak > 0 && onWeak != null) ...[
+            const SizedBox(height: 8),
+            OutlinedButton.icon(
+              onPressed: onWeak,
+              icon: const Icon(Icons.fitness_center, size: 18),
+              label: Text('Zorlandıklarım · $weak hedef'),
+            ),
           ],
         ]),
       ),

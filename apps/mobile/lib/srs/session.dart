@@ -182,3 +182,51 @@ List<String> pickSpeakingTargets(ContentRepo content, String domainId, Map<Strin
 
 /// İçerikteki vurgu işaretlerini ([[…]]) kaldırır.
 String cleanSentence(String s) => s.replaceAll('[[', '').replaceAll(']]', '').trim();
+
+/// Zorlandığın hedefler: unutulmuş (lapses > 0) veya hatırlama olasılığı düşük olan başlanmış kartlar.
+/// En çok unutulan önce; [domainId] null ise bütün alanlardan seçer.
+List<String> weakTargets({
+  required ContentRepo content,
+  required Map<String, CardState> cards,
+  required DateTime now,
+  String? domainId,
+  Fsrs fsrs = const Fsrs(),
+  int limit = 10,
+}) {
+  final inDomain = domainId == null ? null : content.targetsForDomain(domainId).toSet();
+  final list = cards.entries.where((e) {
+    if (e.value.phase == CardPhase.newCard || !content.targets.containsKey(e.key)) return false;
+    if (inDomain != null && !inDomain.contains(e.key)) return false;
+    return e.value.lapses > 0 || fsrs.recallProbability(e.value, now) < 0.8;
+  }).toList()
+    ..sort((a, b) {
+      final l = b.value.lapses.compareTo(a.value.lapses);
+      return l != 0 ? l : fsrs.recallProbability(a.value, now).compareTo(fsrs.recallProbability(b.value, now));
+    });
+  return list.take(limit).map((e) => e.key).toList();
+}
+
+/// Zorlandıklarım oturumu: her zayıf hedef için önce üretim (yazma/çeviri), sonda farklı türde ikinci soru.
+SessionPlan buildWeakSession({
+  required ContentRepo content,
+  required String domainId,
+  required Map<String, CardState> cards,
+  required DateTime now,
+  int limit = 10,
+}) {
+  final ids = weakTargets(content: content, cards: cards, now: now, domainId: domainId, limit: limit);
+  final steps = <SessionStep>[];
+  final second = <SessionStep>[];
+  for (final id in ids) {
+    final reps = cards[id]?.reps ?? 0;
+    final first = pickExercise(content, id, reps, production: true);
+    if (first == null) continue;
+    steps.add(SessionStep(StepKind.exercise, id, exerciseId: first['id'] as String));
+    final again = pickExercise(content, id, reps + 1, avoidType: first['type'] as String?);
+    if (again != null && again['id'] != first['id']) {
+      second.add(SessionStep(StepKind.exercise, id, exerciseId: again['id'] as String, isRetry: true));
+    }
+  }
+  steps.addAll(second);
+  return SessionPlan(domainId: domainId, steps: steps, newTargets: const [], dueTargets: ids, reducedNew: false);
+}

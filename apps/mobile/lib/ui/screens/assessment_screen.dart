@@ -126,6 +126,7 @@ class _AssessmentScreenState extends ConsumerState<AssessmentScreen> {
             ]),
           ),
         ),
+        if (!ContentRepo.isLevelDomain(widget.domainId)) _LevelSuggestion(level: chosen ?? r),
       ]);
     } else {
       final v = content.view(step!.targetId)!;
@@ -227,6 +228,56 @@ class _Intro extends StatelessWidget {
         const SizedBox(height: 8),
         TextButton(onPressed: onSkip, child: const Text('Şimdi değil, seviye 2\'den başla')),
       ]),
+    );
+  }
+}
+
+/// Testten çıkan seviyeye karşılık gelen A1–C2 alanını önerir (1→A1 … 5→C1).
+class _LevelSuggestion extends ConsumerWidget {
+  final int level;
+  const _LevelSuggestion({required this.level});
+  static const _map = {1: 'a1', 2: 'a2', 3: 'b1', 4: 'b2', 5: 'c1'};
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final content = ref.watch(contentProvider);
+    final user = ref.watch(userProvider);
+    final p = context.pal;
+    final id = _map[level.clamp(1, 5)]!;
+    final domain = content.domains[id];
+    if (domain == null || !content.visible(domain)) return const SizedBox.shrink();
+    final active = user.activeDomains.any((d) => d.domainId == id);
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: Card(
+        color: p.primarySoft,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            Row(children: [
+              DomainDot(id, size: 12),
+              const SizedBox(width: 8),
+              Expanded(child: Text('Genel seviyen yaklaşık ${id.toUpperCase()}', style: const TextStyle(fontWeight: FontWeight.w700))),
+            ]),
+            const SizedBox(height: 6),
+            Text('${domain['name_tr']}: ${domain['description_tr']}', style: TextStyle(color: p.muted, fontSize: 13)),
+            const SizedBox(height: 10),
+            active
+                ? Text('Bu seviye alanı zaten listende.', style: TextStyle(color: p.primaryText, fontWeight: FontWeight.w600))
+                : OutlinedButton.icon(
+                    icon: const Icon(Icons.add, size: 18),
+                    label: Text('${id.toUpperCase()} gramer ve kelime derslerini ekle'),
+                    onPressed: () async {
+                      await user.setDomains([...user.activeDomains.map((d) => d.domainId), id]);
+                      ref.read(backendProvider).sync(user);
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${domain['name_tr']} alanlarına eklendi.')));
+                      }
+                    },
+                  ),
+          ]),
+        ),
+      ),
     );
   }
 }

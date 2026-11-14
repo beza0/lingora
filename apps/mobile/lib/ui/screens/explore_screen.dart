@@ -72,6 +72,13 @@ class _ExploreScreenState extends ConsumerState<ExploreScreen> {
                     onTap: () => context.push('/pack/${pack['id']}'),
                   ),
                 ListTile(
+                  leading: Icon(Icons.school_outlined, color: p.domain(domainId)),
+                  title: const Text('Gramer konuları'),
+                  subtitle: Text('Bu alandaki bütün yapı dersleri', style: TextStyle(color: p.muted)),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () => context.push('/grammar/$domainId'),
+                ),
+                ListTile(
                   leading: Icon(Icons.menu_book_outlined, color: p.domain(domainId)),
                   title: const Text('Cümle Rehberi'),
                   subtitle: Text('Duruma göre hazır cümleler', style: TextStyle(color: p.muted)),
